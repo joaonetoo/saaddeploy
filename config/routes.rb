@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :centers
+  resources :centers do
+    collection do
+      get 'autocomplete_center_name'
+    end
+  end
+
   resources :campus do
     collection do
       get 'autocomplete_campu_name'

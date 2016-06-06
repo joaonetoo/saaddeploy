@@ -1,6 +1,6 @@
 class CentersController < ApplicationController
   before_action :set_center, only: [:show, :edit, :update, :destroy]
-
+  autocomplete :center, :name, :full => true
   # GET /centers
   # GET /centers.json
   def index

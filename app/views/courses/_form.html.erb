@@ -23,9 +23,12 @@
     <%= f.label :turno %><br>
     <%= f.text_field :turno %>
   </div>
+  <%= label_tag :center %><br>
+    <%= autocomplete_field_tag :center, params[:center], autocomplete_center_name_centers_path, :id_element => '#course_center_id'%>
+  </div>
+
   <div class="field">
-    <%= f.label :institution_id %><br>
-    <%= f.text_field :institution_id, data: {autocomplete_source: search_institutions_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome" %>
+    <%= f.hidden_field :center_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
