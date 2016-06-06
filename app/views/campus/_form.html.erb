@@ -1,0 +1,29 @@
+<%= form_for(@campu) do |f| %>
+  <% if @campu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campu.errors.count, "error") %> prohibited this campu from being saved:</h2>
+
+      <ul>
+      <% @campu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= label_tag :institution %><br>
+    <%= autocomplete_field_tag :institution, params[:institution], autocomplete_institution_nome_institutions_path, :id_element => '#campu_institution_id'%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :institution_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

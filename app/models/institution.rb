@@ -3,4 +3,5 @@ class Institution < ActiveRecord::Base
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
     validates :nome, :cnpj, :logradouro, :numero, :bairro, :cep, :cidade, :estado, presence: true
     has_many :courses
+    has_many :campus
 end

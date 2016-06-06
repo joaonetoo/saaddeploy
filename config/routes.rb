@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :centers
+  resources :campus do
+    collection do
+      get 'autocomplete_campu_name'
+    end
+  end
+
   get 'admin/search'
   get 'admin/index'
   get 'admin/aprove'

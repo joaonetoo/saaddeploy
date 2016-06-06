@@ -17891,3 +17891,1692 @@ Processing by Users::SessionsController#new as HTML
   Rendered users/shared/_links.html.erb (6.9ms)
   Rendered users/sessions/new.html.erb within layouts/application (108.5ms)
 Completed 200 OK in 3018ms (Views: 2853.7ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 13:40:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 94ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:40:54 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (7.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (89.1ms)
+Completed 200 OK in 2822ms (Views: 2663.5ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-06-06 13:40:59 -0300
+Processing by Users::RegistrationsController#new as HTML
+  [1m[35mInstitution Load (4.8ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 1154ms (Views: 1138.5ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-06 13:41:53 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Uh8hvDE0sg5aLrb31IP56LK0uvPJ84Bciz1KCYq/l9ITEGEcAe8DULAFZCojtAhFtuKnHpt/igGE9BwVX8FZA==", "user"=>{"nome"=>"julian", "telefone"=>"8491013334", "endereco"=>"rua da gameleira", "lattes"=>"latteslink", "biografia"=>"sdsddds", "type"=>"Student", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f8e832ff918 @tempfile=#<Tempfile:/tmp/RackMultipart20160606-4056-42c6ik.png>, @original_filename="profile.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-1fr9ldl.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]' -auto-orient -resize "300x300>" '/tmp/441dd10ea96e07c3eefe49aedb8490de20160606-4056-1uyyer5'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-25j3y1.png[0]' -auto-orient -resize "100x100>" '/tmp/441dd10ea96e07c3eefe49aedb8490de20160606-4056-b8iy1l'
+  [1m[35m (0.7ms)[0m  BEGIN
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4056-1jhfoir.png'
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "users" ("type", "nome", "telefone", "endereco", "lattes", "biografia", "matricula", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["type", "Student"], ["nome", "julian"], ["telefone", "8491013334"], ["endereco", "rua da gameleira"], ["lattes", "latteslink"], ["biografia", "sdsddds"], ["matricula", "20141014040304"], ["avatar_file_name", "profile.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 39149], ["avatar_updated_at", "2016-06-06 16:41:53.450998"], ["email", "julian.sansat@icloud.com"], ["encrypted_password", "$2a$11$QiVruZQddqGbG1Fw9oUasOQDppE/sW7e8LF9zZypv/0LHDc4LZ172"], ["created_at", "2016-06-06 16:41:54.864874"], ["updated_at", "2016-06-06 16:41:54.864874"]]
+  [1m[35m (20.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 1729ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 13:41:55 -0300
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:41:55 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 927ms (Views: 920.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:42:04 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Lj86E3w2KdtyZcooovSLMsffSm0tT7HUTnkEs5blN5FvMHqzTO2YhZhOGPVVw3qfw4lXgH/Du4lBsFKvQ5v5Q==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "julian.sansat@icloud.com"]]
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Completed 401 Unauthorized in 562ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:42:05 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 1052ms (Views: 1046.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 13:57:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 97ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:57:34 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (7.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (91.4ms)
+Completed 200 OK in 2815ms (Views: 2654.6ms | ActiveRecord: 18.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-06 13:57:52 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvyRS96X6CGfnwl9NqYUHF6xjxsNoRHt9FYreThA08sz+KxJXlSG5OQ3pjZBesva6qDXbLjrIcSAaQ4hSxUo8A==", "user"=>{"email"=>"admin@saad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (9.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@saad.com"]]
+Completed 401 Unauthorized in 82ms (ActiveRecord: 10.6ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvyRS96X6CGfnwl9NqYUHF6xjxsNoRHt9FYreThA08sz+KxJXlSG5OQ3pjZBesva6qDXbLjrIcSAaQ4hSxUo8A==", "user"=>{"email"=>"admin@saad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 1555ms (Views: 1108.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (273.7ms)[0m  [1mDROP DATABASE IF EXISTS "saad_v2_development"[0m
+  [1m[35m (249.0ms)[0m  DROP DATABASE IF EXISTS "saad_v2_test"
+  [1m[36m (705.3ms)[0m  [1mCREATE DATABASE "saad_v2_development" ENCODING = 'unicode'[0m
+  [1m[35m (697.2ms)[0m  CREATE DATABASE "saad_v2_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (71.1ms)[0m  CREATE TABLE "administrators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (104.5ms)[0m  [1mCREATE TABLE "classrooms" ("id" serial primary key, "subject_id" integer, "turno" character varying, "codigo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (65.0ms)[0m  CREATE  INDEX  "index_classrooms_on_subject_id" ON "classrooms" USING btree ("subject_id")
+  [1m[36m (16.6ms)[0m  [1mCREATE TABLE "classrooms_students" ("student_id" integer, "classroom_id" integer) [0m
+  [1m[35m (63.2ms)[0m  CREATE  INDEX  "index_classrooms_students_on_classroom_id" ON "classrooms_students" USING btree ("classroom_id")
+  [1m[36m (65.5ms)[0m  [1mCREATE  INDEX  "index_classrooms_students_on_student_id" ON "classrooms_students" USING btree ("student_id")[0m
+  [1m[35m (16.2ms)[0m  CREATE TABLE "classrooms_users" ("user_id" integer, "classroom_id" integer) 
+  [1m[36m (65.0ms)[0m  [1mCREATE  INDEX  "index_classrooms_users_on_classroom_id" ON "classrooms_users" USING btree ("classroom_id")[0m
+  [1m[35m (66.4ms)[0m  CREATE  INDEX  "index_classrooms_users_on_user_id" ON "classrooms_users" USING btree ("user_id")
+  [1m[36m (82.6ms)[0m  [1mCREATE TABLE "coordinators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (115.4ms)[0m  CREATE TABLE "courses" ("id" serial primary key, "nome" character varying, "data_abertura" date, "turno" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (77.4ms)[0m  [1mCREATE  INDEX  "index_courses_on_institution_id" ON "courses" USING btree ("institution_id")[0m
+  [1m[35m (114.1ms)[0m  CREATE TABLE "institutions" ("id" serial primary key, "cnpj" character varying, "logradouro" character varying, "numero" character varying, "bairro" character varying, "cep" character varying, "cidade" character varying, "estado" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "nome" character varying, "tel" character varying, "organizacao_academica" character varying, "categoria_administrativa" character varying, "site" character varying, "image_file_name" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp) 
+  [1m[36m (82.1ms)[0m  [1mCREATE TABLE "principals" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (82.2ms)[0m  CREATE TABLE "students" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (148.4ms)[0m  [1mCREATE TABLE "subjects" ("id" serial primary key, "nome" character varying, "ch" integer, "ementa" text, "codigo" character varying, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (65.8ms)[0m  CREATE  INDEX  "index_subjects_on_course_id" ON "subjects" USING btree ("course_id")
+  [1m[36m (92.9ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (106.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "nome" character varying, "telefone" character varying, "endereco" character varying, "lattes" character varying, "biografia" text, "matricula" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "type" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp, "approved" boolean DEFAULT 'f' NOT NULL, "course_id" integer, "institution_id" integer) 
+  [1m[36m (87.8ms)[0m  [1mCREATE  INDEX  "index_users_on_approved" ON "users" USING btree ("approved")[0m
+  [1m[35m (56.6ms)[0m  CREATE  INDEX  "index_users_on_course_id" ON "users" USING btree ("course_id")
+  [1m[36m (66.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (66.2ms)[0m  CREATE  INDEX  "index_users_on_institution_id" ON "users" USING btree ("institution_id")
+  [1m[36m (66.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (19.1ms)[0m  ALTER TABLE "classrooms" ADD CONSTRAINT "fk_rails_d0cba57dc6"
+FOREIGN KEY ("subject_id")
+  REFERENCES "subjects" ("id")
+
+  [1m[36m (8.0ms)[0m  [1mALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_8c740e114d"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+[0m
+  [1m[35m (20.0ms)[0m  ALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_36bc0ecb8c"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+
+  [1m[36m (19.8ms)[0m  [1mALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_42ea18a101"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+[0m
+  [1m[35m (20.1ms)[0m  ALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_116115b0f2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (19.1ms)[0m  [1mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_d012129e83"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+[0m
+  [1m[35m (9.8ms)[0m  ALTER TABLE "subjects" ADD CONSTRAINT "fk_rails_d31cccf6a9"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+
+  [1m[36m (20.0ms)[0m  [1mALTER TABLE "users" ADD CONSTRAINT "fk_rails_26e618b988"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (18.9ms)[0m  ALTER TABLE "users" ADD CONSTRAINT "fk_rails_7fcf39ca13"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+
+  [1m[36m (64.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (77.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (2.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160531210116')
+  [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518182306')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518202410')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160531163045')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160524175919')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518191441')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160524193013')
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160514164015')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518192322')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160516192017')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160521183203')
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160521175404')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160521181155')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518163328')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518202457')
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160514172435')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518200944')
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518202553')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160516165156')
+  [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160514162629')[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (75.3ms)[0m  [1mCREATE TABLE "administrators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (104.2ms)[0m  CREATE TABLE "classrooms" ("id" serial primary key, "subject_id" integer, "turno" character varying, "codigo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (64.9ms)[0m  [1mCREATE  INDEX  "index_classrooms_on_subject_id" ON "classrooms" USING btree ("subject_id")[0m
+  [1m[35m (16.5ms)[0m  CREATE TABLE "classrooms_students" ("student_id" integer, "classroom_id" integer) 
+  [1m[36m (64.8ms)[0m  [1mCREATE  INDEX  "index_classrooms_students_on_classroom_id" ON "classrooms_students" USING btree ("classroom_id")[0m
+  [1m[35m (66.0ms)[0m  CREATE  INDEX  "index_classrooms_students_on_student_id" ON "classrooms_students" USING btree ("student_id")
+  [1m[36m (16.4ms)[0m  [1mCREATE TABLE "classrooms_users" ("user_id" integer, "classroom_id" integer) [0m
+  [1m[35m (67.3ms)[0m  CREATE  INDEX  "index_classrooms_users_on_classroom_id" ON "classrooms_users" USING btree ("classroom_id")
+  [1m[36m (77.9ms)[0m  [1mCREATE  INDEX  "index_classrooms_users_on_user_id" ON "classrooms_users" USING btree ("user_id")[0m
+  [1m[35m (82.4ms)[0m  CREATE TABLE "coordinators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (115.0ms)[0m  [1mCREATE TABLE "courses" ("id" serial primary key, "nome" character varying, "data_abertura" date, "turno" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (77.3ms)[0m  CREATE  INDEX  "index_courses_on_institution_id" ON "courses" USING btree ("institution_id")
+  [1m[36m (124.6ms)[0m  [1mCREATE TABLE "institutions" ("id" serial primary key, "cnpj" character varying, "logradouro" character varying, "numero" character varying, "bairro" character varying, "cep" character varying, "cidade" character varying, "estado" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "nome" character varying, "tel" character varying, "organizacao_academica" character varying, "categoria_administrativa" character varying, "site" character varying, "image_file_name" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp) [0m
+  [1m[35m (82.1ms)[0m  CREATE TABLE "principals" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (71.1ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (134.6ms)[0m  CREATE TABLE "subjects" ("id" serial primary key, "nome" character varying, "ch" integer, "ementa" text, "codigo" character varying, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (66.3ms)[0m  [1mCREATE  INDEX  "index_subjects_on_course_id" ON "subjects" USING btree ("course_id")[0m
+  [1m[35m (71.6ms)[0m  CREATE TABLE "teachers" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (110.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "nome" character varying, "telefone" character varying, "endereco" character varying, "lattes" character varying, "biografia" text, "matricula" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "type" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp, "approved" boolean DEFAULT 'f' NOT NULL, "course_id" integer, "institution_id" integer) [0m
+  [1m[35m (64.3ms)[0m  CREATE  INDEX  "index_users_on_approved" ON "users" USING btree ("approved")
+  [1m[36m (65.8ms)[0m  [1mCREATE  INDEX  "index_users_on_course_id" ON "users" USING btree ("course_id")[0m
+  [1m[35m (66.8ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (76.0ms)[0m  [1mCREATE  INDEX  "index_users_on_institution_id" ON "users" USING btree ("institution_id")[0m
+  [1m[35m (64.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (18.2ms)[0m  [1mALTER TABLE "classrooms" ADD CONSTRAINT "fk_rails_d0cba57dc6"
+FOREIGN KEY ("subject_id")
+  REFERENCES "subjects" ("id")
+[0m
+  [1m[35m (19.3ms)[0m  ALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_8c740e114d"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+
+  [1m[36m (9.6ms)[0m  [1mALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_36bc0ecb8c"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (19.1ms)[0m  ALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_42ea18a101"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+
+  [1m[36m (20.0ms)[0m  [1mALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_116115b0f2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (18.4ms)[0m  ALTER TABLE "courses" ADD CONSTRAINT "fk_rails_d012129e83"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+
+  [1m[36m (22.3ms)[0m  [1mALTER TABLE "subjects" ADD CONSTRAINT "fk_rails_d31cccf6a9"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (16.1ms)[0m  ALTER TABLE "users" ADD CONSTRAINT "fk_rails_26e618b988"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+
+  [1m[36m (21.0ms)[0m  [1mALTER TABLE "users" ADD CONSTRAINT "fk_rails_7fcf39ca13"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+[0m
+  [1m[35m (71.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (64.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (2.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (5.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160531210116')[0m
+  [1m[35m (9.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518182306')
+  [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518202410')[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160531163045')
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160524175919')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518191441')
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160524193013')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160514164015')
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518192322')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160516192017')
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160521183203')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160521175404')
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160521181155')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518163328')
+  [1m[36m (9.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518202457')[0m
+  [1m[35m (10.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160514172435')
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160518200944')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160518202553')
+  [1m[36m (8.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160516165156')[0m
+  [1m[35m (10.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160514162629')
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "pedro"], ["email", "pedro@yahoo.com.br"], ["created_at", "2016-06-06 17:00:35.985834"], ["updated_at", "2016-06-06 17:00:35.985834"]]
+  [1m[35m (18.9ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Student"], ["nome", "jose"], ["email", "jose@yahoo.com.br"], ["created_at", "2016-06-06 17:00:36.026716"], ["updated_at", "2016-06-06 17:00:36.026716"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "mateus"], ["email", "mateus@yahoo.com.br"], ["created_at", "2016-06-06 17:00:36.046083"], ["updated_at", "2016-06-06 17:00:36.046083"]]
+  [1m[35m (9.7ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Student"], ["nome", "lacio"], ["email", "lacio@yahoo.com.br"], ["created_at", "2016-06-06 17:00:36.068090"], ["updated_at", "2016-06-06 17:00:36.068090"]]
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "ana"], ["email", "ana@yahoo.com.br"], ["created_at", "2016-06-06 17:00:36.090413"], ["updated_at", "2016-06-06 17:00:36.090413"]]
+  [1m[35m (8.9ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Teacher"], ["nome", "gilbert"], ["email", "gilbert@microsoft.com.br"], ["created_at", "2016-06-06 17:00:36.192244"], ["updated_at", "2016-06-06 17:00:36.192244"]]
+  [1m[36m (38.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (19.9ms)[0m  DROP TABLE "administrators" CASCADE
+  [1m[36m (75.4ms)[0m  [1mCREATE TABLE "administrators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (17.4ms)[0m  DROP TABLE "classrooms" CASCADE
+  [1m[36m (141.5ms)[0m  [1mCREATE TABLE "classrooms" ("id" serial primary key, "subject_id" integer, "turno" character varying, "codigo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (65.1ms)[0m  CREATE  INDEX  "index_classrooms_on_subject_id" ON "classrooms" USING btree ("subject_id")
+  [1m[36m (18.6ms)[0m  [1mDROP TABLE "classrooms_students" CASCADE[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "classrooms_students" ("student_id" integer, "classroom_id" integer) 
+  [1m[36m (77.7ms)[0m  [1mCREATE  INDEX  "index_classrooms_students_on_classroom_id" ON "classrooms_students" USING btree ("classroom_id")[0m
+  [1m[35m (65.7ms)[0m  CREATE  INDEX  "index_classrooms_students_on_student_id" ON "classrooms_students" USING btree ("student_id")
+  [1m[36m (18.1ms)[0m  [1mDROP TABLE "classrooms_users" CASCADE[0m
+  [1m[35m (8.8ms)[0m  CREATE TABLE "classrooms_users" ("user_id" integer, "classroom_id" integer) 
+  [1m[36m (66.6ms)[0m  [1mCREATE  INDEX  "index_classrooms_users_on_classroom_id" ON "classrooms_users" USING btree ("classroom_id")[0m
+  [1m[35m (65.9ms)[0m  CREATE  INDEX  "index_classrooms_users_on_user_id" ON "classrooms_users" USING btree ("user_id")
+  [1m[36m (18.0ms)[0m  [1mDROP TABLE "coordinators" CASCADE[0m
+  [1m[35m (74.0ms)[0m  CREATE TABLE "coordinators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (17.1ms)[0m  [1mDROP TABLE "courses" CASCADE[0m
+  [1m[35m (108.1ms)[0m  CREATE TABLE "courses" ("id" serial primary key, "nome" character varying, "data_abertura" date, "turno" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (65.4ms)[0m  [1mCREATE  INDEX  "index_courses_on_institution_id" ON "courses" USING btree ("institution_id")[0m
+  [1m[35m (18.1ms)[0m  DROP TABLE "institutions" CASCADE
+  [1m[36m (106.1ms)[0m  [1mCREATE TABLE "institutions" ("id" serial primary key, "cnpj" character varying, "logradouro" character varying, "numero" character varying, "bairro" character varying, "cep" character varying, "cidade" character varying, "estado" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "nome" character varying, "tel" character varying, "organizacao_academica" character varying, "categoria_administrativa" character varying, "site" character varying, "image_file_name" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp) [0m
+  [1m[35m (17.5ms)[0m  DROP TABLE "principals" CASCADE
+  [1m[36m (74.4ms)[0m  [1mCREATE TABLE "principals" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (17.7ms)[0m  DROP TABLE "students" CASCADE
+  [1m[36m (73.7ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (17.9ms)[0m  DROP TABLE "subjects" CASCADE
+  [1m[36m (118.5ms)[0m  [1mCREATE TABLE "subjects" ("id" serial primary key, "nome" character varying, "ch" integer, "ementa" text, "codigo" character varying, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (67.2ms)[0m  CREATE  INDEX  "index_subjects_on_course_id" ON "subjects" USING btree ("course_id")
+  [1m[36m (17.6ms)[0m  [1mDROP TABLE "teachers" CASCADE[0m
+  [1m[35m (74.8ms)[0m  CREATE TABLE "teachers" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (28.8ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (109.3ms)[0m  CREATE TABLE "users" ("id" serial primary key, "nome" character varying, "telefone" character varying, "endereco" character varying, "lattes" character varying, "biografia" text, "matricula" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "type" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp, "approved" boolean DEFAULT 'f' NOT NULL, "course_id" integer, "institution_id" integer) 
+  [1m[36m (65.5ms)[0m  [1mCREATE  INDEX  "index_users_on_approved" ON "users" USING btree ("approved")[0m
+  [1m[35m (66.2ms)[0m  CREATE  INDEX  "index_users_on_course_id" ON "users" USING btree ("course_id")
+  [1m[36m (65.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (65.8ms)[0m  CREATE  INDEX  "index_users_on_institution_id" ON "users" USING btree ("institution_id")
+  [1m[36m (66.2ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (19.8ms)[0m  ALTER TABLE "classrooms" ADD CONSTRAINT "fk_rails_d0cba57dc6"
+FOREIGN KEY ("subject_id")
+  REFERENCES "subjects" ("id")
+
+  [1m[36m (19.2ms)[0m  [1mALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_8c740e114d"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+[0m
+  [1m[35m (19.8ms)[0m  ALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_36bc0ecb8c"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+
+  [1m[36m (20.4ms)[0m  [1mALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_42ea18a101"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+[0m
+  [1m[35m (9.8ms)[0m  ALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_116115b0f2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (19.7ms)[0m  [1mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_d012129e83"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+[0m
+  [1m[35m (9.6ms)[0m  ALTER TABLE "subjects" ADD CONSTRAINT "fk_rails_d31cccf6a9"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+
+  [1m[36m (19.7ms)[0m  [1mALTER TABLE "users" ADD CONSTRAINT "fk_rails_26e618b988"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (19.7ms)[0m  ALTER TABLE "users" ADD CONSTRAINT "fk_rails_7fcf39ca13"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+
+  [1m[36m (2.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (1.5ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (18.5ms)[0m  [1mDROP TABLE "administrators" CASCADE[0m
+  [1m[35m (75.4ms)[0m  CREATE TABLE "administrators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (29.6ms)[0m  [1mDROP TABLE "classrooms" CASCADE[0m
+  [1m[35m (107.1ms)[0m  CREATE TABLE "classrooms" ("id" serial primary key, "subject_id" integer, "turno" character varying, "codigo" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (64.5ms)[0m  [1mCREATE  INDEX  "index_classrooms_on_subject_id" ON "classrooms" USING btree ("subject_id")[0m
+  [1m[35m (19.2ms)[0m  DROP TABLE "classrooms_students" CASCADE
+  [1m[36m (8.0ms)[0m  [1mCREATE TABLE "classrooms_students" ("student_id" integer, "classroom_id" integer) [0m
+  [1m[35m (64.7ms)[0m  CREATE  INDEX  "index_classrooms_students_on_classroom_id" ON "classrooms_students" USING btree ("classroom_id")
+  [1m[36m (65.9ms)[0m  [1mCREATE  INDEX  "index_classrooms_students_on_student_id" ON "classrooms_students" USING btree ("student_id")[0m
+  [1m[35m (17.1ms)[0m  DROP TABLE "classrooms_users" CASCADE
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "classrooms_users" ("user_id" integer, "classroom_id" integer) [0m
+  [1m[35m (65.0ms)[0m  CREATE  INDEX  "index_classrooms_users_on_classroom_id" ON "classrooms_users" USING btree ("classroom_id")
+  [1m[36m (66.1ms)[0m  [1mCREATE  INDEX  "index_classrooms_users_on_user_id" ON "classrooms_users" USING btree ("user_id")[0m
+  [1m[35m (17.6ms)[0m  DROP TABLE "coordinators" CASCADE
+  [1m[36m (74.2ms)[0m  [1mCREATE TABLE "coordinators" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (18.4ms)[0m  DROP TABLE "courses" CASCADE
+  [1m[36m (118.6ms)[0m  [1mCREATE TABLE "courses" ("id" serial primary key, "nome" character varying, "data_abertura" date, "turno" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (76.9ms)[0m  CREATE  INDEX  "index_courses_on_institution_id" ON "courses" USING btree ("institution_id")
+  [1m[36m (17.5ms)[0m  [1mDROP TABLE "institutions" CASCADE[0m
+  [1m[35m (139.7ms)[0m  CREATE TABLE "institutions" ("id" serial primary key, "cnpj" character varying, "logradouro" character varying, "numero" character varying, "bairro" character varying, "cep" character varying, "cidade" character varying, "estado" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "nome" character varying, "tel" character varying, "organizacao_academica" character varying, "categoria_administrativa" character varying, "site" character varying, "image_file_name" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp) 
+  [1m[36m (17.7ms)[0m  [1mDROP TABLE "principals" CASCADE[0m
+  [1m[35m (74.9ms)[0m  CREATE TABLE "principals" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (18.0ms)[0m  [1mDROP TABLE "students" CASCADE[0m
+  [1m[35m (86.0ms)[0m  CREATE TABLE "students" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (17.9ms)[0m  [1mDROP TABLE "subjects" CASCADE[0m
+  [1m[35m (107.3ms)[0m  CREATE TABLE "subjects" ("id" serial primary key, "nome" character varying, "ch" integer, "ementa" text, "codigo" character varying, "course_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (87.5ms)[0m  [1mCREATE  INDEX  "index_subjects_on_course_id" ON "subjects" USING btree ("course_id")[0m
+  [1m[35m (18.4ms)[0m  DROP TABLE "teachers" CASCADE
+  [1m[36m (74.7ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (28.8ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (140.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "nome" character varying, "telefone" character varying, "endereco" character varying, "lattes" character varying, "biografia" text, "matricula" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "type" character varying, "avatar_file_name" character varying, "avatar_content_type" character varying, "avatar_file_size" integer, "avatar_updated_at" timestamp, "approved" boolean DEFAULT 'f' NOT NULL, "course_id" integer, "institution_id" integer) [0m
+  [1m[35m (76.8ms)[0m  CREATE  INDEX  "index_users_on_approved" ON "users" USING btree ("approved")
+  [1m[36m (75.2ms)[0m  [1mCREATE  INDEX  "index_users_on_course_id" ON "users" USING btree ("course_id")[0m
+  [1m[35m (66.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (55.5ms)[0m  [1mCREATE  INDEX  "index_users_on_institution_id" ON "users" USING btree ("institution_id")[0m
+  [1m[35m (55.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (19.8ms)[0m  [1mALTER TABLE "classrooms" ADD CONSTRAINT "fk_rails_d0cba57dc6"
+FOREIGN KEY ("subject_id")
+  REFERENCES "subjects" ("id")
+[0m
+  [1m[35m (19.0ms)[0m  ALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_8c740e114d"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+
+  [1m[36m (19.9ms)[0m  [1mALTER TABLE "classrooms_students" ADD CONSTRAINT "fk_rails_36bc0ecb8c"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (20.5ms)[0m  ALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_42ea18a101"
+FOREIGN KEY ("classroom_id")
+  REFERENCES "classrooms" ("id")
+
+  [1m[36m (20.5ms)[0m  [1mALTER TABLE "classrooms_users" ADD CONSTRAINT "fk_rails_116115b0f2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (19.9ms)[0m  ALTER TABLE "courses" ADD CONSTRAINT "fk_rails_d012129e83"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+
+  [1m[36m (19.7ms)[0m  [1mALTER TABLE "subjects" ADD CONSTRAINT "fk_rails_d31cccf6a9"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+[0m
+  [1m[35m (20.4ms)[0m  ALTER TABLE "users" ADD CONSTRAINT "fk_rails_26e618b988"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+
+  [1m[36m (19.9ms)[0m  [1mALTER TABLE "users" ADD CONSTRAINT "fk_rails_7fcf39ca13"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+[0m
+  [1m[35m (2.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (4.6ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "pedro"], ["email", "pedro@yahoo.com.br"], ["created_at", "2016-06-06 17:00:58.910462"], ["updated_at", "2016-06-06 17:00:58.910462"]]
+  [1m[35m (12.8ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Student"], ["nome", "jose"], ["email", "jose@yahoo.com.br"], ["created_at", "2016-06-06 17:00:58.949206"], ["updated_at", "2016-06-06 17:00:58.949206"]]
+  [1m[36m (14.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "mateus"], ["email", "mateus@yahoo.com.br"], ["created_at", "2016-06-06 17:00:58.979165"], ["updated_at", "2016-06-06 17:00:58.979165"]]
+  [1m[35m (9.1ms)[0m  COMMIT
+  [1m[36m (1.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Student"], ["nome", "lacio"], ["email", "lacio@yahoo.com.br"], ["created_at", "2016-06-06 17:00:59.001420"], ["updated_at", "2016-06-06 17:00:59.001420"]]
+  [1m[36m (7.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Student"], ["nome", "ana"], ["email", "ana@yahoo.com.br"], ["created_at", "2016-06-06 17:00:59.023590"], ["updated_at", "2016-06-06 17:00:59.023590"]]
+  [1m[35m (13.9ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "users" ("type", "nome", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["type", "Teacher"], ["nome", "gilbert"], ["email", "gilbert@microsoft.com.br"], ["created_at", "2016-06-06 17:00:59.156738"], ["updated_at", "2016-06-06 17:00:59.156738"]]
+  [1m[36m (8.9ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (12.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'administrators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (9.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (10.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (11.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (10.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'coordinators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (10.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (10.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'institutions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (10.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'principals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (11.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (12.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subjects'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (11.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'teachers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (10.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-06-06 14:02:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::RegistrationsController#new as HTML
+  [1m[35mInstitution Load (4.2ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  Rendered users/shared/_links.html.erb (6.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (213.6ms)
+Completed 200 OK in 2993ms (Views: 2776.0ms | ActiveRecord: 22.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-06 14:03:02 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfRqoox6l/2XQvPAXTd3F3CS6Mh/N44wgfY0oqnciEbI8FegDLn5OOzqXIsq66jRxIOwv8p9vhn1yRH62olzfQ==", "user"=>{"nome"=>"julian", "telefone"=>"8491013334", "endereco"=>"rua da pititinga", "lattes"=>"", "biografia"=>"", "type"=>"Student", "matricula"=>"", "institution_id"=>"", "course_id"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "users" ("type", "nome", "telefone", "endereco", "lattes", "biografia", "matricula", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["type", "Student"], ["nome", "julian"], ["telefone", "8491013334"], ["endereco", "rua da pititinga"], ["lattes", ""], ["biografia", ""], ["matricula", ""], ["created_at", "2016-06-06 17:03:02.374206"], ["updated_at", "2016-06-06 17:03:02.374206"]]
+  [1m[35m (43.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 48.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 14:03:02 -0300
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:03:02 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 963ms (Views: 952.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-06-06 14:03:11 -0300
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mInstitution Load (1.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 930ms (Views: 924.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-06-06 14:03:54 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZYD4ZUn/WKZX+T07BcK4kVPXWph2nmDn4dOxsQ0HztvYhMVnyTw2YyxRknByHmdX58YC78PUUM6V7JTpflI14A==", "user"=>{"nome"=>"julian", "telefone"=>"6767", "endereco"=>"rua", "lattes"=>"lattes", "biografia"=>"bla", "type"=>"Student", "matricula"=>"20141014040440", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f84bc5b1d30 @tempfile=#<Tempfile:/tmp/RackMultipart20160606-4674-2kvk06.png>, @original_filename="profile.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-18uodzq.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]' -auto-orient -resize "300x300>" '/tmp/aabd8c1e59aed8e3faad873684fca4ef20160606-4674-zw9jfb'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-gf2ihu.png[0]' -auto-orient -resize "100x100>" '/tmp/aabd8c1e59aed8e3faad873684fca4ef20160606-4674-124p1th'
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20160606-4674-1sk6e35.png'
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "users" ("type", "nome", "telefone", "endereco", "lattes", "biografia", "matricula", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"  [["type", "Student"], ["nome", "julian"], ["telefone", "6767"], ["endereco", "rua"], ["lattes", "lattes"], ["biografia", "bla"], ["matricula", "20141014040440"], ["avatar_file_name", "profile.png"], ["avatar_content_type", "image/png"], ["avatar_file_size", 39149], ["avatar_updated_at", "2016-06-06 17:03:54.718572"], ["email", "julian.sansat@icloud.com"], ["encrypted_password", "$2a$11$5Y7HyFw0Dr6dn3eQDvhy8OS.0MXfiojHMCXRBu6/xe1VTQ2FnK/8m"], ["created_at", "2016-06-06 17:03:55.580662"], ["updated_at", "2016-06-06 17:03:55.580662"]]
+  [1m[36m (23.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1018ms (ActiveRecord: 26.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 14:03:55 -0300
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:03:55 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 1060ms (Views: 1055.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:04:08 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+oKiJepCOO1b3xr3YunK+w0JwTCD7+supggMQBmz5mVHhp8naoFWKCB3tbwVNRU9uRiZRzal2wfSNykYauYdXg==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (5.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "julian.sansat@icloud.com"]]
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 401 Unauthorized in 478ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:04:09 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 1074ms (Views: 1068.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:06:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (6.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (138.4ms)
+Completed 200 OK in 2874ms (Views: 2642.5ms | ActiveRecord: 15.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-06 14:07:11 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgdurBfGygAnvW1a0D0UuCK++V/wGa0BHWt4dXuewAJ/A1OulwWkxVwVwhGn4ct+lq+hKEVTnShpVF0tCMs7OQ==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (5.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "julian.sansat@icloud.com"]]
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-06-06 17:07:12.653753"], ["current_sign_in_at", "2016-06-06 17:07:12.653753"], ["last_sign_in_ip", "127.0.0.1/32"], ["current_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2016-06-06 17:07:12.661513"], ["id", 8]]
+  [1m[36m (27.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 764ms (ActiveRecord: 36.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 14:07:12 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 16ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 14:07:13 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (246.0ms)
+Completed 200 OK in 1180ms (Views: 1161.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:07:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (28.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (236.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (5.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (136.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (261.8ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:07:16 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (28.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (179.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCampus (20160606171144)
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (89.7ms)[0m  [1mCREATE TABLE "campus" ("id" serial primary key, "name" character varying, "Institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (32.0ms)[0m  CREATE  INDEX  "index_campus_on_Institution_id" ON "campus"  ("Institution_id")
+  [1m[36m (7.0ms)[0m  [1mALTER TABLE "campus" ADD CONSTRAINT "fk_rails_9be3081b5d"
+FOREIGN KEY ("Institution_id")
+  REFERENCES "Institutions" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCampus (20160606171415)
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36m (84.2ms)[0m  [1mCREATE TABLE "campus" ("id" serial primary key, "name" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (32.1ms)[0m  CREATE  INDEX  "index_campus_on_institution_id" ON "campus"  ("institution_id")
+  [1m[36m (5.9ms)[0m  [1mALTER TABLE "campus" ADD CONSTRAINT "fk_rails_1c20e5b352"
+FOREIGN KEY ("institution_id")
+  REFERENCES "institutions" ("id")
+[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606171415"]]
+  [1m[36m (21.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (16.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'administrators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (12.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campus'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (15.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'coordinators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'institutions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'principals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (14.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subjects'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'teachers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (14.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 14:19:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (4.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (1.9ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (203.8ms)
+Completed 200 OK in 5125ms (Views: 4713.8ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/assets/campus.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-06 14:19:26 -0300
+
+
+Started GET "/assets/campus.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-06 14:19:26 -0300
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:19:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (29.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (36.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (253.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (119.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (201.2ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 14:19:30 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (2.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (17.5ms)
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 991ms (Views: 958.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2016-06-06 14:19:33 -0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (60.7ms)
+  Rendered institutions/new.html.erb within layouts/application (66.3ms)
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1153ms (Views: 1044.3ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/institutions" for 127.0.0.1 at 2016-06-06 14:20:31 -0300
+Processing by InstitutionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ice23Uohw4lKnmStG4hV1g8GPCBDJqY2kTEmTX5TGBCbObVWAkn99xO1+VAagig7UaWUai1BSoWNa5As1b6Jw==", "institution"=>{"nome"=>"IFRN", "cnpj"=>"010203023233", "logradouro"=>"av salgado filho", "numero"=>"1433", "bairro"=>"Tirol", "cep"=>"59178000", "cidade"=>"Natal", "estado"=>"RN", "tel"=>"8432467024", "organizacao_academica"=>"universidade", "categoria_administrativa"=>"pública", "site"=>"www.ifrn.edu.br", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f5a0da4a498 @tempfile=#<Tempfile:/tmp/RackMultipart20160606-5268-19fe785.jpg>, @original_filename="ifrnLogo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"institution[avatar]\"; filename=\"ifrnLogo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Institution"}
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-ywgr78.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]' -auto-orient -resize "300x300>" '/tmp/2e6994c7218bde4abb00616c94b0d4b220160606-5268-1v2zzn2'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-lmaboj.jpg[0]' -auto-orient -resize "100x100>" '/tmp/2e6994c7218bde4abb00616c94b0d4b220160606-5268-1gwzca0'
+  [1m[35m (1.0ms)[0m  BEGIN
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/40786efe6fd51744001e4d9194f6ea1320160606-5268-wk2mq5.jpg'
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "institutions" ("nome", "cnpj", "logradouro", "numero", "bairro", "cep", "cidade", "estado", "tel", "organizacao_academica", "categoria_administrativa", "site", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) RETURNING "id"[0m  [["nome", "IFRN"], ["cnpj", "010203023233"], ["logradouro", "av salgado filho"], ["numero", "1433"], ["bairro", "Tirol"], ["cep", "59178000"], ["cidade", "Natal"], ["estado", "RN"], ["tel", "8432467024"], ["organizacao_academica", "universidade"], ["categoria_administrativa", "pública"], ["site", "www.ifrn.edu.br"], ["avatar_file_name", "ifrnLogo.jpg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 25600], ["avatar_updated_at", "2016-06-06 17:20:31.076194"], ["created_at", "2016-06-06 17:20:31.572668"], ["updated_at", "2016-06-06 17:20:31.572668"]]
+  [1m[35m (20.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/institutions/1
+Completed 302 Found in 594ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 14:20:31 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1047ms (Views: 1002.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 14:20:35 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (11.6ms)
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 889ms (Views: 881.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/campus" for 127.0.0.1 at 2016-06-06 14:20:44 -0300
+Processing by CampusController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (2.6ms)[0m  SELECT "campus".* FROM "campus"
+  Rendered campus/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 1106ms (Views: 1050.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/campus/new" for 127.0.0.1 at 2016-06-06 14:20:49 -0300
+Processing by CampusController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered campus/_form.html.erb (14.4ms)
+  Rendered campus/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 967ms (Views: 938.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/campus/new" for 127.0.0.1 at 2016-06-06 14:21:17 -0300
+Processing by CampusController#new as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered campus/_form.html.erb (15.0ms)
+  Rendered campus/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 951ms (Views: 939.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/campus/new" for 127.0.0.1 at 2016-06-06 14:23:35 -0300
+Processing by CampusController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered campus/_form.html.erb (29.3ms)
+  Rendered campus/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 1039ms (Views: 1024.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/institutions/autocomplete_institution_nome?term=if" for 127.0.0.1 at 2016-06-06 14:23:39 -0300
+Processing by InstitutionsController#autocomplete_institution_nome as JSON
+  Parameters: {"term"=>"if"}
+  [1m[35mInstitution Load (3.9ms)[0m  SELECT  institutions.id, institutions.nome FROM "institutions" WHERE (LOWER(institutions.nome) ILIKE '%if%')  ORDER BY LOWER(institutions.nome) ASC LIMIT 10
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/institutions/autocomplete_institution_nome?term=ifr" for 127.0.0.1 at 2016-06-06 14:23:48 -0300
+Processing by InstitutionsController#autocomplete_institution_nome as JSON
+  Parameters: {"term"=>"ifr"}
+  [1m[36mInstitution Load (1.9ms)[0m  [1mSELECT  institutions.id, institutions.nome FROM "institutions" WHERE (LOWER(institutions.nome) ILIKE '%ifr%')  ORDER BY LOWER(institutions.nome) ASC LIMIT 10[0m
+Completed 200 OK in 17ms (Views: 4.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/campus" for 127.0.0.1 at 2016-06-06 14:23:57 -0300
+Processing by CampusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FM5EmsEhW1ERWoARorE2sIyuoX6L3Hh3v5xqoHtQ/yqEhbyU7AD7qOg+LmZWtR9HOdQv36Jl58Vz7QB5/f9JbQ==", "campu"=>{"name"=>"campus-central", "institution_id"=>"1"}, "institution"=>"IFRN", "commit"=>"Create Campu"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (1.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "campus" ("name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "campus-central"], ["institution_id", 1], ["created_at", "2016-06-06 17:23:57.478562"], ["updated_at", "2016-06-06 17:23:57.478562"]]
+  [1m[36m (31.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/campus/1
+Completed 302 Found in 82ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 14:23:57 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.4ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (2.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (212.4ms)
+Completed 200 OK in 1191ms (Views: 1170.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/campus" for 127.0.0.1 at 2016-06-06 14:24:04 -0300
+Processing by CampusController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (2.0ms)[0m  SELECT "campus".* FROM "campus"
+  [1m[36mInstitution Load (1.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 974ms (Views: 959.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 14:24:11 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 15ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 14:24:11 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (6.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 1103ms (Views: 1069.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:24:13 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (33.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (255.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (211.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCenters (20160606172539)
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (141.2ms)[0m  [1mCREATE TABLE "centers" ("id" serial primary key, "name" character varying, "campus_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (44.4ms)[0m  CREATE  INDEX  "index_centers_on_campus_id" ON "centers"  ("campus_id")
+  [1m[36m (6.9ms)[0m  [1mALTER TABLE "centers" ADD CONSTRAINT "fk_rails_793963538d"
+FOREIGN KEY ("campu_id")
+  REFERENCES "campus" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCenters (20160606172659)
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (95.8ms)[0m  [1mCREATE TABLE "centers" ("id" serial primary key, "name" character varying, "campu_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (32.7ms)[0m  CREATE  INDEX  "index_centers_on_campu_id" ON "centers"  ("campu_id")
+  [1m[36m (7.7ms)[0m  [1mALTER TABLE "centers" ADD CONSTRAINT "fk_rails_793963538d"
+FOREIGN KEY ("campu_id")
+  REFERENCES "campus" ("id")
+[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160606172659"]]
+  [1m[36m (22.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (14.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'administrators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (12.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campus'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (15.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'centers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (14.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'classrooms_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'coordinators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'courses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (15.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'institutions'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (13.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'principals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (13.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (11.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subjects'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (11.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'teachers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (12.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/centers" for 127.0.0.1 at 2016-06-06 14:28:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CentersController#index as HTML
+  [1m[35mUser Load (3.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCenter Load (2.7ms)[0m  [1mSELECT "centers".* FROM "centers"[0m
+  Rendered centers/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 5111ms (Views: 4733.8ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/assets/centers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-06 14:28:22 -0300
+
+
+Started GET "/assets/centers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-06 14:28:22 -0300
+
+
+Started GET "/centers/new" for 127.0.0.1 at 2016-06-06 14:28:25 -0300
+Processing by CentersController#new as HTML
+  [1m[35mUser Load (6.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered centers/_form.html.erb (85.6ms)
+  Rendered centers/new.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 1039ms (Views: 1002.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/centers/new" for 127.0.0.1 at 2016-06-06 14:28:53 -0300
+Processing by CentersController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered centers/_form.html.erb (19.5ms)
+  Rendered centers/new.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 1065ms (Views: 1035.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/centers/new" for 127.0.0.1 at 2016-06-06 14:33:24 -0300
+Processing by CentersController#new as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered centers/_form.html.erb (18.6ms)
+  Rendered centers/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 1341ms (Views: 1091.1ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/campus/autocomplete_campu_name?term=ca" for 127.0.0.1 at 2016-06-06 14:33:35 -0300
+Processing by CampusController#autocomplete_campu_name as JSON
+  Parameters: {"term"=>"ca"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (3.8ms)[0m  SELECT  campus.id, campus.name FROM "campus" WHERE (LOWER(campus.name) ILIKE '%ca%')  ORDER BY LOWER(campus.name) ASC LIMIT 10
+Completed 200 OK in 55ms (Views: 0.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/campus/autocomplete_campu_name?term=cam" for 127.0.0.1 at 2016-06-06 14:33:36 -0300
+Processing by CampusController#autocomplete_campu_name as JSON
+  Parameters: {"term"=>"cam"}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (2.2ms)[0m  SELECT  campus.id, campus.name FROM "campus" WHERE (LOWER(campus.name) ILIKE '%cam%')  ORDER BY LOWER(campus.name) ASC LIMIT 10
+Completed 200 OK in 17ms (Views: 1.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/campus/autocomplete_campu_name?term=ca" for 127.0.0.1 at 2016-06-06 14:33:37 -0300
+Processing by CampusController#autocomplete_campu_name as JSON
+  Parameters: {"term"=>"ca"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.8ms)[0m  SELECT  campus.id, campus.name FROM "campus" WHERE (LOWER(campus.name) ILIKE '%ca%')  ORDER BY LOWER(campus.name) ASC LIMIT 10
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/campus/autocomplete_campu_name?term=ca" for 127.0.0.1 at 2016-06-06 14:33:38 -0300
+Processing by CampusController#autocomplete_campu_name as JSON
+  Parameters: {"term"=>"ca"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (3.3ms)[0m  SELECT  campus.id, campus.name FROM "campus" WHERE (LOWER(campus.name) ILIKE '%ca%')  ORDER BY LOWER(campus.name) ASC LIMIT 10
+Completed 200 OK in 20ms (Views: 0.9ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/centers" for 127.0.0.1 at 2016-06-06 14:33:52 -0300
+Processing by CentersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wdu/ASqa64ZxZAauW3JYgqninKvPbDU/pNYFfJfsr0PJkEcPB7tLf4gAqNmvdnF1HJgSCubVqo1op2+lEUMZBA==", "center"=>{"name"=>"diatinf", "campu_id"=>"1"}, "campu"=>"campus-central", "commit"=>"Create Center"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (4.3ms)[0m  [1mINSERT INTO "centers" ("name", "campu_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "diatinf"], ["campu_id", 1], ["created_at", "2016-06-06 17:33:52.727805"], ["updated_at", "2016-06-06 17:33:52.727805"]]
+  [1m[35m (34.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/centers/1
+Completed 302 Found in 72ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/centers/1" for 127.0.0.1 at 2016-06-06 14:33:52 -0300
+Processing by CentersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCenter Load (1.7ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (1.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered centers/show.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 986ms (Views: 963.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/centers/1" for 127.0.0.1 at 2016-06-06 14:34:13 -0300
+Processing by CentersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCenter Load (1.8ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (1.5ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered centers/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 1048ms (Views: 1024.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/centers/1" for 127.0.0.1 at 2016-06-06 14:34:24 -0300
+Processing by CentersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCenter Load (6.0ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (7.1ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered centers/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 1036ms (Views: 1002.3ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/centers" for 127.0.0.1 at 2016-06-06 14:34:29 -0300
+Processing by CentersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCenter Load (2.0ms)[0m  [1mSELECT "centers".* FROM "centers"[0m
+  [1m[35mCampu Load (1.5ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered centers/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 1077ms (Views: 1062.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 14:34:32 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 14:34:32 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (254.8ms)
+Completed 200 OK in 1385ms (Views: 1367.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:34:34 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (38.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (261.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (81.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (174.3ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-06 14:34:36 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (36.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (250.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (88.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (162.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2016-06-06 14:35:37 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mCourse Load (2.2ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (14.5ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1147ms (Views: 1100.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2016-06-06 14:35:40 -0300
+Processing by CoursesController#new as HTML
+  Rendered courses/_form.html.erb (48.7ms)
+  Rendered courses/new.html.erb within layouts/application (54.9ms)
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1055ms (Views: 1019.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/institutions/search?term=i" for 127.0.0.1 at 2016-06-06 14:35:58 -0300
+Processing by InstitutionsController#search as JSON
+  Parameters: {"term"=>"i"}
+  [1m[35mInstitution Load (5.2ms)[0m  SELECT "institutions".* FROM "institutions" WHERE (nome ilike '%i%')  ORDER BY "institutions"."nome" ASC
+Completed 200 OK in 97ms (Views: 2.7ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/institutions/search?term=ifr" for 127.0.0.1 at 2016-06-06 14:35:59 -0300
+Processing by InstitutionsController#search as JSON
+  Parameters: {"term"=>"ifr"}
+  [1m[36mInstitution Load (2.1ms)[0m  [1mSELECT "institutions".* FROM "institutions" WHERE (nome ilike '%ifr%')  ORDER BY "institutions"."nome" ASC[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 2.1ms)

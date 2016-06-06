@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531210116) do
+ActiveRecord::Schema.define(version: 20160606172659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(version: 20160531210116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "campus", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "campus", ["institution_id"], name: "index_campus_on_institution_id", using: :btree
+
+  create_table "centers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "campu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "centers", ["campu_id"], name: "index_centers_on_campu_id", using: :btree
 
   create_table "classrooms", force: :cascade do |t|
     t.integer  "subject_id"
@@ -151,6 +169,8 @@ ActiveRecord::Schema.define(version: 20160531210116) do
   add_index "users", ["institution_id"], name: "index_users_on_institution_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "campus", "institutions"
+  add_foreign_key "centers", "campus"
   add_foreign_key "classrooms", "subjects"
   add_foreign_key "classrooms_students", "classrooms"
   add_foreign_key "classrooms_students", "students"

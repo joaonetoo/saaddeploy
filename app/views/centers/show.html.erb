@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @center.name %>
+</p>
+
+<p>
+  <strong>Campus:</strong>
+  <%= @center.campu.name %>
+</p>
+
+<%= link_to 'Edit', edit_center_path(@center) %> |
+<%= link_to 'Back', centers_path %>
