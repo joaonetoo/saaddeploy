@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @institution.nome %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @institution.cnpj %>
+</p>
+
+<p>
+  <strong>Logradouro:</strong>
+  <%= @institution.logradouro %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @institution.numero %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @institution.bairro %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @institution.cep %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @institution.cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @institution.estado %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @institution.tel %>
+</p>
+
+<p>
+  <strong>Organização acadêmica:</strong>
+  <%= @institution.organizacao_academica %>
+</p>
+
+<p>
+  <strong>Categoria_administrativa:</strong>
+  <%= @institution.categoria_administrativa %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @institution.site %>
+</p>
+<%= link_to 'Edit', edit_institution_path(@institution) %> |
+<%= link_to 'Back', institutions_path %>

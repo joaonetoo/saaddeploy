@@ -1,0 +1,20 @@
+I"Z(function() {
+  jQuery(function() {
+    var courses;
+    $('#user_course_id').parent().hide();
+    courses = $('#user_course_id').html();
+    return $('#user_institution_id').on("change", function() {
+      var institution, options;
+      institution = $('#user_institution_id option:selected').text();
+      options = $(courses).filter("optgroup[label='" + institution + "']").html();
+      if (options) {
+        $('#user_course_id').html(options);
+        return $('#user_course_id').parent().show();
+      } else {
+        return $('#user_course_id').empty();
+      }
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,2 @@
+class Principal < User
+end

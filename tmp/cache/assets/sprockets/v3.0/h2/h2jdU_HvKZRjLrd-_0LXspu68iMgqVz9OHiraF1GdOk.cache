@@ -1,0 +1,9 @@
+I"—(function() {
+  jQuery(function() {
+    var courses;
+    courses = $('#user_course_id').html();
+    return console.log(courses);
+  });
+
+}).call(this);
+:ET

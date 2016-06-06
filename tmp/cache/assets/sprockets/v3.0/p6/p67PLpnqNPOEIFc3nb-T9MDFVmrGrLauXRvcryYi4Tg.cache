@@ -1,0 +1,11 @@
+I"Ý(function() {
+  jQuery(function() {
+    var courses;
+    courses = $('#user_course_id').html();
+    return $('#user_institution_id').on("change", function() {
+      return console.log('hi');
+    });
+  });
+
+}).call(this);
+:ET

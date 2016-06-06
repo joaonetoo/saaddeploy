@@ -1,0 +1,27 @@
+<h2>SAAD</h2>
+<p>Bem vindo <%= current_user.nome%></p>
+<p>
+    <strong>Minhas Turmas</strong>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Turno</th>
+      <th>Codigo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= classroom.subject.nome %></td>
+        <td><%= classroom.turno %></td>
+        <td><%= classroom.codigo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

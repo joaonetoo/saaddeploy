@@ -1,0 +1,7 @@
+I"`(function() {
+  jQuery(function() {});
+
+  $(h2).html("Next Step...").hide;
+
+}).call(this);
+:ET

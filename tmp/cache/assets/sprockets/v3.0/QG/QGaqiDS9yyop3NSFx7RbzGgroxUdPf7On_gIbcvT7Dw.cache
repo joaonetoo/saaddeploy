@@ -1,0 +1,18 @@
+I"ð(function() {
+  jQuery(function() {
+    var courses;
+    courses = $('user_course_id').html();
+    return $('#user_course_id').change(function() {
+      var institution, options;
+      institution = $('#user_institution_id :selected').text();
+      options = $(courses).filter("optgroup[label='" + institution + "']").html();
+      if (options) {
+        return $('#user_course_id').html(options);
+      } else {
+        return $('#user_course_id').empty();
+      }
+    });
+  });
+
+}).call(this);
+:ET

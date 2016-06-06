@@ -1,0 +1,7 @@
+I"g(function() {
+  jQuery(function() {
+    return $('#user_course_id').hide();
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,13 @@
+I"J(function() {
+  jQuery(function() {
+    var courses;
+    courses = $('#user_course_id').html();
+    return $('#user_institution_id').on("change", function() {
+      var institution;
+      institution = $('#user_institution option:selected').text();
+      return console.log("valor: " + institution);
+    });
+  });
+
+}).call(this);
+:ET

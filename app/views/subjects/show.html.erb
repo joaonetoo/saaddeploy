@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @subject.nome %>
+</p>
+
+<p>
+  <strong>Ch:</strong>
+  <%= @subject.ch %>
+</p>
+
+<p>
+  <strong>Ementa:</strong>
+  <%= @subject.ementa %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @subject.codigo %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @subject.course.nome %>
+</p>
+
+<p>
+  <strong>Turmas desta disciplina:</strong>
+</p>
+
+<% @subject.classrooms.each do |classroom| %>
+
+<p>
+  <strong>Turmas:</strong>
+  <%= classroom.codigo %>
+  <td><%= link_to 'Abrir', classroom %></td>
+</p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>

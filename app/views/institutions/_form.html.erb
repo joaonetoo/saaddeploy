@@ -1,0 +1,69 @@
+<%= form_for(@institution, url: institutions_path, html: { multipart: true }) do |f| %>
+  <% if @institution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+      <ul>
+      <% @institution.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br>
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="field">
+    <%= f.label :logradouro %><br>
+    <%= f.text_field :logradouro %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade %><br>
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+    <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :organizacao_academica %><br>
+    <%= f.select( :organizacao_academica, [['universidade'], ['centro universitário'], ['faculdade']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :categoria_administrativa %><br>
+    <%= f.select( :categoria_administrativa, [['privada com fins lucrativos'], ['privada sem fins lucrativos'], ['pública']] )%>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br>
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :Logo %><br>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

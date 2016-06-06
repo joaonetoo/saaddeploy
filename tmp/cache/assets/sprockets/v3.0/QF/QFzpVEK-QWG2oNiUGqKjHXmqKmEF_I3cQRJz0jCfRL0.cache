@@ -1,0 +1,14 @@
+I"~(function() {
+  jQuery(function() {
+    var courses, institution, options;
+    courses = $('#user_course_id').html();
+    $('#user_institution_id').change(function() {});
+    institution = $('#user_course_id :selected').text();
+    options = $(courses).filter("optgroup[label='" + institution + "']").html;
+    if (options) {
+      return alert("aqui");
+    }
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,37 @@
+<%= form_for(@subject) do |f| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% @subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :ch %><br>
+    <%= f.number_field :ch %>
+  </div>
+  <div class="field">
+    <%= f.label :ementa %><br>
+    <%= f.text_area :ementa %>
+  </div>
+  <div class="field">
+    <%= f.label :codigo %><br>
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :course_id %><br>
+    <%= f.text_field :course_id, data: {autocomplete_source: search_courses_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

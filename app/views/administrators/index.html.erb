@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Administrators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Endereço</th>
+      <th>Biografia</th>
+      <th>Matricula</th>
+      <th>Email</th>
+      <th>Autorizado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administrators.each do |administrator| %>
+      <tr>
+        <td><%= image_tag administrator.avatar.url(:thumb) %></td>
+        <td><%= administrator.nome %></td>
+        <td><%= administrator.telefone %></td>
+        <td><%= administrator.endereco %></td>
+        <td><%= administrator.biografia %></td>
+        <td><%= administrator.matricula %></td>
+        <td><%= administrator.email %></td>
+        <td><%= administrator.approved %></td>
+        <td><%= link_to 'Mostrar', administrator %></td>
+        <td><%= link_to 'Editar', edit_administrator_path(administrator) %></td>
+        <td><%= link_to 'Deletar', administrator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Administrator', new_administrator_path %>

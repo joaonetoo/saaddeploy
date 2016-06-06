@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saad</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+        <li>
+            <%= link_to "Sair", destroy_user_session_path, :method => 'delete' %>
+        </li>
+        <li>
+            <%= link_to "Home", admin_index_path %>
+        </li>
+    <% end  %>
+
+<%= yield %>
+
+</body>
+</html>

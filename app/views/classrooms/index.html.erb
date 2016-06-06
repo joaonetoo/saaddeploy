@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listando Turmas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Turno</th>
+      <th>Codigo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= link_to classroom.subject.nome, classroom.subject %></td>
+        <td><%= classroom.turno %></td>
+        <td><%= classroom.codigo %></td>
+        <td><%= link_to 'Abrir', classroom %></td>
+        <td><%= link_to 'Editar', edit_classroom_path(classroom) %></td>
+        <td><%= link_to 'Deletar', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Turma', new_classroom_path %>

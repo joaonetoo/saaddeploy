@@ -1,0 +1,7 @@
+I"V(function() {
+  jQuery(function() {});
+
+  $('#course_id').empty;
+
+}).call(this);
+:ET

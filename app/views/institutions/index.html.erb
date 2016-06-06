@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Institutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cnpj</th>
+      <th>Logradouro</th>
+      <th>Numero</th>
+      <th>Bairro</th>
+      <th>Cep</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Tel</th>
+      <th>Organização acadêmica</th>
+      <th>Categoria administrativa</th>
+      <th>Site</th>
+      <th>Logo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutions.each do |institution| %>
+      <tr>
+        <td><%= institution.nome %></td>
+        <td><%= institution.cnpj %></td>
+        <td><%= institution.logradouro %></td>
+        <td><%= institution.numero %></td>
+        <td><%= institution.bairro %></td>
+        <td><%= institution.cep %></td>
+        <td><%= institution.cidade %></td>
+        <td><%= institution.estado %></td>
+        <td><%= institution.tel %></td>
+        <td><%= institution.organizacao_academica %></td>
+        <td><%= institution.categoria_administrativa %></td>
+        <td><%= institution.site %></td>
+        <td><%= image_tag institution.avatar.url(:thumb) %></td>
+        <td><%= link_to 'Show', institution %></td>
+        <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
+        <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Institution', new_institution_path %>

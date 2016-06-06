@@ -1,0 +1,9 @@
+    jQuery->
+    courses = $('#user_course_id').html()
+    $('#user_course_id').change ->
+        institution = $('#user_institution :selected').text()
+        options = $(courses).filter("optgroup[label='#{institution}']").html()
+        if options
+            $('#user_course_id').html(options)
+        else
+            $('#user_course_id').empty()
