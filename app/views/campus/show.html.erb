@@ -6,9 +6,52 @@
 </p>
 
 <p>
-  <strong>Institution:</strong>
-  <%= @campu.institution %>
+  <strong>Instituição:</strong>
+  <%= @campu.institution.nome %>
 </p>
 
 <%= link_to 'Edit', edit_campu_path(@campu) %> |
 <%= link_to 'Back', campus_path %>
+
+<p>Centros:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+       <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @centers.size > 0 %>
+    <% @centers.each do |center| %>
+      <tr>
+        <td><%= center.name %></td>
+        <td><%= link_to 'Abrir', center %></td>
+      </tr>
+         <% end %>
+         <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_for(@center) do |f| %>
+  <% if @center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@center.errors.count, "error") %> prohibited this center from being saved:</h2>
+
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :campu_id, :value => @campu.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Adicionar Centro"%>
+  </div>
+<% end %>

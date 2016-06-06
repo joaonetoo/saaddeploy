@@ -61,3 +61,52 @@
 </p>
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>
+
+<p>Campus:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+       <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @campus.size > 0 %>
+    <% @campus.each do |campus| %>
+      <tr>
+        <td><%= campus.name %></td>
+        <td><%= link_to 'Abrir', campus %></td>
+      </tr>
+         <% end %>
+         <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_for(@campu) do |f| %>
+  <% if @campu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campu.errors.count, "error") %> prohibited this campu from being saved:</h2>
+
+      <ul>
+      <% @campu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :institution_id, :value => @institution.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Adicionar Campus"%>
+  </div>
+<% end %>

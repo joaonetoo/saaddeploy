@@ -21546,3 +21546,745 @@ Processing by InstitutionsController#show as HTML
   Rendered institutions/show.html.erb within layouts/application (1.9ms)
   [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
 Completed 200 OK in 1087ms (Views: 1077.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 15:38:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (4.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 355ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 15:38:20 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 2752ms (Views: 2737.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 15:38:28 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (2.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (136.3ms)
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1429ms (Views: 1384.0ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 15:41:40 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (2.3ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (83.5ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1169ms (Views: 1128.9ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:41:43 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (2.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 845ms (ActiveRecord: 2.5ms)
+
+NameError (undefined local variable or method `institution' for #<InstitutionsController:0x007f8a6cc956c8>
+Did you mean?  @institution):
+  app/controllers/institutions_controller.rb:21:in `show'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (341.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (103.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (174.9ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:41:45 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (4.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 4.3ms)
+
+NameError (undefined local variable or method `institution' for #<InstitutionsController:0x007f8a6a07c640>
+Did you mean?  @institution):
+  app/controllers/institutions_controller.rb:21:in `show'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (26.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (362.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (71.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (150.3ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:42:01 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (2.3ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1617ms (Views: 1501.8ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:46:25 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (2.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (2.1ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (34.4ms)
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 914ms (Views: 896.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:47:03 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (4.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (2.7ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 878ms (Views: 864.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:47:13 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (2.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (1.9ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (11.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1023ms (Views: 1012.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:52:06 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (1.6ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (75.3ms)
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 20.8ms)
+
+ActionView::Template::Error (undefined method `merge' for 1:Fixnum):
+    102:   </div>
+    103: 
+    104:   <div class="field">
+    105:     <%= f.hidden_field :institution_id, @institution.id %>
+    106:   </div>
+    107:   <div class="actions">
+    108:     <%= f.submit %>
+  app/views/institutions/show.html.erb:105:in `block in _app_views_institutions_show_html_erb__1340605217530275623_70116240556560'
+  app/views/institutions/show.html.erb:86:in `_app_views_institutions_show_html_erb__1340605217530275623_70116240556560'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (45.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:54:02 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (3.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (6.1ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (26.8ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1130ms (Views: 1105.7ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:54:14 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.9ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (14.2ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (41.0ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1029ms (Views: 1000.8ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:56:30 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.4ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (5.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (29.9ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 983ms (Views: 966.6ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/campus" for 127.0.0.1 at 2016-06-06 15:56:40 -0300
+Processing by CampusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K1JzrfK7Div4ykwJOKGGRtXVYbOuRAF2jgMnoTkJ/FK7GYuj35qu0gGu4n7Mpa+xYK/vEof9nsRCck14v6ZKFQ==", "campu"=>{"name"=>"campus-zona norte", "institution_id"=>"1"}, "commit"=>"Adicionar Campus"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "campus" ("name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "campus-zona norte"], ["institution_id", 1], ["created_at", "2016-06-06 18:56:40.919843"], ["updated_at", "2016-06-06 18:56:40.919843"]]
+  [1m[35m (36.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/campus/2
+Completed 302 Found in 87ms (ActiveRecord: 41.6ms)
+
+
+Started GET "/campus/2" for 127.0.0.1 at 2016-06-06 15:56:41 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.3ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mInstitution Load (1.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 1013ms (Views: 994.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:57:54 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.4ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (2.6ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (14.2ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1067ms (Views: 1051.8ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/campus" for 127.0.0.1 at 2016-06-06 15:59:04 -0300
+Processing by CampusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uil5uROL08sgeorOVzPjO+zJsIjHjmy8rmg4xw706d8qYoG3PqpzMtkeJLmjN8rMWbM+Ke438w5iGVIeiFtfmA==", "campu"=>{"name"=>"sei", "institution_id"=>"1"}, "commit"=>"Adicionar Campus"}
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "campus" ("name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sei"], ["institution_id", 1], ["created_at", "2016-06-06 18:59:05.382722"], ["updated_at", "2016-06-06 18:59:05.382722"]]
+  [1m[35m (20.6ms)[0m  COMMIT
+  [1m[36mInstitution Load (3.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/institutions/1
+Completed 302 Found in 377ms (ActiveRecord: 55.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 15:59:05 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.2ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (2.8ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 960ms (Views: 946.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/campus/3" for 127.0.0.1 at 2016-06-06 15:59:09 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.7ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mInstitution Load (1.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 992ms (Views: 973.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/campus" for 127.0.0.1 at 2016-06-06 15:59:18 -0300
+Processing by CampusController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (2.0ms)[0m  [1mSELECT "campus".* FROM "campus"[0m
+  [1m[35mInstitution Load (1.4ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered campus/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 1168ms (Views: 1152.8ms | ActiveRecord: 5.4ms)
+
+
+Started DELETE "/campus/3" for 127.0.0.1 at 2016-06-06 15:59:24 -0300
+Processing by CampusController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AE6sTMaof/Xvqpt1xIMQ7+7SNOmT0Dz96J+kuSX/bY2QBVRC64nfDBbONQIwhzkYW6i6SLppo08k7s5go1Dbyg==", "id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (7.1ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  DELETE FROM "campus" WHERE "campus"."id" = $1  [["id", 3]]
+  [1m[36m (23.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/campus
+Completed 302 Found in 73ms (ActiveRecord: 36.7ms)
+
+
+Started GET "/campus" for 127.0.0.1 at 2016-06-06 15:59:25 -0300
+Processing by CampusController#index as HTML
+  [1m[35mUser Load (4.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (2.2ms)[0m  [1mSELECT "campus".* FROM "campus"[0m
+  [1m[35mInstitution Load (1.8ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 1182ms (Views: 1162.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-06 15:59:33 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (4.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 33ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 15:59:33 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 1158ms (Views: 1145.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 15:59:40 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.5ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1018ms (Views: 1006.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:00:16 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.6ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (16.9ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 983ms (Views: 972.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:00:21 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (1.8ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 984ms (Views: 973.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:00:25 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.5ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.5ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 920ms (Views: 905.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:06:32 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.6ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (1.3ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (126.2ms)
+Completed 500 Internal Server Error in 414ms (ActiveRecord: 40.3ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    23:   </thead>
+    24: 
+    25:   <tbody>
+    26:     <% @centros.each do |centro| %>
+    27:       <tr>
+    28:         <td><%= centro.name %></td>
+    29:         <td><%= link_to 'Abrir', centro %></td>
+  app/views/campus/show.html.erb:26:in `_app_views_campus_show_html_erb__4562410846998351360_70116246047800'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.8ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 16:06:55 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 957ms (Views: 943.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/centers" for 127.0.0.1 at 2016-06-06 16:06:58 -0300
+Processing by CentersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCenter Load (1.4ms)[0m  [1mSELECT "centers".* FROM "centers"[0m
+  [1m[35mCampu Load (1.5ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered centers/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 1024ms (Views: 1006.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/centers" for 127.0.0.1 at 2016-06-06 16:07:20 -0300
+Processing by CentersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCenter Load (1.4ms)[0m  SELECT "centers".* FROM "centers"
+  [1m[36mCampu Load (1.1ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered centers/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 972ms (Views: 960.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 16:07:25 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (3.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 981ms (Views: 965.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/campus" for 127.0.0.1 at 2016-06-06 16:07:27 -0300
+Processing by CampusController#index as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.9ms)[0m  [1mSELECT "campus".* FROM "campus"[0m
+  [1m[35mInstitution Load (1.2ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 972ms (Views: 958.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:07:31 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (2.4ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (22.1ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 5.2ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    23:   </thead>
+    24: 
+    25:   <tbody>
+    26:     <% @centros.each do |centro| %>
+    27:       <tr>
+    28:         <td><%= centro.name %></td>
+    29:         <td><%= link_to 'Abrir', centro %></td>
+  app/views/campus/show.html.erb:26:in `_app_views_campus_show_html_erb__4562410846998351360_70116244544280'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (111.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.2ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:07:32 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.2ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (1.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered campus/show.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 6.5ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    23:   </thead>
+    24: 
+    25:   <tbody>
+    26:     <% @centros.each do |centro| %>
+    27:       <tr>
+    28:         <td><%= centro.name %></td>
+    29:         <td><%= link_to 'Abrir', centro %></td>
+  app/views/campus/show.html.erb:26:in `_app_views_campus_show_html_erb__4562410846998351360_70116246047800'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (112.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (158.6ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:10:57 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (5.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.9ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.6ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCenter Load (1.5ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000[0m  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 1024ms (Views: 991.9ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/centers/1" for 127.0.0.1 at 2016-06-06 16:11:07 -0300
+Processing by CentersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCenter Load (1.7ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (1.2ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered centers/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 1013ms (Views: 995.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:11:43 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.2ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (1.3ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCenter Load (1.9ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 1023ms (Views: 1006.4ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/centers" for 127.0.0.1 at 2016-06-06 16:11:54 -0300
+Processing by CentersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8mA/yKg/OAuPBaO1wuetnEdU9EhDwoar8Ddc2Q38ZvtiK8fGhR6Y8nZhDcI244Rr8i566Wp7GRk8RjYAi1PQvA==", "center"=>{"name"=>"diac", "campu_id"=>"1"}, "commit"=>"Adicionar Centro"}
+  [1m[36mUser Load (5.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "centers" ("name", "campu_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "diac"], ["campu_id", 1], ["created_at", "2016-06-06 19:11:54.621246"], ["updated_at", "2016-06-06 19:11:54.621246"]]
+  [1m[35m (18.7ms)[0m  COMMIT
+  [1m[36mCampu Load (1.1ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/campus/1
+Completed 302 Found in 66ms (ActiveRecord: 30.8ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:11:54 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.9ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCenter Load (1.8ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000[0m  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 1022ms (Views: 1000.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:12:31 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.5ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCenter Load (1.7ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000[0m  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 1101ms (Views: 1081.5ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/centers" for 127.0.0.1 at 2016-06-06 16:12:37 -0300
+Processing by CentersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LwwWoJCNhImD/hGASSiv7lV418LYUl+eKNapgF8zunu/R+6uvawkcHqav/e9LIYZ4AJZY/HrwCzkp8NZ2ZwMPA==", "center"=>{"name"=>"diaren", "campu_id"=>"1"}, "commit"=>"Adicionar Centro"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "centers" ("name", "campu_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "diaren"], ["campu_id", 1], ["created_at", "2016-06-06 19:12:37.581006"], ["updated_at", "2016-06-06 19:12:37.581006"]]
+  [1m[36m (31.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mCampu Load (4.9ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/campus/1
+Completed 302 Found in 70ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:12:37 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCampu Load (1.3ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (2.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCenter Load (3.6ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 995ms (Views: 976.7ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 16:12:44 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 979ms (Views: 967.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:12:48 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (22.7ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1013ms (Views: 1006.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:12:51 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCampu Load (1.3ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1045ms (Views: 1032.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:14:40 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (2.3ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (16.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 990ms (Views: 983.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:16:06 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (5.9ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (12.8ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1069ms (Views: 1052.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:16:11 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.6ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (4.4ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (14.5ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 1007ms (Views: 991.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:18:23 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (8.9ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 996ms (Views: 990.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:18:35 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mCampu Load (1.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (23.3ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 992ms (Views: 981.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-06 16:25:26 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.6ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (9.5ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 988ms (Views: 981.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:25:34 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mCampu Load (1.2ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (15.0ms)
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Completed 200 OK in 983ms (Views: 968.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/campus" for 127.0.0.1 at 2016-06-06 16:26:00 -0300
+Processing by CampusController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ro4UmPN97dnpgEUag43q79Xd42AjpNpYA1HU9kY7SEw+xeyW3lxNIBDk6213icMYYKdtwQodRerPIL4vwJT+Cw==", "campu"=>{"name"=>"campus-são gonçalo", "institution_id"=>"1"}, "commit"=>"Adicionar Campus"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "campus" ("name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "campus-são gonçalo"], ["institution_id", 1], ["created_at", "2016-06-06 19:26:00.124680"], ["updated_at", "2016-06-06 19:26:00.124680"]]
+  [1m[35m (14.9ms)[0m  COMMIT
+  [1m[36mInstitution Load (1.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/institutions/1
+Completed 302 Found in 55ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2016-06-06 16:26:00 -0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (3.9ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.6ms)[0m  [1mSELECT COUNT(*) FROM "campus" WHERE "campus"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mCampu Load (2.0ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  ORDER BY "campus"."id" ASC LIMIT 1000  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (24.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 988ms (Views: 968.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:26:05 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.2ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "centers" WHERE "centers"."campu_id" = $1[0m  [["campu_id", 1]]
+  [1m[35mCenter Load (1.9ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 1038ms (Views: 1019.6ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/centers" for 127.0.0.1 at 2016-06-06 16:26:18 -0300
+Processing by CentersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MkSpnBUR/bFbrEGdStN/LCElJZB9vXhjnA6RHy9U5/miD1GSODBdSKLI7+q+11bblF+rMVQE59FQf/vGqftRvg==", "center"=>{"name"=>"centro2", "campu_id"=>"1"}, "commit"=>"Adicionar Centro"}
+  [1m[36mUser Load (8.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (3.8ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "centers" ("name", "campu_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "centro2"], ["campu_id", 1], ["created_at", "2016-06-06 19:26:18.810029"], ["updated_at", "2016-06-06 19:26:18.810029"]]
+  [1m[35m (22.2ms)[0m  COMMIT
+  [1m[36mCampu Load (1.3ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/campus/1
+Completed 302 Found in 69ms (ActiveRecord: 37.5ms)
+
+
+Started GET "/campus/1" for 127.0.0.1 at 2016-06-06 16:26:18 -0300
+Processing by CampusController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mCampu Load (1.9ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "centers" WHERE "centers"."campu_id" = $1[0m  [["campu_id", 1]]
+  [1m[35mCenter Load (2.7ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1000  [["campu_id", 1]]
+  Rendered campus/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 1004ms (Views: 984.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/centers/1" for 127.0.0.1 at 2016-06-06 16:26:24 -0300
+Processing by CentersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mCenter Load (1.7ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCampu Load (1.4ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered centers/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 999ms (Views: 981.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 16:26:29 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (4.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 975ms (Views: 961.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-06 16:27:04 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (2.8ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 1031ms (Views: 1009.9ms | ActiveRecord: 5.3ms)

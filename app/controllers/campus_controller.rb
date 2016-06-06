@@ -10,6 +10,8 @@ class CampusController < ApplicationController
   # GET /campus/1
   # GET /campus/1.json
   def show
+    @centers = Center.where(campu_id: @campu.id).find_each
+    @center = Center.new
   end
 
   # GET /campus/new
@@ -28,7 +30,7 @@ class CampusController < ApplicationController
 
     respond_to do |format|
       if @campu.save
-        format.html { redirect_to @campu, notice: 'Campu was successfully created.' }
+        format.html { redirect_to @campu.institution, notice: 'Campus was successfully created.' }
         format.json { render :show, status: :created, location: @campu }
       else
         format.html { render :new }
