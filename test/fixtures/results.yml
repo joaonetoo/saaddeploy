@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_final: 2016-06-07
+  tf: 1
+  gm: 1
+  au: 1
+  se: 1
+  ec: 1
+  sv: 1
+  ch: 1
+  ls: 1
+  student_id: 
+  quiz_id: 
+
+two:
+  data_final: 2016-06-07
+  tf: 1
+  gm: 1
+  au: 1
+  se: 1
+  ec: 1
+  sv: 1
+  ch: 1
+  ls: 1
+  student_id: 
+  quiz_id: 

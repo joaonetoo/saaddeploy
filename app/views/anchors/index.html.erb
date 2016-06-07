@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Anchors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th>Perfil</th>
+      <th>Perspectiva</th>
+      <th>Tipo</th>
+      <th>Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anchors.each do |anchor| %>
+      <tr>
+        <td><%= anchor.nome %></td>
+        <td><%= anchor.descricao %></td>
+        <td><%= anchor.perfil %></td>
+        <td><%= anchor.perspectiva %></td>
+        <td><%= anchor.tipo %></td>
+        <td><%= anchor.result %></td>
+        <td><%= link_to 'Show', anchor %></td>
+        <td><%= link_to 'Edit', edit_anchor_path(anchor) %></td>
+        <td><%= link_to 'Destroy', anchor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anchor', new_anchor_path %>

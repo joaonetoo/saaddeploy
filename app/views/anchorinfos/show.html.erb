@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @anchorinfo.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @anchorinfo.descricao %>
+</p>
+
+<p>
+  <strong>Perfil:</strong>
+  <%= @anchorinfo.perfil %>
+</p>
+
+<p>
+  <strong>Perspectiva:</strong>
+  <%= @anchorinfo.perspectiva %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @anchorinfo.tipo %>
+</p>
+
+<%= link_to 'Edit', edit_anchorinfo_path(@anchorinfo) %> |
+<%= link_to 'Back', anchorinfos_path %>

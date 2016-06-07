@@ -1,0 +1,61 @@
+<%= form_for(@result) do |f| %>
+  <% if @result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
+
+      <ul>
+      <% @result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_final %><br>
+    <%= f.date_select :data_final %>
+  </div>
+  <div class="field">
+    <%= f.label :tf %><br>
+    <%= f.number_field :tf %>
+  </div>
+  <div class="field">
+    <%= f.label :gm %><br>
+    <%= f.number_field :gm %>
+  </div>
+  <div class="field">
+    <%= f.label :au %><br>
+    <%= f.number_field :au %>
+  </div>
+  <div class="field">
+    <%= f.label :se %><br>
+    <%= f.number_field :se %>
+  </div>
+  <div class="field">
+    <%= f.label :ec %><br>
+    <%= f.number_field :ec %>
+  </div>
+  <div class="field">
+    <%= f.label :sv %><br>
+    <%= f.number_field :sv %>
+  </div>
+  <div class="field">
+    <%= f.label :ch %><br>
+    <%= f.number_field :ch %>
+  </div>
+  <div class="field">
+    <%= f.label :ls %><br>
+    <%= f.number_field :ls %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %><br>
+    <%= f.text_field :student_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quiz_id %><br>
+    <%= f.text_field :quiz_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

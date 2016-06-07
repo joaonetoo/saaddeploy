@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @anchor.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @anchor.descricao %>
+</p>
+
+<p>
+  <strong>Perfil:</strong>
+  <%= @anchor.perfil %>
+</p>
+
+<p>
+  <strong>Perspectiva:</strong>
+  <%= @anchor.perspectiva %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @anchor.tipo %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @anchor.result %>
+</p>
+
+<%= link_to 'Edit', edit_anchor_path(@anchor) %> |
+<%= link_to 'Back', anchors_path %>

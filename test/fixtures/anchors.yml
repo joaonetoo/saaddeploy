@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  perfil: MyText
+  perspectiva: MyText
+  tipo: MyString
+  result_id: 
+
+two:
+  nome: MyString
+  descricao: MyText
+  perfil: MyText
+  perspectiva: MyText
+  tipo: MyString
+  result_id: 
