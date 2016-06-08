@@ -69,6 +69,6 @@ class AnchorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def anchor_params
-      params.require(:anchor).permit(:nome, :descricao, :perfil, :perspectiva, :tipo, :result_id)
+      params.require(:anchor).permit(:nome, :descricao, :perfil, :perspectiva, :tipo, :result_id, :anchorinfo_id)
     end
 end

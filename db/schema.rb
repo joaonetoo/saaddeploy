@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160608181630) do
+ActiveRecord::Schema.define(version: 20160608185524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,14 +152,14 @@ ActiveRecord::Schema.define(version: 20160608181630) do
     t.integer  "sv"
     t.integer  "ch"
     t.integer  "ls"
-    t.integer  "student_id"
     t.integer  "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "results", ["quiz_id"], name: "index_results_on_quiz_id", using: :btree
-  add_index "results", ["student_id"], name: "index_results_on_student_id", using: :btree
+  add_index "results", ["user_id"], name: "index_results_on_user_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -234,7 +234,7 @@ ActiveRecord::Schema.define(version: 20160608181630) do
   add_foreign_key "courses", "centers"
   add_foreign_key "quizzes", "users"
   add_foreign_key "results", "quizzes"
-  add_foreign_key "results", "students"
+  add_foreign_key "results", "users"
   add_foreign_key "subjects", "courses"
   add_foreign_key "users", "courses"
   add_foreign_key "users", "institutions"
