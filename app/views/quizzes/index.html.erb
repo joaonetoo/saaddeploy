@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Data final</th>
+      <th>Creator</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @quizzes.each do |quiz| %>
       <tr>
-        <td><%= quiz.user %></td>
         <td><%= quiz.data_final %></td>
+        <td><%= quiz.creator_id %></td>
         <td><%= link_to 'Show', quiz %></td>
         <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
         <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>

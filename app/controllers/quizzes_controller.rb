@@ -25,7 +25,7 @@ class QuizzesController < ApplicationController
   # POST /quizzes.json
   def create
     @quiz = Quiz.new(quiz_params)
-
+    @quiz.creator_id = current_user.id
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
@@ -69,6 +69,6 @@ class QuizzesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
-      params.require(:quiz).permit(:user_id, :data_final)
+      params.require(:quiz).permit(:user_id, :data_final, :creator_id)
     end
 end
