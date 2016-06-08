@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607170324) do
+ActiveRecord::Schema.define(version: 20160608181630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20160607170324) do
     t.text     "perspectiva"
     t.string   "tipo"
     t.integer  "result_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "anchorinfo_id"
   end
 
+  add_index "anchors", ["anchorinfo_id"], name: "index_anchors_on_anchorinfo_id", using: :btree
   add_index "anchors", ["result_id"], name: "index_anchors_on_result_id", using: :btree
 
   create_table "campus", force: :cascade do |t|
@@ -220,6 +222,7 @@ ActiveRecord::Schema.define(version: 20160607170324) do
   add_index "users", ["institution_id"], name: "index_users_on_institution_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
   add_foreign_key "campus", "institutions"
   add_foreign_key "centers", "campus"
