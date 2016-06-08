@@ -22685,3 +22685,134 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+
+
+Started GET "/anchorinfos" for 127.0.0.1 at 2016-06-07 14:08:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnchorinfosController#index as HTML
+  [1m[35mUser Load (3.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mAnchorinfo Load (2.5ms)[0m  [1mSELECT "anchorinfos".* FROM "anchorinfos"[0m
+  Rendered anchorinfos/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 5292ms (Views: 4925.6ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/assets/anchorinfos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-06-07 14:08:36 -0300
+
+
+Started GET "/assets/anchorinfos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-06-07 14:08:37 -0300
+
+
+Started GET "/anchorinfos/new" for 127.0.0.1 at 2016-06-07 14:08:40 -0300
+Processing by AnchorinfosController#new as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered anchorinfos/_form.html.erb (93.8ms)
+  Rendered anchorinfos/new.html.erb within layouts/application (108.5ms)
+Completed 200 OK in 1185ms (Views: 1148.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2016-06-07 14:09:03 -0300
+Processing by QuizzesController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mQuiz Load (2.1ms)[0m  SELECT "quizzes".* FROM "quizzes"
+  Rendered quizzes/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 1149ms (Views: 1102.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-07 14:09:09 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (23.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 1150ms (Views: 1118.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/results" for 127.0.0.1 at 2016-06-07 14:09:21 -0300
+Processing by ResultsController#index as HTML
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mResult Load (2.5ms)[0m  [1mSELECT "results".* FROM "results"[0m
+  Rendered results/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 1022ms (Views: 985.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/results/new" for 127.0.0.1 at 2016-06-07 14:09:47 -0300
+Processing by ResultsController#new as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered results/_form.html.erb (40.2ms)
+  Rendered results/new.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 1120ms (Views: 1067.8ms | ActiveRecord: 4.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (44.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (37.9ms)[0m  [1mINSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Competência Técnica e Funcional"], ["descricao", "Pessoas que se sentem muito motivadas no exercício de seus talentos e na satisfação de saberem que\nsão “experts”. Pode acontecer com qualquer tipo de serviço, desde o engenheiro, analista econômico até o professor."], ["perfil", "Ter grande satisfação com seu crescente conhecimento na área onde atua; Dedicar sua vida toda à especialização; - procurar um trabalho desafiador; Estar mais interessado no conteúdo intrínseco do trabalho, do que no contexto do trabalho em\nsi; Ser fiel a uma organização, desejando tomar parte no estabelecimento das metas; Desejar carta branca para agir, que o capacite a desempenhar a tarefa apropriadamente; A remuneração deve estar em acordo com suas aptidões, frequentemente definidas pelo\npreparo educacional e experiência profissional; Além de educação contínua, esse grupo valoriza mais o reconhecimento de seus colegas do\nmesmo nível profissional; Aprecia, como reconhecimento pelo seu trabalho, oportunidades educacionais, licenças para estudo, incentivos para participar de reuniões profissionais, verbas para compra de livros ou equipamentos, etc."], ["perspectiva", "Schein (1996) acredita que o grupo ancorado na Competência Técnico funcional está consciente que conhecimento e habilidade tornam-se obsoletos em um mundo tecnológico que muda dinamicamente, não encontrando por parte da empresa a garantia de educação e retreinamento continuado. O mundo necessitará constantemente de artífices e peritos em\n funções específicas diante da complexidade tecnológica, mas permanecer tecnologicamente/funcionalmente competente exigirá constante atualização e reaprendizagem no mundo organizacional, que não agüentará os custos em termos de tempo e dinheiro destes processos de atualização. Poderá haver uma aceleração dos processos de demissão de pessoas obsoletas e a substituição delas por talentos mais jovens e atualizados. Os indivíduos ocupantes de carreira terão que planejar e fazer orçamentos para sua própria aprendizagem,\n ou as organizações privadas e públicas assumirão a responsabilidade, porque, em última análise, trará vantagens para suas organizações."], ["tipo", "tf"], ["created_at", "2016-06-08 17:46:18.456461"], ["updated_at", "2016-06-08 17:46:18.456461"]]
+  [1m[35m (19.2ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["nome", "Competência Administrativa Geral"], ["descricao", "A pessoa percebe que ela realmente quer se tornar uma administradora,\n        a gerência por si só lhe interessa, ela avalia que tem o nível de competência requerida para a função, tem ambição para subir na hierarquia da organização onde será responsável\npor decisões e planos mais importantes e que o seu próprio esforço será responsável pelo sucesso ou fracasso. As pessoas desta âncora reconhecem que devem ter conhecimentos em muitas\náreas diferentes. Os valores e motivações estão ligados aos altos graus de responsabilidade, oportunidades de liderança e alto rendimento. Suas competências devem ser: habilidade de identificar, analisar, sintetizar e resolver problemas sob condições de informação incompleta ou incerta. É comum serem chamados de “tomadores de decisão”, entretanto isto quer\ndizer que eles seriam capazes de identificar e colocar os problemas para que as decisões possam ser tomadas. Têm também habilidades para influenciar, supervisionar, dirigir, ajudar e controlar as pessoas em todos os níveis da organização\nafim de atingir os objetivos da empresa. O tipo de trabalho que mais lhe motiva está ligado a altos graus de responsabilidade, desafio, trabalho variado e integrativo, liderança de oportunidades para contribuir para o sucesso de sua organização."], ["perfil", "Alcançar os mais altos graus de responsabilidade; Ter oportunidade de liderança e facilidade no relacionamento interpessoal; Equilíbrio emocional; Contribuir para o sucesso da organização; Receber altos rendimentos."], ["perspectiva", "Segundo Schein, a necessidade de administração crescerá e será estendida para\nos níveis mais baixos na administração, reduzindo o controle centralizado, que está sendo horizontalizado e replanejado em função das equipes de projeto. As habilidades da administração geral, isto é, competência analítica e interpessoal, serão, portanto, necessárias em todos os níveis da organização. Administradores de equipes, administradores de projetos e administradores de programas, além de suas habilidades técnicas, terão que desenvolver habilidades de administração geral e liderança."], ["tipo", "gm"], ["created_at", "2016-06-08 17:46:18.561969"], ["updated_at", "2016-06-08 17:46:18.561969"]]
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Autonomia e Independência"], ["descricao", "Pessoas que percebem que não podem se sentir dependentes de outra pessoa em relação a regras, procedimentos, horário de trabalho, códigos de vestimenta, e outras normas que estão invariavelmente presentes na maioria das organizações. Estas pessoas têm necessidade de fazerem as coisas “do seu jeito”, no seu próprio passo e de acordo com seus padrões pessoais.\n        Eles acham a vida na organização muito restritiva, irracional e intrusiva em sua vida privada, por isto preferem seguir a sua carreira mais independente. Geralmente escolhem profissões autônomas. O tipo de trabalho está ligado ao contrato por projetos definidos, sendo em\ntempo parcial, total, ou temporário. Este tipo de pessoa gosta de trabalhar com objetivos definidos, e depois de clarificados, quer ser deixada livre para trabalhar."], ["perfil", "Perceber que não pode se sentir dependente de outras pessoas em relação a regras, procedimentos, horários de trabalho, códigos de vestimenta e outras normas presentes na organização; Gostar de trabalhar com objetivos definidos, depois de clarificados, quer ser deixado livre para trabalhar."], ["perspectiva", "Quanto à Autonomia/Independência, Schein (1996) considera que os\nindivíduos nela ancorados acham o mundo ocupacional um lugar fácil para navegar, pois esta âncora está alinhada, pelo menos até o presente, com políticas\norganizacionais, prometendo apenas empregabilidade. A autoconfiança, que pode ser\nnecessidade no futuro, já é parte do preparo psicológico deste grupo de pessoas.\nSegundo Schein (1996), quando as pessoas envelhecem, cresce sua necessidade de\nautonomia, levando a fantasias de abrir seus próprios negócios, de tornar-se\nconsultores, trabalhar meio-período, e, de certa maneira, procuram reduzir a\ndependência de alguma organização ou trabalho particular.\n            Os membros deste grupo, que já têm construído suas carreiras autônomas,\nestarão bem adaptados para o futuro, mas aqueles que dependem de trabalhos\nseguros e planejam desligar-se da organização podem ser altamente vulneráveis com a\natual reestruturação do mercado de trabalho, muito embora sua âncora esteja\nalinhada com futuras opções."], ["tipo", "au"], ["created_at", "2016-06-08 17:46:18.585199"], ["updated_at", "2016-06-08 17:46:18.585199"]]
+  [1m[35m (11.2ms)[0m  COMMIT
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["nome", "Segurança e Estabilidade"], ["descricao", "Pessoas que organizam suas carreiras para se sentirem estáveis e seguras, permitindo\nassim que os futuros eventos sejam previsíveis e possam assim relaxar e prever o seu\nsucesso. Geralmente estão ligados a empregos do governo ou exército, pois estes\ngarantem estabilidade. Muitas vezes são percebidos como “sem ambições” e podem\nser rejeitados em culturas que valorizam a ambição.\n            Os mais talentosos deste grupo atingem níveis maiores na hierarquia da\norganização. Os que têm talentos inusuais, se satisfazem de encontrar um hobby onde\npossam realizá-los. Preferem um tipo de trabalho mais ligado ao contexto do que a\nnatureza do trabalho propriamente dita. Preferem ser reconhecidos por sua fidelidade,\ndesempenho correto que vão lhe assegurar mais estabilidade futura."], ["perfil", "Ser reconhecido por sua fidelidade e performance correta, que vão assegurar\nmais estabilidade futura; Tende a deixar sua carreira nas mãos de empregadores; Prefere trabalhos estáveis e previsíveis; Acredita que a lealdade contribui para o bom desempenho da empresa."], ["perspectiva", "Indivíduos ancorados em Segurança/Estabilidade experimentam os mais severos\nproblemas, porque a mudança das políticas organizacionais de “garantia no emprego” passou para a obtenção de “segurança/empregabilidade”.  Isso significa que o ocupante de carreira ancorado em segurança/estabilidade\ntem que mudar o foco de dependência da organização para dependência de si mesmo. Essa mudança implica afirmar que a única coisa que o ocupante de carreira pode\nrealmente esperar de uma organização é a oportunidade de aprender a ganhar experiência, a qual, presumivelmente, faz dele mais empregável em outra organização."], ["tipo", "se"], ["created_at", "2016-06-08 17:46:18.607313"], ["updated_at", "2016-06-08 17:46:18.607313"]]
+  [1m[36m (10.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Criatividade Empresarial"], ["descricao", "Pessoas que se sentem motivadas para criar negócios próprios através do\ndesenvolvimento de novos produtos e serviços, ou pela construção de novas\norganizações financeiras ou ainda recriando negócios já existentes e adaptando-os às\nsuas especificidades. Não são somente os inventores e os artistas, nem pesquisadores\ncriativos, analistas de mercado ou executivos de publicidade.\n            Neste grupo a criatividade surge como uma necessidade de criar novas\norganizações, produtos ou serviços que podem ser identificados com os próprios\nesforços do empresário que irá sobreviver por si mesmo, e que terá sucesso\neconômico. “Fazer dinheiro” é a sua medida de sucesso. Geralmente são pessoas que\ntem sonhos de ter seu próprio negócio desde a infância, tendo mesmo iniciado\npequenas empresas “fazedoras de dinheiro” já na adolescência. A diferença daqueles\nque querem independência e autonomia é que os empresários são obstinados por\ncriarem a sua própria empresa, que muitas vezes deve sacrificar a autonomia e a\nestabilidade antes de ter o sucesso esperado.\n            O tipo de trabalho está ligado às necessidades de criar, em suas próprias\nempresas, eles continuam a criar novos produtos e serviços ou eles perderão o\ninteresse, vendendo suas empresas e começando outra nova. O reconhecimento que\nesperam é estabelecerem uma grande fortuna e uma empresa considerável."], ["perfil", "Criar seus próprios negócios através de desenvolvimento de novos produtos e\nserviços; Gerar dinheiro é uma medida de sucesso; Possui talento e um grau extraordinário de motivação para provar ao mundo\nque é capaz."], ["perspectiva", "À medida que o mundo se torna mais dinâmico e complexo, as oportunidades\npara indivíduos com a âncora Criatividade Empresarial crescerão rapidamente. A\nnecessidade por novos produtos e serviços, derivados de tecnologias da informação e\nbiotecnologia, bem como a abertura de espaços para novas tecnologias, dará grande\nmobilidade para o empresário, que se deslocará para qualquer parte do mundo ao\nencontro de um lugar mais hospitaleiro para suas ideias.\n            A Criatividade Empresarial é a principal fonte de novos trabalhos para os outros\ngrupos de âncoras, necessitando para tanto de um ambiente econômico, político e\ncultural amigável e encorajador, que incentive novos projetos e valorize o potencial\ndos acadêmicos e pesquisadores das universidades."], ["tipo", "ec"], ["created_at", "2016-06-08 17:46:18.628922"], ["updated_at", "2016-06-08 17:46:18.628922"]]
+  [1m[35m (9.4ms)[0m  COMMIT
+  [1m[36m (1.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["nome", "Dedicação a uma Causa"], ["descricao", "Pessoas que procuram ocupações a fim de incorporarem no trabalho valores\nimportantes para si, mais do que seus talentos ou área de competência. Suas decisões\nde carreira são feitas baseadas no desejo de fazer alguma coisa para melhorar o\nmundo de alguma maneira.\n            As profissões de ajuda como medicina, enfermagem, serviço social, educação\nsão tipicamente carreiras desta âncora onde predominam valores como: trabalhar com\nas pessoas, servir a humanidade, ajudar a nação. Geralmente o tipo de trabalho deve\npermitir influenciar sua organização ou o planejamento social na direção de seus\nvalores. O dinheiro não é importante e o que buscam como recompensa é atingir\nposições com maior influência para poder operar com mais autonomia na realização\nde sua causa."], ["perfil", "Escolher profissões de assistência ao próximo; Deseja um trabalho que lhe permita influenciar as organizações que o emprega\nou a política social na direção de seus valores; Deseja obter reconhecimento e apoio, tanto por parte de seus colegas quanto\nde seus superiores."], ["perspectiva", "O número de pessoas que aparecem com esta âncora está crescendo. Tanto\npessoas jovens como pessoas de meia-idade relatam que estão sentindo a necessidade\nnão só de manter um rendimento adequado, mas de fazer alguma coisa mais\nsignificativa num contexto mais amplo.\n            Novos tipos de organizações e carreiras estão sendo criados para se dedicarem\na questões que preencham as lacunas entre mundo desenvolvido e subdesenvolvido,\ncomo: problemas de raça e religião, segurança de produtos, privacidade,\nsuperpopulação, saúde, bem-estar, etc."], ["tipo", "sv"], ["created_at", "2016-06-08 17:46:18.651669"], ["updated_at", "2016-06-08 17:46:18.651669"]]
+  [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Desafio Puro"], ["descricao", "As pessoas que pensam poder conquistar qualquer um ou qualquer coisa. Eles definem\nsucesso como vencer obstáculos impossíveis, resolver problemas insolúveis, vencer os\noponentes mais ferrenhos. Na medida em que progridem eles procuram desafios cada\nvez mais difíceis. Para alguns aparece sob a forma de procurar trabalhos nos quais ele é colocado\nfrente a problemas cada vez mais difíceis. Para outros o desafio é colocado em termos\nde competitividade interpessoal. Geralmente procuram trabalhos nos quais podem se\nsentir sempre testados, na ausência deste teste constante, sente-se aborrecidos e\ndesmotivados."], ["perfil", "Procurar trabalhos nos quais possa se sentir sempre testado; Novidade, variedade e dificuldade tornam-se fins em si; Para alguns, o desafio é definido em termos interpessoais;\n É comum destacar a importância da diversidade de sua carreira."], ["perspectiva", "Tem havido sempre um grupo de pessoas que definiu suas âncoras em\ntermos de superar probabilidades impossíveis, revolver problemas insolúveis e vencer\ncompetidores. Segundo Schein (1996), este grupo está crescendo em número, mas não\nestá claro se mais pessoas estão ingressando na força de trabalho com esta\npredisposição ou se é uma adaptação para desafios crescentes que o mundo está\napresentando."], ["tipo", "ch"], ["created_at", "2016-06-08 17:46:18.673653"], ["updated_at", "2016-06-08 17:46:18.673653"]]
+  [1m[35m (9.5ms)[0m  COMMIT
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "anchorinfos" ("nome", "descricao", "perfil", "perspectiva", "tipo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["nome", "Estilo de Vida"], ["descricao", "Pessoas que consideram a carreira menos importante e que esta deve estar integrada\nnum estilo de vida. É principalmente voltada a encontrar uma maneira de integrar as\nnecessidades individuais, familiares e da carreira, para isto a pessoa quer flexibilidade\nmais do que qualquer outra coisa.\n            A pessoa olha mais para a atitude da empresa do que para o seu programa de\ntrabalho propriamente dito, uma atitude que reflete respeito pela vida pessoal e\nfamiliar e que permite uma negociação genuína do contrato psicológico possível."], ["perfil", "Prefere flexibilidade acima de tudo; Exige que a carreira esteja integrada com o estilo de vida; Busca uma atitude organizacional que reflita respeito pelos interesses pessoais\ne familiares; Esta âncora reflete algumas tendências da sociedade, sendo o resultado inevitável de famílias em que pai e mãe trabalham."], ["perspectiva", "Estilo de Vida é a âncora que tem mostrado as maiores mudanças desde sua\npesquisa original, nos anos de 1960 e 1970. O progresso e a posição organizacional\nestão cada vez mais definidos em termos do que as pessoas conhecem e quais\nhabilidades as pessoas possuem, e são baseados cada vez menos em tempo de serviço,\nhierarquia e lealdade. Para manter seus melhores empregados, as organizações\ndevem, portanto, estar aptas para desafiá-los e então satisfazer suas necessidades. Ao fazer uma análise sobre mudanças e estruturas das âncoras de carreira para\no século XXI, Schein (1996) argumenta que cada categoria de âncora ainda atrai um\nconjunto de pessoas, mas que o funcionamento de uma dada âncora pode tornar-se\nproblemática à medida que o mundo e a estrutura organizacional tornam-se mais\nturbulentos. O principal efeito é que as pessoas terão que se tornar mais\nautoconfiantes e descobrirem onde suas âncoras melhor se encaixam dentro de uma\nestrutura ocupacional emergente. A habilidade para analisar a si mesmo, bem como a\nhabilidade de descobrir que tipo de trabalho está disponível e como esse trabalho\nevoluirá, torna-se uma habilidade crucial."], ["tipo", "ls"], ["created_at", "2016-06-08 17:46:18.695249"], ["updated_at", "2016-06-08 17:46:18.695249"]]
+  [1m[36m (9.9ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-08 14:46:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 116ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-08 14:46:43 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (10.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (164.3ms)
+Completed 200 OK in 3550ms (Views: 3306.4ms | ActiveRecord: 111.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-08 14:46:58 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xspLspXOI1B6RYibyvnVAyE44mUYHL6SQfVK3LFNtNSUMK7WlL6GNa65frjv9Qoqc18YGoKIeVMWiRnNW4BAwQ==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (68.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "julian.sansat@icloud.com"]]
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2016-06-07 16:21:09.897045"], ["current_sign_in_at", "2016-06-08 17:46:59.440544"], ["sign_in_count", 3], ["updated_at", "2016-06-08 17:46:59.448057"], ["id", 8]]
+  [1m[36m (34.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1004ms (ActiveRecord: 108.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-08 14:46:59 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (4.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 19ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-08 14:46:59 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 1073ms (Views: 1060.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/anchorinfos" for 127.0.0.1 at 2016-06-08 14:47:13 -0300
+Processing by AnchorinfosController#index as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mAnchorinfo Load (4.6ms)[0m  SELECT "anchorinfos".* FROM "anchorinfos"
+  Rendered anchorinfos/index.html.erb within layouts/application (83.2ms)
+Completed 200 OK in 1274ms (Views: 1215.8ms | ActiveRecord: 25.2ms)
