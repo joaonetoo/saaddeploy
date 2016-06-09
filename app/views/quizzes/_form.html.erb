@@ -16,6 +16,13 @@
     <%= f.text_field :user_id %>
   </div>
   <div class="field">
+    <%= label_tag :instituição %><br>
+    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+  </div>
+  <div class="field">
+    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name, include_blank: true)%>
+  </div>
+  <div class="field">
     <%= f.label :data_final %><br>
     <%= f.date_select :data_final %>
   </div>

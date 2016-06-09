@@ -24723,3 +24723,876 @@ Processing by QuizzesController#index as HTML
   [1m[35mQuiz Load (1.7ms)[0m  SELECT "quizzes".* FROM "quizzes"
   Rendered quizzes/index.html.erb within layouts/application (5.3ms)
 Completed 200 OK in 1091ms (Views: 1079.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-09 13:48:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (49.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 138ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-09 13:48:37 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (9.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (187.0ms)
+Completed 200 OK in 4703ms (Views: 4390.1ms | ActiveRecord: 194.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-09 13:49:12 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y3BHN3cyQzlf37JtgcSnHxvTNg8qoQ0Wdit2kscKnu50S0FJ1PzB3wuXshgFkQBFruwcWIZTcaiUCUzDUnYPHg==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (150.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "julian.sansat@icloud.com"]]
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2016-06-08 17:46:59.440544"], ["current_sign_in_at", "2016-06-09 16:49:12.967815"], ["sign_in_count", 4], ["updated_at", "2016-06-09 16:49:12.974621"], ["id", 8]]
+  [1m[36m (32.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1008ms (ActiveRecord: 192.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-09 13:49:13 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-09 13:49:13 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 1073ms (Views: 1056.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-09 13:49:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (41.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (316.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (4.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (112.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (5.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (235.5ms)
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2016-06-09 13:49:24 -0300
+Processing by QuizzesController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mQuiz Load (82.8ms)[0m  [1mSELECT "quizzes".* FROM "quizzes"[0m
+  Rendered quizzes/index.html.erb within layouts/application (95.7ms)
+Completed 200 OK in 1238ms (Views: 1091.5ms | ActiveRecord: 89.3ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 13:50:00 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (44.6ms)
+  Rendered quizzes/new.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 1148ms (Views: 1118.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 13:57:17 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (28.7ms)
+  Rendered quizzes/new.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 1131ms (Views: 1112.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 13:58:19 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (139.1ms)
+  Rendered quizzes/new.html.erb within layouts/application (141.8ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x007fa8bab38638>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181331767360'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181331767360'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (54.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (149.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (73.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.6ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 13:59:00 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (537.8ms)
+  Rendered quizzes/new.html.erb within layouts/application (541.9ms)
+Completed 500 Internal Server Error in 559ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `collection_select_tag' for #<#<Class:0x007fa8bbcb0280>:0x007fa8ba3376c8>
+Did you mean?  collection_select):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select_tag :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181327572380'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181327572380'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (74.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (160.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (73.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (149.8ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 13:59:13 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (28.1ms)
+  Rendered quizzes/new.html.erb within layouts/application (31.5ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.8ms)
+
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181334766380'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181334766380'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (50.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (107.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.8ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:30:36 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (77.9ms)
+  Rendered quizzes/new.html.erb within layouts/application (80.9ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x000000037dd248>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (51.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (135.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.8ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:31:01 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (68.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (71.9ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 2.1ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x007fa8bb795070>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (42.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (116.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.7ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:31:55 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (83.6ms)
+  Rendered quizzes/new.html.erb within layouts/application (86.3ms)
+Completed 500 Internal Server Error in 345ms (ActiveRecord: 22.1ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x007fa89c993ee0>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (47.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.0ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:32:05 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (3.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (75.5ms)
+  Rendered quizzes/new.html.erb within layouts/application (78.2ms)
+Completed 500 Internal Server Error in 357ms (ActiveRecord: 21.8ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x007fa8bb453920>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_28985500'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (44.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (125.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:34:43 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (15.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 5.5ms)
+
+ActionView::Template::Error (wrong number of arguments (given 5, expected 1..3)):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= select_tag :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181074521960'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181074521960'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (44.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (171.0ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:35:30 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (10.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (23.8ms)
+  Rendered quizzes/new.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 10.5ms)
+
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181327271740'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181327271740'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (46.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (118.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-09 14:37:11 -0300
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-09 14:37:11 -0300
+Processing by AdminController#index as HTML
+  [1m[35mUser Load (4.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36m (3.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "f"]]
+  [1m[35mUser Load (3.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 1171ms (Views: 1143.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-09 14:37:13 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (44.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (283.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (80.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (167.9ms)
+
+
+Started GET "/quizzes" for 127.0.0.1 at 2016-06-09 14:37:20 -0300
+Processing by QuizzesController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mQuiz Load (4.5ms)[0m  SELECT "quizzes".* FROM "quizzes"
+  Rendered quizzes/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 1065ms (Views: 1042.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:37:24 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (20.8ms)
+  Rendered quizzes/new.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 2.1ms)
+
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select(:institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181332101620'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181332101620'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181074977820'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (43.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (120.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.9ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:37:25 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (19.2ms)
+  Rendered quizzes/new.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select(:institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181076579080'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181076579080'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (64.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (152.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (6.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (80.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (158.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:38:51 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  Rendered quizzes/_form.html.erb (68.1ms)
+  Rendered quizzes/new.html.erb within layouts/application (71.0ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 6.0ms)
+
+ActionView::Template::Error (undefined method `institution_id' for #<Quiz:0x007fa8ba4eaf10>):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select(:quiz, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181328439640'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181328439640'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (73.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (145.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:39:24 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  Rendered quizzes/_form.html.erb (21.1ms)
+  Rendered quizzes/new.html.erb within layouts/application (43.0ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= label_tag :institution %><br>
+    20:     <%= collection_select(:institution_id, Institution.order(:nome), :id, :nome, prompt: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:20:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181337406160'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181337406160'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (45.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (131.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (170.3ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:39:34 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (65.6ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  Rendered quizzes/_form.html.erb (167.0ms)
+  Rendered quizzes/new.html.erb within layouts/application (175.4ms)
+Completed 200 OK in 1224ms (Views: 1134.3ms | ActiveRecord: 78.4ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:40:05 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (3.1ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  Rendered quizzes/_form.html.erb (40.7ms)
+  Rendered quizzes/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 1132ms (Views: 1096.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:41:49 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (2.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (5.9ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" ASC[0m
+  Rendered quizzes/_form.html.erb (92.8ms)
+  Rendered quizzes/new.html.erb within layouts/application (96.4ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 11.6ms)
+
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column campus.nome does not exist
+LINE 1: SELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" AS...
+                                                  ^
+HINT:  Perhaps you meant to reference the column "campus.name".
+: SELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" ASC):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= label_tag :campus %><br>
+    24:     <%= collection_select(nil, :campu_id, Campu.order(:nome), :id, :nome, include_blank: true) %>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:24:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181079231600'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181079231600'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (49.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (128.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:42:19 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mInstitution Load (2.2ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (22.6ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  Rendered quizzes/_form.html.erb (101.5ms)
+  Rendered quizzes/new.html.erb within layouts/application (104.7ms)
+Completed 200 OK in 1152ms (Views: 1101.4ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:45:57 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (1.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (1.6ms)[0m  SELECT "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  Rendered quizzes/_form.html.erb (185.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (187.9ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 5.2ms)
+
+ActionView::Template::Error (undefined method `name' for #<Institution:0x007fa8bb6f4c60>
+Did you mean?  nome):
+    20:     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :name, :id, :name, include_blank: true)%>
+    24:   </div>
+    25:   <div class="field">
+    26:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:23:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181341284800'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181341284800'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (45.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (119.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.1ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:46:13 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (3.7ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (4.6ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" ASC[0m
+  Rendered quizzes/_form.html.erb (43.4ms)
+  Rendered quizzes/new.html.erb within layouts/application (47.1ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 10.6ms)
+
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column campus.nome does not exist
+LINE 1: SELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" AS...
+                                                  ^
+HINT:  Perhaps you meant to reference the column "campus.name".
+: SELECT "campus".* FROM "campus"  ORDER BY "campus"."nome" ASC):
+    20:     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= grouped_collection_select(nil, :campu_id, Campu.order(:nome), :campus, :name, :id, :name, include_blank: true)%>
+    24:   </div>
+    25:   <div class="field">
+    26:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:23:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181331056060'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181331056060'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (49.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (135.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (157.4ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:46:26 -0300
+Processing by QuizzesController#new as HTML
+  [1m[35mUser Load (9.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+  [1m[36mInstitution Load (1.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (2.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  Rendered quizzes/_form.html.erb (69.1ms)
+  Rendered quizzes/new.html.erb within layouts/application (72.3ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 13.8ms)
+
+ActionView::Template::Error (undefined method `campus' for #<Campu:0x007fa8bb850410>):
+    20:     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= grouped_collection_select(nil, :campu_id, Campu.order(:name), :campus, :name, :id, :name, include_blank: true)%>
+    24:   </div>
+    25:   <div class="field">
+    26:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:23:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181335212740'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181335212740'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (44.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.6ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (119.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.0ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:46:54 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (2.2ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (1.5ms)[0m  SELECT "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  Rendered quizzes/_form.html.erb (90.3ms)
+  Rendered quizzes/new.html.erb within layouts/application (95.3ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 6.6ms)
+
+ActionView::Template::Error (undefined method `name' for #<Institution:0x007fa8baeccbf0>
+Did you mean?  nome):
+    20:     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, include_blank: true) %>
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :name, :id, :name, include_blank: true)%>
+    24:   </div>
+    25:   <div class="field">
+    26:     <%= f.label :data_final %><br>
+  app/views/quizzes/_form.html.erb:23:in `block in _app_views_quizzes__form_html_erb___1116787407853510719_70181335686080'
+  app/views/quizzes/_form.html.erb:1:in `_app_views_quizzes__form_html_erb___1116787407853510719_70181335686080'
+  app/views/quizzes/new.html.erb:3:in `_app_views_quizzes_new_html_erb__3279662738998194024_70181318477860'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (44.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (121.3ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.6ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:47:16 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (2.7ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (1.7ms)[0m  SELECT "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  Rendered quizzes/_form.html.erb (74.2ms)
+  Rendered quizzes/new.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 1204ms (Views: 1179.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/quizzes/new" for 127.0.0.1 at 2016-06-09 14:51:22 -0300
+Processing by QuizzesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35mInstitution Load (7.7ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (1.7ms)[0m  SELECT "campus".* FROM "campus" WHERE "campus"."institution_id" = $1  [["institution_id", 1]]
+  Rendered quizzes/_form.html.erb (53.2ms)
+  Rendered quizzes/new.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 4389ms (Views: 4365.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/quizzes.self-e2f0eea2e138ddcaa43a1a4e35ebbc56c8d16afbe8e60f35321c23518b1b22ec.js?body=1" for 127.0.0.1 at 2016-06-09 14:51:26 -0300
