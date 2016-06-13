@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= label_tag :Alunos %><br>
-    <%= grouped_collection_select(nil, :user_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
+    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
   <div class="field">
     <%= f.label :data_final %><br>

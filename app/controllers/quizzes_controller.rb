@@ -10,6 +10,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
+    @creator = User.where(id: @quiz.creator_id).first
   end
 
   # GET /quizzes/new
@@ -26,6 +27,44 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(quiz_params)
     @quiz.creator_id = current_user.id
+
+    if params[:institution_id] == 'todos'
+      @users = User.where(type: 'Student').find_each
+    else
+      @users = User.where(institution_id: params[:institution_id]).all
+    end
+
+    if params[:campu_id] == 'todos' && params[:institution_id] != 'todos'
+      @campus = Campu.where(institution_id: params[:institution_id]).find_each
+      @centers = []
+      @campus.each do |campus|
+          @centers << Center.where(campu_id: campus.id)
+      end
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.ids)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    elsif params[:institution_id] != 'todos'
+      @campus = Campu.where(id: params[:campu_id]).first
+      @centers = @campus.centers.all
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    end
+
+
+    @users.each do |user|
+        @quiz.users << user
+    end
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
@@ -69,6 +108,6 @@ class QuizzesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
-      params.require(:quiz).permit(:user_id, :data_final, :creator_id)
+      params.require(:quiz).permit(:user_id, :data_final, :creator_id, :institution_id, :campu_id, :center_id, :course_id, :subject_id, :classroom_id, :users_id)
     end
 end

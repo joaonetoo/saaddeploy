@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @quiz.user %>
+  <strong>Criador:</strong>
+  <%= @creator.nome %>
 </p>
 
 <p>
   <strong>Data final:</strong>
   <%= @quiz.data_final %>
 </p>
+
+<strong>Usuarios Participantes: <%= @quiz.users.size %></strong>
+<% @quiz.users.each do |user| %>
+    <p><%= user.nome%></p>
+<% end %>
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
 <%= link_to 'Back', quizzes_path %>
