@@ -25596,3 +25596,97 @@ Completed 200 OK in 4389ms (Views: 4365.2ms | ActiveRecord: 10.9ms)
 
 
 Started GET "/assets/quizzes.self-e2f0eea2e138ddcaa43a1a4e35ebbc56c8d16afbe8e60f35321c23518b1b22ec.js?body=1" for 127.0.0.1 at 2016-06-09 14:51:26 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-13 13:22:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (45.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 292ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-06-13 13:22:31 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (18.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (319.9ms)
+Completed 200 OK in 10037ms (Views: 9555.1ms | ActiveRecord: 206.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-06-13 13:22:59 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HlXUb9/7vOSoKT/dZAoqWpbMewLfSJHHKYmF3Z6IbBrW7nz/v2d8CQh12J+hQxKlaNpPM2LmXHQOldisGjsGmg==", "user"=>{"email"=>"julian.sansat@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (64.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "julian.sansat@icloud.com"]]
+  [1m[36m (4.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2016-06-09 16:49:12.967815"], ["current_sign_in_at", "2016-06-13 16:23:01.199732"], ["sign_in_count", 5], ["updated_at", "2016-06-13 16:23:01.210407"], ["id", 8]]
+  [1m[36m (16.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1361ms (ActiveRecord: 88.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-13 13:23:01 -0300
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/admin/index
+Completed 302 Found in 43ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/index" for 127.0.0.1 at 2016-06-13 13:23:01 -0300
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (8.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."approved" = $1  [["approved", "f"]]
+  [1m[36mUser Load (2.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."approved" = $1  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["approved", "f"]]
+  Rendered admin/index.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 1704ms (Views: 1658.8ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/images/thumb/semfoto.png" for 127.0.0.1 at 2016-06-13 13:23:03 -0300
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (101.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (33.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.1ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (518.2ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (207.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (8.8ms)
+  Rendered /home/urbans/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (409.4ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2016-06-13 13:23:12 -0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (65.2ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (172.7ms)
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 8]]
+Completed 200 OK in 1379ms (Views: 1258.5ms | ActiveRecord: 75.3ms)
