@@ -18,6 +18,8 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1
   # GET /institutions/1.json
   def show
+    @campus = Campu.where(institution_id: @institution.id).find_each
+    @campu = Campu.new
   end
 
   # GET /institutions/new

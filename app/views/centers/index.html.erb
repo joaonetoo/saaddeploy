@@ -15,7 +15,7 @@
     <% @centers.each do |center| %>
       <tr>
         <td><%= center.name %></td>
-        <td><%= center.campu %></td>
+        <td><%= center.campu.name %></td>
         <td><%= link_to 'Show', center %></td>
         <td><%= link_to 'Edit', edit_center_path(center) %></td>
         <td><%= link_to 'Destroy', center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
