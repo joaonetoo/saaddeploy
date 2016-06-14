@@ -61,6 +61,59 @@ class QuizzesController < ApplicationController
       end
     end
 
+    if params[:center_id] == 'todos' && params[:campu_id] != 'todos'
+      @centers = Center.where(campu_id: params[:campu_id]).find_each
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    elsif params[:center_id] != 'todos' && params[:center_id] != nil
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id)
+      end
+    end
+
+    if params[:course_id] == 'todos' && params[:center_id] != 'todos'
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id)
+      end
+    elsif params[:course_id] != 'todos' && params[:center_id] != nil
+      @users = User.where(course_id: params[:course_id]).find_each
+    end
+
+    if params[:subject_id] == 'todos' && params[:course_id] != 'todos'
+      @users = User.where(course_id: params[:course_id]).find_each
+    elsif params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          @users << user
+        end
+      end
+    end
+
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @users = []
+      @classroom.users.each do |user|
+        @users << user
+      end
+    end
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @users = []
+      @users << @user
+    end
 
     @users.each do |user|
         @quiz.users << user
