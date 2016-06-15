@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'quiz/index'
+  post 'quiz/answer'
+
   get 'admin/search'
   get 'admin/index'
   get 'admin/aprove'
