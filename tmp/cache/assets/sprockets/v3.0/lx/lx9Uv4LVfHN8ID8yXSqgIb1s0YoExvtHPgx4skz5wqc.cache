@@ -1,0 +1,9 @@
+I"ç(function() {
+  jQuery(function() {
+    if ($('input[name=q1]:checked').length <= 0) {
+      return alert("No");
+    }
+  });
+
+}).call(this);
+:ET

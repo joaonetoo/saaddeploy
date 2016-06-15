@@ -1,0 +1,25 @@
+I"¿(function() {
+  var count;
+
+  count = 0;
+
+  jQuery(function() {
+    return $('form').submit(function() {
+      $('input:radio').each(function(e) {
+        if ($(e).is(':checked')) {
+          count = count + 1;
+          return console.log(count);
+        }
+      });
+      if (count === 40) {
+        return true;
+      } else {
+        console.log(count);
+        alert('incomplete');
+        return false;
+      }
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,14 @@
+I"5(function() {
+  jQuery(function() {
+    return $('form').submit(function() {
+      return $('input:radio').each(function() {
+        if (!$('input:radio', this).is(':checked')) {
+          preventDefault();
+          return alert('Please select something!');
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

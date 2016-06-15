@@ -1,0 +1,7 @@
+I"_(function() {
+  jQuery(function() {
+    return console.log("sdsd");
+  });
+
+}).call(this);
+:ET

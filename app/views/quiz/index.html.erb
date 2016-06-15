@@ -1,11 +1,12 @@
 <h1>Quiz#index</h1>
-
+<h3 id="notice" class="alert"></h3>
 <%= form_tag({ :controller => "quiz", :action => "answer"}) do |f| %>
+    <div id="recover">
     <p>
     <strong>Sonho em ser tão bom no que faço que minha opinião de especialista será sempre solicitada.</strong>
 
     <%= label_tag(:q1_1, "1") %>
-    <%= radio_button_tag(:q1, 1, :class => 'required') %>
+    <%= radio_button_tag(:q1, 1) %>
     <%= label_tag(:q1_2, "2") %>
     <%= radio_button_tag(:q1, 2) %>
     <%= label_tag(:q1_3, "3") %>
@@ -560,6 +561,11 @@
     <%= radio_button_tag(:q40, 4) %>
 
     </p>
+    </div>
+
+    <div id = "extra">
+
+    </div>
 
     <%= submit_tag "Enviar" %>
 <% end %>

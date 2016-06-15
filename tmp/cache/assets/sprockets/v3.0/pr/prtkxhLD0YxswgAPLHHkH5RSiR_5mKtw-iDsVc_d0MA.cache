@@ -1,0 +1,22 @@
+I"�(function() {
+  jQuery(function() {
+    return $('form').submit(function() {
+      var count;
+      count = 0;
+      $('#recover input[type=radio]').each(function() {
+        if ($(this).prop('checked')) {
+          return count = count + 1;
+        }
+      });
+      if (count === 40) {
+        return true;
+      } else {
+        alert((40 - count) + " Questões sem marcar");
+        $('#alert').html((40 - count) + " Questões sem marcar");
+        return false;
+      }
+    });
+  });
+
+}).call(this);
+:ET

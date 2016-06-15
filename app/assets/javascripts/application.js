@@ -15,6 +15,8 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery-ui/autocomplete
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require autocomplete-rails
 //= require dependent-fields
 //= require turbolinks

@@ -1,0 +1,24 @@
+I"š(function() {
+  var count;
+
+  count = 0;
+
+  jQuery(function() {
+    return $('form').submit(function() {
+      $('radio').each(function(e) {
+        if ($(e).is(':checked')) {
+          return count = count + 1;
+        }
+      });
+      if (count === 1) {
+        return true;
+      } else {
+        console.log(count);
+        alert('incomplete');
+        return false;
+      }
+    });
+  });
+
+}).call(this);
+:ET

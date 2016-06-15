@@ -1,0 +1,22 @@
+I"©(function() {
+  var count;
+
+  count = 0;
+
+  jQuery(function() {
+    return $('form').submit(function() {
+      return $('input:radio').each(function() {
+        if (!$('input:radio', this).is(':checked')) {
+          count = count + 1;
+          console.log(count);
+          alert('Please select something!');
+          return false;
+        } else {
+          return true;
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

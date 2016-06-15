@@ -1,0 +1,9 @@
+I"‹(function() {
+  jQuery(function() {
+    if ($('input[radio]:checked').length <= 0) {
+      return alert("No");
+    }
+  });
+
+}).call(this);
+:ET
