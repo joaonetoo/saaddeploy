@@ -1,0 +1,28 @@
+I"�(function() {
+  jQuery(function() {
+    $('#recover input[type=radio]').on("change", function() {
+      return alert($(this).val());
+    });
+    $('form').submit(function() {
+      var complete, count;
+      count = 0;
+      $('#recover input[type=radio]').each(function() {
+        if ($(this).prop('checked')) {
+          return count = count + 1;
+        }
+      });
+      if (count === 40) {
+        return complete = true;
+      } else {
+        alert((40 - count) + " Questões sem marcar");
+        $('#notice').html((40 - count) + " Questões sem marcar");
+        return false;
+      }
+    });
+    if (complete === true) {
+      return true;
+    }
+  });
+
+}).call(this);
+:ET
