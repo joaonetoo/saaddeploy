@@ -1,7 +1,0 @@
-I"Y(function() {
-  jQuery(function() {
-    return $('*').hide();
-  });
-
-}).call(this);
-:ET

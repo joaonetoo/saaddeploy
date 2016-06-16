@@ -1,7 +1,0 @@
-I"T(function() {
-  jQuery(function() {});
-
-  $('#endereco').hide;
-
-}).call(this);
-:ET

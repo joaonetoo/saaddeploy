@@ -1,7 +1,0 @@
-I"[(function() {
-  jQuery(function() {});
-
-  $(h2).html("Next Step...");
-
-}).call(this);
-:ET

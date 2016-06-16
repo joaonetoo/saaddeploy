@@ -1,7 +1,0 @@
-I"L(function() {
-  jQuery(function() {});
-
-  alert('fu');
-
-}).call(this);
-:ET

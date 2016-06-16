@@ -1,0 +1,41 @@
+I"W(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $('#recover input[type=radio]').on("change", function() {
+      var $check, copy, copy1, name1, value;
+      value = $(this).val();
+      if (value === "4") {
+        name1 = $(this).name;
+        alert(name1);
+        $('#extra').children().show();
+        copy = $($(this).closest('p'));
+        copy1 = copy.children('strong').text();
+        $check = $('<input type="checkbox"/>').attr({
+          name: '' + name1 + ''
+        });
+        return $('#extra').append($check);
+      }
+    });
+    $('#myform').submit(function() {
+      var complete, count;
+      count = 0;
+      $('#recover input[type=radio]').each(function() {
+        if ($(this).prop('checked')) {
+          return count = count + 1;
+        }
+      });
+      if (count === 40) {
+        return complete = true;
+      } else {
+        alert((40 - count) + " Questões sem marcar");
+        $('#notice').html((40 - count) + " Questões sem marcar");
+        return false;
+      }
+    });
+    if (complete === true) {
+      return true;
+    }
+  });
+
+}).call(this);
+:ET

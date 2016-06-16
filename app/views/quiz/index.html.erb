@@ -1,8 +1,8 @@
 <h1>Quiz#index</h1>
 <h3 id="notice" class="alert"></h3>
-<%= form_tag({ :controller => "quiz", :action => "answer"}) do |f| %>
+<%= form_tag({ :controller => "quiz", :action => "answer"}, { :id => "myform"}) do |f| %>
     <div id="recover">
-    <p>
+    <p id= "1">
     <strong>Sonho em ser tão bom no que faço que minha opinião de especialista será sempre solicitada.</strong>
 
     <%= label_tag(:q1_1, "1") %>
@@ -16,7 +16,8 @@
 
     </p>
 
-    <p>
+
+    <p id= "2">
     <strong>Sinto-me mais realizado em meu trabalho quando consigo integrar e administrar o trabalho de outras pessoas.</strong>
 
     <%= label_tag(:q2_1, "1") %>
@@ -30,7 +31,7 @@
 
     </p>
 
-    <p>
+    <p id= "3">
     <strong>Sonho em ter uma carreira que me permitirá executar meu trabalho livremente, a meu modo e dentro do meu horário.</strong>
 
     <%= label_tag(:q3_1, "1") %>
@@ -44,7 +45,7 @@
 
     </p>
 
-    <p>
+    <p id= "4">
     <strong>Estou sempre procurando idéias que me permitirão iniciar o meu próprio negócio.</strong>
 
     <%= label_tag(:q4_1, "1") %>
@@ -58,7 +59,7 @@
 
     </p>
 
-    <p>
+    <p id= "5">
     <strong>Segurança e estabilidade são mais importantes para mim do que liberdade e autonomia.</strong>
 
     <%= label_tag(:q5_1, "1") %>
@@ -72,7 +73,7 @@
 
     </p>
 
-    <p>
+    <p id= "6">
     <strong>Eu preferiria deixar minha organização do que ser colocado em um trabalho que iria comprometer a minha capacidade de perseguir interesses pessoais e familiares.</strong>
 
     <%= label_tag(:q6_1, "1") %>
@@ -86,7 +87,7 @@
 
     </p>
 
-    <p>
+    <p id= "7">
     <strong>Sentirei sucesso na minha carreira se sentir que contribui verdadeiramente para o bem-estar da sociedade</strong>
 
     <%= label_tag(:q7_1, "1") %>
@@ -100,7 +101,7 @@
 
     </p>
 
-    <p>
+    <p id= "8">
     <strong>Eu sonho com uma carreira em que eu vou sempre ser desafiados por problemas cada vez mais difíceis.</strong>
 
     <%= label_tag(:q8_1, "1") %>
@@ -114,7 +115,7 @@
 
     </p>
 
-    <p>
+    <p id= "9">
     <strong>Vou sentir bem-sucedido na minha carreira somente se eu possa desenvolver minhas habilidades para um nível cada vez maior de competência.</strong>
 
     <%= label_tag(:q9_1, "1") %>
@@ -128,7 +129,7 @@
 
     </p>
 
-    <p>
+    <p id= "10">
     <strong>Eu sonho de estar no comando de uma organização inteira</strong>
 
     <%= label_tag(:q10_1, "1") %>
@@ -142,7 +143,7 @@
 
     </p>
 
-    <p>
+    <p id= "11">
     <strong>Eu sou mais realizado em meu trabalho quando eu estou completamente livre de definir minhas próprias tarefas, horários e procedimentos.</strong>
 
     <%= label_tag(:q11_1, "1") %>
@@ -156,7 +157,7 @@
 
     </p>
 
-     <p>
+     <p id= "12">
     <strong>Eu não diria em uma organização que me daria atribuições que jeopartdize minha segurança no emprego.</strong>
 
     <%= label_tag(:q12_1, "1") %>
@@ -170,7 +171,7 @@
 
     </p>
 
-    <p>
+    <p id= "13">
     <strong>Construir um negócio próprio é mais importante para mim do que ser um gerente de alto nível em uma organização de outra pessoa.</strong>
 
     <%= label_tag(:q13_1, "1") %>
@@ -184,7 +185,7 @@
 
     </p>
 
-    <p>
+    <p id= "14">
     <strong>Sinto-me mais realizado em minha carreira quando tenho a oportunidade de usar meus talentos a serviço de meus semelhantes.</strong>
 
     <%= label_tag(:q14_1, "1") %>
@@ -198,7 +199,7 @@
 
     </p>
 
-    <p>
+    <p id= "15">
     <strong>Sentirei sucesso em minha carreira se enfrentar e superar situações muito difíceis.</strong>
 
     <%= label_tag(:q15_1, "1") %>
@@ -212,7 +213,7 @@
 
     </p>
 
-    <p>
+    <p id= "16">
     <strong>Eu sonho de uma carreira que me permita integrar minhas necessidades pessoais, familiares e de trabalho.</strong>
 
     <%= label_tag(:q16_1, "1") %>
@@ -226,7 +227,7 @@
 
     </p>
 
-    <p>
+    <p id= "17">
     <strong>Tornar-se um gerente funcional ou técnico experiente na minha área de especialização é mais atraente para mim do que se tornar um gerente geral.</strong>
 
     <%= label_tag(:q17_1, "1") %>
@@ -240,7 +241,7 @@
 
     </p>
 
-    <p>
+    <p id= "18">
     <strong>Eu me sentirei bem sucedido na minha carreira somente se eu conseguir a autonomia e liberdade para definir o meu trabalho.</strong>
 
     <%= label_tag(:q18_1, "1") %>
@@ -254,7 +255,7 @@
 
     </p>
 
-    <p>
+    <p id= "19">
     <strong>Eu costumo procurar empregos em organizações que me dão uma sensação de estabilidade e segurança.</strong>
 
     <%= label_tag(:q19_1, "1") %>
@@ -268,7 +269,7 @@
 
     </p>
 
-    <p>
+    <p id= "20">
     <strong>Sinto-me mais realizado quando eu fui capaz de construir algo que é principalmente o resultado da minha própria habilidade e esforço.</strong>
 
     <%= label_tag(:q20_1, "1") %>
@@ -282,7 +283,7 @@
 
     </p>
 
-    <p>
+    <p id= "21">
     <strong>Sentirei que minha carreira é um sucesso somente se me tornar diretor geral de uma organização.</strong>
 
     <%= label_tag(:q21_1, "1") %>
@@ -296,7 +297,7 @@
 
     </p>
 
-    <p>
+    <p id= "22">
     <strong>Usando os meus talentos para tornar o mundo um lugar melhor para se viver é o que impulsiona as minhas decisões de carreira.</strong>
 
     <%= label_tag(:q22_1, "1") %>
@@ -310,7 +311,7 @@
 
     </p>
 
-    <p>
+    <p id= "23">
     <strong>Sinto-me mais realizado na minha carreira quando resolvo problemas aparentemente insolúveis ou venço sobre coisas que são aparentemente impossíveis.</strong>
 
     <%= label_tag(:q23_1, "1") %>
@@ -324,7 +325,7 @@
 
     </p>
 
-    <p>
+    <p id= "24">
     <strong>Sentirei sucesso na vida se conseguir equilibrar exigências pessoais, familiares e profissionais.</strong>
 
     <%= label_tag(:q24_1, "1") %>
@@ -338,7 +339,7 @@
 
     </p>
 
-    <p>
+    <p id= "25">
     <strong>Eu sonho com uma carreira que me permita sentir uma sensação de estabilidade e segurança.</strong>
 
     <%= label_tag(:q25_1, "1") %>
@@ -352,7 +353,7 @@
 
     </p>
 
-    <p>
+    <p id= "26">
     <strong>Prefiro sair da empresa onde estou a aceitar um cargo em esquema rotativo que me afaste da minha área de especialidade.</strong>
 
     <%= label_tag(:q26_1, "1") %>
@@ -366,7 +367,7 @@
 
     </p>
 
-    <p>
+    <p id= "27">
     <strong>Equilibrar as exigências da minha vida pessoal e profissional é mais importante para mim do que uma posição gerencial de alto nível</strong>
 
     <%= label_tag(:q27_1, "1") %>
@@ -380,7 +381,7 @@
 
     </p>
 
-    <p>
+    <p id= "28">
     <strong>Eu sonho de estar em uma carreira que faz uma contribuição real para a humanidade e sociedade.</strong>
 
     <%= label_tag(:q28_1, "1") %>
@@ -394,7 +395,7 @@
 
     </p>
 
-    <p>
+    <p id= "29">
     <strong>Eu me sentirei bem sucedido na minha carreira somente se eu criei uma empresa propría baseado em minhas próprias idéias e habilidades.</strong>
 
     <%= label_tag(:q29_1, "1") %>
@@ -408,7 +409,7 @@
 
     </p>
 
-    <p>
+    <p id= "30">
     <strong>Tornar-se um gerente geral é mais atraente para mim do que se tornar um gerente funcional sênior na minha área de especialização.</strong>
 
     <%= label_tag(:q30_1, "1") %>
@@ -422,7 +423,7 @@
 
     </p>
 
-    <p>
+    <p id= "31">
     <strong>A oportunidade de fazer um trabalho à minha maneira, livre de regras e restrições, é muito importante para mim.</strong>
 
     <%= label_tag(:q31_1, "1") %>
@@ -436,7 +437,7 @@
 
     </p>
 
-    <p>
+    <p id= "32">
     <strong>Eu prefiro oportunidades de trabalho que desafiam fortemente a minha resolução de problemas e habilidades competitivas.</strong>
 
     <%= label_tag(:q32_1, "1") %>
@@ -450,7 +451,7 @@
 
     </p>
 
-    <p>
+    <p id= "33">
     <strong>Eu sonho de iniciar e construir o meu próprio negócio.</strong>
 
     <%= label_tag(:q33_1, "1") %>
@@ -464,7 +465,7 @@
 
     </p>
 
-    <p>
+    <p id= "34">
     <strong>Eu preferiria deixar minha organização do que aceitar uma posição que pudesse prejudicar a minha capacidade de ser útil aos outros.</strong>
 
     <%= label_tag(:q34_1, "1") %>
@@ -478,7 +479,7 @@
 
     </p>
 
-    <p>
+    <p id= "35">
     <strong>Eu me sinto mais realizado em meu trabalho quando eu tenho sido capaz de usar minhas habilidades e talentos especiais.</strong>
 
     <%= label_tag(:q35_1, "1") %>
@@ -492,7 +493,7 @@
 
     </p>
 
-    <p>
+    <p id= "36">
     <strong>Prefiro sair da empresa onde estou a aceitar um cargo que me afaste do caminho da diretoria geral.</strong>
 
     <%= label_tag(:q36_1, "1") %>
@@ -506,7 +507,7 @@
 
     </p>
 
-    <p>
+    <p id= "37">
     <strong>Sou mais realizado no meu trabalho quando acho que tenho total inteira segurança financeira e estabilidade no emprego.</strong>
 
     <%= label_tag(:q37_1, "1") %>
@@ -520,7 +521,7 @@
 
     </p>
 
-    <p>
+    <p id= "38">
     <strong>Eu preferiria deixar minha organização do que aceitar um emprego que reduza minha autonomia e liberdade.</strong>
 
     <%= label_tag(:q38_1, "1") %>
@@ -534,7 +535,7 @@
 
     </p>
 
-    <p>
+    <p id= "39">
     <strong>Eu estou sempre procurando oportunidades profissionais que interfiram o mínimo possível em meus interesses pessoais e familiares.</strong>
 
     <%= label_tag(:q39_1, "1") %>
@@ -548,7 +549,7 @@
 
     </p>
 
-    <p>
+    <p id= "40">
     <strong>Trabalhar com problemas quase insolúveis é mais importante do que alcançar uma alta posição administrativa.</strong>
 
     <%= label_tag(:q40_1, "1") %>

@@ -1,0 +1,48 @@
+I"~(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $('#recover input[type=radio]').on("change", function() {
+      var $check, copy, copy1, name1, value;
+      value = $(this).val();
+      if (value === "4") {
+        name1 = $(this).attr('name');
+        $('#extra').children().show();
+        copy = $($(this).closest('p'));
+        copy1 = copy.children('strong').text();
+        $check = $('<input type="checkbox"/>').attr({
+          name: '' + "extra" + name1 + ''
+        });
+        $('#extra').append(copy1);
+        $('#extra').append($check);
+        return $('#extra').append("<br>");
+      }
+    });
+    $('#myform').submit(function() {
+      var complete, count, countcheck;
+      count = 0;
+      countcheck = 0;
+      $('#recover input[type=radio]').each(function() {
+        if ($(this).prop('checked')) {
+          return count = count + 1;
+        }
+      });
+      $('#recover input[type=checkbox]').each(function() {
+        if ($(this).prop('checked')) {
+          return countcheck = countcheck + 1;
+        }
+      });
+      if (count === 40 && countcheck === 5) {
+        return complete = true;
+      } else {
+        alert((5 - countcheck) + "questoes extras sem pontuar");
+        $('#notice').html((40 - count) + " Questões sem marcar");
+        return false;
+      }
+    });
+    if (complete === true) {
+      return true;
+    }
+  });
+
+}).call(this);
+:ET
