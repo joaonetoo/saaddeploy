@@ -11,68 +11,69 @@ class QuizController < ApplicationController
     @extras.each do |x|
         x.slice!(0,5)
     end
-
-    @params = params.each { |k, v| @all[k] = v.to_i + 2 }
-
-    @params .each_with_index do |x,i|
-        puts i if x == "mon_left"
+    @todas = params.select{|key, hash| hash != "on" && key != "commit" && key != "controller" && key != "action" && key != "utf8" && key != "authenticity_token"}
+    @todas.each {|k,v| @todas[k] = v.to_f}
+    @todas.each do |key, value|
+        @extras.each do |x|
+            if key == x
+                @todas[key] = value + 2
+            end
+         end
     end
 
-    q1 = params[:q1].to_i
-    q2 = params[:q2].to_i
-    q3 = params[:q3].to_i
-    q4 = params[:q4].to_i
-    q5 = params[:q5].to_i
-    q6 = params[:q6].to_i
-    q7 = params[:q7].to_i
-    q8 = params[:q8].to_i
-    q9 = params[:q9].to_i
-    q10 = params[:q10].to_i
-    q11 = params[:q11].to_i
-    q12 = params[:q12].to_i
-    q13 = params[:q13].to_i
-    q14 = params[:q14].to_i
-    q15 = params[:q15].to_i
-    q16 = params[:q16].to_i
-    q17 = params[:q17].to_i
-    q18 = params[:q18].to_i
-    q19 = params[:q19].to_i
-    q20 = params[:q20].to_i
-    q21 = params[:q21].to_i
-    q22 = params[:q22].to_i
-    q23 = params[:q23].to_i
-    q24 = params[:q24].to_i
-    q25 = params[:q25].to_i
-    q26 = params[:q26].to_i
-    q27 = params[:q27].to_i
-    q28 = params[:q28].to_i
-    q29 = params[:q29].to_i
-    q30 = params[:q30].to_i
-    q31 = params[:q31].to_i
-    q32 = params[:q32].to_i
-    q33 = params[:q33].to_i
-    q34 = params[:q34].to_i
-    q35 = params[:q35].to_i
-    q36 = params[:q36].to_i
-    q37 = params[:q37].to_i
-    q38 = params[:q38].to_i
-    q39 = params[:q39].to_i
-    q40 = params[:q40].to_i
+    q1 = @todas[:q1]
+    q2 = @todas[:q2]
+    q3 = @todas[:q3]
+    q4 = @todas[:q4]
+    q5 = @todas[:q5]
+    q6 = @todas[:q6]
+    q7 = @todas[:q7]
+    q8 = @todas[:q8]
+    q9 = @todas[:q9]
+    q10 = @todas[:q10]
+    q11 = @todas[:q11]
+    q12 = @todas[:q12]
+    q13 = @todas[:q13]
+    q14 = @todas[:q14]
+    q15 = @todas[:q15]
+    q16 = @todas[:q16]
+    q17 = @todas[:q17]
+    q18 = @todas[:q18]
+    q19 = @todas[:q19]
+    q20 = @todas[:q20]
+    q21 = @todas[:q21]
+    q22 = @todas[:q22]
+    q23 = @todas[:q23]
+    q24 = @todas[:q24]
+    q25 = @todas[:q25]
+    q26 = @todas[:q26]
+    q27 = @todas[:q27]
+    q28 = @todas[:q28]
+    q29 = @todas[:q29]
+    q30 = @todas[:q30]
+    q31 = @todas[:q31]
+    q32 = @todas[:q32]
+    q33 = @todas[:q33]
+    q34 = @todas[:q34]
+    q35 = @todas[:q35]
+    q36 = @todas[:q36]
+    q37 = @todas[:q37]
+    q38 = @todas[:q38]
+    q39 = @todas[:q39]
+    q40 = @todas[:q40]
 
 
-    debugger
     @result = Result.new
-    @result.tf = q1 + q9 + q17 + q26 + q35
-    @result.gm = q2 + q10 + q21 + q30 + q36
-    @result.au = q3 + q11 + q18 + q31 + q38
-    @result.se = q5 + q12 + q19 + q25 + q37
-    @result.ec = q4 + q13 + q20 + q29 + q33
-    @result.sv = q7 + q14 + q22 + q28 + q34
-    @result.ch = q8 + q15 + q23 + q32 + q40
-    @result.ls = q6 + q16 + q24 + q27 + q39
+    @result.tf = (q1 + q9 + q17 + q26 + q35) / 5.0
+    @result.gm = (q2 + q10 + q21 + q30 + q36)/ 5.0
+    @result.au = (q3 + q11 + q18 + q31 + q38)/ 5.0
+    @result.se = (q5 + q12 + q19 + q25 + q37)/ 5.0
+    @result.ec = (q4 + q13 + q20 + q29 + q33)/ 5.0
+    @result.sv = (q7 + q14 + q22 + q28 + q34)/ 5.0
+    @result.ch = (q8 + q15 + q23 + q32 + q40)/ 5.0
+    @result.ls = (q6 + q16 + q24 + q27 + q39)/ 5.0
     @result.user_id = current_user.id
     @result.save
-
 
     hash = {"tf" => @result.tf, "gm" => @result.gm, "au" => @result.au, "se" => @result.se, "ec" => @result.ec, "sv" => @result.sv, "ch" => @result.ch, "ls" => @result.ls}
     @maiores = hash.max_by(2){|k,v| v}
@@ -90,6 +91,15 @@ class QuizController < ApplicationController
     @anchor1.tipo = @anchorinfo.tipo
     @anchor1.result = @result
     @anchor1.save
+
+    @anchor2 = Anchor.new
+    @anchor2.nome = @anchorinfo2.nome
+    @anchor2.descricao = @anchorinfo2.descricao
+    @anchor2.perfil = @anchorinfo2.perfil
+    @anchor2.perspectiva = @anchorinfo2.perspectiva
+    @anchor2.tipo = @anchorinfo2.tipo
+    @anchor2.result = @result
+    @anchor2.save
 
 
     redirect_to @result
