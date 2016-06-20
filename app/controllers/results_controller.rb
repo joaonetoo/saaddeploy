@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
-
+require 'set'
   # GET /results
   # GET /results.json
   def index
@@ -13,13 +13,14 @@ class ResultsController < ApplicationController
   end
 
   def show_by_date
-    @results = Result.where(data_final: params[:data_final], user_id: params[:user_id]).find_each.to_a
+    @results = Result.where(data_final: params[:data_final]).find_each.to_a
     respond_to do |format|
     format.js {}
     end
   end
 
   def list
+
      if params[:institution_id] == 'todos'
       @users = User.where(type: 'Student').find_each
     else
@@ -113,6 +114,20 @@ class ResultsController < ApplicationController
             @results << result
           end
       end
+
+    @datas = []
+    @datas << @results.first
+    @results.each do |element|
+      @datas.each do |data|
+        if data.data_final == element.data_final
+        # duplicated item
+        else
+        # first appearance
+          @datas << element
+        end
+      end
+    end
+
   end
 
   def search
