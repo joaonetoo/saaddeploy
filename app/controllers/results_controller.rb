@@ -109,9 +109,8 @@ class ResultsController < ApplicationController
 
       @results = []
       @users.each do |user|
-          @result = Result.where(user_id: user.id).first
-          if @result != nil
-            @results << @result
+          user.results.each do |result|
+            @results << result
           end
       end
   end
