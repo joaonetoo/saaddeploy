@@ -12,8 +12,112 @@ class ResultsController < ApplicationController
   def show
   end
 
+  def show_by_date
+    @results = Result.where(data_final: params[:data_final], user_id: params[:user_id]).find_each.to_a
+    respond_to do |format|
+    format.js {}
+    end
+  end
+
+  def list
+     if params[:institution_id] == 'todos'
+      @users = User.where(type: 'Student').find_each
+    else
+      @users = User.where(institution_id: params[:institution_id]).all
+    end
+
+    if params[:campu_id] == 'todos' && params[:institution_id] != 'todos'
+      @campus = Campu.where(institution_id: params[:institution_id]).find_each
+      @centers = []
+      @campus.each do |campus|
+          @centers << Center.where(campu_id: campus.id)
+      end
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.ids)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    elsif params[:institution_id] != 'todos'
+      @campus = Campu.where(id: params[:campu_id]).first
+      @centers = @campus.centers.all
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    end
+
+    if params[:center_id] == 'todos' && params[:campu_id] != 'todos'
+      @centers = Center.where(campu_id: params[:campu_id]).find_each
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    elsif params[:center_id] != 'todos' && params[:center_id] != nil
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id)
+      end
+    end
+
+    if params[:course_id] == 'todos' && params[:center_id] != 'todos'
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id)
+      end
+    elsif params[:course_id] != 'todos' && params[:center_id] != nil
+      @users = User.where(course_id: params[:course_id]).find_each
+    end
+
+    if params[:subject_id] == 'todos' && params[:course_id] != 'todos'
+      @users = User.where(course_id: params[:course_id]).find_each
+    elsif params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          @users << user
+        end
+      end
+    end
+
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @users = []
+      @classroom.users.each do |user|
+        @users << user
+      end
+    end
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @users = []
+      @users << @user
+    end
+
+      @results = []
+      @users.each do |user|
+          @result = Result.where(user_id: user.id).first
+          if @result != nil
+            @results << @result
+          end
+      end
+  end
+
   def search
-    @results = Result.all
+
   end
 
   # GET /results/new
@@ -73,6 +177,6 @@ class ResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
-      params.require(:result).permit(:data_final, :tf, :gm, :au, :se, :ec, :sv, :ch, :ls, :user_id, :quiz_id)
+      params.require(:result).permit(:data_final, :tf, :gm, :au, :se, :ec, :sv, :ch, :ls, :user_id, :quiz_id, :final_date)
     end
 end

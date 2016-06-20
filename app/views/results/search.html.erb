@@ -1,6 +1,6 @@
 <%= javascript_include_tag "application", params[:controller] %>
 <h1>Listando Resultados</h1>
-
+<%= form_tag({ :controller => "results", :action => "list"}, { :id => "form2"}) do |f| %>
 <div class="field">
     <%= label_tag :Instituição %>
     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
@@ -26,42 +26,6 @@
     <%= label_tag :Alunos %>
     <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
+<%= submit_tag "Enviar" %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Data final</th>
-      <th>Tf</th>
-      <th>Gm</th>
-      <th>Au</th>
-      <th>Se</th>
-      <th>Ec</th>
-      <th>Sv</th>
-      <th>Ch</th>
-      <th>Ls</th>
-      <th>Student</th>
-      <th>Quiz</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @results.each do |result| %>
-      <tr>
-        <td><%= result.data_final %></td>
-        <td><%= result.tf %></td>
-        <td><%= result.gm %></td>
-        <td><%= result.au %></td>
-        <td><%= result.se %></td>
-        <td><%= result.ec %></td>
-        <td><%= result.sv %></td>
-        <td><%= result.ch %></td>
-        <td><%= result.ls %></td>
-        <td><%= result.user.nome %></td>
-        <td><%= result.quiz %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>

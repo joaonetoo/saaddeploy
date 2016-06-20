@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :results do
     collection do
       get 'search'
+      post 'list'
+      post 'show_by_date'
     end
   end
   resources :quizzes
