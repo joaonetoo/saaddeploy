@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :anchorinfos
   resources :anchors
-  resources :results
+  resources :results do
+    collection do
+      get 'search'
+    end
+  end
   resources :quizzes
   resources :centers do
     collection do

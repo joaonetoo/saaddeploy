@@ -12,6 +12,10 @@ class ResultsController < ApplicationController
   def show
   end
 
+  def search
+    @results = Result.all
+  end
+
   # GET /results/new
   def new
     @result = Result.new

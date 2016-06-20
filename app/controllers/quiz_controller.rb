@@ -1,4 +1,4 @@
-class QuizController < ApplicationController
+    class QuizController < ApplicationController
   def index
   end
 

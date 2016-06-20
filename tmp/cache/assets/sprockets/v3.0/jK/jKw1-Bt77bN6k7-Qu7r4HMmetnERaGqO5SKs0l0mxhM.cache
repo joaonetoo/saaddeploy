@@ -1,0 +1,7 @@
+I"b(function() {
+  jQuery(function() {
+    return $('#_campu_id').hide();
+  });
+
+}).call(this);
+:ET

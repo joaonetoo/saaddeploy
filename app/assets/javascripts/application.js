@@ -20,4 +20,3 @@
 //= require autocomplete-rails
 //= require dependent-fields
 //= require turbolinks
-//= require_tree .

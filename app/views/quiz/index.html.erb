@@ -1,3 +1,4 @@
+<%= javascript_include_tag "application", params[:controller] %>
 <h1>Quiz#index</h1>
 <h3 id="notice" class="alert"></h3>
 <%= form_tag({ :controller => "quiz", :action => "answer"}, { :id => "myform"}) do |f| %>
