@@ -1,5 +1,16 @@
 $('#list').html('<%= escape_javascript render (@results) %>');
 
+var content = []
+
+<% @media.each_with_index do |(key, value), index| %>
+   //print "key: #{key}, value: #{value}, index: #{index}\n"
+    content += '<tr><td><%= index + 1 %></td><td><%= "#{'%.02f' % value}" %></td><td><%= key%></td></tr>';
+
+<% end %>
+
+
+$('#media').html(content);
+
 $('#container').highcharts({
 
         chart: {
@@ -8,7 +19,7 @@ $('#container').highcharts({
         },
 
         title: {
-            text: 'Ancoras',
+            text: 'Media das Ancoras',
             x: -80
         },
 
@@ -17,8 +28,8 @@ $('#container').highcharts({
         },
 
         xAxis: {
-            categories: ['Tf', 'Gm', 'Au', 'Se',
-                    'Ec', 'Sv', 'Ch', 'Ls'],
+            categories: ['TF', 'GM', 'AU', 'SE',
+                    'EC', 'SV', 'CH', 'LS'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -31,7 +42,7 @@ $('#container').highcharts({
 
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.2f}</b><br/>'
+            pointFormat: '<span style="color:{series.color}">Pontuação: <b>{point.y:,.2f}</b><br/>'
         },
 
         legend: {

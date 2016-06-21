@@ -41,6 +41,8 @@ require 'set'
     @mediaCh = @mediaCh / @results.size.to_f
     @mediaLs = @mediaLs / @results.size.to_f
 
+    @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
+      "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
 
     respond_to do |format|
     format.js {}
