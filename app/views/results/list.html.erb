@@ -1,0 +1,27 @@
+Ancoras
+<% @datas.each do |data| %>
+<%= button_to "#{data.data_final}", show_by_date_results_path(:data_final => data.data_final, :user_id => data.user_id) ,remote: true, :method => :post%>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Data Final</th>
+      <th>Tf</th>
+      <th>Gm</th>
+      <th>Au</th>
+      <th>Se</th>
+      <th>Ec</th>
+      <th>Sv</th>
+      <th>Ch</th>
+      <th>Ls</th>
+      <th>Student</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody  id="list">
+
+  </tbody>
+</table>
+
+<br>
