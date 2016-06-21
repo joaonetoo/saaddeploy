@@ -1,1 +1,50 @@
 $('#list').html('<%= escape_javascript render (@results) %>');
+
+$('#container').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Ancoras',
+            x: -80
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Tf', 'Gm', 'Au', 'Se',
+                    'Ec', 'Sv', 'Ch', 'Ls'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.2f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: 'Pontuação da Ancora',
+            data: [<%= @mediaTf %>, <%= @mediaGm %>, <%= @mediaAu %>, <%= @mediaSe %>, <%= @mediaEc %>, <%= @mediaSv %>, <%= @mediaCh %>, <%= @mediaLs %>],
+            pointPlacement: 'on'
+        }]
+
+});

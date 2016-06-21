@@ -14,6 +14,34 @@ require 'set'
 
   def show_by_date
     @results = Result.where(data_final: params[:data_final]).find_each.to_a
+    @mediaTf = 0.0
+    @mediaGm = 0.0
+    @mediaAu = 0.0
+    @mediaSe = 0.0
+    @mediaEc = 0.0
+    @mediaSv = 0.0
+    @mediaCh = 0.0
+    @mediaLs = 0.0
+    @results.each do |result|
+      @mediaTf = @mediaTf + result.tf
+      @mediaGm = @mediaGm + result.gm
+      @mediaAu = @mediaAu + result.au
+      @mediaSe = @mediaSe + result.se
+      @mediaEc = @mediaEc + result.ec
+      @mediaSv = @mediaSv + result.sv
+      @mediaCh = @mediaCh + result.ch
+      @mediaLs = @mediaLs + result.ls
+    end
+    @mediaTf = @mediaTf / @results.size.to_f
+    @mediaGm = @mediaGm / @results.size.to_f
+    @mediaAu = @mediaAu / @results.size.to_f
+    @mediaSe = @mediaSe / @results.size.to_f
+    @mediaEc = @mediaEc / @results.size.to_f
+    @mediaSv = @mediaSv / @results.size.to_f
+    @mediaCh = @mediaCh / @results.size.to_f
+    @mediaLs = @mediaLs / @results.size.to_f
+
+
     respond_to do |format|
     format.js {}
     end

@@ -9,4 +9,9 @@
     <td><%= result.ch %></td>
     <td><%= result.ls %></td>
     <td><%= result.user.nome %></td>
+    <td>
+    <% result.anchors.each do |anchor|%>
+    <%= anchor.nome %>
+    <% end %>
+    </td>
 </tr>
