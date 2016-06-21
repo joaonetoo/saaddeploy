@@ -92,24 +92,27 @@ require 'set'
       end
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.ids)
+          @users << User.where(course_id: course.ids,  type: 'Student')
       end
+      @users = @users.first.to_a
+
     elsif params[:center_id] != 'todos' && params[:center_id] != nil
       @courses = Course.where(center_id: params[:center_id]).find_each
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.id)
+          @users << User.where(course_id: course.id,  type: 'Student')
       end
+      @users = @users.first.to_a
     end
 
     if params[:course_id] == 'todos' && params[:center_id] != 'todos'
       @courses = Course.where(center_id: params[:center_id]).find_each
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.id)
+          @users << User.where(course_id: course.id,  type:'Student').find_each
       end
     elsif params[:course_id] != 'todos' && params[:center_id] != nil
-      @users = User.where(course_id: params[:course_id]).find_each
+      @users = User.where(course_id: params[:course_id], type: 'Student').find_each
     end
 
     if params[:subject_id] == 'todos' && params[:course_id] != 'todos'
