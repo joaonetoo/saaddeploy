@@ -13,7 +13,14 @@ require 'set'
   end
 
   def show_by_date
-    @results = Result.where(data_final: params[:data_final]).find_each.to_a
+    @resultados = params[:results]
+    @results = []
+    @resultados.each do |result|
+      pre = Result.where(data_final: params[:data_final], id: result).first
+      #if not pre.empty?
+        @results << pre
+      #end
+    end
     @mediaTf = 0.0
     @mediaGm = 0.0
     @mediaAu = 0.0
@@ -43,7 +50,6 @@ require 'set'
 
     @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
       "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
-
     respond_to do |format|
     format.js {}
     end
@@ -111,6 +117,7 @@ require 'set'
       @courses.each do |course|
           @users << User.where(course_id: course.id,  type:'Student').find_each
       end
+      @users = @users.first.to_a
     elsif params[:course_id] != 'todos' && params[:center_id] != nil
       @users = User.where(course_id: params[:course_id], type: 'Student').find_each
     end
@@ -148,18 +155,7 @@ require 'set'
           end
       end
 
-    @datas = []
-    @datas << @results.first
-    @results.each do |element|
-      @datas.each do |data|
-        if data.data_final == element.data_final
-        # duplicated item
-        else
-        # first appearance
-          @datas << element
-        end
-      end
-    end
+    @datas = @results.map(&:data_final).uniq
 
   end
 
