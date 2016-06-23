@@ -3,9 +3,9 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 <div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
-Ancoras
+Ancoras<br>
 <% @datas.each do |data| %>
-<%= button_to "#{data}", show_by_date_results_path(:data_final => data, :results => @results) ,remote: true, :method => :post%>
+<%= link_to "#{data}", show_by_date_results_path(:data_final => data, :results => @results) ,remote: true, :method => :post%><br>
 <% end %>
 
 <table>
