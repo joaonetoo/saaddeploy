@@ -110,4 +110,4 @@ jQuery ->
             $('#_users_id option:first').attr("selected", "selected");
             $('#_users_id').parent().show()
         else
-            $('#_user_id').empty()
+            $('#_users_id').empty()
