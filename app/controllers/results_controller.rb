@@ -17,9 +17,9 @@ require 'set'
     @results = []
     @resultados.each do |result|
       pre = Result.where(data_final: params[:data_final], id: result).first
-      #if not pre.empty?
+      if not pre.nil?
         @results << pre
-      #end
+      end
     end
     @mediaTf = 0.0
     @mediaGm = 0.0
@@ -77,6 +77,8 @@ require 'set'
       @courses.each do |course|
           @users << User.where(course_id: course.ids)
       end
+      @users = @users.first.to_a
+      debugger
     elsif params[:institution_id] != 'todos'
       @campus = Campu.where(id: params[:campu_id]).first
       @centers = @campus.centers.all
@@ -102,6 +104,7 @@ require 'set'
       end
       @users = @users.first.to_a
 
+
     elsif params[:center_id] != 'todos' && params[:center_id] != nil
       @courses = Course.where(center_id: params[:center_id]).find_each
       @users = []
@@ -118,8 +121,9 @@ require 'set'
           @users << User.where(course_id: course.id,  type:'Student').find_each
       end
       @users = @users.first.to_a
-    elsif params[:course_id] != 'todos' && params[:center_id] != nil
+    elsif params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos'
       @users = User.where(course_id: params[:course_id], type: 'Student').find_each
+      @users = @users.first.to_a
     end
 
     if params[:subject_id] == 'todos' && params[:course_id] != 'todos'
@@ -147,7 +151,7 @@ require 'set'
       @users = []
       @users << @user
     end
-
+    debugger
       @results = []
       @users.each do |user|
           user.results.each do |result|

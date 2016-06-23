@@ -9,7 +9,12 @@ jQuery ->
     subjects = $('#_subject_id').html()
     classrooms = $('#_classroom_id').html()
     users = $('#_users_id').html()
-
+    $('#_campu_id').empty()
+    $('#_center_id').empty()
+    $('#_course_id').empty()
+    $('#_subject_id').empty()
+    $('#_classroom_id').empty()
+    $('#_users_id').empty()
     $('#_institution_id').prepend("<option value='todos'>Todas</option>")
     $('#_institution_id option:first').attr("selected", "selected");
     $('#_campu_id').prepend("<option value='todos'>Todos</option>")
