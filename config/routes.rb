@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :subjects do
     collection do
       get 'search'
+      get 'autocomplete_subject_nome'
     end
   end
 

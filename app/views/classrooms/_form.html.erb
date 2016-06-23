@@ -13,8 +13,12 @@
 
   <div class="field">
     <%= f.label :Disciplina %><br>
-    <%= f.text_field :subject_id, data: {autocomplete_source: search_subjects_url}, class: "form-control", :placeholder => "Comece a digitar para auto completar o nome" %>
+     <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id'%>
   </div>
+  <div class="field">
+    <%= f.hidden_field :subject_id %>
+  </div>
+
   <div class="field">
     <%= f.label :turno %><br>
     <%= f.text_field :turno %>

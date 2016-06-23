@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  autocomplete :subject, :nome, :full => true
 
   # GET /subjects
   # GET /subjects.json
@@ -8,7 +9,7 @@ class SubjectsController < ApplicationController
     @courses = Course.all
   end
 
-    def search
+  def search
       @subjects = Subject.order(:nome).where("nome ilike ?", "%#{params[:term]}%")
       render json: @subjects.map{|subject| {:label => subject.nome, :value => subject.id}}
   end
