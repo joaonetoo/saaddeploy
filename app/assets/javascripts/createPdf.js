@@ -10,19 +10,19 @@ var specialElementHandlers = {
 
     $('#cmd').click(function () {
         var doc = new jsPDF('p', 'pt');
-        var res = doc.autoTableHtmlToJson(document.getElementById("tabela_resultados"));
-        doc.autoTable(res.columns, res.data, {margin: {top: 80}});
-        var header = function(data) {
-        doc.setFontSize(18);
-        doc.setTextColor(40);
-        doc.setFontStyle('normal');
-        //doc.addImage(headerImgData, 'JPEG', data.settings.margin.left, 20, 50, 50);
-        doc.text("Ancoras", data.settings.margin.left, 50);
-  };
+        var elem = document.getElementById('tabela_resultados');
+        var data = doc.autoTableHtmlToJson(elem);
 
-
-
-  doc.save("table.pdf");
+        var opts = {
+            beforePageContent: function (data) {
+                doc.text(20, 20, 'Nome');
+            },
+            afterPageContent: function (data) {
+                doc.text(20, doc.autoTableEndPosY() + 20, 'Ancora1');
+            }
+        };
+        doc.autoTable(data.columns, data.rows, opts);
+        doc.save("table.pdf");
 
     });
 
