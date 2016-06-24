@@ -70,7 +70,7 @@ $(document).ready(function () {
     // This must be a hyperlink
     $(".export").on('click', function (event) {
         // CSV
-        exportTableToCSV.apply(this, [$('#tabela_resultados'), 'export.csv']);
+        exportTableToCSV.apply(this, [$('#dados'), 'export.csv']);
 
         // IF CSV, don't do event.preventDefault() or return false
         // We actually need this to be a typical hyperlink
