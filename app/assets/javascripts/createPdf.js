@@ -29,6 +29,7 @@
                 doc.text(20, 100, splitDescricao2);
                 doc.text(20, 300, splitPerfil2);
                 doc.text(20, 500, splitPerspectiva2);
+
             }
         }
         doc.autoTable(data.columns, data.rows, opts);
