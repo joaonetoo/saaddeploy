@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
 require 'set'
+require 'csv'
   # GET /results
   # GET /results.json
   def index

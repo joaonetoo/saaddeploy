@@ -14,8 +14,8 @@
     <%= anchor.nome %>
     <% end %>
     <% if @results.size == 1 %>
-    <button type="button" id="cmd" onclick="geraPdf('<%= @nomeUsuario%>','<%= @ancora1Nome%>', '<%= @ancora1Descricao%>', '<%= @ancora1Perfil%>', '<%= @ancora1Perspectiva%>', '<%= @ancora2Nome%>', '<%= @ancora2Descricao%>',
-    '<%= @ancora2Perfil%>', '<%= @ancora2Perspectiva%>')">Gerar PDF</button>
+    <a id="cmd" onclick="geraPdf('<%= @nomeUsuario%>','<%= @ancora1Nome%>', '<%= @ancora1Descricao%>', '<%= @ancora1Perfil%>', '<%= @ancora1Perspectiva%>', '<%= @ancora2Nome%>', '<%= @ancora2Descricao%>',
+    '<%= @ancora2Perfil%>', '<%= @ancora2Perspectiva%>')">Gerar PDF</a>
     <% end %>
     </td>
 </tr>
