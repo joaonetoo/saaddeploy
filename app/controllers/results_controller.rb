@@ -50,6 +50,29 @@ require 'set'
 
     @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
       "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
+    if @results.size == 1
+      if @results.first.anchors[0] != nil
+         @ancora1 = @results.first.anchors[0]
+         @ancora1Nome = @ancora1.nome
+         @ancora1Descricao = @ancora1.descricao.gsub("\n", '')
+         @ancora1Perspectiva = @ancora1.perspectiva.gsub("\n", '')
+         @ancora1Perfil = @ancora1.perfil.gsub("\n", '')
+      end
+      if @results.first.anchors[1] != nil
+       @ancora2 = @results.first.anchors[1]
+       @ancora2Nome = @ancora2.nome
+       @ancora2Descricao = @ancora2.descricao.gsub("\n", '')
+       @ancora2Perspectiva = @ancora2.perspectiva.gsub("\n", '')
+       @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
+
+      end
+      @nomeUsuario = @results.first.user.nome
+
+
+
+    end
+
+
     respond_to do |format|
     format.js {}
     end

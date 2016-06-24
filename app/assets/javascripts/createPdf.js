@@ -1,29 +1,38 @@
-$(document).ready(function(){
-
-
-// We'll make our own renderer to skip this editor
-var specialElementHandlers = {
-    '#editor': function(element, renderer){
-        return true;
-    }
-};
-
-    $('#cmd').click(function () {
+    function geraPdf(nomeUsuario,ancora1Nome, ancora1Descricao, ancora1Perfil, ancora1Perspectiva, ancora2Nome, ancora2Descricao, ancora2Perfil, ancora2Perspectiva) {
+        var specialElementHandlers = {
+        '#editor': function(element, renderer){
+            return true;
+        }
+        }
         var doc = new jsPDF('p', 'pt');
         var elem = document.getElementById('tabela_resultados');
         var data = doc.autoTableHtmlToJson(elem);
+        var splitDescricao1 = doc.splitTextToSize(ancora1Descricao, 800);
+        var splitPerfil1 = doc.splitTextToSize(ancora1Perfil, 800);
+        var splitPerspectiva1 = doc.splitTextToSize(ancora1Perspectiva, 800);
+
+        var splitDescricao2 = doc.splitTextToSize(ancora2Descricao, 800);
+        var splitPerfil2 = doc.splitTextToSize(ancora2Perfil, 800);
+        var splitPerspectiva2 = doc.splitTextToSize(ancora2Perspectiva, 800);
 
         var opts = {
             beforePageContent: function (data) {
-                doc.text(20, 20, 'Nome');
+                doc.text(20, 20, nomeUsuario);
             },
             afterPageContent: function (data) {
-                doc.text(20, doc.autoTableEndPosY() + 20, 'Ancora1');
+                doc.text(20, doc.autoTableEndPosY() + 30, ancora1Nome);
+                doc.text(20, doc.autoTableEndPosY() + 60, splitDescricao1);
+                doc.text(20, doc.autoTableEndPosY() + 200, splitPerfil1);
+                doc.text(20, doc.autoTableEndPosY() + 300, splitPerspectiva1);
+                doc.addPage();
+                doc.text(20, 40, ancora2Nome);
+                doc.text(20, 100, splitDescricao2);
+                doc.text(20, 300, splitPerfil2);
+                doc.text(20, 500, splitPerspectiva2);
             }
-        };
+        }
         doc.autoTable(data.columns, data.rows, opts);
         doc.save("table.pdf");
 
-    });
+        }
 
-});

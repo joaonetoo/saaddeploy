@@ -13,5 +13,7 @@
     <% result.anchors.each do |anchor|%>
     <%= anchor.nome %>
     <% end %>
+    <button type="button" id="cmd" onclick="geraPdf('<%= @nomeUsuario%>','<%= @ancora1Nome%>', '<%= @ancora1Descricao%>', '<%= @ancora1Perfil%>', '<%= @ancora1Perspectiva%>', '<%= @ancora2Nome%>', '<%= @ancora2Descricao%>',
+    '<%= @ancora2Perfil%>', '<%= @ancora2Perspectiva%>')">Gerar PDF</button>
     </td>
 </tr>
