@@ -66,7 +66,7 @@ require 'set'
        @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
 
       end
-      @nomeUsuario = @results.first.user.nome
+      @nomeUsuario = @results.first.user.nome.capitalize
 
 
 
