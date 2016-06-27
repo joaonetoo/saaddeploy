@@ -9,12 +9,29 @@ jQuery ->
     subjects = $('#_subject_id').html()
     classrooms = $('#_classroom_id').html()
     users = $('#_users_id').html()
+
+    campus2 = $('#_campu2_id').html()
+    centers2 = $('#_center2_id').html()
+    courses2 = $('#_course2_id').html()
+    subjects2 = $('#_subject2_id').html()
+    classrooms2 = $('#_classroom2_id').html()
+    users2 = $('#_users2_id').html()
+
     $('#_campu_id').empty()
     $('#_center_id').empty()
     $('#_course_id').empty()
     $('#_subject_id').empty()
     $('#_classroom_id').empty()
     $('#_users_id').empty()
+
+    $('#_campu2_id').empty()
+    $('#_center2_id').empty()
+    $('#_course2_id').empty()
+    $('#_subject2_id').empty()
+    $('#_classroom2_id').empty()
+    $('#_users2_id').empty()
+
+
     $('#_institution_id').prepend("<option value='todos'>Todas</option>")
     $('#_institution_id option:first').attr("selected", "selected");
     $('#_campu_id').prepend("<option value='todos'>Todos</option>")
@@ -29,6 +46,21 @@ jQuery ->
     $('#_classroom_id option:first').attr("selected", "selected");
     $('#_users_id').prepend("<option value='todos'>Todos</option>")
     $('#_users_id option:first').attr("selected", "selected");
+
+    $('#_institution2_id').prepend("<option value='todos'>Todas</option>")
+    $('#_institution2_id option:first').attr("selected", "selected");
+    $('#_campu2_id').prepend("<option value='todos'>Todos</option>")
+    $('#_campu2_id option:first').attr("selected", "selected");
+    $('#_center2_id').prepend("<option value='todos'>Todos</option>")
+    $('#_center2_id option:first').attr("selected", "selected");
+    $('#_course2_id').prepend("<option value='todos'>Todos</option>")
+    $('#_course2_id option:first').attr("selected", "selected");
+    $('#_subject2_id').prepend("<option value='todos'>Todas</option>")
+    $('#_subject2_id option:first').attr("selected", "selected");
+    $('#_classroom2_id').prepend("<option value='todos'>Todas</option>")
+    $('#_classroom2_id option:first').attr("selected", "selected");
+    $('#_users2_id').prepend("<option value='todos'>Todos</option>")
+    $('#_users2_id option:first').attr("selected", "selected");
 
     $('#_institution_id').on "change", ->
         institution = $('#_institution_id option:selected').text()
@@ -111,3 +143,86 @@ jQuery ->
             $('#_users_id').parent().show()
         else
             $('#_users_id').empty()
+
+
+    $('#_institution2_id').on "change", ->
+        institution2 = $('#_institution2_id option:selected').text()
+        options2 = $(campus2).filter("optgroup[label='#{institution2}']").html()
+        if options2
+            $('#_campu2_id').html(options2)
+            $('#_campu2_id').prepend("<option value='todos'>Todos</option>")
+            $('#_campu2_id option:first').attr("selected", "selected");
+            $('#_campu2_id').parent().show()
+        else
+            $('#_campu2_id').empty()
+            $('#_center2_id').empty()
+            $('#_course2_id').empty()
+            $('#_subject2_id').empty()
+            $('#_classroom2_id').empty()
+            $('#_users2_id').empty()
+
+
+    $('#_campu2_id').on "change", ->
+        campu2 = $('#_campu2_id option:selected').text()
+        options2 = $(centers2).filter("optgroup[label='#{campu2}']").html()
+        if options2
+            $('#_center2_id').html(options2)
+            $('#_center2_id').prepend("<option value='todos'>Todos</option>")
+            $('#_center2_id option:first').attr("selected", "selected");
+            $('#_center2_id').parent().show()
+        else
+            $('#_center2_id').empty()
+            $('#_course2_id').empty()
+            $('#_subject2_id').empty()
+            $('#_classroom2_id').empty()
+            $('#_users2_id').empty()
+
+    $('#_center2_id').on "change", ->
+        center2 = $('#_center2_id option:selected').text()
+        options2 = $(courses2).filter("optgroup[label='#{center2}']").html()
+        if options2
+            $('#_course2_id').html(options2)
+            $('#_course2_id').prepend("<option value='todos'>Todos</option>")
+            $('#_course2_id option:first').attr("selected", "selected");
+            $('#_course2_id').parent().show()
+        else
+            $('#_course2_id').empty()
+            $('#_subject2_id').empty()
+            $('#_classroom2_id').empty()
+            $('#_users2_id').empty()
+
+    $('#_course2_id').on "change", ->
+        course2 = $('#_course2_id option:selected').text()
+        options2 = $(subjects2).filter("optgroup[label='#{course2}']").html()
+        if options2
+            $('#_subject2_id').html(options2)
+            $('#_subject2_id').prepend("<option value='todos'>Todas</option>")
+            $('#_subject2_id option:first').attr("selected", "selected");
+            $('#_subject2_id').parent().show()
+        else
+            $('#_subject2_id').empty()
+            $('#_classroom2_id').empty()
+            $('#_users2_id').empty()
+
+    $('#_subject2_id').on "change", ->
+        subject2 = $('#_subject2_id option:selected').text()
+        options2 = $(classrooms2).filter("optgroup[label='#{subject2}']").html()
+        if options2
+            $('#_classroom2_id').html(options2)
+            $('#_classroom2_id').prepend("<option value='todos'>Todas</option>")
+            $('#_classroom2_id option:first').attr("selected", "selected");
+            $('#_classroom2_id').parent().show()
+        else
+            $('#_classroom2_id').empty()
+            $('#_users2_id').empty()
+
+      $('#_classroom2_id').on "change", ->
+        classroom2 = $('#_classroom2_id option:selected').text()
+        options2 = $(users2).filter("optgroup[label='#{classroom2}']").html()
+        if options2
+            $('#_users2_id').html(options2)
+            $('#_users2_id').prepend("<option value='todos'>Todos</option>")
+            $('#_users2_id option:first').attr("selected", "selected");
+            $('#_users2_id').parent().show()
+        else
+            $('#_users2_id').empty()

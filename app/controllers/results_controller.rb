@@ -190,6 +190,10 @@ require 'csv'
 
   end
 
+  def analytics
+
+  end
+
   # GET /results/new
   def new
     @result = Result.new
