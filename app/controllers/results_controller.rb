@@ -13,6 +13,126 @@ require 'csv'
   def show
   end
 
+  def compare_by_date
+    @resultados = params[:results]
+    @results = []
+    @resultados.each do |result|
+      pre = Result.where(data_final: params[:data_final], id: result).first
+      if not pre.nil?
+        @results << pre
+      end
+    end
+    @mediaTf = 0.0
+    @mediaGm = 0.0
+    @mediaAu = 0.0
+    @mediaSe = 0.0
+    @mediaEc = 0.0
+    @mediaSv = 0.0
+    @mediaCh = 0.0
+    @mediaLs = 0.0
+    @results.each do |result|
+      @mediaTf = @mediaTf + result.tf
+      @mediaGm = @mediaGm + result.gm
+      @mediaAu = @mediaAu + result.au
+      @mediaSe = @mediaSe + result.se
+      @mediaEc = @mediaEc + result.ec
+      @mediaSv = @mediaSv + result.sv
+      @mediaCh = @mediaCh + result.ch
+      @mediaLs = @mediaLs + result.ls
+    end
+    @mediaTf = @mediaTf / @results.size.to_f
+    @mediaGm = @mediaGm / @results.size.to_f
+    @mediaAu = @mediaAu / @results.size.to_f
+    @mediaSe = @mediaSe / @results.size.to_f
+    @mediaEc = @mediaEc / @results.size.to_f
+    @mediaSv = @mediaSv / @results.size.to_f
+    @mediaCh = @mediaCh / @results.size.to_f
+    @mediaLs = @mediaLs / @results.size.to_f
+
+    @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
+      "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
+    if @results.size == 1
+      if @results.first.anchors[0] != nil
+         @ancora1 = @results.first.anchors[0]
+         @ancora1Nome = @ancora1.nome
+         @ancora1Descricao = @ancora1.descricao.gsub("\n", '')
+         @ancora1Perspectiva = @ancora1.perspectiva.gsub("\n", '')
+         @ancora1Perfil = @ancora1.perfil.gsub("\n", '')
+      end
+      if @results.first.anchors[1] != nil
+       @ancora2 = @results.first.anchors[1]
+       @ancora2Nome = @ancora2.nome
+       @ancora2Descricao = @ancora2.descricao.gsub("\n", '')
+       @ancora2Perspectiva = @ancora2.perspectiva.gsub("\n", '')
+       @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
+
+      end
+      @nomeUsuario = @results.first.user.nome.capitalize
+
+    end
+
+    #seleção 2
+
+    @resultados2 = params[:results2]
+    @results2 = []
+    @resultados2.each do |result|
+      pre = Result.where(data_final: params[:data_final2], id: result).first
+      if not pre.nil?
+        @results2 << pre
+      end
+    end
+    @mediaTf2 = 0.0
+    @mediaGm2 = 0.0
+    @mediaAu2 = 0.0
+    @mediaSe2 = 0.0
+    @mediaEc2 = 0.0
+    @mediaSv2 = 0.0
+    @mediaCh2 = 0.0
+    @mediaLs2 = 0.0
+    @results2.each do |result|
+      @mediaTf2 = @mediaTf2+ result.tf
+      @mediaGm2 = @mediaGm2 + result.gm
+      @mediaAu2 = @mediaAu2 + result.au
+      @mediaSe2 = @mediaSe2 + result.se
+      @mediaEc2 = @mediaEc2 + result.ec
+      @mediaSv2 = @mediaSv2 + result.sv
+      @mediaCh2 = @mediaCh2 + result.ch
+      @mediaLs2 = @mediaLs2 + result.ls
+    end
+    @mediaTf2 = @mediaTf2 / @results2.size.to_f
+    @mediaGm2 = @mediaGm2 / @results2.size.to_f
+    @mediaAu2 = @mediaAu2 / @results2.size.to_f
+    @mediaSe2 = @mediaSe2 / @results2.size.to_f
+    @mediaEc2 = @mediaEc2 / @results2.size.to_f
+    @mediaSv2 = @mediaSv2 / @results2.size.to_f
+    @mediaCh2 = @mediaCh2 / @results2.size.to_f
+    @mediaLs2 = @mediaLs2 / @results2.size.to_f
+
+    @media2 = {"Competência Técnica e Funcional" => @mediaTf2, "Competência Administrativa Geral" => @mediaGm2, "Autonomia e Independência" => @mediaAu2,
+      "Segurança e Estabilidade" => @mediaSe2, "Criatividade Empresarial" => @mediaEc2, "Dedicação a uma Causa" => @mediaSv2, "Desafio Puro" => @mediaCh2, "Estilo de Vida" => @mediaLs2 }.sort_by{ |k, v| v }.reverse.to_h
+    if @results2.size == 1
+      if @results2.first.anchors[0] != nil
+         @ancora12 = @results2.first.anchors[0]
+         @ancora1Nome2 = @ancora12.nome
+         @ancora1Descricao2 = @ancora12.descricao.gsub("\n", '')
+         @ancora1Perspectiva2 = @ancora12.perspectiva.gsub("\n", '')
+         @ancora1Perfil2 = @ancora12.perfil.gsub("\n", '')
+      end
+      if @results2.first.anchors[1] != nil
+       @ancora22 = @results2.first.anchors[1]
+       @ancora2Nome2 = @ancora22.nome
+       @ancora2Descricao2 = @ancora22.descricao.gsub("\n", '')
+       @ancora2Perspectiva2 = @ancora22.perspectiva.gsub("\n", '')
+       @ancora2Perfil2 = @ancora22.perfil.gsub("\n", '')
+
+      end
+      @nomeUsuario2 = @results2.first.user.nome.capitalize
+
+    end
+
+
+  end
+
   def show_by_date
     @resultados = params[:results]
     @results = []
@@ -404,7 +524,6 @@ require 'csv'
       end
 
     @datas2 = @results2.map(&:data_final).uniq
-    debugger
   end
 
   # GET /results/new

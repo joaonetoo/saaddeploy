@@ -1,0 +1,79 @@
+$('#list').html('<%= escape_javascript render (@results) %>');
+
+var content = []
+
+<% @media.each_with_index do |(key, value), index| %>
+   //print "key: #{key}, value: #{value}, index: #{index}\n"
+    content += '<tr><td><%= index + 1 %></td><td><%= "#{'%.02f' % value}" %></td><td><%= key%></td></tr>';
+
+<% end %>
+
+
+$('#media').html(content);
+
+
+$('#list2').html('<%= escape_javascript render (@results2) %>');
+
+var content = []
+
+<% @media2.each_with_index do |(key, value), index| %>
+   //print "key: #{key}, value: #{value}, index: #{index}\n"
+    content += '<tr><td><%= index + 1 %></td><td><%= "#{'%.02f' % value}" %></td><td><%= key%></td></tr>';
+
+<% end %>
+
+
+$('#media2').html(content);
+
+$('#container').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Media das Ancoras',
+            x: -80
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['TF', 'GM', 'AU', 'SE',
+                    'EC', 'SV', 'CH', 'LS'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">Pontuação: <b>{point.y:,.2f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: 'Seleção 1',
+            data: [<%= @mediaTf %>, <%= @mediaGm %>, <%= @mediaAu %>, <%= @mediaSe %>, <%= @mediaEc %>, <%= @mediaSv %>, <%= @mediaCh %>, <%= @mediaLs %>],
+            pointPlacement: 'on'
+        }, {
+            name: 'Seleção 2',
+            data: [<%= @mediaTf2 %>, <%= @mediaGm2 %>, <%= @mediaAu2 %>, <%= @mediaSe2 %>, <%= @mediaEc2 %>, <%= @mediaSv2 %>, <%= @mediaCh2 %>, <%= @mediaLs2 %>],
+            pointPlacement: 'on'
+        }]
+
+});
