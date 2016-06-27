@@ -194,6 +194,219 @@ require 'csv'
 
   end
 
+  def analytic_list
+
+     if params[:institution_id] == 'todos'
+      @users = User.where(type: 'Student').find_each
+    else
+      @users = User.where(institution_id: params[:institution_id]).all
+    end
+
+    if params[:campu_id] == 'todos' && params[:institution_id] != 'todos'
+      @campus = Campu.where(institution_id: params[:institution_id]).find_each
+      @centers = []
+      @campus.each do |campus|
+          @centers << Center.where(campu_id: campus.id)
+      end
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.ids)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+      @users = @users.first.to_a
+    elsif params[:institution_id] != 'todos'
+      @campus = Campu.where(id: params[:campu_id]).first
+      @centers = @campus.centers.all
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids)
+      end
+    end
+
+    if params[:center_id] == 'todos' && params[:campu_id] != 'todos'
+      @centers = Center.where(campu_id: params[:campu_id]).find_each
+      @courses = []
+      @centers.each do |center|
+          @courses << Course.where(center_id: center.id)
+      end
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.ids,  type: 'Student')
+      end
+      @users = @users.first.to_a
+
+
+    elsif params[:center_id] != 'todos' && params[:center_id] != nil
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id,  type: 'Student')
+      end
+      @users = @users.first.to_a
+    end
+
+    if params[:course_id] == 'todos' && params[:center_id] != 'todos'
+      @courses = Course.where(center_id: params[:center_id]).find_each
+      @users = []
+      @courses.each do |course|
+          @users << User.where(course_id: course.id,  type:'Student').find_each
+      end
+      @users = @users.first.to_a
+    elsif params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos' && params[:subject_id] != 'todos' && params[:classroom_id] != 'todos' && params[:users_id] != nil && params[:users_id] != 'todos'
+      @users = User.where(course_id: params[:course_id], type: 'Student').find_each
+      @users = @users.to_a
+    end
+
+    if params[:subject_id] == 'todos' && params[:course_id] != 'todos'
+      @users = User.where(course_id: params[:course_id]).find_each
+    elsif params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          @users << user
+        end
+      end
+    end
+
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @users = []
+      @classroom.users.each do |user|
+        @users << user
+      end
+    end
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @users = []
+      @users << @user
+    end
+
+      @results = []
+      @users.each do |user|
+          user.results.each do |result|
+            @results << result
+          end
+      end
+
+    @datas = @results.map(&:data_final).uniq
+
+
+    #selecao2
+
+    if params[:institution2_id] == 'todos'
+      @users2 = User.where(type: 'Student').find_each
+    else
+      @users2 = User.where(institution_id: params[:institution2_id]).all
+    end
+
+    if params[:campu2_id] == 'todos' && params[:institution2_id] != 'todos'
+      @campus2 = Campu.where(institution_id: params[:institution2_id]).find_each
+      @centers2 = []
+      @campus2.each do |campus|
+          @centers2 << Center.where(campu_id: campus.id)
+    end
+      @courses2 = []
+      @centers2.each do |center|
+          @courses2 << Course.where(center_id: center.ids)
+    end
+      @users2 = []
+      @courses2.each do |course|
+          @users2 << User.where(course_id: course.ids)
+      end
+      @users2 = @users2.first.to_a
+    elsif params[:institution2_id] != 'todos'
+      @campus2 = Campu.where(id: params[:campu2_id]).first
+      @centers2 = @campus2.centers.all
+      @courses2 = []
+      @centers2.each do |center|
+          @courses2 << Course.where(center_id: center.id)
+      end
+      @users2 = []
+      @courses2.each do |course|
+          @users2 << User.where(course_id: course.ids)
+      end
+    end
+
+    if params[:center2_id] == 'todos' && params[:campu2_id] != 'todos'
+      @centers2 = Center.where(campu_id: params[:campu2_id]).find_each
+      @courses2 = []
+      @centers2.each do |center|
+          @courses2 << Course.where(center_id: center.id)
+    end
+      @users2 = []
+      @courses2.each do |course|
+          @users2 << User.where(course_id: course.ids,  type: 'Student')
+      end
+      @users2 = @users2.first.to_a
+
+
+    elsif params[:center2_id] != 'todos' && params[:center2_id] != nil
+      @courses2 = Course.where(center_id: params[:center2_id]).find_each
+      @users2 = []
+      @courses2.each do |course|
+          @users2 << User.where(course_id: course.id,  type: 'Student')
+      end
+      @users2 = @users2.first.to_a
+    end
+
+    if params[:course2_id] == 'todos' && params[:center2_id] != 'todos'
+      @courses2 = Course.where(center_id: params[:center2_id]).find_each
+      @users2 = []
+      @courses2.each do |course|
+          @users2 << User.where(course_id: course.id,  type:'Student').find_each
+      end
+      @users2 = @users2.first.to_a
+    elsif params[:course2_id] != 'todos' && params[:center2_id] != nil && params[:center2_id] != 'todos' && params[:subject2_id] != 'todos' && params[:classroom2_id] != 'todos' && params[:users2_id] != nil && params[:users2_id] != 'todos'
+      @users2 = User.where(course_id: params[:course2_id], type: 'Student').find_each
+      @users2 = @users2.to_a
+    end
+
+    if params[:subject2_id] == 'todos' && params[:course2_id] != 'todos'
+      @users2 = User.where(course_id: params[:course2_id]).find_each
+    elsif params[:subject2_id] != 'todos' && params[:subject2_id] != nil
+      @classrooms2 = Classroom.where(subject_id: params[:subject2_id]).find_each
+      @users2 = []
+      @classrooms2.each do |classroom|
+        classroom2.users.each do |user|
+          @users2 << user
+        end
+      end
+    end
+
+    if params[:classroom2_id] != 'todos' && params[:classroom2_id] != nil
+      @classroom2 = Classroom.where(id: params[:classroom2_id]).first
+      @users2 = []
+      @classroom2.users.each do |user|
+        @users2 << user
+      end
+    end
+
+    if params[:users2_id] != 'todos' && params[:users2_id] != nil
+      @user2 = User.where(id: params[:users2_id]).first
+      @users2 = []
+      @users2 << @user2
+    end
+
+      @results2 = []
+      @users2.each do |user|
+          user.results.each do |result|
+            @results2 << result
+          end
+      end
+
+    @datas2 = @results2.map(&:data_final).uniq
+    debugger
+  end
+
   # GET /results/new
   def new
     @result = Result.new

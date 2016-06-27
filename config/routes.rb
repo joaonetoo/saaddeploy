@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'list'
       post 'show_by_date'
       get 'analytics'
+      post 'analytic_list'
     end
   end
   resources :quizzes
