@@ -68,7 +68,7 @@ $(document).ready(function () {
     }
 
     // This must be a hyperlink
-    $(".export").on('click', function (event) {
+    $("#export").on('click', function (event) {
         // CSV
         exportTableToCSV.apply(this, [$('#dados'), 'export.csv']);
 
