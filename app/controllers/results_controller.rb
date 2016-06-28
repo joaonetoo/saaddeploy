@@ -14,6 +14,8 @@ require 'csv'
   end
 
   def compare_by_date
+    @selecao = params[:selecao]
+    @selecao2 = params[:selecao2]
     @resultados = params[:results]
     @results = []
     @resultados.each do |result|
@@ -381,8 +383,8 @@ require 'csv'
       end
       @users = @users.first.to_a
     end
-#debugger
-    if params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos' && params[:subject_id] != 'todos' && params[:classroom_id] != 'todos' && params[:users_id] != nil && params[:users_id] != 'todos'
+
+    if params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos'
       @users = User.where(course_id: params[:course_id], type: 'Student').find_each
       @users = @users.to_a
       @course = Course.where(id: params[:course_id]).first
@@ -431,20 +433,25 @@ require 'csv'
 
     if params[:institution2_id] == 'todos'
       @users2 = User.where(type: 'Student').find_each
+      @selecao2 = "todos os institutos"
     else
       @users2 = User.where(institution_id: params[:institution2_id]).all
+      @institution2 = Institution.where(id: params[:institution2_id]).first
+      @selecao2 = @institution2.nome
     end
 
     if params[:campu2_id] == 'todos' && params[:institution2_id] != 'todos'
       @campus2 = Campu.where(institution_id: params[:institution2_id]).find_each
+      @institution2 = Institution.where(id: params[:institution2_id]).first
+      @selecao2 = @institution2.nome
       @centers2 = []
       @campus2.each do |campus|
           @centers2 << Center.where(campu_id: campus.id)
-    end
+      end
       @courses2 = []
       @centers2.each do |center|
           @courses2 << Course.where(center_id: center.ids)
-    end
+      end
       @users2 = []
       @courses2.each do |course|
           @users2 << User.where(course_id: course.ids)
@@ -452,6 +459,7 @@ require 'csv'
       @users2 = @users2.first.to_a
     elsif params[:institution2_id] != 'todos'
       @campus2 = Campu.where(id: params[:campu2_id]).first
+      @selecao2 = @campus2.name
       @centers2 = @campus2.centers.all
       @courses2 = []
       @centers2.each do |center|
@@ -465,10 +473,12 @@ require 'csv'
 
     if params[:center2_id] == 'todos' && params[:campu2_id] != 'todos'
       @centers2 = Center.where(campu_id: params[:campu2_id]).find_each
+      @campus2 = Campu.where(id: params[:campu2_id]).first
+      @selecao2 = @campus2.name
       @courses2 = []
       @centers2.each do |center|
           @courses2 << Course.where(center_id: center.id)
-    end
+      end
       @users2 = []
       @courses2.each do |course|
           @users2 << User.where(course_id: course.ids,  type: 'Student')
@@ -477,6 +487,8 @@ require 'csv'
 
 
     elsif params[:center2_id] != 'todos' && params[:center2_id] != nil
+      @center2 = Center.where(campu_id: params[:campu2_id]).first
+      @selecao2 = @center2.name
       @courses2 = Course.where(center_id: params[:center2_id]).find_each
       @users2 = []
       @courses2.each do |course|
@@ -485,21 +497,14 @@ require 'csv'
       @users2 = @users2.first.to_a
     end
 
-    if params[:course2_id] == 'todos' && params[:center2_id] != 'todos'
-      @courses2 = Course.where(center_id: params[:center2_id]).find_each
-      @users2 = []
-      @courses2.each do |course|
-          @users2 << User.where(course_id: course.id,  type:'Student').find_each
-      end
-      @users2 = @users2.first.to_a
-    elsif params[:course2_id] != 'todos' && params[:center2_id] != nil && params[:center2_id] != 'todos' && params[:subject2_id] != 'todos' && params[:classroom2_id] != 'todos' && params[:users2_id] != nil && params[:users2_id] != 'todos'
+    if params[:course2_id] != 'todos' && params[:center2_id] != nil && params[:center2_id] != 'todos'
       @users2 = User.where(course_id: params[:course2_id], type: 'Student').find_each
       @users2 = @users2.to_a
+      @course2 = Course.where(id: params[:course2_id]).first
+      @selecao2 = @course2.nome
     end
 
-    if params[:subject2_id] == 'todos' && params[:course2_id] != 'todos'
-      @users2 = User.where(course_id: params[:course2_id]).find_each
-    elsif params[:subject2_id] != 'todos' && params[:subject2_id] != nil
+    if params[:subject2_id] != 'todos' && params[:subject2_id] != nil
       @classrooms2 = Classroom.where(subject_id: params[:subject2_id]).find_each
       @users2 = []
       @classrooms2.each do |classroom|
@@ -507,10 +512,13 @@ require 'csv'
           @users2 << user
         end
       end
+      @subject2 = Subject.where(id: params[:subject2_id]).first
+      @selecao2 = @subject2.nome
     end
 
     if params[:classroom2_id] != 'todos' && params[:classroom2_id] != nil
       @classroom2 = Classroom.where(id: params[:classroom2_id]).first
+      @selecao2 = "turma " + @classroom2.codigo
       @users2 = []
       @classroom2.users.each do |user|
         @users2 << user
@@ -521,6 +529,7 @@ require 'csv'
       @user2 = User.where(id: params[:users2_id]).first
       @users2 = []
       @users2 << @user2
+      @selecao2 = @users2.first.nome
     end
 
       @results2 = []

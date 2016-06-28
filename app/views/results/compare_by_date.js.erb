@@ -42,8 +42,8 @@ $('#container').highcharts({
         },
 
         xAxis: {
-            categories: ['TF', 'GM', 'AU', 'SE',
-                    'EC', 'SV', 'CH', 'LS'],
+            categories: ['Competência Técnica e Funcional', 'Competência Administrativa Geral', 'Autonomia e Independência', 'Segurança e Estabilidade',
+                    'Criatividade Empresarial', 'Dedicação a uma Causa', 'Desafio Puro', 'Estilo de Vida'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -67,11 +67,11 @@ $('#container').highcharts({
         },
 
         series: [{
-            name: 'Seleção 1',
+            name: '<%= @selecao %>',
             data: [<%= @mediaTf %>, <%= @mediaGm %>, <%= @mediaAu %>, <%= @mediaSe %>, <%= @mediaEc %>, <%= @mediaSv %>, <%= @mediaCh %>, <%= @mediaLs %>],
             pointPlacement: 'on'
         }, {
-            name: 'Seleção 2',
+            name: '<%= @selecao2 %>',
             data: [<%= @mediaTf2 %>, <%= @mediaGm2 %>, <%= @mediaAu2 %>, <%= @mediaSe2 %>, <%= @mediaEc2 %>, <%= @mediaSv2 %>, <%= @mediaCh2 %>, <%= @mediaLs2 %>],
             pointPlacement: 'on'
         }]
