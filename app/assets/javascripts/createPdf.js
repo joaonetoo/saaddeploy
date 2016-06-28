@@ -36,4 +36,3 @@
         doc.save("table.pdf");
 
         }
-
