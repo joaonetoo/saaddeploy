@@ -7,13 +7,14 @@
         var doc = new jsPDF('p', 'pt');
         var elem = document.getElementById('tabela_resultados');
         var data = doc.autoTableHtmlToJson(elem);
-        var splitDescricao1 = doc.splitTextToSize(ancora1Descricao, 800);
-        var splitPerfil1 = doc.splitTextToSize(ancora1Perfil, 800);
-        var splitPerspectiva1 = doc.splitTextToSize(ancora1Perspectiva, 800);
 
-        var splitDescricao2 = doc.splitTextToSize(ancora2Descricao, 800);
-        var splitPerfil2 = doc.splitTextToSize(ancora2Perfil, 800);
-        var splitPerspectiva2 = doc.splitTextToSize(ancora2Perspectiva, 800);
+
+        var ancora1text = ancora1Descricao + '\n\n\n' + perfilTitulo + '\n\n\n' + ancora1Perfil + '\n\n\n' + ancora1Perspectiva;
+        var text1 = doc.splitTextToSize(ancora1text, 900);
+
+        var ancora2text = ancora2Descricao + '\n\n\n' + ancora2Perfil + '\n\n\n' + ancora2Perspectiva;
+        var text2 = doc.splitTextToSize(ancora2text, 900);
+
 
         var opts = {
             beforePageContent: function (data) {
@@ -23,24 +24,33 @@
                 doc.setFontType("bold");
                 doc.setFontSize(14);
                 doc.text(text, xOffset, 20);
-                var dim = doc.getTextDimensions(text);
-                console.log(dim);
             },
             afterPageContent: function (data) {
-                var ancora1Text = "1.0 " + ancora1Nome, xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(ancora1Nome) * doc.internal.getFontSize() / 2);
-                doc.text(ancora1Text, xOffset, doc.autoTableEndPosY() + 30);
-
-                doc.text(20, doc.autoTableEndPosY() + 60, splitDescricao1);
-                doc.text(20, doc.autoTableEndPosY() + 200, splitPerfil1);
-                doc.text(20, doc.autoTableEndPosY() + 300, splitPerspectiva1);
+                ancora1Nome = "1.0 " + ancora1Nome;
+                var ancora1Title = ancora1Nome, xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(ancora1Nome) * doc.internal.getFontSize() / 2);
+                doc.setFontType("bold");
+                doc.setFontSize(12);
+                doc.text(ancora1Title, xOffset, doc.autoTableEndPosY() + 50);
+                doc.setFontType("normal");
+                doc.setFontSize(10);
+                doc.text(20, doc.autoTableEndPosY() + 100, text1);
+                /*doc.text(20, doc.autoTableEndPosY() + 200, splitPerfil1);
+                doc.text(20, doc.autoTableEndPosY() + 300, splitPerspectiva1);*/
                 doc.addPage();
-                doc.text(20, 40, ancora2Nome);
-                doc.text(20, 100, splitDescricao2);
-                doc.text(20, 300, splitPerfil2);
-                doc.text(20, 500, splitPerspectiva2);
+                ancora2Nome = "2.0 " + ancora2Nome;
+                var ancora2Title = ancora2Nome, xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(ancora2Nome) * doc.internal.getFontSize() / 2);
+                doc.setFontType("bold");
+                doc.setFontSize(12);
+                doc.text(ancora2Title, xOffset, 40);
+                doc.setFontType("normal");
+                doc.setFontSize(10);
+                doc.text(20, 80, text2);
+
 
             }
         }
+
+
         doc.autoTable(data.columns, data.rows, opts);
         doc.save("table.pdf");
 

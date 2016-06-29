@@ -193,7 +193,6 @@ require 'csv'
       @nomeUsuario = @results.first.user.nome.capitalize
 
 
-
     end
 
 
