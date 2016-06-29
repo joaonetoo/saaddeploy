@@ -19,7 +19,7 @@
             beforePageContent: function (data) {
                 var text = "Âncoras de carreira: " + nomeUsuario,
                 xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(text) * doc.internal.getFontSize() / 2);
-                doc.setFont("arial");
+                doc.setFont("times");
                 doc.setFontType("bold");
                 doc.setFontSize(14);
                 doc.text(text, xOffset, 20);
@@ -27,10 +27,9 @@
                 console.log(dim);
             },
             afterPageContent: function (data) {
-                /*var text = "Hi How are you",
-                xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(text) * doc.internal.getFontSize() / 2);
-                doc.text(text, xOffset, 250);*/
-                doc.text(20, doc.autoTableEndPosY() + 30, ancora1Nome);
+                var ancora1Text = "1.0 " + ancora1Nome, xOffset = (doc.internal.pageSize.width / 2) - (doc.getStringUnitWidth(ancora1Nome) * doc.internal.getFontSize() / 2);
+                doc.text(ancora1Text, xOffset, doc.autoTableEndPosY() + 30);
+
                 doc.text(20, doc.autoTableEndPosY() + 60, splitDescricao1);
                 doc.text(20, doc.autoTableEndPosY() + 200, splitPerfil1);
                 doc.text(20, doc.autoTableEndPosY() + 300, splitPerspectiva1);
