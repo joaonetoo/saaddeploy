@@ -1,7 +1,0 @@
-I"b(function() {
-  jQuery(function() {
-    return $('myform').validate();
-  });
-
-}).call(this);
-:ET
