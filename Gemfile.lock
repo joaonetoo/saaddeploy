@@ -48,6 +48,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.0)
+    cancancan (1.15.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -197,6 +198,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (~> 2.3)
   byebug
+  cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   dependent-fields-rails
   devise

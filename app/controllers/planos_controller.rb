@@ -3,6 +3,13 @@ class PlanosController < ApplicationController
 
   # GET /planos
   # GET /planos.json
+  def check_privilege(plano)
+     unless current_user.id == plano.user_id
+      redirect_to welcome_index_path
+      return
+    end
+  end
+
   def index
     @planos = Plano.all
   end
@@ -10,6 +17,7 @@ class PlanosController < ApplicationController
   # GET /planos/1
   # GET /planos/1.json
   def show
+    check_privilege(@plano)
   end
 
   # GET /planos/new
@@ -19,6 +27,7 @@ class PlanosController < ApplicationController
 
   # GET /planos/1/edit
   def edit
+    check_privilege(@plano)
   end
 
   # POST /planos
@@ -55,6 +64,7 @@ class PlanosController < ApplicationController
   # DELETE /planos/1
   # DELETE /planos/1.json
   def destroy
+    check_privilege(@plano)
     @plano.destroy
     respond_to do |format|
       format.html { redirect_to planos_url, notice: 'Plano was successfully destroyed.' }
