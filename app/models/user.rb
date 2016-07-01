@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :results
   has_many :sent_notes, :class_name => 'Note', :foreign_key => 'sender_id'
   has_many :received_notes, :class_name => 'Note', :foreign_key => 'recipient_id'
+  has_one :plano
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

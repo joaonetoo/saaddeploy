@@ -1,0 +1,36 @@
+<h1>StudentArea#index</h1>
+<p>Find me in app/views/student_area/index.html.erb</p>
+
+<h2>SAAD</h2>
+<p>Bem vindo <%= current_user.nome%></p>
+<% if current_user.plano == nil %>
+<%= link_to 'Plano de carreira', new_plano_path %>
+<% elsif @plano != nil%>
+<%= link_to 'Editar Plano de carreira', edit_plano_path(@plano) %>
+<% end %>
+
+<p>
+    <strong>Minhas Turmas</strong>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Turno</th>
+      <th>Codigo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= classroom.subject.nome %></td>
+        <td><%= classroom.turno %></td>
+        <td><%= classroom.codigo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

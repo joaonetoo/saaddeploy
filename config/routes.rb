@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'student_area/index'
+
   resources :planos
   resources :anchorinfos
   resources :notes

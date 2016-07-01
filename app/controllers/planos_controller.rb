@@ -25,6 +25,7 @@ class PlanosController < ApplicationController
   # POST /planos.json
   def create
     @plano = Plano.new(plano_params)
+    @plano.user_id = current_user.id
 
     respond_to do |format|
       if @plano.save
