@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topico</th>
+      <th>Texto</th>
+      <th>Sender</th>
+      <th>Reciper</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td><%= note.topico %></td>
+        <td><%= note.texto %></td>
+        <td><%= note.sender.nome %></td>
+        <td><%= note.recipient.nome %></td>
+        <td><%= link_to 'Show', note %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Note', new_note_path %>

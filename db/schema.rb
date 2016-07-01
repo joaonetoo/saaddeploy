@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619235532) do
+ActiveRecord::Schema.define(version: 20160701135736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,37 @@ ActiveRecord::Schema.define(version: 20160619235532) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.text    "texto"
+    t.string  "topico"
+  end
+
+  create_table "planos", force: :cascade do |t|
+    t.text     "ameacas"
+    t.text     "respostas_ameaca"
+    t.text     "oportunidades"
+    t.text     "respostas_oportunidades"
+    t.text     "fraquezas"
+    t.text     "respostas_fraquezas"
+    t.text     "forcas"
+    t.text     "respostas_forcas"
+    t.text     "missao"
+    t.text     "objetivos_proximo_ano"
+    t.text     "objetivos_cinco_anos"
+    t.text     "objetivos_dez_anos"
+    t.text     "objetivos"
+    t.text     "estrategias"
+    t.text     "plano_objetivo"
+    t.text     "plano_estrategia"
+    t.text     "plano_prazo"
+    t.text     "plano_fator_critico"
+    t.text     "plano_recursos"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "principals", force: :cascade do |t|

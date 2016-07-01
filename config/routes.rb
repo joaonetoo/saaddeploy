@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :planos
   resources :anchorinfos
+  resources :notes
   resources :anchors
   resources :results do
     collection do

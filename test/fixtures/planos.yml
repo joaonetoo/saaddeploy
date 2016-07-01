@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ameacas: MyText
+  respostas_ameaca: MyText
+  oportunidades: MyText
+  respostas_oportunidades: MyText
+  fraquezas: MyText
+  respostas_fraquezas: MyText
+  forcas: MyText
+  respostas_forcas: MyText
+  missao: MyText
+  objetivos_proximo_ano: MyText
+  objetivos_cinco_anos: MyText
+  objetivos_dez_anos: MyText
+  objetivos: MyText
+  estrategias: MyText
+  plano_objetivo: MyText
+  plano_estrategia: MyText
+  plano_prazo: MyText
+  plano_fator_critico: MyText
+  plano_recursos: MyText
+
+two:
+  ameacas: MyText
+  respostas_ameaca: MyText
+  oportunidades: MyText
+  respostas_oportunidades: MyText
+  fraquezas: MyText
+  respostas_fraquezas: MyText
+  forcas: MyText
+  respostas_forcas: MyText
+  missao: MyText
+  objetivos_proximo_ano: MyText
+  objetivos_cinco_anos: MyText
+  objetivos_dez_anos: MyText
+  objetivos: MyText
+  estrategias: MyText
+  plano_objetivo: MyText
+  plano_estrategia: MyText
+  plano_prazo: MyText
+  plano_fator_critico: MyText
+  plano_recursos: MyText
