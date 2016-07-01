@@ -87,7 +87,11 @@
     <%= f.label :plano_recursos %><br>
     <%= f.text_area :plano_recursos %>
   </div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), class: "btn" %>
   </div>
 <% end %>

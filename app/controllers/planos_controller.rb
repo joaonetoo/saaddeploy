@@ -29,7 +29,7 @@ class PlanosController < ApplicationController
 
     respond_to do |format|
       if @plano.save
-        format.html { redirect_to @plano, notice: 'Plano was successfully created.' }
+        format.html { redirect_to welcome_index_path, notice: 'Plano Salvo.' }
         format.json { render :show, status: :created, location: @plano }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PlanosController < ApplicationController
   def update
     respond_to do |format|
       if @plano.update(plano_params)
-        format.html { redirect_to @plano, notice: 'Plano was successfully updated.' }
+        format.html { redirect_to welcome_index_path, notice: 'Plano Atualizado.' }
         format.json { render :show, status: :ok, location: @plano }
       else
         format.html { render :edit }
@@ -70,6 +70,6 @@ class PlanosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plano_params
-      params.require(:plano).permit(:ameacas, :respostas_ameaca, :oportunidades, :respostas_oportunidades, :fraquezas, :respostas_fraquezas, :forcas, :respostas_forcas, :missao, :objetivos_proximo_ano, :objetivos_cinco_anos, :objetivos_dez_anos, :objetivos, :estrategias, :plano_objetivo, :plano_estrategia, :plano_prazo, :plano_fator_critico, :plano_recursos)
+      params.require(:plano).permit(:publico, :ameacas, :respostas_ameaca, :oportunidades, :respostas_oportunidades, :fraquezas, :respostas_fraquezas, :forcas, :respostas_forcas, :missao, :objetivos_proximo_ano, :objetivos_cinco_anos, :objetivos_dez_anos, :objetivos, :estrategias, :plano_objetivo, :plano_estrategia, :plano_prazo, :plano_fator_critico, :plano_recursos)
     end
 end
