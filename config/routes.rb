@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'teachers_area/index'
+  get 'teachers_area/search_plans'
+  post 'teachers_area/list'
+
   get 'student_area/index'
 
   resources :planos

@@ -1,0 +1,41 @@
+<%= @classroom.subject.nome %>
+<%= @classroom.codigo %>
+
+<h1>Estudantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Endereço</th>
+      <th>Biografia</th>
+      <th>Matricula</th>
+      <th>Email</th>
+      <th>Plano</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= image_tag student.avatar.url(:thumb) %></td>
+        <td><%= student.nome %></td>
+        <td><%= student.telefone %></td>
+        <td><%= student.endereco %></td>
+        <td><%= student.biografia %></td>
+        <td><%= student.matricula %></td>
+        <td><%= student.email %></td>
+        <td>
+        <% if student.plano != nil %>
+            <%= student.plano%>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
