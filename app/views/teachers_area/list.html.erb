@@ -29,8 +29,10 @@
         <td><%= student.matricula %></td>
         <td><%= student.email %></td>
         <td>
-        <% if student.plano != nil %>
-            <%= student.plano%>
+        <% if student.plano != nil && student.plano.publico == true%>
+          <%= button_to 'ver', teachers_area_show_plan_path(:plano => student.plano)%>
+        <% else %>
+          Não
         <% end %>
         </td>
       </tr>

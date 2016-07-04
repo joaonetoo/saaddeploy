@@ -1,0 +1,56 @@
+<h1>Plano de <%= @plano.user.nome%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ameacas</th>
+      <th>Respostas ameaca</th>
+      <th>Oportunidades</th>
+      <th>Respostas oportunidades</th>
+      <th>Fraquezas</th>
+      <th>Respostas fraquezas</th>
+      <th>Forcas</th>
+      <th>Respostas forcas</th>
+      <th>Missao</th>
+      <th>Objetivos proximo ano</th>
+      <th>Objetivos cinco anos</th>
+      <th>Objetivos dez anos</th>
+      <th>Objetivos</th>
+      <th>Estrategias</th>
+      <th>Plano objetivo</th>
+      <th>Plano estrategia</th>
+      <th>Plano prazo</th>
+      <th>Plano fator critico</th>
+      <th>Plano recursos</th>
+      <th>Estudante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @plano.ameacas %></td>
+        <td><%= @plano.respostas_ameaca %></td>
+        <td><%= @plano.oportunidades %></td>
+        <td><%= @plano.respostas_oportunidades %></td>
+        <td><%= @plano.fraquezas %></td>
+        <td><%= @plano.respostas_fraquezas %></td>
+        <td><%= @plano.forcas %></td>
+        <td><%= @plano.respostas_forcas %></td>
+        <td><%= @plano.missao %></td>
+        <td><%= @plano.objetivos_proximo_ano %></td>
+        <td><%= @plano.objetivos_cinco_anos %></td>
+        <td><%= @plano.objetivos_dez_anos %></td>
+        <td><%= @plano.objetivos %></td>
+        <td><%= @plano.estrategias %></td>
+        <td><%= @plano.plano_objetivo %></td>
+        <td><%= @plano.plano_estrategia %></td>
+        <td><%= @plano.plano_prazo %></td>
+        <td><%= @plano.plano_fator_critico %></td>
+        <td><%= @plano.plano_recursos %></td>
+        <td><%= @plano.user.nome %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>

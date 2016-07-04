@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'teachers_area/index'
   get 'teachers_area/search_plans'
   post 'teachers_area/list'
+  post 'teachers_area/show_plan'
 
   get 'student_area/index'
 

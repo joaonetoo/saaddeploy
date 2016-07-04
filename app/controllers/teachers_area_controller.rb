@@ -21,4 +21,8 @@ class TeachersAreaController < ApplicationController
       end
   end
 
+  def show_plan
+    @plano = Plano.find(params[:plano])
+  end
+
 end
