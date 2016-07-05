@@ -1,12 +1,18 @@
+<%= javascript_include_tag "application", params[:controller] %>
 <h1>Plano de <%= @plano.user.nome%></h1>
 
         <div id ="ameacas_e_respostas">
           <h3>Ameacas</h3>
           <%= text_area_tag 'ameacas', @plano.ameacas, readonly: true%>
-          <h2>Nova Observação</h2>
-          <%= render 'notes/form'%>
           <h3>Respostas ameaca</h3>
           <%= text_area_tag 'respostas_ameaca', @plano.respostas_ameaca, readonly: true%>
+
+
+          <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'ameaca'%>
+            </div>
+            <%= link_to 'Adicionar Observacao', teachers_area_add_note_path, remote: true %>
         </div>
 
         <div id="oportunidades_e_respostas">

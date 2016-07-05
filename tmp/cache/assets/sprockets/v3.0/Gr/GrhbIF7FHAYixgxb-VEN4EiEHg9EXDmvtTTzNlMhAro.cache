@@ -1,0 +1,8 @@
+I"u(function() {
+  jQuery(function() {
+    alert('dsdsd');
+    return $('#note_div').hide();
+  });
+
+}).call(this);
+:ET

@@ -23,9 +23,15 @@ class TeachersAreaController < ApplicationController
 
   def show_plan
     @plano = Plano.find(params[:plano])
-    @note = Note.new
-    @note.sender_id = current_user
-    @note.recipient_id = @plano.user.id
+    #@note = Note.new
+    #@note.sender_id = current_user
+    #@note.recipient_id = @plano.user.id
+  end
+
+  def add_note
+    respond_to do |format|
+        format.js {}
+    end
   end
 
 end
