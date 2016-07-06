@@ -1,9 +1,0 @@
-I"‡(function() {
-  jQuery(function() {
-    if ($("radio").is(':checked')) {
-      return console.log("sdsd");
-    }
-  });
-
-}).call(this);
-:ET

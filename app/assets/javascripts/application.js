@@ -11,12 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
-//= require jquery-ui
 //= require jquery_ujs
+//= require turbolinks
 //= require jquery-ui/autocomplete
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require autocomplete-rails
 //= require dependent-fields
-//= require turbolinks
+

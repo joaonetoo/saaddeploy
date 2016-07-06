@@ -1,0 +1,8 @@
+I"r(function() {
+  jQuery(function() {
+    alert("sd");
+    return $('.note_div').hide();
+  });
+
+}).call(this);
+:ET

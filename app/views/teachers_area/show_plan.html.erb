@@ -1,4 +1,4 @@
-<%= javascript_include_tag "application", params[:controller] %>
+<%= javascript_include_tag "add_obs.js"%>
 <h1>Plano de <%= @plano.user.nome%></h1>
 
         <div id ="ameacas_e_respostas">
@@ -8,11 +8,12 @@
           <%= text_area_tag 'respostas_ameaca', @plano.respostas_ameaca, readonly: true%>
 
 
-          <div class="note_div">
+            <div class="note_div">
               <h2>Nova Observação</h2>
               <%= render 'notes/form', topico: 'ameaca'%>
             </div>
-            <%= link_to 'Adicionar Observacao', teachers_area_add_note_path, remote: true %>
+            <a href="#" class="add_button">Adicionar Observação</a>
+
         </div>
 
         <div id="oportunidades_e_respostas">
@@ -21,6 +22,14 @@
 
           <h3>Respostas oportunidades</h3>
           <%= text_area_tag 'respostas_oportunidades', @plano.respostas_oportunidades, readonly: true%>
+
+            <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'oportunidades'%>
+            </div>
+            <a href="#" class="add_button">Adicionar Observação</a>
+
+
         </div>
 
         <div id="fraquezas_e_respostas">
@@ -29,6 +38,13 @@
 
          <h3>Respostas fraquezas</h3>
          <%= text_area_tag 'respostas_fraquezas', @plano.fraquezas, readonly: true%>
+
+         <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'fraquezas'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
+
          </div>
 
          <div id="forcas_e_respostas">
@@ -37,11 +53,21 @@
 
          <h3>Respostas forcas</h3>
          <%= text_area_tag 'respostas_forcas', @plano.respostas_forcas, readonly: true%>
+         <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'forcas'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
          <div id="missao">
          <h3>Missao</h3>
          <%= text_area_tag 'missao', @plano.missao, readonly: true%>
+         <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'missao'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
          <div id="objetivos">
@@ -53,6 +79,11 @@
 
          <h3>Objetivos dez anos</h3>
          <%= text_area_tag 'objetivos_dez_anos', @plano.objetivos_dez_anos, readonly: true%>
+         <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'objetivos'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
          <div id="estrategias">
@@ -61,8 +92,13 @@
 
          <h3>Estrategias</h3>
          <%= text_area_tag 'estrategias', @plano.estrategias, readonly: true%>
+         <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'estrategias'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
         </div>
-
+          <h2>Plano de ação</h2>
          <div id= "plano de ação">
              <h3>Plano objetivo</h3>
              <%= text_area_tag 'plano_objetivo', @plano.plano_objetivo, readonly: true%>
@@ -78,6 +114,11 @@
 
              <h3>Plano recursos</h3>
              <%= text_area_tag 'plano_recursos', @plano.plano_recursos, readonly: true%>
+             <div class="note_div">
+              <h2>Nova Observação</h2>
+              <%= render 'notes/form', topico: 'plano'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
   <br>

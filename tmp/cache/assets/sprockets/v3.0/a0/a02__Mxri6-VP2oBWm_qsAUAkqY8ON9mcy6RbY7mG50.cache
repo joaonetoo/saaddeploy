@@ -1,7 +1,0 @@
-I"W(function() {
-  jQuery(function() {
-    return alert("sd");
-  });
-
-}).call(this);
-:ET

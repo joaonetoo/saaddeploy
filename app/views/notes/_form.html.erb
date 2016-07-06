@@ -6,7 +6,7 @@
   </div>
   <div class="field">
     <%= f.label :topico %><br>
-    <%= f.text_field :topico, :value => topico %>
+    <%= f.text_field :topico, :value => topico, readonly: true %>
   </div>
   <div class="field">
     <%= f.hidden_field :sender_id, :value => current_user.id %>
@@ -16,6 +16,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar Observação"%>
   </div>
 <% end %>

@@ -1,5 +1,0 @@
-I"=(function() {
-  $("myform").validate();
-
-}).call(this);
-:ET
