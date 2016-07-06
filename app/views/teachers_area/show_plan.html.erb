@@ -1,5 +1,7 @@
 <%= javascript_include_tag "add_obs.js"%>
-<h1>Plano de <%= @plano.user.nome%></h1>
+<h1>Plano de carreira</h1>
+<h2>Nome: <%= @plano.user.nome.capitalize %></h2>
+<h2>Curso: <%= @plano.user.course.nome %> </h2>
 
         <div id ="ameacas_e_respostas">
           <h3>Ameacas</h3>
