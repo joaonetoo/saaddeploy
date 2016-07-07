@@ -58,6 +58,10 @@ gem 'puma'
 
 gem 'devise'
 
+gem 'prawn'
+
+gem 'prawn-table'
+
 gem 'cancancan', '~> 1.10'
 
 gem "paperclip", "~> 5.0.0.beta1"

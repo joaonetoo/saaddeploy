@@ -28,6 +28,17 @@ class TeachersAreaController < ApplicationController
     #@note.recipient_id = @plano.user.id
   end
 
+  def pdf_plan
+    respond_to do |format|
+      format.html
+      format.pdf {
+        pdf = Prawn::Document.new
+        pdf.text "hello world"
+        send_data pdf.render, filename: 'plan.pdf', type: 'application/pdf', disposition: "inline"
+      }
+    end
+  end
+
   def add_note
     respond_to do |format|
         format.js {}

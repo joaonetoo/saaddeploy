@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'teachers_area/list'
   post 'teachers_area/show_plan'
   get 'teachers_area/show_plan'
+  get 'teachers_area/pdf_plan'
   get 'teachers_area/add_note'
 
   get 'student_area/index'
