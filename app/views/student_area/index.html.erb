@@ -4,9 +4,13 @@
 <h2>SAAD</h2>
 <p>Bem vindo <%= current_user.nome%></p>
 <% if current_user.plano == nil %>
-<%= link_to 'Plano de carreira', new_plano_path %>
+  <%= link_to 'Plano de carreira', new_plano_path %>
 <% elsif @plano != nil%>
-<%= link_to 'Editar Plano de carreira', edit_plano_path(@plano) %>
+  <% if @notes != nil %>
+    <strong>Você tem observações no plano de carreira</strong>
+  <% end %>
+  <%= link_to 'Editar Plano de carreira', edit_plano_path(@plano) %>
+
 <% end %>
 
 <p>

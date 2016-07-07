@@ -28,6 +28,7 @@ class PlanosController < ApplicationController
   # GET /planos/1/edit
   def edit
     check_privilege(@plano)
+    @notes = Note.where(recipient: @plano.user).each.to_a
   end
 
   # POST /planos

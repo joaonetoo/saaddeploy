@@ -2,5 +2,14 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @plano %> |
-<%= link_to 'Back', planos_path %>
+
+
+<% if @notes != nil %>
+  <h2>Observações</h2>
+  <% @notes.each do |note|%>
+    <h3>Tópico: <%= note.topico%></h3>
+    <%= text_area_tag 'obsevação[]', note.texto, readonly: true%>
+    <strong>Autor: <%= note.sender.nome %></strong>
+    <%= link_to 'Deletar', note, method: :delete, data: { confirm: 'Excluir observação?' } %>
+  <% end %>
+<% end %>

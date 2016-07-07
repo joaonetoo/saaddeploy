@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div id ="ameacas_e_respostas">
   <div class="field">
     <%= f.label :ameacas %><br>
     <%= f.text_area :ameacas %>
@@ -19,6 +20,9 @@
     <%= f.label :respostas_ameaca %><br>
     <%= f.text_area :respostas_ameaca %>
   </div>
+</div>
+
+<div id="oportunidades_e_respostas">
   <div class="field">
     <%= f.label :oportunidades %><br>
     <%= f.text_area :oportunidades %>
@@ -26,7 +30,11 @@
   <div class="field">
     <%= f.label :respostas_oportunidades %><br>
     <%= f.text_area :respostas_oportunidades %>
-  </div>
+</div>
+
+ </div>
+
+<div id="fraquezas_e_respostas">
   <div class="field">
     <%= f.label :fraquezas %><br>
     <%= f.text_area :fraquezas %>
@@ -35,6 +43,9 @@
     <%= f.label :respostas_fraquezas %><br>
     <%= f.text_area :respostas_fraquezas %>
   </div>
+</div>
+
+<div id="forcas_e_respostas">
   <div class="field">
     <%= f.label :forcas %><br>
     <%= f.text_area :forcas %>
@@ -43,10 +54,16 @@
     <%= f.label :respostas_forcas %><br>
     <%= f.text_area :respostas_forcas %>
   </div>
+</div>
+
+<div id="missao">
   <div class="field">
     <%= f.label :missao %><br>
     <%= f.text_area :missao %>
   </div>
+</div>
+
+<div id="objetivos">
   <div class="field">
     <%= f.label :objetivos_proximo_ano %><br>
     <%= f.text_area :objetivos_proximo_ano %>
@@ -59,6 +76,8 @@
     <%= f.label :objetivos_dez_anos %><br>
     <%= f.text_area :objetivos_dez_anos %>
   </div>
+</div>
+<div id="estrategias">
   <div class="field">
     <%= f.label :objetivos %><br>
     <%= f.text_area :objetivos %>
@@ -67,6 +86,9 @@
     <%= f.label :estrategias %><br>
     <%= f.text_area :estrategias %>
   </div>
+</div>
+
+<div id= "plano de ação">
   <div class="field">
     <%= f.label :plano_objetivo %><br>
     <%= f.text_area :plano_objetivo %>
@@ -87,6 +109,8 @@
     <%= f.label :plano_recursos %><br>
     <%= f.text_area :plano_recursos %>
   </div>
+</div>
+
   <div class="field">
     <%= f.label :status %>
     <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
@@ -95,3 +119,4 @@
     <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), class: "btn" %>
   </div>
 <% end %>
+
