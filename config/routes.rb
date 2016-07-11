@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'teachers_area/add_note'
 
   get 'student_area/index'
+  get 'student_area/pdf_plan'
 
   resources :planos
   resources :anchorinfos

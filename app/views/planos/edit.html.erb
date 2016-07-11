@@ -3,7 +3,7 @@
 <%= render 'form' %>
 
 
-
+  <%= link_to "Gerar PDF", student_area_pdf_plan_path(format: 'pdf', plano: @plano) %>
 <% if @notes != nil %>
   <h2>Observações</h2>
   <% @notes.each do |note|%>
