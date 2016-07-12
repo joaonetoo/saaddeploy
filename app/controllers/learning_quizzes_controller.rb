@@ -15,6 +15,11 @@ class LearningQuizzesController < ApplicationController
   # GET /learning_quizzes/new
   def new
     @learning_quiz = LearningQuiz.new
+    @students = User.where(type: "Student").to_a
+    @users = []
+    @students.each do |student|
+        @users << student.id
+    end
   end
 
   # GET /learning_quizzes/1/edit

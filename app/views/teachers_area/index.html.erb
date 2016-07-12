@@ -1,7 +1,11 @@
 <h1>TeachersArea#index</h1>
 <h2>SAAD</h2>
 <p>Bem vindo <%= current_user.nome%></p>
-<%= link_to 'Procurar planos de carreira', teachers_area_search_plans_path %>
+<%= link_to 'Procurar planos de carreira', teachers_area_search_plans_path %><br>
+<%= link_to 'Criar Questionario de ancoras', new_quiz_path %><br>
+<%= link_to 'Criar Buscar resultados', search_results_path %><br>
+<%= link_to 'Comparar resultados', analytics_results_path %><br>
+<%= link_to 'Cria Questionario de estilos de aprendizagem', new_learning_quiz_path %>
 <p>
     <strong>Minhas Turmas</strong>
 </p>

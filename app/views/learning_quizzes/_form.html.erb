@@ -12,8 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= label_tag :Instituição %><br>
+    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
+  </div>
+  <div class="field">
+    <%= label_tag :Campus %><br>
+    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Centro %><br>
+    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Curso %><br>
+    <%= grouped_collection_select(nil, :course_id, Center.order(:name), :courses, :name, :id, :nome)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Disciplina %><br>
+    <%= grouped_collection_select(nil, :subject_id, Course.order(:nome), :subjects, :nome, :id, :nome)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Turma %><br>
+    <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Alunos %><br>
+    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
   <div class="field">
     <%= f.label :data_final %><br>
