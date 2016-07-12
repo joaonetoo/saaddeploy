@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Learning Quizzes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Data final</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_quizzes.each do |learning_quiz| %>
+      <tr>
+        <td><%= learning_quiz.user %></td>
+        <td><%= learning_quiz.data_final %></td>
+        <td><%= link_to 'Show', learning_quiz %></td>
+        <td><%= link_to 'Edit', edit_learning_quiz_path(learning_quiz) %></td>
+        <td><%= link_to 'Destroy', learning_quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Learning quiz', new_learning_quiz_path %>

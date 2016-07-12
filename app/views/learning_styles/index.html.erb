@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Learning Styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th>Sigla</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_styles.each do |learning_style| %>
+      <tr>
+        <td><%= learning_style.nome %></td>
+        <td><%= learning_style.descricao %></td>
+        <td><%= learning_style.sigla %></td>
+        <td><%= link_to 'Show', learning_style %></td>
+        <td><%= link_to 'Edit', edit_learning_style_path(learning_style) %></td>
+        <td><%= link_to 'Destroy', learning_style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Learning style', new_learning_style_path %>

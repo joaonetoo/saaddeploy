@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @learning_quiz.user %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @learning_quiz.data_final %>
+</p>
+
+<%= link_to 'Edit', edit_learning_quiz_path(@learning_quiz) %> |
+<%= link_to 'Back', learning_quizzes_path %>

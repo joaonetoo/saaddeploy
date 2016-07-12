@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @learning_style.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @learning_style.descricao %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @learning_style.sigla %>
+</p>
+
+<%= link_to 'Edit', edit_learning_style_path(@learning_style) %> |
+<%= link_to 'Back', learning_styles_path %>

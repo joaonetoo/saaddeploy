@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ec:</strong>
+  <%= @learning_result.ec %>
+</p>
+
+<p>
+  <strong>Or:</strong>
+  <%= @learning_result.or %>
+</p>
+
+<p>
+  <strong>Ca:</strong>
+  <%= @learning_result.ca %>
+</p>
+
+<p>
+  <strong>Ea:</strong>
+  <%= @learning_result.ea %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @learning_result.student %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @learning_result.user %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @learning_result.data_final %>
+</p>
+
+<%= link_to 'Edit', edit_learning_result_path(@learning_result) %> |
+<%= link_to 'Back', learning_results_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701181731) do
+ActiveRecord::Schema.define(version: 20160712135324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,38 @@ ActiveRecord::Schema.define(version: 20160701181731) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "learning_quizzes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.date     "data_final"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "learning_quizzes", ["user_id"], name: "index_learning_quizzes_on_user_id", using: :btree
+
+  create_table "learning_results", force: :cascade do |t|
+    t.integer  "ec"
+    t.integer  "or"
+    t.integer  "ca"
+    t.integer  "ea"
+    t.integer  "student_id"
+    t.integer  "user_id"
+    t.date     "data_final"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "learning_results", ["student_id"], name: "index_learning_results_on_student_id", using: :btree
+  add_index "learning_results", ["user_id"], name: "index_learning_results_on_user_id", using: :btree
+
+  create_table "learning_styles", force: :cascade do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.string   "sigla"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notes", force: :cascade do |t|
@@ -276,6 +308,9 @@ ActiveRecord::Schema.define(version: 20160701181731) do
   add_foreign_key "classrooms_users", "classrooms"
   add_foreign_key "classrooms_users", "users"
   add_foreign_key "courses", "centers"
+  add_foreign_key "learning_quizzes", "users"
+  add_foreign_key "learning_results", "students"
+  add_foreign_key "learning_results", "users"
   add_foreign_key "planos", "users"
   add_foreign_key "quizzes", "users"
   add_foreign_key "quizzes_users", "quizzes"

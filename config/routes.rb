@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :learning_quizzes
+  resources :learning_styles
+  resources :learning_results
   get 'teachers_area/index'
   get 'teachers_area/search_plans'
   post 'teachers_area/list'
