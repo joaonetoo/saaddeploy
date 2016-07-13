@@ -25,6 +25,24 @@ class LearningResultsController < ApplicationController
   def search
   end
 
+  def show_by_date
+    @selecao = params[:selecao]
+    @resultados = params[:results]
+    @results = []
+    @resultados.each do |result|
+      pre = LearningResult.where(data_final: params[:data_final], id: result).first
+      if not pre.nil?
+        @results << pre
+      end
+    end
+    debugger
+    respond_to do |format|
+    format.js {}
+  end
+
+end
+
+
   def list
     if params[:institution_id] == 'todos'
       @users = User.where(type: 'Student').find_each
