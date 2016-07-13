@@ -31,7 +31,6 @@ class LearningResultsController < ApplicationController
     @learning_result.ca = params[:q1b].to_i + params[:q2b].to_i + params[:q3a].to_i + params[:q4d].to_i + params[:q5c].to_i + params[:q6d].to_i+ params[:q7c].to_i + params[:q8b].to_i + params[:q9d].to_i + params[:q10d].to_i + params[:q11c].to_i + params[:q12a].to_i
     @learning_result.ea = params[:q1c].to_i + params[:q2d].to_i + params[:q3b].to_i + params[:q4b].to_i + params[:q5d].to_i + params[:q6b].to_i + params[:q7d].to_i + params[:q8a].to_i + params[:q9c].to_i + params[:q10c].to_i + params[:q11d].to_i + params[:q12d].to_i
     @learning_result.user_id = current_user.id
-    @learning_result.student_id = current_user.id
     debugger
     respond_to do |format|
       if @learning_result.save
@@ -76,6 +75,6 @@ class LearningResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_result_params
-      params.require(:learning_result).permit(:ec, :or, :ca, :ea, :student_id, :user_id, :data_final)
+      params.require(:learning_result).permit(:data_final)
     end
 end

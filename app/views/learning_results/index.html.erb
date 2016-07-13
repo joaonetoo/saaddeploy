@@ -9,7 +9,6 @@
       <th>Or</th>
       <th>Ca</th>
       <th>Ea</th>
-      <th>Student</th>
       <th>User</th>
       <th>Data final</th>
       <th colspan="3"></th>
@@ -23,8 +22,7 @@
         <td><%= learning_result.or %></td>
         <td><%= learning_result.ca %></td>
         <td><%= learning_result.ea %></td>
-        <td><%= learning_result.student %></td>
-        <td><%= learning_result.user %></td>
+        <td><%= learning_result.user.nome %></td>
         <td><%= learning_result.data_final %></td>
         <td><%= link_to 'Show', learning_result %></td>
         <td><%= link_to 'Edit', edit_learning_result_path(learning_result) %></td>

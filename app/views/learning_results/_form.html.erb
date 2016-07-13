@@ -12,7 +12,6 @@
   <% end %>
 
 
-
   <div class="field">
     <strong>Enquanto aprendo: </strong>
     <%= number_field_tag 'q1a', nil, min: 1, max: 4 %>
@@ -148,7 +147,7 @@
   </div>
 
   <div class="field">
-    <%= hidden_field_tag :data_final, @data_final %>
+    <%= f.hidden_field :data_final, :value => @data_final %>
   </div>
   <div class="actions">
     <%= f.submit "Enviar"%>
