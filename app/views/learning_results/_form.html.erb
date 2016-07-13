@@ -148,8 +148,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :data_final %><br>
-    <%= f.date_select :data_final %>
+    <%= hidden_field_tag :data_final, @data_final %>
   </div>
   <div class="actions">
     <%= f.submit "Enviar"%>

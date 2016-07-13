@@ -15,6 +15,7 @@ class LearningResultsController < ApplicationController
   # GET /learning_results/new
   def new
     @learning_result = LearningResult.new
+    @data_final = params[:data_final]
   end
 
   # GET /learning_results/1/edit
@@ -29,6 +30,8 @@ class LearningResultsController < ApplicationController
     @learning_result.or = params[:q1d].to_i + params[:q2a].to_i + params[:q3c].to_i + params[:q4c].to_i + params[:q5b].to_i + params[:q6a].to_i + params[:q7a].to_i + params[:q8c].to_i + params[:q9a].to_i + params[:q10a].to_i + params[:q11b].to_i + params[:q12c].to_i
     @learning_result.ca = params[:q1b].to_i + params[:q2b].to_i + params[:q3a].to_i + params[:q4d].to_i + params[:q5c].to_i + params[:q6d].to_i+ params[:q7c].to_i + params[:q8b].to_i + params[:q9d].to_i + params[:q10d].to_i + params[:q11c].to_i + params[:q12a].to_i
     @learning_result.ea = params[:q1c].to_i + params[:q2d].to_i + params[:q3b].to_i + params[:q4b].to_i + params[:q5d].to_i + params[:q6b].to_i + params[:q7d].to_i + params[:q8a].to_i + params[:q9c].to_i + params[:q10c].to_i + params[:q11d].to_i + params[:q12d].to_i
+    @learning_result.user_id = current_user.id
+    @learning_result.student_id = current_user.id
     debugger
     respond_to do |format|
       if @learning_result.save

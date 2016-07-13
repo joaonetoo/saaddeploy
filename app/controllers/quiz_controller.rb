@@ -1,5 +1,6 @@
     class QuizController < ApplicationController
   def index
+    @data_final = params[:data_final]
   end
 
   def answer
@@ -99,6 +100,7 @@
     @anchor2.perspectiva = @anchorinfo2.perspectiva
     @anchor2.tipo = @anchorinfo2.tipo
     @anchor2.result = @result
+    @result.data_final = params[:data_final]
     @anchor2.save
 
 

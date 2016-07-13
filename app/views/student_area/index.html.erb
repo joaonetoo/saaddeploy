@@ -3,6 +3,21 @@
 
 <h2>SAAD</h2>
 <p>Bem vindo <%= current_user.nome%></p>
+<% if @my_quizzes != nil && @my_quizzes.size > 0%>
+<p>Voce tem Questionarios para responder, clique nas datas</p>
+  <% @my_quizzes.each do |quiz| %>
+    <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final) %><br>
+  <% end %>
+<% end %>
+
+<% if @my_learning_quizzes != nil && @my_learning_quizzes.size > 0%>
+<p>Voce tem Questionarios de estilo de aprendizagem para responder, clique nas datas</p>
+  <% @my_learning_quizzes.each do |quiz| %>
+    <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final) %><br>
+  <% end %>
+<% end %>
+
+<strong>Meu plano de carreira</strong><br>
 <% if current_user.plano == nil %>
   <%= link_to 'Plano de carreira', new_plano_path %>
 <% elsif @plano != nil%>
