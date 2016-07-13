@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712135324) do
+ActiveRecord::Schema.define(version: 20160713165114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,9 +133,18 @@ ActiveRecord::Schema.define(version: 20160712135324) do
     t.date     "data_final"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "creator_id"
   end
 
   add_index "learning_quizzes", ["user_id"], name: "index_learning_quizzes_on_user_id", using: :btree
+
+  create_table "learning_quizzes_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "learning_quiz_id"
+  end
+
+  add_index "learning_quizzes_users", ["learning_quiz_id"], name: "index_learning_quizzes_users_on_learning_quiz_id", using: :btree
+  add_index "learning_quizzes_users", ["user_id"], name: "index_learning_quizzes_users_on_user_id", using: :btree
 
   create_table "learning_results", force: :cascade do |t|
     t.integer  "ec"
@@ -309,6 +318,8 @@ ActiveRecord::Schema.define(version: 20160712135324) do
   add_foreign_key "classrooms_users", "users"
   add_foreign_key "courses", "centers"
   add_foreign_key "learning_quizzes", "users"
+  add_foreign_key "learning_quizzes_users", "learning_quizzes"
+  add_foreign_key "learning_quizzes_users", "users"
   add_foreign_key "learning_results", "students"
   add_foreign_key "learning_results", "users"
   add_foreign_key "planos", "users"

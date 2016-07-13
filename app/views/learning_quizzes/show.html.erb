@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% @learning_quiz.users.each do |user| %>
 <p>
   <strong>User:</strong>
-  <%= @learning_quiz.user %>
+  <%= user.nome %>
 </p>
+<% end %>
 
 <p>
   <strong>Data final:</strong>
