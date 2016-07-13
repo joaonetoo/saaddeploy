@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/semfoto.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :results
+  has_many :learning_results
   has_many :sent_notes, :class_name => 'Note', :foreign_key => 'sender_id'
   has_many :received_notes, :class_name => 'Note', :foreign_key => 'recipient_id'
   has_one :plano

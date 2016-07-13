@@ -171,7 +171,6 @@ require 'csv'
     @mediaSv = @mediaSv / @results.size.to_f
     @mediaCh = @mediaCh / @results.size.to_f
     @mediaLs = @mediaLs / @results.size.to_f
-
     @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
       "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
     if @results.size == 1
@@ -188,10 +187,8 @@ require 'csv'
        @ancora2Descricao = @ancora2.descricao.gsub("\n", '')
        @ancora2Perspectiva = @ancora2.perspectiva.gsub("\n", '')
        @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
-
       end
       @nomeUsuario = @results.first.user.nome.capitalize
-
 
     end
 
@@ -264,9 +261,13 @@ require 'csv'
       @courses = Course.where(center_id: params[:center_id]).find_each
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.id,  type: 'Student')
+          course.users.each do |user|
+            if(user.type == 'Student')
+              @users << user
+            end
+          end
+          #@users << User.where(course_id: course.id,  type: 'Student').find_each.to_a
       end
-      @users = @users.first.to_a
     end
 
     if params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos'
@@ -312,7 +313,6 @@ require 'csv'
       end
 
     @datas = @results.map(&:data_final).uniq
-
 
   end
 
@@ -386,10 +386,14 @@ require 'csv'
       @selecao = @center.name
       @courses = Course.where(center_id: params[:center_id]).find_each
       @users = []
-      @courses.each do |course|
-          @users << User.where(course_id: course.id,  type: 'Student')
+     @courses.each do |course|
+          course.users.each do |user|
+            if(user.type == 'Student')
+              @users << user
+            end
+          end
+          #@users << User.where(course_id: course.id,  type: 'Student').find_each.to_a
       end
-      @users = @users.first.to_a
     end
 
     if params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos'
