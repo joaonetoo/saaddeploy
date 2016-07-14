@@ -25,6 +25,9 @@ class LearningResultsController < ApplicationController
   def search
   end
 
+  def analytics
+  end
+
   def show_by_date
     @selecao = params[:selecao]
     @resultados = params[:results]
@@ -188,6 +191,10 @@ end
 
     @datas = @results.map(&:data_final).uniq
 
+
+  end
+
+  def analytic_list
 
   end
 

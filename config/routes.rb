@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get 'search'
       post 'list'
       post 'show_by_date'
+      get 'analytics'
+      post 'analytic_list'
     end
   end
   get 'teachers_area/index'
