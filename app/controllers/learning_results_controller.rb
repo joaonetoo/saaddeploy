@@ -66,11 +66,50 @@ class LearningResultsController < ApplicationController
       @mediaAc = @mediaAc / @learning_results.size.to_f / 0.48
       @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
       @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
+      #selecao 2
+
+      @selecao2 = params[:selecao2]
+      @resultados2 = params[:results2]
+      @learning_results2 = []
+      @resultados2.each do |result|
+        pre = LearningResult.where(data_final: params[:data_final2], id: result).first
+        if not pre.nil?
+          @learning_results2 << pre
+        end
+      end
+      @mediaEc2 = 0
+      @mediaOr2 = 0
+      @mediaCa2 = 0
+      @mediaEa2 = 0
+
+      @mediaDi2 = 0
+      @mediaAc2 = 0
+      @mediaAs2 = 0
+      @mediaCo2 = 0
+      @learning_results2.each do |result|
+        @mediaEc2 = @mediaEc2 + result.ec
+        @mediaOr2 = @mediaOr2 + result.or
+        @mediaCa2 = @mediaCa2 + result.ca
+        @mediaEa2 = @mediaEa2 + result.ea
+        @mediaDi2 = @mediaDi2 + ((result.ec + result.or) / 2)
+        @mediaAc2 = @mediaAc2 + ((result.ec + result.ea) / 2)
+        @mediaAs2 = @mediaAs2 + ((result.or + result.ca) / 2)
+        @mediaCo2 = @mediaCo2 + ((result.ea + result.ca) / 2)
+      end
+      @mediaEc2 = (@mediaEc2 / @learning_results2.size.to_f) / 0.48
+      @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f / 0.48
+      @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f / 0.48
+      @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f / 0.48
+
+      @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f / 0.48
+      @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f / 0.48
+      @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f / 0.48
+      @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f / 0.48
 
 
       respond_to do |format|
-      format.js {}
-    end
+        format.js {}
+      end
 
 
   end
