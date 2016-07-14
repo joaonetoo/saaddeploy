@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post 'show_by_date'
       get 'analytics'
       post 'analytic_list'
+      post 'compare_by_date'
     end
   end
   get 'teachers_area/index'
