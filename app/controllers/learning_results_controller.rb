@@ -28,14 +28,43 @@ class LearningResultsController < ApplicationController
   def show_by_date
     @selecao = params[:selecao]
     @resultados = params[:results]
-    @results = []
+    @learning_results = []
     @resultados.each do |result|
       pre = LearningResult.where(data_final: params[:data_final], id: result).first
       if not pre.nil?
-        @results << pre
+        @learning_results << pre
       end
     end
-    debugger
+    @mediaEc = 0
+    @mediaOr = 0
+    @mediaCa = 0
+    @mediaEa = 0
+
+    @mediaDi = 0
+    @mediaAc = 0
+    @mediaAs = 0
+    @mediaCo = 0
+    @learning_results.each do |result|
+      @mediaEc = @mediaEc + result.ec
+      @mediaOr = @mediaOr + result.or
+      @mediaCa = @mediaCa + result.ca
+      @mediaEa = @mediaEa + result.ea
+      @mediaDi = @mediaDi + ((result.ec + result.or) / 2)
+      @mediaAc = @mediaAc + ((result.ec + result.ea) / 2)
+      @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
+      @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
+    end
+    @mediaEc = (@mediaEc / @learning_results.size.to_f) / 0.48
+    @mediaOr = @mediaOr / @learning_results.size.to_f / 0.48
+    @mediaCa = @mediaCa / @learning_results.size.to_f / 0.48
+    @mediaEa = @mediaEa / @learning_results.size.to_f / 0.48
+
+    @mediaDi = @mediaDi / @learning_results.size.to_f / 0.48
+    @mediaAc = @mediaAc / @learning_results.size.to_f / 0.48
+    @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
+    @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
+
+
     respond_to do |format|
     format.js {}
   end
