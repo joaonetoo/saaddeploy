@@ -67,6 +67,46 @@ class LearningResultsController < ApplicationController
       @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
       @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
 
+      #selecao 2
+
+    @selecao2 = params[:selecao2]
+    @resultados2 = params[:results2]
+    @learning_results2 = []
+    @resultados2.each do |result|
+      pre = LearningResult.where(data_final: params[:data_final2], id: result).first
+      if not pre.nil?
+        @learning_results2 << pre
+      end
+    end
+    @mediaEc2 = 0
+    @mediaOr2 = 0
+    @mediaCa2 = 0
+    @mediaEa2 = 0
+
+    @mediaDi2 = 0
+    @mediaAc2 = 0
+    @mediaAs2 = 0
+    @mediaCo2 = 0
+    @learning_results2.each do |result|
+      @mediaEc2 = @mediaEc2 + result.ec
+      @mediaOr2 = @mediaOr2 + result.or
+      @mediaCa2 = @mediaCa2 + result.ca
+      @mediaEa2 = @mediaEa2 + result.ea
+      @mediaDi2 = @mediaDi2 + ((result.ec + result.or) / 2)
+      @mediaAc2 = @mediaAc2 + ((result.ec + result.ea) / 2)
+      @mediaAs2 = @mediaAs2 + ((result.or + result.ca) / 2)
+      @mediaCo2 = @mediaCo2 + ((result.ea + result.ca) / 2)
+    end
+    @mediaEc2 = (@mediaEc2 / @learning_results2.size.to_f) / 0.48
+    @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f / 0.48
+    @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f / 0.48
+    @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f / 0.48
+
+    @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f / 0.48
+    @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f / 0.48
+    @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f / 0.48
+    @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f / 0.48
+
 
       respond_to do |format|
       format.js {}
@@ -113,6 +153,8 @@ class LearningResultsController < ApplicationController
     @mediaAc = @mediaAc / @learning_results.size.to_f / 0.48
     @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
     @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
+
+
 
 
     respond_to do |format|
@@ -480,7 +522,6 @@ end
     @learning_result.ca = params[:q1b].to_i + params[:q2b].to_i + params[:q3a].to_i + params[:q4d].to_i + params[:q5c].to_i + params[:q6d].to_i+ params[:q7c].to_i + params[:q8b].to_i + params[:q9d].to_i + params[:q10d].to_i + params[:q11c].to_i + params[:q12a].to_i
     @learning_result.ea = params[:q1c].to_i + params[:q2d].to_i + params[:q3b].to_i + params[:q4b].to_i + params[:q5d].to_i + params[:q6b].to_i + params[:q7d].to_i + params[:q8a].to_i + params[:q9c].to_i + params[:q10c].to_i + params[:q11d].to_i + params[:q12d].to_i
     @learning_result.user_id = current_user.id
-    debugger
     respond_to do |format|
       if @learning_result.save
         format.html { redirect_to @learning_result, notice: 'Learning result was successfully created.' }
