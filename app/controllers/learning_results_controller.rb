@@ -28,6 +28,27 @@ class LearningResultsController < ApplicationController
   def analytics
   end
 
+  def pdf_list
+    @result = LearningResult.find(params[:result])
+    student = User.find(@result.user.id)
+    respond_to do |format|
+      format.html
+      format.pdf {
+        pdf = Prawn::Document.new
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+
+          pdf.font("Helvetica", :style => :bold)
+          pdf.text "Nome do aluno: #{@result.user.nome.capitalize}", :align => :center, :size => 14
+          pdf.text "editado em: #{@result.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
+          pdf.move_down 40
+
+
+
+        send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
+      }
+    end
+  end
+
    def compare_by_date
       @selecao = params[:selecao]
       @resultados = params[:results]

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'analytics'
       post 'analytic_list'
       post 'compare_by_date'
+      get 'pdf_list'
     end
   end
   get 'teachers_area/index'
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
 
   get 'student_area/index'
   get 'student_area/pdf_plan'
+  get 'student_area/my_learning_result'
 
   resources :planos
   resources :anchorinfos
