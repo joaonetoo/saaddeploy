@@ -31,13 +31,13 @@ class TeachersAreaController < ApplicationController
   end
 
   def pdf_plan
-    @plano = Plano.find(params[:plano])
-    student = User.find(@plano.user.id)
+    @result = LearningResult.find(params[:result])
+    student = User.find(@result.user.id)
     respond_to do |format|
       format.html
       format.pdf {
         pdf = Prawn::Document.new
-          pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{@plano.user.nome.capitalize}", :align => :center, :size => 14

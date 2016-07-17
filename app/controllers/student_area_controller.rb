@@ -4,6 +4,7 @@ require "prawn/measurement_extensions"
   def index
     @classrooms = current_user.classrooms
     @quizzes = current_user.quizzes
+    @my_learning_results = current_user.learning_results
     @results = Result.where(user_id: current_user).find_each.to_a
     @my_quizzes = []
     @quizzes.each do |quiz|
@@ -44,6 +45,17 @@ require "prawn/measurement_extensions"
         @plano = current_user.plano
         @notes = Note.where(recipient: @plano.user).each.to_a
     end
+
+  end
+
+  def my_learning_result
+    @selecao = current_user.nome
+    @results = []
+    current_user.learning_results.each do |result|
+      @results << result
+    end
+
+    @datas = @results.map(&:data_final).uniq
 
   end
 

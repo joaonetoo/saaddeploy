@@ -2,6 +2,12 @@ $('#media').html('<%= escape_javascript render (@learning_results) %>');
 
 var content = []
 
+$('#exports').empty();
+<% if @learning_results.size == 1 %>
+     pdf = '<%= link_to "Gerar PDF", pdf_list_learning_results_path(format: "pdf", result: @learning_results.first) %>';
+      $('#exports').append(pdf);
+<%end%>
+
 $('#container').highcharts({
 
         chart: {

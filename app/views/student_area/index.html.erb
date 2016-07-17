@@ -17,6 +17,10 @@
   <% end %>
 <% end %>
 
+<% if @my_learning_results != nil%>
+    <%= link_to "Ver Resultados de estilo de aprendizagem", student_area_my_learning_result_path%><br>
+<% end %>
+
 <strong>Meu plano de carreira</strong><br>
 <% if current_user.plano == nil %>
   <%= link_to 'Plano de carreira', new_plano_path %>
