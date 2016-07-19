@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: saad_v2_development
+  database: saad_v3_development
   host: localhost
   username: postgres
   password: postgres
@@ -62,7 +62,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: saad_v2_test
+  database: saad_v3_test
   host: localhost
   username: postgres
   password: postgres
