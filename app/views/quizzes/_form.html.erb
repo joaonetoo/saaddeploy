@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= label_tag :Instituição %><br>
-    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
+    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, {}, {class: "btn btn-theme -toggle"}) %>
   </div>
   <div class="field">
     <%= label_tag :Campus %><br>

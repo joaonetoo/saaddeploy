@@ -12,6 +12,8 @@
 
     <!-- Custom styles for this template -->
     <%= javascript_include_tag 'chart-master/Chart.js'%>
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -25,21 +27,28 @@
   <section id="container" >
     <% if user_signed_in? %>
         <%= render :partial => 'layouts/navbar' %>
-        <li>
-            <%= link_to "Sair", destroy_user_session_path, :method => 'delete' %>
-        </li>
-        <li>
-            <%= link_to "Home", admin_index_path %>
-        </li>
+        <%= render :partial => 'layouts/sidebar' %>
     <% end  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <section id="main-content">
+          <section class="wrapper">
 
-<%= yield %>
+              <div class="row">
+                  <div class="col-lg-9 main-chart">
+                        <p class="notice"><%= notice %></p>
+                        <p class="alert"><%= alert %></p>
+                        <%= yield %>
+                  </div>
+              </div>
+          </section>
+
+    </section>
+
+
+
 
 
 <!-- js placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag 'jquery', 'jquery-1.8.3', 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
+<%= javascript_include_tag 'jquery', 'jquery-1.8.3', 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
 
     <!--common script for all pages-->
     <%= javascript_include_tag 'gritter/js/jquery.gritter.js' %>
