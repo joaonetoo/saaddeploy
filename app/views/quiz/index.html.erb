@@ -1,4 +1,6 @@
 <%= javascript_include_tag "application", params[:controller] %>
+<%= stylesheet_link_tag 'style-responsive'%>
+<%= stylesheet_link_tag 'table-responsive'%>
 <h1>Quiz#index</h1>
 <h3 id="notice" class="alert"></h3>
 <%= form_tag({ :controller => "quiz", :action => "answer"}, { :id => "myform"}) do |f| %>
@@ -575,3 +577,351 @@
 <% end %>
 
 
+<div class="row mt">
+                    <div class="col-lg-12">
+                      <div class="content-panel">
+                      <h4><i class="fa fa-angle-right"></i> Quiz Âncoras</h4>
+                          <section id="unseen">
+                            <table class="table table-bordered table-striped table-condensed">
+                              <thead>
+                              <tr>
+                                  <th>Questão</th>
+                                  <th>Enunciado</th>
+                                  <th class="numeric">1</th>
+                                  <th class="numeric">2</th>
+                                  <th class="numeric">3</th>
+                                  <th class="numeric">4</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td>1</td>
+                                  <td><strong>Sonho em ser tão bom no que faço que minha opinião de especialista será sempre solicitada.</strong></td>
+                                  <td class="numeric"><%= radio_button_tag(:q1, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q1, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q1, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q1, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>Sinto-me mais realizado em meu trabalho quando consigo integrar e administrar o trabalho de outras pessoas.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q2, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q2, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q2, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q2, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>3</td>
+                                  <td>Sonho em ter uma carreira que me permitirá executar meu trabalho livremente, a meu modo e dentro do meu horário.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q3, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q3, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q3, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q3, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>4</td>
+                                  <td>Estou sempre procurando idéias que me permitirão iniciar o meu próprio negócio.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q4, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q4, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q4, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q4, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>5</td>
+                                  <td>Segurança e estabilidade são mais importantes para mim do que liberdade e autonomia.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q5, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q5, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q5, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q5, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>6</td>
+                                  <td>Eu preferiria deixar minha organização do que ser colocado em um trabalho que iria comprometer a minha capacidade de perseguir interesses pessoais e familiares.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q6, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q6, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q6, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q6, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>7</td>
+                                  <td>Sentirei sucesso na minha carreira se sentir que contribui verdadeiramente para o bem-estar da sociedade</td>
+                                  <td class="numeric"><%= radio_button_tag(:q7, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q7, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q7, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q7, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>8</td>
+                                  <td>Eu sonho com uma carreira em que eu vou sempre ser desafiados por problemas cada vez mais difíceis.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q8, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q8, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q8, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q8, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>9</td>
+                                  <td>Vou sentir bem-sucedido na minha carreira somente se eu possa desenvolver minhas habilidades para um nível cada vez maior de competência.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q9, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q9, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q9, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q9, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>10</td>
+                                  <td>Eu sonho de estar no comando de uma organização inteira</td>
+                                  <td class="numeric"><%= radio_button_tag(:q10, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q10, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q10, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q10, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>11</td>
+                                  <td>Eu sou mais realizado em meu trabalho quando eu estou completamente livre de definir minhas próprias tarefas, horários e procedimentos.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q11, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q11, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q11, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q11, 4) %></td>
+                              </tr>
+                               <tr>
+                                  <td>12</td>
+                                  <td>Eu não diria em uma organização que me daria atribuições que jeopartdize minha segurança no emprego.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q12, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q12, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q12, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q12, 4) %></td>
+                              </tr>
+                               <tr>
+                                  <td>13</td>
+                                  <td>Eu não diria em uma organização que me daria atribuições que jeopartdize minha segurança no emprego.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q13, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q13, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q13, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q13, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>14</td>
+                                  <td>Sinto-me mais realizado em minha carreira quando tenho a oportunidade de usar meus talentos a serviço de meus semelhantes.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q14, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q14, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q14, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q14, 4) %></td>
+                              </tr>
+                               <tr>
+                                  <td>15</td>
+                                  <td>Sentirei sucesso em minha carreira se enfrentar e superar situações muito difíceis.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q15, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q15, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q15, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q15, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>16</td>
+                                  <td>Eu sonho de uma carreira que me permita integrar minhas necessidades pessoais, familiares e de trabalho.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q16, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q16, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q16, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q16, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>17</td>
+                                  <td>Tornar-se um gerente funcional ou técnico experiente na minha área de especialização é mais atraente para mim do que se tornar um gerente geral.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q17, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q17, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q17, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q17, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>18</td>
+                                  <td>Eu me sentirei bem sucedido na minha carreira somente se eu conseguir a autonomia e liberdade para definir o meu trabalho.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q18, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q18, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q18, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q18, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>19</td>
+                                  <td>Eu costumo procurar empregos em organizações que me dão uma sensação de estabilidade e segurança.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q19, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q19, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q19, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q19, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>20</td>
+                                  <td>Sinto-me mais realizado quando eu fui capaz de construir algo que é principalmente o resultado da minha própria habilidade e esforço.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q20, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q20, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q20, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q20, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>21</td>
+                                  <td>Sentirei que minha carreira é um sucesso somente se me tornar diretor geral de uma organização.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q21, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q21, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q21, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q21, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>22</td>
+                                  <td>Usando os meus talentos para tornar o mundo um lugar melhor para se viver é o que impulsiona as minhas decisões de carreira.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q22, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q22, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q22, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q22, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>23</td>
+                                  <td>Sinto-me mais realizado na minha carreira quando resolvo problemas aparentemente insolúveis ou venço sobre coisas que são aparentemente impossíveis.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q23, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q23, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q23, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q23, 4) %></td>
+                              </tr>
+                               <tr>
+                                  <td>24</td>
+                                  <td>Sentirei sucesso na vida se conseguir equilibrar exigências pessoais, familiares e profissionais.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q24, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q24, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q24, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q24, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>25</td>
+                                  <td>Eu sonho com uma carreira que me permita sentir uma sensação de estabilidade e segurança.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q25, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q25, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q25, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q25, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>26</td>
+                                  <td>Prefiro sair da empresa onde estou a aceitar um cargo em esquema rotativo que me afaste da minha área de especialidade.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q26, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q26, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q26, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q26, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>27</td>
+                                  <td>Equilibrar as exigências da minha vida pessoal e profissional é mais importante para mim do que uma posição gerencial de alto nível</td>
+                                  <td class="numeric"><%= radio_button_tag(:q27, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q27, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q27, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q27, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>28</td>
+                                  <td>Eu sonho de estar em uma carreira que faz uma contribuição real para a humanidade e sociedade.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q28, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q28, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q28, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q28, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>29</td>
+                                  <td>Eu me sentirei bem sucedido na minha carreira somente se eu criei uma empresa propría baseado em minhas próprias idéias e habilidades.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q29, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q29, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q29, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q29, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>30</td>
+                                  <td>Tornar-se um gerente geral é mais atraente para mim do que se tornar um gerente funcional sênior na minha área de especialização.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q30, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q30, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q30, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q30, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>31</td>
+                                  <td>A oportunidade de fazer um trabalho à minha maneira, livre de regras e restrições, é muito importante para mim.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q31, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q31, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q31, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q31, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>32</td>
+                                  <td>Eu prefiro oportunidades de trabalho que desafiam fortemente a minha resolução de problemas e habilidades competitivas.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q32, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q32, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q32, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q32, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>33</td>
+                                  <td>Eu sonho de iniciar e construir o meu próprio negócio.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q33, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q33, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q33, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q33, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>34</td>
+                                  <td>Eu preferiria deixar minha organização do que aceitar uma posição que pudesse prejudicar a minha capacidade de ser útil aos outros.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q34, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q34, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q34, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q34, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>35</td>
+                                  <td>Eu me sinto mais realizado em meu trabalho quando eu tenho sido capaz de usar minhas habilidades e talentos especiais.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q35, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q35, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q35, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q35, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>36</td>
+                                  <td>Prefiro sair da empresa onde estou a aceitar um cargo que me afaste do caminho da diretoria geral.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q36, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q36, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q36, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q36, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>37</td>
+                                  <td>Sou mais realizado no meu trabalho quando acho que tenho total inteira segurança financeira e estabilidade no emprego.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q37, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q37, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q37, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q37, 4) %></td>
+                              </tr>
+                            <tr>
+                                  <td>38</td>
+                                  <td>Eu preferiria deixar minha organização do que aceitar um emprego que reduza minha autonomia e liberdade.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q38, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q38, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q38, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q38, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>39</td>
+                                  <td>Eu estou sempre procurando oportunidades profissionais que interfiram o mínimo possível em meus interesses pessoais e familiares.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q39, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q39, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q39, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q39, 4) %></td>
+                              </tr>
+                              <tr>
+                                  <td>40</td>
+                                  <td>Trabalhar com problemas quase insolúveis é mais importante do que alcançar uma alta posição administrativa.</td>
+                                  <td class="numeric"><%= radio_button_tag(:q40, 1) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q40, 2) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q40, 3) %></td>
+                                  <td class="numeric"><%= radio_button_tag(:q40, 4) %></td>
+                              </tr>
+
+
+
+                              </tbody>
+                          </table>
+                          </section>
+                  </div><!-- /content-panel -->
+               </div><!-- /col-lg-4 -->
+            </div><!-- /row -->
+
+            <div class="row mt">
