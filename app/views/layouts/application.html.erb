@@ -27,7 +27,15 @@
   <section id="container" >
     <% if user_signed_in? %>
         <%= render :partial => 'layouts/navbar' %>
-        <%= render :partial => 'layouts/sidebar' %>
+
+        <% if current_user.type == 'Teacher' %>
+            <%= render :partial => 'layouts/sidebarteacher' %>
+        <% elsif current_user.type == 'Student' %>
+            <%= render :partial => 'layouts/sidebarstudent' %>
+        <% elsif current_user.type == 'Administrator' %>
+            <%= render :partial => 'layouts/sidebaradmin' %>
+        <% end %>
+
     <% end  %>
     <section id="main-content">
           <section class="wrapper">

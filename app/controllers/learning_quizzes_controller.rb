@@ -125,7 +125,7 @@ class LearningQuizzesController < ApplicationController
 
     respond_to do |format|
       if @learning_quiz.save
-        format.html { redirect_to @learning_quiz, notice: 'Questionario criado' }
+        format.html { redirect_to welcome_index_path, notice: 'Questionario criado' }
         format.json { render :show, status: :created, location: @learning_quiz }
       else
         format.html { render :new }

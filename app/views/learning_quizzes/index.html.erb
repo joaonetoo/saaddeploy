@@ -14,7 +14,6 @@
   <tbody>
     <% @learning_quizzes.each do |learning_quiz| %>
       <tr>
-        <td><%= learning_quiz.user %></td>
         <td><%= learning_quiz.data_final %></td>
         <td><%= link_to 'Show', learning_quiz %></td>
         <td><%= link_to 'Edit', edit_learning_quiz_path(learning_quiz) %></td>

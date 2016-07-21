@@ -216,7 +216,6 @@ class LearningResultsController < ApplicationController
 
 
 
-
     respond_to do |format|
     format.js {}
   end
@@ -584,7 +583,7 @@ end
     @learning_result.user_id = current_user.id
     respond_to do |format|
       if @learning_result.save
-        format.html { redirect_to @learning_result, notice: 'Learning result was successfully created.' }
+        format.html { redirect_to welcome_index_path, notice: 'Learning result was successfully created.' }
         format.json { render :show, status: :created, location: @learning_result }
       else
         format.html { render :new }

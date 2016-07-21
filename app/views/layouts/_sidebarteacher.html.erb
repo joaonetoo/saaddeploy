@@ -1,0 +1,84 @@
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+
+                  <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
+
+                  <h5 class="centered"><%=current_user.nome%></h5>
+
+                  <li class="mt">
+                      <%= link_to admin_index_path, :class => 'active' do%>
+                          <i class="fa fa-dashboard"></i>
+                          <span>Home</span>
+                      <%  end %>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Planos de carreira</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'Buscar resultados', teachers_area_search_plans_path%></li>
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Estilos de aprendizagem</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'Buscar resultados', search_learning_results_path %></li>
+                          <li><%= link_to 'Cria Questionario', new_learning_quiz_path %></li>
+                          <li><%= link_to 'Comparar resultados', analytics_learning_results_path %></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Âncoras de carreira</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'Buscar resultados', search_results_path %></li>
+                          <li><%= link_to 'Criar Questionario', new_quiz_path %></li>
+                          <li><%= link_to 'Comparar resultados', analytics_results_path %></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-tasks"></i>
+                          <span>Forms</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="form_component.html">Form Components</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Data Tables</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="basic_table.html">Basic Table</a></li>
+                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class=" fa fa-bar-chart-o"></i>
+                          <span>Charts</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="morris.html">Morris</a></li>
+                          <li><a  href="chartjs.html">Chartjs</a></li>
+                      </ul>
+                  </li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->

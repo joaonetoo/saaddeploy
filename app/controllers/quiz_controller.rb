@@ -74,6 +74,7 @@
     @result.ch = (q8 + q15 + q23 + q32 + q40)/ 5.0
     @result.ls = (q6 + q16 + q24 + q27 + q39)/ 5.0
     @result.user_id = current_user.id
+    @result.data_final = params[:data_final]
     @result.save
 
     hash = {"tf" => @result.tf, "gm" => @result.gm, "au" => @result.au, "se" => @result.se, "ec" => @result.ec, "sv" => @result.sv, "ch" => @result.ch, "ls" => @result.ls}

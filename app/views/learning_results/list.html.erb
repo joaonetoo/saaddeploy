@@ -6,7 +6,7 @@
 
 
 
-<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 <%= form_tag(show_by_date_learning_results_path, method: 'post', :remote => true) do %>
   <h2><%= @selecao %></h2>
   <%= hidden_field_tag "selecao", @selecao %>
