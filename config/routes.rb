@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'teachers_area/add_note'
   get 'teachers_area/send_video'
   post 'teachers_area/create_video'
+  get 'teachers_area/videos_index'
 
   get 'student_area/index'
   get 'student_area/pdf_plan'

@@ -5,15 +5,64 @@ class TeachersAreaController < ApplicationController
     @classrooms = current_user.classrooms
   end
 
+  def videos_index
+    @videos = current_user.sent_videos
+  end
+
   def send_video
     @classrooms = current_user.classrooms
     @subjects = []
+    @students = []
     @classrooms.each do |classroom|
         @subjects << classroom.subject
+        classroom.users.each do |user|
+          if user.type == 'Student'
+              @students << user
+          end
+        end
     end
   end
 
   def create_video
+    @video = Video.new
+    @video.description = params[:description]
+    @video.url = @video.youtubeRegExp(params[:url])
+    debugger
+    @video.sender_id = current_user.id
+    current_user.sent_videos << @video
+    @video.save
+
+    if params[:classroom_id] == 'todos'
+      @classrooms = current_user.classrooms
+      @selecao = "Todas as turmas"
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          @users << user
+        end
+      end
+
+    elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @selecao = "turma " + @classroom.codigo
+      @users = []
+      @classroom.users.each do |user|
+        @users << user
+      end
+    end
+
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @users = []
+      @users << @user
+      @selecao = @users.first.nome
+    end
+    @users.each do |user|
+        if user.type == 'Student'
+          @video.recipients << user
+        end
+    end
 
   end
 

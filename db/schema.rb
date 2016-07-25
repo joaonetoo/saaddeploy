@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724172831) do
+ActiveRecord::Schema.define(version: 20160725182526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -305,20 +305,23 @@ ActiveRecord::Schema.define(version: 20160724172831) do
   add_index "users", ["institution_id"], name: "index_users_on_institution_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "video_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "video_id"
-  end
-
-  add_index "video_users", ["user_id"], name: "index_video_users_on_user_id", using: :btree
-  add_index "video_users", ["video_id"], name: "index_video_users_on_video_id", using: :btree
-
   create_table "videos", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
     t.string  "url"
     t.string  "description"
+    t.integer "user_id"
   end
+
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
+
+  create_table "videos_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "video_id"
+  end
+
+  add_index "videos_users", ["user_id"], name: "index_videos_users_on_user_id", using: :btree
+  add_index "videos_users", ["video_id"], name: "index_videos_users_on_video_id", using: :btree
 
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
@@ -343,6 +346,7 @@ ActiveRecord::Schema.define(version: 20160724172831) do
   add_foreign_key "subjects", "courses"
   add_foreign_key "users", "courses"
   add_foreign_key "users", "institutions"
-  add_foreign_key "video_users", "users"
-  add_foreign_key "video_users", "videos"
+  add_foreign_key "videos", "users"
+  add_foreign_key "videos_users", "users"
+  add_foreign_key "videos_users", "videos"
 end

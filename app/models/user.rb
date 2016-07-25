@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :sent_notes, :class_name => 'Note', :foreign_key => 'sender_id'
   has_many :received_notes, :class_name => 'Note', :foreign_key => 'recipient_id'
 
-  has_many :sent_videos, :class_name => 'Video', :foreign_key => 'sender_id'
-  has_many :received_videos, :class_name => 'Video', :foreign_key => 'recipient_id'
+  has_many :sent_videos, :class_name => 'Video', :foreign_key => 'sender_id', :join_table => :videos_users
+  has_and_belongs_to_many :received_videos, :class_name => 'Video', :foreign_key => 'recipient_id', :join_table => :videos_users
 
   has_one :plano
 
