@@ -1,0 +1,10 @@
+I"«(function() {
+  jQuery(function() {
+    var users;
+    $('.note_div').hide();
+    $('#_users_id').hide();
+    return users = $('#_users_id').html();
+  });
+
+}).call(this);
+:ET

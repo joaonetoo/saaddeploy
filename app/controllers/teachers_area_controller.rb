@@ -5,6 +5,18 @@ class TeachersAreaController < ApplicationController
     @classrooms = current_user.classrooms
   end
 
+  def send_video
+    @classrooms = current_user.classrooms
+    @subjects = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+    end
+  end
+
+  def create_video
+
+  end
+
   def search_plans
     @classrooms = current_user.classrooms
     @subjects = []
