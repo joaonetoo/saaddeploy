@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   resources :learning_quizzes
   resources :learning_styles
   resources :learning_results do
