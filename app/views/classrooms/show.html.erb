@@ -32,21 +32,39 @@
 </div>
 <% end %>
 
-<strong>Usuarios Participantes: </strong>
+<strong>Usuarios Participantes: </strong><br>
 
-<% @classroom.users.each do |user| %>
+<strong>Professores</strong>
+<% @classroom.teachers.each do |user| %>
     <p>
     <strong>id:</strong>
     <%= user.id %>
     </p>
     <p>
     <strong>Nome:</strong>
-    <%= user.nome %>
+    <%= user.nome %> <%= link_to "remover", remove_user_classrooms_path(user: user, classroom: @classroom)%>
     </p>
     <p>
     <strong>Tipo:</strong>
     <%= user.type %>
     </p>
+<% end %>
+<br>
+<strong>Estudantes</strong>
+<% @classroom.students.each do |user| %>
+    <p>
+    <strong>id:</strong>
+    <%= user.id %>
+    </p>
+    <p>
+    <strong>Nome:</strong>
+    <%= user.nome %> <%= link_to "remover", remove_user_classrooms_path(user: user, classroom: @classroom)%>
+    </p>
+    <p>
+    <strong>Tipo:</strong>
+    <%= user.type %>
+    </p>
+
 
 <% end %>
 

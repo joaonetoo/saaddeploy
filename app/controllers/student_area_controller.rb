@@ -59,6 +59,15 @@ require "prawn/measurement_extensions"
 
   end
 
+  def videos_index
+    @videos = current_user.received_videos
+  end
+
+  def unsubscribe_video
+    @video = Video.find(params[:video])
+    @video.recipients.delete(current_user)
+    redirect_to  student_area_videos_index_path
+  end
 
   def pdf_plan
     @plano = Plano.find(params[:plano])

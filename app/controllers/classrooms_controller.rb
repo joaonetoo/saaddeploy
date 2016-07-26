@@ -10,10 +10,25 @@ class ClassroomsController < ApplicationController
   def add_user
     @user = User.where(nome: params[:user_id]).first
     @classroom = Classroom.find(params[:classroom_id])
-    @classroom.users << @user
+    if @user.type == 'Student'
+      @student = Student.where(nome: params[:user_id]).first
+      @classroom.students << @user
+    elsif @user.type == 'Teacher'
+      @classroom.teachers << @user
+    end
 
     flash[:notice] = "Usuario adicionado."
     redirect_to @classroom
+  end
+
+  def remove_user
+   @user = User.find(params[:user])
+   @classroom = Classroom.find(params[:classroom])
+   @classroom.users.delete(@user)
+   if @user.type == 'Student'
+    @classroom.students.delete(@user)
+   end
+    redirect_to  @classroom
   end
 
   # GET /classrooms/1

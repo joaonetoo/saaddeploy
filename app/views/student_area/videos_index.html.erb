@@ -1,12 +1,14 @@
-<h2>Videos Enviados</h2>
+<h2>Videos Recebidos</h2>
 <% if @videos != nil %>
     <% @videos.each do |video| %>
         <div>
             <iframe width="400" height="300" src="<%= "http://www.youtube.com/embed/"+ video.url %>"></iframe>
             <p>
-                Descrição: <%= video.description %><br>
-                <%= link_to 'Deletar', video, method: :delete, data: { confirm: 'Are you sure?' } %>
+            Descrição: <%= video.description %><br>
+            Enviado por: <%= video.sender.nome%><br>
+            <%= link_to "deletar", student_area_unsubscribe_video_path(video: video)%>
             </p>
         </div>
+        <br>
     <% end %>
 <% end %>

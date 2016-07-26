@@ -14,14 +14,6 @@ class CoordinatorsAreaController < ApplicationController
     @subjects.each do |subject|
       @classrooms = Classroom.where(subject_id: subject.id).find_each
     end
-    @students = []
-    @classrooms.each do |classroom|
-        classroom.users.each do |user|
-          if user.type == 'Student'
-              @students << user
-          end
-        end
-    end
   end
 
   def create_video

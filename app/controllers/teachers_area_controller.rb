@@ -11,16 +11,7 @@ class TeachersAreaController < ApplicationController
 
   def send_video
     @classrooms = current_user.classrooms
-    @subjects = []
-    @students = []
-    @classrooms.each do |classroom|
-        @subjects << classroom.subject
-        classroom.users.each do |user|
-          if user.type == 'Student'
-              @students << user
-          end
-        end
-    end
+    @subjects =@classrooms.each.map(&:subject).uniq
   end
 
   def create_video
