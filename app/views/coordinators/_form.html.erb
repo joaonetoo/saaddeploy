@@ -1,4 +1,5 @@
 <h2>Cadastro</h2>
+<%= javascript_include_tag "coordinators" %>
 
 <%= form_for("user", url: user_registration_path) do |f| %>
 
@@ -36,13 +37,23 @@
     <%= f.file_field :avatar %>
   </div>
 
-  <div class="field">
+   <div class="field">
     <%= label_tag :institution %><br>
     <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
   </div>
 
   <div class="field">
-    <%= f.grouped_collection_select :course_id, Institution.order(:nome), :courses, :nome, :id, :nome, include_blank: true%>
+    <%= label_tag :Campus %><br>
+    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
+  </div>
+  <div class="field">
+    <%= label_tag :Centro %><br>
+    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= label_tag :Curso %><br>
+    <%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>
   </div>
 
   <div class="field">

@@ -27,7 +27,6 @@ class TeachersAreaController < ApplicationController
     @video = Video.new
     @video.description = params[:description]
     @video.url = @video.youtubeRegExp(params[:url])
-    debugger
     @video.sender_id = current_user.id
     current_user.sent_videos << @video
     @video.save
