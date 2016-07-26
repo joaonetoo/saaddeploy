@@ -8,10 +8,12 @@ class WelcomeController < ApplicationController
         redirect_to student_area_index_path
     elsif user_signed_in? && current_user.type == "Teacher"
         redirect_to teachers_area_index_path
+
+    elsif user_signed_in? && current_user.type == "Coordinator"
+        redirect_to coordinators_area_index_path
+
     else
-
         redirect_to new_user_session_path
-
     end
 
 

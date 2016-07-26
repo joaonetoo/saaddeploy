@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'coordinators_area/index'
+
+  post 'coordinators_area/create_video'
+
+  get 'coordinators_area/list'
+
+  get 'coordinators_area/search_plans'
+
+  get 'coordinators_area/send_video'
+
+  get 'coordinators_area/show_plan'
+
+  get 'coordinators_area/videos_index'
+
   resources :videos
   resources :learning_quizzes
   resources :learning_styles

@@ -1,0 +1,8 @@
+<h2>Videos Enviados</h2>
+<% if @videos != nil %>
+    <% @videos.each do |video| %>
+        <div>
+            <iframe width="400" height="300" src="<%= "http://www.youtube.com/embed/"+ video.url %>"></iframe>
+        </div>
+    <% end %>
+<% end %>

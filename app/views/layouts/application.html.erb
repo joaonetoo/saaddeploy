@@ -34,6 +34,8 @@
             <%= render :partial => 'layouts/sidebarstudent' %>
         <% elsif current_user.type == 'Administrator' %>
             <%= render :partial => 'layouts/sidebaradmin' %>
+        <% elsif current_user.type == 'Coordinator' %>
+            <%= render :partial => 'layouts/sidebarcoordinator' %>
         <% end %>
 
     <% end  %>
