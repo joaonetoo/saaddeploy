@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727180443) do
+ActiveRecord::Schema.define(version: 20160727190129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.datetime "data"
+    t.string   "nome"
+    t.string   "palestrante"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "activities", ["event_id"], name: "index_activities_on_event_id", using: :btree
 
   create_table "administrators", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -340,6 +351,7 @@ ActiveRecord::Schema.define(version: 20160727180443) do
   add_index "videos_users", ["user_id"], name: "index_videos_users_on_user_id", using: :btree
   add_index "videos_users", ["video_id"], name: "index_videos_users_on_video_id", using: :btree
 
+  add_foreign_key "activities", "events"
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
   add_foreign_key "campus", "institutions"
