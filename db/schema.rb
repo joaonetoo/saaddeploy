@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727190129) do
+ActiveRecord::Schema.define(version: 20160727191313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -235,6 +235,21 @@ ActiveRecord::Schema.define(version: 20160727190129) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "autor"
+    t.string   "email"
+    t.text     "resumo"
+    t.string   "tags"
+    t.string   "tipo"
+    t.string   "estado"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "projects", ["event_id"], name: "index_projects_on_event_id", using: :btree
+
   create_table "quizzes", force: :cascade do |t|
     t.integer  "user_id"
     t.date     "data_final"
@@ -368,6 +383,7 @@ ActiveRecord::Schema.define(version: 20160727190129) do
   add_foreign_key "learning_quizzes_users", "users"
   add_foreign_key "learning_results", "users"
   add_foreign_key "planos", "users"
+  add_foreign_key "projects", "events"
   add_foreign_key "quizzes", "users"
   add_foreign_key "quizzes_users", "quizzes"
   add_foreign_key "quizzes_users", "users"
