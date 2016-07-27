@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725182526) do
+ActiveRecord::Schema.define(version: 20160727180443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,23 @@ ActiveRecord::Schema.define(version: 20160725182526) do
   end
 
   add_index "courses", ["center_id"], name: "index_courses_on_center_id", using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "nome"
+    t.text     "apresentacao"
+    t.text     "objetivos"
+    t.datetime "inicio"
+    t.datetime "fim"
+    t.boolean  "submissao"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "normas",       default: "nenhuma"
+    t.datetime "deadline",     default: '2016-07-27 18:02:10'
+    t.string   "trabalhos",    default: "nenhum"
+    t.integer  "user_id"
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "institutions", force: :cascade do |t|
     t.string   "cnpj"
@@ -333,6 +350,7 @@ ActiveRecord::Schema.define(version: 20160725182526) do
   add_foreign_key "classrooms_users", "classrooms"
   add_foreign_key "classrooms_users", "users"
   add_foreign_key "courses", "centers"
+  add_foreign_key "events", "users"
   add_foreign_key "learning_quizzes", "users"
   add_foreign_key "learning_quizzes_users", "learning_quizzes"
   add_foreign_key "learning_quizzes_users", "users"

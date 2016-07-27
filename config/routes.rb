@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get 'coordinators_area/index'
 
   post 'coordinators_area/create_video'

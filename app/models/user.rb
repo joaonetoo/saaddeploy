@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :sent_videos, :class_name => 'Video', :foreign_key => 'sender_id', :join_table => :videos_users
   has_and_belongs_to_many :received_videos, :class_name => 'Video', :foreign_key => 'user_id', :join_table => :videos_users
-
+  has_many :events
   has_one :plano
 
   # Include default devise modules. Others available are:
