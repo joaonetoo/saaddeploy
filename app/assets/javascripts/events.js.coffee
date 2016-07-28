@@ -8,3 +8,6 @@ jQuery ->
             $('#extra').children().show()
         else
             $('#extra').children().hide()
+    $('.note_div').hide()
+    $('.add_button').on "click", ->
+        $('.note_div').show()

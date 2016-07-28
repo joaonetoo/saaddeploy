@@ -1,3 +1,5 @@
+<%= javascript_include_tag "application", params[:controller] %>
+<%= link_to 'Voltar', public_events_events_path %>
 <p>
   <strong>Nome:</strong>
   <%= @event.nome %>
@@ -24,11 +26,6 @@
 </p>
 
 <p>
-  <strong>Submissao:</strong>
-  <%= @event.submissao %>
-</p>
-
-<p>
   <strong>Normas</strong>
   <%= @event.normas %>
 </p>
@@ -49,7 +46,11 @@
 </p>
 
 <%if @event.submissao == true %>
-
+  <a href="#" class="add_button">Submeter Trabalho</a>
+  <div class="note_div">
+      <h2>Envio de trabalho</h2>
+      <%= render 'projects/form'%>
+  </div>
 <% end %>
 
-<%= link_to 'Voltar', public_events_events_path %>
+

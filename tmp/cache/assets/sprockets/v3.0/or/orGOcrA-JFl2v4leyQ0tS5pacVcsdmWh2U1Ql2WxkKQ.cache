@@ -1,0 +1,15 @@
+I"i(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $("input[type=checkbox]").on("change", function() {
+      if ($("input[type=checkbox]").prop('checked')) {
+        return $('#extra').children().show();
+      } else {
+        return $('#extra').children().hide();
+      }
+    });
+    return $('.note_div').hide();
+  });
+
+}).call(this);
+:ET
