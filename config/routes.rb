@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :registrations
   resources :projects
   resources :activities
-  resources :events
+  resources :events do
+    collection do
+        get 'public_events'
+    end
+  end
   get 'coordinators_area/index'
 
   post 'coordinators_area/create_video'

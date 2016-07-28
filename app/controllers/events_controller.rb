@@ -1,9 +1,14 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :permission_check
+  before_action :permission_check, only: [:index, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:public_events]
 
   # GET /events
   # GET /events.json
+  def public_events
+    @events = Event.all
+  end
+
   def index
     @events = Event.all
   end
@@ -76,6 +81,6 @@ class EventsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nome, :apresentacao, :objetivos, :inicio, :fim, :submissao)
+      params.require(:event).permit(:nome, :apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas)
     end
 end
