@@ -141,6 +141,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    paperclip-ghostscript (0.1.0)
+      paperclip
     pdf-core (0.6.1)
     pg (0.18.4)
     prawn (2.1.0)
@@ -242,6 +244,7 @@ DEPENDENCIES
   jquery-ui-rails
   jquery-validation-rails
   paperclip (~> 5.0.0.beta1)
+  paperclip-ghostscript
   pg (~> 0.15)
   prawn
   prawn-table

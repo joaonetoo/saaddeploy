@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -19,8 +17,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-gem 'jquery-turbolinks'
 
 gem 'jquery-turbolinks'
 
@@ -70,6 +66,9 @@ gem 'prawn-table'
 gem 'cancancan', '~> 1.10'
 
 gem "paperclip", "~> 5.0.0.beta1"
+
+gem 'paperclip-ghostscript'
+
 gem 'aws-sdk', '~> 2.3'
 
 ruby '2.3.0'
