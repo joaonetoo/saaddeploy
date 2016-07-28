@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events do
     collection do
         get 'public_events'
+        get 'public_show'
     end
   end
   get 'coordinators_area/index'

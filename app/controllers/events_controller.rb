@@ -1,12 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :permission_check, only: [:index, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:public_events]
+  skip_before_action :authenticate_user!, only: [:public_events, :public_show]
 
   # GET /events
   # GET /events.json
   def public_events
     @events = Event.all
+  end
+
+  def public_show
+    @event = Event.find(params[:event])
   end
 
   def index

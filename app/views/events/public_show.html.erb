@@ -1,0 +1,55 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @event.nome %>
+</p>
+
+<p>
+  <strong>Apresentacao:</strong>
+  <%= @event.apresentacao %>
+</p>
+
+<p>
+  <strong>Objetivos:</strong>
+  <%= @event.objetivos %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @event.inicio.strftime("%-d/%-m/%y às %H:%M") %>
+</p>
+
+<p>
+  <strong>Fim:</strong>
+  <%= @event.fim.strftime("%-d/%-m/%y às %H:%M") %>
+</p>
+
+<p>
+  <strong>Submissao:</strong>
+  <%= @event.submissao %>
+</p>
+
+<p>
+  <strong>Normas</strong>
+  <%= @event.normas %>
+</p>
+
+<p>
+  <strong>Deadline</strong>
+  <%= @event.deadline.strftime("%-d/%-m/%y: %H:%M") %>
+</p>
+
+<p>
+  <strong>Trabalhos</strong>
+  <%= @event.trabalhos %>
+</p>
+
+<p>
+  <strong>Criado por:</strong>
+  <%= @event.user.nome %>
+</p>
+
+<%if @event.submissao == true %>
+
+<% end %>
+
+<%= link_to 'Voltar', public_events_events_path %>

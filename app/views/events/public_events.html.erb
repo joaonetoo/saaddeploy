@@ -23,6 +23,7 @@
 
           <tbody>
             <% @events.each do |event| %>
+            <% if event.fim.past? == false %>
               <tr>
                 <td><%= event.nome %></td>
                 <td><%= event.apresentacao %></td>
@@ -35,8 +36,9 @@
                     <td>Não</td>
                 <% end %>
                 <td><%= event.user.nome %></td>
-                <td><%= link_to 'Ver', event %></td>
+                <td><%= link_to 'Ver', public_show_events_path(:event => event ) %></td>
               </tr>
+              <% end  %>
             <% end %>
           </tbody>
         </table>
