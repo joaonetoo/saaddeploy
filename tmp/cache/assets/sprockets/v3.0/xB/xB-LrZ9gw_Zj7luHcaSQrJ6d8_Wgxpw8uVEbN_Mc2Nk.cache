@@ -1,0 +1,11 @@
+I"ô(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $('#recover input[type=checkbox]').on("change", function() {});
+    if ($(this).prop('checked')) {
+      return console.log('hora do show');
+    }
+  });
+
+}).call(this);
+:ET

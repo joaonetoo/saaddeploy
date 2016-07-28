@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :permission_check
 
   # GET /events
   # GET /events.json
@@ -28,7 +29,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to welcome_index_path, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -67,6 +68,12 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
+    def permission_check
+      if current_user.type == 'Administrator' || current_user.type == 'Coordinator' || current_user.type == 'Principal'
+      else
+        redirect_to welcome_index_path
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:nome, :apresentacao, :objetivos, :inicio, :fim, :submissao)

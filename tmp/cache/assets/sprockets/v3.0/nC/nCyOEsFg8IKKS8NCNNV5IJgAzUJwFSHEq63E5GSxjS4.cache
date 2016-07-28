@@ -1,0 +1,7 @@
+I"i(function() {
+  jQuery(function() {
+    return $('#extra').children().hide();
+  });
+
+}).call(this);
+:ET

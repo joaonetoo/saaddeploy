@@ -1,0 +1,10 @@
+I"¼(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    if ($('input:checkbox').prop('checked')) {
+      return console.log('hora do show');
+    }
+  });
+
+}).call(this);
+:ET

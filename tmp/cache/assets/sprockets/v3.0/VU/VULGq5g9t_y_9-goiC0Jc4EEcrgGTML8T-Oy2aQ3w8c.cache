@@ -1,0 +1,12 @@
+I"Ê(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    if ($({
+      input: checkbox
+    }).prop('checked')) {
+      return $('#event_submissao').hide();
+    }
+  });
+
+}).call(this);
+:ET

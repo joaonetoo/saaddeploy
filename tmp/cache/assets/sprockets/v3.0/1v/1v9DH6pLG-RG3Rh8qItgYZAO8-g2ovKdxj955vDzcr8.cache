@@ -1,0 +1,10 @@
+I"³(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    if ($('input:checkbox').prop('checked')) {
+      return alert('something');
+    }
+  });
+
+}).call(this);
+:ET

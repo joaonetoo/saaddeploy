@@ -1,0 +1,11 @@
+I"Õ(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $('#event_submissao').hide();
+    if ($('#event_submissao').attr(':checked')) {
+      return alert("sdsdsd");
+    }
+  });
+
+}).call(this);
+:ET

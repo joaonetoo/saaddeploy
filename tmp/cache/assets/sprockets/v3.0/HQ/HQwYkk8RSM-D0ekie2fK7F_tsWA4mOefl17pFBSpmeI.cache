@@ -1,0 +1,12 @@
+I"(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    return $("input[type=checkbox]").on("change", function() {
+      if ($("input[type=checkbox]").prop('checked')) {
+        return $('#extra').children().show();
+      }
+    });
+  });
+
+}).call(this);
+:ET
