@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @projects = @event.projects
   end
 
   # GET /events/new

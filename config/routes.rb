@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'coordinators_area/videos_index'
 
+  get 'coordinators_area/my_events'
+
   resources :videos
   resources :learning_quizzes
   resources :learning_styles

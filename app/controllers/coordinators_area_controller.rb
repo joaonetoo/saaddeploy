@@ -8,6 +8,10 @@ class CoordinatorsAreaController < ApplicationController
     @videos = current_user.sent_videos
   end
 
+  def my_events
+      @events = Event.where(:user_id => current_user.id)
+  end
+
   def send_video
     @course = current_user.course
     @subjects = Subject.where(:course_id => @course.id)

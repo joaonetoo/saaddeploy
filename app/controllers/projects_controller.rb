@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:create]
 
   # GET /projects
   # GET /projects.json
@@ -69,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:titulo, :autor, :email, :resumo, :tags, :tipo, :estado, :event_id)
+      params.require(:project).permit(:titulo, :autor, :email, :resumo, :tags, :tipo, :estado, :event_id, :file)
     end
 end

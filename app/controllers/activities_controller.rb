@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
   def show
   end
 
+
   # GET /activities/new
   def new
     @activity = Activity.new
