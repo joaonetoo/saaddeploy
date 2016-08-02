@@ -26,11 +26,12 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
+    @event = Event.find(params[:activity][:event_id])
+    @activities = @event.activities
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
-        format.json { render :show, status: :created, location: @activity }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @activity.errors, status: :unprocessable_entity }
@@ -55,10 +56,13 @@ class ActivitiesController < ApplicationController
   # DELETE /activities/1
   # DELETE /activities/1.json
   def destroy
+    @event = @activity.event
+    @activities = @event.activities
     @activity.destroy
     respond_to do |format|
       format.html { redirect_to activities_url, notice: 'Activity was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

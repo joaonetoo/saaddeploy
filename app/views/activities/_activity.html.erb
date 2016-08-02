@@ -1,0 +1,7 @@
+<tr>
+<td><%= activity.data %></td>
+<td><%= activity.nome %></td>
+<td><%= activity.palestrante %></td>
+<td><%= activity.event.nome %></td>
+<td><%= link_to 'Deletar', activity, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%></td>
+</tr>
