@@ -57,7 +57,7 @@ class ActivitiesController < ApplicationController
   # DELETE /activities/1.json
   def destroy
     @event = @activity.event
-    @activities = @event.activities
+    @activities = @event.activitiess
     @activity.destroy
     respond_to do |format|
       format.html { redirect_to activities_url, notice: 'Activity was successfully destroyed.' }

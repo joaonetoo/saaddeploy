@@ -28,15 +28,15 @@
         <td><%= event.nome %></td>
         <td><%= event.apresentacao %></td>
         <td><%= event.objetivos %></td>
-        <td><%= event.inicio.strftime("%-d/%-m/%y: %H:%M") %></td>
-        <td><%= event.fim.strftime("%-d/%-m/%y: %H:%M") %></td>
+        <td><%= event.inicio.strftime("%d/%m/%y: %H:%M") %></td>
+        <td><%= event.fim.strftime("%d/%m/%y: %H:%M") %></td>
         <% if event.submissao %>
             <td>Sim</td>
         <% else %>
             <td>Não</td>
         <% end %>
         <td><%= event.normas %></td>
-        <td><%= event.deadline.strftime("%-d/%-m/%y: %H:%M") %></td>
+        <td><%= event.deadline.strftime("%d/%m/%y: %H:%M") %></td>
         <td><%= event.trabalhos %></td>
         <td><%= event.user.nome %></td>
         <td><%= link_to 'Ver', event %></td>

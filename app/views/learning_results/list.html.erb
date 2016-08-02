@@ -4,7 +4,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
 
-
+<%= javascript_include_tag "createCsv"%>
 
 <div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 <%= form_tag(show_by_date_learning_results_path, method: 'post', :remote => true) do %>
@@ -15,7 +15,13 @@
     <%= hidden_field_tag "results[]", id %>
   <% end %>
 
-  <table id="tabela_resultados">
+<a href="#" id="export">Exportar CSV</a>
+
+<div id='exports'>
+</div>
+
+<div id = "dados">
+  <table>
     <thead>
       <tr>
       <th>User</th>
@@ -28,14 +34,11 @@
       </tr>
     </thead>
 
-    <tbody  id="media">
+    <tbody  id="list">
 
     </tbody>
   </table>
-
-  <div id='exports'>
   </div>
-
 
   <br>
 
