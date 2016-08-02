@@ -77,7 +77,7 @@
         <td><%= project.estado %></td>
         <td><%= project.event.nome %></td>
         <td><%= link_to "Arquivo", project.file.url(:original, false) %></td>
-        <td><%= link_to 'Ver', project %></td>
+        <td><%= link_to 'Fazer Observação', project %></td>
         <td><%= link_to 'Aprovar', edit_project_path(project) %></td>
         <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
