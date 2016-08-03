@@ -36,13 +36,13 @@
 </p>
 
 <p>
-  <strong>Event:</strong>
-  <%= @project.event %>
+  <strong>Evento:</strong>
+  <%= @project.event.nome %>
 </p>
 
 <%= form_tag  observation_projects_path, multipart: true do%>
   <div class="field">
-    <%= label_tag :observation %><br>
+    <%= label_tag :observação %><br>
     <%= text_area_tag :observation %>
   </div>
   <div class="field">
@@ -58,5 +58,5 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Editar', edit_project_path(@project) %> |
+<%= link_to 'Voltar', @project.event %>

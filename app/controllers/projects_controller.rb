@@ -25,8 +25,10 @@ class ProjectsController < ApplicationController
   def observation
     @observation = params[:observation]
     @project = Project.find(params[:project])
+    @autor = @project.autor
     @email = @project.email
-    UserMailer.sample_email(@email, @observation).deliver_now
+    @doc = params[:file]
+    UserMailer.sample_email(@email, @observation, @doc, @autor).deliver_now
     redirect_to @project, notice: 'Observação enviada'
   end
 
