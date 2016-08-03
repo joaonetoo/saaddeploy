@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :registrations
-  resources :projects
+  resources :projects do
+      collection do
+        post 'observation'
+      end
+  end
   resources :activities
   resources :events do
     collection do

@@ -40,5 +40,19 @@
   <%= @project.event %>
 </p>
 
+<%= form_tag  observation_projects_path, multipart: true do%>
+  <div class="field">
+    <%= label_tag :observation %><br>
+    <%= text_area_tag :observation %>
+  </div>
+  <div class="field">
+    <%= hidden_field_tag :project, @project.id %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "fazer observação"%>
+  </div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

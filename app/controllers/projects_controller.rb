@@ -22,6 +22,14 @@ class ProjectsController < ApplicationController
   def edit
   end
 
+  def observation
+    @observation = params[:observation]
+    @project = Project.find(params[:project])
+    @email = @project.email
+    UserMailer.sample_email(@email, @observation).deliver_now
+    redirect_to @project, notice: 'Observação enviada'
+  end
+
   # POST /projects
   # POST /projects.json
   def create
