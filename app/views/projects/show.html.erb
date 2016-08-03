@@ -48,6 +48,10 @@
   <div class="field">
     <%= hidden_field_tag :project, @project.id %>
   </div>
+  <div class="field">
+    <%= label_tag :arquivo %><br>
+    <%= file_field_tag :file %>
+  </div>
   <div class="actions">
     <%= submit_tag "fazer observação"%>
   </div>
