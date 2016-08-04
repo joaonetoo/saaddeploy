@@ -45,12 +45,23 @@
   <%= @event.user.nome %>
 </p>
 
+<div>
+  <div class="note_div">
+      <h2>Inscrição para o evento</h2>
+      <%= render 'registrations/form'%>
+  </div>
+  <a href="#" class="add_button">Realizar Inscrição</a>
+</div>
+
+<div>
 <%if @event.submissao == true %>
-  <a href="#" class="add_button">Submeter Trabalho</a>
   <div class="note_div">
       <h2>Envio de trabalho</h2>
       <%= render 'projects/form'%>
   </div>
+  <a href="#" class="add_button">Submeter Trabalho</a>
+  </div>
+
 <% end %>
 
 

@@ -1,0 +1,21 @@
+I"/(function() {
+  jQuery(function() {
+    $('#extra').children().hide();
+    $("input[type=checkbox]").on("change", function() {
+      if ($("input[type=checkbox]").prop('checked')) {
+        return $('#extra').children().show();
+      } else {
+        return $('#extra').children().hide();
+      }
+    });
+    $('.note_div').hide();
+    return $('.add_button').on("click", function() {
+      $(".note_div").hide();
+      $(".add_button").show();
+      $(this).closest("div").find('.note_div').show();
+      return $(this).hide();
+    });
+  });
+
+}).call(this);
+:ET

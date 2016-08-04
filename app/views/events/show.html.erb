@@ -1,3 +1,4 @@
+<%= javascript_include_tag "add_obs.js"%>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -38,11 +39,13 @@
 
 <p id="notice"><%= notice %></p>
 
-  <a href="#" class="add_button">Adicionar Atividade</a>
+<div>
   <div class="note_div">
       <h2>Adicionar atividade</h2>
       <%= render 'activities/form'%>
   </div>
+</div>
+  <a href="#" class="add_button">Adicionar Atividade</a>
 
 <div class="row mt">
 <div class="col-lg-12">

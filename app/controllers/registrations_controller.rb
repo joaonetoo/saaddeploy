@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:create]
 
   # GET /registrations
   # GET /registrations.json
@@ -25,10 +26,11 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(registration_params)
-
+    @event = @registration.event
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        RegistrationMailer.registration_email(@event, @registration).deliver_now
+        format.html { redirect_to public_events_events_path, notice: 'Cadastrado com sucesso' }
         format.json { render :show, status: :created, location: @registration }
       else
         format.html { render :new }

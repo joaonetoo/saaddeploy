@@ -10,4 +10,7 @@ jQuery ->
             $('#extra').children().hide()
     $('.note_div').hide()
     $('.add_button').on "click", ->
-        $('.note_div').show()
+        $(".note_div").hide();
+        $(".add_button").show();
+        $(this).closest("div").find('.note_div').show()
+        $(this).hide()

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>SAAD</h1>
+    <h2>Confirmação de inscrição</h2>
+    <h3>Caro <%= @registration.nome%>, </h3>
+    <p>
+        sua inscrição no evento <%= @event.nome %> com data <%= @event.inicio.strftime("%d/%m/%y as %H:%M") %> está confirmada.
+    </p>
+  </body>
+</html>

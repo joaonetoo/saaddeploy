@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to public_events_events_path, notice: 'Project was successfully created.' }
+        format.html { redirect_to public_events_events_path, notice: 'Trabalho enviado com sucesso' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -65,9 +65,10 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    @event = @project.event
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to @event, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
