@@ -36,6 +36,8 @@
             <%= render :partial => 'layouts/sidebaradmin' %>
         <% elsif current_user.type == 'Coordinator' %>
             <%= render :partial => 'layouts/sidebarcoordinator' %>
+        <% elsif current_user.type == 'Principal' %>
+            <%= render :partial => 'layouts/sidebarprincipal' %>
         <% end %>
 
     <% end  %>

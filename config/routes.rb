@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'principals_area/index'
+
+  get 'principals_area/create_video'
+
+  get 'principals_area/list'
+
+  get 'principals_area/my_events'
+
+  get 'principals_area/search_anchors'
+
+  get 'principals_area/search_plans'
+
+  get 'principals_area/send_video'
+
+  get 'principals_area/show_plan'
+
+  get 'principals_area/videos_index'
+
   resources :registrations
   resources :projects do
       collection do
@@ -27,6 +45,8 @@ Rails.application.routes.draw do
   get 'coordinators_area/videos_index'
 
   get 'coordinators_area/my_events'
+
+   get 'coordinators_area/search_anchors'
 
   resources :videos
   resources :learning_quizzes

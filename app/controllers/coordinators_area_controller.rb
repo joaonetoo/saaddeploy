@@ -8,6 +8,10 @@ class CoordinatorsAreaController < ApplicationController
     @videos = current_user.sent_videos
   end
 
+  def search_anchors
+
+  end
+
   def my_events
       @events = Event.where(:user_id => current_user.id)
   end

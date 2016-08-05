@@ -12,6 +12,8 @@ class WelcomeController < ApplicationController
     elsif user_signed_in? && current_user.type == "Coordinator"
         redirect_to coordinators_area_index_path
 
+    elsif user_signed_in? && current_user.type == "Principal"
+        redirect_to principals_area_index_path
     else
         redirect_to new_user_session_path
     end
