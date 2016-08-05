@@ -22,6 +22,7 @@ class EventsController < ApplicationController
   def show
     @projects = @event.projects
     @activities = @event.activities
+    @registrations = @event.registrations
   end
 
   # GET /events/new
