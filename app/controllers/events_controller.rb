@@ -3,6 +3,13 @@ class EventsController < ApplicationController
   before_action :permission_check, only: [:index, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:public_events, :public_show]
 
+  def check_privilege(event)
+     unless current_user.id == event.user_id
+      redirect_to welcome_index_path
+      return
+    end
+  end
+
   # GET /events
   # GET /events.json
   def public_events
@@ -20,6 +27,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    check_privilege(@event)
     @projects = @event.projects
     @activities = @event.activities
     @registrations = @event.registrations
