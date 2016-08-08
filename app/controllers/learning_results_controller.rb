@@ -204,15 +204,6 @@ class LearningResultsController < ApplicationController
       @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
     end
-    @mediaEc = (@mediaEc / @learning_results.size.to_f) / 0.48
-    @mediaOr = @mediaOr / @learning_results.size.to_f / 0.48
-    @mediaCa = @mediaCa / @learning_results.size.to_f / 0.48
-    @mediaEa = @mediaEa / @learning_results.size.to_f / 0.48
-
-    @mediaDi = @mediaDi / @learning_results.size.to_f / 0.48
-    @mediaAc = @mediaAc / @learning_results.size.to_f / 0.48
-    @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
-    @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
 
 
 
