@@ -567,10 +567,10 @@ end
   # POST /learning_results.json
   def create
     @learning_result = LearningResult.new(learning_result_params)
-    @learning_result.ec = params[:q1a].to_i + params[:q2c].to_i + params[:q3d].to_i + params[:q4a].to_i + params[:q5a].to_i + params[:q6c].to_i + params[:q7b].to_i + params[:q8d].to_i + params[:q9b].to_i + params[:q10b].to_i + params[:q11a].to_i + params[:q12b].to_i
-    @learning_result.or = params[:q1d].to_i + params[:q2a].to_i + params[:q3c].to_i + params[:q4c].to_i + params[:q5b].to_i + params[:q6a].to_i + params[:q7a].to_i + params[:q8c].to_i + params[:q9a].to_i + params[:q10a].to_i + params[:q11b].to_i + params[:q12c].to_i
-    @learning_result.ca = params[:q1b].to_i + params[:q2b].to_i + params[:q3a].to_i + params[:q4d].to_i + params[:q5c].to_i + params[:q6d].to_i+ params[:q7c].to_i + params[:q8b].to_i + params[:q9d].to_i + params[:q10d].to_i + params[:q11c].to_i + params[:q12a].to_i
-    @learning_result.ea = params[:q1c].to_i + params[:q2d].to_i + params[:q3b].to_i + params[:q4b].to_i + params[:q5d].to_i + params[:q6b].to_i + params[:q7d].to_i + params[:q8a].to_i + params[:q9c].to_i + params[:q10c].to_i + params[:q11d].to_i + params[:q12d].to_i
+    @learning_result.ec = @learning_result.q1a + @learning_result.q2c + @learning_result.q3d + @learning_result.q4a + @learning_result.q5a + @learning_result.q6c + @learning_result.q7b + @learning_result.q8d + @learning_result.q9b + @learning_result.q10b + @learning_result.q11a + @learning_result.q12b
+    @learning_result.or = @learning_result.q1d + @learning_result.q2a + @learning_result.q3c + @learning_result.q4c + @learning_result.q5b + @learning_result.q6a + @learning_result.q7a + @learning_result.q8c + @learning_result.q9a + @learning_result.q10a + @learning_result.q11b + @learning_result.q12c
+    @learning_result.ca = @learning_result.q1b + @learning_result.q2b + @learning_result.q3a + @learning_result.q4d + @learning_result.q5c + @learning_result.q6d+ @learning_result.q7c + @learning_result.q8b + @learning_result.q9d + @learning_result.q10d + @learning_result.q11c + @learning_result.q12a
+    @learning_result.ea = @learning_result.q1c + @learning_result.q2d + @learning_result.q3b + @learning_result.q4b + @learning_result.q5d + @learning_result.q6b + @learning_result.q7d + @learning_result.q8a + @learning_result.q9c + @learning_result.q10c + @learning_result.q11d + @learning_result.q12d
     @learning_result.user_id = current_user.id
     respond_to do |format|
       if @learning_result.save
@@ -615,6 +615,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_result_params
-      params.require(:learning_result).permit(:data_final)
+      params.require(:learning_result).permit(:data_final, :q1a, :q1b, :q1c, :q1d, :q2a, :q2b, :q2c, :q2d, :q3a, :q3b, :q3c, :q3d, :q4a, :q4b, :q4c, :q4d, :q5a, :q5b, :q5c, :q5d, :q6a, :q6b, :q6c, :q6d, :q7a, :q7b, :q7c, :q7d, :q8a, :q8b, :q8c, :q8d, :q9a, :q9b, :q9c, :q9d, :q10a, :q10b, :q10c, :q10d, :q11a, :q11b, :q11c, :q11d, :q12a, :q12b, :q12c, :q12d)
     end
 end

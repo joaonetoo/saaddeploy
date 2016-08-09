@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729164325) do
+ActiveRecord::Schema.define(version: 20160809200743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -183,6 +183,54 @@ ActiveRecord::Schema.define(version: 20160729164325) do
     t.date     "data_final"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "q1a"
+    t.integer  "q1b"
+    t.integer  "q1c"
+    t.integer  "q1d"
+    t.integer  "q2a"
+    t.integer  "q2b"
+    t.integer  "q2c"
+    t.integer  "q2d"
+    t.integer  "q3a"
+    t.integer  "q3b"
+    t.integer  "q3c"
+    t.integer  "q3d"
+    t.integer  "q4a"
+    t.integer  "q4b"
+    t.integer  "q4c"
+    t.integer  "q4d"
+    t.integer  "q5a"
+    t.integer  "q5b"
+    t.integer  "q5c"
+    t.integer  "q5d"
+    t.integer  "q6a"
+    t.integer  "q6b"
+    t.integer  "q6c"
+    t.integer  "q6d"
+    t.integer  "q7a"
+    t.integer  "q7b"
+    t.integer  "q7c"
+    t.integer  "q7d"
+    t.integer  "q8a"
+    t.integer  "q8b"
+    t.integer  "q8c"
+    t.integer  "q8d"
+    t.integer  "q9a"
+    t.integer  "q9b"
+    t.integer  "q9c"
+    t.integer  "q9d"
+    t.integer  "q10a"
+    t.integer  "q10b"
+    t.integer  "q10c"
+    t.integer  "q10d"
+    t.integer  "q11a"
+    t.integer  "q11b"
+    t.integer  "q11c"
+    t.integer  "q11d"
+    t.integer  "q12a"
+    t.integer  "q12b"
+    t.integer  "q12c"
+    t.integer  "q12d"
   end
 
   add_index "learning_results", ["user_id"], name: "index_learning_results_on_user_id", using: :btree
