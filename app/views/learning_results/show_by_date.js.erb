@@ -8,6 +8,9 @@ $('#exports').empty();
       $('#exports').append(pdf);
 <%end%>
 
+var categories = ['Experiência Concreta', 'Observação Reflexiva', 'Conceituação Abstrata', 'Experimentação Ativa'],
+    count = 0;
+
 $('#graphic').highcharts({
 
             chart: {
@@ -15,19 +18,72 @@ $('#graphic').highcharts({
         },
 
         title: {
-            text: 'Highcharts Polar Chart'
+            text: 'Estilos de Aprendizagem'
         },
 
         pane: {
-            startAngle: 0,
-            endAngle: 360
+            startAngle: 0
+        },
+
+
+        xAxis: {
+            tickInterval: 1,
+            min: 0,
+            max: 4,
+            tickmarkPlacement: 'on',
+            categories: categories,
+        },
+
+
+        yAxis: {
+            min: 0
+        },
+
+        plotOptions: {
+            series: {
+                pointStart: 0,
+                pointInterval: 1,
+                 pointPlacement: 'on'
+            },
+            column: {
+                pointPadding: 0,
+                groupPadding: 0,
+            }
+        },
+
+
+
+        series: [{
+            type: 'area',
+            name: 'Area',
+            data: [<%= @mediaEc %>,<%= @mediaOr %>, <%= @mediaCa%>,<%= @mediaEa %>]
+        }]
+
+});
+
+var categories = ['Divergente', 'Assimilador', 'Convergente', 'Acomodador'],
+    count = 0;
+
+$('#graphic2').highcharts({
+
+            chart: {
+            polar: true
+        },
+
+        title: {
+            text: 'Características individuais'
+        },
+
+        pane: {
+            startAngle: 45
         },
 
         xAxis: {
-            tickInterval: 90,
+            tickInterval: 1,
             min: 0,
-            max: 360,
-            categories: ['Experiência Concreta', 'Observação Reflexiva', 'Conceituação Abstrata', 'Experimentação']
+            max: 4,
+            tickmarkPlacement: 'on',
+            categories: categories,
         },
 
         yAxis: {
@@ -37,7 +93,8 @@ $('#graphic').highcharts({
         plotOptions: {
             series: {
                 pointStart: 0,
-                pointInterval: 90
+                pointInterval: 1,
+                pointPlacement: 'on'
             },
             column: {
                 pointPadding: 0,
@@ -50,7 +107,10 @@ $('#graphic').highcharts({
         series: [{
             type: 'area',
             name: 'Area',
-            data: [<%= @mediaEc %>,<%= @mediaOr %>, <%= @mediaCa%>,<%= @mediaAc %>]
+            color: '#34ED13',
+            data: [<%= @mediaDi %>, <%= @mediaAs %>, <%= @mediaCo %>, <%= @mediaAc %>]
         }]
 
 });
+
+

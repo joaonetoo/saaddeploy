@@ -203,6 +203,7 @@ class LearningResultsController < ApplicationController
       @mediaAc = @mediaAc + ((result.ec + result.ea) / 2)
       @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
+      @eap1 = @mediaCa - @mediaEc
     end
 
 
