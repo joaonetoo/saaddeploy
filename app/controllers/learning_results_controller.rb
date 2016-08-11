@@ -78,55 +78,15 @@ class LearningResultsController < ApplicationController
         @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
         @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
       end
-      @mediaEc = (@mediaEc / @learning_results.size.to_f) / 0.48
-      @mediaOr = @mediaOr / @learning_results.size.to_f / 0.48
-      @mediaCa = @mediaCa / @learning_results.size.to_f / 0.48
-      @mediaEa = @mediaEa / @learning_results.size.to_f / 0.48
+      @mediaEc = (@mediaEc / @learning_results.size.to_f)
+      @mediaOr = @mediaOr / @learning_results.size.to_f
+      @mediaCa = @mediaCa / @learning_results.size.to_f
+      @mediaEa = @mediaEa / @learning_results.size.to_f
 
-      @mediaDi = @mediaDi / @learning_results.size.to_f / 0.48
-      @mediaAc = @mediaAc / @learning_results.size.to_f / 0.48
-      @mediaAs = @mediaAs / @learning_results.size.to_f / 0.48
-      @mediaCo = @mediaCo / @learning_results.size.to_f / 0.48
-      #selecao 2
-
-      @selecao2 = params[:selecao2]
-      @resultados2 = params[:results2]
-      @learning_results2 = []
-      @resultados2.each do |result|
-        pre = LearningResult.where(data_final: params[:data_final2], id: result).first
-        if not pre.nil?
-          @learning_results2 << pre
-        end
-      end
-      @mediaEc2 = 0
-      @mediaOr2 = 0
-      @mediaCa2 = 0
-      @mediaEa2 = 0
-
-      @mediaDi2 = 0
-      @mediaAc2 = 0
-      @mediaAs2 = 0
-      @mediaCo2 = 0
-      @learning_results2.each do |result|
-        @mediaEc2 = @mediaEc2 + result.ec
-        @mediaOr2 = @mediaOr2 + result.or
-        @mediaCa2 = @mediaCa2 + result.ca
-        @mediaEa2 = @mediaEa2 + result.ea
-        @mediaDi2 = @mediaDi2 + ((result.ec + result.or) / 2)
-        @mediaAc2 = @mediaAc2 + ((result.ec + result.ea) / 2)
-        @mediaAs2 = @mediaAs2 + ((result.or + result.ca) / 2)
-        @mediaCo2 = @mediaCo2 + ((result.ea + result.ca) / 2)
-      end
-      @mediaEc2 = (@mediaEc2 / @learning_results2.size.to_f) / 0.48
-      @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f / 0.48
-      @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f / 0.48
-      @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f / 0.48
-
-      @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f / 0.48
-      @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f / 0.48
-      @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f / 0.48
-      @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f / 0.48
-
+      @mediaDi = @mediaDi / @learning_results.size.to_f
+      @mediaAc = @mediaAc / @learning_results.size.to_f
+      @mediaAs = @mediaAs / @learning_results.size.to_f
+      @mediaCo = @mediaCo / @learning_results.size.to_f
       #selecao 2
 
     @selecao2 = params[:selecao2]
@@ -157,15 +117,18 @@ class LearningResultsController < ApplicationController
       @mediaAs2 = @mediaAs2 + ((result.or + result.ca) / 2)
       @mediaCo2 = @mediaCo2 + ((result.ea + result.ca) / 2)
     end
-    @mediaEc2 = (@mediaEc2 / @learning_results2.size.to_f) / 0.48
-    @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f / 0.48
-    @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f / 0.48
-    @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f / 0.48
+    @mediaEc2 = @mediaEc2 / @learning_results2.size.to_f
+    @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f
+    @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f
+    @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f
 
-    @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f / 0.48
-    @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f / 0.48
-    @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f / 0.48
-    @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f / 0.48
+    @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f
+    @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f
+    @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f
+    @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f
+
+    @eap1 = @mediaCa - @mediaEc
+    @eap2 = @mediaEa - @mediaOr
 
 
       respond_to do |format|
@@ -203,26 +166,19 @@ class LearningResultsController < ApplicationController
       @mediaAc = @mediaAc + ((result.ec + result.ea) / 2)
       @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
+
+  end
+      @mediaEc = @mediaEc / @learning_results.size.to_f
+      @mediaOr = @mediaOr / @learning_results.size.to_f
+      @mediaCa = @mediaCa / @learning_results.size.to_f
+      @mediaEa = @mediaEa / @learning_results.size.to_f
+      @mediaDi = @mediaDi / @learning_results.size.to_f
+      @mediaAc = @mediaAc / @learning_results.size.to_f
+      @mediaAs = @mediaAs / @learning_results.size.to_f
+      @mediaCo = @mediaCo / @learning_results.size.to_f
+
       @eap1 = @mediaCa - @mediaEc
       @eap2 = @mediaEa - @mediaOr
-      if @eap1 < 0
-          @mediaCo = ((result.ea + result.ca) / 4)
-          @mediaAs = ((result.or + result.ca) / 4)
-      elsif @eap1 > 0
-          @mediaAc = ((result.ec + result.ea) / 4)
-          @mediaDi = ((result.ec + result.or) / 4)
-      end
-
-      if @eap2 < 0
-        @mediaAc = ((result.ec + result.ea) / 4)
-        @mediaCo = ((result.ea + result.ca) / 4)
-      elsif @eap2 > 0
-        @mediaDi = ((result.ec + result.or) / 4)
-        @mediaAs = ((result.or + result.ca) / 4)
-      end
-    end
-
-
 
     respond_to do |format|
     format.js {}

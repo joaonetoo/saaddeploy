@@ -7,56 +7,119 @@ $('#media2').html('<%= escape_javascript render (@learning_results) %>');
 
 
 
-
+var categories = ['Experiência Concreta', 'Observação Reflexiva', 'Conceituação Abstrata', 'Experimentação Ativa'],
+    count = 0;
 
 $('#graphic').highcharts({
 
-        chart: {
-            polar: true,
-            type: 'line'
+            chart: {
+            polar: true
         },
 
         title: {
-            text: 'Comparação das Ancoras',
-            x: -80
+            text: 'Estilos de Aprendizagem'
         },
 
         pane: {
-            size: '80%'
+            startAngle: 0
         },
+
 
         xAxis: {
-            categories: ['Experiência concreta', 'Divergente', 'Observação reflexiva', 'Assimilador', 'Conceituação Abstrata', 'Convergente', 'Experimentação ativa', 'Acomodador'],
+            tickInterval: 1,
+            min: 0,
+            max: 4,
             tickmarkPlacement: 'on',
-            lineWidth: 0
+            categories: categories,
         },
+
 
         yAxis: {
-            gridLineInterpolation: 'polygon',
-            lineWidth: 0,
-            min: 0
+            min: 0,
+            max: 46
         },
 
-        tooltip: {
-            shared: true,
-            pointFormat: '<span style="color:{series.color}">Pontuação: <b>{point.y:,.2f}</b><br/>'
-        },
-
-        legend: {
-            align: 'right',
-            verticalAlign: 'top',
-            y: 70,
-            layout: 'vertical'
+        plotOptions: {
+            series: {
+                pointStart: 0,
+                pointInterval: 1,
+                 pointPlacement: 'on'
+            },
+            column: {
+                pointPadding: 0,
+                groupPadding: 0,
+            }
         },
 
         series: [{
+            type: 'area',
             name: '<%= @selecao %>',
-            data: [<%= @mediaEc %>, <%= @mediaDi %>, <%= @mediaOr %>, <%= @mediaAs %>, <%= @mediaCa%>, <%= @mediaCo %>, <%= @mediaEa %>, <%= @mediaAc %>],
-            pointPlacement: 'on'
+            data: [<%= @mediaEc %>, <%= @mediaOr %>,  <%= @mediaCa%>,  <%= @mediaEa %>],
+
         }, {
+            type: 'line',
             name: '<%= @selecao2 %>',
-            data: [<%= @mediaEc2 %>, <%= @mediaDi2 %>, <%= @mediaOr2 %>, <%= @mediaAs2 %>, <%= @mediaCa2%>, <%= @mediaCo2 %>, <%= @mediaEa2 %>, <%= @mediaAc2 %>],
-            pointPlacement: 'on'
+            color: '#34ED13',
+            data: [<%= @mediaEc2 %>, <%= @mediaOr2 %>,  <%= @mediaCa2%>,  <%= @mediaEa2 %>],
+
         }]
 
+});
+
+
+var categories = ['Divergente', 'Assimilador', 'Convergente', 'Acomodador'],
+    count = 0;
+
+$('#graphic2').highcharts({
+
+            chart: {
+            polar: true
+        },
+
+        title: {
+            text: 'Características individuais'
+        },
+
+        pane: {
+            startAngle: 45
+        },
+
+        xAxis: {
+            tickInterval: 1,
+            min: 0,
+            max: 4,
+            tickmarkPlacement: 'on',
+            categories: categories,
+        },
+
+        yAxis: {
+            min: 0
+        },
+
+        plotOptions: {
+            series: {
+                pointStart: 0,
+                pointInterval: 1,
+                pointPlacement: 'on'
+            },
+            column: {
+                pointPadding: 0,
+                groupPadding: 0
+            }
+        },
+
+
+
+        series: [{
+            type: 'area',
+            name: '<%= @selecao %>',
+            data: [<%= @mediaDi %>, <%= @mediaAs %>,  <%= @mediaCo%>,  <%= @mediaAc %>],
+
+        }, {
+            type: 'line',
+            name: '<%= @selecao2 %>',
+            color: '#34ED13',
+            data: [<%= @mediaDi2 %>, <%= @mediaAs2 %>,  <%= @mediaCo2%>,  <%= @mediaAc2 %>],
+
+        }]
 });
