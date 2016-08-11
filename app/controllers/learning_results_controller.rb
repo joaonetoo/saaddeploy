@@ -204,6 +204,22 @@ class LearningResultsController < ApplicationController
       @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
       @eap1 = @mediaCa - @mediaEc
+      @eap2 = @mediaEa - @mediaOr
+      if @eap1 < 0
+          @mediaCo = ((result.ea + result.ca) / 4)
+          @mediaAs = ((result.or + result.ca) / 4)
+      elsif @eap1 > 0
+          @mediaAc = ((result.ec + result.ea) / 4)
+          @mediaDi = ((result.ec + result.or) / 4)
+      end
+
+      if @eap2 < 0
+        @mediaAc = ((result.ec + result.ea) / 4)
+        @mediaCo = ((result.ea + result.ca) / 4)
+      elsif @eap2 > 0
+        @mediaDi = ((result.ec + result.or) / 4)
+        @mediaAs = ((result.or + result.ca) / 4)
+      end
     end
 
 
