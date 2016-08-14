@@ -31,6 +31,13 @@ class LearningResultsController < ApplicationController
   def pdf_list
     @result = LearningResult.find(params[:result])
     student = User.find(@result.user.id)
+    @mediaDi = ((@result.ec + @result.or) / 2)
+    @mediaAc = ((@result.ec + @result.ea) / 2)
+    @mediaAs = ((@result.or + @result.ca) / 2)
+    @mediaCo = ((@result.ea + @result.ca) / 2)
+    @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
+    @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
+    @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
     respond_to do |format|
       format.html
       format.pdf {
@@ -38,10 +45,24 @@ class LearningResultsController < ApplicationController
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "Nome do aluno: #{@result.user.nome.capitalize}", :align => :center, :size => 14
-          pdf.text "editado em: #{@result.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
+          pdf.text "Inventário de estilos de aprendizagem", :color => "006699", :align => :center, :size => 18
+          pdf.move_down 20
+          pdf.text "Nome do aluno: #{@result.user.nome.capitalize}",:color => "006699", :align => :center, :size => 14
+          pdf.move_down 10
+          pdf.text "Realizado em: #{@result.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
           pdf.move_down 40
-
+          pdf.table([["Experiência Concreta", "Observação Reflexiva", "Conceituação Abstrata", "Experiência Ativa"],["#{@result.ec}", "#{@result.or}", "#{@result.ca}", "#{@result.ea}"]], :position => :center, row_colors: ['006699', 'ffffff'], cell_style: { size: 12, align: :center})
+          pdf.move_down 40
+          pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 14
+          pdf.move_down 20
+          pdf.font("Helvetica")
+          pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
+          pdf.move_down 40
+          pdf.font("Helvetica", :style => :bold)
+           pdf.text "Primeiro estilo predominante: #{@predominante2.nome}",:color => "006699", :align => :left, :size => 14
+          pdf.move_down 20
+          pdf.font("Helvetica")
+          pdf.text "#{@predominante2.descricao}", :align => :left, :size => 12
 
 
         send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
