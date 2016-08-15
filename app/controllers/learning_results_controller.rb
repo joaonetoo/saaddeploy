@@ -51,7 +51,7 @@ class LearningResultsController < ApplicationController
           pdf.move_down 10
           pdf.text "Realizado em: #{@result.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
           pdf.move_down 40
-          pdf.table([["Experiência Concreta", "Observação Reflexiva", "Conceituação Abstrata", "Experiência Ativa"],["#{@result.ec}", "#{@result.or}", "#{@result.ca}", "#{@result.ea}"]], :position => :center, row_colors: ['006699', 'ffffff'], cell_style: { size: 12, align: :center})
+          pdf.table([["<color rgb='FFFFFF'>Experiência Concreta</color>", "<color rgb='FFFFFF'>Observação Reflexiva</color>", "<color rgb='FFFFFF'>Conceituação Abstrata</color>", "<color rgb='FFFFFF'>Experiência Ativa</color>"],["#{@result.ec}", "#{@result.or}", "#{@result.ca}", "#{@result.ea}"]], :position => :center, row_colors: ['006699', 'ffffff'], cell_style: { size: 12, align: :center, border_color: "006699", :inline_format => true })
           pdf.move_down 40
           pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 14
           pdf.move_down 20
@@ -59,7 +59,7 @@ class LearningResultsController < ApplicationController
           pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
           pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
-           pdf.text "Primeiro estilo predominante: #{@predominante2.nome}",:color => "006699", :align => :left, :size => 14
+           pdf.text "Segundo estilo predominante: #{@predominante2.nome}",:color => "006699", :align => :left, :size => 14
           pdf.move_down 20
           pdf.font("Helvetica")
           pdf.text "#{@predominante2.descricao}", :align => :left, :size => 12
