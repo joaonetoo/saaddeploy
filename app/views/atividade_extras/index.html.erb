@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Atividade Extras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descricao</th>
+      <th>Data final</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atividade_extras.each do |atividade_extra| %>
+      <tr>
+        <td><%= atividade_extra.titulo %></td>
+        <td><%= atividade_extra.descricao %></td>
+        <td><%= atividade_extra.data_final %></td>
+        <td><%= atividade_extra.user.nome %></td>
+        <td><%= link_to "Arquivo", atividade_extra.arquivo.url(:original, false) %></td>
+        <td><%= link_to 'Show', atividade_extra %></td>
+        <td><%= link_to 'Edit', edit_atividade_extra_path(atividade_extra) %></td>
+        <td><%= link_to 'Destroy', atividade_extra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atividade extra', new_atividade_extra_path %>

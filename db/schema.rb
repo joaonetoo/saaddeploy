@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809200743) do
+ActiveRecord::Schema.define(version: 20160815211247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,21 @@ ActiveRecord::Schema.define(version: 20160809200743) do
 
   add_index "anchors", ["anchorinfo_id"], name: "index_anchors_on_anchorinfo_id", using: :btree
   add_index "anchors", ["result_id"], name: "index_anchors_on_result_id", using: :btree
+
+  create_table "atividade_extras", force: :cascade do |t|
+    t.string   "titulo"
+    t.text     "descricao"
+    t.date     "data_final"
+    t.integer  "user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "arquivo_file_name"
+    t.string   "arquivo_content_type"
+    t.integer  "arquivo_file_size"
+    t.datetime "arquivo_updated_at"
+  end
+
+  add_index "atividade_extras", ["user_id"], name: "index_atividade_extras_on_user_id", using: :btree
 
   create_table "campus", force: :cascade do |t|
     t.string   "name"
@@ -433,6 +448,7 @@ ActiveRecord::Schema.define(version: 20160809200743) do
   add_foreign_key "activities", "events"
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
+  add_foreign_key "atividade_extras", "users"
   add_foreign_key "campus", "institutions"
   add_foreign_key "centers", "campus"
   add_foreign_key "classrooms", "subjects"

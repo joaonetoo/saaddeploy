@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :atividade_extras
   get 'principals_area/index'
 
   get 'principals_area/create_video'

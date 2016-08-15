@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @atividade_extra.titulo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @atividade_extra.descricao %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @atividade_extra.data_final %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @atividade_extra.user %>
+</p>
+
+<%= link_to 'Edit', edit_atividade_extra_path(@atividade_extra) %> |
+<%= link_to 'Back', atividade_extras_path %>
