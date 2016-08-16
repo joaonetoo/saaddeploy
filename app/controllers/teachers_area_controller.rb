@@ -20,6 +20,46 @@ class TeachersAreaController < ApplicationController
   end
 
   def create_atividade_extra
+    @atividade_extra = AtividadeExtra.new
+    @atividade_extra.titulo = params[:titulo]
+    @atividade_extra.descricao = params[:descricao]
+    @atividade_extra.data_final = params[:data_final]
+    @atividade_extra.arquivo = params[:arquivo]
+    current_user.sent_atividade_extras << @atividade_extra
+    @atividade_extra.sender = current_user
+    @atividade_extra.save
+
+     if params[:classroom_id] == 'todos'
+      @classrooms = current_user.classrooms
+      @selecao = "Todas as turmas"
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          @users << user
+        end
+      end
+
+    elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @selecao = "turma " + @classroom.codigo
+      @users = []
+      @classroom.users.each do |user|
+        @users << user
+      end
+    end
+
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @users = []
+      @users << @user
+      @selecao = @users.first.nome
+    end
+    @users.each do |user|
+        if user.type == 'Student'
+          @atividade_extra.recipients << user
+        end
+    end
 
   end
 
