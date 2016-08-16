@@ -14,6 +14,15 @@ class TeachersAreaController < ApplicationController
     @subjects =@classrooms.each.map(&:subject).uniq
   end
 
+  def send_atividade_extra
+    @classrooms = current_user.classrooms
+    @subjects =@classrooms.each.map(&:subject).uniq
+  end
+
+  def create_atividade_extra
+
+  end
+
   def create_video
     @video = Video.new
     @video.description = params[:description]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815211247) do
+ActiveRecord::Schema.define(version: 20160816170419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 20160815211247) do
   end
 
   add_index "atividade_extras", ["user_id"], name: "index_atividade_extras_on_user_id", using: :btree
+
+  create_table "atividade_extras_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "atividade_extra_id"
+  end
+
+  add_index "atividade_extras_users", ["atividade_extra_id"], name: "index_atividade_extras_users_on_atividade_extra_id", using: :btree
+  add_index "atividade_extras_users", ["user_id"], name: "index_atividade_extras_users_on_user_id", using: :btree
 
   create_table "campus", force: :cascade do |t|
     t.string   "name"
@@ -449,6 +457,8 @@ ActiveRecord::Schema.define(version: 20160815211247) do
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
   add_foreign_key "atividade_extras", "users"
+  add_foreign_key "atividade_extras_users", "atividade_extras"
+  add_foreign_key "atividade_extras_users", "users"
   add_foreign_key "campus", "institutions"
   add_foreign_key "centers", "campus"
   add_foreign_key "classrooms", "subjects"

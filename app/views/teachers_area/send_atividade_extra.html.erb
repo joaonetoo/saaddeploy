@@ -1,0 +1,31 @@
+<%= javascript_include_tag "application", params[:controller] %>
+<h1>Criar Atividade Extra</h1>
+<%= form_tag({ :controller => "teachers_area", :action => "create_atividade_extra"}, { :id => "form_video"}) do |f| %>
+  <div class="field">
+    <%= label_tag :titulo %><br>
+    <%= text_field_tag :titulo %>
+  </div>
+  <div class="field">
+    <%= label_tag :descricao %><br>
+    <%= text_area_tag :descricao %>
+  </div>
+  <div class="field">
+    <%= label_tag :data_final %><br>
+    <%= date_select(nil, :data_final, order: [:day, :month, :year]) %>
+  </div>
+  <div class="field">
+    <%= label_tag :arquivo %><br>
+    <%= file_field_tag :arquivo %>
+  </div>
+  <div class="field">
+    <%= label_tag :Turma %>
+    <%= grouped_collection_select(nil, :classroom_id, @subjects, :classrooms, :nome, :id, :codigo)%>
+</div>
+<div class="field">
+    <%= label_tag :Usuarios %>
+    <%= grouped_collection_select(nil, :users_id, @classrooms, :students, :codigo, :id, :nome)%>
+</div>
+  <div class="actions">
+    <%= submit_tag "Enviar"%>
+  </div>
+<% end %>

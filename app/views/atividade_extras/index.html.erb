@@ -19,7 +19,6 @@
         <td><%= atividade_extra.titulo %></td>
         <td><%= atividade_extra.descricao %></td>
         <td><%= atividade_extra.data_final %></td>
-        <td><%= atividade_extra.user.nome %></td>
         <td><%= link_to "Arquivo", atividade_extra.arquivo.url(:original, false) %></td>
         <td><%= link_to 'Show', atividade_extra %></td>
         <td><%= link_to 'Edit', edit_atividade_extra_path(atividade_extra) %></td>
