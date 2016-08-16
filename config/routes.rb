@@ -75,6 +75,7 @@ Rails.application.routes.draw do
   get 'teachers_area/videos_index'
   get 'teachers_area/send_atividade_extra'
   post 'teachers_area/create_atividade_extra'
+  get 'teachers_area/list_atividades'
 
   get 'student_area/index'
   get 'student_area/pdf_plan'

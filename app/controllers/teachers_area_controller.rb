@@ -19,15 +19,21 @@ class TeachersAreaController < ApplicationController
     @subjects =@classrooms.each.map(&:subject).uniq
   end
 
+  def list_atividades
+    @atividades = current_user.sent_atividade_extras
+  end
+
   def create_atividade_extra
     @atividade_extra = AtividadeExtra.new
     @atividade_extra.titulo = params[:titulo]
     @atividade_extra.descricao = params[:descricao]
-    @atividade_extra.data_final = params[:data_final]
+    @atividade_extra.data_final =params[:data_final].to_a.sort.collect{|c| c[1]}.join("-")
     @atividade_extra.arquivo = params[:arquivo]
     current_user.sent_atividade_extras << @atividade_extra
     @atividade_extra.sender = current_user
     @atividade_extra.save
+    debugger
+
 
      if params[:classroom_id] == 'todos'
       @classrooms = current_user.classrooms
@@ -60,7 +66,6 @@ class TeachersAreaController < ApplicationController
           @atividade_extra.recipients << user
         end
     end
-
   end
 
   def create_video
