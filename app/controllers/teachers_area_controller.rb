@@ -32,7 +32,6 @@ class TeachersAreaController < ApplicationController
     current_user.sent_atividade_extras << @atividade_extra
     @atividade_extra.sender = current_user
     @atividade_extra.save
-    debugger
 
 
      if params[:classroom_id] == 'todos'
