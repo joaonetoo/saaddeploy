@@ -82,6 +82,7 @@ Rails.application.routes.draw do
   get 'student_area/my_learning_result'
   get 'student_area/videos_index'
   get 'student_area/unsubscribe_video'
+  get 'student_area/list_atividades'
 
   resources :planos
   resources :anchorinfos

@@ -59,6 +59,10 @@ require "prawn/measurement_extensions"
 
   end
 
+  def list_atividades
+    @atividades = current_user.received_atividade_extras
+  end
+
   def videos_index
     @videos = current_user.received_videos
   end
