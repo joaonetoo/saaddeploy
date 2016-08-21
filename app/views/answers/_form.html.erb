@@ -20,8 +20,7 @@
     <%= f.file_field :arquivo_resposta %>
   </div>
   <div class="field">
-    <%= f.label :atividade_extra_id %><br>
-    <%= f.text_field :atividade_extra_id %>
+    <%= f.hidden_field :atividade_extra_id, :value => @atividade_extra %>
   </div>
   <div class="actions">
     <%= f.submit %>

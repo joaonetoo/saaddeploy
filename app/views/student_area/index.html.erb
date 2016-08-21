@@ -8,6 +8,15 @@
   </div>
 <% end %>
 
+<% if @atividades.size > 0%>
+  <div class="alert alert-info">
+    <p>Voce tem atividades para responder</p>
+      <% @atividades.each do |atividade| %>
+      <%= link_to "#{atividade.titulo}", new_answer_path(:atividade_extra => atividade) %><br>
+      <% end %>
+  </div>
+<% end %>
+
 <% if @my_learning_quizzes != nil && @my_learning_quizzes.size > 0%>
   <div class="alert alert-info">
     <p>Voce tem Questionarios de estilo de aprendizagem para responder, clique nas datas</p>
@@ -25,6 +34,9 @@
   <% end %>
   </div>
 <% end %>
+
+
+
 
 <p>
     <strong>Minhas Turmas</strong>

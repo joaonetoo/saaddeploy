@@ -46,6 +46,8 @@ require "prawn/measurement_extensions"
         @notes = Note.where(recipient: @plano.user).each.to_a
     end
 
+    @atividades = current_user.received_atividade_extras
+
   end
 
   def my_learning_result
