@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817212247) do
+ActiveRecord::Schema.define(version: 20160821225935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,21 @@ ActiveRecord::Schema.define(version: 20160817212247) do
 
   add_index "anchors", ["anchorinfo_id"], name: "index_anchors_on_anchorinfo_id", using: :btree
   add_index "anchors", ["result_id"], name: "index_anchors_on_result_id", using: :btree
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "observacao"
+    t.integer  "atividade_extra_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "arquivo_resposta_file_name"
+    t.string   "arquivo_resposta_content_type"
+    t.integer  "arquivo_resposta_file_size"
+    t.datetime "arquivo_resposta_updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "answers", ["atividade_extra_id"], name: "index_answers_on_atividade_extra_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "atividade_extras", force: :cascade do |t|
     t.string   "titulo"
@@ -461,6 +476,8 @@ ActiveRecord::Schema.define(version: 20160817212247) do
   add_foreign_key "activities", "events"
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
+  add_foreign_key "answers", "atividade_extras"
+  add_foreign_key "answers", "users"
   add_foreign_key "atividade_extras", "users"
   add_foreign_key "atividade_extras_users", "atividade_extras"
   add_foreign_key "atividade_extras_users", "users"

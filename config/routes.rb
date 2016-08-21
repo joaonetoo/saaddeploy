@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :resposta
   resources :atividade_extras
   get 'principals_area/index'
 

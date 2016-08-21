@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @respostum.observacao %>
+</p>
+
+<p>
+  <strong>Atividade extra:</strong>
+  <%= @respostum.atividade_extra %>
+</p>
+
+<%= link_to 'Edit', edit_respostum_path(@respostum) %> |
+<%= link_to 'Back', resposta_path %>

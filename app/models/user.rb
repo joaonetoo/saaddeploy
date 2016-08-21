@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :received_atividade_extras, :class_name => 'AtividadeExtra', :foreign_key => 'user_id', :join_table => :atividade_extras_users
 
   has_many :events
+  has_many :answers
   has_one :plano
 
   # Include default devise modules. Others available are:

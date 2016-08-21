@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resposta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Observacao</th>
+      <th>Atividade extra</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resposta.each do |respostum| %>
+      <tr>
+        <td><%= respostum.observacao %></td>
+        <td><%= respostum.atividade_extra %></td>
+        <td><%= link_to 'Show', respostum %></td>
+        <td><%= link_to 'Edit', edit_respostum_path(respostum) %></td>
+        <td><%= link_to 'Destroy', respostum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Respostum', new_respostum_path %>
