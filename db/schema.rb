@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816170419) do
+ActiveRecord::Schema.define(version: 20160817212247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,12 +62,17 @@ ActiveRecord::Schema.define(version: 20160816170419) do
     t.text     "descricao"
     t.date     "data_final"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "arquivo_file_name"
     t.string   "arquivo_content_type"
     t.integer  "arquivo_file_size"
     t.datetime "arquivo_updated_at"
+    t.string   "arquivo_resposta_file_name"
+    t.string   "arquivo_resposta_content_type"
+    t.integer  "arquivo_resposta_file_size"
+    t.datetime "arquivo_resposta_updated_at"
+    t.string   "status",                        default: "aberta"
   end
 
   add_index "atividade_extras", ["user_id"], name: "index_atividade_extras_on_user_id", using: :btree
