@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160821225935) do
+ActiveRecord::Schema.define(version: 20160822115846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,13 +60,14 @@ ActiveRecord::Schema.define(version: 20160821225935) do
   create_table "answers", force: :cascade do |t|
     t.text     "observacao"
     t.integer  "atividade_extra_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "arquivo_resposta_file_name"
     t.string   "arquivo_resposta_content_type"
     t.integer  "arquivo_resposta_file_size"
     t.datetime "arquivo_resposta_updated_at"
     t.integer  "user_id"
+    t.string   "status",                        default: "aberta"
   end
 
   add_index "answers", ["atividade_extra_id"], name: "index_answers_on_atividade_extra_id", using: :btree

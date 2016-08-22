@@ -47,7 +47,7 @@ require "prawn/measurement_extensions"
     end
 
     @atividades = current_user.received_atividade_extras
-
+    @answers  = current_user.answers
   end
 
   def my_learning_result

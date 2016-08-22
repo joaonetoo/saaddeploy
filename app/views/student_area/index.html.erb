@@ -12,7 +12,7 @@
   <div class="alert alert-info">
     <p>Voce tem atividades para responder</p>
       <% @atividades.each do |atividade| %>
-      <%= link_to "#{atividade.titulo}", new_answer_path(:atividade_extra => atividade) %><br>
+        <%= link_to "#{atividade.titulo}", new_answer_path(:atividade_extra => atividade) %><br>
       <% end %>
   </div>
 <% end %>
