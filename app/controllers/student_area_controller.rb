@@ -65,6 +65,11 @@ require "prawn/measurement_extensions"
     @atividades = current_user.received_atividade_extras
   end
 
+  def list_answers
+    @atividade_extra = AtividadeExtra.find(params[:atividade_extra])
+    @answers = Answer.where(:user => current_user, :atividade_extra => @atividade_extra)
+  end
+
   def videos_index
     @videos = current_user.received_videos
   end

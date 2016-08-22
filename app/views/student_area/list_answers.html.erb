@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<strong>Atividade: </strong><br>
 <p>
   <strong>Titulo:</strong>
   <%= @atividade_extra.titulo %>
@@ -23,7 +22,7 @@
 <div class="row mt">
   <div class="col-lg-12">
     <div class="content-panel">
-      <h4><i class="fa fa-angle-right"></i> Respostas</h4>
+      <h4><i class="fa fa-angle-right"></i>Minhas Respostas</h4>
       <section id="unseen">
         <table class="table table-bordered table-striped table-condensed">
   <thead>
@@ -44,10 +43,7 @@
         <td><%= answer.observacao %></td>
         <td><%= link_to "Arquivo", answer.arquivo_resposta.url(:original, false) %></td>
         <td><%= answer.status %></td>
-        <% if answer.status != 'finalizado'%>
-          <td><%= link_to 'Aprovar', teachers_area_aprove_answer_path(answer: answer, atividade: @atividade_extra) %></td>
-        <% end %>
-        <td><%= link_to 'Correção', new_answer_note_path(:answer => answer) %></td>
+        <td><%= link_to "ver correções", answer%></td>
       </tr>
     <% end %>
   </tbody>
@@ -57,5 +53,3 @@
 </div>
 </div>
 
-<%= link_to 'Edit', edit_atividade_extra_path(@atividade_extra) %> |
-<%= link_to 'Back', atividade_extras_path %>

@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :answers
+  has_many :answer_notes
   has_one :plano
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

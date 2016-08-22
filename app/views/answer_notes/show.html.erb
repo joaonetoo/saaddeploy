@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @answer_note.observacao %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @answer_note.answer %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @answer_note.user %>
+</p>
+
+<%= link_to 'Edit', edit_answer_note_path(@answer_note) %> |
+<%= link_to 'Back', answer_notes_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answer_notes
   resources :answers
   resources :resposta
   resources :atividade_extras
@@ -78,6 +79,7 @@ Rails.application.routes.draw do
   get 'teachers_area/send_atividade_extra'
   post 'teachers_area/create_atividade_extra'
   get 'teachers_area/list_atividades'
+  get 'teachers_area/aprove_answer'
 
   get 'student_area/index'
   get 'student_area/pdf_plan'
@@ -85,6 +87,8 @@ Rails.application.routes.draw do
   get 'student_area/videos_index'
   get 'student_area/unsubscribe_video'
   get 'student_area/list_atividades'
+  get 'student_area/list_answers'
+
 
   resources :planos
   resources :anchorinfos

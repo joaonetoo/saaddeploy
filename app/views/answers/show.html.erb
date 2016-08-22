@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <h4><i class="fa fa-angle-right"></i> Correções</h4>
+      <section id="unseen">
+        <table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Professor</th>
+      <th>Observacao</th>
+      <th>Anexo</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Observacao:</strong>
-  <%= @answer.observacao %>
-</p>
+  <tbody>
+    <% @answer.answer_notes.each do |note| %>
+      <tr>
+        <td><%= note.user.nome %></td>
+        <td><%= note.observacao %></td>
+        <td><%= link_to "Arquivo", note.arquivo.url(:original, false) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>
+</div>
+</div>
+</div>
 
-<p>
-  <strong>Atividade extra:</strong>
-  <%= @answer.atividade_extra %>
-</p>
-
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>

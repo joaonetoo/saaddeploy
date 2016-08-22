@@ -23,6 +23,14 @@ class TeachersAreaController < ApplicationController
     @atividades = current_user.sent_atividade_extras
   end
 
+  def aprove_answer
+    @atividade = AtividadeExtra.find(params[:atividade])
+    @answer = Answer.find(params[:answer])
+    @answer.status = "finalizado"
+    @answer.save
+    redirect_to @atividade
+  end
+
   def create_atividade_extra
     @atividade_extra = AtividadeExtra.new
     @atividade_extra.titulo = params[:titulo]

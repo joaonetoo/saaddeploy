@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Answer Notes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Observacao</th>
+      <th>Answer</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answer_notes.each do |answer_note| %>
+      <tr>
+        <td><%= answer_note.observacao %></td>
+        <td><%= answer_note.answer %></td>
+        <td><%= answer_note.user %></td>
+        <td><%= link_to 'Show', answer_note %></td>
+        <td><%= link_to 'Edit', edit_answer_note_path(answer_note) %></td>
+        <td><%= link_to 'Destroy', answer_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Answer note', new_answer_note_path %>
