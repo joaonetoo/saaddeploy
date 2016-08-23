@@ -4,4 +4,16 @@ class AtividadeExtra < ActiveRecord::Base
   has_many :answers
   has_attached_file :arquivo
   validates_attachment :arquivo, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+
+def self.close
+    @atividades = AtividadeExtra.all
+    @atividades.each do |atividade|
+        if atividade.data_final.past?
+            atividade.status = 'finalizado'
+            atividade.save
+        end
+    end
+end
+
+
 end

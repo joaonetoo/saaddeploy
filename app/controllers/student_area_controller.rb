@@ -62,6 +62,7 @@ require "prawn/measurement_extensions"
   end
 
   def list_atividades
+    AtividadeExtra.close
     @atividades = current_user.received_atividade_extras
   end
 

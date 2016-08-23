@@ -19,6 +19,7 @@
 
   <tbody>
     <% @atividades.each do |atividade_extra| %>
+    <% if atividade_extra.status == 'aberta' %>
       <tr>
         <td><%= atividade_extra.titulo %></td>
         <td><%= atividade_extra.descricao %></td>
@@ -29,6 +30,7 @@
         <td><%= link_to "responder", new_answer_path(:atividade_extra => atividade_extra) %></td>
         <td><%= link_to "ver respostas", student_area_list_answers_path(:atividade_extra => atividade_extra)%></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

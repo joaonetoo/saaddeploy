@@ -14,6 +14,7 @@ class AtividadeExtrasController < ApplicationController
 
   # GET /atividade_extras/new
   def new
+    AtividadeExtra.close
     @atividade_extra = AtividadeExtra.new
   end
 

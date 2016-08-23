@@ -20,6 +20,7 @@ class TeachersAreaController < ApplicationController
   end
 
   def list_atividades
+    AtividadeExtra.close
     @atividades = current_user.sent_atividade_extras
   end
 
