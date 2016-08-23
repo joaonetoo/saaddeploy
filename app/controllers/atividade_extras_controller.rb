@@ -26,7 +26,6 @@ class AtividadeExtrasController < ApplicationController
   # POST /atividade_extras.json
   def create
     @atividade_extra = AtividadeExtra.new(atividade_extra_params)
-    debugger
     respond_to do |format|
       if @atividade_extra.save
         format.html { redirect_to @atividade_extra, notice: 'Atividade extra was successfully created.' }

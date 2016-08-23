@@ -29,7 +29,7 @@ class AnswerNotesController < ApplicationController
     @answer_note.user = current_user
     respond_to do |format|
       if @answer_note.save
-        format.html { redirect_to @answer_note, notice: 'Answer note was successfully created.' }
+        format.html { redirect_to teachers_area_list_atividades_path, notice: 'Correção feita.' }
         format.json { render :show, status: :created, location: @answer_note }
       else
         format.html { render :new }

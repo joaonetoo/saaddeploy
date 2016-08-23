@@ -18,6 +18,7 @@
 
   <tbody>
     <% @atividades.each do |atividade_extra| %>
+    <%if atividade_extra.status != 'finalizado' %>
       <tr>
         <td><%= atividade_extra.titulo %></td>
         <td><%= atividade_extra.descricao %></td>
@@ -26,6 +27,46 @@
         <td><%= link_to "Arquivo", atividade_extra.arquivo.url(:original, false) %></td>
         <td><%= link_to 'Ver Respostas', atividade_extra %></td>
       </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</section>
+</div>
+</div>
+</div>
+
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <h4><i class="fa fa-angle-right"></i> Atividades Extras fechadas</h4>
+      <section id="unseen">
+        <table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Descricao</th>
+      <th>Status</th>
+      <th>Data final</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atividades.each do |atividade_extra| %>
+      <%if atividade_extra.status == 'finalizado'%>
+      <tr>
+        <td><%= atividade_extra.titulo %></td>
+        <td><%= atividade_extra.descricao %></td>
+        <td><%= atividade_extra.status %></td>
+        <td><%= atividade_extra.data_final %></td>
+        <td><%= link_to "Arquivo", atividade_extra.arquivo.url(:original, false) %></td>
+        <td><%= link_to 'Ver Respostas', atividade_extra %></td>
+      </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
