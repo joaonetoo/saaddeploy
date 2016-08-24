@@ -43,7 +43,7 @@ class LearningResultsController < ApplicationController
       format.pdf {
         pdf = Prawn::Document.new
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-
+          pdf.background = "#{Rails.root}/public/pdf_bg.png"
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Inventário de estilos de aprendizagem", :color => "006699", :align => :center, :size => 18
           pdf.move_down 20
