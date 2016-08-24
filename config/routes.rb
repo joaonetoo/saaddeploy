@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'principals_area/videos_index'
 
-  resources :registrations
+
   resources :projects do
       collection do
         post 'observation'
@@ -140,6 +140,7 @@ Rails.application.routes.draw do
     get 'autocomplete_course_nome'
     end
   end
+
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   resources :subjects do
     collection do
