@@ -30,7 +30,7 @@ class MatriculationsController < ApplicationController
     respond_to do |format|
       if @matriculation.save
         RegistrationMailer.registration_email(@event, @matriculation).deliver_now
-        format.html { redirect_to @matriculation, notice: 'Matriculation was successfully created.' }
+        format.html { redirect_to public_events_events_path, notice: 'Matriculation was successfully created.' }
         format.json { render :show, status: :created, location: @matriculation }
       else
         format.html { render :new }
