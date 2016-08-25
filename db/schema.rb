@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20160823171304) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.string   "normas",       default: "nenhuma"
-    t.datetime "deadline",     default: '2016-07-27 18:02:10'
+    t.datetime "deadline",     default: '2016-08-24 14:48:16'
     t.string   "trabalhos",    default: "nenhum"
     t.integer  "user_id"
   end
@@ -224,7 +224,6 @@ ActiveRecord::Schema.define(version: 20160823171304) do
     t.string   "organizacao_academica"
     t.string   "categoria_administrativa"
     t.string   "site"
-    t.string   "image_file_name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

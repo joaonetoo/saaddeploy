@@ -1,8 +1,0 @@
-I"è(function() {
-  jQuery(function() {
-    $('#extra').children().hide();
-    return $('#event_submissao').prop('checked');
-  });
-
-}).call(this);
-:ET

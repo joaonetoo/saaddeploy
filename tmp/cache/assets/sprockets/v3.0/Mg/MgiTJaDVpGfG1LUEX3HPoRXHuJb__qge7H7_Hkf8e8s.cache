@@ -1,12 +1,0 @@
-I"(function() {
-  jQuery(function() {
-    $('#extra').children().hide();
-    return $("input[type=checkbox]").on("change", function() {
-      if ("input[type=checkbox]".prop('checked')) {
-        return console.log('hora do show');
-      }
-    });
-  });
-
-}).call(this);
-:ET

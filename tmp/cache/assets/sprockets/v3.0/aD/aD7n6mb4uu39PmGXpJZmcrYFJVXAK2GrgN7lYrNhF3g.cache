@@ -1,7 +1,0 @@
-I"P(function() {
-  jQuery(function() {});
-
-  alert('sdsdsd');
-
-}).call(this);
-:ET

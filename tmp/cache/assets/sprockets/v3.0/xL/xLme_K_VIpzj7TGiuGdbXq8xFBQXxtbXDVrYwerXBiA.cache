@@ -1,7 +1,0 @@
-I"a(function() {
-  jQuery(function() {
-    return $('.note_div').hide();
-  });
-
-}).call(this);
-:ET

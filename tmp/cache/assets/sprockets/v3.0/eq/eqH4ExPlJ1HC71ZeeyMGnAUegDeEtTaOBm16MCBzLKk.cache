@@ -1,8 +1,0 @@
-I"Å(function() {
-  jQuery(function() {
-    $('.note_div').hide();
-    return $('#_users_id').parent().hide();
-  });
-
-}).call(this);
-:ET
