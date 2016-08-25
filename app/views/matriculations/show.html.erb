@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @matriculation.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @matriculation.email %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @matriculation.telefone %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @matriculation.tipo %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @matriculation.event %>
+</p>
+
+<%= link_to 'Edit', edit_matriculation_path(@matriculation) %> |
+<%= link_to 'Back', matriculations_path %>

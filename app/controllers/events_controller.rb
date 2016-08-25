@@ -30,7 +30,7 @@ class EventsController < ApplicationController
     check_privilege(@event)
     @projects = @event.projects
     @activities = @event.activities
-    @registrations = @event.registrations
+    @matriculations = @event.matriculations
   end
 
   # GET /events/new
