@@ -1,0 +1,25 @@
+<%= form_for(Matriculation.new) do |f| %>
+
+    <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br>
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.select :tipo, ['Estudante', 'Professor', 'Profissional']%>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :event_id, :value => @event.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Inscrever'%>
+  </div>
+<% end %>

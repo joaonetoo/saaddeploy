@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :matriculations
   resources :answer_notes
   resources :answers
   resources :resposta
