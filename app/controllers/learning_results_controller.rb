@@ -41,9 +41,9 @@ class LearningResultsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf {
-        pdf = Prawn::Document.new
+          img = "#{Rails.root}/public/pdf_bg.png"
+          Prawn::Document.generate("background.pdf", :page_size=> "A4",:background => img) do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-          pdf.background = "#{Rails.root}/public/pdf_bg.png"
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Inventário de estilos de aprendizagem", :color => "006699", :align => :center, :size => 18
           pdf.move_down 20
@@ -64,8 +64,9 @@ class LearningResultsController < ApplicationController
           pdf.font("Helvetica")
           pdf.text "#{@predominante2.descricao}", :align => :left, :size => 12
 
+          send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
+        end
 
-        send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
       }
     end
   end
