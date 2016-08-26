@@ -60,7 +60,13 @@
 
 
 <!-- js placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
+    <%= javascript_include_tag 'jquery.min', 'jquery-migrate-1.4.1.min', 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
 
     <!--common script for all pages-->
     <%= javascript_include_tag 'gritter/js/jquery.gritter.js' %>
