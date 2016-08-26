@@ -1,7 +1,26 @@
 <%= javascript_include_tag "createCsv"%>
 
-<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
-<div id="graphic2" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+    <div class="tab-pane hidden" id="chartjs">
+      <div class="row mt">
+        <div class="col-lg-6">
+          <div class="content-panel">
+            <div class="panel-body text-center">
+              <div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="content-panel">
+            <div class="panel-body text-center">
+              <div id="graphic2" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>-->
+<!--<div id="graphic2" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>-->
 <%= form_tag(show_by_date_learning_results_path, method: 'post', :remote => true) do %>
   <%= hidden_field_tag "selecao", @selecao %>
   <%= select_tag(:data_final, options_for_select(@datas)) %>
