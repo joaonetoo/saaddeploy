@@ -9,7 +9,7 @@
         var data = doc.autoTableHtmlToJson(elem);
 
 
-        var ancora1text = ancora1Descricao + '\n\n\n' + perfilTitulo + '\n\n\n' + ancora1Perfil + '\n\n\n' + ancora1Perspectiva;
+        var ancora1text = ancora1Descricao + '\n\n\n' + ancora1Perfil + '\n\n\n' + ancora1Perspectiva;
         var text1 = doc.splitTextToSize(ancora1text, 900);
 
         var ancora2text = ancora2Descricao + '\n\n\n' + ancora2Perfil + '\n\n\n' + ancora2Perspectiva;
