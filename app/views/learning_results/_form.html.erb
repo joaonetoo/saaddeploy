@@ -12,144 +12,286 @@
   <% end %>
 
 
+  <hr>
   <div class="field">
-    <strong>Enquanto aprendo: </strong>
-    <%= f.number_field :q1a, min: 1, max: 4 %>
-    <%= label_tag("Gosto de lidar com meus sentimentos")%>
-    <%= f.number_field :q1b, min: 1, max: 4 %>
-    <%= label_tag("Gosto de pensar sobre ideias")%>
-    <%= f.number_field :q1c, min: 1, max: 4 %>
-    <%= label_tag("Gosto de estar fazendo coisas")%>
-    <%= f.number_field :q1d, min: 1, max: 4 %>
-    <%= label_tag("Gosto de observar e escutar")%>
+    <h4><strong>Enquanto aprendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q1a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de lidar com meus sentimentos")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q1b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de pensar sobre ideias")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q1c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de estar fazendo coisas")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q1d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de observar e escutar")%>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <strong>Aprendo melhor quando: </strong>
-    <%= f.number_field :q2a, min: 1, max: 4 %>
-    <%= label_tag("Ouço e observo com atenção")%>
-    <%= f.number_field :q2b, min: 1, max: 4 %>
-    <%= label_tag("Me apóio em pensamento lógico")%>
-    <%= f.number_field :q2c, min: 1, max: 4 %>
-    <%= label_tag("Confio em meus palpites e impressões")%>
-    <%= f.number_field :q2d, min: 1, max: 4 %>
-    <%= label_tag("Trabalho com afinco para executar a tarefa")%>
 
-  </div>
+  <hr>
   <div class="field">
-    <strong>Quando estou aprendendo: </strong>
-    <%= f.number_field :q3a, min: 1, max: 4 %>
-    <%= label_tag("Tendo a buscar explicações para as coisas")%>
-    <%= f.number_field :q3b, min: 1, max: 4 %>
-    <%= label_tag("Sou responsável acerca das coisas")%>
-    <%= f.number_field :q3c, min: 1, max: 4 %>
-    <%= label_tag("Fico quieto e concentrado")%>
-    <%= f.number_field :q3d, min: 1, max: 4 %>
-    <%= label_tag("Tenho sentimentos e reações fortes")%>
+   <h4><strong>Aprendo melhor quando: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q2a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Ouço e observo com atenção")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q2b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me apóio em pensamento lógico")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q2c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Confio em meus palpites e impressões")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q2d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Trabalho com afinco para executar a tarefa")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-    <strong>Aprendo: </strong>
-    <%= f.number_field :q4a, min: 1, max: 4 %>
-    <%= label_tag("Sentindo")%>
-    <%= f.number_field :q4b, min: 1, max: 4 %>
-    <%= label_tag("Fazendo")%>
-    <%= f.number_field :q4c, min: 1, max: 4 %>
-    <%= label_tag("Observando")%>
-    <%= f.number_field :q4d, min: 1, max: 4 %>
-    <%= label_tag("Pensando")%>
+    <h4><strong>Quando estou aprendendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q3a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Tendo a buscar explicações para as coisas")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q3b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou responsável acerca das coisas")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q3c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Fico quieto e concentrado")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q3d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Tenho sentimentos e reações fortes")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-  <strong>Enquanto aprendo</strong>
-    <%= f.number_field :q5a, min: 1, max: 4 %>
-    <%= label_tag("Me abro a novas experiências")%>
-    <%= f.number_field :q5b, min: 1, max: 4 %>
-    <%= label_tag("Examino todos os ângulos da questão")%>
-    <%= f.number_field :q5c, min: 1, max: 4 %>
-    <%= label_tag("Gosto de analisar as coisas, desdobrá-las em partes")%>
-    <%= f.number_field :q5d, min: 1, max: 4 %>
-    <%= label_tag("Gosto de testar as coisas")%>
+    <h4><strong>Aprendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q4a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sentindo")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q4b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Fazendo")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q4c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Observando")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q4d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Pensando")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-    <strong>Enquanto estou aprendendo: </strong>
-    <%= f.number_field :q6a, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa observadora")%>
-    <%= f.number_field :q6b, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa ativa")%>
-    <%= f.number_field :q6c, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa intuitiva")%>
-    <%= f.number_field :q6d, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa lógica")%>
+    <h4><strong>Enquanto aprendo</strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q5a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me abro a novas experiências")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q5b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Examino todos os ângulos da questão")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q5c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de analisar as coisas, desdobrá-las em partes")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q5d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de testar as coisas")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-    <strong>Aprendo melhor através de: </strong>
-    <%= f.number_field :q7a, min: 1, max: 4 %>
-    <%= label_tag("Observação")%>
-    <%= f.number_field :q7b, min: 1, max: 4 %>
-    <%= label_tag("Interações pessoais")%>
-    <%= f.number_field :q7c, min: 1, max: 4 %>
-    <%= label_tag("Teorias racionais")%>
-    <%= f.number_field :q7d, min: 1, max: 4 %>
-    <%= label_tag("Oportunidades para experimentar e praticar")%>
+    <h4><strong>Enquanto estou aprendendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q6a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa observadora")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q6b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa ativa")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q6c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa intuitiva")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q6d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa lógica")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-    <strong>Enquanto aprendo: </strong>
-    <%= f.number_field :q8a, min: 1, max: 4 %>
-    <%= label_tag("Gosto de ver os resultados de meu trabalho")%>
-    <%= f.number_field :q8b, min: 1, max: 4 %>
-    <%= label_tag("Gosto de ideias e teorias")%>
-    <%= f.number_field :q8c, min: 1, max: 4 %>
-    <%= label_tag("Penso antes de agir")%>
-    <%= f.number_field :q8d, min: 1, max: 4 %>
-    <%= label_tag("Sinto-me pessoalmente envolvido no assunto")%>
+    <h4><strong>Aprendo melhor através de: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q7a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Observação")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q7b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Interações pessoais")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q7c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Teorias racionais")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q7d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Oportunidades para experimentar e praticar")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-  <strong>Aprendo melhor quando: </strong>
-    <%= f.number_field :q9a, min: 1, max: 4 %>
-    <%= label_tag("Me apóio em minhas observações")%>
-    <%= f.number_field :q9b, min: 1, max: 4 %>
-    <%= label_tag("Me apóio em minhas impressões")%>
-    <%= f.number_field :q9c, min: 1, max: 4 %>
-    <%= label_tag("Posso experimentar coisas por mim mesmo")%>
-    <%= f.number_field :q9d, min: 1, max: 4 %>
-    <%= label_tag("Me apóio em minhas ideias")%>
+    <h4><strong>Enquanto aprendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q8a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de ver os resultados de meu trabalho")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q8b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de ideias e teorias")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q8c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Penso antes de agir")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q8d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sinto-me pessoalmente envolvido no assunto")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-  <strong>Quando estou aprendendo: </strong>
-    <%= f.number_field :q10a, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa compenetrada")%>
-    <%= f.number_field :q10b, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa flexível")%>
-    <%= f.number_field :q10c, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa responsável")%>
-    <%= f.number_field :q10d, min: 1, max: 4 %>
-    <%= label_tag("Sou uma pessoa racional")%>
+    <h4><strong>Aprendo melhor quando: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q9a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me apóio em minhas observações")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q9b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me apóio em minhas impressões")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q9c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Posso experimentar coisas por mim mesmo")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q9d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me apóio em minhas ideias")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-  <strong>Enquanto aprendo: </strong>
-    <%= f.number_field :q11a, min: 1, max: 4 %>
-    <%= label_tag("Me envolvo todo")%>
-    <%= f.number_field :q11b, min: 1, max: 4 %>
-    <%= label_tag("Gosto de observar")%>
-    <%= f.number_field :q11c, min: 1, max: 4 %>
-    <%= label_tag("Avalio as coisas")%>
-    <%= f.number_field :q11d, min: 1, max: 4 %>
-    <%= label_tag("Gosto de estar ativo")%>
+    <h4><strong>Quando estou aprendendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q10a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa compenetrada")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q10b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa flexível")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q10c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa responsável")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q10d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou uma pessoa racional")%>
+      </div>
+    </div>
   </div>
+
+  <hr>
   <div class="field">
-  <strong>Aprendo melhor quando: </strong>
-    <%= f.number_field :q12a, min: 1, max: 4 %>
-    <%= label_tag("Analiso as ideias")%>
-    <%= f.number_field :q12b, min: 1, max: 4 %>
-    <%= label_tag("Sou receptivo e de mente aberta")%>
-    <%= f.number_field :q12c, min: 1, max: 4 %>
-    <%= label_tag("Sou cuidadoso")%>
-    <%= f.number_field :q12d, min: 1, max: 4 %>
-    <%= label_tag("Sou prático")%>
+    <h4><strong>Enquanto aprendo: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q11a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Me envolvo todo")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q11b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de observar")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q11c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Avalio as coisas")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q11d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Gosto de estar ativo")%>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="field">
+    <h4><strong>Aprendo melhor quando: </strong></h4>
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= f.number_field :q12a, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Analiso as ideias")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q12b, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou receptivo e de mente aberta")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q12c, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou cuidadoso")%>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.number_field :q12d, min: 1, max: 4, class: 'form-control' %>
+        <%= label_tag("Sou prático")%>
+      </div>
+    </div>
   </div>
 
   <div class="field">
     <%= f.hidden_field :data_final, :value => @data_final %>
   </div>
   <div class="actions">
-    <%= f.submit "Enviar"%>
+    <%= f.submit "Enviar", class: 'btn btn-primary btn-sm btn-block' %>
   </div>
 <% end %>
