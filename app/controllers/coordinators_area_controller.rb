@@ -67,11 +67,14 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def search_plans
-    @classrooms = current_user.classrooms
-    @subjects = []
-    @classrooms.each do |classroom|
-        @subjects << classroom.subject
+    @subjects = current_user.course.subjects
+    @classrooms = []
+    @subjects.each do |subject|
+      subject.classrooms do |classroom|
+        @classrooms << classroom
+      end
     end
+    @classrooms.uniq!
   end
 
   def list
