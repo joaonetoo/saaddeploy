@@ -1,5 +1,7 @@
-<%= @classroom.subject.nome %>
-<%= @classroom.codigo %>
+<% if @selecao != 'todos'%>
+  <%= @classroom.subject.nome %>
+  <%= @classroom.codigo %>
+<% end %>
 
 <h1>Estudantes</h1>
 

@@ -147,6 +147,7 @@ class TeachersAreaController < ApplicationController
         end
       end
     end
+    @students = @students.uniq { |s| s.nome}
   end
 
   def show_plan

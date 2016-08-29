@@ -35,6 +35,7 @@
   <%= @event.user.nome %>
 </p>
 
+<%= link_to "Gerar PDF", pdf_event_events_path(format: 'pdf', event: @event) %>
 <%= link_to 'Editar', edit_event_path(@event) %>
 
 <p id="notice"><%= notice %></p>
@@ -134,7 +135,7 @@
   </thead>
 
   <tbody>
-    <% @registrations.each do |registration| %>
+    <% @matriculations.each do |registration| %>
       <tr>
         <td><%= registration.nome %></td>
         <td><%= registration.email %></td>

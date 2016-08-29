@@ -58,6 +58,26 @@ class EventsController < ApplicationController
     end
   end
 
+  def pdf_event
+    @event = Event.find(params[:event])
+    respond_to do |format|
+      format.html
+      format.pdf {
+          img = "#{Rails.root}/public/bg_folder2.png"
+          #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
+          Prawn::Document.generate("background.pdf", :page_size=> "A4",:background => img) do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          pdf.font("Helvetica", :style => :bold)
+          pdf.move_down 50
+          pdf.text "#{@event.nome}", :align => :center,:color => "006699", :size => 18
+
+          send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
+        end
+      }
+    end
+
+  end
+
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update

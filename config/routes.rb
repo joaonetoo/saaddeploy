@@ -33,13 +33,14 @@ Rails.application.routes.draw do
     collection do
         get 'public_events'
         get 'public_show'
+        get 'pdf_event'
     end
   end
   get 'coordinators_area/index'
 
   post 'coordinators_area/create_video'
 
-  get 'coordinators_area/list'
+  post 'coordinators_area/list'
 
   get 'coordinators_area/search_plans'
 

@@ -1,6 +1,6 @@
 <%= javascript_include_tag "application", params[:controller] %>
 <h1>Buscar planos</h1>
-<%= form_tag({ :controller => "teachers_area", :action => "list"}, { :id => "form2"}) do |f| %>
+<%= form_tag({ :controller => "coordinators_area", :action => "list"}, { :id => "form2"}) do |f| %>
 <div class="field">
     <%= label_tag :Turma %>
     <%= grouped_collection_select(nil, :classroom_id, @subjects, :classrooms, :nome, :id, :codigo)%>

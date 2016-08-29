@@ -78,13 +78,33 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def list
-    @classroom = Classroom.find(params[:classroom_id])
     @students = []
+    if params[:classroom_id] == 'todos'
+      @selecao = 'todos'
+      @subjects = current_user.course.subjects
+      @classrooms = []
+      @subjects.each do |subject|
+        subject.classrooms.each do |classroom|
+          @classrooms << classroom
+        end
+      end
+      @classrooms.uniq!
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.type == 'Student'
+            @students << user
+          end
+        end
+      end
+    else
+    @classroom = Classroom.find(params[:classroom_id])
       @classroom.users.each do |user|
         if user.type == 'Student'
             @students << user
         end
       end
+    end
+    @students = @students.uniq { |s| s.nome}
   end
 
   def show_plan
@@ -102,7 +122,6 @@ class CoordinatorsAreaController < ApplicationController
       format.pdf {
         pdf = Prawn::Document.new
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{@plano.user.nome.capitalize}", :align => :center, :size => 14
           pdf.text "editado em: #{@plano.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
