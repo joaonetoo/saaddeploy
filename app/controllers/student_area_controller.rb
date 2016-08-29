@@ -81,6 +81,16 @@ require "prawn/measurement_extensions"
     redirect_to  student_area_videos_index_path
   end
 
+  def my_result
+    @selecao = current_user.nome
+    @results = []
+    current_user.results.each do |result|
+      @results << result
+    end
+
+    @datas = @results.map(&:data_final).uniq
+  end
+
   def pdf_plan
     @plano = Plano.find(params[:plano])
     student = User.find(@plano.user.id)

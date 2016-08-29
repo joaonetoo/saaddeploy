@@ -1,0 +1,62 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
+
+<%= javascript_include_tag "createPdf"%>
+<%= javascript_include_tag "createCsv"%>
+
+<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+Ancoras<br>
+<h2><%= @selecao %></h2>
+
+<% @datas.each do |data| %>
+<%= link_to "#{data}", show_by_date_results_path(:data_final => data, :results => @results, :selecao => @selecao) ,remote: true, :method => :post%><br>
+<% end %>
+
+<table id="tabela_resultados">
+  <thead>
+    <tr>
+      <th>Ordem</th>
+      <th>Pontuação</th>
+      <th>Âncoras</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody  id="media">
+
+  </tbody>
+</table>
+
+ <a href="#" id="export">Exportar CSV</a>
+
+<div id='exports'>
+</div>
+
+<br>
+<div id = "dados">
+<h2>Alunos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Estudante</th>
+      <th>Data Final</th>
+      <th>Competência Técnica e Funcional</th>
+      <th>Competência Administrativa Geral</th>
+      <th>Autonomia e Independência</th>
+      <th>Segurança e Estabilidade</th>
+      <th>Criatividade Empresarial</th>
+      <th>Dedicação a uma Causa</th>
+      <th>Desafio Puro</th>
+      <th>Estilo de Vida</th>
+      <th>Âncoras Predominantes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody  id="list">
+
+  </tbody>
+</table>
+</div>
+
+<br>
