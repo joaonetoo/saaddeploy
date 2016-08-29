@@ -124,16 +124,29 @@ class TeachersAreaController < ApplicationController
     @classrooms.each do |classroom|
         @subjects << classroom.subject
     end
+    @subjects.uniq!
   end
 
   def list
-    @classroom = Classroom.find(params[:classroom_id])
     @students = []
+    if params[:classroom_id] == 'todos'
+      @selecao = 'todos'
+      @classrooms = current_user.classrooms
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.type == 'Student'
+            @students << user
+          end
+        end
+      end
+    else
+      @classroom = Classroom.find(params[:classroom_id])
       @classroom.users.each do |user|
         if user.type == 'Student'
             @students << user
         end
       end
+    end
   end
 
   def show_plan
