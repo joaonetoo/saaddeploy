@@ -157,8 +157,8 @@ class TeachersAreaController < ApplicationController
   end
 
   def pdf_plan
-    @result = LearningResult.find(params[:result])
-    student = User.find(@result.user.id)
+    @plano = Plano.find(params[:plano])
+    student = User.find(@plano.user.id)
     respond_to do |format|
       format.html
       format.pdf {
