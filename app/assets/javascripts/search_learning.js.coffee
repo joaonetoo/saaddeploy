@@ -16,3 +16,5 @@ jQuery ->
             $('#_users_id').parent().show()
         else
             $('#_users_id').empty()
+            $('#_users_id').prepend("<option value='todos'>Todos</option>")
+            $('#_users_id option:first').attr("selected", "selected");
