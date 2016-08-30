@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-    $('#extra').children().hide()
+    $('#alerts-value-4').children().hide()
     $('#recover input[type=radio]').on "change", ->
         value = $(this).val()
         name1 = $(this).attr('name')
@@ -11,15 +11,34 @@ jQuery ->
             $(''+"#p"+name1+'').remove()
 
         if ( value == "4")
-            $('#extra').children().show()
-            copy = $($(this).closest('p'))
-            copy1 = copy.children('strong').text()
-            $newp = $('<p></p>').attr({id : ''+"p"+name1+''})
+            $('#alerts-value-4').children().show()
+            copy = $($(this).closest('tr'))
+            copy1 = copy.children('tr td:nth-child(2)').text()
+
+            $newli = $('
+                <li class="list-warning">
+                  <i class=" fa fa-ellipsis-v"></i>
+                  <div class="task-checkbox">
+                    <input type="checkbox" name="extra' + name1 + '"/>
+                  </div>
+                  <div class="task-title">
+                    <span class="task-title-sp" id="p' + name1 + '"></span>
+                  </div>
+                </li>
+            ')
+            $('#sortable').append($newli)
+            $newli.append(copy1)
+
+    ###        $newp = $('<span class="task-title-sp"></span>').attr({id : ''+"p"+name1+''})
             $check = $('<input type="checkbox"/>').attr({name : ''+"extra"+name1+''})
             $('#extra').append($newp)
             $newp.append(copy1)
-            $newp.append($check)
-            $newp.append("<br>")
+            $('#alerts-value-4-checkbox').append($check)
+            $check.append($check)
+    ###
+
+
+
 
 
     $('#myform').submit ->
