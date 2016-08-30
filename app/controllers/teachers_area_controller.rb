@@ -127,6 +127,27 @@ class TeachersAreaController < ApplicationController
     @subjects.uniq!
   end
 
+  def search_learning
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+    end
+    @subjects.uniq!
+  end
+
   def list
     @students = []
     if params[:classroom_id] == 'todos'
