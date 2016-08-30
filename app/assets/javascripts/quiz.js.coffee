@@ -16,13 +16,13 @@ jQuery ->
             copy1 = copy.children('tr td:nth-child(2)').text()
 
             $newli = $('
-                <li class="list-warning">
+                <li class="list-warning" id="p' + name1 + '">
                   <i class=" fa fa-ellipsis-v"></i>
                   <div class="task-checkbox">
                     <input type="checkbox" name="extra' + name1 + '"/>
                   </div>
                   <div class="task-title">
-                    <span class="task-title-sp" id="p' + name1 + '"></span>
+                    <span class="task-title-sp"></span>
                   </div>
                 </li>
             ')
