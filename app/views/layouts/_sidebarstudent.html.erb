@@ -18,14 +18,15 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
-                          <span>Planos de carreira</span>
+                          <span>Carreira</span>
                       </a>
                       <ul class="sub">
                           <% if current_user.plano == nil %>
-                            <li><%= link_to 'Novo', new_plano_path %></li>
+                            <li><%= link_to 'Criar plano', new_plano_path %></li>
                           <% elsif current_user.plano != nil%>
-                            <li><%= link_to 'Editar', edit_plano_path(current_user.plano) %></li>
+                            <li><%= link_to 'Editar plano', edit_plano_path(current_user.plano) %></li>
                           <% end %>
+                          <li><%= link_to 'Âncoras', student_area_my_result_path %></li>
                       </ul>
                   </li>
 

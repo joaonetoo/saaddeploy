@@ -1,6 +1,28 @@
 class TeachersAreaController < ApplicationController
   require "prawn/measurement_extensions"
 
+
+  def setup_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+    end
+    @subjects.uniq!
+  end
+
   def index
     @classrooms = current_user.classrooms
   end
@@ -128,24 +150,11 @@ class TeachersAreaController < ApplicationController
   end
 
   def search_learning
-    @institutions = []
-    @courses = []
-    @centers = []
-    @campus = []
-    @institution = Institution.find(current_user.institution_id)
-    @course = Course.find(current_user.course_id)
-    @center = @course.center
-    @campu = @center.campu
-    @classrooms = current_user.classrooms
-    @institutions << @institution
-    @courses << @course
-    @centers << @center
-    @campus << @campu
-    @subjects = []
-    @classrooms.each do |classroom|
-        @subjects << classroom.subject
-    end
-    @subjects.uniq!
+    setup_search
+  end
+
+  def search_analytics
+    setup_search
   end
 
   def list

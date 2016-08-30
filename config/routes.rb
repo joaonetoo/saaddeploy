@@ -83,6 +83,7 @@ Rails.application.routes.draw do
   get 'teachers_area/list_atividades'
   get 'teachers_area/aprove_answer'
   get 'teachers_area/search_learning'
+  get 'teachers_area/search_analytics'
 
   get 'student_area/index'
   get 'student_area/pdf_plan'
