@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <title>Saad</title>
 
   <!-- Bootstrap core CSS -->
-    <%= stylesheet_link_tag 'style', 'style-responsive','bootstrap', 'font-awesome','jquery.gritter' %>
+    <%= stylesheet_link_tag 'style', 'style-responsive','bootstrap', 'font-awesome' %>
     <!--external css-->
     <%= stylesheet_link_tag 'lineicons/style.css' %>
 
     <!-- Custom styles for this template -->
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -60,11 +65,10 @@
 
 
 <!-- js placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag 'jquery.min', 'jquery-migrate-1.4.1.min', 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
+    <%= javascript_include_tag 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
 

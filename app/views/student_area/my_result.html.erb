@@ -4,7 +4,20 @@
 <%= javascript_include_tag "createPdf"%>
 <%= javascript_include_tag "createCsv"%>
 
-<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<div class="tab-pane hidden" id="chartjs">
+  <div class="row mt">
+    <div class="col-lg-6">
+      <div class="content-panel">
+        <div class="panel-body text-center">
+          <div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 Ancoras<br>
 <h2><%= @selecao %></h2>
 
