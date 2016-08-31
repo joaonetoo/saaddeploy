@@ -1,6 +1,31 @@
 class CoordinatorsAreaController < ApplicationController
   require "prawn/measurement_extensions"
 
+  def setup_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+
+    @subjects = current_user.course.subjects
+    @classrooms = []
+    @subjects.each do |subject|
+        subject.classrooms.each do |classroom|
+          @classrooms << classroom
+      end
+    end
+    @classrooms.uniq!
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+
+  end
+
   def index
   end
 
@@ -10,6 +35,10 @@ class CoordinatorsAreaController < ApplicationController
 
   def search_anchors
 
+  end
+
+  def search_learning
+    setup_search
   end
 
   def my_events

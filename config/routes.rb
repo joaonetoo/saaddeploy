@@ -54,6 +54,8 @@ Rails.application.routes.draw do
 
    get 'coordinators_area/search_anchors'
 
+   get 'coordinators_area/search_learning'
+
   resources :videos
   resources :learning_quizzes
   resources :learning_styles
