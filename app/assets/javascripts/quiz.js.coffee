@@ -22,12 +22,12 @@ jQuery ->
                     <input type="checkbox" name="extra' + name1 + '"/>
                   </div>
                   <div class="task-title">
-                    <span class="task-title-sp"></span>
+                    <span class="task-title-sp" id="s' + name1 + '"></span>
                   </div>
                 </li>
             ')
             $('#sortable').append($newli)
-            $newli.append(copy1)
+            $(''+"#s"+name1+'').append(copy1)
 
     ###        $newp = $('<span class="task-title-sp"></span>').attr({id : ''+"p"+name1+''})
             $check = $('<input type="checkbox"/>').attr({name : ''+"extra"+name1+''})
