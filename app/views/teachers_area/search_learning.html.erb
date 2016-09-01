@@ -18,10 +18,10 @@
 
 
     <%= label_tag :Disciplina %>
-    <%= grouped_collection_select(nil, :subject_id, @courses, :subjects, :nome, :id, :nome)%>
+    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
 
     <%= label_tag :Turma %>
-    <%= grouped_collection_select(nil, :classroom_id, @subjects, :classrooms, :nome, :id, :codigo)%>
+    <%= collection_select(nil, :classroom_id, @classrooms,:id, :codigo)%>
 
     <%= label_tag :Alunos %>
     <%= grouped_collection_select(nil, :users_id, @classrooms, :students, :codigo, :id, :nome)%>

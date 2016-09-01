@@ -8,14 +8,11 @@
     <%= label_tag :Campus %>
     <%= collection_select(nil, :campu_id, @campus, :id, :name)%>
 
-
     <%= label_tag :Centro %>
     <%= collection_select(nil, :center_id, @centers, :id, :name)%>
 
-
     <%= label_tag :Curso %>
     <%= collection_select(nil, :course_id, @courses, :id, :nome)%>
-
 
     <%= label_tag :Disciplina %>
     <%= grouped_collection_select(nil, :subject_id, @courses, :subjects, :nome, :id, :nome)%>

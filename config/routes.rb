@@ -52,9 +52,13 @@ Rails.application.routes.draw do
 
   get 'coordinators_area/my_events'
 
-   get 'coordinators_area/search_anchors'
+  get 'coordinators_area/search_anchors'
 
-   get 'coordinators_area/search_learning'
+  get 'coordinators_area/search_learning'
+
+  get 'coordinators_area/search_analytics'
+
+  get 'coordinators_area/search_learning_analytics'
 
   resources :videos
   resources :learning_quizzes

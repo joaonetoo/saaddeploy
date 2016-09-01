@@ -34,10 +34,18 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def search_anchors
-
+    setup_search
   end
 
   def search_learning
+    setup_search
+  end
+
+  def search_learning_analytics
+    setup_search
+  end
+
+  def search_analytics
     setup_search
   end
 
