@@ -17,10 +17,17 @@ class TeachersAreaController < ApplicationController
     @centers << @center
     @campus << @campu
     @subjects = []
+    @students = []
     @classrooms.each do |classroom|
         @subjects << classroom.subject
+        classroom.users.each do |user|
+            if user.type == 'Student'
+            @students << user
+        end
+        end
     end
     @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
   end
 
   def index

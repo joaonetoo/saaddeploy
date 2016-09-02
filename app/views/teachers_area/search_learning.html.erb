@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'search_learning.js' %>
+
 <h1>Listando Resultados de Estilos de aprendizagem</h1>
 <%= form_tag({ :controller => "learning_results", :action => "list"}, { :id => "form2"}) do |f| %>
 <div class="field">
@@ -21,10 +21,10 @@
     <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
 
     <%= label_tag :Turma %>
-    <%= collection_select(nil, :classroom_id, @classrooms,:id, :codigo)%>
+    <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
 
     <%= label_tag :Alunos %>
-    <%= grouped_collection_select(nil, :users_id, @classrooms, :students, :codigo, :id, :nome)%>
+    <%= collection_select(nil, :users_id, @students, :id, :nome)%>
 
 </div>
 <%= submit_tag "Enviar" %>
