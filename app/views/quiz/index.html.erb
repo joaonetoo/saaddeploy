@@ -1,4 +1,4 @@
-<!--<%= javascript_include_tag "application", params[:controller] %>-->
+<%= javascript_include_tag "application", params[:controller] %>
 <%= stylesheet_link_tag 'style-responsive'%>
 <%= stylesheet_link_tag 'table-responsive'%>
 <h1>Análise de âncoras de carreira</h1>
@@ -917,7 +917,7 @@
 
 
     <div class="row mt mb" id="alerts-value-4">
-      <div class="col-md-12">
+      <div class="col-md-12" id="extra">
         <section class="task-panel tasks-widget">
           <div class="panel-heading">
             <%= hidden_field_tag :data_final, @data_final %>
