@@ -67,8 +67,6 @@ Rails.application.config.assets.precompile += %w( jquery-migrate-3.0.0.min.js )
 Rails.application.config.assets.precompile += %w( jquery-migrate-1.4.1.min.js )
 Rails.application.config.assets.precompile += %w( search_learning.js )
 Rails.application.config.assets.precompile += %w( jquery-1.8.3.min.js )
-<<<<<<< HEAD
 Rails.application.config.assets.precompile += %w( validation_learning.js )
-=======
 Rails.application.config.assets.precompile += %w( jquery.backstretch.min.js )
->>>>>>> d533be02ed8a42aa966bd01f3815706bf06d28af
+
