@@ -46,20 +46,24 @@
         <% end %>
 
     <% end  %>
+    <% if user_signed_in? %>
     <section id="main-content">
           <section class="wrapper">
 
               <div class="row">
                   <div class="col-lg-12 main-chart">
+
                         <p class="notice"><%= notice %></p>
                         <p class="alert"><%= alert %></p>
+    <% end  %>
                         <%= yield %>
+    <% if user_signed_in? %>
                   </div>
               </div>
           </section>
 
     </section>
-
+    <% end  %>
 
 
 
@@ -67,6 +71,14 @@
 <!-- js placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag 'bootstrap', 'jquery.dcjqaccordion.2.7', 'jquery.scrollTo.min', 'jquery.nicescroll', 'jquery.sparkline', 'common-scripts'%>
 
+    <% if !user_signed_in? %>
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <%= javascript_include_tag 'jquery.backstretch.min' %>
+    <script>
+      $.backstretch("/assets/login-bg.jpg", {speed: 500});
+    </script>
+    <% end  %>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
