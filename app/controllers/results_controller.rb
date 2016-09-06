@@ -204,7 +204,7 @@ require 'csv'
       @users = User.where(type: 'Student').find_each
       @selecao = "todos os institutos"
     else
-      @users = User.where(institution_id: params[:institution_id]).all
+      @users = User.where(institution_id: params[:institution_id], type: 'Student').all
       @institution = Institution.where(id: params[:institution_id]).first
       @selecao = @institution.nome
     end
@@ -223,7 +223,7 @@ require 'csv'
       end
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.ids)
+          @users << User.where(course_id: course.ids, type: 'Student')
       end
       @users = @users.first.to_a
     elsif params[:institution_id] != 'todos'
@@ -236,7 +236,7 @@ require 'csv'
       end
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.ids)
+          @users << User.where(course_id: course.ids, type: 'Student')
       end
     end
 
@@ -282,7 +282,9 @@ require 'csv'
       @users = []
       @classrooms.each do |classroom|
         classroom.users.each do |user|
-          @users << user
+          if(user.type == 'Student')
+            @users << user
+          end
         end
       end
       @subject = Subject.where(id: params[:subject_id]).first
@@ -294,7 +296,9 @@ require 'csv'
       @selecao = "turma " + @classroom.codigo
       @users = []
       @classroom.users.each do |user|
-        @users << user
+        if(user.type == 'Student')
+          @users << user
+        end
       end
     end
 
@@ -330,7 +334,7 @@ require 'csv'
       @users = User.where(type: 'Student').find_each
       @selecao = "todos os institutos"
     else
-      @users = User.where(institution_id: params[:institution_id]).all
+      @users = User.where(institution_id: params[:institution_id], type: 'Student').all
       @institution = Institution.where(id: params[:institution_id]).first
       @selecao = @institution.nome
     end
@@ -349,7 +353,7 @@ require 'csv'
       end
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.ids)
+          @users << User.where(course_id: course.ids, type: 'Student')
       end
       @users = @users.first.to_a
     elsif params[:institution_id] != 'todos'
@@ -362,7 +366,7 @@ require 'csv'
       end
       @users = []
       @courses.each do |course|
-          @users << User.where(course_id: course.ids)
+          @users << User.where(course_id: course.ids, type: 'Student')
       end
     end
 
@@ -408,7 +412,9 @@ require 'csv'
       @users = []
       @classrooms.each do |classroom|
         classroom.users.each do |user|
-          @users << user
+          if(user.type == 'Student')
+            @users << user
+          end
         end
       end
       @subject = Subject.where(id: params[:subject_id]).first
@@ -420,7 +426,9 @@ require 'csv'
       @selecao = "turma " + @classroom.codigo
       @users = []
       @classroom.users.each do |user|
-        @users << user
+        if(user.type == 'Student')
+          @users << user
+        end
       end
     end
 
@@ -447,7 +455,7 @@ require 'csv'
       @users2 = User.where(type: 'Student').find_each
       @selecao2 = "todos os institutos"
     else
-      @users2 = User.where(institution_id: params[:institution2_id]).all
+      @users2 = User.where(institution_id: params[:institution2_id], type: 'Student').all
       @institution2 = Institution.where(id: params[:institution2_id]).first
       @selecao2 = @institution2.nome
     end
@@ -466,7 +474,7 @@ require 'csv'
       end
       @users2 = []
       @courses2.each do |course|
-          @users2 << User.where(course_id: course.ids)
+          @users2 << User.where(course_id: course.ids, type: 'Student')
       end
       @users2 = @users2.first.to_a
     elsif params[:institution2_id] != 'todos'
@@ -479,7 +487,7 @@ require 'csv'
       end
       @users2 = []
       @courses2.each do |course|
-          @users2 << User.where(course_id: course.ids)
+          @users2 << User.where(course_id: course.ids, type: 'Student')
       end
     end
 
@@ -521,7 +529,9 @@ require 'csv'
       @users2 = []
       @classrooms2.each do |classroom|
         classroom.users.each do |user|
-          @users2 << user
+          if(user.type == 'Student')
+            @users2 << user
+          end
         end
       end
       @subject2 = Subject.where(id: params[:subject2_id]).first
@@ -533,7 +543,9 @@ require 'csv'
       @selecao2 = "turma " + @classroom2.codigo
       @users2 = []
       @classroom2.users.each do |user|
-        @users2 << user
+        if(user.type == 'Student')
+          @users2 << user
+        end
       end
     end
 

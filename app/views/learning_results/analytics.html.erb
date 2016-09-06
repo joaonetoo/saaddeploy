@@ -25,7 +25,7 @@
     <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
 
     <%= label_tag :Alunos %>
-    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :students, :codigo, :id, :nome)%>
+    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
 <h2>Seleção 2</h2>
   <div class="field">
@@ -51,7 +51,7 @@
     <%= grouped_collection_select(nil, :classroom2_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
 
     <%= label_tag :Alunos %>
-    <%= grouped_collection_select(nil, :users2_id, Classroom.order(:codigo), :students, :codigo, :id, :nome)%>
+    <%= grouped_collection_select(nil, :users2_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
 <%= submit_tag "Enviar" %>
 <% end %>

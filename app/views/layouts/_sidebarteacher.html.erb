@@ -18,10 +18,13 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-puzzle-piece"></i>
-                          <span>Planos de carreira</span>
+                          <span>Carreira</span>
                       </a>
                       <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', teachers_area_search_plans_path%></li>
+                          <li><%= link_to 'Buscar planos', teachers_area_search_plans_path%></li>
+                          <li><%= link_to 'Buscar âncoras', search_results_path %></li>
+                          <li><%= link_to 'Comparar âncoras ', analytics_results_path %></li>
+                          <li><%= link_to 'Criar Questionario', new_quiz_path %></li>
                       </ul>
                   </li>
 
@@ -31,20 +34,9 @@
                           <span>Estilos de aprendizagem</span>
                       </a>
                       <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', teachers_area_search_learning_path %></li>
+                          <li><%= link_to 'Buscar resultados', search_learning_results_path %></li>
                           <li><%= link_to 'Cria Questionario', new_learning_quiz_path %></li>
-                          <li><%= link_to 'Comparar resultados', teachers_area_search_analytics_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-puzzle-piece"></i>
-                          <span>Âncoras de carreira</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', search_results_path %></li>
-                          <li><%= link_to 'Criar Questionario', new_quiz_path %></li>
-                          <li><%= link_to 'Comparar resultados', analytics_results_path %></li>
+                          <li><%= link_to 'Comparar resultados', analytics_learning_results_path %></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

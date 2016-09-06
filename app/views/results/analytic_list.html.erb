@@ -13,7 +13,11 @@
     <%= hidden_field_tag "results[]", id %>
   <% end %>
 
-  <table id="tabela_resultados">
+ <div class="row mt">
+  <div class="col-lg-12">
+      <h4><i class="fa fa-angle-right"></i> <%= @selecao %></h4>
+      <section id="unseen">
+<table id="tabela_resultados" class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Ordem</th>
@@ -27,6 +31,9 @@
 
     </tbody>
   </table>
+    </section>
+  </div>
+  </div>
 
 
   <br>
@@ -38,7 +45,11 @@
     <%= hidden_field_tag "results2[]", id %>
   <% end %>
 
-  <table id="tabela_resultados2">
+<div class="row mt">
+  <div class="col-lg-12">
+      <h4><i class="fa fa-angle-right"></i> <%= @selecao2 %></h4>
+      <section id="unseen">
+<table id="tabela_resultados2" class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Ordem</th>
@@ -52,6 +63,9 @@
 
     </tbody>
   </table>
+      </section>
+  </div>
+  </div>
 
 
 <%= submit_tag "Comparar" %>

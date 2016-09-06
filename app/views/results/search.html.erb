@@ -23,8 +23,8 @@
     <%= label_tag :Turma %>
     <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
 
-    <%= label_tag :Alunos %>
-    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :students, :codigo, :id, :nome)%>
+    <%= label_tag :Usuarios %>
+    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
 <%= submit_tag "Enviar" %>
 <% end %>

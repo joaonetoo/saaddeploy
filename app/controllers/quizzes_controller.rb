@@ -29,7 +29,7 @@ class QuizzesController < ApplicationController
     @quiz.creator_id = current_user.id
 
     if params[:institution_id] == 'todos'
-      @users = User.where(type: 'Student').find_each
+      @users = User.all
     else
       @users = User.where(institution_id: params[:institution_id]).all
     end
@@ -120,7 +120,7 @@ class QuizzesController < ApplicationController
     end
     respond_to do |format|
       if @quiz.save
-        format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
+        format.html { redirect_to welcome_index_path, notice: 'Quiz was successfully created.' }
         format.json { render :show, status: :created, location: @quiz }
       else
         format.html { render :new }

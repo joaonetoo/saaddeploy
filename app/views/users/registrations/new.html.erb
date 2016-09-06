@@ -6,61 +6,91 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-login"}) do |f| %>
         <h2 class="form-login-heading">Bem vindo ao Saad, logue-se para acessar</h2>
         <div class="login-wrap">
+        <div class="field">
+          <%= f.label :nome %>
           <%= f.text_field :nome, :class => "form-control" %>
-          <br>
+
+        </div>
+        <div class="field">
+        <%= f.label :telefone %>
           <%= f.text_field :telefone, :class => "form-control" %>
-          <br>
+          </div>
+          <div class="field">
+          <%= f.label :endereco %>
           <%= f.text_field :endereco, :class => "form-control" %>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :lattes %>
           <%= f.text_field :lattes, :class => "form-control" %>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :biografia %>
           <%= f.text_area :biografia, :class => "form-control" %>
-          <br>
+
+          </div>
           <!--<%= f.select :type, [['Estudante', 'Student'], ['Professor','Teacher']],{:class => "form-control"} %>-->
+          <div class="field">
+          <%= f.label :tipo_de_usuario %>
           <select name="user[type]" id="user_type" class="form-control">
             <option value="Student">Estudante</option>
             <option value="Teacher">Professor</option>
           </select>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :matricula %>
           <%= f.text_field :matricula, :class => "form-control" %>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :foto %>
           <%= f.file_field :avatar, :class => "form-control" %>
-          <br>
-          <!--<%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true %>-->
-          <select name="user[institution_id]" id="user_institution_id" class="form-control">
-            <option value=""></option>
-            <option value="1">IFRN</option></select>
-          <br>
-          <!--<%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name, :class => "form-control")%>-->
-          <select name="[campu_id]" id="_campu_id" class="form-control">
-            <optgroup label="IFRN"><option value="1">natal-central</option>
-            <option value="2">campus-Zona Norte</option></optgroup></select>
-          <br>
-          <!--<%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>-->
-          <select name="[center_id]" id="_center_id" class="form-control"><optgroup label="campus-Zona Norte"></optgroup><optgroup label="natal-central"><option value="1">Diatinf</option></optgroup></select>
-          <br>
-          <!--<%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>-->
-          <select name="user[course_id]" id="user_course_id" class="form-control">
-            <optgroup label="Diatinf"><option value="1">TADS</option>
-            <option value="2">redes</option></optgroup></select>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :instituição %>
+          <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true %>
+          </div>
+          <div class="field">
+          <%= f.label :campus %>
+          <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name, :class => "form-control")%>
+          </div>
+
+          <div class="field">
+          <%= f.label :centro %>
+          <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
+          </div>
+
+          <div class="field">
+          <%= f.label :curso %>
+          <%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>
+          </div>
+
+          <div class="field">
+          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, :class => "form-control" %>
-          <br>
+
+          </div>
+          <div class="field">
+          <%= f.label :senha %>
           <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
-          <br>
-          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
-          <br>
-          <button class="btn btn-theme btn-block" name="commit" value="Log in" type="submit"><i class="fa fa-lock"></i>SIGN UP</button>
-          <hr>
 
-          <div class="login-social-link centered">
-            <p>or you can sign in via your social network</p>
-            <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
-            <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
           </div>
+          <div class="field">
+          <%= f.label :confirmação_senha %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+
+          </div>
+          <div class="field">
+          <button class="btn btn-theme btn-block" name="commit" value="Log in" type="submit"><i class="fa fa-lock"></i>SIGN UP</button>
+          </div>
+
+
           <div class="registration">
             <%= render "users/shared/links" %>
           </div>
