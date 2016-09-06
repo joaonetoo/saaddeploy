@@ -2,29 +2,58 @@
   <div class="container">
 
     <!--<form class="form-login" action="index.html"> -->
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-login"}) do |f| %>
+        <!--<%= javascript_include_tag "registrations" %>-->
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-login"}) do |f| %>
         <h2 class="form-login-heading">Bem vindo ao Saad, logue-se para acessar</h2>
         <div class="login-wrap">
-          <!--<input type="text" class="form-control" placeholder="User ID" autofocus>-->
-          <!--<%= f.label :email %>-->
-          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
+          <%= f.text_field :nome, :class => "form-control" %>
           <br>
-          <!--<input type="password" class="form-control" placeholder="Password">-->
-          <!--<%= f.label :password %> -->
-          <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
-
-          <label class="checkbox">
-          <span class="pull-right">
-              <!--<a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>-->
-            <% if devise_mapping.rememberable? -%>
-              <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-            <% end -%>
-          </span>
-          </label>
-          <!--<button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>-->
-          <!--<%= f.submit "Log in" %>-->
-          <button class="btn btn-theme btn-block" name="commit" value="Log in" type="submit"><i class="fa fa-lock"></i> LOG IN</button>
+          <%= f.text_field :telefone, :class => "form-control" %>
+          <br>
+          <%= f.text_field :endereco, :class => "form-control" %>
+          <br>
+          <%= f.text_field :lattes, :class => "form-control" %>
+          <br>
+          <%= f.text_area :biografia, :class => "form-control" %>
+          <br>
+          <!--<%= f.select :type, [['Estudante', 'Student'], ['Professor','Teacher']],{:class => "form-control"} %>-->
+          <select name="user[type]" id="user_type" class="form-control">
+            <option value="Student">Estudante</option>
+            <option value="Teacher">Professor</option>
+          </select>
+          <br>
+          <%= f.text_field :matricula, :class => "form-control" %>
+          <br>
+          <%= f.file_field :avatar, :class => "form-control" %>
+          <br>
+          <!--<%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true %>-->
+          <select name="user[institution_id]" id="user_institution_id" class="form-control">
+            <option value=""></option>
+            <option value="1">IFRN</option></select>
+          <br>
+          <!--<%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name, :class => "form-control")%>-->
+          <select name="[campu_id]" id="_campu_id" class="form-control">
+            <optgroup label="IFRN"><option value="1">natal-central</option>
+            <option value="2">campus-Zona Norte</option></optgroup></select>
+          <br>
+          <!--<%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>-->
+          <select name="[center_id]" id="_center_id" class="form-control"><optgroup label="campus-Zona Norte"></optgroup><optgroup label="natal-central"><option value="1">Diatinf</option></optgroup></select>
+          <br>
+          <!--<%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>-->
+          <select name="user[course_id]" id="user_course_id" class="form-control">
+            <optgroup label="Diatinf"><option value="1">TADS</option>
+            <option value="2">redes</option></optgroup></select>
+          <br>
+          <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+          <br>
+          <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+          <br>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+          <br>
+          <button class="btn btn-theme btn-block" name="commit" value="Log in" type="submit"><i class="fa fa-lock"></i>SIGN UP</button>
           <hr>
 
           <div class="login-social-link centered">
@@ -33,10 +62,6 @@
             <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
           </div>
           <div class="registration">
-            <!--Don't have an account yet?<br/>-->
-            <!--<a class="" href="#">-->
-            <!--Create an account-->
-            <!--</a>-->
             <%= render "users/shared/links" %>
           </div>
 
@@ -69,86 +94,86 @@
   </div>
 </div>
 
-<h2>Cadastro</h2>
-<%= javascript_include_tag "registrations" %>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<!--<h2>Cadastro</h2>-->
+<!--<%= javascript_include_tag "registrations" %>-->
+<!--<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>-->
+  <!--<%= devise_error_messages! %>-->
 
-    <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :lattes %><br>
-    <%= f.text_field :lattes %>
-  </div>
-   <div class="field">
-    <%= f.label :biografia %><br>
-    <%= f.text_area :biografia %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo%><br>
-    <%= f.select :type, [['Estudante', 'Student'], ['Professor','Teacher']]%>
-  </div>
-  <div class="field">
-    <%= f.label :matricula %><br>
-    <%= f.text_field :matricula %>
-  </div>
+    <!--<div class="field">-->
+    <!--<%= f.label :nome %>-->
+    <!--<%= f.text_field :nome %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :telefone %>-->
+    <!--<%= f.text_field :telefone %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :endereco %>-->
+    <!--<%= f.text_field :endereco %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :lattes %>-->
+    <!--<%= f.text_field :lattes %>-->
+  <!--</div>-->
+   <!--<div class="field">-->
+    <!--<%= f.label :biografia %>-->
+    <!--<%= f.text_area :biografia %>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :tipo%>-->
+    <!--<%= f.select :type, [['Estudante', 'Student'], ['Professor','Teacher']]%>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= f.label :matricula %>-->
+    <!--<%= f.text_field :matricula %>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= f.label :foto %><br>
-    <%= f.file_field :avatar %>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= f.label :foto %>-->
+    <!--<%= f.file_field :avatar %>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= label_tag :institution %><br>
-    <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= label_tag :institution %>-->
+    <!--<%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= label_tag :Campus %><br>
-    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Centro %><br>
-    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= label_tag :Campus %>-->
+    <!--<%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>-->
+  <!--</div>-->
+  <!--<div class="field">-->
+    <!--<%= label_tag :Centro %>-->
+    <!--<%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= label_tag :Curso %><br>
-    <%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= label_tag :Curso %>-->
+    <!--<%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>-->
+  <!--</div>-->
 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= f.label :email %>-->
+    <!--<%= f.email_field :email, autofocus: true %>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= f.label :senha %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= f.label :senha %>-->
+    <!--<% if @minimum_password_length %>-->
+    <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+    <!--<% end %>-->
+    <!--<%= f.password_field :password, autocomplete: "off" %>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= f.label :confirmação_senha %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  <!--<div class="field">-->
+    <!--<%= f.label :confirmação_senha %>-->
+    <!--<%= f.password_field :password_confirmation, autocomplete: "off" %>-->
+  <!--</div>-->
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+  <!--<div class="actions">-->
+    <!--<%= f.submit "Sign up" %>-->
+  <!--</div>-->
+<!--<% end %>-->
 
-<%= render "users/shared/links" %>
+<!--<%= render "users/shared/links" %>-->
