@@ -1,5 +1,115 @@
-<h1>TeachersArea#index</h1>
-<h2>SAAD</h2>
+<div class="row">
+  <div class="col-lg-9">
+    <div class="col-lg-3">
+      <img  src="/assets/saad.png" class="img-responsive">
+    </div>
+    <div class="col-lg-9">
+      <h2>Bem vindo ao SAAD <%= current_user.nome%></h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta, lacus sit amet auctor faucibus, justo libero sodales leo, quis porttitor dui lectus eu ante. In suscipit enim odio, nec euismod magna pellentesque feugiat. Morbi porta quam sed erat egestas mattis. Aliquam et ultricies nunc, a gravida nisi. Etiam eget tellus sit amet lorem condimentum scelerisque ut vitae tortor. Integer vitae molestie turpis, quis pellentesque leo. Praesent eget tincidunt purus, dictum pharetra magna. Vivamus laoreet tortor non ex tristique, ut cursus felis pretium. Duis rutrum sem mi, et facilisis odio feugiat in. Donec non urna at elit scelerisque molestie. Sed ac dui at metus porta varius. Sed accumsan ex et arcu porta, eget fringilla ex sagittis. Pellentesque mauris nunc, interdum euismod pharetra vel, accumsan nec enim. Etiam nec suscipit nisi.
+      </p>
+    </div>
+  </div>
+  <!-- *********************************************************************************** -->
+  <div class="col-lg-3 ds">
+    <!--COMPLETED ACTIONS DONUTS CHART-->
+    <h3> Questionarios </h3>
+    <br>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Procurar planos de carreira', teachers_area_search_plans_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Criar Questionario de ancoras', new_quiz_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Buscar resultados', search_results_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Comparar resultados', analytics_results_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Cria Questionario de estilos de aprendizagem', new_learning_quiz_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Buscar resultados de estilos de aprendizagem', search_learning_results_path %><br>
+        </p>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="thumb">
+        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+      </div>
+      <div class="details">
+        <p>
+          <%= link_to 'Comparar resultados de estilos de aprendizagem', analytics_learning_results_path %>
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h4><i class="fa fa-angle-right"></i> Minhas Turmas</h4><hr><table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Turno</th>
+      <th>Codigo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @classrooms.each do |classroom| %>
+        <tr>
+          <td><%= classroom.subject.nome %></td>
+          <td><%= classroom.turno %></td>
+          <td><%= classroom.codigo %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!--
 <p>Bem vindo <%= current_user.nome%></p>
 <%= link_to 'Procurar planos de carreira', teachers_area_search_plans_path %><br>
 <%= link_to 'Criar Questionario de ancoras', new_quiz_path %><br>
@@ -31,5 +141,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
+<br>-->
