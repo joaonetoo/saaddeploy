@@ -6,6 +6,8 @@ $(document).ready(function () {
                 var atual = $(this)
                 $(this).parent().siblings().each(function (){
                     $(this).find('input').each(function (){
+                        if ($(this).val() > 0) {
+                        }
                         if( $(this).val() == atual.val() && atual.val() > 0 ) {
                             atual.css("border", "5px solid red");
                             atual.addClass('borderclass');
@@ -30,8 +32,20 @@ $(document).ready(function () {
                     }
                 });
 
+                var filled = 0
+                var errors = 0
+                $('.form-control').each(function () {
+                    if($(this).val() > 0){
+                        filled++;
+                    }
+                });
+                $('.borderclass').each(function() {
+                    errors++;
+                });
+                if( filled == 48 && errors == 0){
+                    $("input[type='submit']").removeAttr("disabled");
+                }
     });
-
 
 
 
