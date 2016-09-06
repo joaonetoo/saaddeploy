@@ -32,6 +32,44 @@ class TeachersAreaController < ApplicationController
 
   def index
     @classrooms = current_user.classrooms
+    @quizzes = current_user.quizzes
+    @my_learning_results = current_user.learning_results
+    @results = Result.where(user_id: current_user).find_each.to_a
+    @my_quizzes = []
+    @quizzes.each do |quiz|
+        @equal = false
+        if @results.size > 0
+            @results.each do |result|
+                if result.data_final == quiz.data_final
+                    @equal = true
+                end
+            end
+            if @equal == false
+                @my_quizzes << quiz
+            end
+        else
+                @my_quizzes << quiz
+        end
+        end
+
+    @learning_quizzes = current_user.learning_quizzes
+    @learning_results = LearningResult.where(user_id: current_user).find_each.to_a
+    @my_learning_quizzes = []
+    @learning_quizzes.each do |quiz|
+        @equal = false
+        if @learning_results.size > 0
+            @learning_results.each do |result|
+                if result.data_final == quiz.data_final
+                    @equal = true
+                end
+            end
+            if @equal == false
+                @my_learning_quizzes << quiz
+            end
+        else
+                @my_learning_quizzes << quiz
+        end
+    end
   end
 
   def videos_index

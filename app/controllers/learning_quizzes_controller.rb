@@ -33,7 +33,7 @@ class LearningQuizzesController < ApplicationController
     @learning_quiz.creator_id = current_user.id
 
     if params[:institution_id] == 'todos'
-      @users = User.where(type: 'Student').find_each
+      @users = User.all
     else
       @users = User.where(institution_id: params[:institution_id]).all
     end

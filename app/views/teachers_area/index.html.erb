@@ -8,6 +8,24 @@
 <%= link_to 'Cria Questionario de estilos de aprendizagem', new_learning_quiz_path %><br>
 <%= link_to 'Buscar resultados de estilos de aprendizagem', search_learning_results_path %><br>
 <%= link_to 'Comparar resultados de estilos de aprendizagem', analytics_learning_results_path %>
+
+<% if @my_quizzes != nil && @my_quizzes.size > 0%>
+  <div class="alert alert-warning">
+    <p>Voce tem Questionarios para responder, clique nas datas</p>
+      <% @my_quizzes.each do |quiz| %>
+        <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final) %><br>
+      <% end %>
+  </div>
+<% end %>
+
+<% if @my_learning_quizzes != nil && @my_learning_quizzes.size > 0%>
+  <div class="alert alert-info">
+    <p>Voce tem Questionarios de estilo de aprendizagem para responder, clique nas datas</p>
+      <% @my_learning_quizzes.each do |quiz| %>
+        <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final) %><br>
+      <% end %>
+  </div>
+<% end %>
 <p>
     <strong>Minhas Turmas</strong>
 </p>
