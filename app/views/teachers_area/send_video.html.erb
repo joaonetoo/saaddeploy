@@ -2,8 +2,12 @@
 <h1>Enviar video</h1>
 <%= form_tag({ :controller => "teachers_area", :action => "create_video"}, { :id => "form_video"}) do |f| %>
 <div class="field">
+    <%= label_tag :titulo %><br>
+    <%= text_field_tag :titulo %>
+  </div>
+<div class="field">
     <%= label_tag :descrição %><br>
-    <%= text_field_tag :description %>
+    <%= text_area_tag :description %>
   </div>
   <div class="field">
     <%= label_tag :url %><br>

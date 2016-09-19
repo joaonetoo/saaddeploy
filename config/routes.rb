@@ -99,6 +99,8 @@ Rails.application.routes.draw do
   get 'student_area/unsubscribe_video'
   get 'student_area/list_atividades'
   get 'student_area/list_answers'
+  get 'student_area/compare_anchors'
+  get 'student_area/compare_learning'
 
 
   resources :planos

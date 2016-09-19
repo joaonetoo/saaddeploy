@@ -27,6 +27,7 @@
                             <li><%= link_to 'Editar plano', edit_plano_path(current_user.plano) %></li>
                           <% end %>
                           <li><%= link_to 'Âncoras', student_area_my_result_path %></li>
+                          <li><%= link_to 'Comparar Âncoras', student_area_compare_anchors_path %></li>
                       </ul>
                   </li>
 
@@ -37,6 +38,9 @@
                       </a>
                       <ul class="sub">
                           <li><%= link_to 'Resultados', student_area_my_learning_result_path %></li>
+                      </ul>
+                      <ul class="sub">
+                          <li><%= link_to 'Comparar Resultados', student_area_compare_learning_path %></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

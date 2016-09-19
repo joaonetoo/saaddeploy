@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825131542) do
+ActiveRecord::Schema.define(version: 20160918181758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20160825131542) do
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.string   "normas",       default: "nenhuma"
-    t.datetime "deadline",     default: '2016-08-24 14:48:16'
+    t.datetime "deadline",     default: '2016-07-27 18:02:10'
     t.string   "trabalhos",    default: "nenhum"
     t.integer  "user_id"
   end
@@ -224,6 +224,7 @@ ActiveRecord::Schema.define(version: 20160825131542) do
     t.string   "organizacao_academica"
     t.string   "categoria_administrativa"
     t.string   "site"
+    t.string   "image_file_name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -504,6 +505,7 @@ ActiveRecord::Schema.define(version: 20160825131542) do
     t.string  "url"
     t.string  "description"
     t.integer "user_id"
+    t.string  "titulo"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree

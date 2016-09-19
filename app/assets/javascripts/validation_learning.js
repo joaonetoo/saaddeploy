@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('input').change(function () {
                 var atual = $(this)
                 $(this).parent().siblings().each(function (){
+
                     $(this).find('input').each(function (){
                         if ($(this).val() > 0) {
                         }
@@ -13,9 +14,14 @@ $(document).ready(function () {
                             atual.addClass('borderclass');
                             $(this).css("border", "5px solid red");
                             $(this).addClass('borderclass');
+                            $(this).parent('div').parent('div').find('.alert').show();
                         }
+
+
                     });
                 });
+                var alerta = 0;
+
                 $('.borderclass').each(function (){
                     var self = $(this)
                     count = 0;
@@ -23,17 +29,20 @@ $(document).ready(function () {
                         $(this).find('input').each(function (){
                             if( self.val() == $(this).val() ){
                                 count++;
+                                alert++;
                             }
                         });
                     });
                     if (count == 0){
                         self.removeClass('borderclass');
                         self.css("border", "1px solid #ccc");
+                        $(this).parent('div').parent('div').find('.alert').hide();
                     }
                 });
 
                 var filled = 0
                 var errors = 0
+
                 $('.form-control').each(function () {
                     if($(this).val() > 0){
                         filled++;
