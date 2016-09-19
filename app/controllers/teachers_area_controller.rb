@@ -145,6 +145,7 @@ class TeachersAreaController < ApplicationController
 
   def create_video
     @video = Video.new
+    @video.titulo = params[:titulo]
     @video.description = params[:description]
     @video.url = @video.youtubeRegExp(params[:url])
     @video.sender_id = current_user.id

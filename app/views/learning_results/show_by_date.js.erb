@@ -17,11 +17,11 @@ $('#graphic').highcharts({
         },
 
         title: {
-            text: 'Estilos de Aprendizagem'
+            text: 'Habilidades'
         },
 
         pane: {
-            startAngle: 0
+            startAngle: 0,
         },
 
 
@@ -31,12 +31,16 @@ $('#graphic').highcharts({
             max: 4,
             tickmarkPlacement: 'on',
             categories: categories,
+
         },
 
 
         yAxis: {
             min: 0,
-            max: 46
+            max: 46,
+            labels: {
+                enabled: false
+             }
         },
 
         plotOptions: {
@@ -51,11 +55,14 @@ $('#graphic').highcharts({
             }
         },
 
+        credits: {
+            enabled: false
+        },
 
 
         series: [{
             type: 'area',
-            name: 'Area',
+            name: 'Score',
             data: [<%= @mediaEc %>,<%= @mediaOr %>, <%= @mediaCa%>,<%= @mediaEa %>]
         }]
 
@@ -71,7 +78,7 @@ $('#graphic2').highcharts({
         },
 
         title: {
-            text: 'Características individuais'
+            text: 'Estilos de Aprendizagem'
         },
 
         pane: {
@@ -87,7 +94,11 @@ $('#graphic2').highcharts({
         },
 
         yAxis: {
-            min: 0
+            min: 0,
+            max: 46,
+              labels: {
+                enabled: false
+             }
         },
 
         plotOptions: {
@@ -102,12 +113,14 @@ $('#graphic2').highcharts({
             }
         },
 
-
+        credits: {
+            enabled: false
+        },
 
         series: [{
             type: 'area',
-            name: 'Area',
-            color: '#34ED13',
+            name: 'Score',
+            color: '#ff6600',
             data: [<%= @mediaDi %>, <%= @mediaAs %>, <%= @mediaCo %>, <%= @mediaAc %>]
         }]
 

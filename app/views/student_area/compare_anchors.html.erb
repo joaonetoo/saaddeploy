@@ -1,0 +1,69 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
+
+<%= javascript_include_tag "createPdf"%>
+<%= javascript_include_tag "createCsv"%>
+
+<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<%= form_tag(compare_by_date_results_path, method: 'post', :remote => true) do %>
+  <%= hidden_field_tag "selecao", @selecao %>
+  <%= select_tag(:data_final, options_for_select(@datas)) %>
+  <% @results.map(&:id).each do |id| %>
+    <%= hidden_field_tag "results[]", id %>
+  <% end %>
+
+ <div class="row mt">
+  <div class="col-lg-12">
+      <section id="unseen">
+<table id="tabela_resultados" class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Ordem</th>
+        <th>Pontuação</th>
+        <th>Âncoras</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody  id="media">
+
+    </tbody>
+  </table>
+    </section>
+  </div>
+  </div>
+
+
+  <br>
+
+  <%= hidden_field_tag "selecao2", @selecao2 %>
+  <%= select_tag(:data_final2, options_for_select(@datas2)) %>
+  <% @results2.map(&:id).each do |id| %>
+    <%= hidden_field_tag "results2[]", id %>
+  <% end %>
+
+<div class="row mt">
+  <div class="col-lg-12">
+      <section id="unseen">
+<table id="tabela_resultados2" class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Ordem</th>
+        <th>Pontuação</th>
+        <th>Âncoras Predominantes</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody  id="media2">
+
+    </tbody>
+  </table>
+      </section>
+  </div>
+  </div>
+
+
+<%= submit_tag "Comparar" %>
+<% end %>
+<br>

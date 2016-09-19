@@ -61,6 +61,33 @@ require "prawn/measurement_extensions"
 
   end
 
+  def compare_anchors
+    @selecao = current_user.nome
+    @results = []
+    current_user.results.each do |result|
+      @results << result
+    end
+
+    @datas = @results.map(&:data_final).uniq
+
+    @results2 = @results
+    @datas2 = @datas
+    @selecao2 = @selecao
+  end
+
+  def compare_learning
+    @selecao = current_user.nome
+    @results = []
+          current_user.learning_results.each do |result|
+            @results << result
+          end
+
+    @datas = @results.map(&:data_final).uniq
+    @results2 = @results
+    @datas2 = @datas
+    @selecao2 = @selecao
+  end
+
   def list_atividades
     AtividadeExtra.close
     @atividades = current_user.received_atividade_extras
