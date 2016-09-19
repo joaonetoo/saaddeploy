@@ -1,4 +1,4 @@
-$(document).ready(function () {
+var ready(function () {
     $('input').keypress(function(event){
         event.preventDefault();
     });
@@ -50,7 +50,8 @@ $(document).ready(function () {
 
 
 });
-
+$(document).ready(ready);
+$(document).on('page:change', ready);
 
 
 
