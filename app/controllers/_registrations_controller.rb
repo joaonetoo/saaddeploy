@@ -1,4 +1,4 @@
-gitclass RegistrationsController < ApplicationController
+class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:create]
 
