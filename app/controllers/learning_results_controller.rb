@@ -55,7 +55,14 @@ class LearningResultsController < ApplicationController
 
   def selection
     @subject = Subject.find(params[:subject])
-    @classrooms = @subject.classrooms
+    @classrooms = []
+    @subject.classrooms.each do |classroom|
+      classroom.users.each do |user|
+        if user.id == current_user.id
+          @classrooms << classroom
+        end
+      end
+    end
 
     respond_to do |format|
        format.js {  }
