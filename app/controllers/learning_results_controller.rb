@@ -21,8 +21,8 @@ class LearningResultsController < ApplicationController
         @subjects << classroom.subject
         classroom.users.each do |user|
             if user.type == 'Student'
-            @students << user
-        end
+              @students << user
+            end
         end
     end
     @subjects.uniq!
@@ -53,7 +53,7 @@ class LearningResultsController < ApplicationController
     setup_search
   end
 
-  def selection
+  def subject_selection
     @subject = Subject.find(params[:subject])
     @classrooms = []
     @subject.classrooms.each do |classroom|
@@ -67,6 +67,11 @@ class LearningResultsController < ApplicationController
     respond_to do |format|
        format.js {  }
     end
+  end
+
+  def classroom_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
   end
 
   def analytics
