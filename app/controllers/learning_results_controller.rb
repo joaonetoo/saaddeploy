@@ -1,7 +1,7 @@
 class LearningResultsController < ApplicationController
   before_action :set_learning_result, only: [:show, :edit, :update, :destroy]
 
-  def setup_search
+  def setup_teacher_search
     @institutions = []
     @courses = []
     @centers = []
@@ -50,7 +50,9 @@ class LearningResultsController < ApplicationController
   end
 
   def search
-    setup_search
+    if current_user.type == 'Teacher'
+      setup_teacher_search
+    end
   end
 
   def subject_selection
