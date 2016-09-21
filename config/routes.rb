@@ -72,6 +72,7 @@ Rails.application.routes.draw do
       post 'analytic_list'
       post 'compare_by_date'
       get 'pdf_list'
+      get 'selection'
     end
   end
   get 'teachers_area/index'

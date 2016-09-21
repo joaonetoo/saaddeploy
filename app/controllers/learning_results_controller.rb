@@ -1,6 +1,33 @@
 class LearningResultsController < ApplicationController
   before_action :set_learning_result, only: [:show, :edit, :update, :destroy]
 
+  def setup_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+            if user.type == 'Student'
+            @students << user
+        end
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+  end
   # GET /learning_results
   # GET /learning_results.json
   def index
@@ -23,6 +50,16 @@ class LearningResultsController < ApplicationController
   end
 
   def search
+    setup_search
+  end
+
+  def selection
+    @subject = Subject.find(params[:subject])
+    @classrooms = @subject.classrooms
+
+    respond_to do |format|
+       format.js {  }
+    end
   end
 
   def analytics

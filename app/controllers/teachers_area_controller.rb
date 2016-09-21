@@ -1,7 +1,6 @@
 class TeachersAreaController < ApplicationController
   require "prawn/measurement_extensions"
 
-
   def setup_search
     @institutions = []
     @courses = []
