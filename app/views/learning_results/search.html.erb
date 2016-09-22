@@ -1,4 +1,5 @@
 <%= javascript_include_tag 'search_learning' %>
 <h1>Listando Resultados de Estilos de aprendizagem</h1>
-<%= render :partial => 'learning_results/teacher_search' %>
-
+<% if current_user.type == 'Teacher' %>
+    <%= render :partial => 'learning_results/teacher_search' %>
+<% end %>

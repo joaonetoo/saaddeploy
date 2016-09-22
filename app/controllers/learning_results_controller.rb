@@ -20,13 +20,12 @@ class LearningResultsController < ApplicationController
     @classrooms.each do |classroom|
         @subjects << classroom.subject
         classroom.users.each do |user|
-            if user.type == 'Student'
               @students << user
-            end
         end
     end
     @subjects.uniq!
     @students = @students.uniq { |s| s.nome}
+
   end
   # GET /learning_results
   # GET /learning_results.json
@@ -71,12 +70,36 @@ class LearningResultsController < ApplicationController
     end
   end
 
+    def subject2_selection
+    @subject = Subject.find(params[:subject])
+    @classrooms = []
+    @subject.classrooms.each do |classroom|
+      classroom.users.each do |user|
+        if user.id == current_user.id
+          @classrooms << classroom
+        end
+      end
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
   def classroom_selection
     @classroom = Classroom.find(params[:classroom])
     @users = @classroom.users
   end
 
+  def classroom2_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
+  end
+
   def analytics
+    if current_user.type == 'Teacher'
+      setup_teacher_search
+    end
   end
 
   def pdf_list
