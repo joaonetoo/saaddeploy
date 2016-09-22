@@ -119,6 +119,10 @@ Rails.application.routes.draw do
       get 'analytics'
       post 'analytic_list'
       post 'compare_by_date'
+      get 'subject_selection'
+      get 'subject2_selection'
+      get 'classroom_selection'
+      get 'classroom2_selection'
     end
   end
   resources :quizzes

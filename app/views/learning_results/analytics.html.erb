@@ -1,5 +1,5 @@
 <%= javascript_include_tag 'search_learning' %>
 <h1>Comparar resultados de estilos de aprendizagem</h1>
-
-<%= render :partial => 'learning_results/teacher_analytics' %>
-
+<% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
+    <%= render :partial => 'learning_results/teacher_analytics' %>
+<% end %>

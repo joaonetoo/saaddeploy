@@ -8,6 +8,32 @@ require 'csv'
     @results = Result.all
   end
 
+def setup_teacher_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+
+  end
   # GET /results/1
   # GET /results/1.json
   def show
@@ -321,11 +347,71 @@ require 'csv'
   end
 
   def search
+    if current_user.type == 'Teacher'
+      setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
+    end
+  end
 
+  def subject_selection
+    @subject = Subject.find(params[:subject])
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator'
+      @classrooms = @subject.classrooms
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+    def subject2_selection
+    @subject = Subject.find(params[:subject])
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator'
+      @classrooms = @subject.classrooms
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+  def classroom_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
+  end
+
+  def classroom2_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
   end
 
   def analytics
-
+      if current_user.type == 'Teacher'
+      setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
+    end
   end
 
   def analytic_list

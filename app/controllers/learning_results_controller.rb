@@ -51,18 +51,25 @@ class LearningResultsController < ApplicationController
   def search
     if current_user.type == 'Teacher'
       setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
     end
   end
 
   def subject_selection
     @subject = Subject.find(params[:subject])
-    @classrooms = []
-    @subject.classrooms.each do |classroom|
-      classroom.users.each do |user|
-        if user.id == current_user.id
-          @classrooms << classroom
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
         end
       end
+    elsif current_user.type == 'Coordinator'
+      @classrooms = @subject.classrooms
     end
 
     respond_to do |format|
@@ -72,13 +79,17 @@ class LearningResultsController < ApplicationController
 
     def subject2_selection
     @subject = Subject.find(params[:subject])
-    @classrooms = []
-    @subject.classrooms.each do |classroom|
-      classroom.users.each do |user|
-        if user.id == current_user.id
-          @classrooms << classroom
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
         end
       end
+    elsif current_user.type == 'Coordinator'
+      @classrooms = @subject.classrooms
     end
 
     respond_to do |format|
@@ -99,6 +110,9 @@ class LearningResultsController < ApplicationController
   def analytics
     if current_user.type == 'Teacher'
       setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
     end
   end
 
