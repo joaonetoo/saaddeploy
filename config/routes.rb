@@ -77,6 +77,11 @@ Rails.application.routes.draw do
       get 'classroom_selection'
       get 'classroom2_selection'
       get 'course_selection'
+      get 'course2_selection'
+      get 'center_selection'
+      get 'center2_selection'
+      get 'campu_selection'
+      get 'campu2_selection'
     end
   end
   get 'teachers_area/index'
@@ -124,6 +129,12 @@ Rails.application.routes.draw do
       get 'subject2_selection'
       get 'classroom_selection'
       get 'classroom2_selection'
+      get 'course_selection'
+      get 'course2_selection'
+      get 'center_selection'
+      get 'center2_selection'
+      get 'campu_selection'
+      get 'campu2_selection'
     end
   end
   resources :quizzes

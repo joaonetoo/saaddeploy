@@ -1,13 +1,17 @@
+<%= javascript_include_tag 'search_learning_admin' %>
 <%= form_tag({ :controller => "learning_results", :action => "analytic_list"}, { :id => "form2"}) do |f| %>
+<h2>Seleção 1</h2>
 <div class="field">
-
     <%= hidden_field_tag :institution_id, @institution.id %>
 
-    <%= hidden_field_tag :campu_id, @campu.id %>
+    <%= label_tag :Campus %>
+    <%= collection_select(nil, :campu_id, @campus, :id, :name)%>
 
-    <%= hidden_field_tag :center_id, @center.id %>
+    <%= label_tag :Centro %>
+    <%= collection_select(nil, :center_id, @centers, :id, :name)%>
 
-    <%= hidden_field_tag :course_id, @course.id %>
+    <%= label_tag :Curso %>
+    <%= collection_select(nil, :course_id, @courses, :id, :nome)%>
 
     <%= label_tag :Disciplina %>
     <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
@@ -23,11 +27,14 @@
   <div class="field">
     <%= hidden_field_tag :institution2_id, @institution.id %>
 
-    <%= hidden_field_tag :campu2_id, @campu.id %>
+    <%= label_tag :Campus %>
+    <%= collection_select(nil, :campu2_id, @campus, :id, :name)%>
 
-    <%= hidden_field_tag :center2_id, @center.id %>
+    <%= label_tag :Centro %>
+    <%= collection_select(nil, :center2_id, @centers, :id, :name)%>
 
-    <%= hidden_field_tag :course2_id, @course.id %>
+    <%= label_tag :Curso %>
+    <%= collection_select(nil, :course2_id, @courses, :id, :nome)%>
 
     <%= label_tag :Disciplina %>
     <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>

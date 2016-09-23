@@ -110,7 +110,32 @@ class LearningResultsController < ApplicationController
     end
   end
 
+  def campu_selection
+    @campu = Campu.find(params[:campu])
+    @centers = @campu.centers
+  end
+
+  def campu2_selection
+    @campu = Campu.find(params[:campu])
+    @centers = @campu.centers
+  end
+
+  def center_selection
+    @center = Center.find(params[:center])
+    @courses = @center.courses
+  end
+
+  def center2_selection
+    @center = Center.find(params[:center])
+    @courses = @center.courses
+  end
+
   def course_selection
+    @course = Course.find(params[:course])
+    @subjects = @course.subjects
+  end
+
+  def course2_selection
     @course = Course.find(params[:course])
     @subjects = @course.subjects
   end
@@ -170,6 +195,8 @@ class LearningResultsController < ApplicationController
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
+    elsif current_user.type == 'Principal'
+      setup_principal_search
     end
   end
 
