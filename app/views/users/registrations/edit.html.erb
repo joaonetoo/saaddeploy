@@ -1,64 +1,112 @@
-<h2>Editar Perfil</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+<h2><i class="fa fa-angle-right"></i>Editar perfil</h2>
+<div class="row mt">
+  <div class="col-lg-12">
+      <div class="content-panel">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|%>
+            <%= devise_error_messages! %>
+            <div class="row mt form-horizontal style-form">
+                <div class="col-lg-3">
+                      <div class="form-group">
+                        <%= f.label :nome, :class => "col-sm-2 control-label" %>
+                        <div class="col-sm-10">
+                          <%= f.text_field :nome, :class => "form-control" %>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3">
+                      <div class="field form-group">
+                          <%= f.label :telefone, :class => "col-sm-2 control-label"  %>
+                          <div class="col-sm-10">
+                            <%= f.text_field :telefone, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-3">
+                      <div class="field form-group">
+                          <%= f.label :endereco, :class => "col-sm-2 control-label"  %>
+                          <div class="col-sm-10">
+                            <%= f.text_field :endereco, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-3">
+                      <div class="field form-group">
+                          <%= f.label :email, :class => "col-sm-2 control-label"  %>
+                          <div class="col-sm-10">
+                            <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row mt form-horizontal style-form">
+                  <div class="col-lg-3">
+                      <div class="field form-group">
+                          <%= f.label :avatar, :class => "col-sm-2 control-label" %>
+                          <div class="col-sm-10">
+                            <%= f.file_field :avatar, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-3">
+                      <div class="field form-group">
+                          <%= f.label :lattes, :class => "col-sm-2 control-label" %>
+                          <div class="col-sm-10">
+                            <%= f.text_field :lattes, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-6">
+                      <div class="field form-group">
+                          <%= f.label :biografia, :class => "col-sm-2 control-label" %>
+                          <div class="col-sm-10">
+                            <%= f.text_field :biografia, :class => "form-control" %>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row mt form-horizontal style-form">
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                  <div class="col-lg-4">
+                      <div class="field form-group">
+                            <%= f.label :senha_atual, :class => "col-sm-3 control-label"  %>
+                          <div class="col-sm-9">
+                            <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
+                            <br><i>(Insira sua senha atual para validar as mudanças)</i>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-4">
+                      <div class="field form-group">
+                            <%= f.label :nova_senha, :class => "col-sm-3 control-label" %>
+                          <div class="col-sm-9">
+                            <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                            <br><i>(deixe em branco caso não queira mudar)</i>
+                          </div>
+                      </div>
+                </div>
+                <div class="col-lg-4">
+                      <div class="field form-group">
+                          <%= f.label :confirmação_nova_senha, :class => "col-sm-3 control-label" %>
+                          <div class="col-sm-9">
+                            <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+                            <br><i>(repita o valor preenchido no campo anterior)</i>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            <div class="actions">
+                <center><%= f.submit "Atualizar", :class => "btn btn-success btn-sm" %></center>
+            </div>
+            <% end %>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :lattes %><br>
-    <%= f.text_field :lattes %>
-  </div>
-   <div class="field">
-    <%= f.label :biografia %><br>
-    <%= f.text_area :biografia %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.file_field :avatar %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nova_senha %> <i>(deixe em branco caso não queira mudar)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :confirmação_nova_senha %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :senha_atual %> <i>(Insira sua senha atual para validar as mudanças)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Atualizar" %>
-  </div>
-<% end %>
-
+</div>
+<!--
 <h3>Excluir conta</h3>
 
 <p>Cancelar conta? <%= button_to "Cancelar conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Voltar", :back %>
+-->

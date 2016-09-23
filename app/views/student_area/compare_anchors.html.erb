@@ -4,66 +4,77 @@
 <%= javascript_include_tag "createPdf"%>
 <%= javascript_include_tag "createCsv"%>
 
-<div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
-<%= form_tag(compare_by_date_results_path, method: 'post', :remote => true) do %>
-  <%= hidden_field_tag "selecao", @selecao %>
-  <%= select_tag(:data_final, options_for_select(@datas)) %>
-  <% @results.map(&:id).each do |id| %>
-    <%= hidden_field_tag "results[]", id %>
-  <% end %>
 
- <div class="row mt">
-  <div class="col-lg-12">
-      <section id="unseen">
-<table id="tabela_resultados" class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Ordem</th>
-        <th>Pontuação</th>
-        <th>Âncoras</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody  id="media">
-
-    </tbody>
-  </table>
-    </section>
-  </div>
-  </div>
-
-
-  <br>
-
-  <%= hidden_field_tag "selecao2", @selecao2 %>
-  <%= select_tag(:data_final2, options_for_select(@datas2)) %>
-  <% @results2.map(&:id).each do |id| %>
-    <%= hidden_field_tag "results2[]", id %>
-  <% end %>
-
+<h2><i class="fa fa-angle-right"></i>Análise de âncoras de carreira</h2>
 <div class="row mt">
   <div class="col-lg-12">
-      <section id="unseen">
-<table id="tabela_resultados2" class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Ordem</th>
-        <th>Pontuação</th>
-        <th>Âncoras Predominantes</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+      <div class="content-panel">
+            <center><h3>Selecione os parâmetros abaixo para comparar</h3></center>
+            <div class="row mt">
+                <div class="col-lg-6">
+                    <center>
+                      <h4>Parâmetro 1:</h4>
+                      <%= form_tag(compare_by_date_results_path, method: 'post', :remote => true) do %>
+                      <%= hidden_field_tag "selecao", @selecao %>
+                      <%= select_tag(:data_final, options_for_select(@datas)) %>
+                      <% @results.map(&:id).each do |id| %>
+                        <%= hidden_field_tag "results[]", id %>
+                      <% end %>
+                    </center>
+                  </div>
 
-    <tbody  id="media2">
-
-    </tbody>
-  </table>
-      </section>
+                  <div class="col-lg-6">
+                    <center>
+                      <h4>Parâmetro 2:</h4>
+                      <%= hidden_field_tag "selecao2", @selecao2 %>
+                      <%= select_tag(:data_final2, options_for_select(@datas2)) %>
+                      <% @results2.map(&:id).each do |id| %>
+                      <%= hidden_field_tag "results2[]", id %>
+                      <% end %>
+                    </center>
+                  </div>
+                </div>
+                <div class="row mt">
+                <div class="col-md-2 col-md-offset-5">
+                    <center>
+                    <%= submit_tag "Comparar", :class => "btn btn-primary btn-sm btn-block" %>
+                      <% end %>
+                    </center>
+                </div>
+            </div>
+                <div class="row mt">
+                    <div class="col-lg-6">
+                      <section id="unseen"><br>
+                          <table id="tabela_resultados" class="table table-bordered table-striped table-condensed">
+                            <thead>
+                              <tr>
+                                <th>Ordem</th>
+                                <th>Pontuação</th>
+                                <th>Âncoras</th>
+                              </tr>
+                            </thead>
+                            <tbody  id="media">
+                            </tbody>
+                        </table>
+                    </section>
+                  </div>
+                  <div class="col-lg-6">
+                        <section id="unseen"><br>
+                          <table id="tabela_resultados2" class="table table-bordered table-striped table-condensed">
+                            <thead>
+                              <tr>
+                                <th>Ordem</th>
+                                <th>Pontuação</th>
+                                <th>Âncoras</th>
+                              </tr>
+                          </thead>
+                          <tbody  id="media2">
+                          </tbody>
+                        </table>
+                        </section>
+                  </div>
+            </div>
+            <div id="graphic"></div>
+      </div>
   </div>
-  </div>
-
-
-<%= submit_tag "Comparar" %>
-<% end %>
-<br>
+</div>

@@ -1,4 +1,4 @@
-<h1>Listando Resultados de Estilos de aprendizagem</h1>
+<h2><i class="fa fa-angle-right"></i>Listar resultados de estilos de aprendizagem</h2>
 <% if current_user.type == 'Teacher'  || current_user.type == 'Coordinator'%>
     <%= render :partial => 'learning_results/teacher_search' %>
 <% elsif current_user.type == 'Principal' %>

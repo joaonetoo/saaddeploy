@@ -1,6 +1,7 @@
-<h1>Comparar resultados de estilos de aprendizagem</h1>
+<h2><i class="fa fa-angle-right"></i>Comparar estilos de aprendizagem</h2>
 <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
     <%= render :partial => 'learning_results/teacher_analytics' %>
 <% elsif current_user.type == 'Principal' %>
     <%= render :partial => 'learning_results/principal_analytics' %>
 <% end %>
+

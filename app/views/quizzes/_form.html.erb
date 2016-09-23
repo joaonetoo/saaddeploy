@@ -2,7 +2,6 @@
   <% if @quiz.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
-
       <ul>
       <% @quiz.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,40 +9,58 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= label_tag :Instituição %><br>
-    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, {}, {class: "btn btn-theme -toggle"}) %>
+  <h2><i class="fa fa-angle-right"></i>Solicitar resposta às âncoras de carreira</h2>
+  <div class="row mt">
+    <div class="col-lg-12">
+      <div class="content-panel">
+        <div class="row mt">
+          <div class="col-lg-6">
+              <h3>Selecione o(s) aluno(s)</h3>
+              <div class="campo_compare">
+                <%= label_tag :Instituição %><br>
+                <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome, {}) %>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Campus %><br>
+                <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Centro %><br>
+                <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Curso %><br>
+                <%= grouped_collection_select(nil, :course_id, Center.order(:name), :courses, :name, :id, :nome)%>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Disciplina %><br>
+                <%= grouped_collection_select(nil, :subject_id, Course.order(:nome), :subjects, :nome, :id, :nome)%>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Turma %><br>
+                <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
+              </div>
+              <div class="campo_compare">
+                <%= label_tag :Alunos %><br>
+                <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <h3>Selecione a data final para preenchimento</h3>
+              <div class="campo_compare">
+                <%= f.label :data_final %><br>
+                <%= f.date_select :data_final %>
+              </div>
+          </div>
+        </div>
+        <div class="row mt">
+          <div class="col-lg-12">
+              <div class="actions">
+              <center><%= f.submit "Criar questionário", :class => "btn btn-primary btn-lg"%></center>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= label_tag :Campus %><br>
-    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Centro %><br>
-    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Curso %><br>
-    <%= grouped_collection_select(nil, :course_id, Center.order(:name), :courses, :name, :id, :nome)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Disciplina %><br>
-    <%= grouped_collection_select(nil, :subject_id, Course.order(:nome), :subjects, :nome, :id, :nome)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Turma %><br>
-    <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Alunos %><br>
-    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
-  </div>
-  <div class="field">
-    <%= f.label :data_final %><br>
-    <%= f.date_select :data_final %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Criar questionário"%>
-  </div>
-<% end %>

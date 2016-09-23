@@ -4,29 +4,51 @@
 <%= javascript_include_tag "createPdf"%>
 <%= javascript_include_tag "createCsv"%>
 
-<div class="tab-pane hidden" id="chartjs">
-  <div class="row mt">
-    <div class="col-lg-6">
+<h2><i class="fa fa-angle-right"></i>Âncoras de carreira</h2>
+<div class="row mt">
+  <div class="col-lg-12">
       <div class="content-panel">
-        <div class="panel-body text-center">
-          <div id="graphic" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
-        </div>
+          <label>Selecione uma âncora para visualizar</label>
+          <%= form_tag(show_by_date_results_path, method: 'post', :remote => true) do %>
+            <%= hidden_field_tag "selecao", @selecao %>
+            <%= select_tag(:data_final, options_for_select(@datas)) %>
+            <% @results.map(&:id).each do |id| %>
+              <%= hidden_field_tag "results[]", id %>
+            <% end %>
+          <div class="row mt">
+              <div class="col-lg-6">
+                  <div class="tab-pane hidden" id="chartjs">
+                    <div id="graphic"></div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <table id="tabela_resultados" class="table table-bordered table-striped table-condensed">
+                      <thead>
+                        <tr>
+                          <th>Ordem</th>
+                          <th>Pontuação</th>
+                          <th>Âncoras</th>
+                        </tr>
+                      </thead>
+                      <tbody  id="media">
+                      </tbody>
+                  </table>
+              </div>
       </div>
-    </div>
-
   </div>
+</div>
+
+<div class="col-lg-12">
+ <a href="#" id="export" class="btn btn-primary btn-sm btn-success">BAIXAR PARA O EXCEL</a>
+<div id='exports'>
+</div>
 </div>
 
 
 Ancoras<br>
 <h2><%= @selecao %></h2>
 
-<%= form_tag(show_by_date_results_path, method: 'post', :remote => true) do %>
-    <%= hidden_field_tag "selecao", @selecao %>
-    <%= select_tag(:data_final, options_for_select(@datas)) %>
-    <% @results.map(&:id).each do |id| %>
-      <%= hidden_field_tag "results[]", id %>
-    <% end %>
+
 
 <table id="tabela_resultados">
   <thead>
@@ -43,10 +65,6 @@ Ancoras<br>
   </tbody>
 </table>
 
- <a href="#" id="export">Exportar CSV</a>
-
-<div id='exports'>
-</div>
 
 <br>
 <div id = "dados">
