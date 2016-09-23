@@ -76,6 +76,7 @@ Rails.application.routes.draw do
       get 'subject2_selection'
       get 'classroom_selection'
       get 'classroom2_selection'
+      get 'course_selection'
     end
   end
   get 'teachers_area/index'
