@@ -1,6 +1,9 @@
 <%= javascript_include_tag "results" %>
-<h1>Listando Resultados</h1>
-<%= form_tag({ :controller => "results", :action => "list"}, { :id => "form2"}) do |f| %>
+<h2><i class="fa fa-angle-right"></i>Buscar âncoras de carreira</h2>
+<div class="row mt">
+    <div class="col-lg-12">
+      <div class="content-panel">
+        <%= form_tag({ :controller => "results", :action => "list"}, { :id => "form2"}) do |f| %>
 <div class="field">
     <%= label_tag :Instituição %>
     <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
@@ -26,6 +29,11 @@
     <%= label_tag :Usuarios %>
     <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
   </div>
-<%= submit_tag "Enviar" %>
+<%= submit_tag "Enviar", :class => "btn btn-info btn-sm" %>
 <% end %>
+      </div>
+    </div>
+</div>
+
+
 
