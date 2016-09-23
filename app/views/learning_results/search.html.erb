@@ -1,31 +1,7 @@
-<%= javascript_include_tag "application", params[:controller] %>
 <h1>Listando Resultados de Estilos de aprendizagem</h1>
-<%= form_tag({ :controller => "learning_results", :action => "list"}, { :id => "form2"}) do |f| %>
-<div class="field">
-    <%= label_tag :Instituição %>
-    <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
-
-    <%= label_tag :Campus %>
-    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
-
-
-    <%= label_tag :Centro %>
-    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
-
-
-    <%= label_tag :Curso %>
-    <%= grouped_collection_select(nil, :course_id, Center.order(:name), :courses, :name, :id, :nome)%>
-
-
-    <%= label_tag :Disciplina %>
-    <%= grouped_collection_select(nil, :subject_id, Course.order(:nome), :subjects, :nome, :id, :nome)%>
-
-    <%= label_tag :Turma %>
-    <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
-
-    <%= label_tag :Usuarios %>
-    <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
-  </div>
-<%= submit_tag "Enviar" %>
+<% if current_user.type == 'Teacher'  || current_user.type == 'Coordinator'%>
+    <%= render :partial => 'learning_results/teacher_search' %>
+<% elsif current_user.type == 'Principal' %>
+    <%= render :partial => 'learning_results/principal_search' %>
 <% end %>
 

@@ -1,0 +1,44 @@
+<%= javascript_include_tag 'search_learning' %>
+<%= form_tag({ :controller => "learning_results", :action => "analytic_list"}, { :id => "form2"}) do |f| %>
+<div class="field">
+
+    <%= hidden_field_tag :institution_id, @institution.id %>
+
+    <%= hidden_field_tag :campu_id, @campu.id %>
+
+    <%= hidden_field_tag :center_id, @center.id %>
+
+    <%= hidden_field_tag :course_id, @course.id %>
+
+    <%= label_tag :Disciplina %>
+    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
+
+    <%= label_tag :Turma %>
+    <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
+
+    <%= label_tag :Usuarios %>
+    <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+  </div>
+
+  <h2>Seleção 2</h2>
+  <div class="field">
+    <%= hidden_field_tag :institution2_id, @institution.id %>
+
+    <%= hidden_field_tag :campu2_id, @campu.id %>
+
+    <%= hidden_field_tag :center2_id, @center.id %>
+
+    <%= hidden_field_tag :course2_id, @course.id %>
+
+    <%= label_tag :Disciplina %>
+    <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
+
+    <%= label_tag :Turma %>
+    <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
+
+    <%= label_tag :Usuarios %>
+    <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
+  </div>
+
+<%= submit_tag "Enviar" %>
+<% end %>

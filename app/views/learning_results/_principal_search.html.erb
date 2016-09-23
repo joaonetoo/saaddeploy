@@ -1,20 +1,17 @@
-<h1>Listando Resultados de Estilos de aprendizagem</h1>
+<%= javascript_include_tag 'search_learning_admin' %>
 <%= form_tag({ :controller => "learning_results", :action => "list"}, { :id => "form2"}) do |f| %>
 <div class="field">
-    <%= label_tag :Instituição %>
-    <%= collection_select(nil, :institution_id, @institutions, :id, :nome) %>
+
+    <%= hidden_field_tag :institution_id, @institution.id %>
 
     <%= label_tag :Campus %>
     <%= collection_select(nil, :campu_id, @campus, :id, :name)%>
 
-
     <%= label_tag :Centro %>
     <%= collection_select(nil, :center_id, @centers, :id, :name)%>
 
-
     <%= label_tag :Curso %>
     <%= collection_select(nil, :course_id, @courses, :id, :nome)%>
-
 
     <%= label_tag :Disciplina %>
     <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
@@ -22,10 +19,8 @@
     <%= label_tag :Turma %>
     <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
 
-    <%= label_tag :Alunos %>
+    <%= label_tag :Usuarios %>
     <%= collection_select(nil, :users_id, @students, :id, :nome)%>
-
-</div>
+  </div>
 <%= submit_tag "Enviar" %>
 <% end %>
-
