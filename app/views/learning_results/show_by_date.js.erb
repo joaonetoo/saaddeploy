@@ -4,7 +4,7 @@ var content = []
 
 $('#exports').empty();
 <% if @learning_results.size == 1 %>
-     pdf = '<%= link_to "Gerar PDF", pdf_list_learning_results_path(format: "pdf", result: @learning_results.first) %>';
+     pdf = '<%= link_to "Gerar PDF", pdf_list_learning_results_path(format: "pdf", result: @learning_results.first), :class => "btn btn-danger btn-sm" %>';
       $('#exports').append(pdf);
 <%end%>
 

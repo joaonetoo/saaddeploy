@@ -1,11 +1,11 @@
 <%= javascript_include_tag 'search_learning' %>
-<h2><i class="fa fa-angle-right"></i>Buscar âncoras de carreira</h2>
+
 <div class="row mt">
     <div class="col-lg-12">
       <div class="content-panel">
 <%= form_tag({ :controller => "results", :action => "analytic_list"}, { :id => "form2"}) do |f| %>
 <div class="field">
-
+  <h2>Seleção 1</h2>
     <%= hidden_field_tag :institution_id, @institution.id %>
 
     <%= hidden_field_tag :campu_id, @campu.id %>

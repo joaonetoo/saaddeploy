@@ -10,9 +10,12 @@
       <div class="content-panel">
           <h3><%= @selecao %></h3>
           <label>Selecione uma âncora para visualizar</label>
-          <% @datas.each do |data| %>
-          <%= link_to "#{data}", show_by_date_results_path(:data_final => data, :results => @results, :selecao => @selecao) ,remote: true, :method => :post%><br>
-          <% end %>
+          <%= form_tag(show_by_date_results_path, method: 'post', :remote => true) do %>
+          <%= hidden_field_tag "selecao", @selecao %>
+          <%= select_tag(:data_final, options_for_select(@datas)) %>
+          <% @results.map(&:id).each do |id| %>
+          <%= hidden_field_tag "results[]", id %>
+        <% end %>
     <div class="row mt">
       <div class="col-lg-6">
         <div class="tab-pane hidden" id="chartjs">
@@ -45,18 +48,8 @@
           <div id='exports'></div>
       </div>
     </div>
-<<<<<<< HEAD
   </div>
 </div>
-=======
-Ancoras<br>
-<%= form_tag(show_by_date_results_path, method: 'post', :remote => true) do %>
-  <h2><%= @selecao %></h2>
-    <%= hidden_field_tag "selecao", @selecao %>
-    <%= select_tag(:data_final, options_for_select(@datas)) %>
-    <% @results.map(&:id).each do |id| %>
-    <%= hidden_field_tag "results[]", id %>
-  <% end %>
 
 <div class="row mt">
   <div class="col-lg-12">
@@ -82,8 +75,6 @@ Ancoras<br>
 
  <a href="#" id="export">Exportar CSV</a>
 
-<div id='exports'>
-</div>
 
 <div class="row mt">
   <div class="col-lg-12">
@@ -119,4 +110,3 @@ Ancoras<br>
 <%= submit_tag "Comparar" %>
 <% end %>
 <br>
->>>>>>> 6364b7bcd98e77a35c8d852c140ecbb3f3c9a1f6

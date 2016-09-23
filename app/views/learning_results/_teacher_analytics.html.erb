@@ -4,8 +4,10 @@
     <div class="col-lg-12">
       <div class="content-panel">
             <div class="row mt">
-                <div class="col-lg-6">
+
     <%= form_tag({ :controller => "learning_results", :action => "analytic_list"}, { :id => "form2"}) do |f| %>
+    <div class="col-lg-6">
+    <h3>Seleção 1</h3>
     <div class="field">
 
         <%= hidden_field_tag :institution_id, @institution.id %>
@@ -29,32 +31,31 @@
         <%= collection_select(nil, :users_id, @students, :id, :nome)%>
       </div>
       </div>
-
+    </div>
       <div class="col-lg-6">
       <h3>Seleção 2</h3>
       <div class="field">
-    <%= hidden_field_tag :institution2_id, @institution.id %>
+        <%= hidden_field_tag :institution2_id, @institution.id %>
 
-    <%= hidden_field_tag :campu2_id, @campu.id %>
+        <%= hidden_field_tag :campu2_id, @campu.id %>
 
-    <%= hidden_field_tag :center2_id, @center.id %>
+        <%= hidden_field_tag :center2_id, @center.id %>
 
-    <%= hidden_field_tag :course2_id, @course.id %>
+        <%= hidden_field_tag :course2_id, @course.id %>
 
-    <div class="campo_compare">
-    <%= label_tag :Disciplina %>
-    <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Turma %>
-    <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Usuarios %>
-    <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
+        <div class="campo_compare">
+        <%= label_tag :Disciplina %>
+        <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
+        </div>
+        <div class="campo_compare">
+        <%= label_tag :Turma %>
+        <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
+        </div>
+        <div class="campo_compare">
+        <%= label_tag :Usuarios %>
+        <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
     </div>
   </div>
-
 </div>
         <div class="row mt">
             <div class="col-lg-12">
