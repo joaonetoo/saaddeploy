@@ -1,11 +1,8 @@
 <%= javascript_include_tag "results" %>
-        <%= form_tag({ :controller => "results", :action => "list"}, { :id => "form2"}) do |f| %>
-
 <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
     <%= render :partial => 'results/teacher_search' %>
 <% elsif current_user.type == 'Principal' %>
     <%= render :partial => 'results/principal_search' %>
-
 <% end %>
 
 
