@@ -1,6 +1,83 @@
 class LearningResultsController < ApplicationController
   before_action :set_learning_result, only: [:show, :edit, :update, :destroy]
 
+  def setup_teacher_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+
+  end
+
+  def setup_principal_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @subjects = []
+    @classrooms = []
+    @students = []
+    @institution = Institution.find(current_user.institution_id)
+    @campus = current_user.campus
+    @campus.each do |campu|
+      pre = Center.where(campu: campu).load
+      pre.each do |p|
+        if not p.nil?
+          @centers << p
+        end
+      end
+    end
+    @centers.each do |center|
+      pre = Course.where(center: center).load
+      pre.each do |p|
+        if not p.nil?
+          @courses << p
+        end
+      end
+    end
+    @courses.each do |course|
+      pre = Subject.where(course: course).load
+      pre.each do |p|
+        if not p.nil?
+          @subjects << p
+        end
+      end
+    end
+    @subjects.each do |subject|
+      pre = Classroom.where(subject: subject).load
+       pre.each do |p|
+        if not p.nil?
+          @classrooms << p
+        end
+      end
+    end
+    @classrooms.each do |classroom|
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+  end
   # GET /learning_results
   # GET /learning_results.json
   def index
@@ -23,9 +100,104 @@ class LearningResultsController < ApplicationController
   end
 
   def search
+    if current_user.type == 'Teacher'
+      setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
+    elsif current_user.type == 'Principal'
+      setup_principal_search
+    end
+  end
+
+  def campu_selection
+    @campu = Campu.find(params[:campu])
+    @centers = @campu.centers
+  end
+
+  def campu2_selection
+    @campu = Campu.find(params[:campu])
+    @centers = @campu.centers
+  end
+
+  def center_selection
+    @center = Center.find(params[:center])
+    @courses = @center.courses
+  end
+
+  def center2_selection
+    @center = Center.find(params[:center])
+    @courses = @center.courses
+  end
+
+  def course_selection
+    @course = Course.find(params[:course])
+    @subjects = @course.subjects
+  end
+
+  def course2_selection
+    @course = Course.find(params[:course])
+    @subjects = @course.subjects
+  end
+
+  def subject_selection
+    @subject = Subject.find(params[:subject])
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator' || 'Principal'
+      @classrooms = @subject.classrooms
+    end
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+    def subject2_selection
+    @subject = Subject.find(params[:subject])
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator' || 'Principal'
+      @classrooms = @subject.classrooms
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+  def classroom_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
+  end
+
+  def classroom2_selection
+    @classroom = Classroom.find(params[:classroom])
+    @users = @classroom.users
   end
 
   def analytics
+    if current_user.type == 'Teacher'
+      setup_teacher_search
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
+    elsif current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   def pdf_list

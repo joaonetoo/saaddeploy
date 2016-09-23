@@ -1,43 +1,7 @@
-<%= javascript_include_tag "application", params[:controller] %>
 <h2><i class="fa fa-angle-right"></i>Listar resultados de estilos de aprendizagem</h2>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-            <%= form_tag({ :controller => "learning_results", :action => "list"}, { :id => "form2"}) do |f| %>
-            <div class="campo_compare">
-                <%= label_tag :Instituição %>
-                <%= collection_select(nil, :institution_id, Institution.order(:nome), :id, :nome) %>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Campus %>
-                <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Centro %>
-                <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Curso %>
-                <%= grouped_collection_select(nil, :course_id, Center.order(:name), :courses, :name, :id, :nome)%>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Disciplina %>
-                <%= grouped_collection_select(nil, :subject_id, Course.order(:nome), :subjects, :nome, :id, :nome)%>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Turma %>
-                <%= grouped_collection_select(nil, :classroom_id, Subject.order(:nome), :classrooms, :nome, :id, :codigo)%>
-            </div>
-            <div class="campo_compare">
-                <%= label_tag :Usuarios %>
-                <%= grouped_collection_select(nil, :users_id, Classroom.order(:codigo), :users, :codigo, :id, :nome)%>
-            </div>
-            <div class="row mt">
-                <div class="col-lg-12">
-                    <br><center><%= submit_tag "Enviar", :class => "btn btn-primary btn-lg"  %></center>
-                </div>
-            </div>
-            <% end %>
-        </div>
-    </div>
-</div>
+<% if current_user.type == 'Teacher'  || current_user.type == 'Coordinator'%>
+    <%= render :partial => 'learning_results/teacher_search' %>
+<% elsif current_user.type == 'Principal' %>
+    <%= render :partial => 'learning_results/principal_search' %>
+<% end %>
+

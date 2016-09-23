@@ -1,0 +1,84 @@
+<%= javascript_include_tag 'search_learning_admin' %>
+<h2><i class="fa fa-angle-right"></i>Comparar estilos de aprendizagem</h2>
+<div class="row mt">
+    <div class="col-lg-12">
+      <div class="content-panel">
+            <div class="row mt">
+                <div class="col-lg-6">
+<%= form_tag({ :controller => "learning_results", :action => "analytic_list"}, { :id => "form2"}) do |f| %>
+<div class="field">
+<h3>Seleção 1</h3>
+
+    <%= hidden_field_tag :institution_id, @institution.id %>
+    <div class="campo_compare">
+    <%= label_tag :Campus %>
+    <%= collection_select(nil, :campu_id, @campus, :id, :name)%>
+    </div>
+
+    <div class="campo_compare">
+    <%= label_tag :Centro %>
+    <%= collection_select(nil, :center_id, @centers, :id, :name)%>
+    </div>
+
+    <div class="campo_compare">
+    <%= label_tag :Curso %>
+    <%= collection_select(nil, :course_id, @courses, :id, :nome)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Disciplina %>
+    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Turma %>
+    <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Usuarios %>
+    <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+    </div>
+  </div>
+
+<div class="col-lg-6">
+      <h3>Seleção 2</h3>
+      <div class="field">
+    <%= hidden_field_tag :institution2_id, @institution.id %>
+
+    <div class="campo_compare">
+    <%= label_tag :Campus %>
+    <%= collection_select(nil, :campu2_id, @campus, :id, :name)%>
+    </div>
+
+    <div class="campo_compare">
+    <%= label_tag :Centro %>
+    <%= collection_select(nil, :center2_id, @centers, :id, :name)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Curso %>
+    <%= collection_select(nil, :course2_id, @courses, :id, :nome)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Disciplina %>
+    <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Turma %>
+    <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
+    </div>
+    <div class="campo_compare">
+    <%= label_tag :Usuarios %>
+    <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
+    </div>
+  </div>
+
+</div>
+        <div class="row mt">
+            <div class="col-lg-12">
+                <center>
+                    <%= submit_tag "Enviar", :class => "btn btn-primary btn-lg"  %>
+                    <% end %>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

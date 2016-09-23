@@ -69,4 +69,4 @@ Rails.application.config.assets.precompile += %w( search_learning.js )
 Rails.application.config.assets.precompile += %w( jquery-1.8.3.min.js )
 Rails.application.config.assets.precompile += %w( validation_learning.js )
 Rails.application.config.assets.precompile += %w( jquery.backstretch.min.js )
-
+Rails.application.config.assets.precompile += %w( search_learning_admin.js )
