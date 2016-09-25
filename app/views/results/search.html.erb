@@ -1,4 +1,3 @@
-<%= javascript_include_tag "results" %>
 <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
     <%= render :partial => 'results/teacher_search' %>
 <% elsif current_user.type == 'Principal' %>
