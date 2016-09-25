@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :strategies
+  resources :objectives
+  resources :threats_answers
+  resources :threats
+  resources :weakness_answers
+  resources :weaknesses
+  resources :opportunity_answers
+  resources :opportunities
+  resources :strength_answers
+  resources :strengths
   resources :matriculations
   resources :answer_notes
   resources :answers
@@ -111,6 +121,7 @@ Rails.application.routes.draw do
   get 'student_area/list_answers'
   get 'student_area/compare_anchors'
   get 'student_area/compare_learning'
+  get 'student_area/my_plan'
 
 
   resources :planos

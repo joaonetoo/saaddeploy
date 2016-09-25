@@ -118,6 +118,13 @@ require "prawn/measurement_extensions"
     @datas = @results.map(&:data_final).uniq
   end
 
+  def my_plan
+    if current_user.plano != nil
+        @plano = current_user.plano
+        @strength = Strength.new
+    end
+  end
+
   def pdf_plan
     @plano = Plano.find(params[:plano])
     student = User.find(@plano.user.id)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918181758) do
+ActiveRecord::Schema.define(version: 20160925181906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -337,28 +337,37 @@ ActiveRecord::Schema.define(version: 20160918181758) do
     t.string  "topico"
   end
 
+  create_table "objectives", force: :cascade do |t|
+    t.string   "deadline"
+    t.string   "text"
+    t.integer  "plano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "objectives", ["plano_id"], name: "index_objectives_on_plano_id", using: :btree
+
+  create_table "opportunities", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "plano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "opportunities", ["plano_id"], name: "index_opportunities_on_plano_id", using: :btree
+
+  create_table "opportunity_answers", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "opportunity_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "opportunity_answers", ["opportunity_id"], name: "index_opportunity_answers_on_opportunity_id", using: :btree
+
   create_table "planos", force: :cascade do |t|
-    t.text     "ameacas"
-    t.text     "respostas_ameaca"
-    t.text     "oportunidades"
-    t.text     "respostas_oportunidades"
-    t.text     "fraquezas"
-    t.text     "respostas_fraquezas"
-    t.text     "forcas"
-    t.text     "respostas_forcas"
-    t.text     "missao"
-    t.text     "objetivos_proximo_ano"
-    t.text     "objetivos_cinco_anos"
-    t.text     "objetivos_dez_anos"
-    t.text     "objetivos"
-    t.text     "estrategias"
-    t.text     "plano_objetivo"
-    t.text     "plano_estrategia"
-    t.text     "plano_prazo"
-    t.text     "plano_fator_critico"
-    t.text     "plano_recursos"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.boolean  "publico"
   end
@@ -438,6 +447,34 @@ ActiveRecord::Schema.define(version: 20160918181758) do
   add_index "results", ["quiz_id"], name: "index_results_on_quiz_id", using: :btree
   add_index "results", ["user_id"], name: "index_results_on_user_id", using: :btree
 
+  create_table "strategies", force: :cascade do |t|
+    t.date     "deadline"
+    t.string   "text"
+    t.integer  "objective_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "strategies", ["objective_id"], name: "index_strategies_on_objective_id", using: :btree
+
+  create_table "strength_answers", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "strength_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "strength_answers", ["strength_id"], name: "index_strength_answers_on_strength_id", using: :btree
+
+  create_table "strengths", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "plano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "strengths", ["plano_id"], name: "index_strengths_on_plano_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -459,6 +496,24 @@ ActiveRecord::Schema.define(version: 20160918181758) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "threats", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "plano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "threats", ["plano_id"], name: "index_threats_on_plano_id", using: :btree
+
+  create_table "threats_answers", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "threat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "threats_answers", ["threat_id"], name: "index_threats_answers_on_threat_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "nome"
@@ -518,6 +573,24 @@ ActiveRecord::Schema.define(version: 20160918181758) do
   add_index "videos_users", ["user_id"], name: "index_videos_users_on_user_id", using: :btree
   add_index "videos_users", ["video_id"], name: "index_videos_users_on_video_id", using: :btree
 
+  create_table "weakness_answers", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "weakness_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "weakness_answers", ["weakness_id"], name: "index_weakness_answers_on_weakness_id", using: :btree
+
+  create_table "weaknesses", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "plano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "weaknesses", ["plano_id"], name: "index_weaknesses_on_plano_id", using: :btree
+
   add_foreign_key "activities", "events"
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
@@ -542,6 +615,9 @@ ActiveRecord::Schema.define(version: 20160918181758) do
   add_foreign_key "learning_quizzes_users", "users"
   add_foreign_key "learning_results", "users"
   add_foreign_key "matriculations", "events"
+  add_foreign_key "objectives", "planos"
+  add_foreign_key "opportunities", "planos"
+  add_foreign_key "opportunity_answers", "opportunities"
   add_foreign_key "planos", "users"
   add_foreign_key "projects", "events"
   add_foreign_key "quizzes", "users"
@@ -550,10 +626,17 @@ ActiveRecord::Schema.define(version: 20160918181758) do
   add_foreign_key "registrations", "events"
   add_foreign_key "results", "quizzes"
   add_foreign_key "results", "users"
+  add_foreign_key "strategies", "objectives"
+  add_foreign_key "strength_answers", "strengths"
+  add_foreign_key "strengths", "planos"
   add_foreign_key "subjects", "courses"
+  add_foreign_key "threats", "planos"
+  add_foreign_key "threats_answers", "threats"
   add_foreign_key "users", "courses"
   add_foreign_key "users", "institutions"
   add_foreign_key "videos", "users"
   add_foreign_key "videos_users", "users"
   add_foreign_key "videos_users", "videos"
+  add_foreign_key "weakness_answers", "weaknesses"
+  add_foreign_key "weaknesses", "planos"
 end
