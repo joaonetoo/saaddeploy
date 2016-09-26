@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @objective.deadline %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @objective.text %>
+</p>
+
+<p>
+  <strong>Plano:</strong>
+  <%= @objective.plano %>
+</p>
+
+<%= link_to 'Edit', edit_objective_path(@objective) %> |
+<%= link_to 'Back', objectives_path %>

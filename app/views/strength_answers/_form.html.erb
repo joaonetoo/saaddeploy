@@ -1,0 +1,17 @@
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(StrengthAnswer.new, remote: remote, html: {role: :form, 'data-model' => 'strength_answer'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.text_field :text, class: 'control-label' %>
+    <span class="help-block"></span>
+  </div>
+  <div class="field">
+    <%= f.label :strength_id %><br>
+    <%= f.hidden_field :strength_id, :value => locals[:teste] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

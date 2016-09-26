@@ -1,0 +1,26 @@
+<div>
+    <%= strength.text %>
+    <% strength.strength_answers.each do |answer|%>
+        Resposta: <%= answer.text %>
+    <% end %>
+    <div class="modal fade"  class="modali" id="<%= strength.id%>new_strength_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Criar nova resposta de Força</h4>
+          </div>
+          <div class="modal-body">
+            <%# Render the new person form (passing modal => true to enable remote => true) %>
+            <%= render 'strength_answers/form', modal: true, :locals => {:teste => strength.id} %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= link_to 'Nova Resposta', "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal' %>
+    <%= link_to 'Deletar', strength, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
+</div>

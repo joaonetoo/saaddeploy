@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @threats_answer.text %>
+</p>
+
+<p>
+  <strong>Threat:</strong>
+  <%= @threats_answer.threat %>
+</p>
+
+<%= link_to 'Edit', edit_threats_answer_path(@threats_answer) %> |
+<%= link_to 'Back', threats_answers_path %>

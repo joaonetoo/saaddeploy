@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Weakness Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Weakness</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weakness_answers.each do |weakness_answer| %>
+      <tr>
+        <td><%= weakness_answer.text %></td>
+        <td><%= weakness_answer.weakness %></td>
+        <td><%= link_to 'Show', weakness_answer %></td>
+        <td><%= link_to 'Edit', edit_weakness_answer_path(weakness_answer) %></td>
+        <td><%= link_to 'Destroy', weakness_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weakness answer', new_weakness_answer_path %>

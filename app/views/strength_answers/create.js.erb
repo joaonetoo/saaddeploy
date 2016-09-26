@@ -1,0 +1,5 @@
+$('#new_strength_modal').modal('hide');
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();
+$('#strengths').html('<%= escape_javascript render (@strengths) %>');
+$('#new_strength_modal').modal_success();

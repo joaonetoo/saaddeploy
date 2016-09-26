@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Opportunity Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Opportunity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @opportunity_answers.each do |opportunity_answer| %>
+      <tr>
+        <td><%= opportunity_answer.text %></td>
+        <td><%= opportunity_answer.opportunity %></td>
+        <td><%= link_to 'Show', opportunity_answer %></td>
+        <td><%= link_to 'Edit', edit_opportunity_answer_path(opportunity_answer) %></td>
+        <td><%= link_to 'Destroy', opportunity_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Opportunity answer', new_opportunity_answer_path %>

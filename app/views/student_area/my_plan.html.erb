@@ -1,0 +1,26 @@
+<%= javascript_include_tag 'plano_modal' %>
+<h2>Forças</h2>
+<div id = "strengths">
+    <%= render @strengths%>
+</div>
+
+
+<%= link_to 'New Strength', '#new_strength_modal', 'data-toggle' => 'modal' %>
+
+<div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Criar nova Força</h4>
+      </div>
+      <div class="modal-body">
+        <%# Render the new person form (passing modal => true to enable remote => true) %>
+        <%= render 'strengths/form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

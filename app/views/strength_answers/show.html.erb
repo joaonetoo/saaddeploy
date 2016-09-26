@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @strength_answer.text %>
+</p>
+
+<p>
+  <strong>Strength:</strong>
+  <%= @strength_answer.strength %>
+</p>
+
+<%= link_to 'Edit', edit_strength_answer_path(@strength_answer) %> |
+<%= link_to 'Back', strength_answers_path %>

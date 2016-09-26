@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Strength Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Strength</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strength_answers.each do |strength_answer| %>
+      <tr>
+        <td><%= strength_answer.text %></td>
+        <td><%= strength_answer.strength %></td>
+        <td><%= link_to 'Show', strength_answer %></td>
+        <td><%= link_to 'Edit', edit_strength_answer_path(strength_answer) %></td>
+        <td><%= link_to 'Destroy', strength_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strength answer', new_strength_answer_path %>
