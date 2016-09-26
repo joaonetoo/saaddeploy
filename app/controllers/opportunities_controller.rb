@@ -25,11 +25,14 @@ class OpportunitiesController < ApplicationController
   # POST /opportunities.json
   def create
     @opportunity = Opportunity.new(opportunity_params)
+    @plano = current_user.plano
+    @opportunities = @plano.opportunities
 
     respond_to do |format|
       if @opportunity.save
         format.html { redirect_to @opportunity, notice: 'Opportunity was successfully created.' }
         format.json { render :show, status: :created, location: @opportunity }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @opportunity.errors, status: :unprocessable_entity }
@@ -55,9 +58,12 @@ class OpportunitiesController < ApplicationController
   # DELETE /opportunities/1.json
   def destroy
     @opportunity.destroy
+    @plano = current_user.plano
+    @opportunities = @plano.opportunities
     respond_to do |format|
       format.html { redirect_to opportunities_url, notice: 'Opportunity was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

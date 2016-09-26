@@ -122,8 +122,17 @@ require "prawn/measurement_extensions"
     if current_user.plano != nil
         @plano = current_user.plano
         @strength = Strength.new
+        @threat = Threat.new
+        @weakness = Weakness.new
+        @opportunity = Opportunity.new
+        @weakness_answer= WeaknessAnswer.new
         @strength_answer = StrengthAnswer.new
+        @opportunity_answer = OpportunityAnswer.new
+        @threats_answer = ThreatsAnswer.new
+        @threats = @plano.threats
         @strengths = @plano.strengths
+        @weaknesses = @plano.weaknesses
+        @opportunities = @plano.opportunities
     end
   end
 

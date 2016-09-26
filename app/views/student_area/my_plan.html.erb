@@ -1,26 +1,140 @@
 <%= javascript_include_tag 'plano_modal' %>
-<h2>Forças</h2>
-<div id = "strengths">
-    <%= render @strengths%>
-</div>
+<div class="row mt">
+    <div class="col-lg-12 main-chart">
+    <div class="row">
+    <h2><i class="fa fa-angle-right">Forças</i></h2>
+        <h4><%= link_to 'Adicionar Força', '#new_strength_modal', 'data-toggle' => 'modal' %></h4>
 
+        <div id = "strengths">
+            <%= render @strengths%>
+        </div>
 
-<%= link_to 'New Strength', '#new_strength_modal', 'data-toggle' => 'modal' %>
-
-<div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Criar nova Força</h4>
-      </div>
-      <div class="modal-body">
-        <%# Render the new person form (passing modal => true to enable remote => true) %>
-        <%= render 'strengths/form', modal: true %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-      </div>
+        <div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Criar nova Força</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'strengths/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
+
+<div class="row">
+        <h2><i class="fa fa-angle-right">Fraquezas</i></h2>
+        <h4><%= link_to 'Adicionar Fraqueza', '#new_weakness_modal', 'data-toggle' => 'modal' %></h4>
+
+        <div id = "weaknesses">
+            <%= render @weaknesses%>
+        </div>
+
+        <div class="modal fade" id="new_weakness_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Criar nova Fraqueza</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'weaknesses/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <h2><i class="fa fa-angle-right">Oportunidades</i></h2>
+        <h4><%= link_to 'Adicionar Oportunidade', '#new_opportunity_modal', 'data-toggle' => 'modal' %></h4>
+
+        <div id = "opportunities">
+            <%= render @opportunities%>
+        </div>
+
+        <div class="modal fade" id="new_opportunity_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Criar nova Oportunidade</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'opportunities/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2><i class="fa fa-angle-right">Oportunidades</i></h2>
+        <h4><%= link_to 'Adicionar Oportunidade', '#new_opportunity_modal', 'data-toggle' => 'modal' %></h4>
+
+        <div id = "opportunities">
+            <%= render @opportunities%>
+        </div>
+
+        <div class="modal fade" id="new_opportunity_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Criar nova Oportunidade</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'opportunities/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        <div class="row">
+        <h2><i class="fa fa-angle-right">Ameaças</i></h2>
+        <h4><%= link_to 'Adicionar Ameaça', '#new_threat_modal', 'data-toggle' => 'modal' %></h4>
+
+        <div id = "threats">
+            <%= render @threats%>
+        </div>
+
+        <div class="modal fade" id="new_threat_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Criar nova Ameaça</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'threats/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        </div>
 </div>

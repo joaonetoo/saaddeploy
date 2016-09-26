@@ -1,16 +1,16 @@
 <div class="col-lg-4 col-md-4 col-sm-4 mb">
 <div class="grey-panel pn donut-chart">
     <div class="grey-header">
-        <%= strength.text %>
+        <%= weakness.text %>
     </div>
     Respostas:
     <br>
-    <% strength.strength_answers.each do |answer|%>
+    <% weakness.weakness_answers.each do |answer|%>
         <%= answer.text %>
         <%= link_to 'Deletar', answer, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
         <br>
     <% end %>
-    <div class="modal fade"  class="modali" id="<%= strength.id%>new_strength_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade"  class="modali" id="<%= weakness.id%>new_weakness_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -19,7 +19,7 @@
           </div>
           <div class="modal-body">
             <%# Render the new person form (passing modal => true to enable remote => true) %>
-            <%= render 'strength_answers/form', modal: true, :locals => {:teste => strength.id} %>
+            <%= render 'weakness_answers/form', modal: true, :locals => {:teste => weakness.id} %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <%= link_to 'Nova Resposta', "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal' %>
-    <%= link_to 'Deletar', strength, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
+    <%= link_to 'Nova Resposta', "##{weakness.id}new_weakness_answers_modal", 'data-toggle' => 'modal' %>
+    <%= link_to 'Deletar', weakness, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
 </div>
 </div>

@@ -25,11 +25,13 @@ class WeaknessesController < ApplicationController
   # POST /weaknesses.json
   def create
     @weakness = Weakness.new(weakness_params)
-
+    @plano = current_user.plano
+    @weaknesses = @plano.weaknesses
     respond_to do |format|
       if @weakness.save
         format.html { redirect_to @weakness, notice: 'Weakness was successfully created.' }
         format.json { render :show, status: :created, location: @weakness }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @weakness.errors, status: :unprocessable_entity }
@@ -55,9 +57,12 @@ class WeaknessesController < ApplicationController
   # DELETE /weaknesses/1.json
   def destroy
     @weakness.destroy
+    @plano = current_user.plano
+    @weaknesses = @plano.weaknesses
     respond_to do |format|
       format.html { redirect_to weaknesses_url, notice: 'Weakness was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -64,6 +64,7 @@ class StrengthAnswersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to strength_answers_url, notice: 'Strength answer was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

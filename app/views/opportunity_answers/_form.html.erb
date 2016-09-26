@@ -1,23 +1,15 @@
-<%= form_for(@opportunity_answer) do |f| %>
-  <% if @opportunity_answer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@opportunity_answer.errors.count, "error") %> prohibited this opportunity_answer from being saved:</h2>
-
-      <ul>
-      <% @opportunity_answer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(OpportunityAnswer.new, remote: remote, html: {role: :form, 'data-model' => 'opportunity_answer'}) do |f| %>
 
   <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.text_field :text, class: 'control-label'  %>
+    <span class="help-block"></span>
   </div>
   <div class="field">
     <%= f.label :opportunity_id %><br>
-    <%= f.text_field :opportunity_id %>
+    <%= f.text_field :opportunity_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
     <%= f.submit %>

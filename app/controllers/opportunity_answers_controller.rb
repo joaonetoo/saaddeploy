@@ -25,11 +25,15 @@ class OpportunityAnswersController < ApplicationController
   # POST /opportunity_answers.json
   def create
     @opportunity_answer = OpportunityAnswer.new(opportunity_answer_params)
+    @opportunity = Opportunity.find(@opportunity_answer.opportunity)
+    @plano = current_user.plano
+    @opportunities = @plano.opportunities
 
     respond_to do |format|
       if @opportunity_answer.save
         format.html { redirect_to @opportunity_answer, notice: 'Opportunity answer was successfully created.' }
         format.json { render :show, status: :created, location: @opportunity_answer }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @opportunity_answer.errors, status: :unprocessable_entity }
@@ -55,9 +59,12 @@ class OpportunityAnswersController < ApplicationController
   # DELETE /opportunity_answers/1.json
   def destroy
     @opportunity_answer.destroy
+    @plano = current_user.plano
+    @opportunities = @plano.opportunities
     respond_to do |format|
       format.html { redirect_to opportunity_answers_url, notice: 'Opportunity answer was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

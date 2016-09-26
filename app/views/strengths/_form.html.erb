@@ -3,17 +3,7 @@
 <% remote = modal ? true : false %>
 <%= form_for(Strength.new, remote: remote, html: {role: :form, 'data-model' => 'strength'}) do |f| %>
 
-  <% if @strength.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@strength.errors.count, "error") %> prohibited this strength from being saved:</h2>
 
-      <ul>
-      <% @strength.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :text, class: 'control-label' %><br>

@@ -1,23 +1,15 @@
-<%= form_for(@threat) do |f| %>
-  <% if @threat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@threat.errors.count, "error") %> prohibited this threat from being saved:</h2>
-
-      <ul>
-      <% @threat.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(Threat.new, remote: remote, html: {role: :form, 'data-model' => 'Threat'}) do |f| %>
 
   <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.text_field :text, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
   <div class="field">
     <%= f.label :plano_id %><br>
-    <%= f.text_field :plano_id %>
+    <%= f.text_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

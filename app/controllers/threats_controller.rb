@@ -25,14 +25,18 @@ class ThreatsController < ApplicationController
   # POST /threats.json
   def create
     @threat = Threat.new(threat_params)
+    @plano = current_user.plano
+    @threats = @plano.threats
 
     respond_to do |format|
       if @threat.save
         format.html { redirect_to @threat, notice: 'Threat was successfully created.' }
         format.json { render :show, status: :created, location: @threat }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @threat.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -55,9 +59,12 @@ class ThreatsController < ApplicationController
   # DELETE /threats/1.json
   def destroy
     @threat.destroy
+    @plano = current_user.plano
+    @threats = @plano.threats
     respond_to do |format|
       format.html { redirect_to threats_url, notice: 'Threat was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
