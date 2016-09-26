@@ -122,6 +122,8 @@ require "prawn/measurement_extensions"
     if current_user.plano != nil
         @plano = current_user.plano
         @strength = Strength.new
+        @strength_answer = StrengthAnswer.new
+        @strengths = @plano.strengths
     end
   end
 
