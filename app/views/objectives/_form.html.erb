@@ -11,14 +11,14 @@
     </select>
   </div>
   <div class="field">
-    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.label :objetivo, class: 'control-label' %><br>
     <%= f.text_field :text, class: 'form-control' %>
     <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.text_field :plano_id, :value => @plano.id %>
+    <%= f.hidden_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "criar objetivo"%>
   </div>
 <% end %>
