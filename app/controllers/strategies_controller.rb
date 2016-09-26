@@ -25,11 +25,14 @@ class StrategiesController < ApplicationController
   # POST /strategies.json
   def create
     @strategy = Strategy.new(strategy_params)
-
+    @objective = Objective.find(@strategy.objective)
+    @plano = current_user.plano
+    @objectives = @plano.objectives
     respond_to do |format|
       if @strategy.save
         format.html { redirect_to @strategy, notice: 'Strategy was successfully created.' }
         format.json { render :show, status: :created, location: @strategy }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @strategy.errors, status: :unprocessable_entity }
@@ -55,9 +58,12 @@ class StrategiesController < ApplicationController
   # DELETE /strategies/1.json
   def destroy
     @strategy.destroy
+    @plano = current_user.plano
+    @objectives = @plano.objectives
     respond_to do |format|
       format.html { redirect_to strategies_url, notice: 'Strategy was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

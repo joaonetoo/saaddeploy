@@ -9,10 +9,9 @@
     <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.label :weakness_id %><br>
-    <%= f.text_field :weakness_id, :value => locals[:teste] %>
+    <%= f.hidden_field :weakness_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "responder fraqeuza"%>
   </div>
 <% end %>

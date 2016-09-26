@@ -1,0 +1,36 @@
+<div class="col-lg-4 col-md-4 col-sm-4 mb">
+<div class="grey-panel pn donut-chart">
+    <div class="grey-header">
+        <%= objective.text %><br>
+        Deadline: <%= objective.data %>
+    </div>
+    Respostas:
+    <br>
+    <% objective.strategies.each do |answer|%>
+        Estratégia: <%= answer.text %><br>
+        Deadline: <%= answer.deadline %>
+        <%= link_to 'Deletar', answer, method: :delete, remote: true, data: { confirm: 'Deletar estrategia?' }%>
+        <br>
+    <% end %>
+    <div class="modal fade"  class="modali" id="<%= objective.id%>new_strategies_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Criar novo objetivo</h4>
+          </div>
+          <div class="modal-body">
+            <%# Render the new person form (passing modal => true to enable remote => true) %>
+            <%= render 'strategies/form', modal: true, :locals => {:teste => objective.id, :limit => objective.data} %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= link_to 'Nova Estratégia', "##{objective.id}new_strategies_modal", 'data-toggle' => 'modal' %>
+    <%= link_to 'Deletar', objective, method: :delete, remote: true, data: { confirm: 'Deletar estratégia?' }%>
+</div>
+</div>

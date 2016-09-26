@@ -25,11 +25,14 @@ class ObjectivesController < ApplicationController
   # POST /objectives.json
   def create
     @objective = Objective.new(objective_params)
-
+    @objective.data = Time.now + (@objective.deadline).to_i.years
+    @plano = current_user.plano
+    @objectives = @plano.objectives
     respond_to do |format|
       if @objective.save
         format.html { redirect_to @objective, notice: 'Objective was successfully created.' }
         format.json { render :show, status: :created, location: @objective }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @objective.errors, status: :unprocessable_entity }
@@ -55,9 +58,12 @@ class ObjectivesController < ApplicationController
   # DELETE /objectives/1.json
   def destroy
     @objective.destroy
+    @plano = current_user.plano
+    @objectives = @plano.objectives
     respond_to do |format|
       format.html { redirect_to objectives_url, notice: 'Objective was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -3,14 +3,13 @@
 <%= form_for(ThreatsAnswer.new, remote: remote, html: {role: :form, 'data-model' => 'threat_answer'}) do |f| %>
 
   <div class="field">
-    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.label :resposta, class: 'control-label' %><br>
     <%= f.text_field :text, class: 'control-label'  %>
   </div>
   <div class="field">
-    <%= f.label :threat_id %><br>
-    <%= f.text_field :threat_id, :value => locals[:teste] %>
+    <%= f.hidden_field :threat_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "responder ameaça"%>
   </div>
 <% end %>

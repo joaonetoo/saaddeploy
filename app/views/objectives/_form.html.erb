@@ -1,27 +1,22 @@
-<%= form_for(@objective) do |f| %>
-  <% if @objective.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@objective.errors.count, "error") %> prohibited this objective from being saved:</h2>
-
-      <ul>
-      <% @objective.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(Objective.new, remote: remote, html: {role: :form, 'data-model' => 'objective'}) do |f| %>
 
   <div class="field">
     <%= f.label :deadline %><br>
-    <%= f.text_field :deadline %>
+    <select name="objective[deadline]" id="objective_deadline" class="form-control">
+          <option value="1">1 ano</option>
+          <option value="5">5 anos</option>
+          <option value="10">10 anos</option>
+    </select>
   </div>
   <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.text_field :text, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.label :plano_id %><br>
-    <%= f.text_field :plano_id %>
+    <%= f.text_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -8,10 +8,9 @@
     <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.label :plano_id %><br>
-    <%= f.text_field :plano_id, :value => @plano.id %>
+    <%= f.hidden_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar fraqueza"%>
   </div>
 <% end %>

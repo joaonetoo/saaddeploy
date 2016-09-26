@@ -125,11 +125,14 @@ require "prawn/measurement_extensions"
         @threat = Threat.new
         @weakness = Weakness.new
         @opportunity = Opportunity.new
+        @objective = Objective.new
         @weakness_answer= WeaknessAnswer.new
+        @strategy = Strategy.new
         @strength_answer = StrengthAnswer.new
         @opportunity_answer = OpportunityAnswer.new
         @threats_answer = ThreatsAnswer.new
         @threats = @plano.threats
+        @objectives = @plano.objectives
         @strengths = @plano.strengths
         @weaknesses = @plano.weaknesses
         @opportunities = @plano.opportunities
@@ -137,189 +140,123 @@ require "prawn/measurement_extensions"
   end
 
   def pdf_plan
-    @plano = Plano.find(params[:plano])
-    student = User.find(@plano.user.id)
+    @plano = current_user.plano
     respond_to do |format|
       format.html
       format.pdf {
         pdf = Prawn::Document.new
-          pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          pdf.image "#{current_user.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "Nome do aluno: #{@plano.user.nome.capitalize}", :align => :center, :size => 14
-          pdf.text "editado em: #{@plano.updated_at.strftime("%d/%m/%Y")}", :align => :center, :size => 10
+          pdf.text "Nome do aluno: #{current_user.nome.capitalize}", :align => :center, :size => 14
           pdf.move_down 40
 
           pdf.text "1.0 Ameaças", :align => :left, :size => 12
-
           pdf.move_down 5
 
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.ameacas}", :align => :left, :size => 10
-          pdf.font("Helvetica", :style => :bold)
+          @plano.threats.each do |threat|
 
-          pdf.move_down 20
+              pdf.font("Helvetica")
+              pdf.text "#{threat.text}", :align => :left, :size => 10
+              pdf.font("Helvetica", :style => :bold)
 
-          pdf.text "1.1 Resposta Ameaças", :align => :left, :size => 10
-          pdf.move_down 5
+               pdf.move_down 20
+              threat.threats_answers.each do |answer|
 
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.respostas_ameaca}", :align => :left, :size => 10
 
-          pdf.move_down 20
+                pdf.text "Resposta Ameaça", :align => :left, :size => 10
+                pdf.move_down 5
+
+                pdf.font("Helvetica")
+                pdf.text "#{answer.text}", :align => :left, :size => 10
+
+                pdf.move_down 20
+            end
+          end
+
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "2.0 oportunidades", :align => :left, :size => 12
           pdf.move_down 5
+        @plano.opportunities.each do |opportunity|
           pdf.font("Helvetica")
-          pdf.text "#{@plano.oportunidades}", :align => :left, :size => 10
-
+          pdf.text "#{opportunity.text}", :align => :left, :size => 10
           pdf.move_down 20
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "2.1 Resposta Oportunidades", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.respostas_oportunidades}", :align => :left, :size => 10
+          opportunity.opportunity_answers.each do |answer|
 
-          pdf.move_down 20
+            pdf.font("Helvetica", :style => :bold)
+            pdf.text "Resposta oportunidade:", :align => :left, :size => 10
+            pdf.move_down 5
+            pdf.font("Helvetica")
+            pdf.text "#{answer.text}", :align => :left, :size => 10
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "3.0 fraquezas", :align => :left, :size => 12
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.fraquezas}", :align => :left, :size => 10
+            pdf.move_down 20
+          end
+        end
 
-          pdf.move_down 20
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "3.1 Resposta Fraquezas", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.respostas_fraquezas}", :align => :left, :size => 10
+            pdf.font("Helvetica", :style => :bold)
+            pdf.text "3.0 fraquezas", :align => :left, :size => 12
+             pdf.move_down 5
+          @plano.weaknesses.each do |weakness|
+            pdf.font("Helvetica")
+            pdf.text "#{weakness.text}", :align => :left, :size => 10
 
-          pdf.move_down 20
+            pdf.move_down 20
+
+            weakness.weakness_answers.each do |answer|
+
+            pdf.font("Helvetica", :style => :bold)
+            pdf.text "Resposta Fraqueza", :align => :left, :size => 10
+            pdf.move_down 5
+            pdf.font("Helvetica")
+            pdf.text "#{answer.text}", :align => :left, :size => 10
+
+            pdf.move_down 20
+          end
+        end
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "4.0 Forças", :align => :left, :size => 12
            pdf.move_down 5
+        @plano.strengths.each do |strength|
           pdf.font("Helvetica")
-          pdf.text "#{@plano.forcas}", :align => :left, :size => 10
+          pdf.text "#{strength.text}", :align => :left, :size => 10
 
           pdf.move_down 20
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "4.1 Resposta Forcas", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.respostas_forcas}", :align => :left, :size => 10
+          strength.strength_answers.each do |answer|
+            pdf.font("Helvetica", :style => :bold)
+            pdf.text "Resposta Força", :align => :left, :size => 10
+             pdf.move_down 5
+            pdf.font("Helvetica")
+            pdf.text "#{answer.text}", :align => :left, :size => 10
 
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "5.0 Minha missão", :align => :left, :size => 12
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.missao}", :align => :left, :size => 10
-
-          pdf.move_down 20
+            pdf.move_down 20
+          end
+         end
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "6.0 Meus objetivos ", :align => :left, :size => 12
 
           pdf.move_down 10
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "6.1 Objetivos para o proximo ano", :align => :left, :size => 10
-           pdf.move_down 5
+        @plano.objectives.each do |objective|
           pdf.font("Helvetica")
-          pdf.text "#{@plano.objetivos_proximo_ano}", :align => :left, :size => 10
+          pdf.text "#{objective.text}, Data limite planejada: #{objective.data}", :align => :left, :size => 10
 
           pdf.move_down 20
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "6.2 Objetivos para daqui a cinco anos", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.objetivos_cinco_anos}", :align => :left, :size => 10
+          objective.strategies.each do |strategy|
 
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "6.3 Objetivos para daqui a dez anos", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.objetivos_dez_anos}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "7.0 Minhas Estratégias ", :align => :left, :size => 12
-
-          pdf.move_down 10
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "7.1 Objetivos", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.objetivos}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "7.2 Estratégias", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.estrategias}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.0 Plano de ação ", :align => :left, :size => 12
-
-          pdf.move_down 10
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.1 Objetivos", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.plano_objetivo}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.2 Estratégia", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.plano_estrategia}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.3 Prazo", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.plano_prazo}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.4 Fator Crítico de sucesso", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.plano_fator_critico}", :align => :left, :size => 10
-
-          pdf.move_down 20
-
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "8.5 Recursos", :align => :left, :size => 10
-           pdf.move_down 5
-          pdf.font("Helvetica")
-          pdf.text "#{@plano.plano_recursos}", :align => :left, :size => 10
-
-
-
-
+            pdf.font("Helvetica", :style => :bold)
+            pdf.text "Estratégias: ", :align => :left, :size => 12
+            pdf.move_down 5
+            pdf.font("Helvetica")
+            pdf.text "#{strategy.text}, Data limite: #{strategy.deadline}", :align => :left, :size => 10
+            pdf.move_down 10
+         end
+         end
         send_data pdf.render, filename: 'plan.pdf', type: 'application/pdf', disposition: "inline"
       }
     end

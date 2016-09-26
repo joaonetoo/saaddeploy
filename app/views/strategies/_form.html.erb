@@ -1,29 +1,20 @@
-<%= form_for(@strategy) do |f| %>
-  <% if @strategy.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@strategy.errors.count, "error") %> prohibited this strategy from being saved:</h2>
-
-      <ul>
-      <% @strategy.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(Strategy.new, remote: remote, html: {role: :form, 'data-model' => 'strategy'}) do |f| %>
 
   <div class="field">
     <%= f.label :deadline %><br>
-    <%= f.date_select :deadline %>
+    <%= f.date_select :deadline, :start_year => Date.current.year, :end_year => locals[:limit].year %>
   </div>
   <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.label :text, class: 'control-label' %><br>
+    <%= f.text_field :text, class: 'control-label' %>
+    <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.label :objective_id %><br>
-    <%= f.text_field :objective_id %>
+    <%= f.hidden_field :objective_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "criar estratŕgia"%>
   </div>
 <% end %>

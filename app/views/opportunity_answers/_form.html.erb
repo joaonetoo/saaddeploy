@@ -8,10 +8,9 @@
     <span class="help-block"></span>
   </div>
   <div class="field">
-    <%= f.label :opportunity_id %><br>
-    <%= f.text_field :opportunity_id, :value => locals[:teste] %>
+    <%= f.hidden_field :opportunity_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "responder oportunidade"%>
   </div>
 <% end %>
