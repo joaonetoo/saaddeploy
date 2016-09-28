@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926184817) do
+ActiveRecord::Schema.define(version: 20160928140725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -371,6 +371,7 @@ ActiveRecord::Schema.define(version: 20160926184817) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.boolean  "publico"
+    t.text     "mission"
   end
 
   add_index "planos", ["user_id"], name: "index_planos_on_user_id", using: :btree

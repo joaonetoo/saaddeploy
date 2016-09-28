@@ -5,120 +5,91 @@
 
         <div id ="ameacas_e_respostas">
           <h3>Ameacas</h3>
-          <%= text_area_tag 'ameacas', @plano.ameacas, readonly: true%>
-          <h3>Respostas ameaca</h3>
-          <%= text_area_tag 'respostas_ameaca', @plano.respostas_ameaca, readonly: true%>
-
-
+          <% @plano.threats.each do |threat|%>
+            <%= text_area_tag 'ameacas', threat.text, readonly: true%>
+            <h3>Respostas ameaca</h3>
+            <% threat.threats_answers.each do |answer| %>
+              <%= text_area_tag 'respostas_ameaca', answer.text, readonly: true%>
+            <% end %>
+          <% end %>
             <div class="note_div">
               <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'ameaca'%>
+              <%= render 'notes/form', topico: 'threats'%>
             </div>
             <a href="#" class="add_button">Adicionar Observação</a>
-
         </div>
 
         <div id="oportunidades_e_respostas">
           <h3>Oportunidades</h3>
-          <%= text_area_tag 'oportunidades', @plano.oportunidades, readonly: true%>
-
-          <h3>Respostas oportunidades</h3>
-          <%= text_area_tag 'respostas_oportunidades', @plano.respostas_oportunidades, readonly: true%>
-
-            <div class="note_div">
-              <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'oportunidades'%>
-            </div>
-            <a href="#" class="add_button">Adicionar Observação</a>
-
-
+          <% @plano.opportunities.each do |opportunity|%>
+            <%= text_area_tag 'oportunidades', opportunity.text, readonly: true%>
+            <% opportunity.opportunity_answers do |answer|%>
+              <h3>Respostas oportunidades</h3>
+              <%= text_area_tag 'respostas_oportunidades', answer.text, readonly: true%>
+            <% end %>
+          <%  end %>
+          <div class="note_div">
+            <h2>Nova Observação</h2>
+            <%= render 'notes/form', topico: 'opportunities'%>
+          </div>
+          <a href="#" class="add_button">Adicionar Observação</a>
         </div>
 
         <div id="fraquezas_e_respostas">
          <h3>Fraquezas</h3>
-         <%= text_area_tag 'fraquezas', @plano.fraquezas, readonly: true%>
-
-         <h3>Respostas fraquezas</h3>
-         <%= text_area_tag 'respostas_fraquezas', @plano.fraquezas, readonly: true%>
-
+         <% @plano.weaknesses.each do |weakness|%>
+          <%= text_area_tag 'fraquezas', weakness.text, readonly: true%>
+          <% weakness.weakness_answers.each do |answer|%>
+            <h3>Respostas fraquezas</h3>
+            <%= text_area_tag 'respostas_fraquezas', answer.text, readonly: true%>
+          <% end %>
+         <% end %>
          <div class="note_div">
               <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'fraquezas'%>
+              <%= render 'notes/form', topico: 'weaknesses'%>
           </div>
           <a href="#" class="add_button">Adicionar Observação</a>
 
          </div>
 
          <div id="forcas_e_respostas">
-         <h3>Forcas</h3>
-         <%= text_area_tag 'forcas', @plano.forcas, readonly: true%>
-
-         <h3>Respostas forcas</h3>
-         <%= text_area_tag 'respostas_forcas', @plano.respostas_forcas, readonly: true%>
+         <h3>Forças</h3>
+         <% @plano.strengths.each do |strength|%>
+          <%= text_area_tag 'forcas', strength.text, readonly: true%>
+          <% strength.strength_answers.each do |answer|%>
+            <h3>Respostas forcas</h3>
+            <%= text_area_tag 'respostas_forcas', answer.text, readonly: true%>
+          <% end %>
+         <% end %>
          <div class="note_div">
               <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'forcas'%>
+              <%= render 'notes/form', topico: 'strengths'%>
           </div>
           <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
          <div id="missao">
-         <h3>Missao</h3>
-         <%= text_area_tag 'missao', @plano.missao, readonly: true%>
+         <h3>Minha missão</h3>
+         <%= text_area_tag 'missao', @plano.mission, readonly: true%>
          <div class="note_div">
               <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'missao'%>
+              <%= render 'notes/form', topico: 'mission'%>
           </div>
           <a href="#" class="add_button">Adicionar Observação</a>
          </div>
 
          <div id="objetivos">
-         <h3>Objetivos proximo ano</h3>
-         <%= text_area_tag 'objetivos_proximo_ano', @plano.objetivos_proximo_ano, readonly: true%>
-
-         <h3>Objetivos cinco anos</h3>
-        <%= text_area_tag 'objetivos_cinco_anos', @plano.objetivos_cinco_anos, readonly: true%>
-
-         <h3>Objetivos dez anos</h3>
-         <%= text_area_tag 'objetivos_dez_anos', @plano.objetivos_dez_anos, readonly: true%>
+            <h3>Objetivos</h3>
+            <% @plano.objectives.each do |objective|%>
+              <%= text_area_tag 'objetivos', objective.text, readonly: true%>
+              <% objective.strategies.each do |strategy|%>
+                <h3>Estratégias: </h3>
+                <%= text_area_tag 'estrategias', strategy.text, readonly: true%>
+              <% end %>
+            <% end %>
          <div class="note_div">
               <h2>Nova Observação</h2>
               <%= render 'notes/form', topico: 'objetivos'%>
-          </div>
-          <a href="#" class="add_button">Adicionar Observação</a>
-         </div>
-
-         <div id="estrategias">
-         <h3>Objetivos</h3>
-         <%= text_area_tag 'objetivos', @plano.objetivos, readonly: true%>
-
-         <h3>Estrategias</h3>
-         <%= text_area_tag 'estrategias', @plano.estrategias, readonly: true%>
-         <div class="note_div">
-              <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'estrategias'%>
-          </div>
-          <a href="#" class="add_button">Adicionar Observação</a>
-        </div>
-          <h2>Plano de ação</h2>
-         <div id= "plano de ação">
-             <h3>Plano objetivo</h3>
-             <%= text_area_tag 'plano_objetivo', @plano.plano_objetivo, readonly: true%>
-
-             <h3>Plano estrategia</h3>
-             <%= text_area_tag 'plano_estrategia', @plano.plano_estrategia, readonly: true%>
-
-             <h3>Plano prazo</h3>
-             <%= text_area_tag 'plano_prazo', @plano.plano_prazo, readonly: true%>
-
-             <h3>Plano fator critico</h3>
-             <%= text_area_tag 'plano_fator_critico', @plano.plano_fator_critico, readonly: true%>
-
-             <h3>Plano recursos</h3>
-             <%= text_area_tag 'plano_recursos', @plano.plano_recursos, readonly: true%>
-             <div class="note_div">
-              <h2>Nova Observação</h2>
-              <%= render 'notes/form', topico: 'plano'%>
           </div>
           <a href="#" class="add_button">Adicionar Observação</a>
          </div>

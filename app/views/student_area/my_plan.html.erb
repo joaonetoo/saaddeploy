@@ -135,6 +135,32 @@
           </div>
         </div>
     </div>
+    <%= form_for(@plano) do |f| %>
+  <% if @plano.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
+
+      <ul>
+      <% @plano.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h2><i class="fa fa-angle-right">Minha Missão</i></h2>
+    <%= f.text_area :mission%>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
+  </div>
+  <div class="actions">
+    <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), class: "btn" %>
+  </div>
+<% end %>
 
         <%= link_to "Gerar PDF", student_area_pdf_plan_path(format: 'pdf') %>
 

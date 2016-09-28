@@ -11,12 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
-  </div>
   <div class="actions">
-    <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), class: "btn" %>
+    <%= f.submit "Criar Plano", class: "btn" %>
   </div>
 <% end %>
 

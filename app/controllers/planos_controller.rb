@@ -34,12 +34,13 @@ class PlanosController < ApplicationController
   # POST /planos
   # POST /planos.json
   def create
-    @plano = Plano.new(plano_params)
+    @plano = Plano.new
+    @plano.publico = false
     @plano.user_id = current_user.id
 
     respond_to do |format|
       if @plano.save
-        format.html { redirect_to welcome_index_path, notice: 'Plano Salvo.' }
+        format.html { redirect_to student_area_my_plan_path, notice: 'Plano Salvo.' }
         format.json { render :show, status: :created, location: @plano }
       else
         format.html { render :new }
@@ -53,7 +54,7 @@ class PlanosController < ApplicationController
   def update
     respond_to do |format|
       if @plano.update(plano_params)
-        format.html { redirect_to welcome_index_path, notice: 'Plano Atualizado.' }
+        format.html { redirect_to student_area_my_plan_path, notice: 'Plano Atualizado.' }
         format.json { render :show, status: :ok, location: @plano }
       else
         format.html { render :edit }
@@ -81,6 +82,6 @@ class PlanosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plano_params
-      params.require(:plano).permit(:publico, :ameacas, :respostas_ameaca, :oportunidades, :respostas_oportunidades, :fraquezas, :respostas_fraquezas, :forcas, :respostas_forcas, :missao, :objetivos_proximo_ano, :objetivos_cinco_anos, :objetivos_dez_anos, :objetivos, :estrategias, :plano_objetivo, :plano_estrategia, :plano_prazo, :plano_fator_critico, :plano_recursos)
+      params.require(:plano).permit(:publico, :mission)
     end
 end
