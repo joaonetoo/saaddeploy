@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @study_case.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @study_case.author %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @study_case.area %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @study_case.topic %>
+</p>
+
+<p>
+  <strong>Topic2:</strong>
+  <%= @study_case.topic2 %>
+</p>
+
+<p>
+  <strong>Recommended:</strong>
+  <%= @study_case.recommended %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @study_case.abstract %>
+</p>
+
+<%= link_to 'Edit', edit_study_case_path(@study_case) %> |
+<%= link_to 'Back', study_cases_path %>

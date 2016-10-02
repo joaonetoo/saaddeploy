@@ -1,0 +1,53 @@
+<%= form_for(@study_case) do |f| %>
+  <% if @study_case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@study_case.errors.count, "error") %> prohibited this study_case from being saved:</h2>
+
+      <ul>
+      <% @study_case.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :topic %><br>
+    <%= f.text_field :topic %>
+  </div>
+  <div class="field">
+    <%= f.label :topic2 %><br>
+    <%= f.text_field :topic2 %>
+  </div>
+  <div class="field">
+    <%= f.label :recommended %><br>
+    <%= f.text_field :recommended %>
+  </div>
+  <div class="field">
+    <%= f.label :abstract %><br>
+    <%= f.text_area :abstract %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo_do_caso %><br>
+    <%= f.file_field :case_file %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo_das_notas %><br>
+    <%= f.file_field :notes_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
