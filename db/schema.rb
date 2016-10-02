@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928140725) do
+ActiveRecord::Schema.define(version: 20161002213317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -400,6 +400,17 @@ ActiveRecord::Schema.define(version: 20160928140725) do
 
   add_index "projects", ["event_id"], name: "index_projects_on_event_id", using: :btree
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "statement"
+    t.integer  "user_id"
+    t.integer  "study_case_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "questions", ["study_case_id"], name: "index_questions_on_study_case_id", using: :btree
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
+
   create_table "quizzes", force: :cascade do |t|
     t.integer  "user_id"
     t.date     "data_final"
@@ -481,6 +492,29 @@ ActiveRecord::Schema.define(version: 20160928140725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "study_cases", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "area"
+    t.string   "topic"
+    t.string   "topic2"
+    t.string   "recommended"
+    t.text     "abstract"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "user_id"
+    t.string   "case_file_file_name"
+    t.string   "case_file_content_type"
+    t.integer  "case_file_file_size"
+    t.datetime "case_file_updated_at"
+    t.string   "notes_file_file_name"
+    t.string   "notes_file_content_type"
+    t.integer  "notes_file_file_size"
+    t.datetime "notes_file_updated_at"
+  end
+
+  add_index "study_cases", ["user_id"], name: "index_study_cases_on_user_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "nome"
@@ -622,6 +656,8 @@ ActiveRecord::Schema.define(version: 20160928140725) do
   add_foreign_key "opportunity_answers", "opportunities"
   add_foreign_key "planos", "users"
   add_foreign_key "projects", "events"
+  add_foreign_key "questions", "study_cases"
+  add_foreign_key "questions", "users"
   add_foreign_key "quizzes", "users"
   add_foreign_key "quizzes_users", "quizzes"
   add_foreign_key "quizzes_users", "users"
@@ -631,6 +667,7 @@ ActiveRecord::Schema.define(version: 20160928140725) do
   add_foreign_key "strategies", "objectives"
   add_foreign_key "strength_answers", "strengths"
   add_foreign_key "strengths", "planos"
+  add_foreign_key "study_cases", "users"
   add_foreign_key "subjects", "courses"
   add_foreign_key "threats", "planos"
   add_foreign_key "threats_answers", "threats"

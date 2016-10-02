@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :questions
+  resources :study_cases
   resources :strategies
   resources :objectives
   resources :threats_answers

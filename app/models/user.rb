@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :study_cases
   has_and_belongs_to_many :classrooms
   has_and_belongs_to_many :quizzes
   has_and_belongs_to_many :learning_quizzes
