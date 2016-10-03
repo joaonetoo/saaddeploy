@@ -1,0 +1,14 @@
+<h2>Buscar Caso de Estudo</h2>
+<div class=" header-search">
+    <%= form_tag list_study_cases_path, :method => 'get', :class => 'form', :role => 'form' do%>
+      <div class="input-group">
+        <%= autocomplete_field_tag :title, params[:title], autocomplete_study_case_title_study_cases_path, placeholder: 'Buscar', :class => 'form-control'%>
+        <span class="input-group-btn">
+        <%= button_tag(type: "submit", class: "btn btn-default") do%>
+          <i class="fa fa-search"></i>
+        <% end %>
+        </span>
+        </div>
+        <% end %>
+</div>
+

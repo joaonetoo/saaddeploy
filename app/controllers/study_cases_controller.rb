@@ -1,5 +1,6 @@
 class StudyCasesController < ApplicationController
   before_action :set_study_case, only: [:show, :edit, :update, :destroy]
+  autocomplete :study_case, :title, :full => true
 
   def check_privilege(study_case)
      unless current_user.id == study_case.user_id
@@ -28,6 +29,14 @@ class StudyCasesController < ApplicationController
   # GET /study_cases/1/edit
   def edit
     check_privilege(@study_case)
+  end
+
+  def search
+
+  end
+
+  def list
+    @study_cases = StudyCase.where("title ilike ?", params[:title])
   end
 
   # POST /study_cases

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :classrooms
   has_and_belongs_to_many :quizzes
   has_and_belongs_to_many :learning_quizzes
+  has_and_belongs_to_many :study_cases
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/semfoto.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_many :results

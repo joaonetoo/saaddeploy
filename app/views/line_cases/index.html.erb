@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Line Cases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Study case</th>
+      <th>User</th>
+      <th>Data final</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_cases.each do |line_case| %>
+      <tr>
+        <td><%= line_case.study_case %></td>
+        <td><%= line_case.user %></td>
+        <td><%= line_case.data_final %></td>
+        <td><%= line_case.question %></td>
+        <td><%= link_to 'Show', line_case %></td>
+        <td><%= link_to 'Edit', edit_line_case_path(line_case) %></td>
+        <td><%= link_to 'Destroy', line_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line case', new_line_case_path %>

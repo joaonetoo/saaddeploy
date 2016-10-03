@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  study_case_id: 
+  user_id: 
+  data_final: 2016-10-03
+  question_id: 
+
+two:
+  study_case_id: 
+  user_id: 
+  data_final: 2016-10-03
+  question_id: 

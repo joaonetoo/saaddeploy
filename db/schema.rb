@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003001636) do
+ActiveRecord::Schema.define(version: 20161003230604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -317,6 +317,27 @@ ActiveRecord::Schema.define(version: 20161003001636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "line_cases", force: :cascade do |t|
+    t.integer  "study_case_id"
+    t.integer  "user_id"
+    t.date     "data_final"
+    t.integer  "question_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "line_cases", ["question_id"], name: "index_line_cases_on_question_id", using: :btree
+  add_index "line_cases", ["study_case_id"], name: "index_line_cases_on_study_case_id", using: :btree
+  add_index "line_cases", ["user_id"], name: "index_line_cases_on_user_id", using: :btree
+
+  create_table "line_cases_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "line_case_id"
+  end
+
+  add_index "line_cases_users", ["line_case_id"], name: "index_line_cases_users_on_line_case_id", using: :btree
+  add_index "line_cases_users", ["user_id"], name: "index_line_cases_users_on_user_id", using: :btree
 
   create_table "matriculations", force: :cascade do |t|
     t.string   "nome"
@@ -659,6 +680,11 @@ ActiveRecord::Schema.define(version: 20161003001636) do
   add_foreign_key "learning_quizzes_users", "learning_quizzes"
   add_foreign_key "learning_quizzes_users", "users"
   add_foreign_key "learning_results", "users"
+  add_foreign_key "line_cases", "questions"
+  add_foreign_key "line_cases", "study_cases"
+  add_foreign_key "line_cases", "users"
+  add_foreign_key "line_cases_users", "line_cases"
+  add_foreign_key "line_cases_users", "users"
   add_foreign_key "matriculations", "events"
   add_foreign_key "objectives", "planos"
   add_foreign_key "opportunities", "planos"

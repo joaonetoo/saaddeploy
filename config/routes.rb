@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :line_cases
   resources :references
   resources :questions
-  resources :study_cases
+  resources :study_cases do
+    collection do
+      get 'search'
+      get 'list'
+      get 'autocomplete_study_case_title'
+    end
+  end
   resources :strategies
   resources :objectives
   resources :threats_answers
