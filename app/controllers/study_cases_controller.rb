@@ -1,6 +1,12 @@
 class StudyCasesController < ApplicationController
   before_action :set_study_case, only: [:show, :edit, :update, :destroy]
 
+  def check_privilege(study_case)
+     unless current_user.id == study_case.user_id
+      redirect_to welcome_index_path
+      return
+    end
+  end
   # GET /study_cases
   # GET /study_cases.json
   def index
@@ -10,6 +16,8 @@ class StudyCasesController < ApplicationController
   # GET /study_cases/1
   # GET /study_cases/1.json
   def show
+    check_privilege(@study_case)
+    @questions = @study_case.questions
   end
 
   # GET /study_cases/new
@@ -19,6 +27,7 @@ class StudyCasesController < ApplicationController
 
   # GET /study_cases/1/edit
   def edit
+    check_privilege(@study_case)
   end
 
   # POST /study_cases
@@ -27,11 +36,13 @@ class StudyCasesController < ApplicationController
     @study_case = StudyCase.new(study_case_params)
     @study_case.user = current_user
     @study_case.recommended = params[:recommended].to_sentence
-    if params[:relat][:atu] == 'yes'
-      @reference = Reference.new
-      @reference.text = params[:reference]
-      @reference.study_case = @study_case
-      @reference.save
+    if params[:relat]
+      if params[:relat][:atu] == 'yes'
+        @reference = Reference.new
+        @reference.text = params[:reference]
+        @reference.study_case = @study_case
+        @reference.save
+      end
     end
     respond_to do |format|
       if @study_case.save
@@ -61,6 +72,7 @@ class StudyCasesController < ApplicationController
   # DELETE /study_cases/1
   # DELETE /study_cases/1.json
   def destroy
+    check_privilege(@study_case)
     @study_case.destroy
     respond_to do |format|
       format.html { redirect_to study_cases_url, notice: 'Study case was successfully destroyed.' }

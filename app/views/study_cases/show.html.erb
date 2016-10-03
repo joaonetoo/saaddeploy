@@ -1,39 +1,89 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Titulo:</strong>
   <%= @study_case.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Autor:</strong>
   <%= @study_case.author %>
 </p>
 
 <p>
-  <strong>Area:</strong>
+  <strong>Area de conhecimento:</strong>
   <%= @study_case.area %>
 </p>
 
 <p>
-  <strong>Topic:</strong>
+  <strong>Tema principal:</strong>
   <%= @study_case.topic %>
 </p>
 
 <p>
-  <strong>Topic2:</strong>
+  <strong>Tema secundario:</strong>
   <%= @study_case.topic2 %>
 </p>
 
 <p>
-  <strong>Recommended:</strong>
+  <strong>Recomendado para:</strong>
   <%= @study_case.recommended %>
 </p>
 
 <p>
-  <strong>Abstract:</strong>
+  <strong>Resumo:</strong>
   <%= @study_case.abstract %>
 </p>
 
-<%= link_to 'Edit', edit_study_case_path(@study_case) %> |
-<%= link_to 'Back', study_cases_path %>
+<p>
+<%= link_to "Arquivo do Caso", @study_case.case_file.url(:original, false) %>
+</p>
+
+<p>
+<%= link_to "Arquivo das notas", @study_case.notes_file.url(:original, false) %>
+</p>
+
+        <div class="modal fade" id="new_question_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Adicionar Questão</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                <%= render 'questions/form', modal: true %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<div class="row mt">
+<div class="col-lg-12">
+<div class="content-panel">
+<h4><i class="fa fa-angle-right"></i> Questões: </h4>
+<section id="unseen">
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Enunciado</th>
+    </tr>
+  </thead>
+
+  <tbody id= "questions">
+    <%= render @questions%>
+  </tbody>
+</table>
+</section>
+</div>
+</div>
+</div>
+<h4><%= link_to 'Adicionar Questão', '#new_question_modal', 'data-toggle' => 'modal' %></h4>
+
+
+<%= link_to 'Editar', edit_study_case_path(@study_case) %> |
+<%= link_to 'Voltar', study_cases_path %>

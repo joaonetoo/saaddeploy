@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Study Cases</h1>
+<h1>Casos de Ensino</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Area</th>
-      <th>Topic</th>
-      <th>Topic2</th>
-      <th>Recommended</th>
-      <th>Abstract</th>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Area de conhecimento</th>
+      <th>Tema primário</th>
+      <th>Tema secundário</th>
+      <th>Recomendado para</th>
+      <th>Resumo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,9 +28,9 @@
         <td><%= study_case.abstract %></td>
         <td><%= link_to "Arquivo do Caso", study_case.case_file.url(:original, false) %></td>
         <td><%= link_to "Arquivo das notas", study_case.notes_file.url(:original, false) %></td>
-        <td><%= link_to 'Show', study_case %></td>
-        <td><%= link_to 'Edit', edit_study_case_path(study_case) %></td>
-        <td><%= link_to 'Destroy', study_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Questões', study_case %></td>
+        <td><%= link_to 'Editar', edit_study_case_path(study_case) %></td>
+        <td><%= link_to 'Deletar', study_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

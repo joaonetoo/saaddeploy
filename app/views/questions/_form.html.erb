@@ -1,27 +1,16 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
-      <% @question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(Question.new, remote: remote, html: {role: :form, 'data-model' => 'question'}) do |f| %>
 
   <div class="field">
-    <%= f.label :statement %><br>
-    <%= f.text_field :statement %>
+    <%= f.label :enunciado, class: 'control-label' %><br>
+    <%= f.text_field :statement, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="field">
-    <%= f.label :study_case_id %><br>
-    <%= f.text_field :study_case_id %>
+    <%= f.hidden_field :study_case_id, :value => @study_case.id %>
   </div>
   <div class="actions">
     <%= f.submit %>
