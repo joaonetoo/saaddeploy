@@ -20,6 +20,8 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
+gem 'rails-i18n'
+
 gem 'font-awesome-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

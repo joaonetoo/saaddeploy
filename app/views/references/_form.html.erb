@@ -1,0 +1,14 @@
+<%= form_for(Reference.new, remote: true) do |f| %>
+
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :study_case_id %><br>
+    <%= f.hidden_field :study_case_id, :value => @study_case.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002213317) do
+ActiveRecord::Schema.define(version: 20161003001636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -429,6 +429,15 @@ ActiveRecord::Schema.define(version: 20161002213317) do
   add_index "quizzes_users", ["quiz_id"], name: "index_quizzes_users_on_quiz_id", using: :btree
   add_index "quizzes_users", ["user_id"], name: "index_quizzes_users_on_user_id", using: :btree
 
+  create_table "references", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "study_case_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "references", ["study_case_id"], name: "index_references_on_study_case_id", using: :btree
+
   create_table "registrations", force: :cascade do |t|
     t.string   "nome"
     t.string   "email"
@@ -661,6 +670,7 @@ ActiveRecord::Schema.define(version: 20161002213317) do
   add_foreign_key "quizzes", "users"
   add_foreign_key "quizzes_users", "quizzes"
   add_foreign_key "quizzes_users", "users"
+  add_foreign_key "references", "study_cases"
   add_foreign_key "registrations", "events"
   add_foreign_key "results", "quizzes"
   add_foreign_key "results", "users"

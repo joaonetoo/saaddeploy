@@ -25,7 +25,14 @@ class StudyCasesController < ApplicationController
   # POST /study_cases.json
   def create
     @study_case = StudyCase.new(study_case_params)
-
+    @study_case.user = current_user
+    @study_case.recommended = params[:recommended].to_sentence
+    if params[:relat][:atu] == 'yes'
+      @reference = Reference.new
+      @reference.text = params[:reference]
+      @reference.study_case = @study_case
+      @reference.save
+    end
     respond_to do |format|
       if @study_case.save
         format.html { redirect_to @study_case, notice: 'Study case was successfully created.' }
@@ -69,6 +76,6 @@ class StudyCasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def study_case_params
-      params.require(:study_case).permit(:title, :author, :area, :topic, :topic2, :recommended, :abstract)
+      params.require(:study_case).permit(:title, :author, :area, :topic, :topic2, :recommended, :abstract, :case_file, :notes_file)
     end
 end

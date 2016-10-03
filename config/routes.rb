@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :references
   resources :questions
   resources :study_cases
   resources :strategies

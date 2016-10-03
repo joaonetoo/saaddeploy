@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'add_reference' %>
 <%= form_for(@study_case) do |f| %>
   <% if @study_case.errors.any? %>
     <div id="error_explanation">
@@ -12,31 +13,43 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :titulo %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :author %><br>
+    <%= f.label :autor %><br>
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :area %><br>
+    <label>Caso Publicado em Evento ou Periódico?</label>
+    <%= radio_button 'relat', 'atu', 'yes', {:class => "relat__atu relat__atu_yes"} %> Sim
+    <%= radio_button 'relat', 'atu', 'no', {:class => "relat__atu relat__atu_no"} %>  Não
+        <div id="esatu" style="display:none" class="field">
+          <label>Referencia:</label>
+            <%= text_field_tag :reference %>
+          </div>
+  </div>
+  <div class="field">
+    <%= f.label :area_de_conhecimento %><br>
     <%= f.text_field :area %>
   </div>
   <div class="field">
-    <%= f.label :topic %><br>
+    <%= f.label :tema_primário %><br>
     <%= f.text_field :topic %>
   </div>
   <div class="field">
-    <%= f.label :topic2 %><br>
+    <%= f.label :tema_secundário %><br>
     <%= f.text_field :topic2 %>
   </div>
   <div class="field">
-    <%= f.label :recommended %><br>
-    <%= f.text_field :recommended %>
+    <%= f.label :recomendado_para_alunos_de %><br>
+    <label>graduação</label>
+    <input type="checkbox" name="recommended[]" value="graduação" />
+    <label>pós-graduação</label>
+    <input type="checkbox" name="recommended[]" value="pós-graduação" />
   </div>
   <div class="field">
-    <%= f.label :abstract %><br>
+    <%= f.label :resumo %><br>
     <%= f.text_area :abstract %>
   </div>
   <div class="field">
