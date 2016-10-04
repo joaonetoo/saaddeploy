@@ -1,0 +1,18 @@
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(Question.new,  :url => url_for(:controller => 'questions', :action => 'add'),remote: remote, html: {role: :form, 'data-model' => 'question'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :enunciado, class: 'control-label' %><br>
+    <%= f.text_field :statement, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :study_case_id, :value => @study_case.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

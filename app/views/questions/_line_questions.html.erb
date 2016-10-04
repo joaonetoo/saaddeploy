@@ -1,0 +1,6 @@
+<% @questions.each do |question| %>
+<tr>
+<td><%= question.statement %></td>
+<td><input type="checkbox" name="questions[]" value="<%=question.id%>" /></td>
+</tr>
+<%  end %>

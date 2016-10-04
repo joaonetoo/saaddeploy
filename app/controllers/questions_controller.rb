@@ -21,6 +21,22 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def add
+    @question = Question.new(question_params)
+    @study_case = @question.study_case
+    @questions = @study_case.questions
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.json { render :show, status: :created, location: @question }
+        format.js
+      else
+        format.html { render :new }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # POST /questions
   # POST /questions.json
   def create

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :line_cases
   resources :references
-  resources :questions
+  resources :questions do
+    collection do
+      post 'add'
+    end
+  end
   resources :study_cases do
     collection do
       get 'search'
