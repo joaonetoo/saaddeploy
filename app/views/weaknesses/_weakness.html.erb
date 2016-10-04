@@ -1,21 +1,15 @@
-<div class="col-lg-4 col-md-4 col-sm-4 mb">
-<div class="grey-panel pn donut-chart">
-    <div class="grey-header">
-        <%= weakness.text %>
-    </div>
-    Respostas:
-    <br>
+<h3>&nbsp;<i class="fa fa-angle-right"></i><%= weakness.text %> <%= link_to ' - Deletar fraqueza', weakness, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger"%></h3>
+    <h4>&nbsp;<i class="fa fa-angle-right"></i>Respostas a <%= weakness.text %> <%= link_to ' + Nova Resposta', "##{weakness.id}new_weakness_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success" %></h4>
+
     <% weakness.weakness_answers.each do |answer|%>
-        <%= answer.text %>
-        <%= link_to 'Deletar', answer, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
-        <br>
-    <% end %>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to ' - Deletar resposta', answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+   <% end %>
     <div class="modal fade"  class="modali" id="<%= weakness.id%>new_weakness_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Criar nova resposta de Força</h4>
+            <h4 class="modal-title" id="myModalLabel">Criar nova resposta de Fraqueza</h4>
           </div>
           <div class="modal-body">
             <%# Render the new person form (passing modal => true to enable remote => true) %>
@@ -27,8 +21,4 @@
         </div>
       </div>
     </div>
-
-    <%= link_to 'Nova Resposta', "##{weakness.id}new_weakness_answers_modal", 'data-toggle' => 'modal' %>
-    <%= link_to 'Deletar', weakness, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
-</div>
-</div>
+    <hr>

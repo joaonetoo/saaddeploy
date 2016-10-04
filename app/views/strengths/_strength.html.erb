@@ -1,15 +1,10 @@
-<div class="col-lg-4 col-md-4 col-sm-4 mb">
-<div class="grey-panel pn donut-chart">
-    <div class="grey-header">
-        <%= strength.text %>
-    </div>
-    Respostas:
-    <br>
+        <h3>&nbsp;<i class="fa fa-angle-right"></i><%= strength.text %> <%= link_to ' - Deletar força', strength, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger"%></h3>
+
+    <h4>&nbsp;<i class="fa fa-angle-right"></i>Respostas a <%= strength.text %> <%= link_to ' + Nova Resposta', "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success" %></h4>
+
     <% strength.strength_answers.each do |answer|%>
-        <%= answer.text %>
-        <%= link_to 'Deletar', answer, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
-        <br>
-    <% end %>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to ' - Deletar resposta', answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+   <% end %>
     <div class="modal fade"  class="modali" id="<%= strength.id%>new_strength_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -27,8 +22,4 @@
         </div>
       </div>
     </div>
-
-    <%= link_to 'Nova Resposta', "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal' %>
-    <%= link_to 'Deletar', strength, method: :delete, remote: true, data: { confirm: 'Deletar Força?' }%>
-</div>
-</div>
+    <hr>

@@ -1,113 +1,164 @@
-<%= javascript_include_tag 'plano_modal' %>
+ <%= javascript_include_tag 'plano_modal' %>
+<h2><i class="fa fa-angle-right"></i>Plano de carreira</h2>
 <div class="row mt">
-    <div class="col-lg-12 main-chart">
-    <div class="row">
-    <h2><i class="fa fa-angle-right">Forças</i></h2>
-        <h4><%= link_to 'Adicionar Força', '#new_strength_modal', 'data-toggle' => 'modal' %></h4>
+  <div class="col-lg-12">
+      <div class="content-panel">
+        <div class="row mt">
+                <div class="col-lg-12">
+                      <div>
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#forcas" aria-controls="forcas" role="tab" data-toggle="tab"><h4>Forças</h4></a></li>
+                            <li role="presentation"><a href="#oportunidades" aria-controls="oportunidades" role="tab" data-toggle="tab"><h4>Oportunidades</h4></a></li>
+                            <li role="presentation"><a href="#fraquezas" aria-controls="fraquezas" role="tab" data-toggle="tab"><h4>Fraquezas</h4></a></li>
+                            <li role="presentation"><a href="#ameacas" aria-controls="ameacas" role="tab" data-toggle="tab"><h4>Ameaças</h4></a></li>
+                            <li role="presentation"><a href="#missao" aria-controls="missao" role="tab" data-toggle="tab"><h4>Minha missão</h4></a></li>
+                            <li role="presentation"><a href="#objetivos" aria-controls="objetivos" role="tab" data-toggle="tab"><h4>Objetivos</h4></a></li>
+                          </ul>
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="forcas">
+                                <h2>&nbsp;<i class="fa fa-angle-right"></i>Forças <%= link_to '+ ADICIONAR FORÇA', '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                                <p>&nbsp;Características e condições pessoais que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
+                                  <hr>
+                                  <div id = "strengths">
+                                      <%= render @strengths%>
+                                  </div>
+                                  <div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                          <h4 class="modal-title" id="myModalLabel">Criar nova Força</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <%# Render the new person form (passing modal => true to enable remote => true) %>
+                                          <%= render 'strengths/form', modal: true %>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="oportunidades">
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Oportunidades <%= link_to '+ ADICIONAR OPORTUNIDADE', '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                                <p>&nbsp;Eventos externos que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
+                                  <hr>
+                                  <div id = "opportunities">
+                                    <%= render @opportunities%>
+                                </div>
+                                  <div class="modal fade" id="new_opportunity_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                          <h4 class="modal-title" id="myModalLabel">Criar nova Oportunidade</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <%# Render the new person form (passing modal => true to enable remote => true) %>
+                                          <%= render 'opportunities/form', modal: true %>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
 
-        <div id = "strengths">
-            <%= render @strengths%>
+                            <div role="tabpanel" class="tab-pane" id="fraquezas">
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Fraquezas <%= link_to '+ ADICIONAR FRAQUEZA', '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                                <p>&nbsp;Características e condições pessoais que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
+                                  <hr>
+                                  <div id = "opportunities">
+                                    <%= render @weaknesses%>
+                                </div>
+                                  <div class="modal fade" id="new_weakness_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                          <h4 class="modal-title" id="myModalLabel">Criar nova Fraqueza</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <%# Render the new person form (passing modal => true to enable remote => true) %>
+                                          <%= render 'weaknesses/form', modal: true %>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="ameacas">
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Ameaças <%= link_to '+ ADICIONAR AMEAÇA', '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                                <p>&nbsp;Eventos externos que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
+                                  <hr>
+                                  <div id = "opportunities">
+                                    <%= render @threats%>
+                                </div>
+                                  <div class="modal fade" id="new_threat_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                          <h4 class="modal-title" id="myModalLabel">Criar nova ameaça</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <%# Render the new person form (passing modal => true to enable remote => true) %>
+                                          <%= render 'threats/form', modal: true %>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="missao">
+                              <%= form_for(@plano) do |f| %>
+                              <% if @plano.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2>&nbsp;<%= pluralize(@plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
+                                  <p>&nbsp;Reflita sobre sua missão, a razão de ser de seus esforços e do seu emprego de seus talentos e recursos. Registre-os abaixo</p>
+
+                                  <ul>
+                                  <% @plano.errors.full_messages.each do |message| %>
+                                    <li><%= message  %></li>
+                                  <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                              <div class="form-group">
+                                <h2><i class="fa fa-angle-right"></i>Minha missão</h2>
+                                <label class="col-sm-1 col-sm-1 control-label">Minha missão</label>
+                                <div class="col-sm-11">
+                                    <%= f.text_area :mission, :class => "form-control"%>
+                                </div>
+                              </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="objetivos">Objetivos</div>
+                          </div>
+                      </div>
+                </div>
         </div>
+      </div>
+  </div>
+</div>
 
-        <div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Criar nova Força</h4>
-              </div>
-              <div class="modal-body">
-                <%# Render the new person form (passing modal => true to enable remote => true) %>
-                <%= render 'strengths/form', modal: true %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
 
-<div class="row">
-        <h2><i class="fa fa-angle-right">Fraquezas</i></h2>
-        <h4><%= link_to 'Adicionar Fraqueza', '#new_weakness_modal', 'data-toggle' => 'modal' %></h4>
 
-        <div id = "weaknesses">
-            <%= render @weaknesses%>
-        </div>
 
-        <div class="modal fade" id="new_weakness_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Criar nova Fraqueza</h4>
-              </div>
-              <div class="modal-body">
-                <%# Render the new person form (passing modal => true to enable remote => true) %>
-                <%= render 'weaknesses/form', modal: true %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
 
-        <div class="row">
-        <h2><i class="fa fa-angle-right">Oportunidades</i></h2>
-        <h4><%= link_to 'Adicionar Oportunidade', '#new_opportunity_modal', 'data-toggle' => 'modal' %></h4>
 
-        <div id = "opportunities">
-            <%= render @opportunities%>
-        </div>
 
-        <div class="modal fade" id="new_opportunity_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Criar nova Oportunidade</h4>
-              </div>
-              <div class="modal-body">
-                <%# Render the new person form (passing modal => true to enable remote => true) %>
-                <%= render 'opportunities/form', modal: true %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
 
-        <div class="row">
-        <h2><i class="fa fa-angle-right">Ameaças</i></h2>
-        <h4><%= link_to 'Adicionar Ameaça', '#new_threat_modal', 'data-toggle' => 'modal' %></h4>
 
-        <div id = "threats">
-            <%= render @threats%>
-        </div>
-
-        <div class="modal fade" id="new_threat_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Criar nova Ameaça</h4>
-              </div>
-              <div class="modal-body">
-                <%# Render the new person form (passing modal => true to enable remote => true) %>
-                <%= render 'threats/form', modal: true %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
 
     <div class="row">
         <h2><i class="fa fa-angle-right">Objetivos</i></h2>
@@ -135,23 +186,9 @@
           </div>
         </div>
     </div>
-    <%= form_for(@plano) do |f| %>
-  <% if @plano.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plano.errors.count, "error") %> prohibited this plano from being saved:</h2>
 
-      <ul>
-      <% @plano.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <h2><i class="fa fa-angle-right">Minha Missão</i></h2>
-    <%= f.text_area :mission%>
-  </div>
+
 
   <div class="field">
     <%= f.label :status %>
@@ -164,5 +201,5 @@
 
         <%= link_to "Gerar PDF", student_area_pdf_plan_path(format: 'pdf') %>
 
-        </div>
-</div>
+
+
