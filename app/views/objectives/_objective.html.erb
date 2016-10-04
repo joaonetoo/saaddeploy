@@ -1,17 +1,12 @@
-<div class="col-lg-4 col-md-4 col-sm-4 mb">
-<div class="grey-panel pn donut-chart">
-    <div class="grey-header">
-        <%= objective.text %><br>
-        Deadline: <%= objective.data %>
-    </div>
-    Respostas:
-    <br>
+<h3>&nbsp;<i class="fa fa-angle-right"></i><%= objective.text %>  <%= link_to ' - Deletar objetivo', objective, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger"%></h3>
+    <p><b>&nbsp;&nbsp;Deadline: </b><%= objective.data %></p>
+    <h4>&nbsp;<i class="fa fa-angle-right"></i>Estratégias a <%= objective.text %> <%= link_to '+ Nova estratégia', "##{objective.id}new_strategies_modal", 'data-toggle' => 'modal', :class => "btn btn-success"  %></h4>
+
     <% objective.strategies.each do |answer|%>
-        Estratégia: <%= answer.text %><br>
-        Deadline: <%= answer.deadline %>
-        <%= link_to 'Deletar', answer, method: :delete, remote: true, data: { confirm: 'Deletar estrategia?' }%>
-        <br>
-    <% end %>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; <b>Estratégia:</b> <%= answer.text %></label><br>
+        <label> <b> &nbsp; &nbsp; &nbsp;Deadline:</b> <%= answer.deadline %></label>
+        <label> &nbsp; &nbsp; &nbsp; <%= link_to ' - Deletar estratégia', answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label>
+   <% end %>
     <div class="modal fade"  class="modali" id="<%= objective.id%>new_strategies_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -29,8 +24,4 @@
         </div>
       </div>
     </div>
-
-    <%= link_to 'Nova Estratégia', "##{objective.id}new_strategies_modal", 'data-toggle' => 'modal' %>
-    <%= link_to 'Deletar', objective, method: :delete, remote: true, data: { confirm: 'Deletar estratégia?' }%>
-</div>
-</div>
+    <hr>

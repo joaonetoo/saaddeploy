@@ -1,45 +1,60 @@
-<% if @selecao != 'todos'%>
+<h2><i class="fa fa-angle-right"></i>Lista de alunos</h2>
+<p><% if @selecao != 'todos'%>
   <%= @classroom.subject.nome %>
   <%= @classroom.codigo %>
-<% end %>
+<% end %></p>
+<div class="row mt">
+  <div class="col-lg-12">
+      <div class="content-panel">
+        <div class="row mt">
+                <div class="col-lg-12">
+                      <div>
+                          <div class="unseen">
+                            <div class="dados">
+                          <table class="table table-bordered table-striped table-condensed">
+                            <thead>
+                              <tr>
+                                <th>Foto</th>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                                <th>Biografia</th>
+                                <th>Matricula</th>
+                                <th>Email</th>
+                                <th>Ações</th>
+                              </tr>
+                            </thead>
 
-<h1>Estudantes</h1>
+                            <tbody>
+                              <% @students.each do |student| %>
+                                <tr>
+                                  <td><center><%= image_tag student.avatar.url(:thumb), :class => "photos_users" %></center></td>
+                                  <td><%= student.nome %></td>
+                                  <td><%= student.telefone %></td>
+                                  <td><%= student.endereco %></td>
+                                  <td><%= student.biografia %></td>
+                                  <td><%= student.matricula %></td>
+                                  <td><%= student.email %></td>
+                                  <td>
+                                  <% if student.plano != nil && student.plano.publico == true%>
+                                    <center><%= button_to 'ver', teachers_area_show_plan_path(:plano => student.plano), :class => "btn btn-primary btn-sm"%></center>
+                                  <% else %>
+                                    Não
+                                  <% end %>
+                                  </td>
+                                </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>Endereço</th>
-      <th>Biografia</th>
-      <th>Matricula</th>
-      <th>Email</th>
-      <th>Plano</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= image_tag student.avatar.url(:thumb) %></td>
-        <td><%= student.nome %></td>
-        <td><%= student.telefone %></td>
-        <td><%= student.endereco %></td>
-        <td><%= student.biografia %></td>
-        <td><%= student.matricula %></td>
-        <td><%= student.email %></td>
-        <td>
-        <% if student.plano != nil && student.plano.publico == true%>
-          <%= button_to 'ver', teachers_area_show_plan_path(:plano => student.plano)%>
-        <% else %>
-          Não
-        <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
