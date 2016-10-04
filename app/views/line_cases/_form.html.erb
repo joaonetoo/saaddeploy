@@ -1,33 +1,6 @@
-<%= form_for(@line_case) do |f| %>
-  <% if @line_case.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@line_case.errors.count, "error") %> prohibited this line_case from being saved:</h2>
-
-      <ul>
-      <% @line_case.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
+    <%= render :partial => 'line_cases/teacher_search' %>
+  <% elsif current_user.type == 'Principal' %>
+    <%= render :partial => 'line_cases/principal_search' %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :study_case_id %><br>
-    <%= f.text_field :study_case_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :data_final %><br>
-    <%= f.date_select :data_final %>
-  </div>
-  <div class="field">
-    <%= f.label :question_id %><br>
-    <%= f.text_field :question_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

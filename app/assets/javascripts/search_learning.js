@@ -28,7 +28,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "subject_selection",
+        url: "/results/subject_selection",
         type: "GET",
         data: { subject : $('#_subject_id option:selected').val() },
       })
@@ -44,7 +44,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "subject2_selection",
+        url: "/results/subject2_selection",
         type: "GET",
         data: { subject : $('#_subject2_id option:selected').val() },
       })
@@ -57,7 +57,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "classroom_selection",
+        url: "/results/classroom_selection",
         type: "GET",
         data: { classroom : $('#_classroom_id option:selected').val() },
       })
@@ -70,7 +70,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "classroom2_selection",
+        url: "/results/classroom2_selection",
         type: "GET",
         data: { classroom : $('#_classroom2_id option:selected').val() },
       })

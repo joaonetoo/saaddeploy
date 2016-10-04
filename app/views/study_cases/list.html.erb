@@ -26,6 +26,7 @@
         <td><%= study_case.topic2 %></td>
         <td><%= study_case.recommended %></td>
         <td><%= study_case.abstract %></td>
+        <td><%= link_to "enviar caso", new_line_case_path(:study_case => study_case) %></td>
         <td><%= link_to "Arquivo do Caso", study_case.case_file.url(:original, false) %></td>
         <td><%= link_to "Arquivo das notas", study_case.notes_file.url(:original, false) %></td>
         <td><%= link_to 'Questões', study_case %></td>
@@ -37,5 +38,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Study case', new_study_case_path %>
