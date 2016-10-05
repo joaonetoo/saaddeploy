@@ -229,7 +229,8 @@ class TeachersAreaController < ApplicationController
 
   def pdf_plan
     @plano = Plano.find(params[:plano])
-    @learning_result = current_user.learning_results.last
+    @student = @plano.user
+    @learning_result = @student.learning_results.last
     @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
     @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
     @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
@@ -237,17 +238,19 @@ class TeachersAreaController < ApplicationController
     @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
     @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
     @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
-    @result = current_user.results.last
+    @result = @student.results.last
     @ancora1 = @result.anchors[0]
     @descricao = @ancora1.descricao.gsub("\n", '')
     respond_to do |format|
       format.html
       format.pdf {
         pdf = Prawn::Document.new
-          pdf.image "#{current_user.avatar.path(:thumb)}", :scale => 0.75
+          pdf.image "#{@student.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "Nome do aluno: #{current_user.nome.capitalize}", :color => "006699", :align => :center, :size => 18
+          pdf.text "Nome do aluno: #{@student.nome.capitalize}", :color => "006699", :align => :center, :size => 18
+          pdf.move_down 10
+          pdf.text "Realizado em: #{@plano.updated_at.strftime("%d/%m/%Y")}", :color => "006699", :align => :center, :size => 10
           pdf.move_down 40
           pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
           pdf.move_down 20
