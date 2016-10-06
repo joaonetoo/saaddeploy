@@ -136,6 +136,12 @@ require "prawn/measurement_extensions"
         @strengths = @plano.strengths
         @weaknesses = @plano.weaknesses
         @opportunities = @plano.opportunities
+        @strength_notes = Note.where(recipient: current_user, topico: 'strengths')
+        @opportunity_notes = Note.where(recipient: current_user, topico: 'opportunities')
+        @weakness_notes = Note.where(recipient: current_user, topico: 'weaknesses')
+        @threat_notes = Note.where(recipient: current_user, topico: 'threats')
+        @mission_notes = Note.where(recipient: current_user, topico: 'mission')
+        @objective_notes = Note.where(recipient: current_user, topico: 'objetivos')
     end
   end
 

@@ -23,6 +23,14 @@
                             <div id = "strengths">
                                 <%= render @strengths%>
                             </div>
+                            <% if @strength_notes != nil && @strength_notes.size > 0%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de forças</h2>
+                              <% @strength_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                             <div class="modal fade" id="new_strength_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -47,7 +55,15 @@
                             <hr>
                             <div id = "opportunities">
                               <%= render @opportunities%>
-                          </div>
+                            </div>
+                            <% if @opportunity_notes != nil && @opportunity_notes.size > 0%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre oportunidades</h2>
+                              <% @opportunity_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                             <div class="modal fade" id="new_opportunity_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -73,6 +89,14 @@
                             <div id = "opportunities">
                               <%= render @weaknesses%>
                           </div>
+                          <% if @weakness_notes != nil && @weakness_notes.size > 0%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de fraquezas</h2>
+                              <% @weakness_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                             <div class="modal fade" id="new_weakness_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -98,6 +122,14 @@
                             <div id = "threats">
                               <%= render @threats%>
                           </div>
+                          <% if @threat_notes != nil && @threat_notes.size > 0%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de ameaças</h2>
+                              <% @threat_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                             <div class="modal fade" id="new_threat_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -136,6 +168,14 @@
                           <div class="col-sm-11">
                               <%= f.text_area :mission, :class => "form-control"%><br>
                           </div>
+                          <% if @mission_notes != nil && @mission_notes.size > 0%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre missão</h2>
+                              <% @mission_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                         </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="objetivos">
@@ -145,6 +185,14 @@
                         <div id = "objectives">
                             <%= render @objectives%>
                         </div>
+                        <% if @objective_notes != nil%>
+                              <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de objetivos</h2>
+                              <% @objective_notes.each do |note|%>
+                                    <div>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                    </div>
+                              <% end %>
+                            <% end %>
                         <div class="modal fade" id="new_objective_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
