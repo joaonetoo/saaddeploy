@@ -1,7 +1,10 @@
-<%= form_for(Note.new, remote: true) do |f| %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+
+<%= form_for(Note.new, remote: remote, html: {role: :form, 'data-model' => 'note'}) do |f| %>
 
   <div class="field">
-    <%= f.label :texto %><br>
+    <%= f.label :Observação %><br>
     <%= f.text_area :texto %>
   </div>
   <div class="field">
