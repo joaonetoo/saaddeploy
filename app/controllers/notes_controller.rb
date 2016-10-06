@@ -60,9 +60,12 @@ class NotesController < ApplicationController
     @notes = @note.recipient.received_notes
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
-      format.json { head :no_content }
-      format.js
+      if current_user.type == 'Student'
+        format.html { redirect_to student_area_my_plan_path, notice: 'Observação deletada' }
+      else
+        format.html { redirect_to notes_url, notice: 'Observação deletada' }
+        format.json { head :no_content }
+      end
     end
   end
 

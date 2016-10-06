@@ -1,2 +1,2 @@
 $('#notes').html('<%= escape_javascript render (@notes) %>');
-$('.modal fade').modal_success();
+$('.modal').modal_success();
