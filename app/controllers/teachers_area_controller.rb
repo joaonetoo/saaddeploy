@@ -245,7 +245,7 @@ class TeachersAreaController < ApplicationController
       format.html
       format.pdf {
         pdf = Prawn::Document.new
-          pdf.image "#{@student.avatar.path(:thumb)}", :scale => 0.75
+          #pdf.image "#{@student.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{@student.nome.capitalize}", :color => "006699", :align => :center, :size => 18

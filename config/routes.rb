@@ -128,14 +128,19 @@ Rails.application.routes.draw do
   get 'student_area/index'
   get 'student_area/pdf_plan'
   get 'student_area/my_learning_result'
+  post 'student_area/my_learning_result'
   get 'student_area/my_result'
+  post 'student_area/my_result'
   get 'student_area/videos_index'
   get 'student_area/unsubscribe_video'
   get 'student_area/list_atividades'
   get 'student_area/list_answers'
   get 'student_area/compare_anchors'
+  post 'student_area/compare_anchors'
   get 'student_area/compare_learning'
+  post 'student_area/compare_learning'
   get 'student_area/my_plan'
+  post 'student_area/my_plan'
 
 
   resources :planos

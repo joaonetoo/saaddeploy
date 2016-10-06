@@ -162,7 +162,7 @@ require "prawn/measurement_extensions"
       format.html
       format.pdf {
         pdf = Prawn::Document.new
-          pdf.image "#{current_user.avatar.path(:thumb)}", :scale => 0.75
+          #pdf.image "#{current_user.avatar.path(:thumb)}", :scale => 0.75
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{current_user.nome.capitalize}", :color => "006699", :align => :center, :size => 18
