@@ -55,7 +55,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "campu_selection",
+        url: "/results/campu_selection",
         type: "GET",
         data: { campu : $('#_campu_id option:selected').val() },
       })
@@ -80,7 +80,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "campu2_selection",
+        url: "/results/campu2_selection",
         type: "GET",
         data: { campu : $('#_campu2_id option:selected').val() },
       })
@@ -102,7 +102,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "center_selection",
+        url: "/results/center_selection",
         type: "GET",
         data: { center : $('#_center_id option:selected').val() },
       })
@@ -124,7 +124,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "center2_selection",
+        url: "/results/center2_selection",
         type: "GET",
         data: { center : $('#_center2_id option:selected').val() },
       })
@@ -143,7 +143,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "course_selection",
+        url: "/results/course_selection",
         type: "GET",
         data: { course : $('#_course_id option:selected').val() },
       })
@@ -162,7 +162,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "course2_selection",
+        url: "/results/course2_selection",
         type: "GET",
         data: { course : $('#_course2_id option:selected').val() },
       })
@@ -178,7 +178,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "subject_selection",
+        url: "/results/subject_selection",
         type: "GET",
         data: { subject : $('#_subject_id option:selected').val() },
       })
@@ -194,7 +194,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "subject2_selection",
+        url: "/results/subject2_selection",
         type: "GET",
         data: { subject : $('#_subject2_id option:selected').val() },
       })
@@ -207,7 +207,7 @@ $(document).ready(function () {
         $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "classroom_selection",
+        url: "/results/classroom_selection",
         type: "GET",
         data: { classroom : $('#_classroom_id option:selected').val() },
       })
@@ -220,7 +220,7 @@ $(document).ready(function () {
         $('#_users2_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "classroom2_selection",
+        url: "/results/classroom2_selection",
         type: "GET",
         data: { classroom : $('#_classroom2_id option:selected').val() },
       })

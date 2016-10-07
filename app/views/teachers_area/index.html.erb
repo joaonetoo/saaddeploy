@@ -14,7 +14,7 @@
   <div class="alert alert-warning">
     <p>Voce tem Questionarios para responder, clique nas datas</p>
       <% @my_quizzes.each do |quiz| %>
-        <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final) %><br>
+        <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final), :method=> :post %><br>
       <% end %>
   </div>
 <% end %>
@@ -23,7 +23,7 @@
   <div class="alert alert-info">
     <p>Voce tem Questionarios de estilo de aprendizagem para responder, clique nas datas</p>
       <% @my_learning_quizzes.each do |quiz| %>
-        <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final) %><br>
+        <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final), :method=> :post %><br>
       <% end %>
   </div>
 <% end %>
@@ -43,7 +43,7 @@
           </div>
           <div class="details">
             <p>
-              <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final) %>
+              <%= link_to "#{quiz.data_final}", quiz_index_path(:data_final => quiz.data_final), :method=> :post %>
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@
               </div>
               <div class="details">
                 <p>
-                  <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final) %><br>
+                  <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final), :method=> :post %><br>
                 </p>
               </div>
             </div>

@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 'principals_area/list'
 
+  post 'principals_area/list'
+
   get 'principals_area/my_events'
 
   get 'principals_area/search_anchors'
@@ -89,6 +91,7 @@ Rails.application.routes.draw do
   resources :learning_styles
   resources :learning_results do
     collection do
+      post 'new'
       get 'search'
       post 'list'
       post 'show_by_date'
@@ -181,6 +184,7 @@ Rails.application.routes.draw do
   end
 
   get 'quiz/index'
+  post 'quiz/index'
   post 'quiz/answer'
 
   get 'admin/search'
