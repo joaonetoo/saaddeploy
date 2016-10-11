@@ -32,25 +32,6 @@
   <tbody>
     <% @planos.each do |plano| %>
       <tr>
-        <td><%= plano.ameacas %></td>
-        <td><%= plano.respostas_ameaca %></td>
-        <td><%= plano.oportunidades %></td>
-        <td><%= plano.respostas_oportunidades %></td>
-        <td><%= plano.fraquezas %></td>
-        <td><%= plano.respostas_fraquezas %></td>
-        <td><%= plano.forcas %></td>
-        <td><%= plano.respostas_forcas %></td>
-        <td><%= plano.missao %></td>
-        <td><%= plano.objetivos_proximo_ano %></td>
-        <td><%= plano.objetivos_cinco_anos %></td>
-        <td><%= plano.objetivos_dez_anos %></td>
-        <td><%= plano.objetivos %></td>
-        <td><%= plano.estrategias %></td>
-        <td><%= plano.plano_objetivo %></td>
-        <td><%= plano.plano_estrategia %></td>
-        <td><%= plano.plano_prazo %></td>
-        <td><%= plano.plano_fator_critico %></td>
-        <td><%= plano.plano_recursos %></td>
         <td><%= plano.user_id %></td>
         <td><%= link_to 'Show', plano %></td>
         <td><%= link_to 'Edit', edit_plano_path(plano) %></td>
