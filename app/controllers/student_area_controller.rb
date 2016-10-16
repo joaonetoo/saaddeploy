@@ -108,6 +108,10 @@ require "prawn/measurement_extensions"
     redirect_to  student_area_videos_index_path
   end
 
+  def classrooms
+    @classrooms = current_user.classrooms
+  end
+
   def my_result
     @selecao = current_user.nome
     @results = []

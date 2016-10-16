@@ -144,6 +144,7 @@ Rails.application.routes.draw do
   post 'student_area/compare_learning'
   get 'student_area/my_plan'
   post 'student_area/my_plan'
+  get 'student_area/classrooms'
 
 
   resources :planos

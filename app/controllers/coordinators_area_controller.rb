@@ -13,12 +13,19 @@ class CoordinatorsAreaController < ApplicationController
 
     @subjects = current_user.course.subjects
     @classrooms = []
+    @students = []
     @subjects.each do |subject|
         subject.classrooms.each do |classroom|
+          classroom.users.each do |user|
+            if user.type == 'Student'
+            @students << user
+            end
+          end
           @classrooms << classroom
       end
     end
     @classrooms.uniq!
+    @students = @students.uniq { |s| s.nome}
     @institutions << @institution
     @courses << @course
     @centers << @center
