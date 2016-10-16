@@ -112,6 +112,10 @@ require "prawn/measurement_extensions"
     @classrooms = current_user.classrooms
   end
 
+  def classroom_show
+    @classroom = Classroom.find(params[:classroom])
+  end
+
   def my_result
     @selecao = current_user.nome
     @results = []
