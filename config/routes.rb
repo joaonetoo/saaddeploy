@@ -201,6 +201,9 @@ Rails.application.routes.draw do
       get 'add_user'
       get 'autocomplete_user_nome'
       get 'remove_user'
+      get 'search'
+      get 'list'
+      post 'list'
     end
   end
   resources :administrators

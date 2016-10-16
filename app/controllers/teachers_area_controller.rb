@@ -199,24 +199,42 @@ class TeachersAreaController < ApplicationController
 
   def list
     @students = []
-    if params[:classroom_id] == 'todos'
-      @selecao = 'todos'
+    if params[:subject_id] == 'todos'
       @classrooms = current_user.classrooms
-      @classrooms.each do |classroom|
+    end
+
+    if params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
+      @subject = Subject.where(id: params[:subject_id]).first
+      @selecao = @subject.nome
+    end
+
+    @classrooms.each do |classroom|
         classroom.users.each do |user|
-          if user.type == 'Student'
+          if(user.type == 'Student')
             @students << user
           end
-        end
       end
-    else
-      @classroom = Classroom.find(params[:classroom_id])
+    end
+
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+      @classroom = Classroom.where(id: params[:classroom_id]).first
+      @selecao = "turma " + @classroom.codigo
+      @students = []
       @classroom.users.each do |user|
-        if user.type == 'Student'
-            @students << user
+        if(user.type == 'Student')
+          @students << user
         end
       end
     end
+
+    if params[:users_id] != 'todos' && params[:users_id] != nil
+      @user = User.where(id: params[:users_id]).first
+      @students = []
+      @students << @user
+      @selecao = @students.first.nome
+    end
+
     @students = @students.uniq { |s| s.nome}
   end
 
