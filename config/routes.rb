@@ -60,6 +60,7 @@ Rails.application.routes.draw do
         get 'public_events'
         get 'public_show'
         get 'pdf_event'
+        get 'approve_project'
     end
   end
   get 'coordinators_area/index'

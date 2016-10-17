@@ -16,6 +16,13 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def approve_project
+    @project = Project.find(params[:project])
+    @project.estado = 'aprovado'
+    @project.save
+    redirect_to @project.event
+  end
+
   def public_show
     @event = Event.find(params[:event])
   end
@@ -70,6 +77,17 @@ class EventsController < ApplicationController
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 50
           pdf.text "#{@event.nome}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 130
+          pdf.text "Apresentação: #{@event.apresentacao}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 100
+          pdf.text "Objetivo: #{@event.objetivos}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 100
+          pdf.text "Informações: #{@event.informacoes}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 150
+          pdf.text "Data: #{@event.inicio.strftime("%-d/%-m/%y às %H:%M")}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 50
+          pdf.text "Local: #{@event.local}", :align => :left,:color => "006699", :size => 18
+
 
           send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
         end
@@ -116,6 +134,6 @@ class EventsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nome, :apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas)
+      params.require(:event).permit(:nome, :informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local)
     end
 end

@@ -56,9 +56,10 @@ class MatriculationsController < ApplicationController
   # DELETE /matriculations/1
   # DELETE /matriculations/1.json
   def destroy
+    @event = @matriculation.event
     @matriculation.destroy
     respond_to do |format|
-      format.html { redirect_to matriculations_url, notice: 'Matriculation was successfully destroyed.' }
+      format.html { redirect_to @event, notice: 'Matricula deletada' }
       format.json { head :no_content }
     end
   end

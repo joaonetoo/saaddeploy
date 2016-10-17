@@ -17,13 +17,19 @@
 </p>
 
 <p>
+  <strong>Informações:</strong>
+  <%= @event.informacoes %>
+</p>
+
+
+<p>
   <strong>Inicio:</strong>
-  <%= @event.inicio %>
+  <%= @event.inicio.strftime("%-d/%-m/%y às %H:%M") %>
 </p>
 
 <p>
   <strong>Fim:</strong>
-  <%= @event.fim %>
+  <%= @event.fim.strftime("%-d/%-m/%y às %H:%M") %>
 </p>
 
 <p>
@@ -37,8 +43,6 @@
 
 <%= link_to "Gerar PDF", pdf_event_events_path(format: 'pdf', event: @event) %>
 <%= link_to 'Editar', edit_event_path(@event) %>
-
-<p id="notice"><%= notice %></p>
 
 <div>
   <div class="note_div">
@@ -82,7 +86,7 @@
         <td><%= project.event.nome %></td>
         <td><%= link_to "Arquivo", project.file.url(:original, false) %></td>
         <td><%= link_to 'Fazer Observação', project %></td>
-        <td><%= link_to 'Aprovar', edit_project_path(project) %></td>
+        <td><%= link_to 'Aprovar', approve_project_events_path(project: project) %></td>
         <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
