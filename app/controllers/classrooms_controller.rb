@@ -124,6 +124,8 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/1.json
   def show
     @users = User.all
+    @students = @classroom.students
+    @teachers = @classroom.teachers
   end
 
   def list

@@ -1,0 +1,8 @@
+                            <tr>
+                              <td><center><%= image_tag student.avatar.url(:thumb), :class => "photos_users"   %></center></td>
+                              <td><%= student.nome %></td>
+                              <td><%= student.matricula %></td>
+                              <td><%= student.email %></td>
+                              <td><%= student.telefone %></td>
+                              <td><%= link_to "remover", remove_user_classrooms_path(user: student, classroom: @classroom)%></td>
+                            </tr>

@@ -1,0 +1,16 @@
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+
+<%= form_tag add_user_classrooms_path, :method => 'get' do%>
+
+<div class="field">
+    <%= label_tag :nome %><br>
+    <%= autocomplete_field_tag :user_id, params[:user], autocomplete_user_nome_classrooms_path%>
+</div>
+
+<%= hidden_field_tag :classroom_id, @classroom.id %>
+
+<div class="actions">
+   <%= submit_tag "adicionar" %>
+</div>
+<% end %>
