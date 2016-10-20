@@ -15,7 +15,9 @@
   <tbody>
     <% @classrooms.each do |classroom| %>
       <tr>
+        <% if classroom.subject != nil%>
         <td><%= link_to classroom.subject.nome, classroom.subject %></td>
+        <% end %>
         <td><%= classroom.turno %></td>
         <td><%= classroom.codigo %></td>
         <td><%= link_to 'Abrir', classroom %></td>
