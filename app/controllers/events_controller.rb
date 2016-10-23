@@ -98,7 +98,7 @@ class EventsController < ApplicationController
 
   def certificate_event
         @event = Event.find(params[:event])
-        @registration = Registration.find(params[:registration])
+        @matriculation = Matriculation.find(params[:registration])
     respond_to do |format|
       format.html
       format.pdf {
@@ -107,11 +107,13 @@ class EventsController < ApplicationController
           Prawn::Document.generate("background.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           pdf.font("Helvetica", :style => :bold)
-          pdf.move_down 50
-          pdf.text "#{@event.nome}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 250
+          pdf.text "Declaro para os devidos fins que #{@matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+
+          #pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape, :background => img)
 
 
-          send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
+          send_data pdf.render, filename: 'certificado.pdf', type: 'application/pdf', disposition: "inline"
         end
       }
     end
@@ -156,6 +158,6 @@ class EventsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nome, :informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local)
+      params.require(:event).permit(:nome, :ch,:informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local)
     end
 end
