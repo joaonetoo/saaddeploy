@@ -61,6 +61,7 @@ Rails.application.routes.draw do
         get 'public_show'
         get 'pdf_event'
         get 'certificate_event'
+        post 'certificate_event'
         get 'approve_project'
     end
   end
