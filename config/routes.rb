@@ -60,6 +60,7 @@ Rails.application.routes.draw do
         get 'public_events'
         get 'public_show'
         get 'pdf_event'
+        get 'certificate_event'
         get 'approve_project'
     end
   end
@@ -78,6 +79,10 @@ Rails.application.routes.draw do
   get 'coordinators_area/videos_index'
 
   get 'coordinators_area/my_events'
+
+  get 'coordinators_area/finished_events'
+
+  get 'coordinators_area/show_finished_event'
 
   get 'coordinators_area/search_anchors'
 

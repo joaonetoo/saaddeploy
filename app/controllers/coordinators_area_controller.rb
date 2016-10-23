@@ -57,8 +57,20 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def my_events
-      @events = Event.where(:user_id => current_user.id)
+      @events = Event.where(:user_id => current_user.id).where("fim > ?", Date.today)
   end
+
+  def finished_events
+    @events = Event.where(:user_id => current_user.id).where("fim <= ?", Date.today)
+  end
+
+  def show_finished_event
+    @event = Event.find(params[:event])
+    @projects = @event.projects
+    @activities = @event.activities
+    @matriculations = @event.matriculations
+  end
+
 
   def send_video
     @course = current_user.course
