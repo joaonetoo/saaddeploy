@@ -1,27 +1,9 @@
-<%= javascript_include_tag "coordinators_area" %>
-<h1>Enviar video</h1>
-<%= form_tag({ :controller => "coordinators_area", :action => "create_video"}, { :id => "form_video"}) do |f| %>
-<div class="field">
-    <%= label_tag :titulo %><br>
-    <%= text_area_tag :titulo %>
-</div>
-<div class="field">
-    <%= label_tag :descrição %><br>
-    <%= text_area_tag :description %>
-</div>
-  <div class="field">
-    <%= label_tag :url %><br>
-    <%= text_field_tag :url %>
-  </div>
-<div class="field">
-    <%= label_tag :Turma %>
-    <%= grouped_collection_select(nil, :classroom_id, @subjects, :classrooms, :nome, :id, :codigo)%>
-</div>
-<div class="field">
-    <%= label_tag :Usuarios %>
-    <%= grouped_collection_select(nil, :users_id, @classrooms, :students, :codigo, :id, :nome)%>
-</div>
-
-
-<%= submit_tag "Enviar" %>
+<%= javascript_include_tag "teachers_area" %>
+<h2><i class="fa fa-angle-right"></i>Enviar Vídeo</h2>
+<% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
+    <%= render :partial => 'coordinators_area/teacher_search' %>
+<% elsif current_user.type == 'Principal' %>
+    <%= render :partial => 'coordinators_areas/principal_search' %>
 <% end %>
+
+
