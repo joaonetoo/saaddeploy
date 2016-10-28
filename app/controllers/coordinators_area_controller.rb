@@ -34,6 +34,16 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def index
+    @pendings_students = User.where(type: 'Student', approved: false, course_id: current_user.course.id).find_each
+    @pendings_teachers = User.where(type: 'Teacher', approved: false, course_id: current_user.course.id).find_each
+  end
+
+  def aprove
+    @pending = User.where(id: params[:pending]).first
+    @pending.approved = true
+    @pending.save
+    flash[:notice] = 'usuario aprovado'
+    redirect_to welcome_index_path
   end
 
   def videos_index

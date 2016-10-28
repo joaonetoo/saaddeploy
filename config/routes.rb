@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :atividade_extras
   get 'principals_area/index'
 
+  get 'principals_area/aprove'
+
   get 'principals_area/create_video'
 
   get 'principals_area/list'
@@ -68,6 +70,8 @@ Rails.application.routes.draw do
   get 'coordinators_area/index'
 
   post 'coordinators_area/create_video'
+
+  get 'coordinators_area/aprove'
 
   post 'coordinators_area/list'
 

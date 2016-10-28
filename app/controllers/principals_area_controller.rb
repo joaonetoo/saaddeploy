@@ -1,6 +1,17 @@
 class PrincipalsAreaController < ApplicationController
   def index
     @videos = current_user.sent_videos
+    @pendings_students = User.where(type: 'Student', approved: false, institution_id: current_user.institution.id).find_each
+    @pendings_teachers = User.where(type: 'Teacher', approved: false, institution_id: current_user.institution.id).find_each
+    @pendings_coordinators = User.where(type: 'Coordinator', approved: false, institution_id: current_user.institution.id).find_each
+  end
+
+  def aprove
+    @pending = User.where(id: params[:pending]).first
+    @pending.approved = true
+    @pending.save
+    flash[:notice] = 'usuario aprovado'
+    redirect_to welcome_index_path
   end
 
   def setup_principal_search
