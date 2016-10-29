@@ -202,7 +202,20 @@ class QuizzesController < ApplicationController
     end
 
     @users.each do |user|
-        @quiz.users << user
+        @equal = false
+        @user_quizzes = user.quizzes
+        if @user_quizzes.size > 0
+            @user_quizzes.each do |user_quiz|
+              if user_quiz.data_final == @quiz.data_final
+                @equal = true
+              end
+            end
+            if @equal == false
+                    @quiz.users << user
+            end
+        else
+          @quiz.users << user
+        end
     end
     respond_to do |format|
       if @quiz.save
