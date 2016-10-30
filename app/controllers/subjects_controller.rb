@@ -6,7 +6,12 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
-    @courses = Course.all
+    if current_user.type == 'Administrator'
+      @courses = Course.all
+    elsif current_user.type == 'Principal'
+      @subjects = current_user.search_subjects
+    end
+
   end
 
   def search
@@ -23,10 +28,16 @@ class SubjectsController < ApplicationController
   def new
     @subject = Subject.new
     @course = Course.all
+    if current_user.type == 'Principal'
+      @courses = current_user.courses
+    end
   end
 
   # GET /subjects/1/edit
   def edit
+    if current_user.type == 'Principal'
+      current_user.setup_search
+    end
   end
 
   # POST /subjects

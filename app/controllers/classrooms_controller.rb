@@ -82,7 +82,11 @@ class ClassroomsController < ApplicationController
   end
 
   def index
-    @classrooms = Classroom.all
+    if current_user.type == 'Administrator'
+      @classrooms = Classroom.all
+    elsif current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   def search
@@ -269,10 +273,16 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
+    if current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   # GET /classrooms/1/edit
   def edit
+    if current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   # POST /classrooms

@@ -78,14 +78,27 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class=" fa fa-youtube-play"></i>
-                          <span>Turmas</span>
+                          <i class="fa fa-university"></i>
+                          <span>Gerenciar Instituições</span>
                       </a>
                       <ul class="sub">
-                          <li><%= link_to "Ver turmas", search_classrooms_path %></li>
+                          <li><%= link_to 'Instituição', current_user.institution%></li>
+                          <li><%= link_to 'Campus', campus_path %></li>
+                          <li><%= link_to 'Centros', centers_path %></li>
                       </ul>
                   </li>
-
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-mortar-board"></i>
+                          <span>Gerenciar Cursos</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'Cursos', courses_path %></li>
+                          <li><%= link_to 'Disciplinas', subjects_path %></li>
+                          <li><%= link_to 'Turmas', classrooms_path %></li>
+                          <li><%= link_to "Buscar turma", search_classrooms_path %></li>
+                      </ul>
+                  </li>
 
               </ul>
               <!-- sidebar menu end-->

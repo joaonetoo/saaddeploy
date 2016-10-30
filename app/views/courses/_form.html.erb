@@ -23,6 +23,7 @@
     <%= f.label :turno %><br>
     <%= f.text_field :turno %>
   </div>
+  <%if current_user.type == 'Administrator'%>
   <%= label_tag :center %><br>
     <%= autocomplete_field_tag :center, params[:center], autocomplete_center_name_centers_path, :id_element => '#course_center_id'%>
   </div>
@@ -30,6 +31,10 @@
   <div class="field">
     <%= f.hidden_field :center_id %>
   </div>
+<%elsif current_user.type == 'Principal' %>
+  <div class="field">
+  <%= f.collection_select(:center_id, @centers, :id, :name)%>
+<% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

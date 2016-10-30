@@ -4,6 +4,13 @@ class InstitutionsController < ApplicationController
   skip_before_action :authenticate_user!
   # GET /institutions
   # GET /institutions.json
+    def check_privilege(institution)
+     unless current_user.institution == @institution
+      redirect_to welcome_index_path
+      return
+    end
+    end
+
   def index
     @institutions = Institution.all
   end
@@ -18,6 +25,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1
   # GET /institutions/1.json
   def show
+    check_privilege(@institution)
     @campus = Campu.where(institution_id: @institution.id).find_each
     @campu = Campu.new
   end

@@ -28,6 +28,7 @@
     <%= f.label :codigo %><br>
     <%= f.text_field :codigo %>
   </div>
+  <%if current_user.type == 'Administrator'%>
   <div class="field">
     <%= f.label :course %><br>
     <%= autocomplete_field_tag :course, params[:course], autocomplete_course_nome_courses_path, :id_element => '#subject_course_id'%>
@@ -35,7 +36,11 @@
   <div class="field">
     <%= f.hidden_field :course_id %>
   </div>
-
+  <%elsif current_user.type == 'Principal' %>
+    <div class="field">
+    <%= f.label :curso%>
+    <%= f.collection_select(:course_id, @courses, :id, :nome)%>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
