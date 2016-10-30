@@ -1,5 +1,4 @@
 <%= form_for(Project.new, remote: true, html: { multipart: true }, authenticity_token: true) do |f| %>
-
   <div class="field">
     <%= f.label :titulo %><br>
     <%= f.text_field :titulo %>

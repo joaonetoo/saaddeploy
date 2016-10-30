@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.hidden_field :subject_id %>
   </div>
-  <% elsif current_user.type == 'Principal'%>
+  <% elsif current_user.type != 'Administrator' %>
       <%= f.label :Disciplina%>
       <%= f.collection_select(:subject_id, @subjects, :id, :nome)%>
   <% end %>

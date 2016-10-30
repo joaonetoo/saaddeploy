@@ -69,13 +69,15 @@
                           <li><%= link_to "Editar", edit_user_registration_path %></li>
                       </ul>
                   </li>
-                <li class="sub-menu">
+                  <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class=" fa fa-youtube-play"></i>
-                          <span>Turmas</span>
+                          <i class="fa fa-mortar-board"></i>
+                          <span>Gerenciar Disciplinas</span>
                       </a>
                       <ul class="sub">
-                          <li><%= link_to "Ver turmas", search_classrooms_path %></li>
+                          <li><%= link_to 'Disciplinas', subjects_path %></li>
+                          <li><%= link_to 'Turmas', classrooms_path %></li>
+                          <li><%= link_to "Buscar turma", search_classrooms_path %></li>
                       </ul>
                   </li>
 

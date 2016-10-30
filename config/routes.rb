@@ -64,6 +64,8 @@ Rails.application.routes.draw do
         get 'pdf_event'
         get 'certificate_event'
         post 'certificate_event'
+        get 'certificate_project'
+        post 'certificate_project'
         get 'approve_project'
     end
   end

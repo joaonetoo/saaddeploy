@@ -2,6 +2,32 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
   autocomplete :subject, :nome, :full => true
 
+  def setup_teacher_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+
+  end
   # GET /subjects
   # GET /subjects.json
   def index
@@ -10,6 +36,9 @@ class SubjectsController < ApplicationController
       @courses = Course.all
     elsif current_user.type == 'Principal'
       @subjects = current_user.search_subjects
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
     end
 
   end

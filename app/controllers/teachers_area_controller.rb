@@ -398,7 +398,7 @@ class TeachersAreaController < ApplicationController
           pdf.move_down 10
         @plano.objectives.each do |objective|
           pdf.font("Helvetica")
-          pdf.text "#{objective.text}, Data limite planejada: #{objective.data}", :align => :left, :size => 12
+          pdf.text "#{objective.text}, Data limite planejada: #{l(objective.data, format: '%d de %B, de %Y')}", :align => :left, :size => 12
 
           pdf.move_down 20
 
@@ -408,7 +408,7 @@ class TeachersAreaController < ApplicationController
             pdf.text "Estratégias: ", :color => "006699", :align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
-            pdf.text "#{strategy.text}, Data limite: #{strategy.deadline}", :align => :left, :size => 12
+            pdf.text "#{strategy.text}, Data limite: #{l(strategy.deadline, format: '%d de %B, de %Y')}", :align => :left, :size => 12
             pdf.move_down 10
          end
          end

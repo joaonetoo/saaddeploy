@@ -30,6 +30,39 @@ class ClassroomsController < ApplicationController
 
   end
 
+  def setup_coordinator_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+
+    @subjects = current_user.course.subjects
+    @classrooms = []
+    @students = []
+    @subjects.each do |subject|
+        subject.classrooms.each do |classroom|
+          classroom.users.each do |user|
+            if user.type == 'Student'
+            @students << user
+            end
+          end
+          @classrooms << classroom
+      end
+    end
+    @classrooms.uniq!
+    @students = @students.uniq { |s| s.nome}
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+
+  end
+
+
   def setup_principal_search
     @institutions = []
     @courses = []
@@ -86,6 +119,10 @@ class ClassroomsController < ApplicationController
       @classrooms = Classroom.all
     elsif current_user.type == 'Principal'
       setup_principal_search
+    elsif current_user.type == 'Coordinator'
+      setup_coordinator_search
+    elsif current_user.type == 'Teacher'
+      setup_teacher_search
     end
   end
 
@@ -275,6 +312,10 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new
     if current_user.type == 'Principal'
       setup_principal_search
+    elsif current_user.type == 'Coordinator'
+      setup_coordinator_search
+    elsif current_user.type == 'Teacher'
+      setup_teacher_search
     end
   end
 
@@ -282,6 +323,10 @@ class ClassroomsController < ApplicationController
   def edit
     if current_user.type == 'Principal'
       setup_principal_search
+    elsif current_user.type == 'Coordinator'
+      setup_coordinator_search
+    elsif current_user.type == 'Teacher'
+      setup_teacher_search
     end
   end
 

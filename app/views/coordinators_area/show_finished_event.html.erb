@@ -69,11 +69,13 @@
       <th>Estado</th>
       <th>Evento</th>
       <th>Arquivo</th>
-      <th colspan="3"></th>
+      <th>Seleção</th>
+      <th colspan="2">Ações</th>
     </tr>
   </thead>
 
   <tbody>
+  <%= form_tag({ :controller => "events", :action => "certificate_project", :format => "pdf"}, { :id => "myform"}) do |f| %>
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.titulo %></td>
@@ -85,7 +87,7 @@
         <td><%= project.estado %></td>
         <td><%= project.event.nome %></td>
         <td><%= link_to "Arquivo", project.file.url(:original, false) %></td>
-        <td><%= link_to 'Fazer Observação', project %></td>
+        <td><input type="checkbox" name="projects[]" value="<%=project.id%>" /></td>
         <td><%= link_to 'Aprovar', approve_project_events_path(project: project) %></td>
         <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -93,6 +95,9 @@
   </tbody>
 </table>
 </section>
+<%= hidden_field_tag :event, @event.id%>
+<center><%= submit_tag "Gerar Certificados de trabalho", :class => "btn btn-success btn-lg"  %></center>
+<% end %>
 </div>
 </div>
 </div>
