@@ -1,37 +1,56 @@
-<%= form_for(@classroom) do |f| %>
-  <% if @classroom.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
+<h2><i class="fa fa-angle-right"></i>Nova turma</h2>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <div class="row mt">
+        <div class="col-lg-12">
+          <%= form_for(@classroom) do |f| %>
+            <% if @classroom.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
 
-      <ul>
-      <% @classroom.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% @classroom.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row mt">
+              <div class="col-lg-3">
+                <%if current_user.type == 'Administrator'%>
+              <div class="field">
+                <%= f.label :Disciplina %><br>
+                 <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id'%>
+              </div>
+              <div class="field">
+                <%= f.hidden_field :subject_id %>
+              </div>
+              <% elsif current_user.type != 'Administrator' %>
+                  <%= f.label :Disciplina%>
+                  <%= f.collection_select(:subject_id, @subjects, :id, :nome)%>
+              <% end %>
+              </div>                
+              <div class="col-lg-3">
+                <div class="field">
+                  <%= f.label :turno %><br>
+                  <%= f.text_field :turno %>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="field">
+                  <%= f.label :codigo %><br>
+                  <%= f.text_field :codigo %>
+                </div>
+              </div>             
+            </div>
+        </div>
+      </div>
     </div>
   <% end %>
-  <%if current_user.type == 'Administrator'%>
-  <div class="field">
-    <%= f.label :Disciplina %><br>
-     <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id'%>
+    <div class="actions">
+      <center><br><%= f.submit 'Cadastrar turma', :class => "btn btn-success btn-lg"  %></center>
+    </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.hidden_field :subject_id %>
-  </div>
-  <% elsif current_user.type != 'Administrator' %>
-      <%= f.label :Disciplina%>
-      <%= f.collection_select(:subject_id, @subjects, :id, :nome)%>
-  <% end %>
-  <div class="field">
-    <%= f.label :turno %><br>
-    <%= f.text_field :turno %>
-  </div>
-  <div class="field">
-    <%= f.label :codigo %><br>
-    <%= f.text_field :codigo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
+</div>

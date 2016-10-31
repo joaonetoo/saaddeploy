@@ -738,6 +738,8 @@ ActiveRecord::Schema.define(version: 20161031005032) do
   add_foreign_key "users", "institutions"
   add_foreign_key "videos", "users"
   add_foreign_key "videos_users", "users"
+  add_foreign_key "videos_users", "users"
+  add_foreign_key "videos_users", "videos"
   add_foreign_key "videos_users", "videos"
   add_foreign_key "weakness_answers", "weaknesses"
   add_foreign_key "weaknesses", "planos"
