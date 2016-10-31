@@ -16,40 +16,18 @@
                   </li>
 
                   <li class="sub-menu">
-                      <%= link_to administrators_path do%>
+                      <a href="javascript:;" >
                           <i class="fa fa-group"></i>
-                          <span>Gerenciar Administradores</span>
-                      <% end %>
+                          <span>Gerenciar Usuários</span>
+                      </a>
+                      <ul class="sub">
+                          <li><%= link_to 'Administradores', administrators_path %></li>
+                          <li><%= link_to 'Diretores', principals_path %></li>
+                          <li><%= link_to 'Coordenadores', coordinators_path %></li>
+                          <li><%= link_to 'Professores', teachers_path %></li>
+                          <li><%= link_to 'Estudantes', students_path %></li>
+                      </ul>
                   </li>
-
-                  <li class="sub-menu">
-                      <%= link_to principals_path do%>
-                          <i class="fa fa-group"></i>
-                          <span>Gerenciar Diretores</span>
-                      <% end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <%= link_to coordinators_path do%>
-                          <i class="fa fa-group"></i>
-                          <span>Gerenciar Coordenadores</span>
-                      <% end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <%= link_to teachers_path do%>
-                          <i class="fa fa-group"></i>
-                          <span>Gerenciar Professores</span>
-                      <% end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <%= link_to students_path do%>
-                          <i class="fa fa-group"></i>
-                          <span>Gerenciar Estudantes</span>
-                      <% end %>
-                  </li>
-
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
@@ -75,17 +53,7 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-youtube-play"></i>
+                          <i class=" fa fa-user"></i>
                           <span>Perfil</span>
                       </a>
                       <ul class="sub">
