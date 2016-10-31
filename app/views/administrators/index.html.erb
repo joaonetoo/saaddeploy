@@ -32,8 +32,7 @@
                                   <td><%= administrator.matricula %></td>-->
                                   <td><%= administrator.email %></td>
                                   <!--<td><%= administrator.approved %></td>-->
-                                  <!--<td><%= link_to 'Mostrar', administrator %></td>-->
-                                  <td><%= link_to 'Editar', edit_administrator_path(administrator) %></td>
+
                                   <td><%= link_to 'Excluir', administrator, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
                                 </tr>
                               <% end %>

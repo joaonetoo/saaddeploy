@@ -35,8 +35,6 @@
                               <td><%= student.institution_id %></td>
                               <td><%= student.course_id %></td>
                               <!--<td><%= student.approved %></td>-->
-                              <!--<td><%= link_to 'Visualizar', student %></td>-->
-                              <td><%= link_to 'Editar', edit_student_path(student) %></td>
                               <td><%= link_to 'Excluir', student, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
                             </tr>
                           <% end %>
