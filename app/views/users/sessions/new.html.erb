@@ -1,6 +1,5 @@
 <div id="login-page">
   <div class="container">
-
     <!--<form class="form-login" action="index.html"> -->
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-login"}) do |f| %>
       <h2 class="form-login-heading">Bem vindo ao Saad, logue-se para acessar</h2>
@@ -12,7 +11,6 @@
         <!--<input type="password" class="form-control" placeholder="Password">-->
         <!--<%= f.label :password %> -->
         <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
-
         <label class="checkbox">
           <span class="pull-right">
               <!--<a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>-->
@@ -33,6 +31,7 @@
           <!--<a class="" href="#">-->
             <!--Create an account-->
           <!--</a>-->
+          <%= link_to 'Eventos Públicos', public_events_events_path%><br>
           <%= render "users/shared/links" %>
         </div>
 

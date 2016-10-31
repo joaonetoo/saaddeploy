@@ -201,8 +201,21 @@ class LearningQuizzesController < ApplicationController
     end
 
     @users.each do |user|
+        @equal = false
+        @user_learning_quizzes = user.learning_quizzes
+        if @user_learning_quizzes.size > 0
+          @user_learning_quizzes.each do |user_learning_quiz|
+          if user_learning_quiz.data_final == @learning_quiz.data_final
+            @equal = true
+          end
+        end
+        if @equal == false
+          @learning_quiz.users << user
+        end
+      else
         @learning_quiz.users << user
     end
+  end
 
     respond_to do |format|
       if @learning_quiz.save

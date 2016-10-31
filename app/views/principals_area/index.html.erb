@@ -13,5 +13,24 @@
 <%= link_to 'Cria Questionario de estilos de aprendizagem', new_learning_quiz_path %><br>
 <%= link_to 'Buscar resultados de estilos de aprendizagem', search_learning_results_path %><br>
 <%= link_to 'Comparar resultados de estilos de aprendizagem', analytics_learning_results_path %>
+    <%if @pendings_students.size >= 1 %>
+    <strong>Estudantes</strong>
+    <% @pendings_students.each do |pending| %>
+        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', coordinators_area_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+    <% end %>
+<% end %>
 
+<%if @pendings_teachers.size >= 1 %>
+    <strong>Professores</strong>
+    <% @pendings_teachers.each do |pending| %>
+        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', coordinators_area_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+    <% end %>
+<% end %>
+
+<%if @pendings_coordinators.size >= 1 %>
+    <strong>Coordenadores</strong>
+    <% @pendings_coordinators.each do |pending| %>
+        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', coordinators_area_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+    <% end %>
+<% end %>
 <br>

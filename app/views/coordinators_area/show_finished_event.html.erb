@@ -1,0 +1,171 @@
+<%= javascript_include_tag "add_obs.js"%>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @event.nome %>
+</p>
+
+<p>
+  <strong>Apresentacao:</strong>
+  <%= @event.apresentacao %>
+</p>
+
+<p>
+  <strong>Objetivos:</strong>
+  <%= @event.objetivos %>
+</p>
+
+<p>
+  <strong>Informações:</strong>
+  <%= @event.informacoes %>
+</p>
+
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @event.inicio.strftime("%-d/%-m/%y às %H:%M") %>
+</p>
+
+<p>
+  <strong>Fim:</strong>
+  <%= @event.fim.strftime("%-d/%-m/%y às %H:%M") %>
+</p>
+
+<p>
+  <strong>Submissao:</strong>
+  <%= @event.submissao %>
+</p>
+<p>
+  <strong>Criado por:</strong>
+  <%= @event.user.nome %>
+</p>
+
+<%= link_to "Gerar PDF", pdf_event_events_path(format: 'pdf', event: @event) %>
+<%= link_to 'Editar', edit_event_path(@event) %>
+
+<div>
+  <div class="note_div">
+      <h2>Adicionar atividade</h2>
+      <%= render 'activities/form'%>
+  </div>
+</div>
+  <a href="#" class="add_button">Adicionar Atividade</a>
+
+<div class="row mt">
+<div class="col-lg-12">
+<div class="content-panel">
+<h4><i class="fa fa-angle-right"></i> Trabalhos submetidos</h4>
+<section id="unseen">
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Email</th>
+      <th>Resumo</th>
+      <th>Tags</th>
+      <th>Tipo</th>
+      <th>Estado</th>
+      <th>Evento</th>
+      <th>Arquivo</th>
+      <th>Seleção</th>
+      <th colspan="2">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= form_tag({ :controller => "events", :action => "certificate_project", :format => "pdf"}, { :id => "myform"}) do |f| %>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.titulo %></td>
+        <td><%= project.autor %></td>
+        <td><%= project.email %></td>
+        <td><%= project.resumo %></td>
+        <td><%= project.tags %></td>
+        <td><%= project.tipo %></td>
+        <td><%= project.estado %></td>
+        <td><%= project.event.nome %></td>
+        <td><%= link_to "Arquivo", project.file.url(:original, false) %></td>
+        <td><input type="checkbox" name="projects[]" value="<%=project.id%>" /></td>
+        <td><%= link_to 'Aprovar', approve_project_events_path(project: project) %></td>
+        <td><%= link_to 'Deletar', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</section>
+<%= hidden_field_tag :event, @event.id%>
+<center><%= submit_tag "Gerar Certificados de trabalho", :class => "btn btn-success btn-lg"  %></center>
+<% end %>
+</div>
+</div>
+</div>
+
+<div class="row mt">
+<div class="col-lg-12">
+<div class="content-panel">
+<h4><i class="fa fa-angle-right"></i> Atividades registradas</h4>
+<section id="unseen">
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Nome</th>
+      <th>Palestrante</th>
+      <th>Evento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id= "activities">
+    <%= render @activities%>
+  </tbody>
+</table>
+</section>
+</div>
+</div>
+</div>
+
+<div class="row mt">
+<div class="col-lg-12">
+<div class="content-panel">
+<h4><i class="fa fa-angle-right"></i> Usuarios inscritos no evento</h4>
+<section id="unseen">
+<table class="table table-bordered table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Tipo</th>
+      <th>Seleção</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= form_tag({ :controller => "events", :action => "certificate_event", :format => "pdf"}, { :id => "myform"}) do |f| %>
+    <% @matriculations.each do |registration| %>
+      <tr>
+        <td><%= registration.nome %></td>
+        <td><%= registration.email %></td>
+        <td><%= registration.telefone %></td>
+        <td><%= registration.tipo %></td>
+        <td><input type="checkbox" name="matriculations[]" value="<%=registration.id%>" /></td>
+        <td><%= link_to 'Deletar', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+</section>
+<%= hidden_field_tag :event, @event.id%>
+<center><%= submit_tag "Gerar Certificados", :class => "btn btn-success btn-lg"  %></center>
+    <% end %>
+</div>
+</div>
+</div>
+
+<br>
+

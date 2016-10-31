@@ -76,8 +76,7 @@ class TeachersAreaController < ApplicationController
   end
 
   def send_video
-    @classrooms = current_user.classrooms
-    @subjects =@classrooms.each.map(&:subject).uniq
+    setup_search
   end
 
   def send_atividade_extra
@@ -151,25 +150,36 @@ class TeachersAreaController < ApplicationController
     current_user.sent_videos << @video
     @video.save
 
-    if params[:classroom_id] == 'todos'
-      @classrooms = current_user.classrooms
-      @selecao = "Todas as turmas"
+    if params[:subject_id] == 'todos'
+      setup_search
+      @users = @students
+      @selecao = "todas as disciplinas"
+    end
+
+     if params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
       @users = []
       @classrooms.each do |classroom|
         classroom.users.each do |user|
-          @users << user
+          if(user.type == 'Student')
+            @users << user
+          end
         end
       end
+      @subject = Subject.where(id: params[:subject_id]).first
+      @selecao = @subject.nome
+    end
 
-    elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
       @classroom = Classroom.where(id: params[:classroom_id]).first
       @selecao = "turma " + @classroom.codigo
       @users = []
       @classroom.users.each do |user|
-        @users << user
+        if(user.type == 'Student')
+          @users << user
+        end
       end
     end
-
 
     if params[:users_id] != 'todos' && params[:users_id] != nil
       @user = User.where(id: params[:users_id]).first
@@ -177,11 +187,15 @@ class TeachersAreaController < ApplicationController
       @users << @user
       @selecao = @users.first.nome
     end
+
+
+    @users = @users.uniq { |s| s.nome}
     @users.each do |user|
         if user.type == 'Student'
           @video.recipients << user
         end
     end
+
 
   end
 
@@ -248,17 +262,21 @@ class TeachersAreaController < ApplicationController
   def pdf_plan
     @plano = Plano.find(params[:plano])
     @student = @plano.user
-    @learning_result = @student.learning_results.last
-    @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
-    @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
-    @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
-    @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
-    @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
-    @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
-    @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
-    @result = @student.results.last
-    @ancora1 = @result.anchors[0]
-    @descricao = @ancora1.descricao.gsub("\n", '')
+    if @student.learning_results != nil && @student.learning_results.length > 0
+      @learning_result = @student.learning_results.last
+      @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
+      @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
+      @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
+      @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
+      @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
+      @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
+      @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
+    end
+    if @student.results != nil && @student.results.length > 0
+      @result = @student.results.last
+      @ancora1 = @result.anchors[0]
+      @descricao = @ancora1.descricao.gsub("\n", '')
+    end
     respond_to do |format|
       format.html
       format.pdf {
@@ -269,17 +287,21 @@ class TeachersAreaController < ApplicationController
           pdf.text "Nome do aluno: #{@student.nome.capitalize}", :color => "006699", :align => :center, :size => 18
           pdf.move_down 10
           pdf.text "Realizado em: #{@plano.updated_at.strftime("%d/%m/%Y")}", :color => "006699", :align => :center, :size => 10
-          pdf.move_down 40
-          pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
-          pdf.move_down 40
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@descricao}", :align => :left, :size => 12
+          if @student.learning_results != nil && @student.learning_results.length > 0
+            pdf.move_down 40
+            pdf.text "Primeiro estilo de aprendizagem predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
+            pdf.move_down 40
+            pdf.font("Helvetica", :style => :bold)
+          end
+          if @student.results != nil && @student.results.length > 0
+            pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@descricao}", :align => :left, :size => 12
+          end
           pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Plano de carreira",:color => "006699", :align => :left, :size => 16
@@ -376,7 +398,7 @@ class TeachersAreaController < ApplicationController
           pdf.move_down 10
         @plano.objectives.each do |objective|
           pdf.font("Helvetica")
-          pdf.text "#{objective.text}, Data limite planejada: #{objective.data}", :align => :left, :size => 12
+          pdf.text "#{objective.text}, Data limite planejada: #{l(objective.data, format: '%d de %B, de %Y')}", :align => :left, :size => 12
 
           pdf.move_down 20
 
@@ -386,7 +408,7 @@ class TeachersAreaController < ApplicationController
             pdf.text "Estratégias: ", :color => "006699", :align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
-            pdf.text "#{strategy.text}, Data limite: #{strategy.deadline}", :align => :left, :size => 12
+            pdf.text "#{strategy.text}, Data limite: #{l(strategy.deadline, format: '%d de %B, de %Y')}", :align => :left, :size => 12
             pdf.move_down 10
          end
          end

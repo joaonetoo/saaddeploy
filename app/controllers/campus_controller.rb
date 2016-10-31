@@ -4,7 +4,11 @@ class CampusController < ApplicationController
   # GET /campus
   # GET /campus.json
   def index
-    @campus = Campu.all
+    if current_user.type == "Administrator"
+      @campus = Campu.all
+    elsif current_user.type == 'Principal'
+      @campus = Campu.where(institution_id: current_user.institution.id)
+    end
   end
 
   # GET /campus/1
@@ -17,6 +21,9 @@ class CampusController < ApplicationController
   # GET /campus/new
   def new
     @campu = Campu.new
+    if current_user.type == "Principal"
+      @institution = current_user.institution
+    end
   end
 
   # GET /campus/1/edit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017134716) do
+ActiveRecord::Schema.define(version: 20161031005032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,9 +161,16 @@ ActiveRecord::Schema.define(version: 20161017134716) do
   add_index "classrooms_users", ["user_id"], name: "index_classrooms_users_on_user_id", using: :btree
 
   create_table "coordinators", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "institution_id"
+    t.integer  "campu_id"
+    t.integer  "center_id"
   end
+
+  add_index "coordinators", ["campu_id"], name: "index_coordinators_on_campu_id", using: :btree
+  add_index "coordinators", ["center_id"], name: "index_coordinators_on_center_id", using: :btree
+  add_index "coordinators", ["institution_id"], name: "index_coordinators_on_institution_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "nome"
@@ -199,14 +206,19 @@ ActiveRecord::Schema.define(version: 20161017134716) do
     t.datetime "inicio"
     t.datetime "fim"
     t.boolean  "submissao"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.string   "normas",       default: "nenhuma"
-    t.datetime "deadline",     default: '2016-07-27 18:02:10'
-    t.string   "trabalhos",    default: "nenhum"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.string   "normas",             default: "nenhuma"
+    t.datetime "deadline",           default: '2016-07-27 18:02:10'
+    t.string   "trabalhos",          default: "nenhum"
     t.integer  "user_id"
     t.text     "informacoes"
     t.string   "local"
+    t.integer  "ch"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -548,6 +560,14 @@ ActiveRecord::Schema.define(version: 20161017134716) do
 
   add_index "study_cases", ["user_id"], name: "index_study_cases_on_user_id", using: :btree
 
+  create_table "study_cases_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "study_case_id"
+  end
+
+  add_index "study_cases_users", ["study_case_id"], name: "index_study_cases_users_on_study_case_id", using: :btree
+  add_index "study_cases_users", ["user_id"], name: "index_study_cases_users_on_user_id", using: :btree
+
   create_table "subjects", force: :cascade do |t|
     t.string   "nome"
     t.integer  "ch"
@@ -676,6 +696,9 @@ ActiveRecord::Schema.define(version: 20161017134716) do
   add_foreign_key "classrooms_students", "students"
   add_foreign_key "classrooms_users", "classrooms"
   add_foreign_key "classrooms_users", "users"
+  add_foreign_key "coordinators", "campus"
+  add_foreign_key "coordinators", "centers"
+  add_foreign_key "coordinators", "institutions"
   add_foreign_key "courses", "centers"
   add_foreign_key "events", "users"
   add_foreign_key "learning_quizzes", "users"
@@ -706,6 +729,8 @@ ActiveRecord::Schema.define(version: 20161017134716) do
   add_foreign_key "strength_answers", "strengths"
   add_foreign_key "strengths", "planos"
   add_foreign_key "study_cases", "users"
+  add_foreign_key "study_cases_users", "study_cases"
+  add_foreign_key "study_cases_users", "users"
   add_foreign_key "subjects", "courses"
   add_foreign_key "threats", "planos"
   add_foreign_key "threats_answers", "threats"

@@ -59,8 +59,10 @@
   <strong>Site:</strong>
   <%= @institution.site %>
 </p>
-<%= link_to 'Edit', edit_institution_path(@institution) %> |
-<%= link_to 'Back', institutions_path %>
+<%if current_user.type == 'Administrator'%>
+  <%= link_to 'Editar', edit_institution_path(@institution) %> |
+  <%= link_to 'Voltar', institutions_path %>
+<% end %>
 
 <p>Campus:</p>
 <table>

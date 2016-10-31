@@ -4,9 +4,64 @@ class CoursesController < ApplicationController
   skip_before_action :authenticate_user!
   # GET /courses
   # GET /courses.json
+  def setup_principal_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @subjects = []
+    @classrooms = []
+    @students = []
+    @institution = Institution.find(current_user.institution_id)
+    @campus = current_user.campus
+    @campus.each do |campu|
+      pre = Center.where(campu: campu).load
+      pre.each do |p|
+        if not p.nil?
+          @centers << p
+        end
+      end
+    end
+    @centers.each do |center|
+      pre = Course.where(center: center).load
+      pre.each do |p|
+        if not p.nil?
+          @courses << p
+        end
+      end
+    end
+    @courses.each do |course|
+      pre = Subject.where(course: course).load
+      pre.each do |p|
+        if not p.nil?
+          @subjects << p
+        end
+      end
+    end
+    @subjects.each do |subject|
+      pre = Classroom.where(subject: subject).load
+       pre.each do |p|
+        if not p.nil?
+          @classrooms << p
+        end
+      end
+    end
+    @classrooms.each do |classroom|
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+  end
+
   def index
-    @courses = Course.all
-    @institutions = Institution.all
+    if current_user.type == 'Administrator'
+      @courses = Course.all
+    elsif current_user.type == 'Principal'
+      setup_principal_search
+    end
+
   end
 
   # GET /courses
@@ -25,11 +80,16 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    @institutions = Institution.all
+    if current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   # GET /courses/1/edit
   def edit
+    if current_user.type == 'Principal'
+      setup_principal_search
+    end
   end
 
   # POST /courses

@@ -34,6 +34,16 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def index
+    @pendings_students = User.where(type: 'Student', approved: false, course_id: current_user.course.id).find_each
+    @pendings_teachers = User.where(type: 'Teacher', approved: false, course_id: current_user.course.id).find_each
+  end
+
+  def aprove
+    @pending = User.where(id: params[:pending]).first
+    @pending.approved = true
+    @pending.save
+    flash[:notice] = 'usuario aprovado'
+    redirect_to welcome_index_path
   end
 
   def videos_index
@@ -57,15 +67,23 @@ class CoordinatorsAreaController < ApplicationController
   end
 
   def my_events
-      @events = Event.where(:user_id => current_user.id)
+      @events = Event.where(:user_id => current_user.id).where("fim > ?", Date.today)
   end
 
+  def finished_events
+    @events = Event.where(:user_id => current_user.id).where("fim <= ?", Date.today)
+  end
+
+  def show_finished_event
+    @event = Event.find(params[:event])
+    @projects = @event.projects
+    @activities = @event.activities
+    @matriculations = @event.matriculations
+  end
+
+
   def send_video
-    @course = current_user.course
-    @subjects = Subject.where(:course_id => @course.id)
-    @subjects.each do |subject|
-      @classrooms = Classroom.where(subject_id: subject.id).find_each
-    end
+    setup_search
   end
 
   def create_video
@@ -77,25 +95,36 @@ class CoordinatorsAreaController < ApplicationController
     current_user.sent_videos << @video
     @video.save
 
-    if params[:classroom_id] == 'todos'
-      @classrooms = current_user.classrooms
-      @selecao = "Todas as turmas"
+     if params[:subject_id] == 'todos'
+      setup_search
+      @users = @students
+      @selecao = "todas as disciplinas"
+    end
+
+     if params[:subject_id] != 'todos' && params[:subject_id] != nil
+      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
       @users = []
       @classrooms.each do |classroom|
         classroom.users.each do |user|
-          @users << user
+          if(user.type == 'Student')
+            @users << user
+          end
         end
       end
+      @subject = Subject.where(id: params[:subject_id]).first
+      @selecao = @subject.nome
+    end
 
-    elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+    if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
       @classroom = Classroom.where(id: params[:classroom_id]).first
       @selecao = "turma " + @classroom.codigo
       @users = []
       @classroom.users.each do |user|
-        @users << user
+        if(user.type == 'Student')
+          @users << user
+        end
       end
     end
-
 
     if params[:users_id] != 'todos' && params[:users_id] != nil
       @user = User.where(id: params[:users_id]).first
@@ -103,6 +132,9 @@ class CoordinatorsAreaController < ApplicationController
       @users << @user
       @selecao = @users.first.nome
     end
+
+
+    @users = @users.uniq { |s| s.nome}
     @users.each do |user|
         if user.type == 'Student'
           @video.recipients << user

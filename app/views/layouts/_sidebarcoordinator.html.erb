@@ -47,6 +47,7 @@
                       <ul class="sub">
                           <li><%= link_to 'Novo evento', new_event_path %></li>
                           <li><%= link_to 'Meus eventos', coordinators_area_my_events_path %></li>
+                          <li><%= link_to 'eventos terminados', coordinators_area_finished_events_path %></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -68,13 +69,15 @@
                           <li><%= link_to "Editar", edit_user_registration_path %></li>
                       </ul>
                   </li>
-                <li class="sub-menu">
+                  <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class=" fa fa-youtube-play"></i>
-                          <span>Turmas</span>
+                          <i class="fa fa-mortar-board"></i>
+                          <span>Gerenciar Disciplinas</span>
                       </a>
                       <ul class="sub">
-                          <li><%= link_to "Ver turmas", search_classrooms_path %></li>
+                          <li><%= link_to 'Disciplinas', subjects_path %></li>
+                          <li><%= link_to 'Turmas', classrooms_path %></li>
+                          <li><%= link_to "Buscar turma", search_classrooms_path %></li>
                       </ul>
                   </li>
 

@@ -2,11 +2,45 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
   autocomplete :subject, :nome, :full => true
 
+  def setup_teacher_search
+    @institutions = []
+    @courses = []
+    @centers = []
+    @campus = []
+    @institution = Institution.find(current_user.institution_id)
+    @course = Course.find(current_user.course_id)
+    @center = @course.center
+    @campu = @center.campu
+    @classrooms = current_user.classrooms
+    @institutions << @institution
+    @courses << @course
+    @centers << @center
+    @campus << @campu
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
+
+  end
   # GET /subjects
   # GET /subjects.json
   def index
     @subjects = Subject.all
-    @courses = Course.all
+    if current_user.type == 'Administrator'
+      @courses = Course.all
+    elsif current_user.type == 'Principal'
+      @subjects = current_user.search_subjects
+    elsif current_user.type == 'Coordinator'
+      setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
+    end
+
   end
 
   def search
@@ -23,10 +57,16 @@ class SubjectsController < ApplicationController
   def new
     @subject = Subject.new
     @course = Course.all
+    if current_user.type == 'Principal'
+      @courses = current_user.courses
+    end
   end
 
   # GET /subjects/1/edit
   def edit
+    if current_user.type == 'Principal'
+      current_user.setup_search
+    end
   end
 
   # POST /subjects

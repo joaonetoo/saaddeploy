@@ -96,6 +96,79 @@ class EventsController < ApplicationController
 
   end
 
+  def certificate_project
+    @event = Event.find(params[:event])
+        @projects = Project.find(params[:projects])
+        @project = @projects.first
+        @projects.shift
+      respond_to do |format|
+      format.pdf {
+          img = "#{Rails.root}/public/background_certificado.jpg"
+          #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
+          Prawn::Document.generate("background.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          pdf.font("Helvetica", :style => :bold)
+          pdf.move_down 250
+          pdf.text "Declaro para os devidos fins que #{@project.autor.capitalize} apresentaram o trabalho intitulado #{@project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 150
+          pdf.move_down 10
+          pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 10
+          pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
+          @projects.each do |project|
+            pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape, :background => img)
+            pdf.move_down 250
+            pdf.text "Declaro para os devidos fins que #{@project.autor.capitalize} apresentaram o trabalho intitulado #{@project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+            pdf.move_down 150
+            pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
+            pdf.move_down 10
+            pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
+          end
+
+
+          send_data pdf.render, filename: 'certificado.pdf', type: 'application/pdf', disposition: "inline"
+        end
+      }
+    end
+  end
+
+  def certificate_event
+        @event = Event.find(params[:event])
+        @matriculations = Matriculation.find(params[:matriculations])
+        @matriculation = @matriculations.first
+        @matriculations.shift
+      respond_to do |format|
+      format.pdf {
+          img = "#{Rails.root}/public/background_certificado.jpg"
+          #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
+          Prawn::Document.generate("background.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          pdf.font("Helvetica", :style => :bold)
+          pdf.move_down 250
+          pdf.text "Declaro para os devidos fins que #{@matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 150
+          pdf.move_down 10
+          pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
+          pdf.move_down 10
+          pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
+          @matriculations.each do |matriculation|
+            pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape, :background => img)
+            pdf.move_down 250
+            pdf.text "Declaro para os devidos fins que #{matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+            pdf.move_down 150
+            pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
+            pdf.move_down 10
+            pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
+          end
+
+
+          send_data pdf.render, filename: 'certificado.pdf', type: 'application/pdf', disposition: "inline"
+        end
+      }
+    end
+
+  end
+
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
@@ -134,6 +207,6 @@ class EventsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nome, :informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local)
+      params.require(:event).permit(:nome, :ch,:informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local, :image)
     end
 end

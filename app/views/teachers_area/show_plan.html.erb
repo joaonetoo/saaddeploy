@@ -158,12 +158,12 @@
                       <div role="tabpanel" class="tab-pane active" id="objetivos">
                         <% @plano.objectives.each do |objective|%>
                         <h2>&nbsp;<i class="fa fa-angle-right"></i><%= objective.text %></h2>
-                        <h4>&nbsp;&nbsp;Limite máximo: <%= objective.data %></h4>
+                        <h4>&nbsp;&nbsp;Limite máximo: <%= objective.data.strftime("%-d/%-m/%y") %></h4>
 
                         <h3>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Estratégia ao objetivo</h3>
                         <% objective.strategies.each do |answer|%>
                         <h4>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i><%= answer.text %></h4>
-                        <h5>&nbsp; &nbsp; &nbsp; &nbsp;Limite definido: <%= answer.deadline %></h5>
+                        <h5>&nbsp; &nbsp; &nbsp; &nbsp;Limite definido: <%= answer.deadline.strftime("%-d/%-m/%y") %></h5>
 
 
                             <% end %>

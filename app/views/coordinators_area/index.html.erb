@@ -10,6 +10,24 @@
 </p><p>Alguns recursos do SAAD envolvem a auto percepção sobre a carreira, elaboração de planos de carreira e currículo, avaliação dos estilos de aprendizagem, plataforma de casos para ensino, canal de vídeos, além do planejamento de atividades de apoio à aprendizagem, pelo professor, como por exemplo questionários de avaliação, gestão de atividades complementares, entre outros.
 </p><p>Esse conjunto de informações possibilitará acompanhar todo o desenvolvimento do aluno ao longo do curso e também auxiliará os docentes na análise do perfil dos alunos e no planejamento de ações de ensino a partir de perspectivas experienciais de aprendizagem centradas no estudante.
 </p><p>O desenvolvimento do SAAD é uma ação de um projeto de pesquisa que recebeu apoio financeiro do Conselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq, como também do Instituto Brasileiro de Estudos e Pesquisas Sociais – IBEPES.
+    <p>
+    <strong>Aprovações pendentes</strong>
+</p>
+
+<%if @pendings_students.size >= 1 %>
+    <strong>Estudantes</strong>
+    <% @pendings_students.each do |pending| %>
+        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', coordinators_area_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+    <% end %>
+<% end %>
+
+<%if @pendings_teachers.size >= 1 %>
+    <strong>Professores</strong>
+    <% @pendings_teachers.each do |pending| %>
+        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', coordinators_area_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+    <% end %>
+<% end %>
+
     </div>
   </div>
   <!-- *********************************************************************************** -->

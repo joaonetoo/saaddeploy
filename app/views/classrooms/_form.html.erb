@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <%if current_user.type == 'Administrator'%>
   <div class="field">
     <%= f.label :Disciplina %><br>
      <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id'%>
@@ -18,7 +18,10 @@
   <div class="field">
     <%= f.hidden_field :subject_id %>
   </div>
-
+  <% elsif current_user.type != 'Administrator' %>
+      <%= f.label :Disciplina%>
+      <%= f.collection_select(:subject_id, @subjects, :id, :nome)%>
+  <% end %>
   <div class="field">
     <%= f.label :turno %><br>
     <%= f.text_field :turno %>

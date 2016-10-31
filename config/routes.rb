@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :atividade_extras
   get 'principals_area/index'
 
+  get 'principals_area/aprove'
+
   get 'principals_area/create_video'
 
   get 'principals_area/list'
@@ -60,12 +62,18 @@ Rails.application.routes.draw do
         get 'public_events'
         get 'public_show'
         get 'pdf_event'
+        get 'certificate_event'
+        post 'certificate_event'
+        get 'certificate_project'
+        post 'certificate_project'
         get 'approve_project'
     end
   end
   get 'coordinators_area/index'
 
   post 'coordinators_area/create_video'
+
+  get 'coordinators_area/aprove'
 
   post 'coordinators_area/list'
 
@@ -78,6 +86,10 @@ Rails.application.routes.draw do
   get 'coordinators_area/videos_index'
 
   get 'coordinators_area/my_events'
+
+  get 'coordinators_area/finished_events'
+
+  get 'coordinators_area/show_finished_event'
 
   get 'coordinators_area/search_anchors'
 
