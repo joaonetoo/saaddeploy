@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :quizzes
   has_and_belongs_to_many :learning_quizzes
   has_and_belongs_to_many :study_cases
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/semfoto.png"
+  has_attached_file :avatar, styles: { thumb: "100x100>" }, default_url: "/images/:style/semfoto.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validate :image_dimensions
   has_many :results
   has_many :learning_results
   has_many :sent_notes, :class_name => 'Note', :foreign_key => 'sender_id'
@@ -38,5 +39,14 @@ def active_for_authentication?
     end
   end
 
+private
+  def image_dimensions
+    required_width  = 100
+    required_height = 100
+    dimensions = Paperclip::Geometry.from_file(avatar.queued_for_write[:original].path)
+
+    errors.add(:image, "largura deve ser 100 px") unless dimensions.width == required_width
+    errors.add(:image, "altura deve ser 100 px") unless dimensions.height == required_height
+  end
 
 end
