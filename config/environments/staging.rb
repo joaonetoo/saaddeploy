@@ -71,7 +71,7 @@ Rails.application.configure do
 config.action_mailer.delivery_method = :smtp
 # SMTP settings for gmail
 config.action_mailer.smtp_settings = {
-   :user_name => 'deploysaad',
+  :user_name => 'deploysaad',
   :password => 'Urb4nssaad',
   :domain => 'urbanssaad.com',
   :address => 'smtp.sendgrid.net',
@@ -84,6 +84,10 @@ config.action_mailer.smtp_settings = {
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  config.middleware.insert_before(::Rack::Runtime, "::Rack::Auth::Basic", "Staging") do |u, p|
+    u == ENV["STAGING_USERNAME"] && p == ENV["STAGING_PASSWORD"]
+  end
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
