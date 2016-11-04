@@ -12,7 +12,7 @@ role :web, %w{deploy@138.68.18.111}, other_property: :other_value
 role :db,  %w{deploy@138.68.18.111}
 set :branch, "master"
 set :rails_env, "production"
-set :deploy_to, "/var/www/saad-v3-prod"
+set :deploy_to, "/var/saad-v3-prod"
 
 # role-based syntax
 # ==================
