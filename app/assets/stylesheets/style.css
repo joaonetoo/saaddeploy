@@ -1959,6 +1959,9 @@ label {
 	margin-bottom: 15px;
 }
 
+#new_user {
+    width: 860px!important;
+}
 
 /*LOCK SCREEN CONF*/
 #showtime {

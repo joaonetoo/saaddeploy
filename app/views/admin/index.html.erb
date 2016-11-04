@@ -1,47 +1,17 @@
-<h1>Area Administrador SAAD</h1>
-
-<p>
-<%= link_to 'Gerenciar Administradores', administrators_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Diretores', principals_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Coordenadores', coordinators_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Professores', teachers_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Alunos', students_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Instituições', institutions_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Cursos', courses_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Disciplinas', subjects_path %>
-</p>
-
-<p>
-<%= link_to 'Gerenciar Turmas', classrooms_path %>
-</p>
-
-<p>
-    <strong>Aprovações pendentes</strong>
-</p>
-
-<%if @pendings.size >= 1 %>
-    <% @pendings.each do |pending| %>
-        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', admin_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
-    <% end %>
-<% end %>
+<h2><i class="fa fa-angle-right"></i>Administrador SAAD</h2>
+<p>Aprovações pendentes</p>
+<div class="row mt">
+    <div class="col-lg-12">
+      <div class="content-panel">
+            <div class="row mt">
+            	<div class="col-lg-12">
+					<%if @pendings.size >= 1 %>
+					    <% @pendings.each do |pending| %>
+					        <p><%= image_tag pending.avatar.url(:thumb) %> <%= pending.nome %> <%= pending.type %> <%= link_to 'Aceitar', admin_aprove_path(pending: pending), data: { confirm: 'Deseja Aceitar ?' } %></p>
+					    <% end %>
+					<% end %>
+            	</div>
+            </div>
+       </div>
+     </div>
+</div>
