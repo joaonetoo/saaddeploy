@@ -268,7 +268,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   cancancan (~> 1.10)
-  capistrano
+  capistrano (~> 3.0)
   capistrano-passenger
   capistrano-rails
   coffee-rails (~> 4.1.0)

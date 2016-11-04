@@ -62,7 +62,7 @@ end
 gem 'rails_12factor', group: :production
 gem 'puma'
 
-gem 'capistrano'
+gem 'capistrano', '~> 3.0'
 
 gem 'rvm-capistrano'
 
