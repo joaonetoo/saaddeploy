@@ -1,0 +1,1 @@
+(function(){jQuery(function(){return $("#classroom_subject_id").autocomplete({source:$("#classroom_subject_id").data("autocomplete-source")})})}).call(this);
