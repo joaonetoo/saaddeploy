@@ -3,8 +3,6 @@ lock '3.6.1'
 
 set :application, 'saad-v3'
 set :repo_url, 'JulianSansat@bitbucket.org/urbanssaad/saad-v3.git'
-set :git_https_username, 'JulianSansat'
-set :git_https_password, 'Emin3m@ifrn'
 set :user, "deploy"
 set :stages, %w(production staging)
 # Default branch is :master
