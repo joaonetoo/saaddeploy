@@ -1,9 +1,9 @@
 # Change these
-server '138.68.18.111', port: 22, roles: [:web, :app, :db], primary: true
+server '138.68.18.111', port: 22, roles: [:web], primary: true
 
-set :repo_url,        'git@bitbucket.org:urbanssaad/saad-v3.git'
-set :application,     'saad-v3'
-set :user,            'deploy'
+set :repo_url, 'git@bitbucket.org:urbanssaad/saad-v3.git'
+set :application, 'saad-v3'
+set :user, 'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
