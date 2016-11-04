@@ -5,6 +5,10 @@ set :application, 'saad-v3'
 set :repo_url, 'https://github.com/JulianSansat/saaddeploy.git'
 set :user, "deploy"
 set :stages, %w(production staging)
+
+set :default_env, {
+      'PATH' => "/opt/ruby-enterprise/bin/:$PATH"
+    }
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
