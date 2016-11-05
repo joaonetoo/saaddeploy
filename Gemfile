@@ -24,6 +24,8 @@ gem 'therubyracer'
 
 gem 'rails-i18n'
 
+gem 'unicorn'
+
 gem 'font-awesome-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

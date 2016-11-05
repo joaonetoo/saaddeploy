@@ -1,0 +1,19 @@
+I, [2016-11-05T21:10:50.424942 #26604]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-05T21:10:55.172031 #26604]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-11-05T21:10:55.172340 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T21:10:55.175759 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T21:10:55.177277 #26607]  INFO -- : worker=0 spawned pid=26607
+I, [2016-11-05T21:10:55.177637 #26607]  INFO -- : worker=0 ready
+I, [2016-11-05T21:10:55.180259 #26604]  INFO -- : master process ready
+I, [2016-11-05T21:10:55.188758 #26610]  INFO -- : worker=1 spawned pid=26610
+I, [2016-11-05T21:10:55.189020 #26610]  INFO -- : worker=1 ready
+E, [2016-11-05T21:16:43.077844 #26604] ERROR -- : reaped #<Process::Status: pid 26610 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T21:16:43.083636 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T21:16:43.101502 #26734]  INFO -- : worker=1 spawned pid=26734
+I, [2016-11-05T21:16:43.101940 #26734]  INFO -- : worker=1 ready
