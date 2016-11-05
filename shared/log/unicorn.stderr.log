@@ -25,3 +25,7 @@ E, [2016-11-05T21:39:15.228422 #26604] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-11-05T21:39:15.233520 #26604]  INFO -- : worker=1 spawning...
 I, [2016-11-05T21:39:15.249963 #27105]  INFO -- : worker=1 spawned pid=27105
 I, [2016-11-05T21:39:15.250514 #27105]  INFO -- : worker=1 ready
+E, [2016-11-05T21:48:33.530231 #26604] ERROR -- : reaped #<Process::Status: pid 26607 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T21:48:33.535927 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T21:48:33.544922 #27406]  INFO -- : worker=0 spawned pid=27406
+I, [2016-11-05T21:48:33.545353 #27406]  INFO -- : worker=0 ready

@@ -626,3 +626,47 @@ Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:43:12 +000
 Started GET "/" for 59.127.153.136 at 2016-11-05 21:44:22 +0000
 Processing by WelcomeController#index as HTML
 Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/" for 177.89.28.132 at 2016-11-05 21:49:11 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:49:11 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.5ms)
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 931ms (Views: 832.6ms | ActiveRecord: 6.9ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:49:13 +0000
+Started GET "/users/sign_up" for 177.89.28.132 at 2016-11-05 21:49:15 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mInstitution Load (2.5ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.5ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.5ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 63ms (Views: 54.1ms | ActiveRecord: 6.8ms)
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:49:43 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6gsqOJAfYTiSdn4np/Nk/xIpdp2YD3UL13abipCAanHm+EiBb7VOTLusbjNNQaKWt2mmZwLGKvEzNX/lO/xrWg==", "user"=>{"nome"=>"admin", "telefone"=>"8491013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Teacher", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered layouts/_messages.html.erb (0.3ms)
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.3ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.3ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 305ms (Views: 59.0ms | ActiveRecord: 2.3ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:49:44 +0000
