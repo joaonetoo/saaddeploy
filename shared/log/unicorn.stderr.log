@@ -17,3 +17,11 @@ E, [2016-11-05T21:16:43.077844 #26604] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-11-05T21:16:43.083636 #26604]  INFO -- : worker=1 spawning...
 I, [2016-11-05T21:16:43.101502 #26734]  INFO -- : worker=1 spawned pid=26734
 I, [2016-11-05T21:16:43.101940 #26734]  INFO -- : worker=1 ready
+E, [2016-11-05T21:20:40.586258 #26604] ERROR -- : reaped #<Process::Status: pid 26734 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T21:20:40.592831 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T21:20:40.609817 #26819]  INFO -- : worker=1 spawned pid=26819
+I, [2016-11-05T21:20:40.610322 #26819]  INFO -- : worker=1 ready
+E, [2016-11-05T21:39:15.228422 #26604] ERROR -- : reaped #<Process::Status: pid 26819 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T21:39:15.233520 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T21:39:15.249963 #27105]  INFO -- : worker=1 spawned pid=27105
+I, [2016-11-05T21:39:15.250514 #27105]  INFO -- : worker=1 ready

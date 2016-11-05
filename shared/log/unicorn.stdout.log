@@ -99,3 +99,530 @@ Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0
   Rendered users/registrations/new.html.erb within layouts/application (26.1ms)
 Completed 200 OK in 315ms (Views: 36.2ms | ActiveRecord: 2.6ms)
 Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:19:34 +0000
+Started GET "/users" for 177.89.28.132 at 2016-11-05 21:29:30 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/" for 177.89.28.132 at 2016-11-05 21:29:35 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:29:35 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 36ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:29:36 +0000
+Started GET "/users/sign_up" for 177.89.28.132 at 2016-11-05 21:29:39 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (1.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 1.7ms)
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:32:20 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gJK6lK9/JMfo8+5KK/aVV2XiI5uEIT0/dWlOhk2TYWQsJgKB1yh97AaJ90EpZOB/YDCDXVMPm3CqmpSG54um2A==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Teacher", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac3459138 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26819-1vp0ky5.png>, @original_filename="profile100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile100.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-15i5ezs.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1xk9r1v.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1xk9r1v.png[0]'
+Command :: convert '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1xk9r1v.png[0]' -auto-orient -resize "100x100>" '/tmp/1683b6872660472cdc672eda6a7d09c120161105-26819-1j3nsya'
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-18fd2vo.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1xk9r1v.png[0]' 2>/dev/null
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  Rendered layouts/_messages.html.erb (1.0ms)
+  [1m[36mInstitution Load (5.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.6ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.5ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (540.9ms)
+Completed 200 OK in 1028ms (Views: 549.1ms | ActiveRecord: 22.1ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:32:22 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:32:36 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifYhIAu5/OZjY4iwvaPwN9zJ9DLBsHiCjCUw4WiOon4lQpk1c+6lzY0Zkbu/MYUf2RtU9Bae3s1T1urhwpZlwg==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Student", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[36mInstitution Load (1.3ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.4ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.3ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 330ms (Views: 55.7ms | ActiveRecord: 3.4ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:32:38 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:32:50 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pgjp68SwcaMEXb20YbBE0du6yuRVlh0MG0kKzqV/g2MKvFH+vOcoiOonpL9jIjH53mhqIoK4u0PEutDOD2dE3w==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Student", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac6da76b0 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26819-14kx2m0.png>, @original_filename="profile100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile100.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1j2451l.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1sloez6.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1sloez6.png[0]'
+Command :: convert '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1sloez6.png[0]' -auto-orient -resize "100x100>" '/tmp/de1defacd4363923f70f98e6a83cc64d20161105-26819-1isfof5'
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-185un1p.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26819-1sloez6.png[0]' 2>/dev/null
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered layouts/_messages.html.erb (0.1ms)
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.3ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.3ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 355ms (Views: 50.3ms | ActiveRecord: 2.2ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:32:51 +0000
+Started GET "/" for 177.89.28.132 at 2016-11-05 21:32:58 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:32:58 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:32:59 +0000
+Started POST "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:33:08 +0000
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UjWs8jj+uz3KrBuAKZki+cvKgFqGpEpAtpAwwCgFMhj+gRTnQKniFiTWAosrC1fRzhggnFGK7A9pY+rAgh31pA==", "user"=>{"email"=>"admin@saad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "email"=>""}
+  [1m[36mUser Load (6.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "admin@saad.com"]]
+Completed 401 Unauthorized in 80ms (ActiveRecord: 9.1ms)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UjWs8jj+uz3KrBuAKZki+cvKgFqGpEpAtpAwwCgFMhj+gRTnQKniFiTWAosrC1fRzhggnFGK7A9pY+rAgh31pA==", "user"=>{"email"=>"admin@saad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "email"=>""}
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 214ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:33:09 +0000
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:34:45 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 42ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a5b33844c9755aa84ee3d64a35d9f81fb20055304f0d90f3d0d137408c6dd206.css" for 177.89.28.132 at 2016-11-05 21:34:45 +0000
+Started GET "/assets/application-809957254289b3bf09c0daa6f65d88bdc88527823877538315c192d7fa86c577.js" for 177.89.28.132 at 2016-11-05 21:34:46 +0000
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:34:48 +0000
+Started GET "/users/sign_up" for 177.89.28.132 at 2016-11-05 21:34:51 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (3.3ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.4ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.5ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/registrations/new.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 64ms (Views: 57.6ms | ActiveRecord: 4.3ms)
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:35:55 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TBmJSTh/KIFpC2WE0bBSgYBJsyU4/kKVIsb7xpWtrMann71/cZggbIcSy4eYzQ3Go95ZAXOiWRe4hQ4hKwfbdA==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Teacher", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac6da3ec0 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26607-jw865p.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-yuv8v8.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-1i884x5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-1i884x5.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-1i884x5.jpg[0]' -auto-orient -resize "100x100>" '/tmp/263d9ac255adf24ad8afb781e0ffda7120161105-26607-1q9fev5'
+  [1m[35m (2.8ms)[0m  BEGIN
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-yyxzth.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-1i884x5.jpg[0]' 2>/dev/null
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (5.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.4ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 542ms (Views: 123.9ms | ActiveRecord: 9.9ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:35:56 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:36:10 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HlUPjM6AcIkSGjDE2V1PG5d6P9Vy7OO4Tid69DQgavf10zu6h2d4ZPwDnseQIBBctO3V8Tmw+DrUZI8TioodRQ==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Student", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac6ed8cc8 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26607-6cy20o.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-oalqjy.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-d2oshc.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-d2oshc.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-d2oshc.jpg[0]' -auto-orient -resize "100x100>" '/tmp/955315059146ae3b9c91ce11ff6203a720161105-26607-zw71rt'
+  [1m[35m (1.8ms)[0m  BEGIN
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-aaoj1o.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161105-26607-d2oshc.jpg[0]' 2>/dev/null
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (3.5ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.4ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 408ms (Views: 54.8ms | ActiveRecord: 6.5ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:36:11 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:36:31 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Z6zNITCUo5vcrzObHszrYerIhk6vSRuSplZkmFxe7M6GIcCzSVaY4FrEs0lBmzqpDzIPXHhP+zQ2qx139sMAQ==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Student", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac630bdf0 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26607-f7j7uy.png>, @original_filename="profile100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile100.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-mzgct3.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-1nunc23.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-1nunc23.png[0]'
+Command :: convert '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-1nunc23.png[0]' -auto-orient -resize "100x100>" '/tmp/86427691f1687733e76ad82f5a1770e120161105-26607-1vaee3l'
+  [1m[35m (0.8ms)[0m  BEGIN
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-od0omj.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-1nunc23.png[0]' 2>/dev/null
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (2.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.4ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/registrations/new.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 343ms (Views: 56.3ms | ActiveRecord: 4.2ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:36:32 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:37:30 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"htIn3TyNQA2SFYagcTYc/vGNsWc/iRtT3LgUKxGJyCptVBPrdWpI4HwMKKM4S0O50hpbQ3TVANFG++HMryO/mA==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"lorem ipslum", "type"=>"Student", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.3ms)
+  [1m[35mInstitution Load (1.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.4ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 288ms (Views: 67.0ms | ActiveRecord: 4.2ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:37:31 +0000
+Started GET "/users" for 177.89.28.132 at 2016-11-05 21:39:28 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:519:in `maintain_worker_count'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:283:in `join'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/" for 177.89.28.132 at 2016-11-05 21:39:32 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:39:32 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.4ms)
+  Rendered users/shared/_links.html.erb (0.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 1049ms (Views: 926.5ms | ActiveRecord: 7.9ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:39:34 +0000
+Started GET "/users/sign_up" for 177.89.28.132 at 2016-11-05 21:39:37 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered layouts/_messages.html.erb (0.9ms)
+  [1m[36mInstitution Load (2.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.9ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.6ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 93ms (Views: 78.4ms | ActiveRecord: 10.8ms)
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:40:22 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Dlp5Kyw1JV6NxDtsdDI1M66itvqsljIJbi3s+hDjQn1+JsIJB1fSgl6Fp5FldEmifnbFoB2B53h8A1wiU9F6w==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Teacher", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac2c97170 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26607-62uduq.png>, @original_filename="profile100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile100.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-yyz0j0.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-m8dmef.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-m8dmef.png[0]'
+Command :: convert '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-m8dmef.png[0]' -auto-orient -resize "100x100>" '/tmp/b1b58a580fdb97843627c7b69c77a33c20161105-26607-1s5fj90'
+  [1m[35m (2.0ms)[0m  BEGIN
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-1peenmr.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-m8dmef.png[0]' 2>/dev/null
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.3ms)
+  [1m[35mInstitution Load (2.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.4ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 389ms (Views: 72.6ms | ActiveRecord: 6.2ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:40:23 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:40:38 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/PAsEW9wLwgEMJ7aToLghVF4Ra1j0Au0GADUTBl2ZLjxMd79592k13d9mKm6x/l3FjsUYAkUVOHcSG6PeHqsWg==", "user"=>{"nome"=>"admin", "telefone"=>"84991013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Student", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 308ms (Views: 86.8ms | ActiveRecord: 2.2ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:40:39 +0000
+Started GET "/users" for 177.89.28.132 at 2016-11-05 21:41:25 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:519:in `maintain_worker_count'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:283:in `join'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/" for 177.89.28.132 at 2016-11-05 21:41:29 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 177.89.28.132 at 2016-11-05 21:41:29 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+Started GET "/assets/application-a5b33844c9755aa84ee3d64a35d9f81fb20055304f0d90f3d0d137408c6dd206.css" for 177.89.28.132 at 2016-11-05 21:41:29 +0000
+Started GET "/assets/application-809957254289b3bf09c0daa6f65d88bdc88527823877538315c192d7fa86c577.js" for 177.89.28.132 at 2016-11-05 21:41:29 +0000
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:41:31 +0000
+Started GET "/users/sign_up" for 177.89.28.132 at 2016-11-05 21:41:32 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[35mInstitution Load (0.9ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.5ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 1.9ms)
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:42:47 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JqoOdF1e9YC0HE0f18268nPNcqaMLOPXUAi+NN9BkM0qWWzNovTa9J3GXQs9f3yb1o2iXBblvC20S1pbdD2R5g==", "user"=>{"nome"=>"admin", "telefone"=>"8491013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Teacher", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[35mInstitution Load (1.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 291ms (Views: 74.3ms | ActiveRecord: 2.9ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:42:48 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:43:00 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QZXywP91lraDd2V9Mm/wH/5uw7XBkWunCMnGKE1XWGZNZpB5AN+5wqqtdWnY3TZ2Wy4TT1tYNF3siiJH5itZTQ==", "user"=>{"nome"=>"admin", "telefone"=>"8491013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Student", "matricula"=>"20141014040304", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0055aac623a688 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-26607-x674g6.png>, @original_filename="profile100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"profile100.png\"\r\nContent-Type: image/png\r\n">, "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-lpaf34.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-141awog.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-141awog.png[0]'
+Command :: convert '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-141awog.png[0]' -auto-orient -resize "100x100>" '/tmp/786d96993b7c531b22dbcee4765b1e1c20161105-26607-1yh18n8'
+  [1m[35m (0.4ms)[0m  BEGIN
+Command :: file -b --mime '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-11e59zj.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/15389746251a4883a0cd7c1b1e9740a720161105-26607-141awog.png[0]' 2>/dev/null
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  [1m[35mInstitution Load (0.6ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCampu Load (0.3ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC[0m
+  Rendered users/shared/_links.html.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 337ms (Views: 53.5ms | ActiveRecord: 1.9ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:43:01 +0000
+Started POST "/users" for 177.89.28.132 at 2016-11-05 21:43:11 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kl7uP9NK6UfeRcabu9T9mITiCe3y16Skou199pBGpJyerYyGLODGM/ef1o9RZjvxIaLZF2ge+15GrpmZOzqltw==", "user"=>{"nome"=>"admin", "telefone"=>"8491013334", "endereco"=>"rua de ponta negra", "lattes"=>"lattes", "biografia"=>"bio", "type"=>"Student", "matricula"=>"20141014040304", "institution_id"=>"", "course_id"=>"", "email"=>"admin@saad.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "campu_id"=>"", "center_id"=>"", "commit"=>"Log in", "email"=>""}
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered layouts/_messages.html.erb (0.2ms)
+  [1m[36mInstitution Load (1.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCampu Load (0.3ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCenter Load (0.3ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "institutions".* FROM "institutions"  ORDER BY "institutions"."nome" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "campus".* FROM "campus"  ORDER BY "campus"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "centers".* FROM "centers"  ORDER BY "centers"."name" ASC
+  Rendered users/shared/_links.html.erb (0.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 308ms (Views: 47.1ms | ActiveRecord: 2.4ms)
+Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-11-05 21:43:12 +0000
+Started GET "/" for 59.127.153.136 at 2016-11-05 21:44:22 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
