@@ -20,6 +20,8 @@ gem 'turbolinks'
 
 gem 'jquery-turbolinks'
 
+gem 'therubyracer'
+
 gem 'rails-i18n'
 
 gem 'font-awesome-rails'

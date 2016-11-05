@@ -27,8 +27,8 @@ development:
   <<: *default
   database: saad_v3_development
   host: localhost
-  username: postgres
-  password: postgres
+  username: pguser
+  password: pguser
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,8 +64,8 @@ test:
   <<: *default
   database: saad_v3_test
   host: localhost
-  username: postgres
-  password: postgres
+  username: pguser
+  password: pguser
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,11 +89,11 @@ test:
 staging:
   <<: *default
   database: saad-v3
-  username: deploy
+  username: pguser
   password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
   database: saad
-  username: deploy
+  username: pguser
   password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
