@@ -33,3 +33,156 @@ E, [2016-11-05T21:53:10.706477 #26604] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-11-05T21:53:10.713991 #26604]  INFO -- : worker=1 spawning...
 I, [2016-11-05T21:53:10.736897 #27485]  INFO -- : worker=1 spawned pid=27485
 I, [2016-11-05T21:53:10.737372 #27485]  INFO -- : worker=1 ready
+E, [2016-11-05T22:13:25.283720 #26604] ERROR -- : reaped #<Process::Status: pid 27406 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T22:13:25.289156 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:13:25.311484 #28180]  INFO -- : worker=0 spawned pid=28180
+I, [2016-11-05T22:13:25.311895 #28180]  INFO -- : worker=0 ready
+I, [2016-11-05T22:17:53.478631 #28275]  INFO -- : executing ["/home/deploy/.rbenv/versions/2.3.1/bin/unicorn", "-c", "config/unicorn.rb", "-E", "production", "-D", {12=>#<Kgio::UNIXServer:/home/deploy/saaddeploy/shared/sockets/unicorn.sock>}] (in /home/deploy/saaddeploy)
+I, [2016-11-05T22:17:53.479071 #28275]  INFO -- : forked child re-executing...
+I, [2016-11-05T22:17:54.070831 #28275]  INFO -- : inherited addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-11-05T22:17:54.071186 #28275]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-05T22:17:58.672810 #28275]  INFO -- : worker=0 spawning...
+E, [2016-11-05T22:17:58.749687 #28275] ERROR -- : Cannot allocate memory - fork(2) (Errno::ENOMEM)
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:503:in `fork'
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:503:in `spawn_missing_workers'
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:132:in `start'
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+/home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+/home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<main>'
+E, [2016-11-05T22:17:58.763516 #26604] ERROR -- : reaped #<Process::Status: pid 28275 exit 1> exec()-ed
+E, [2016-11-05T22:22:44.722849 #26604] ERROR -- : master loop error: Cannot allocate memory - fork(2) (Errno::ENOMEM)
+E, [2016-11-05T22:22:44.724257 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:432:in `fork'
+E, [2016-11-05T22:22:44.724318 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:432:in `reexec'
+E, [2016-11-05T22:22:44.724345 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:296:in `join'
+E, [2016-11-05T22:22:44.724363 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+E, [2016-11-05T22:22:44.724379 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+E, [2016-11-05T22:22:44.724395 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+E, [2016-11-05T22:22:44.724413 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli/exec.rb:74:in `load'
+E, [2016-11-05T22:22:44.724428 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli/exec.rb:74:in `kernel_load'
+E, [2016-11-05T22:22:44.724444 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli/exec.rb:27:in `run'
+E, [2016-11-05T22:22:44.724460 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli.rb:332:in `exec'
+E, [2016-11-05T22:22:44.724477 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+E, [2016-11-05T22:22:44.724495 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2016-11-05T22:22:44.724512 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+E, [2016-11-05T22:22:44.724531 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli.rb:20:in `dispatch'
+E, [2016-11-05T22:22:44.724549 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+E, [2016-11-05T22:22:44.724568 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/cli.rb:11:in `start'
+E, [2016-11-05T22:22:44.724611 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/exe/bundle:34:in `block in <top (required)>'
+E, [2016-11-05T22:22:44.724637 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+E, [2016-11-05T22:22:44.724657 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bundler-1.13.6/exe/bundle:26:in `<top (required)>'
+E, [2016-11-05T22:22:44.724676 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+E, [2016-11-05T22:22:44.724692 #26604] ERROR -- : /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+E, [2016-11-05T22:23:07.131227 #26604] ERROR -- : reaped #<Process::Status: pid 27485 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T22:23:07.126150 #28450]  INFO -- : Refreshing Gem list
+I, [2016-11-05T22:23:07.135599 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T22:23:07.150339 #28454]  INFO -- : worker=1 spawned pid=28454
+I, [2016-11-05T22:23:07.150789 #28454]  INFO -- : worker=1 ready
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+E, [2016-11-05T22:23:11.551739 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:11.553882 #28450] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2016-11-05T22:23:11.709975 #26604] ERROR -- : reaped #<Process::Status: pid 28180 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T22:23:11.714970 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:23:11.734226 #28457]  INFO -- : worker=0 spawned pid=28457
+I, [2016-11-05T22:23:11.734595 #28457]  INFO -- : worker=0 ready
+E, [2016-11-05T22:23:12.055293 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:12.056131 #28450] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2016-11-05T22:23:12.556505 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:12.556613 #28450] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2016-11-05T22:23:13.057005 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:13.057118 #28450] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2016-11-05T22:23:13.557478 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:13.557596 #28450] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2016-11-05T22:23:14.057952 #28450] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+Errno::EADDRINUSE: Address already in use - connect(2) for /home/deploy/saaddeploy/shared/sockets/unicorn.sock
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `initialize'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `new'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `bind_listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:231:in `listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `block in bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:130:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-05T22:23:54.043660 #28565]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+E, [2016-11-05T22:23:58.336358 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:58.338116 #28565] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2016-11-05T22:23:58.838726 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:58.838837 #28565] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2016-11-05T22:23:59.339693 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:59.339803 #28565] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2016-11-05T22:23:59.840475 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:23:59.840584 #28565] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2016-11-05T22:24:00.341213 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-11-05T22:24:00.341349 #28565] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2016-11-05T22:24:00.841949 #28565] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+Errno::EADDRINUSE: Address already in use - connect(2) for /home/deploy/saaddeploy/shared/sockets/unicorn.sock
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `initialize'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `new'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `bind_listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:231:in `listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `block in bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:130:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+E, [2016-11-05T22:29:41.100698 #26604] ERROR -- : reaped #<Process::Status: pid 28457 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T22:29:41.108007 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:29:41.122964 #28672]  INFO -- : worker=0 spawned pid=28672
+I, [2016-11-05T22:29:41.123462 #28672]  INFO -- : worker=0 ready
+E, [2016-11-05T22:29:46.380742 #26604] ERROR -- : reaped #<Process::Status: pid 28454 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T22:29:46.386489 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T22:29:46.394286 #28679]  INFO -- : worker=1 spawned pid=28679
+I, [2016-11-05T22:29:46.394647 #28679]  INFO -- : worker=1 ready
+E, [2016-11-05T22:30:34.435403 #26604] ERROR -- : worker=0 PID:28672 timeout (31s > 30s), killing
+E, [2016-11-05T22:30:34.451899 #26604] ERROR -- : reaped #<Process::Status: pid 28672 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T22:30:34.456083 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:30:34.459420 #28691]  INFO -- : worker=0 spawned pid=28691
+I, [2016-11-05T22:30:34.459826 #28691]  INFO -- : worker=0 ready
+E, [2016-11-05T22:30:57.839504 #26604] ERROR -- : reaped #<Process::Status: pid 28679 SIGKILL (signal 9)> worker=1
+I, [2016-11-05T22:30:57.847803 #26604]  INFO -- : worker=1 spawning...
+I, [2016-11-05T22:30:57.860480 #28700]  INFO -- : worker=1 spawned pid=28700
+I, [2016-11-05T22:30:57.860977 #28700]  INFO -- : worker=1 ready
+E, [2016-11-05T22:31:39.265647 #26604] ERROR -- : reaped #<Process::Status: pid 28691 SIGKILL (signal 9)> worker=0
+I, [2016-11-05T22:31:39.275126 #26604]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:31:39.288418 #28730]  INFO -- : worker=0 spawned pid=28730
+I, [2016-11-05T22:31:39.289042 #28730]  INFO -- : worker=0 ready
+I, [2016-11-05T22:45:21.319886 #26604]  INFO -- : reaped #<Process::Status: pid 28700 exit 0> worker=1
+I, [2016-11-05T22:45:21.323607 #26604]  INFO -- : reaped #<Process::Status: pid 28730 exit 0> worker=0
+I, [2016-11-05T22:45:21.323983 #26604]  INFO -- : master complete
+I, [2016-11-05T22:54:37.393912 #1729]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-05T22:54:42.160700 #1729]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-11-05T22:54:42.160935 #1729]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-11-05T22:54:42.161104 #1729]  INFO -- : worker=0 spawning...
+I, [2016-11-05T22:54:42.163379 #1729]  INFO -- : worker=1 spawning...
+I, [2016-11-05T22:54:42.164931 #1732]  INFO -- : worker=0 spawned pid=1732
+I, [2016-11-05T22:54:42.167341 #1729]  INFO -- : master process ready
+I, [2016-11-05T22:54:42.165325 #1732]  INFO -- : worker=0 ready
+I, [2016-11-05T22:54:42.175253 #1735]  INFO -- : worker=1 spawned pid=1735
+I, [2016-11-05T22:54:42.175497 #1735]  INFO -- : worker=1 ready
