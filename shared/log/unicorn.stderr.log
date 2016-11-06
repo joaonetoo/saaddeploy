@@ -210,3 +210,69 @@ E, [2016-11-06T21:56:48.882112 #1729] ERROR -- : reaped #<Process::Status: pid 8
 I, [2016-11-06T21:56:48.894126 #1729]  INFO -- : worker=1 spawning...
 I, [2016-11-06T21:56:48.924011 #11259]  INFO -- : worker=1 spawned pid=11259
 I, [2016-11-06T21:56:48.924436 #11259]  INFO -- : worker=1 ready
+I, [2016-11-06T22:03:36.661776 #1729]  INFO -- : reaped #<Process::Status: pid 8927 exit 0> worker=0
+I, [2016-11-06T22:03:36.865661 #1729]  INFO -- : reaped #<Process::Status: pid 11259 exit 0> worker=1
+I, [2016-11-06T22:03:36.865921 #1729]  INFO -- : master complete
+I, [2016-11-06T22:03:40.462588 #11696]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:07:54.725254 #11950]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:08:04.308419 #12089]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:10:22.997373 #12335]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:13:09.841231 #12572]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:16:52.300990 #12731]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T22:17:02.640551 #12869]  INFO -- : Refreshing Gem list
+SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name must be CONSTANT
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'

@@ -1456,3 +1456,10 @@ ActiveRecord::UnknownAttributeError (unknown attribute 'avatar' for Teacher.):
   /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
 
 
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)
