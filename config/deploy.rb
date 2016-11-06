@@ -25,11 +25,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 
 set :rbenv_type, :deploy # or :system, depends on your rbenv setup
-
-
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all # default value
+set :rbenv_ruby, '2.3.1-p247'
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
