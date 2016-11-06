@@ -15,8 +15,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-gem 'capistrano-rbenv', '~> 2.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

@@ -23,9 +23,6 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
-
-set :rbenv_type, :deploy # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.1p112'
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
