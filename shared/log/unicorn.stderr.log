@@ -186,3 +186,7 @@ I, [2016-11-05T22:54:42.167341 #1729]  INFO -- : master process ready
 I, [2016-11-05T22:54:42.165325 #1732]  INFO -- : worker=0 ready
 I, [2016-11-05T22:54:42.175253 #1735]  INFO -- : worker=1 spawned pid=1735
 I, [2016-11-05T22:54:42.175497 #1735]  INFO -- : worker=1 ready
+E, [2016-11-06T17:07:30.054739 #1729] ERROR -- : reaped #<Process::Status: pid 1732 SIGKILL (signal 9)> worker=0
+I, [2016-11-06T17:07:30.072465 #1729]  INFO -- : worker=0 spawning...
+I, [2016-11-06T17:07:30.092296 #7941]  INFO -- : worker=0 spawned pid=7941
+I, [2016-11-06T17:07:30.092817 #7941]  INFO -- : worker=0 ready
