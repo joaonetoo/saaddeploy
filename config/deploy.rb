@@ -25,7 +25,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 
 set :rbenv_type, :deploy # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.1-p247'
+set :rbenv_ruby, '2.3.1-p112'
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
