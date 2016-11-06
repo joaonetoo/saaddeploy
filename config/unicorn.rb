@@ -1,6 +1,6 @@
 #set path to application
-app_dir = File.expand_path("../..", __FILE__)
-shared_dir = "#{app_dir}/shared"
+app_dir = "/home/deploy/saaddeploy"
+shared_dir = "/home/deploy/saaddeploy/shared"
 working_directory app_dir
 
 
