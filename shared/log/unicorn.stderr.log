@@ -276,3 +276,27 @@ SyntaxError: /home/deploy/saaddeploy/config/application.rb:9: class/module name 
   /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
   /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
   /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-11-06T23:02:09.837133 #14433]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-06T23:02:13.405735 #14433]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-11-06T23:02:13.406007 #14433]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-11-06T23:02:13.406160 #14433]  INFO -- : worker=0 spawning...
+I, [2016-11-06T23:02:13.408635 #14433]  INFO -- : worker=1 spawning...
+I, [2016-11-06T23:02:13.409879 #14436]  INFO -- : worker=0 spawned pid=14436
+I, [2016-11-06T23:02:13.410127 #14436]  INFO -- : worker=0 ready
+I, [2016-11-06T23:02:13.412994 #14433]  INFO -- : master process ready
+I, [2016-11-06T23:02:13.421686 #14439]  INFO -- : worker=1 spawned pid=14439
+I, [2016-11-06T23:02:13.421964 #14439]  INFO -- : worker=1 ready
+E, [2016-11-07T14:00:36.715855 #14433] ERROR -- : reaped #<Process::Status: pid 14436 SIGKILL (signal 9)> worker=0
+I, [2016-11-07T14:00:36.724255 #14433]  INFO -- : worker=0 spawning...
+I, [2016-11-07T14:00:36.741837 #20084]  INFO -- : worker=0 spawned pid=20084
+I, [2016-11-07T14:00:36.742843 #20084]  INFO -- : worker=0 ready
+E, [2016-11-07T14:03:04.089552 #14433] ERROR -- : reaped #<Process::Status: pid 14439 SIGKILL (signal 9)> worker=1
+I, [2016-11-07T14:03:04.096039 #14433]  INFO -- : worker=1 spawning...
+I, [2016-11-07T14:03:04.127981 #20196]  INFO -- : worker=1 spawned pid=20196
+I, [2016-11-07T14:03:04.128677 #20196]  INFO -- : worker=1 ready
