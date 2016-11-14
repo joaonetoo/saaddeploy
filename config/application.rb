@@ -29,8 +29,6 @@ module saaddeploy
         :address     => 'smtp.gmail.com',
         :domain      => 'gmail.com',
         :port        => 465,
-        :user_name   => "rexwebcompany@gmail.com",
-        :password    => "w3br3xcastanha",
         :authentication => :login,
         tls: true
 }
