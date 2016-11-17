@@ -25,7 +25,9 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1
   # GET /institutions/1.json
   def show
-    check_privilege(@institution)
+    if current_user.type != 'Administrator'	
+      check_privilege(@institution)
+    end
     @campus = Campu.where(institution_id: @institution.id).find_each
     @campu = Campu.new
   end
