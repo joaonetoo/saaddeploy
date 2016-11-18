@@ -408,3 +408,7 @@ E, [2016-11-17T01:48:06.712116 #24086] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-11-17T01:48:06.716421 #24086]  INFO -- : worker=1 spawning...
 I, [2016-11-17T01:48:06.750192 #12407]  INFO -- : worker=1 spawned pid=12407
 I, [2016-11-17T01:48:06.750693 #12407]  INFO -- : worker=1 ready
+E, [2016-11-17T15:11:17.470818 #24086] ERROR -- : reaped #<Process::Status: pid 5995 SIGKILL (signal 9)> worker=0
+I, [2016-11-17T15:11:17.476462 #24086]  INFO -- : worker=0 spawning...
+I, [2016-11-17T15:11:17.500882 #20301]  INFO -- : worker=0 spawned pid=20301
+I, [2016-11-17T15:11:17.501461 #20301]  INFO -- : worker=0 ready
