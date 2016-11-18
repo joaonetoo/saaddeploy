@@ -1,67 +1,60 @@
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
+          <div id="sidebar">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-
-                  <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
-
-                  <h5 class="centered"><%=current_user.nome%></h5>
-
-                  <li class="mt">
-                      <%= link_to admin_index_path, :class => 'sub-menu' do%>
-                          <i class="fa fa-home"></i>
-                          <span>Home</span>
-                      <%  end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-group"></i>
-                          <span>Gerenciar Usuários</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Administradores', administrators_path %></li>
-                          <li><%= link_to 'Diretores', principals_path %></li>
-                          <li><%= link_to 'Coordenadores', coordinators_path %></li>
-                          <li><%= link_to 'Professores', teachers_path %></li>
-                          <li><%= link_to 'Estudantes', students_path %></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-university"></i>
-                          <span>Gerenciar Instituições</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Instituições', institutions_path %></li>
-                          <li><%= link_to 'Campus', campus_path %></li>
-                          <li><%= link_to 'Centros', centers_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-mortar-board"></i>
-                          <span>Gerenciar Cursos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Cursos', courses_path %></li>
-                          <li><%= link_to 'Disciplinas', subjects_path %></li>
-                          <li><%= link_to 'Turmas', classrooms_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-user"></i>
-                          <span>Perfil</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to "Editar", edit_user_registration_path %></li>
-                      </ul>
-                  </li>
-
-              </ul>
+              <ul class="menu-sanfona">
+                <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
+                              <h5 class="centered"><%=current_user.nome%></h5>
+                <li tabindex="0">
+                  <%= link_to admin_index_path do%>
+                      <i class="fa fa-home"></i>
+                      <span>Home</span>
+                  <%  end %>
+                </li>
+                <li tabindex="1">  <i class="fa fa-group"></i>
+                                      <span>Gerenciar Usuários</span>
+                    <ul>
+                        <li><span><%= link_to 'Administradores', administrators_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Diretores', principals_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Coordenadores', coordinators_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Professores', teachers_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Estudantes', students_path %></span>
+                        </li>
+                    </ul>
+                </li>
+                <li tabindex="2"> <i class="fa fa-university"></i>
+                                      <span>Gerenciar Instituições</span>
+                    <ul>
+                        <li><span><%= link_to 'Instituições', institutions_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Campus', campus_path %></span>
+                        </li>
+                        <li><span><%= link_to 'Centros', centers_path %></span>
+                        </li>
+                    </ul>
+                </li>
+                <li tabindex="3"> <i class="fa fa-mortar-board"></i>
+                                      <span>Gerenciar Cursos</span>
+                    <ul>
+                        <li><span><%= link_to 'Cursos', courses_path %></span>
+                        </li>
+                        <li><%= link_to 'Disciplinas', subjects_path %></span>
+                        </li>
+                        <li><%= link_to 'Turmas', classrooms_path %></span>
+                        </li>
+                    </ul>
+                </li>
+                <li tabindex="3"> <i class=" fa fa-user"></i>
+                                      <span>Perfil</span>
+                    <ul>
+                        <li><span><%= link_to "Editar", edit_user_registration_path %></span></li>
+                    </ul>
+                </li>
+        </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
