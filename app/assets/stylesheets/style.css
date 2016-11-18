@@ -21,6 +21,31 @@ body {
 
 ul li {
     list-style: none;
+    padding:0;
+    margin:0;
+}
+
+*:focus {
+    outline:none
+}
+
+.menu-sanfona {
+    border-bottom:none;
+    background:#FFFFFF;
+}
+.menu-sanfona span {
+    padding:10px;
+    display:block;
+}
+.menu-sanfona > li {
+}
+.menu-sanfona li ul {
+    display:none;
+}
+
+/* a mágica acontece aqui */
+.menu-sanfona li:focus ul {
+    display:block;
 }
 
 a, a:hover, a:focus {
@@ -241,11 +266,12 @@ ul.top-menu > li > .logout {
 	color: #f2f2f2;
 	font-weight: 700;
 }
-
+/*
 #sidebar ul li {
     position: relative;
 }
-
+*/
+/*
 #sidebar .sub-menu > .sub li  {
     padding-left: 32px;
 }
@@ -253,6 +279,7 @@ ul.top-menu > li > .logout {
 #sidebar .sub-menu > .sub li:last-child {
     padding-bottom: 10px;
 }
+*/
 
 /*LEFT NAVIGATION ICON*/
 .dcjq-icon {
@@ -274,7 +301,7 @@ ul.top-menu > li > .logout {
     -webkit-border-radius:3px;
 }
 /*---*/
-
+/*
 .nav-collapse.collapse {
     display: inline;
 }
@@ -338,6 +365,7 @@ ul.sidebar-menu li ul.sub li.active a {
 
 ul.sidebar-menu li{
     /*line-height: 20px !important;*/
+/*
     margin-bottom: 5px;
     margin-left:10px;
     margin-right:10px;
@@ -391,7 +419,7 @@ ul.sidebar-menu li a.active i {
     color: #fff;
 }
 
-
+*/
 .mail-info, .mail-info:hover {
     margin: -3px 6px 0 0;
     font-size: 11px;
