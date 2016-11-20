@@ -6,52 +6,66 @@
                 <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
                               <h5 class="centered"><%=current_user.nome%></h5>
                 <li tabindex="0">
+                <span>
                   <%= link_to admin_index_path do%>
                       <i class="fa fa-home"></i>
-                      <span>Home</span>
+                      <p>Home</p>
                   <%  end %>
+                  </span>
                 </li>
-                <li tabindex="1">  <i class="fa fa-group"></i>
-                                      <span>Gerenciar Usuários</span>
+                <li tabindex="1">
+                <span>
+                  <i class="fa fa-group"></i>
+                    <p>Gerenciar Usuários</p>
+                 </span>
                     <ul>
-                        <li><span><%= link_to 'Administradores', administrators_path %></span>
+                        <li><%= link_to 'Administradores', administrators_path %>
                         </li>
-                        <li><span><%= link_to 'Diretores', principals_path %></span>
+                        <li><%= link_to 'Diretores', principals_path %>
                         </li>
-                        <li><span><%= link_to 'Coordenadores', coordinators_path %></span>
+                        <li><%= link_to 'Coordenadores', coordinators_path %>
                         </li>
-                        <li><span><%= link_to 'Professores', teachers_path %></span>
+                        <li><%= link_to 'Professores', teachers_path %>
                         </li>
-                        <li><span><%= link_to 'Estudantes', students_path %></span>
+                        <li><%= link_to 'Estudantes', students_path %>
                         </li>
                     </ul>
                 </li>
-                <li tabindex="2"> <i class="fa fa-university"></i>
-                                      <span>Gerenciar Instituições</span>
+                <li tabindex="2">
+                <span>
+                       <i class="fa fa-university"></i>
+                        <p>Gerenciar Instituições</p>
+                </span>
                     <ul>
-                        <li><span><%= link_to 'Instituições', institutions_path %></span>
+                        <li><%= link_to 'Instituições', institutions_path %>
                         </li>
-                        <li><span><%= link_to 'Campus', campus_path %></span>
+                        <li><%= link_to 'Campus', campus_path %>
                         </li>
-                        <li><span><%= link_to 'Centros', centers_path %></span>
+                        <li><%= link_to 'Centros', centers_path %>
                         </li>
                     </ul>
                 </li>
-                <li tabindex="3"> <i class="fa fa-mortar-board"></i>
-                                      <span>Gerenciar Cursos</span>
+                <li tabindex="3">
+                <span>
+                  <i class="fa fa-mortar-board"></i>
+                  <p>Gerenciar Cursos</p>
+                </span>
                     <ul>
-                        <li><span><%= link_to 'Cursos', courses_path %></span>
+                        <li><%= link_to 'Cursos', courses_path %>
                         </li>
-                        <li><%= link_to 'Disciplinas', subjects_path %></span>
+                        <li><%= link_to 'Disciplinas', subjects_path %>
                         </li>
-                        <li><%= link_to 'Turmas', classrooms_path %></span>
+                        <li><%= link_to 'Turmas', classrooms_path %>
                         </li>
                     </ul>
                 </li>
-                <li tabindex="3"> <i class=" fa fa-user"></i>
-                                      <span>Perfil</span>
+                <li tabindex="3">
+                <span>
+                  <i class=" fa fa-user"></i>
+                  <p>Perfil</p>
+                 </span>
                     <ul>
-                        <li><span><%= link_to "Editar", edit_user_registration_path %></span></li>
+                        <li><%= link_to "Editar", edit_user_registration_path %></li>
                     </ul>
                 </li>
         </ul>

@@ -30,15 +30,25 @@ ul li {
 }
 
 .menu-sanfona {
+    margin-left: -27px;
     border-bottom:none;
-    background:#FFFFFF;
 }
 .menu-sanfona span {
     padding:10px;
     display:block;
 }
-.menu-sanfona > li {
+.menu-sanfona > li span{
+    display: block;
 }
+.menu-sanfona li i {
+    display: block;
+    float: left;
+}
+.menu-sanfona li ul li a {
+    color: #797979;
+    display: inline;
+}
+
 .menu-sanfona li ul {
     display:none;
 }
