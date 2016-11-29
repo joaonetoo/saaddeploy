@@ -1,97 +1,99 @@
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
+          <div id="sidebar">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-
-                  <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
-
-                  <h5 class="centered"><%=current_user.nome%></h5>
-
-                  <li class="mt">
-                      <%= link_to admin_index_path, :class => 'active' do%>
-                          <i class="fa fa-home"></i>
-                          <span>Home</span>
-                      <%  end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-puzzle-piece"></i>
-                          <span>Carreira</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Planos de Carreira', teachers_area_search_plans_path%></li>
-                          <li><%= link_to 'Buscar Âncoras', search_results_path %></li>
-                          <li><%= link_to 'Comparar âncoras ', analytics_results_path %></li>
-                          <li><%= link_to 'Criar Questionario', new_quiz_path %></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-sliders"></i>
-                          <span>Estilos de aprendizagem</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Estilos de aprendizagem', search_learning_results_path %></li>
-                          <li><%= link_to 'Cria Questionario', new_learning_quiz_path %></li>
-                          <li><%= link_to 'Comparar resultados', analytics_learning_results_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-calendar-check-o"></i>
-                          <span>Atividades</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Criar Atividade', teachers_area_send_atividade_extra_path%></li>
-                          <li><%= link_to 'Atividades Criadas', teachers_area_list_atividades_path%></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-youtube-play"></i>
-                          <span>Videos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Videos Enviados', teachers_area_videos_index_path %></li>
-                          <li><%= link_to 'Enviar video', teachers_area_send_video_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Casos de Ensino</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Adicionar Caso', new_study_case_path %></li>
-                          <li><%= link_to 'Meus Casos', study_cases_path %></li>
-                          <li><%= link_to 'Buscar casos', search_study_cases_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-user"></i>
-                          <span>Perfil</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to "Editar", edit_user_registration_path %></li>
-                      </ul>
-                  </li>
-              <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-mortar-board"></i>
-                          <span>Turmas</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Criar Turma', new_classroom_path %></li>
-                          <li><%= link_to "Buscar turmas", search_classrooms_path %></li>
-                      </ul>
-                  </li>
-
-
-              </ul>
+                <div class="block">
+                <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
+                <h5 class="centered"><%=current_user.nome%></h5>
+                  <div>
+                    <input type="radio" name="item" id="item-one" checked hidden />
+                    <label for="item-one">
+                      <i class="fa fa-home"></i>
+                      <%= link_to 'Home', admin_index_path %>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-two" hidden />
+                    <label for="item-two">
+                      <i class="fa fa-puzzle-piece"></i>
+                      Carreira
+                    </label>
+                    <div>
+                      <%= link_to 'Planos de Carreira', teachers_area_search_plans_path%>
+                      <%= link_to 'Buscar Âncoras', search_results_path %>
+                      <%= link_to 'Comparar âncoras ', analytics_results_path %>
+                      <%= link_to 'Criar Questionario', new_quiz_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-three" hidden />
+                    <label for="item-three">
+                      <i class="fa fa-sliders"></i>
+                      Estilos de aprendizagem
+                    </label>
+                    <div>
+                      <%= link_to 'Estilos de aprendizagem', search_learning_results_path %>
+                      <%= link_to 'Cria Questionario', new_learning_quiz_path %>
+                      <%= link_to 'Comparar resultados', analytics_learning_results_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-four" hidden />
+                    <label for="item-four">
+                    <i class="fa fa-calendar-check-o"></i>
+                          Atividades
+                    </label>
+                    <div>
+                      <%= link_to 'Criar Atividade', teachers_area_send_atividade_extra_path%>
+                      <%= link_to 'Atividades Criadas', teachers_area_list_atividades_path%>
+                    </div>
+                  </div>
+                  <div>
+                  <div>
+                    <input type="radio" name="item" id="item-five" hidden />
+                    <label for="item-five">
+                    <i class=" fa fa-youtube-play"></i>
+                      Videos
+                    </label>
+                    <div>
+                       <%= link_to 'Videos Enviados', teachers_area_videos_index_path %>
+                       <%= link_to 'Enviar video', teachers_area_send_video_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-six" hidden />
+                    <label for="item-six">
+                    <i class="fa fa-mortar-board"></i>
+                      Turmas
+                    </label>
+                    <div>
+                      <%= link_to 'Criar Turma', new_classroom_path %>
+                      <%= link_to "Buscar turmas", search_classrooms_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-seven" hidden />
+                    <label for="item-seven">
+                    <i class="fa fa-book"></i>
+                        Casos de Ensino
+                    </label>
+                    <div>
+                      <%= link_to 'Adicionar Caso', new_study_case_path %>
+                      <%= link_to 'Meus Casos', study_cases_path %>
+                      <%= link_to 'Buscar casos', search_study_cases_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-eight" hidden />
+                    <label for="item-eight">
+                    <i class=" fa fa-user"></i>
+                    Perfil
+                    </label>
+                    <div>
+                      <%= link_to "Editar", edit_user_registration_path %>
+                    </div>
+                  </div>
+                </div>
               <!-- sidebar menu end-->
           </div>
       </aside>
