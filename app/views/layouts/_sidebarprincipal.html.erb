@@ -1,106 +1,101 @@
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
+          <div id="sidebar">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-
-                  <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
-
-                  <h5 class="centered"><%=current_user.nome%></h5>
-
-                  <li class="mt">
-                      <%= link_to admin_index_path, :class => 'active' do%>
-                          <i class="fa fa-home"></i>
-                          <span>Home</span>
-                      <%  end %>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-puzzle-piece"></i>
-                          <span>Planos de carreira</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', principals_area_search_plans_path%></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-sliders"></i>
-                          <span>Estilos de aprendizagem</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', search_learning_results_path %></li>
-                          <li><%= link_to 'Cria Questionario', new_learning_quiz_path %></li>
-                          <li><%= link_to 'Comparar resultados', analytics_learning_results_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-puzzle-piece"></i>
-                          <span>Âncoras de carreira</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Buscar resultados', search_results_path %></li>
-                          <li><%= link_to 'Criar Questionario', new_quiz_path %></li>
-                          <li><%= link_to 'Comparar resultados', analytics_results_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-calendar-check-o"></i>
-                          <span>Eventos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Novo evento', new_event_path %></li>
-                          <li><%= link_to 'Meus eventos', principals_area_my_events_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-youtube-play"></i>
-                          <span>Videos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Videos Enviados', principals_area_videos_index_path %></li>
-                          <li><%= link_to 'Enviar video', principals_area_send_video_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-user"></i>
-                          <span>Perfil</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to "Editar", edit_user_registration_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-university"></i>
-                          <span>Gerenciar Instituições</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Instituição', current_user.institution%></li>
-                          <li><%= link_to 'Campus', campus_path %></li>
-                          <li><%= link_to 'Centros', centers_path %></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-mortar-board"></i>
-                          <span>Gerenciar Cursos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><%= link_to 'Cursos', courses_path %></li>
-                          <li><%= link_to 'Disciplinas', subjects_path %></li>
-                          <li><%= link_to 'Turmas', classrooms_path %></li>
-                          <li><%= link_to "Buscar turma", search_classrooms_path %></li>
-                      </ul>
-                  </li>
-
-              </ul>
+                <div class="block">
+                <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
+                <h5 class="centered"><%=current_user.nome%></h5>
+                  <div>
+                    <input type="radio" name="item" id="item-one" checked hidden />
+                    <label for="item-one">
+                      <i class="fa fa-home"></i>
+                      <%= link_to 'Home', admin_index_path %>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-two" hidden />
+                    <label for="item-two">
+                      <i class="fa fa-puzzle-piece"></i>
+                      Carreira
+                    </label>
+                    <div>
+                      <%= link_to 'Planos de Carreira', principals_area_search_plans_path%>
+                      <%= link_to 'Buscar Âncoras', search_results_path %>
+                      <%= link_to 'Comparar âncoras ', analytics_results_path %>
+                      <%= link_to 'Criar Questionario', new_quiz_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-three" hidden />
+                    <label for="item-three">
+                      <i class="fa fa-sliders"></i>
+                      Estilos de aprendizagem
+                    </label>
+                    <div>
+                      <%= link_to 'Estilos de aprendizagem', search_learning_results_path %>
+                      <%= link_to 'Cria Questionario', new_learning_quiz_path %>
+                      <%= link_to 'Comparar resultados', analytics_learning_results_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-four" hidden />
+                    <label for="item-four">
+                    <i class="fa fa-calendar-check-o"></i>
+                      Eventos
+                    </label>
+                    <div>
+                      <%= link_to 'Novo evento', new_event_path %>
+                      <%= link_to 'Meus eventos', principals_area_my_events_path %>
+                    </div>
+                  </div>
+                  <div>
+                  <div>
+                    <input type="radio" name="item" id="item-five" hidden />
+                    <label for="item-five">
+                    <i class=" fa fa-youtube-play"></i>
+                      Videos
+                    </label>
+                    <div>
+                       <%= link_to 'Videos Enviados', principals_area_videos_index_path %>
+                        <%= link_to 'Enviar video', principals_area_send_video_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-six" hidden />
+                    <label for="item-six">
+                    <i class="fa fa-university"></i>
+                        Gerenciar Instituições
+                    </label>
+                    <div>
+                      <%= link_to 'Instituição', current_user.institution%>
+                      <%= link_to 'Campus', campus_path %>
+                      <%= link_to 'Centros', centers_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-seven" hidden />
+                    <label for="item-seven">
+                    <i class="fa fa-mortar-board"></i>
+                        Gerenciar Cursos
+                    </label>
+                    <div>
+                      <%= link_to 'Cursos', courses_path %>
+                      <%= link_to 'Disciplinas', subjects_path %>
+                      <%= link_to 'Turmas', classrooms_path %>
+                      <%= link_to "Buscar turma", search_classrooms_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-eight" hidden />
+                    <label for="item-eight">
+                    <i class=" fa fa-user"></i>
+                    Perfil
+                    </label>
+                    <div>
+                      <%= link_to "Editar", edit_user_registration_path %>
+                    </div>
+                  </div>
+                </div>
               <!-- sidebar menu end-->
           </div>
       </aside>

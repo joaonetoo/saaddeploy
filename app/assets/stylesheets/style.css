@@ -19,6 +19,84 @@ body {
     font-size:13px;
 }
 
+.block {
+  float: left;
+  z-index: 10;
+  overflow: hidden;
+  display: inline;
+  margin: -2px 0 0;
+  padding: 0;
+  margin-top: 75px;
+}
+
+.block { width: 100%; }
+
+.block > div {
+  display: block;
+  position: relative;
+  color: black;
+
+}
+
+.block > div input + label {
+  cursor: pointer;
+  display: block;
+  padding: 7.5px 15px;
+  -webkit-transition: background-color 0.25s ease-in-out 0.5s, color 0.25s ease-in-out 0.5s;
+  transition: background-color 0.25s ease-in-out 0.5s, color 0.25s ease-in-out 0.5s;
+  color: #aeb2b7;
+}
+
+.block > div input + label:hover {
+  background-color: #232839;
+    color: #fff;
+}
+
+.block > div input ~ div {
+  visibility: hidden;
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out 0.2s, opacity 0.25s ease-in-out 0.25s, padding 0s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0.2s, opacity 0.25s ease-in-out 0.25s, padding 0s ease-in-out 0s;
+}
+
+.block > div input ~ div p { padding: 0 15px; }
+
+.block > div input:checked + label {
+    background-color: #232839;
+  -webkit-transition: background-color 0s ease-in-out 0s;
+  transition: background-color 0s ease-in-out 0s;
+  color: black;
+  color: #fff;
+}
+
+.block > div input:checked + label:hover {
+  background-color: #232839;
+  color: #fff;
+}
+
+.block > div input:checked ~ div {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  max-height: 200px;
+  padding: 15px 0;
+  -webkit-transition: all 0.5s ease-in-out 0.2s, opacity 0.25s ease-in-out 0.5s, padding 0s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0.2s, opacity 0.25s ease-in-out 0.5s, padding 0s ease-in-out 0s;
+}
+
+.block > div input:checked ~ div a {
+  color: #aeb2b7;
+  text-decoration: none;
+  padding: 0.5em 0 0.5em 2em;
+  display: block;
+}
+
+.block > div input:checked ~ div a:hover {
+  color: #ffffff;
+}
+/*
 ul li {
     list-style: none;
     padding:0;
@@ -29,39 +107,6 @@ ul li {
     outline:none
 }
 
-.menu-sanfona {
-    margin-left: -27px;
-    border-bottom:none;
-}
-.menu-sanfona span {
-    padding:10px;
-    display:block;
-}
-.menu-sanfona > li span{
-    display: block;
-}
-.menu-sanfona li i {
-    display: block;
-    float: left;
-}
-.menu-sanfona li ul li a {
-    color: #797979;
-    display: inline;
-}
-
-.menu-sanfona li ul {
-    display:none;
-}
-
-/* a mágica acontece aqui */
-.menu-sanfona li:focus ul {
-    display:block;
-}
-
-a, a:hover, a:focus {
-    text-decoration: none;
-    outline: none;
-}
 ::selection {
 
     background: #68dff0;
@@ -76,6 +121,8 @@ a, a:hover, a:focus {
     width: 100%;
     height: 100%;
 }
+
+*/
 
 /* Bootstrap Modifications */
 .modal-header {

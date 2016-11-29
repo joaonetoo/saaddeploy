@@ -2,73 +2,64 @@
       <aside>
           <div id="sidebar">
               <!-- sidebar menu start-->
-              <ul class="menu-sanfona">
+                <div class="block">
                 <p class="centered"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %></p>
-                              <h5 class="centered"><%=current_user.nome%></h5>
-                <li tabindex="0">
-                <span>
-                  <%= link_to admin_index_path do%>
+                <h5 class="centered"><%=current_user.nome%></h5>
+                  <div>
+                    <input type="radio" name="item" id="item-one" checked hidden />
+                    <label for="item-one">
                       <i class="fa fa-home"></i>
-                      <p>Home</p>
-                  <%  end %>
-                  </span>
-                </li>
-                <li tabindex="1">
-                <span>
-                  <i class="fa fa-group"></i>
-                    <p>Gerenciar Usuários</p>
-                 </span>
-                    <ul>
-                        <li><%= link_to 'Administradores', administrators_path %>
-                        </li>
-                        <li><%= link_to 'Diretores', principals_path %>
-                        </li>
-                        <li><%= link_to 'Coordenadores', coordinators_path %>
-                        </li>
-                        <li><%= link_to 'Professores', teachers_path %>
-                        </li>
-                        <li><%= link_to 'Estudantes', students_path %>
-                        </li>
-                    </ul>
-                </li>
-                <li tabindex="2">
-                <span>
-                       <i class="fa fa-university"></i>
-                        <p>Gerenciar Instituições</p>
-                </span>
-                    <ul>
-                        <li><%= link_to 'Instituições', institutions_path %>
-                        </li>
-                        <li><%= link_to 'Campus', campus_path %>
-                        </li>
-                        <li><%= link_to 'Centros', centers_path %>
-                        </li>
-                    </ul>
-                </li>
-                <li tabindex="3">
-                <span>
-                  <i class="fa fa-mortar-board"></i>
-                  <p>Gerenciar Cursos</p>
-                </span>
-                    <ul>
-                        <li><%= link_to 'Cursos', courses_path %>
-                        </li>
-                        <li><%= link_to 'Disciplinas', subjects_path %>
-                        </li>
-                        <li><%= link_to 'Turmas', classrooms_path %>
-                        </li>
-                    </ul>
-                </li>
-                <li tabindex="3">
-                <span>
-                  <i class=" fa fa-user"></i>
-                  <p>Perfil</p>
-                 </span>
-                    <ul>
-                        <li><%= link_to "Editar", edit_user_registration_path %></li>
-                    </ul>
-                </li>
-        </ul>
+                      <%= link_to 'Home', admin_index_path %>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-two" hidden />
+                    <label for="item-two"><i class="fa fa-group"></i>
+                      Gerenciar Usuários
+                    </label>
+                    <div>
+                      <%= link_to 'Administradores', administrators_path %>
+                      <%= link_to 'Diretores', principals_path %>
+                      <%= link_to 'Coordenadores', coordinators_path %>
+                      <%= link_to 'Professores', teachers_path %>
+                      <%= link_to 'Estudantes', students_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-three" hidden />
+                    <label for="item-three">
+                    <i class="fa fa-university"></i>
+                      Gerenciar Instituições
+                    </label>
+                    <div>
+                      <%= link_to 'Instituições', institutions_path %>
+                      <%= link_to 'Campus', campus_path %>
+                      <%= link_to 'Centros', centers_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-four" hidden />
+                    <label for="item-four">
+                    <i class="fa fa-mortar-board"></i>
+                      Gerenciar Cursos
+                    </label>
+                    <div>
+                      <%= link_to 'Cursos', courses_path %>
+                      <%= link_to 'Disciplinas', subjects_path %>
+                      <%= link_to 'Turmas', classrooms_path %>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="radio" name="item" id="item-five" hidden />
+                    <label for="item-five">
+                    <i class=" fa fa-user"></i>
+                    Perfil
+                    </label>
+                    <div>
+                      <%= link_to "Editar", edit_user_registration_path %>
+                    </div>
+                  </div>
+                </div>
               <!-- sidebar menu end-->
           </div>
       </aside>
