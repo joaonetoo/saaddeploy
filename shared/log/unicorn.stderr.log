@@ -412,3 +412,395 @@ E, [2016-11-17T15:11:17.470818 #24086] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-11-17T15:11:17.476462 #24086]  INFO -- : worker=0 spawning...
 I, [2016-11-17T15:11:17.500882 #20301]  INFO -- : worker=0 spawned pid=20301
 I, [2016-11-17T15:11:17.501461 #20301]  INFO -- : worker=0 ready
+I, [2016-11-18T11:19:19.283572 #24086]  INFO -- : reaped #<Process::Status: pid 20301 exit 0> worker=0
+I, [2016-11-18T11:19:19.288163 #24086]  INFO -- : reaped #<Process::Status: pid 12407 exit 0> worker=1
+I, [2016-11-18T11:19:19.288434 #24086]  INFO -- : master complete
+I, [2016-11-18T11:19:22.814170 #31211]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-18T11:19:27.588513 #31211]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-11-18T11:19:27.589733 #31211]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-11-18T11:19:27.590007 #31211]  INFO -- : worker=0 spawning...
+I, [2016-11-18T11:19:27.595612 #31211]  INFO -- : worker=1 spawning...
+I, [2016-11-18T11:19:27.597038 #31214]  INFO -- : worker=0 spawned pid=31214
+I, [2016-11-18T11:19:27.599501 #31211]  INFO -- : master process ready
+I, [2016-11-18T11:19:27.597306 #31214]  INFO -- : worker=0 ready
+I, [2016-11-18T11:19:27.607123 #31217]  INFO -- : worker=1 spawned pid=31217
+I, [2016-11-18T11:19:27.607368 #31217]  INFO -- : worker=1 ready
+E, [2016-11-18T11:19:54.755575 #31211] ERROR -- : reaped #<Process::Status: pid 31214 SIGKILL (signal 9)> worker=0
+I, [2016-11-18T11:19:54.763324 #31211]  INFO -- : worker=0 spawning...
+I, [2016-11-18T11:19:54.782772 #31227]  INFO -- : worker=0 spawned pid=31227
+I, [2016-11-18T11:19:54.783523 #31227]  INFO -- : worker=0 ready
+E, [2016-11-19T04:36:32.909106 #31211] ERROR -- : reaped #<Process::Status: pid 31217 SIGKILL (signal 9)> worker=1
+I, [2016-11-19T04:36:32.915240 #31211]  INFO -- : worker=1 spawning...
+I, [2016-11-19T04:36:32.937471 #5582]  INFO -- : worker=1 spawned pid=5582
+I, [2016-11-19T04:36:32.937904 #5582]  INFO -- : worker=1 ready
+E, [2016-11-19T18:42:49.137280 #31211] ERROR -- : reaped #<Process::Status: pid 31227 SIGKILL (signal 9)> worker=0
+I, [2016-11-19T18:42:49.144548 #31211]  INFO -- : worker=0 spawning...
+I, [2016-11-19T18:42:49.167921 #15199]  INFO -- : worker=0 spawned pid=15199
+I, [2016-11-19T18:42:49.168320 #15199]  INFO -- : worker=0 ready
+I, [2016-11-20T21:59:13.370986 #31211]  INFO -- : reaped #<Process::Status: pid 5582 exit 0> worker=1
+I, [2016-11-20T21:59:13.375591 #31211]  INFO -- : reaped #<Process::Status: pid 15199 exit 0> worker=0
+I, [2016-11-20T21:59:13.375857 #31211]  INFO -- : master complete
+I, [2016-11-20T21:59:30.041653 #29639]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-20T21:59:34.915692 #29639]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-11-20T21:59:34.916152 #29639]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-11-20T21:59:34.916397 #29639]  INFO -- : worker=0 spawning...
+I, [2016-11-20T21:59:34.923464 #29639]  INFO -- : worker=1 spawning...
+I, [2016-11-20T21:59:34.924876 #29644]  INFO -- : worker=0 spawned pid=29644
+I, [2016-11-20T21:59:34.925133 #29644]  INFO -- : worker=0 ready
+I, [2016-11-20T21:59:34.927537 #29639]  INFO -- : master process ready
+I, [2016-11-20T21:59:34.934821 #29647]  INFO -- : worker=1 spawned pid=29647
+I, [2016-11-20T21:59:34.935051 #29647]  INFO -- : worker=1 ready
+E, [2016-11-21T18:32:49.657848 #29639] ERROR -- : reaped #<Process::Status: pid 29647 SIGKILL (signal 9)> worker=1
+I, [2016-11-21T18:32:49.667012 #29639]  INFO -- : worker=1 spawning...
+I, [2016-11-21T18:32:49.676820 #6395]  INFO -- : worker=1 spawned pid=6395
+I, [2016-11-21T18:32:49.677586 #6395]  INFO -- : worker=1 ready
+E, [2016-11-21T19:13:07.835248 #29639] ERROR -- : reaped #<Process::Status: pid 29644 SIGKILL (signal 9)> worker=0
+I, [2016-11-21T19:13:07.854220 #29639]  INFO -- : worker=0 spawning...
+I, [2016-11-21T19:13:07.881750 #6837]  INFO -- : worker=0 spawned pid=6837
+I, [2016-11-21T19:13:07.882237 #6837]  INFO -- : worker=0 ready
+E, [2016-11-23T14:13:45.829590 #29639] ERROR -- : reaped #<Process::Status: pid 6837 SIGKILL (signal 9)> worker=0
+I, [2016-11-23T14:13:45.838335 #29639]  INFO -- : worker=0 spawning...
+I, [2016-11-23T14:13:45.864474 #31352]  INFO -- : worker=0 spawned pid=31352
+I, [2016-11-23T14:13:45.864945 #31352]  INFO -- : worker=0 ready
+E, [2016-11-24T04:12:45.362856 #29639] ERROR -- : reaped #<Process::Status: pid 31352 SIGKILL (signal 9)> worker=0
+I, [2016-11-24T04:12:45.366826 #29639]  INFO -- : worker=0 spawning...
+I, [2016-11-24T04:12:45.390879 #4866]  INFO -- : worker=0 spawned pid=4866
+I, [2016-11-24T04:12:45.391361 #4866]  INFO -- : worker=0 ready
+E, [2016-11-29T04:42:41.121677 #29639] ERROR -- : reaped #<Process::Status: pid 6395 SIGKILL (signal 9)> worker=1
+I, [2016-11-29T04:42:41.130199 #29639]  INFO -- : worker=1 spawning...
+I, [2016-11-29T04:42:41.158803 #30000]  INFO -- : worker=1 spawned pid=30000
+I, [2016-11-29T04:42:41.159171 #30000]  INFO -- : worker=1 ready
+I, [2016-11-29T18:31:16.414471 #29639]  INFO -- : reaped #<Process::Status: pid 4866 exit 0> worker=0
+I, [2016-11-29T18:31:16.416527 #29639]  INFO -- : reaped #<Process::Status: pid 30000 exit 0> worker=1
+I, [2016-11-29T18:31:16.416672 #29639]  INFO -- : master complete
+I, [2016-11-29T18:31:22.450961 #3181]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-11-29T18:31:27.675144 #3181]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-11-29T18:31:27.676377 #3181]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-11-29T18:31:27.677027 #3181]  INFO -- : worker=0 spawning...
+I, [2016-11-29T18:31:27.683180 #3181]  INFO -- : worker=1 spawning...
+I, [2016-11-29T18:31:27.690071 #3184]  INFO -- : worker=0 spawned pid=3184
+I, [2016-11-29T18:31:27.690656 #3184]  INFO -- : worker=0 ready
+I, [2016-11-29T18:31:27.693176 #3181]  INFO -- : master process ready
+I, [2016-11-29T18:31:27.699613 #3187]  INFO -- : worker=1 spawned pid=3187
+I, [2016-11-29T18:31:27.700039 #3187]  INFO -- : worker=1 ready
+E, [2016-11-29T18:32:03.452646 #3181] ERROR -- : reaped #<Process::Status: pid 3187 SIGKILL (signal 9)> worker=1
+I, [2016-11-29T18:32:03.457734 #3181]  INFO -- : worker=1 spawning...
+I, [2016-11-29T18:32:03.472646 #3222]  INFO -- : worker=1 spawned pid=3222
+I, [2016-11-29T18:32:03.473266 #3222]  INFO -- : worker=1 ready
+E, [2016-11-29T18:32:12.811834 #3181] ERROR -- : reaped #<Process::Status: pid 3184 SIGKILL (signal 9)> worker=0
+I, [2016-11-29T18:32:12.817544 #3181]  INFO -- : worker=0 spawning...
+I, [2016-11-29T18:32:12.830911 #3228]  INFO -- : worker=0 spawned pid=3228
+I, [2016-11-29T18:32:12.831319 #3228]  INFO -- : worker=0 ready
+E, [2016-11-29T21:47:59.408494 #3181] ERROR -- : reaped #<Process::Status: pid 3222 SIGKILL (signal 9)> worker=1
+I, [2016-11-29T21:47:59.415822 #3181]  INFO -- : worker=1 spawning...
+I, [2016-11-29T21:47:59.445163 #4571]  INFO -- : worker=1 spawned pid=4571
+I, [2016-11-29T21:47:59.445882 #4571]  INFO -- : worker=1 ready
+E, [2016-11-30T12:32:04.727699 #3181] ERROR -- : reaped #<Process::Status: pid 3228 SIGKILL (signal 9)> worker=0
+I, [2016-11-30T12:32:04.737599 #3181]  INFO -- : worker=0 spawning...
+I, [2016-11-30T12:32:04.765638 #11102]  INFO -- : worker=0 spawned pid=11102
+I, [2016-11-30T12:32:04.766051 #11102]  INFO -- : worker=0 ready
+E, [2016-11-30T23:06:15.546884 #3181] ERROR -- : reaped #<Process::Status: pid 4571 SIGKILL (signal 9)> worker=1
+I, [2016-11-30T23:06:15.556080 #3181]  INFO -- : worker=1 spawning...
+I, [2016-11-30T23:06:15.592558 #19773]  INFO -- : worker=1 spawned pid=19773
+I, [2016-11-30T23:06:15.593015 #19773]  INFO -- : worker=1 ready
+I, [2016-12-01T02:21:37.561693 #3181]  INFO -- : reaped #<Process::Status: pid 11102 exit 0> worker=0
+I, [2016-12-01T02:21:37.566549 #3181]  INFO -- : reaped #<Process::Status: pid 19773 exit 0> worker=1
+I, [2016-12-01T02:21:37.566713 #3181]  INFO -- : master complete
+I, [2016-12-01T02:21:42.446829 #21231]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-01T02:21:47.297781 #21231]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-01T02:21:47.298191 #21231]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-01T02:21:47.298457 #21231]  INFO -- : worker=0 spawning...
+I, [2016-12-01T02:21:47.302826 #21231]  INFO -- : worker=1 spawning...
+I, [2016-12-01T02:21:47.304417 #21234]  INFO -- : worker=0 spawned pid=21234
+I, [2016-12-01T02:21:47.304681 #21234]  INFO -- : worker=0 ready
+I, [2016-12-01T02:21:47.307695 #21231]  INFO -- : master process ready
+I, [2016-12-01T02:21:47.314950 #21237]  INFO -- : worker=1 spawned pid=21237
+I, [2016-12-01T02:21:47.315195 #21237]  INFO -- : worker=1 ready
+I, [2016-12-01T02:32:01.678530 #21231]  INFO -- : reaped #<Process::Status: pid 21234 exit 0> worker=0
+I, [2016-12-01T02:32:01.686863 #21231]  INFO -- : reaped #<Process::Status: pid 21237 exit 0> worker=1
+I, [2016-12-01T02:32:01.687256 #21231]  INFO -- : master complete
+I, [2016-12-01T02:32:08.303177 #21510]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-01T02:32:13.094562 #21510]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-01T02:32:13.094916 #21510]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-01T02:32:13.095454 #21510]  INFO -- : worker=0 spawning...
+I, [2016-12-01T02:32:13.100308 #21510]  INFO -- : worker=1 spawning...
+I, [2016-12-01T02:32:13.101785 #21513]  INFO -- : worker=0 spawned pid=21513
+I, [2016-12-01T02:32:13.102048 #21513]  INFO -- : worker=0 ready
+I, [2016-12-01T02:32:13.104559 #21510]  INFO -- : master process ready
+I, [2016-12-01T02:32:13.110715 #21516]  INFO -- : worker=1 spawned pid=21516
+I, [2016-12-01T02:32:13.110955 #21516]  INFO -- : worker=1 ready
+I, [2016-12-01T02:40:56.188627 #21510]  INFO -- : reaped #<Process::Status: pid 21513 exit 0> worker=0
+I, [2016-12-01T02:40:56.193482 #21510]  INFO -- : reaped #<Process::Status: pid 21516 exit 0> worker=1
+I, [2016-12-01T02:40:56.193935 #21510]  INFO -- : master complete
+I, [2016-12-01T02:41:02.753713 #21781]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-01T02:41:08.110409 #21781]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-01T02:41:08.111099 #21781]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-01T02:41:08.111332 #21781]  INFO -- : worker=0 spawning...
+I, [2016-12-01T02:41:08.115690 #21781]  INFO -- : worker=1 spawning...
+I, [2016-12-01T02:41:08.119375 #21781]  INFO -- : master process ready
+I, [2016-12-01T02:41:08.117175 #21784]  INFO -- : worker=0 spawned pid=21784
+I, [2016-12-01T02:41:08.126784 #21784]  INFO -- : worker=0 ready
+I, [2016-12-01T02:41:08.128583 #21787]  INFO -- : worker=1 spawned pid=21787
+I, [2016-12-01T02:41:08.128782 #21787]  INFO -- : worker=1 ready
+E, [2016-12-01T02:55:54.922740 #21781] ERROR -- : reaped #<Process::Status: pid 21787 SIGKILL (signal 9)> worker=1
+I, [2016-12-01T02:55:55.030115 #21781]  INFO -- : reaped #<Process::Status: pid 21784 exit 0> worker=0
+I, [2016-12-01T02:55:55.032591 #21781]  INFO -- : master complete
+I, [2016-12-01T02:55:58.725784 #22064]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-01T02:56:03.421655 #22064]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-01T02:56:03.422017 #22064]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-01T02:56:03.422285 #22064]  INFO -- : worker=0 spawning...
+I, [2016-12-01T02:56:03.430728 #22067]  INFO -- : worker=0 spawned pid=22067
+I, [2016-12-01T02:56:03.431029 #22067]  INFO -- : worker=0 ready
+I, [2016-12-01T02:56:03.431344 #22064]  INFO -- : worker=1 spawning...
+I, [2016-12-01T02:56:03.433928 #22064]  INFO -- : master process ready
+I, [2016-12-01T02:56:03.442720 #22070]  INFO -- : worker=1 spawned pid=22070
+I, [2016-12-01T02:56:03.442946 #22070]  INFO -- : worker=1 ready
+I, [2016-12-01T03:15:04.185202 #22064]  INFO -- : reaped #<Process::Status: pid 22067 exit 0> worker=0
+I, [2016-12-01T03:15:04.190273 #22064]  INFO -- : reaped #<Process::Status: pid 22070 exit 0> worker=1
+I, [2016-12-01T03:15:04.190408 #22064]  INFO -- : master complete
+I, [2016-12-01T03:15:08.341566 #22335]  INFO -- : Refreshing Gem list
+LoadError: cannot load such file -- smtp_tls
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/saaddeploy/config/environments/production.rb:2:in `block in <top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `configure'
+  /home/deploy/saaddeploy/config/environments/production.rb:1:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:598:in `block (2 levels) in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `block in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:228:in `block in tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:431:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:349:in `block in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:226:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:205:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+  /home/deploy/saaddeploy/config/environment.rb:5:in `<top (required)>'
+  config.ru:4:in `require'
+  config.ru:4:in `block in <main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+  config.ru:1:in `new'
+  config.ru:1:in `<main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-12-01T03:15:19.464452 #22470]  INFO -- : Refreshing Gem list
+LoadError: cannot load such file -- smtp_tls
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/saaddeploy/config/environments/production.rb:2:in `block in <top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `configure'
+  /home/deploy/saaddeploy/config/environments/production.rb:1:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:598:in `block (2 levels) in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `block in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:228:in `block in tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:431:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:349:in `block in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:226:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:205:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+  /home/deploy/saaddeploy/config/environment.rb:5:in `<top (required)>'
+  config.ru:4:in `require'
+  config.ru:4:in `block in <main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+  config.ru:1:in `new'
+  config.ru:1:in `<main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-12-01T03:15:35.725048 #22657]  INFO -- : Refreshing Gem list
+LoadError: cannot load such file -- smtp_tls
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/saaddeploy/config/environments/production.rb:2:in `block in <top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `configure'
+  /home/deploy/saaddeploy/config/environments/production.rb:1:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:598:in `block (2 levels) in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `block in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:228:in `block in tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:431:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:349:in `block in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:226:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:205:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+  /home/deploy/saaddeploy/config/environment.rb:5:in `<top (required)>'
+  config.ru:4:in `require'
+  config.ru:4:in `block in <main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+  config.ru:1:in `new'
+  config.ru:1:in `<main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+I, [2016-12-01T03:18:37.141806 #22825]  INFO -- : Refreshing Gem list
+LoadError: cannot load such file -- smtp_tls
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/saaddeploy/config/environments/production.rb:2:in `block in <top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/railtie.rb:210:in `configure'
+  /home/deploy/saaddeploy/config/environments/production.rb:1:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:598:in `block (2 levels) in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:597:in `block in <class:Engine>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:228:in `block in tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:422:in `block (2 levels) in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:431:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:421:in `block in each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:415:in `each_strongly_connected_component_from'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:349:in `block in each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `call'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:347:in `each_strongly_connected_component'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:226:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/2.3.0/tsort.rb:205:in `tsort_each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+  /home/deploy/saaddeploy/config/environment.rb:5:in `<top (required)>'
+  config.ru:4:in `require'
+  config.ru:4:in `block in <main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+  config.ru:1:in `new'
+  config.ru:1:in `<main>'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `eval'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn.rb:56:in `block in builder'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:752:in `build_app!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:129:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
