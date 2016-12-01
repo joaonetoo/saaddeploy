@@ -69,19 +69,17 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-
-config.action_mailer.raise_delivery_errors = true
 ActionMailer::Base.default_content_type = "text/html"
+config.action_mailer.raise_delivery_errors = true
 ActionMailer::Base.delivery_method = :sendmail
 ActionMailer::Base.smtp_settings = {
-:address => "localhost",
-:port => 587,
-:authentication => :login,
-:domain => "saad.net.br",
-:user_name => "sistema@saad.net.br",
-:password => "Em41l_544d"
+  :address => "localhost",
+  :port => 587,
+  :authentication => :login,
+  :domain => "saad.net.br",
+  :user_name => "sistema@saad.net.br",
+  :password => ENV['EMAIL_PASS']
 }
-
 
 
 
