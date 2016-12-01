@@ -22,17 +22,6 @@ module Saaddeploy
     config.i18n.default_locale = :pt
 
 
-
-
-     ActionMailer::Base.smtp_settings = {
-        :enable_starttls_auto => true,
-        :address     => 'smtp.gmail.com',
-        :domain      => 'gmail.com',
-        :port        => 465,
-        :authentication => :login,
-        tls: true
-}
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
