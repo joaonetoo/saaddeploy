@@ -28,6 +28,8 @@ class CampusController < ApplicationController
 
   # GET /campus/1/edit
   def edit
+    @campu = Campu.find(params[:id])
+    @institution = @campu.institution
   end
 
   # POST /campus

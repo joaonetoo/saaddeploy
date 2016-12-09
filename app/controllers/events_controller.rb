@@ -70,22 +70,32 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf {
-          img = "#{Rails.root}/public/bg_folder2.png"
+          img = "#{Rails.root}/public/bg_folder.jpg"
           #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
           Prawn::Document.generate("background.pdf", :page_size=> "A4",:background => img) do |pdf|
-          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          pdf.image "#{@event.image.path(:thumb)}", :position => :center
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 50
           pdf.text "#{@event.nome}", :align => :center,:color => "006699", :size => 18
-          pdf.move_down 130
-          pdf.text "Apresentação: #{@event.apresentacao}", :align => :left,:color => "006699", :size => 18
-          pdf.move_down 100
-          pdf.text "Objetivo: #{@event.objetivos}", :align => :left,:color => "006699", :size => 18
-          pdf.move_down 100
-          pdf.text "Informações: #{@event.informacoes}", :align => :left,:color => "006699", :size => 18
-          pdf.move_down 150
-          pdf.text "Data: #{@event.inicio.strftime("%-d/%-m/%y às %H:%M")}", :align => :left,:color => "006699", :size => 18
           pdf.move_down 50
+          pdf.image "#{Rails.root}/public/icon_apresentacao.png"
+          pdf.move_down 5
+          pdf.text "Apresentação: #{@event.apresentacao}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 40
+          pdf.image "#{Rails.root}/public/icon_objetivo.png"
+          pdf.move_down 5
+          pdf.text "Objetivo: #{@event.objetivos}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 40
+          pdf.image "#{Rails.root}/public/icon_inscricao.png"
+          pdf.move_down 5
+          pdf.text "Informações: #{@event.informacoes}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 40
+          pdf.image "#{Rails.root}/public/icon_data.png"
+          pdf.move_down 5
+          pdf.text "Data: #{@event.inicio.strftime("%-d/%-m/%y às %H:%M")}", :align => :left,:color => "006699", :size => 18
+          pdf.move_down 40
+          pdf.image "#{Rails.root}/public/icon_local.png"
+          pdf.move_down 5
           pdf.text "Local: #{@event.local}", :align => :left,:color => "006699", :size => 18
 
 

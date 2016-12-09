@@ -32,13 +32,26 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+config.action_mailer.perform_deliveries = true
+config.action_mailer.delivery_method = :smtp
+
+config.action_mailer.smtp_settings = {
+:address        => 'smtp.sendgrid.net',
+:port           => '587',
+:authentication => :plain,
+:user_name      =>  ENV['SENDGRID_USERNAME'],
+:password       =>  ENV['SENDGRID_PASSWORD'],
+:domain         => 'localhost:3000',
+:enable_starttls_auto => true
+}
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :smtp
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

@@ -73,15 +73,15 @@ config.action_mailer.delivery_method = :smtp
 # SMTP settings for gmail
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
-host = 'domain.com'
+host = 'sistema.saad.net.br'
 config.action_mailer.default_url_options = { host: host }
-ActionMailer::Base.smtp_settings = {
-:address        => 'smtp.saad.net.br',
+config.action_mailer.smtp_settings = {
+:address        => 'smtp.sendgrid.net',
 :port           => '587',
 :authentication => :plain,
-:user_name      => ENV['SENDGRID_USERNAME'],
-:password       => 'Em41l_544d',
-:domain         => 'domain.com',
+:user_name      =>  ENV['SENDGRID_USERNAME'],
+:password       =>  ENV['SENDGRID_PASSWORD'],
+:domain         => 'sistema.saad.net.br',
 :enable_starttls_auto => true
 }
 

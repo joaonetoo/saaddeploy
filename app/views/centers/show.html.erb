@@ -1,14 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <h4><i class="fa fa-angle-right"></i> Centro</h4>
+      <br>
+      <section id="unseen">
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Campus</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
 
-<p>
-  <strong>Name:</strong>
-  <%= @center.name %>
-</p>
+          <tbody>
+              <tr>
+                <td><%= @center.name %></td>
+                <td><%= @center.campu.name %></td>
+              </tr>
+          </tbody>
 
-<p>
-  <strong>Campus:</strong>
-  <%= @center.campu.name %>
-</p>
+        </table>
 
-<%= link_to 'Edit', edit_center_path(@center) %> |
-<%= link_to 'Back', centers_path %>
+        <br>
+        </section>
+      </div>
+    </div>
+  </div>

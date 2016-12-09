@@ -94,6 +94,6 @@ staging:
 
 production:
   <<: *default
-  database: saad
-  username: pguser
-  password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
+  database: saad_v3_development
+  username: postgres
+  password: postgres
