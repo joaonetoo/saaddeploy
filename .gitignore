@@ -5,5 +5,6 @@
 # TODO Comment out this rule if environment variables can be committed
 .env
 .idea/
+.rbenv-vars
 tmp/cache/assets/*
 
