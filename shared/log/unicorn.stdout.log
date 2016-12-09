@@ -8172,3 +8172,4 @@ Processing by Users::SessionsController#new as HTML
   Rendered users/sessions/new.html.erb within layouts/application (41.4ms)
 Completed 200 OK in 1039ms (Views: 956.4ms | ActiveRecord: 7.5ms)
 Started GET "/assets/login-bg.jpg" for 177.89.28.132 at 2016-12-01 03:44:40 +0000
+bundler: failed to load command: unicorn (/home/deploy/.rbenv/versions/2.3.1/bin/unicorn)

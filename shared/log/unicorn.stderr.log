@@ -475,3 +475,33 @@ I, [2016-12-01T03:43:59.737184 #24630]  INFO -- : worker=0 ready
 I, [2016-12-01T03:43:59.739347 #24626]  INFO -- : master process ready
 I, [2016-12-01T03:43:59.746688 #24633]  INFO -- : worker=1 spawned pid=24633
 I, [2016-12-01T03:43:59.746894 #24633]  INFO -- : worker=1 ready
+I, [2016-12-09T04:31:27.235813 #24645]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+E, [2016-12-09T04:31:36.224138 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-12-09T04:31:36.224244 #24645] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2016-12-09T04:31:36.724943 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-12-09T04:31:36.725061 #24645] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2016-12-09T04:31:37.226534 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-12-09T04:31:37.226774 #24645] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2016-12-09T04:31:37.727480 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-12-09T04:31:37.727604 #24645] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2016-12-09T04:31:38.228745 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+E, [2016-12-09T04:31:38.228874 #24645] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2016-12-09T04:31:38.729621 #24645] ERROR -- : adding listener failed addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock (in use)
+Errno::EADDRINUSE: Address already in use - connect(2) for /home/deploy/saaddeploy/shared/sockets/unicorn.sock
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `initialize'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `new'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/socket_helper.rb:122:in `bind_listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:231:in `listen'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `block in bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `each'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:808:in `bind_new_listeners!'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/lib/unicorn/http_server.rb:130:in `start'
+  /home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/unicorn-5.2.0/bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
