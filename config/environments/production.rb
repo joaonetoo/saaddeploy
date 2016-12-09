@@ -72,18 +72,16 @@ Rails.application.configure do
 config.action_mailer.delivery_method = :smtp
 # SMTP settings for gmail
 config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
-host = 'sistema.saad.net.br'
-config.action_mailer.default_url_options = { host: host }
+config.action_mailer.default_url_options = { :host => 'sistema.saad.net.br' }
 config.action_mailer.smtp_settings = {
 :address        => 'smtp.sendgrid.net',
 :port           => '587',
 :authentication => :plain,
 :user_name      =>  ENV['SENDGRID_USERNAME'],
 :password       =>  ENV['SENDGRID_PASSWORD'],
-:domain         => 'sistema.saad.net.br',
-:enable_starttls_auto => true
+:domain         => 'sistema.saad.net.br'
 }
+ActionMailer::Base.delivery_method = :smtp
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
