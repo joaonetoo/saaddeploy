@@ -88,12 +88,12 @@ test:
 #
 staging:
   <<: *default
-  database: saad-v3
+  database: saad-v4
   username: pguser
   password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
-  database: saad
+  database: saad-v4
   username: pguser
   password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
