@@ -65,7 +65,7 @@ test:
   database: saad_v3_test
   host: localhost
   username: pguser
-  password: pguser
+  password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -94,6 +94,6 @@ staging:
 
 production:
   <<: *default
-  database: saad_v3_development
-  username: postgres
-  password: postgres
+  database: saad
+  username: pguser
+  password: <%= ENV['SAAD_DATABASE_PASSWORD'] %>
