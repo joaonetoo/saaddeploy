@@ -1,5 +1,4 @@
 Rails.application.configure do
-  require 'smtp_tls'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -69,19 +68,21 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-ActionMailer::Base.default_content_type = "text/html"
+config.action_mailer.delivery_method = :smtp
+# SMTP settings for gmail
 config.action_mailer.raise_delivery_errors = true
-ActionMailer::Base.delivery_method = :sendmail
+config.action_mailer.delivery_method = :smtp
+host = 'domain.com'
+config.action_mailer.default_url_options = { host: host }
 ActionMailer::Base.smtp_settings = {
-  :address => "localhost",
-  :port => 587,
-  :authentication => :login,
-  :domain => "saad.net.br",
-  :user_name => "sistema@saad.net.br",
-  :password => ENV['EMAIL_PASS']
+:address        => 'smtp.saad.net.br',
+:port           => '587',
+:authentication => :plain,
+:user_name      => ENV['SENDGRID_USERNAME'],
+:password       => 'Em41l_544d',
+:domain         => 'domain.com',
+:enable_starttls_auto => true
 }
-
-
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
