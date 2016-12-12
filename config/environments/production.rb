@@ -81,7 +81,7 @@ ActionMailer::Base.smtp_settings = {
 :authentication => :plain,
 :user_name      =>  ENV['SENDGRID_USERNAME'],
 :password       =>  ENV['SENDGRID_PASSWORD'],
-:domain         => 'sistema.saad'
+:domain         => 'sistema.saad.net.br'
 }
 ActionMailer::Base.delivery_method = :smtp
 
@@ -94,7 +94,7 @@ ActionMailer::Base.delivery_method = :smtp
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Paperclip.options[:command_path] = "/usr/local/bin/" 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 # config.paperclip_defaults = {
     #storage: :s3,
     #s3_credentials: {
