@@ -801,3 +801,58 @@ I, [2016-12-09T06:31:25.352679 #3985]  INFO -- : worker=0 spawned pid=3985
 I, [2016-12-09T06:31:25.353022 #3985]  INFO -- : worker=0 ready
 I, [2016-12-09T06:31:25.353886 #3988]  INFO -- : worker=1 spawned pid=3988
 I, [2016-12-09T06:31:25.354165 #3988]  INFO -- : worker=1 ready
+E, [2016-12-09T07:17:32.356165 #2758] ERROR -- : reaped #<Process::Status: pid 3988 SIGKILL (signal 9)> worker=1
+I, [2016-12-09T07:17:32.462010 #2758]  INFO -- : reaped #<Process::Status: pid 3985 exit 0> worker=0
+I, [2016-12-09T07:17:32.462271 #2758]  INFO -- : master complete
+I, [2016-12-09T07:17:35.481712 #5037]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-09T07:17:40.207536 #5037]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-09T07:17:40.207920 #5037]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-09T07:17:40.208156 #5037]  INFO -- : worker=0 spawning...
+I, [2016-12-09T07:17:40.211836 #5037]  INFO -- : worker=1 spawning...
+I, [2016-12-09T07:17:40.215222 #5041]  INFO -- : worker=0 spawned pid=5041
+I, [2016-12-09T07:17:40.215504 #5041]  INFO -- : worker=0 ready
+I, [2016-12-09T07:17:40.217062 #5037]  INFO -- : master process ready
+I, [2016-12-09T07:17:40.226672 #5044]  INFO -- : worker=1 spawned pid=5044
+I, [2016-12-09T07:17:40.226989 #5044]  INFO -- : worker=1 ready
+E, [2016-12-09T07:18:26.238117 #5037] ERROR -- : worker=1 PID:5044 timeout (31s > 30s), killing
+E, [2016-12-09T07:18:26.251778 #5037] ERROR -- : reaped #<Process::Status: pid 5044 SIGKILL (signal 9)> worker=1
+I, [2016-12-09T07:18:26.251947 #5037]  INFO -- : worker=1 spawning...
+I, [2016-12-09T07:18:26.255609 #5108]  INFO -- : worker=1 spawned pid=5108
+I, [2016-12-09T07:18:26.255884 #5108]  INFO -- : worker=1 ready
+I, [2016-12-09T07:31:29.052542 #5037]  INFO -- : reaped #<Process::Status: pid 5041 exit 0> worker=0
+I, [2016-12-09T07:31:29.055075 #5037]  INFO -- : reaped #<Process::Status: pid 5108 exit 0> worker=1
+I, [2016-12-09T07:31:29.055287 #5037]  INFO -- : master complete
+I, [2016-12-09T07:31:32.282530 #5672]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-09T07:31:36.814462 #5672]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-09T07:31:36.814825 #5672]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-09T07:31:36.815013 #5672]  INFO -- : worker=0 spawning...
+I, [2016-12-09T07:31:36.818569 #5672]  INFO -- : worker=1 spawning...
+I, [2016-12-09T07:31:36.819869 #5675]  INFO -- : worker=0 spawned pid=5675
+I, [2016-12-09T07:31:36.820091 #5675]  INFO -- : worker=0 ready
+I, [2016-12-09T07:31:36.822375 #5672]  INFO -- : master process ready
+I, [2016-12-09T07:31:36.830227 #5678]  INFO -- : worker=1 spawned pid=5678
+I, [2016-12-09T07:31:36.830469 #5678]  INFO -- : worker=1 ready
+E, [2016-12-09T14:11:30.367433 #5672] ERROR -- : reaped #<Process::Status: pid 5678 SIGKILL (signal 9)> worker=1
+I, [2016-12-09T14:11:30.374606 #5672]  INFO -- : worker=1 spawning...
+I, [2016-12-09T14:11:30.396640 #10188]  INFO -- : worker=1 spawned pid=10188
+I, [2016-12-09T14:11:30.397060 #10188]  INFO -- : worker=1 ready
+E, [2016-12-12T03:00:03.544984 #5672] ERROR -- : reaped #<Process::Status: pid 5675 SIGKILL (signal 9)> worker=0
+I, [2016-12-12T03:00:03.556726 #5672]  INFO -- : worker=0 spawning...
+I, [2016-12-12T03:00:03.581068 #15531]  INFO -- : worker=0 spawned pid=15531
+I, [2016-12-12T03:00:03.581552 #15531]  INFO -- : worker=0 ready
+E, [2016-12-12T14:52:36.732400 #5672] ERROR -- : reaped #<Process::Status: pid 10188 SIGKILL (signal 9)> worker=1
+I, [2016-12-12T14:52:36.738303 #5672]  INFO -- : worker=1 spawning...
+I, [2016-12-12T14:52:36.763608 #23799]  INFO -- : worker=1 spawned pid=23799
+I, [2016-12-12T14:52:36.764128 #23799]  INFO -- : worker=1 ready

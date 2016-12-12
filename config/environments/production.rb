@@ -69,10 +69,12 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-config.action_mailer.delivery_method = :smtp
+
 # SMTP settings for gmail
 config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_url_options = { :host => 'sistema.saad.net.br' }
+
 ActionMailer::Base.smtp_settings = {
 :address        => 'smtp.sendgrid.net',
 :port           => '587',
@@ -91,8 +93,9 @@ ActionMailer::Base.delivery_method = :smtp
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  Paperclip.options[:command_path] = "/usr/local/bin/"
- # config.paperclip_defaults = {
+
+  Paperclip.options[:command_path] = "/usr/local/bin/" 
+# config.paperclip_defaults = {
     #storage: :s3,
     #s3_credentials: {
     #bucket: ENV.fetch('S3_BUCKET_NAME'),
