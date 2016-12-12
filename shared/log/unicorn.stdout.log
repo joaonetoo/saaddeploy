@@ -34873,3 +34873,768 @@ Paperclip::Error (Event model missing required attr_accessor for 'image_file_nam
   app/controllers/events_controller.rb:55:in `create'
 
 
+Started GET "/events/new" for 200.137.2.52 at 2016-12-12 17:26:58 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  Rendered events/_form.html.erb (59.0ms)
+  Rendered events/new.html.erb within layouts/application (1053.1ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (5.1ms)
+Completed 200 OK in 1225ms (Views: 1084.4ms | ActiveRecord: 10.0ms)
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 17:27:00 +0000
+Started POST "/events" for 200.137.2.52 at 2016-12-12 17:27:16 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t6QHyOBgcq7FFOeR26RzQ1M8uIkqs2bja5zn6EwVoWcKQAuc7PLaW2CXllcYREq7T7E4/NaUlYpI40DjxudSPw==", "event"=>{"nome"=>"teste", "apresentacao"=>"teste", "objetivos"=>"teste", "informacoes"=>"teste", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055663c8d4878 @tempfile=#<Tempfile:/tmp/RackMultipart20161212-26398-gmsrw.png>, @original_filename="logo100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"logo100.png\"\r\nContent-Type: image/png\r\n">, "ch"=>"60", "inicio(3i)"=>"12", "inicio(2i)"=>"12", "inicio(1i)"=>"2016", "fim(3i)"=>"12", "fim(2i)"=>"12", "fim(1i)"=>"2016", "local"=>"ifrn", "submissao"=>"0", "trabalhos"=>"nenhum", "deadline(3i)"=>"6", "deadline(2i)"=>"9", "deadline(1i)"=>"2016", "normas"=>"nenhuma"}, "commit"=>"Cadastrar"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+Paperclip::Error (Event model missing required attr_accessor for 'image_file_name'):
+  app/controllers/events_controller.rb:55:in `create'
+
+
+Started GET "/" for 59.127.138.17 at 2016-12-12 17:46:23 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:12:48 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:12:49 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.7ms)
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 1088ms (Views: 1001.2ms | ActiveRecord: 6.3ms)
+Started GET "/assets/login-bg.jpg" for 200.137.2.52 at 2016-12-12 18:12:51 +0000
+Started POST "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:12:57 +0000
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yYJz84qsR/hYUXUDOxr5MPbV5Aa4dgJCJzSVQ/A9RXCYSghM7+5Uybrav1AW8akRRv9KH7SFVKODeqs00sIQNA==", "user"=>{"email"=>"coord@saad.net.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "email"=>""}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "coord@saad.net.br"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "sign_in_count" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["last_sign_in_at", "2016-12-12 16:57:22.800745"], ["current_sign_in_at", "2016-12-12 18:12:58.067524"], ["last_sign_in_ip", "200.137.2.52/32"], ["sign_in_count", 12], ["updated_at", "2016-12-12 18:12:58.071034"], ["id", 117]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://sistema.saad.net.br/
+Completed 302 Found in 262ms (ActiveRecord: 4.4ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:12:58 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+Redirected to http://sistema.saad.net.br/coordinators_area/index
+Completed 302 Found in 75ms (ActiveRecord: 8.5ms)
+Started GET "/coordinators_area/index" for 200.137.2.52 at 2016-12-12 18:12:58 +0000
+Processing by CoordinatorsAreaController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mCourse Load (3.6ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3[0m  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  ORDER BY "users"."id" ASC LIMIT 1000  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3[0m  [["type", "Teacher"], ["approved", "f"], ["course_id", 3]]
+  Rendered coordinators_area/index.html.erb within layouts/application (32.5ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (3.5ms)
+Completed 200 OK in 87ms (Views: 56.4ms | ActiveRecord: 8.0ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:12:58 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 18:12:58 +0000
+Started GET "/assets/saad.png" for 200.137.2.52 at 2016-12-12 18:12:59 +0000
+Started GET "/events/new" for 200.137.2.52 at 2016-12-12 18:13:05 +0000
+Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  Rendered events/_form.html.erb (15.5ms)
+  Rendered events/new.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (1.9ms)
+Completed 200 OK in 63ms (Views: 38.2ms | ActiveRecord: 2.7ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:13:05 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started POST "/events" for 200.137.2.52 at 2016-12-12 18:13:26 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bnXZiQSlkKyL1waGF+vgG3ttpVt0X0KPR/NCVFZQe0+xUgJNtaDuRtqenSyNoWNMMZ8eGwgLO21djlzbieaoKg==", "event"=>{"nome"=>"teste", "apresentacao"=>"teste", "objetivos"=>"teste", "informacoes"=>"teste", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055b4d03afbd0 @tempfile=#<Tempfile:/tmp/RackMultipart20161212-27578-5ntuf2.png>, @original_filename="logo100.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"logo100.png\"\r\nContent-Type: image/png\r\n">, "ch"=>"60", "inicio(3i)"=>"12", "inicio(2i)"=>"12", "inicio(1i)"=>"2016", "fim(3i)"=>"12", "fim(2i)"=>"12", "fim(1i)"=>"2016", "local"=>"IFRN", "submissao"=>"0", "trabalhos"=>"nenhum", "deadline(3i)"=>"6", "deadline(2i)"=>"9", "deadline(1i)"=>"2016", "normas"=>"nenhuma"}, "commit"=>"Cadastrar"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-1ep2ze4.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]' -auto-orient -resize "300x300>" '/tmp/f91fbbbcb394651e6a9684d7a18ea53c20161212-27578-arm9y7'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]' -auto-orient -resize "175x175>" '/tmp/f91fbbbcb394651e6a9684d7a18ea53c20161212-27578-1uzqd3h'
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-18c0ymm.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5186c8f129a4c2e0bb04aabf18684fed20161212-27578-l2gxyx.png[0]' 2>/dev/null
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  Rendered events/_form.html.erb (20.9ms)
+  Rendered events/new.html.erb within layouts/application (551.2ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (3.8ms)
+Completed 200 OK in 810ms (Views: 590.8ms | ActiveRecord: 5.4ms)
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 18:13:28 +0000
+Started POST "/events" for 200.137.2.52 at 2016-12-12 18:15:29 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQ+W2/aZWXmZjgmTzSsjSrEEWvDqcXHLDc0/lFbyb8K+KE0fR5wnk8jHkjlXYaAd+/bhsJYlCCkXsCEbiUS8pw==", "event"=>{"nome"=>"teste", "apresentacao"=>"teste", "objetivos"=>"teste", "informacoes"=>"teste", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055b4d1a3e450 @tempfile=#<Tempfile:/tmp/RackMultipart20161212-27578-d2jb1v.png>, @original_filename="logo175.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"logo175.png\"\r\nContent-Type: image/png\r\n">, "ch"=>"60", "inicio(3i)"=>"12", "inicio(2i)"=>"12", "inicio(1i)"=>"2016", "fim(3i)"=>"12", "fim(2i)"=>"12", "fim(1i)"=>"2016", "local"=>"IFRN", "submissao"=>"0", "trabalhos"=>"nenhum", "deadline(3i)"=>"6", "deadline(2i)"=>"9", "deadline(1i)"=>"2016", "normas"=>"nenhuma"}, "commit"=>"Cadastrar"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-izud95.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]' -auto-orient -resize "300x300>" '/tmp/8e03ea22f6683d301fcd2fbd7a919de620161212-27578-1f786y9'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]' -auto-orient -resize "175x175>" '/tmp/8e03ea22f6683d301fcd2fbd7a919de620161212-27578-12g1seb'
+  [1m[35m (3.6ms)[0m  BEGIN
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-lit0vg.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/b9ef7da4f082c588924e1992161b493320161212-27578-em6e3c.png[0]' 2>/dev/null
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO "events" ("nome", "ch", "informacoes", "apresentacao", "objetivos", "submissao", "local", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "inicio", "fim", "deadline", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["nome", "teste"], ["ch", 60], ["informacoes", "teste"], ["apresentacao", "teste"], ["objetivos", "teste"], ["submissao", "f"], ["local", "IFRN"], ["image_file_name", "logo175.png"], ["image_content_type", "image/png"], ["image_file_size", 9570], ["image_updated_at", "2016-12-12 18:15:29.739956"], ["inicio", "2016-12-12 00:00:00.000000"], ["fim", "2016-12-12 00:00:00.000000"], ["deadline", "2016-09-06 00:00:00.000000"], ["user_id", 117], ["created_at", "2016-12-12 18:15:29.882996"], ["updated_at", "2016-12-12 18:15:29.882996"]]
+  [1m[35m (4.2ms)[0m  COMMIT
+Redirected to http://sistema.saad.net.br/events/2
+Completed 302 Found in 196ms (ActiveRecord: 15.4ms)
+Started GET "/events/2" for 200.137.2.52 at 2016-12-12 18:15:30 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mEvent Load (1.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  Rendered activities/_form.html.erb (23.3ms)
+  [1m[35mProject Load (1.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."event_id" = $1  [["event_id", 2]]
+  [1m[36mActivity Load (4.9ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE "activities"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered collection (0.0ms)
+  [1m[35mMatriculation Load (0.5ms)[0m  SELECT "matriculations".* FROM "matriculations" WHERE "matriculations"."event_id" = $1  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (78.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.5ms)
+Completed 200 OK in 190ms (Views: 87.2ms | ActiveRecord: 20.2ms)
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 18:15:30 +0000
+Started GET "/events/pdf_event.pdf?event=2" for 200.137.2.52 at 2016-12-12 18:15:36 +0000
+Processing by EventsController#pdf_event as PDF
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered text template (0.0ms)
+Sent data learning_results.pdf (1.0ms)
+Completed 200 OK in 259ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+Started GET "/admin/index" for 200.137.2.52 at 2016-12-12 18:15:53 +0000
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+Redirected to http://sistema.saad.net.br/welcome/index
+Filter chain halted as :admin_check rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 1.8ms)
+Started GET "/welcome/index" for 200.137.2.52 at 2016-12-12 18:15:53 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+Redirected to http://sistema.saad.net.br/coordinators_area/index
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+Started GET "/coordinators_area/index" for 200.137.2.52 at 2016-12-12 18:15:53 +0000
+Processing by CoordinatorsAreaController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (2.2ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  [["type", "Teacher"], ["approved", "f"], ["course_id", 3]]
+  Rendered coordinators_area/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.8ms)
+Completed 200 OK in 43ms (Views: 31.5ms | ActiveRecord: 5.8ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:15:54 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/learning_results/search" for 200.137.2.52 at 2016-12-12 18:16:00 +0000
+Processing by LearningResultsController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mInstitution Load (2.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCenter Load (0.7ms)[0m  SELECT  "centers".* FROM "centers" WHERE "centers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCampu Load (0.5ms)[0m  [1mSELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mClassroom Load (1.2ms)[0m  SELECT "classrooms".* FROM "classrooms" INNER JOIN "classrooms_users" ON "classrooms"."id" = "classrooms_users"."classroom_id" WHERE "classrooms_users"."user_id" = $1  [["user_id", 117]]
+  [1m[36mSubject Load (0.7ms)[0m  [1mSELECT  "subjects".* FROM "subjects" WHERE "subjects"."course_id" = $1  ORDER BY "subjects"."id" ASC LIMIT 1000[0m  [["course_id", 3]]
+  Rendered learning_results/_teacher_search.html.erb (21.7ms)
+  Rendered learning_results/search.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (1.6ms)
+Completed 200 OK in 135ms (Views: 42.7ms | ActiveRecord: 18.4ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:16:00 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started POST "/learning_results/list" for 200.137.2.52 at 2016-12-12 18:16:02 +0000
+Processing by LearningResultsController#list as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p8h/8LnXad0LzbOy18EBd4rAJjdhsX0q6Xvui0QffYJ476Q0CNIXN1qEKBhNi4IgwDKddx3lBMjzBvAEm6mu5w==", "institution_id"=>"2", "campu_id"=>"3", "center_id"=>"2", "course_id"=>"3", "subject_id"=>"todos", "classroom_id"=>"todos", "users_id"=>"todos", "commit"=>"Enviar"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mInstitution Load (0.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1  ORDER BY "institutions"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mCampu Load (0.3ms)[0m  SELECT  "campus".* FROM "campus" WHERE "campus"."id" = $1  ORDER BY "campus"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mCenter Load (0.2ms)[0m  [1mSELECT "centers".* FROM "centers" WHERE "centers"."campu_id" = $1[0m  [["campu_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT "courses"."id" FROM "courses" WHERE "courses"."center_id" = $1  [["center_id", 2]]
+  [1m[36mCenter Load (0.3ms)[0m  [1mSELECT  "centers".* FROM "centers" WHERE "centers"."campu_id" = $1  ORDER BY "centers"."id" ASC LIMIT 1[0m  [["campu_id", 3]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."center_id" = $1  ORDER BY "courses"."id" ASC LIMIT 1000  [["center_id", 2]]
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."course_id" = $1[0m  [["course_id", 3]]
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."course_id" = $1 AND "users"."type" = $2  ORDER BY "users"."id" ASC LIMIT 1000  [["course_id", 3], ["type", "Student"]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1  ORDER BY "courses"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mLearningResult Load (0.9ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 7]]
+  [1m[36mLearningResult Load (0.5ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[35mLearningResult Load (0.4ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 9]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 10]]
+  [1m[35mLearningResult Load (0.4ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 11]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 12]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 13]]
+  [1m[36mLearningResult Load (0.5ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 14]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 15]]
+  [1m[36mLearningResult Load (0.5ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[35mLearningResult Load (0.4ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 17]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 19]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 20]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 22]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 23]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 24]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 25]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 26]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 27]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 31]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 32]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 33]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 35]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 36]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 37]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 38]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 39]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 41]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 42]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 43]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 47]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 49]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 52]]
+  [1m[35mLearningResult Load (0.4ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 53]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 54]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 55]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 56]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 58]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 59]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 60]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 61]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 62]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 63]]
+  [1m[35mLearningResult Load (0.4ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 64]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 65]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 66]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 67]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 69]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 70]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 71]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 72]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 74]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 75]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 76]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 77]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 78]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 79]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 80]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 81]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 82]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 83]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 84]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 85]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 86]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 87]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 88]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 89]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 90]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 92]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 93]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 94]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 95]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 96]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 97]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 98]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 99]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 100]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 109]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 115]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 116]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 118]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 121]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 122]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 123]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 124]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 129]]
+  [1m[36mLearningResult Load (0.4ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 130]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 133]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 135]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 140]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 145]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 153]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 155]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 156]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 157]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 159]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 164]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 167]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 173]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 176]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 177]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 182]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 184]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 185]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 187]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 192]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 197]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 198]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 199]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 200]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 201]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 205]]
+  [1m[36mLearningResult Load (0.2ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 208]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 209]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 211]]
+  [1m[35mLearningResult Load (0.2ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 214]]
+  [1m[36mLearningResult Load (0.3ms)[0m  [1mSELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1[0m  [["user_id", 217]]
+  [1m[35mLearningResult Load (0.3ms)[0m  SELECT "learning_results".* FROM "learning_results" WHERE "learning_results"."user_id" = $1  [["user_id", 219]]
+  Rendered learning_results/list.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.6ms)
+Completed 200 OK in 293ms (Views: 24.9ms | ActiveRecord: 41.9ms)
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 18:16:03 +0000
+Started DELETE "/users/sign_out" for 200.137.2.52 at 2016-12-12 18:16:05 +0000
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eP4wTj7qMF1bc6D1dPgSoQdNKqiw+0HKoGSikf9GQHOn2euKj+9Otwo6O1/uspH2Tb+R6MyvOCi6GbweIPCTFg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://sistema.saad.net.br/
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:16:06 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:16:06 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 200.137.2.52 at 2016-12-12 18:16:06 +0000
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:16:30 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:16:30 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (2.3ms)
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 59ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 200.137.2.52 at 2016-12-12 18:16:30 +0000
+Started GET "/events/public_events" for 200.137.2.52 at 2016-12-12 18:16:32 +0000
+Processing by EventsController#public_events as HTML
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/public_events.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.8ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:16:38 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:16:38 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (0.6ms)
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:16:42 +0000
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RlSRC51d0sUrENAtimdOJgSgkggbxEYEWCLuU8pDnWOACLaZ43o2xfOjsFFms20rcvdcFfGXpZi3ZJ0Iu3hSQw==", "user"=>{"email"=>"coord@saad.net.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "email"=>""}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "coord@saad.net.br"]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2016-12-12 18:12:58.067524"], ["current_sign_in_at", "2016-12-12 18:16:43.165554"], ["sign_in_count", 13], ["updated_at", "2016-12-12 18:16:43.171812"], ["id", 117]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://sistema.saad.net.br/
+Completed 302 Found in 230ms (ActiveRecord: 4.0ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:16:43 +0000
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+Redirected to http://sistema.saad.net.br/coordinators_area/index
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+Started GET "/coordinators_area/index" for 200.137.2.52 at 2016-12-12 18:16:43 +0000
+Processing by CoordinatorsAreaController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  ORDER BY "users"."id" ASC LIMIT 1000[0m  [["type", "Student"], ["approved", "f"], ["course_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."type" = $1 AND "users"."approved" = $2 AND "users"."course_id" = $3  [["type", "Teacher"], ["approved", "f"], ["course_id", 3]]
+  Rendered coordinators_area/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.5ms)
+Completed 200 OK in 34ms (Views: 26.9ms | ActiveRecord: 2.1ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:16:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/assets/saad_2.png" for 200.137.2.52 at 2016-12-12 18:16:43 +0000
+Started GET "/assets/saad.png" for 200.137.2.52 at 2016-12-12 18:16:43 +0000
+Started GET "/coordinators_area/my_events" for 200.137.2.52 at 2016-12-12 18:16:47 +0000
+Processing by CoordinatorsAreaController#my_events as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = $1 AND (fim > '2016-12-12')  [["user_id", 117]]
+  Rendered coordinators_area/my_events.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.2ms)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.7ms)
+Started GET "/images/thumb/semfoto.png" for 200.137.2.52 at 2016-12-12 18:16:47 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/semfoto.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/unicorn:22:in `<top (required)>'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:74:in `kernel_load'
+  bundler (1.13.6) lib/bundler/cli/exec.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/cli.rb:332:in `exec'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+  bundler (1.13.6) lib/bundler/cli.rb:20:in `dispatch'
+  bundler (1.13.6) lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+  bundler (1.13.6) lib/bundler/cli.rb:11:in `start'
+  bundler (1.13.6) exe/bundle:34:in `block in <top (required)>'
+  bundler (1.13.6) lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+  bundler (1.13.6) exe/bundle:26:in `<top (required)>'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+  /home/deploy/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+
+
+Started GET "/coordinators_area/finished_events" for 200.137.2.52 at 2016-12-12 18:16:51 +0000
+Processing by CoordinatorsAreaController#finished_events as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."user_id" = $1 AND (fim <= '2016-12-12')  [["user_id", 117]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  Rendered coordinators_area/finished_events.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (2.0ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.3ms)
+Started GET "/events/2/edit" for 200.137.2.52 at 2016-12-12 18:16:54 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_form.html.erb (22.8ms)
+  Rendered events/edit.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (3.0ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 1.0ms)
+Started PATCH "/events/2" for 200.137.2.52 at 2016-12-12 18:17:08 +0000
+Processing by EventsController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QmLNysjjdbfOcxtlLDx2u2V/ltFQzVCPDFuMGiGwM9mbHM1KOuhPoNGr198SbHacW6kq8e0HXAsr1F/r2wHaYw==", "event"=>{"nome"=>"teste", "apresentacao"=>"teste", "objetivos"=>"teste", "informacoes"=>"teste", "ch"=>"60", "inicio(3i)"=>"15", "inicio(2i)"=>"12", "inicio(1i)"=>"2016", "fim(3i)"=>"15", "fim(2i)"=>"12", "fim(1i)"=>"2016", "local"=>"IFRN", "submissao"=>"0", "trabalhos"=>"nenhum", "deadline(3i)"=>"6", "deadline(2i)"=>"9", "deadline(1i)"=>"2016", "normas"=>"nenhuma"}, "commit"=>"Cadastrar", "id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "events" SET "inicio" = $1, "fim" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["inicio", "2016-12-15 00:00:00.000000"], ["fim", "2016-12-15 00:00:00.000000"], ["updated_at", "2016-12-12 18:17:08.564324"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://sistema.saad.net.br/events/2
+Completed 200 OK in 28ms (ActiveRecord: 2.7ms)
+Started GET "/events/2" for 200.137.2.52 at 2016-12-12 18:17:08 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 117]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 117]]
+  Rendered activities/_form.html.erb (32.3ms)
+  [1m[36mProject Load (1.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35mActivity Load (0.9ms)[0m  SELECT "activities".* FROM "activities" WHERE "activities"."event_id" = $1  [["event_id", 2]]
+  Rendered collection (0.0ms)
+  [1m[36mMatriculation Load (1.1ms)[0m  [1mSELECT "matriculations".* FROM "matriculations" WHERE "matriculations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (60.3ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_sidebarcoordinator.html.erb (5.7ms)
+Completed 200 OK in 139ms (Views: 91.0ms | ActiveRecord: 10.9ms)
+Started DELETE "/users/sign_out" for 200.137.2.52 at 2016-12-12 18:17:11 +0000
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mew5sgfnEIdT1iq/bdiv+jgaleNvJ6sThC0/Z+7SmBRAkjky9ewqkEwO5gVTiK/dBswpw9Ltp5ejouyWFGNxrg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 117]]
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://sistema.saad.net.br/
+Completed 302 Found in 11ms (ActiveRecord: 1.6ms)
+Started GET "/" for 200.137.2.52 at 2016-12-12 18:17:12 +0000
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 200.137.2.52 at 2016-12-12 18:17:12 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/shared/_links.html.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+Started GET "/assets/login-bg.jpg" for 200.137.2.52 at 2016-12-12 18:17:12 +0000
+Started GET "/events/public_events" for 200.137.2.52 at 2016-12-12 18:17:14 +0000
+Processing by EventsController#public_events as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  Rendered events/public_events.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 1.2ms)
+Started GET "/events/public_show?event=2" for 200.137.2.52 at 2016-12-12 18:17:16 +0000
+Processing by EventsController#public_show as HTML
+  Parameters: {"event"=>"2"}
+  [1m[35mEvent Load (0.9ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  Rendered matriculations/_form.html.erb (15.6ms)
+  Rendered events/public_show.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 2.3ms)
+Started POST "/matriculations" for 200.137.2.52 at 2016-12-12 18:17:41 +0000
+Processing by MatriculationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5Xxae7idB5jfZHqcpY+Y0gmpSh0IJZUZFlfBkB2w1+gSRuIaspuEcrV1hc7SnjOADMvOkZh4DWGkpBXf+stYQ==", "matriculation"=>{"nome"=>"julian", "email"=>"julian.sansat@icloud.com", "telefone"=>"8491013334", "tipo"=>"Estudante", "event_id"=>"2"}, "commit"=>"Inscrever"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "matriculations" ("nome", "email", "telefone", "tipo", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["nome", "julian"], ["email", "julian.sansat@icloud.com"], ["telefone", "8491013334"], ["tipo", "Estudante"], ["event_id", 2], ["created_at", "2016-12-12 18:17:41.500498"], ["updated_at", "2016-12-12 18:17:41.500498"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  Rendered registration_mailer/registration_email.html.erb within layouts/mailer (3.5ms)
+
+RegistrationMailer#registration_email: processed outbound mail in 363.2ms
+
+Sent mail to julian.sansat@icloud.com (30019.6ms)
+Date: Mon, 12 Dec 2016 18:17:41 +0000
+From: rexwebcompany@gmail.com
+To: julian.sansat@icloud.com
+Message-ID: <584ee9c5def29_6bb82ada6463b0dc115c2@sistema.saad.mail>
+Subject: =?UTF-8?Q?Confirma=C3=A7=C3=A3o_de_inscri=C3=A7=C3=A3o?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />
+  </head>
+  <body>
+    <h1>SAAD</h1>
+    <h2>Confirma=C3=A7=C3=A3o de inscri=C3=A7=C3=A3o</h2>
+    <h3>Caro julian, </h3>
+    <p>
+        sua inscri=C3=A7=C3=A3o no evento teste com data 15/12/16 as 00:0=
+0 est=C3=A1 confirmada.
+    </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Completed 500 Internal Server Error in 30455ms (ActiveRecord: 6.4ms)
+
+Net::OpenTimeout (execution expired):
+  app/controllers/matriculations_controller.rb:32:in `block in create'
+  app/controllers/matriculations_controller.rb:30:in `create'
+
+

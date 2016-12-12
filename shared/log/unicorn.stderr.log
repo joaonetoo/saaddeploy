@@ -856,3 +856,47 @@ E, [2016-12-12T14:52:36.732400 #5672] ERROR -- : reaped #<Process::Status: pid 1
 I, [2016-12-12T14:52:36.738303 #5672]  INFO -- : worker=1 spawning...
 I, [2016-12-12T14:52:36.763608 #23799]  INFO -- : worker=1 spawned pid=23799
 I, [2016-12-12T14:52:36.764128 #23799]  INFO -- : worker=1 ready
+I, [2016-12-12T17:26:43.081500 #26391]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-12T17:26:48.453046 #26391]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-12T17:26:48.453979 #26391]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-12T17:26:48.454162 #26391]  INFO -- : worker=0 spawning...
+I, [2016-12-12T17:26:48.458589 #26391]  INFO -- : worker=1 spawning...
+I, [2016-12-12T17:26:48.461017 #26391]  INFO -- : master process ready
+I, [2016-12-12T17:26:48.470700 #26396]  INFO -- : worker=0 spawned pid=26396
+I, [2016-12-12T17:26:48.471054 #26396]  INFO -- : worker=0 ready
+I, [2016-12-12T17:26:48.473028 #26398]  INFO -- : worker=1 spawned pid=26398
+I, [2016-12-12T17:26:48.473230 #26398]  INFO -- : worker=1 ready
+E, [2016-12-12T18:00:24.072410 #26391] ERROR -- : reaped #<Process::Status: pid 26398 SIGKILL (signal 9)> worker=1
+I, [2016-12-12T18:00:24.079143 #26391]  INFO -- : worker=1 spawning...
+I, [2016-12-12T18:00:24.095516 #26967]  INFO -- : worker=1 spawned pid=26967
+I, [2016-12-12T18:00:24.095990 #26967]  INFO -- : worker=1 ready
+I, [2016-12-12T18:12:02.450279 #26391]  INFO -- : reaped #<Process::Status: pid 26396 exit 0> worker=0
+I, [2016-12-12T18:12:02.752537 #26391]  INFO -- : reaped #<Process::Status: pid 26967 exit 0> worker=1
+I, [2016-12-12T18:12:02.752780 #26391]  INFO -- : master complete
+I, [2016-12-12T18:12:17.024562 #27572]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-12T18:12:20.982197 #27572]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-12T18:12:20.983426 #27572]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-12T18:12:20.983673 #27572]  INFO -- : worker=0 spawning...
+I, [2016-12-12T18:12:20.987448 #27572]  INFO -- : worker=1 spawning...
+I, [2016-12-12T18:12:20.991700 #27576]  INFO -- : worker=0 spawned pid=27576
+I, [2016-12-12T18:12:20.992036 #27576]  INFO -- : worker=0 ready
+I, [2016-12-12T18:12:20.989196 #27572]  INFO -- : master process ready
+I, [2016-12-12T18:12:20.998689 #27578]  INFO -- : worker=1 spawned pid=27578
+I, [2016-12-12T18:12:20.998943 #27578]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
