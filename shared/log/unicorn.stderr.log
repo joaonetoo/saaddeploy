@@ -900,3 +900,93 @@ If you need full UTF-8 support, consider using a TTF font instead.
 
 To disable this warning, add the following line to your code:
 Prawn::Font::AFM.hide_m17n_warning = true
+E, [2016-12-12T18:21:58.731987 #27572] ERROR -- : reaped #<Process::Status: pid 27576 SIGKILL (signal 9)> worker=0
+I, [2016-12-12T18:21:58.739250 #27572]  INFO -- : worker=0 spawning...
+I, [2016-12-12T18:21:58.754160 #27806]  INFO -- : worker=0 spawned pid=27806
+I, [2016-12-12T18:21:58.754752 #27806]  INFO -- : worker=0 ready
+I, [2016-12-12T18:25:38.052606 #27572]  INFO -- : reaped #<Process::Status: pid 27578 exit 0> worker=1
+I, [2016-12-12T18:25:38.153400 #27572]  INFO -- : reaped #<Process::Status: pid 27806 exit 0> worker=0
+I, [2016-12-12T18:25:38.153778 #27572]  INFO -- : master complete
+I, [2016-12-12T18:25:48.942922 #28248]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-12T18:25:53.738496 #28248]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-12T18:25:53.739628 #28248]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-12T18:25:53.739911 #28248]  INFO -- : worker=0 spawning...
+I, [2016-12-12T18:25:53.746404 #28248]  INFO -- : worker=1 spawning...
+I, [2016-12-12T18:25:53.750974 #28254]  INFO -- : worker=0 spawned pid=28254
+I, [2016-12-12T18:25:53.751308 #28254]  INFO -- : worker=0 ready
+I, [2016-12-12T18:25:53.749119 #28248]  INFO -- : master process ready
+I, [2016-12-12T18:25:53.759056 #28256]  INFO -- : worker=1 spawned pid=28256
+I, [2016-12-12T18:25:53.759325 #28256]  INFO -- : worker=1 ready
+I, [2016-12-12T18:36:24.141206 #28248]  INFO -- : reaped #<Process::Status: pid 28254 exit 0> worker=0
+I, [2016-12-12T18:36:24.143450 #28248]  INFO -- : reaped #<Process::Status: pid 28256 exit 0> worker=1
+I, [2016-12-12T18:36:24.143689 #28248]  INFO -- : master complete
+I, [2016-12-12T18:36:31.179289 #28750]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-12T18:36:36.041808 #28750]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-12T18:36:36.042969 #28750]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-12T18:36:36.043291 #28750]  INFO -- : worker=0 spawning...
+I, [2016-12-12T18:36:36.048134 #28750]  INFO -- : worker=1 spawning...
+I, [2016-12-12T18:36:36.052906 #28753]  INFO -- : worker=0 spawned pid=28753
+I, [2016-12-12T18:36:36.061515 #28750]  INFO -- : master process ready
+I, [2016-12-12T18:36:36.053208 #28753]  INFO -- : worker=0 ready
+I, [2016-12-12T18:36:36.069998 #28756]  INFO -- : worker=1 spawned pid=28756
+I, [2016-12-12T18:36:36.070567 #28756]  INFO -- : worker=1 ready
+I, [2016-12-12T18:46:07.609589 #28750]  INFO -- : reaped #<Process::Status: pid 28753 exit 0> worker=0
+I, [2016-12-12T18:46:07.612518 #28750]  INFO -- : reaped #<Process::Status: pid 28756 exit 0> worker=1
+I, [2016-12-12T18:46:07.612883 #28750]  INFO -- : master complete
+I, [2016-12-12T18:46:15.827018 #29419]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-12T18:46:20.521149 #29419]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-12T18:46:20.521514 #29419]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-12T18:46:20.521712 #29419]  INFO -- : worker=0 spawning...
+I, [2016-12-12T18:46:20.524241 #29419]  INFO -- : worker=1 spawning...
+I, [2016-12-12T18:46:20.525560 #29423]  INFO -- : worker=0 spawned pid=29423
+I, [2016-12-12T18:46:20.525782 #29423]  INFO -- : worker=0 ready
+I, [2016-12-12T18:46:20.528307 #29419]  INFO -- : master process ready
+I, [2016-12-12T18:46:20.534605 #29426]  INFO -- : worker=1 spawned pid=29426
+I, [2016-12-12T18:46:20.534836 #29426]  INFO -- : worker=1 ready
+E, [2016-12-12T22:37:06.179088 #29419] ERROR -- : reaped #<Process::Status: pid 29426 SIGKILL (signal 9)> worker=1
+I, [2016-12-12T22:37:06.188091 #29419]  INFO -- : worker=1 spawning...
+I, [2016-12-12T22:37:06.213203 #32445]  INFO -- : worker=1 spawned pid=32445
+I, [2016-12-12T22:37:06.213696 #32445]  INFO -- : worker=1 ready
+E, [2016-12-13T16:51:37.063778 #29419] ERROR -- : reaped #<Process::Status: pid 32445 SIGKILL (signal 9)> worker=1
+I, [2016-12-13T16:51:37.068924 #29419]  INFO -- : worker=1 spawning...
+I, [2016-12-13T16:51:37.093527 #12028]  INFO -- : worker=1 spawned pid=12028
+I, [2016-12-13T16:51:37.093914 #12028]  INFO -- : worker=1 ready
+E, [2016-12-13T23:44:39.097409 #29419] ERROR -- : reaped #<Process::Status: pid 29423 SIGKILL (signal 9)> worker=0
+I, [2016-12-13T23:44:39.102151 #29419]  INFO -- : worker=0 spawning...
+I, [2016-12-13T23:44:39.123956 #19593]  INFO -- : worker=0 spawned pid=19593
+I, [2016-12-13T23:44:39.124361 #19593]  INFO -- : worker=0 ready
+E, [2016-12-14T07:20:43.767109 #29419] ERROR -- : reaped #<Process::Status: pid 12028 SIGKILL (signal 9)> worker=1
+I, [2016-12-14T07:20:43.772070 #29419]  INFO -- : worker=1 spawning...
+I, [2016-12-14T07:20:43.794401 #25895]  INFO -- : worker=1 spawned pid=25895
+I, [2016-12-14T07:20:43.794830 #25895]  INFO -- : worker=1 ready
+E, [2016-12-15T03:10:23.091106 #29419] ERROR -- : reaped #<Process::Status: pid 25895 SIGKILL (signal 9)> worker=1
+I, [2016-12-15T03:10:23.095529 #29419]  INFO -- : worker=1 spawning...
+I, [2016-12-15T03:10:23.121512 #6912]  INFO -- : worker=1 spawned pid=6912
+I, [2016-12-15T03:10:23.121925 #6912]  INFO -- : worker=1 ready
+E, [2016-12-15T23:39:08.282095 #29419] ERROR -- : reaped #<Process::Status: pid 19593 SIGKILL (signal 9)> worker=0
+I, [2016-12-15T23:39:08.291682 #29419]  INFO -- : worker=0 spawning...
+I, [2016-12-15T23:39:08.360572 #20732]  INFO -- : worker=0 spawned pid=20732
+I, [2016-12-15T23:39:08.361052 #20732]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
