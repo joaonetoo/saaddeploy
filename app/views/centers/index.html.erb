@@ -23,7 +23,7 @@
                                   <td><%= center.campu.name %> </td>
                                   <td><center><%= button_to 'Abrir', center, :class => "btn btn-primary btn-sm", method: :get%></center></td>
                                   <% if current_user.type == 'Administrator'%>
-                                  <td><%= link_to 'Edit', edit_center_path(campu) %></td>
+                                  <td><%= link_to 'Edit', edit_center_path(center) %></td>
                                   <td><%= link_to 'Destroy', center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                   <% end %>
                                 </tr>

@@ -14,6 +14,7 @@
       <div class="tab-content clearfix">
         <div class="tab-pane active" id="1b">
           <h3>Dados Gerais</h3>
+          <p><%= image_tag @event.image.url(:thumb) %></p>
           <p>
           <strong>Nome:</strong>
           <%= @event.nome %>
