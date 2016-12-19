@@ -1,5 +1,5 @@
 class RegistrationMailer < ApplicationMailer
-    default from: 'rexwebcompany@gmail.com'
+    default from: 'sistema@saad.net.br'
     layout 'mailer'
 
     def registration_email(event, matriculation)

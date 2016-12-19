@@ -990,3 +990,95 @@ If you need full UTF-8 support, consider using a TTF font instead.
 
 To disable this warning, add the following line to your code:
 Prawn::Font::AFM.hide_m17n_warning = true
+I, [2016-12-16T02:50:17.230936 #29419]  INFO -- : reaped #<Process::Status: pid 6912 exit 0> worker=1
+I, [2016-12-16T02:50:17.247746 #29419]  INFO -- : reaped #<Process::Status: pid 20732 exit 0> worker=0
+I, [2016-12-16T02:50:17.248312 #29419]  INFO -- : master complete
+I, [2016-12-16T02:50:28.293442 #22908]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-16T02:50:33.097484 #22908]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-16T02:50:33.097811 #22908]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-16T02:50:33.097998 #22908]  INFO -- : worker=0 spawning...
+I, [2016-12-16T02:50:33.101843 #22908]  INFO -- : worker=1 spawning...
+I, [2016-12-16T02:50:33.104280 #22908]  INFO -- : master process ready
+I, [2016-12-16T02:50:33.110598 #22912]  INFO -- : worker=0 spawned pid=22912
+I, [2016-12-16T02:50:33.110891 #22912]  INFO -- : worker=0 ready
+I, [2016-12-16T02:50:33.112643 #22914]  INFO -- : worker=1 spawned pid=22914
+I, [2016-12-16T02:50:33.112905 #22914]  INFO -- : worker=1 ready
+I, [2016-12-16T02:55:58.496351 #22908]  INFO -- : reaped #<Process::Status: pid 22912 exit 0> worker=0
+I, [2016-12-16T02:55:58.500030 #22908]  INFO -- : reaped #<Process::Status: pid 22914 exit 0> worker=1
+I, [2016-12-16T02:55:58.500251 #22908]  INFO -- : master complete
+I, [2016-12-16T02:56:06.134891 #23249]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-16T02:56:10.983690 #23249]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-16T02:56:10.985447 #23249]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-16T02:56:10.985777 #23249]  INFO -- : worker=0 spawning...
+I, [2016-12-16T02:56:10.999871 #23253]  INFO -- : worker=0 spawned pid=23253
+I, [2016-12-16T02:56:11.000449 #23253]  INFO -- : worker=0 ready
+I, [2016-12-16T02:56:11.001531 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-16T02:56:11.008131 #23249]  INFO -- : master process ready
+I, [2016-12-16T02:56:11.016069 #23256]  INFO -- : worker=1 spawned pid=23256
+I, [2016-12-16T02:56:11.016578 #23256]  INFO -- : worker=1 ready
+E, [2016-12-16T06:25:05.167786 #23249] ERROR -- : reaped #<Process::Status: pid 23256 SIGKILL (signal 9)> worker=1
+I, [2016-12-16T06:25:05.189718 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-16T06:25:05.294713 #25117]  INFO -- : worker=1 spawned pid=25117
+I, [2016-12-16T06:25:05.295601 #25117]  INFO -- : worker=1 ready
+E, [2016-12-16T12:23:10.014330 #23249] ERROR -- : worker=0 PID:23253 timeout (31s > 30s), killing
+E, [2016-12-16T12:23:21.256934 #23249] ERROR -- : reaped #<Process::Status: pid 23253 SIGKILL (signal 9)> worker=0
+E, [2016-12-16T12:23:21.257686 #23249] ERROR -- : worker=1 PID:25117 timeout (31s > 30s), killing
+I, [2016-12-16T12:23:21.258140 #23249]  INFO -- : worker=0 spawning...
+E, [2016-12-16T12:23:21.264377 #23249] ERROR -- : worker=1 PID:25117 timeout (31s > 30s), killing
+I, [2016-12-16T12:23:21.277828 #28546]  INFO -- : worker=0 spawned pid=28546
+I, [2016-12-16T12:23:21.278309 #28546]  INFO -- : worker=0 ready
+E, [2016-12-16T12:23:21.403992 #23249] ERROR -- : reaped #<Process::Status: pid 25117 SIGKILL (signal 9)> worker=1
+I, [2016-12-16T12:23:21.404347 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-16T12:23:21.414420 #28549]  INFO -- : worker=1 spawned pid=28549
+I, [2016-12-16T12:23:21.414792 #28549]  INFO -- : worker=1 ready
+E, [2016-12-17T02:03:26.092930 #23249] ERROR -- : reaped #<Process::Status: pid 28546 SIGKILL (signal 9)> worker=0
+I, [2016-12-17T02:03:26.099821 #23249]  INFO -- : worker=0 spawning...
+I, [2016-12-17T02:03:26.126573 #4823]  INFO -- : worker=0 spawned pid=4823
+I, [2016-12-17T02:03:26.127193 #4823]  INFO -- : worker=0 ready
+E, [2016-12-17T04:14:51.168763 #23249] ERROR -- : worker=1 PID:28549 timeout (31s > 30s), killing
+E, [2016-12-17T04:15:16.912340 #23249] ERROR -- : reaped #<Process::Status: pid 28549 SIGKILL (signal 9)> worker=1
+I, [2016-12-17T04:15:16.913615 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-17T04:15:16.997159 #5984]  INFO -- : worker=1 spawned pid=5984
+I, [2016-12-17T04:15:16.997819 #5984]  INFO -- : worker=1 ready
+E, [2016-12-17T11:08:50.088359 #23249] ERROR -- : reaped #<Process::Status: pid 5984 SIGKILL (signal 9)> worker=1
+I, [2016-12-17T11:08:50.109662 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-17T11:08:50.141716 #12350]  INFO -- : worker=1 spawned pid=12350
+I, [2016-12-17T11:08:50.142315 #12350]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+D, [2016-12-17T20:44:54.543026 #23249] DEBUG -- : waiting 16.0s after suspend/hibernation
+D, [2016-12-17T20:45:45.853147 #23249] DEBUG -- : waiting 16.0s after suspend/hibernation
+D, [2016-12-18T00:24:48.556090 #23249] DEBUG -- : waiting 16.0s after suspend/hibernation
+E, [2016-12-18T01:32:25.124372 #23249] ERROR -- : reaped #<Process::Status: pid 12350 SIGKILL (signal 9)> worker=1
+I, [2016-12-18T01:32:25.131939 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-18T01:32:25.160794 #20643]  INFO -- : worker=1 spawned pid=20643
+I, [2016-12-18T01:32:25.161322 #20643]  INFO -- : worker=1 ready
+E, [2016-12-18T06:22:43.934660 #23249] ERROR -- : reaped #<Process::Status: pid 4823 SIGKILL (signal 9)> worker=0
+I, [2016-12-18T06:22:43.945966 #23249]  INFO -- : worker=0 spawning...
+I, [2016-12-18T06:22:43.970460 #24838]  INFO -- : worker=0 spawned pid=24838
+I, [2016-12-18T06:22:43.970923 #24838]  INFO -- : worker=0 ready
+D, [2016-12-18T21:32:46.002173 #23249] DEBUG -- : waiting 16.0s after suspend/hibernation
+E, [2016-12-19T13:01:25.299070 #23249] ERROR -- : reaped #<Process::Status: pid 20643 SIGKILL (signal 9)> worker=1
+I, [2016-12-19T13:01:25.312252 #23249]  INFO -- : worker=1 spawning...
+I, [2016-12-19T13:01:25.348631 #9451]  INFO -- : worker=1 spawned pid=9451
+I, [2016-12-19T13:01:25.349804 #9451]  INFO -- : worker=1 ready

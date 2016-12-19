@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-    default from: 'rexwebcompany@gmail.com'
+    default from: 'sistema@saad.net.br'
     layout 'mailer'
 
     def sample_email(email, mensagem, doc, autor)

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "rexwebcompany@gmail.com"
+  default from: "sistema@saad.net.br"
   layout 'mailer'
 end
