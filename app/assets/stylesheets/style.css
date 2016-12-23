@@ -18,7 +18,9 @@ body {
     margin: 0px !important;
     font-size:13px;
 }
-
+.title_event{
+  color: #428bca;
+}
 #exTab1 .tab-content {
   color : white;
   background-color: #e7e7e7;

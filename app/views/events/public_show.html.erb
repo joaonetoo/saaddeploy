@@ -1,6 +1,18 @@
 <%= link_to 'Voltar', public_events_events_path %>
 <div class="container"><h2>Evento </h2></div>
 <div id="exTab3" class="container">
+<div class="row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+      <h1 class="title_event"><%= image_tag @event.image.url(:thumb) %><%= @event.nome.capitalize %></h1>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+
 <ul  class="nav nav-pills">
       <li class="active">
         <a  href="#1b" data-toggle="tab">Overview</a>
@@ -14,7 +26,6 @@
       <div class="tab-content clearfix">
         <div class="tab-pane active" id="1b">
           <h3>Dados Gerais</h3>
-          <p><%= image_tag @event.image.url(:thumb) %></p>
           <p>
           <strong>Nome:</strong>
           <%= @event.nome %>
