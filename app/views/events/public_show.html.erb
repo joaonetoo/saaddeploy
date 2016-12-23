@@ -1,15 +1,12 @@
 <%= link_to 'Voltar', public_events_events_path %>
-<div class="container"><h2>Evento </h2></div>
+<div class="container">
 <div id="exTab3" class="container">
 <div class="row">
-    <div class="col-sm-4">
-
+    <div class="col-md-2 img text-right">
+      <%= image_tag @event.image.url(:thumb) %>
     </div>
-    <div class="col-sm-4">
-      <h1 class="title_event"><%= image_tag @event.image.url(:thumb) %><%= @event.nome.capitalize %></h1>
-    </div>
-    <div class="col-sm-4">
-
+    <div class="col-sm-10">
+      <h1 class="title_event"><%= @event.nome.capitalize %></h1>
     </div>
   </div>
 
@@ -83,6 +80,7 @@
          <%end%>
         </div>
       </div>
+  </div>
   </div>
 
 
