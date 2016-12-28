@@ -155,17 +155,21 @@ require "prawn/measurement_extensions"
 
   def pdf_plan
     @plano = current_user.plano
-    @learning_result = current_user.learning_results.last
-    @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
-    @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
-    @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
-    @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
-    @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
-    @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
-    @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
-    @result = current_user.results.last
-    @ancora1 = @result.anchors[0]
-    @descricao = @ancora1.descricao.gsub("\n", '')
+    if current_user.learning_results != nil && current_user.learning_results.length > 0
+      @learning_result = current_user.learning_results.last
+      @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
+      @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
+      @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
+      @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
+      @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
+      @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
+      @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
+    end
+    if current_user.results != nil && current_user.results.length > 0
+      @result = current_user.results.last
+      @ancora1 = @result.anchors[0]
+      @descricao = @ancora1.descricao.gsub("\n", '')
+    end
     respond_to do |format|
       format.html
       format.pdf {
@@ -174,17 +178,21 @@ require "prawn/measurement_extensions"
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{current_user.nome.capitalize}", :color => "006699", :align => :center, :size => 18
-          pdf.move_down 40
-          pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
-          pdf.move_down 40
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@descricao}", :align => :left, :size => 12
+          if current_user.learning_results != nil && current_user.learning_results.length > 0
+            pdf.move_down 40
+            pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
+            pdf.move_down 40
+            pdf.font("Helvetica", :style => :bold)
+          end
+          if current_user.results != nil && current_user.results.length > 0
+            pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@descricao}", :align => :left, :size => 12
+          end
           pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Plano de carreira",:color => "006699", :align => :left, :size => 16

@@ -306,7 +306,7 @@ class TeachersAreaController < ApplicationController
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Plano de carreira",:color => "006699", :align => :left, :size => 16
           pdf.move_down 5
-          pdf.text "1.0 Ameaças", :color => "006699",:align => :left, :size => 14
+          pdf.text "Ameaças", :color => "006699",:align => :left, :size => 14
 
 
           @plano.threats.each do |threat|
@@ -371,19 +371,19 @@ class TeachersAreaController < ApplicationController
             pdf.move_down 20
           end
         end
-
+          pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "4.0 Forças", :color => "006699",:align => :left, :size => 14
+          pdf.text "Forças", :color => "006699",:align => :left, :size => 14
            pdf.move_down 5
         @plano.strengths.each do |strength|
           pdf.font("Helvetica")
           pdf.text "#{strength.text}", :align => :left, :size => 12
 
           pdf.move_down 20
-
+          pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
           strength.strength_answers.each do |answer|
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta Força", :color => "006699",:align => :left, :size => 14
              pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
