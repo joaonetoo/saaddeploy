@@ -43,6 +43,8 @@ def setup_teacher_search
     @subjects = []
     @classrooms = []
     @students = []
+    @anos = ["Todos", "2016", "2015"]
+    @semestres = ["Todos", "1", "2"]
     @institution = Institution.find(current_user.institution_id)
     @campus = current_user.campus
     @campus.each do |campu|
@@ -452,6 +454,10 @@ def setup_teacher_search
     elsif current_user.type == 'Coordinator' || 'Principal'
       @classrooms = @subject.classrooms
     end
+    @anos = []
+    @classrooms.each do |classroom|
+        @anos << classroom.ano
+    end
     respond_to do |format|
        format.js {  }
     end
@@ -470,6 +476,33 @@ def setup_teacher_search
       end
     elsif current_user.type == 'Coordinator' || 'Principal'
       @classrooms = @subject.classrooms
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+  def ano_selection
+    @ano = params[:ano]
+    @subject = Subject.find(params[:subject])
+    @semestres = []
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator' || 'Principal'
+      @classrooms = @subject.classrooms
+    end
+    @classrooms.each do |classroom|
+      if classroom.ano == @ano
+        @semestres << classroom.semestre
+      end
     end
 
     respond_to do |format|

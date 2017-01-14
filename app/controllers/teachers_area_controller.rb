@@ -395,7 +395,11 @@ class TeachersAreaController < ApplicationController
           pdf.font("Helvetica", :style => :bold)
           pdf.text "6.0 Meus objetivos ", :color => "006699",:align => :left, :size => 14
 
+
           pdf.move_down 10
+          data = [ ["this is not quite as long as the others", "here we have a line that is long but with smaller words", "this is so very looooooooooooooooooooooooooooooong"] ]
+          pdf.table(data)
+          pdf.move_down 20
         @plano.objectives.each do |objective|
           pdf.font("Helvetica")
           pdf.text "#{objective.text}, Data limite planejada: #{l(objective.data, format: '%d de %B, de %Y')}", :align => :left, :size => 12

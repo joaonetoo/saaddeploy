@@ -9,18 +9,20 @@
                       <table class="table table-bordered table-striped table-condensed">
                             <thead>
                               <tr>
-                                <th>Turma</th>
                                 <th>Disciplina</th>
+                                <th>Ano</th>
+                                <th>Semestre</th>
                                 <th>Turno</th>
-                                <th>Ações</th>
+                                <th>Nome</th>
                               </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                  <td><%= @classroom.codigo %></td>
                                   <td><%= @classroom.subject.nome %></td>
-                                  <td><%= @classroom.turno%></td>
-                                  <td><center><%= link_to 'Editar', edit_classroom_path(@classroom) %></center></td>
+                                  <td><%= @classroom.ano %></td>
+                                  <td><%= @classroom.semestre %></td>
+                                  <td><%= @classroom.turno %></td>
+                                  <td><%= @classroom.codigo %></td>
                                 </tr>
                             </tbody>
                           </table>

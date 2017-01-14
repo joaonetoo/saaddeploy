@@ -12,8 +12,10 @@
                             <thead>
                               <tr>
                                 <th>Disciplina</th>
+                                <th>Ano</th>
+                                <th>Semestre</th>
                                 <th>Turno</th>
-                                <th>Código</th>
+                                <th>Nome</th>
                                 <th colspan="3"><center>Ações</center></th>
                               </tr>
                             </thead>
@@ -21,6 +23,8 @@
                               <% @classrooms.each do |classroom| %>
                                 <tr>
                                   <td><%= classroom.subject.nome %></td>
+                                  <td><%= classroom.ano %></td>
+                                  <td><%= classroom.semestre %></td>
                                   <td><%= classroom.turno %></td>
                                   <td><%= classroom.codigo %></td>
                                   <td><center><%= button_to 'detalhes', classroom, :class => "btn btn-primary btn-sm", method: :get%></center></td>
