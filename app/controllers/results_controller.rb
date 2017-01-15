@@ -371,7 +371,23 @@ def setup_teacher_search
       @subject = Subject.where(id: params[:subject_id]).first
       @selecao = @subject.nome
     end
+#aqui
+    if params[:ano] != 'todos' && params[:ano] != nil
+      if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+      elsif current_user.type == 'Coordinator' || 'Principal'
+        @classrooms = @subject.classrooms
+      end
 
+    end
+#
     if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
       @classroom = Classroom.where(id: params[:classroom_id]).first
       @selecao = "turma " + @classroom.codigo

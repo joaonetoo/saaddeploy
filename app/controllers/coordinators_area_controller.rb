@@ -6,6 +6,8 @@ class CoordinatorsAreaController < ApplicationController
     @courses = []
     @centers = []
     @campus = []
+    @anos = []
+    @semestres = []
     @institution = Institution.find(current_user.institution_id)
     @course = Course.find(current_user.course_id)
     @center = @course.center

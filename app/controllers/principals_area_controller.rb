@@ -22,6 +22,8 @@ class PrincipalsAreaController < ApplicationController
     @subjects = []
     @classrooms = []
     @students = []
+    @anos = []
+    @semestres = []
     @institution = Institution.find(current_user.institution_id)
     @campus = current_user.campus
     @campus.each do |campu|
