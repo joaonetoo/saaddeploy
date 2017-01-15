@@ -194,6 +194,7 @@ Rails.application.routes.draw do
       get 'center2_selection'
       get 'campu_selection'
       get 'campu2_selection'
+      get 'no_users_error'
     end
   end
   resources :quizzes

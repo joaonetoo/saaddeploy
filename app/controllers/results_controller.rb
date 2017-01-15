@@ -33,6 +33,7 @@ def setup_teacher_search
         end
     end
     @subjects.uniq!
+    @users = @students
     @students = @students.uniq { |s| s.nome}
 
   end
@@ -352,14 +353,31 @@ def setup_teacher_search
     end
 
     if params[:course_id] != 'todos' && params[:center_id] != nil && params[:center_id] != 'todos'
-      @users = User.where(course_id: params[:course_id], type: 'Student').find_each
-      @users = @users.to_a
-      @course = Course.where(id: params[:course_id]).first
-      @selecao = @course.nome
+      if current_user.type == 'Teacher'
+        setup_teacher_search
+        @selecao = "todos os meus alunos"
+      else
+        @users = User.where(course_id: params[:course_id], type: 'Student').find_each
+        @users = @users.to_a
+        @course = Course.where(id: params[:course_id]).first
+        @selecao = @course.nome
+      end
     end
 
     if params[:subject_id] != 'todos' && params[:subject_id] != nil
-      @classrooms = Classroom.where(subject_id: params[:subject_id]).find_each
+      @subject = Subject.find(params[:subject_id])
+      if current_user.type == 'Teacher'
+        @classrooms = []
+        @subject.classrooms.each do |classroom|
+          classroom.users.each do |user|
+            if user.id == current_user.id
+              @classrooms << classroom
+            end
+          end
+        end
+      elsif current_user.type == 'Coordinator' || 'Principal'
+        @classrooms = @subject.classrooms
+      end
       @users = []
       @classrooms.each do |classroom|
         classroom.users.each do |user|
@@ -368,26 +386,64 @@ def setup_teacher_search
           end
         end
       end
-      @subject = Subject.where(id: params[:subject_id]).first
       @selecao = @subject.nome
     end
-#aqui
+#ano
     if params[:ano] != 'todos' && params[:ano] != nil
+      @ano = params[:ano]
       if current_user.type == 'Teacher'
-      @classrooms = []
-      @subject.classrooms.each do |classroom|
-        classroom.users.each do |user|
-          if user.id == current_user.id
+        @classrooms = []
+        @current_user.classrooms.each do |classroom|
+          if classroom.subject == @subject && classroom.ano == @ano
+            @classrooms << classroom
+          end
+        end
+      elsif current_user.type == 'Coordinator' || 'Principal'
+        @subject.classrooms.each do |classroom|
+          if classroom.ano == @ano
             @classrooms << classroom
           end
         end
       end
-      elsif current_user.type == 'Coordinator' || 'Principal'
-        @classrooms = @subject.classrooms
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if(user.type == 'Student')
+            @users << user
+          end
+        end
       end
-
+      @selecao = "Turmas do ano #{@ano} da Disciplina #{@subject.nome}"
     end
 #
+#semestre
+    if params[:semestre] != 'todos' && params[:semestre] != nil
+      @semestre = params[:semestre]
+      if current_user.type == 'Teacher'
+        @classrooms = []
+        @current_user.classrooms.each do |classroom|
+          if classroom.subject == @subject && classroom.ano == @ano && classroom.semestre == @semestre
+            @classrooms << classroom
+          end
+        end
+      elsif current_user.type == 'Coordinator' || 'Principal'
+        @subject.classrooms.each do |classroom|
+          if classroom.semestre == @semestre && classroom.ano == @ano
+            @classrooms << classroom
+          end
+        end
+      end
+      @users = []
+      @classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if(user.type == 'Student')
+            @users << user
+          end
+        end
+      end
+      @selecao = "Turmas do #{@semestre} semestre, do ano #{@ano} da Disciplina #{@subject.nome}"
+    end
+
     if params[:classroom_id] != 'todos' && params[:classroom_id] != nil
       @classroom = Classroom.where(id: params[:classroom_id]).first
       @selecao = "turma " + @classroom.codigo
@@ -406,6 +462,7 @@ def setup_teacher_search
       @selecao = @users.first.nome
     end
 
+    if @users != nil
       @results = []
       @users.each do |user|
           user.results.each do |result|
@@ -413,7 +470,10 @@ def setup_teacher_search
           end
       end
 
-    @datas = @results.map(&:data_final).uniq
+      @datas = @results.map(&:data_final).uniq
+    else
+      redirect_to no_users_error_results_path, notice: 'Anchor was successfully created.'
+    end
 
   end
 

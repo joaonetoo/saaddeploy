@@ -23,8 +23,8 @@
                               <% @classrooms.each do |classroom| %>
                                 <tr>
                                   <td><%= classroom.subject.nome %></td>
-                                  <td><%= classroom.subject.ano %></td>
-                                  <td><%= classroom.subject.semestre %></td>
+                                  <td><%= classroom.ano %></td>
+                                  <td><%= classroom.semestre %></td>
                                   <td><%= classroom.codigo %></td>
                                   <td><%= classroom.turno%></td>
                                   <td><center><%= button_to 'ver', classroom, :class => "btn btn-primary btn-sm", method: :get%></center></td>
