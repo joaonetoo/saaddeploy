@@ -249,21 +249,23 @@ $(document).ready(function () {
       })
     })
 
-    $('#_subject2_id').change(function () {
-      if($('#_subject2_id').val() == 'todos'){
-        $('#_classroom2_id').empty()
-        $('#_classroom2_id').prepend("<option value='todos'>Todas</option>")
-        $('#_classroom2_id option:first').attr("selected", "selected");
-        $('#_users2_id').empty()
-        $('#_users2_id').prepend("<option value='todos'>Todos</option>")
-        $('#_users2_id option:first').attr("selected", "selected");
+    $('#semestre').change(function () {
+      if($('semestre').val() == 'todos'){
+        $('#_classroom_id').empty()
+        $('#_classroom_id').prepend("<option value='todos'>Todos</option>")
+        $('#_classroom_id option:first').attr("selected", "selected");
+        $('#_users_id').empty()
+        $('#_users_id').prepend("<option value='todos'>Todas</option>")
+        $('#_users_id option:first').attr("selected", "selected");
       }
       $.ajax( {
-        url: "/results/subject2_selection",
+        url: "/results/semestre_selection",
         type: "GET",
-        data: { subject : $('#_subject2_id option:selected').val() },
+        data: { semestre : $('#semestre option:selected').val(), subject : $('#_subject_id option:selected').val() },
       })
     })
+
+
 
     $('#_classroom_id').change(function () {
       if($('#_classroom_id').val() == 'todos') {

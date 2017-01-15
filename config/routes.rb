@@ -179,6 +179,7 @@ Rails.application.routes.draw do
       get 'subject_selection'
       get 'subject2_selection'
       get 'ano_selection'
+      get 'semestre_selection'
       get 'classroom_selection'
       get 'classroom2_selection'
       get 'course_selection'
