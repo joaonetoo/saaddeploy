@@ -21,6 +21,12 @@
                     <%= label_tag :Disciplina %>
                     <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
 
+                    <%= label_tag :ano %>
+                    <%= select_tag "ano", options_for_select(@anos)%>
+
+                    <%= label_tag :semestre %>
+                    <%= select_tag "semestre", options_for_select(@semestres)%>
+
                     <%= label_tag :Turma %>
                     <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
 
@@ -44,6 +50,12 @@
 
                     <%= label_tag :Disciplina %>
                     <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
+
+                    <%= label_tag :ano %>
+                    <%= select_tag "ano2", options_for_select(@anos)%>
+
+                    <%= label_tag :semestre %>
+                    <%= select_tag "semestre2", options_for_select(@semestres)%>
 
                     <%= label_tag :Turma %>
                     <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>

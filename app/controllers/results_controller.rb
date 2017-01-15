@@ -479,7 +479,10 @@ def setup_teacher_search
     elsif current_user.type == 'Coordinator' || 'Principal'
       @classrooms = @subject.classrooms
     end
-
+    @anos = []
+    @classrooms.each do |classroom|
+        @anos << classroom.ano
+    end
     respond_to do |format|
        format.js {  }
     end
@@ -512,7 +515,60 @@ def setup_teacher_search
     end
   end
 
+  def ano2_selection
+    @ano = params[:ano]
+    @subject = Subject.find(params[:subject])
+    @semestres = []
+    if current_user.type == 'Teacher'
+      @classrooms = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator' || 'Principal'
+      @classrooms = @subject.classrooms
+    end
+    @classrooms.each do |classroom|
+      if classroom.ano == @ano
+        @semestres << classroom.semestre
+      end
+    end
+
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
   def semestre_selection
+    @semestre = params[:semestre]
+    @subject = Subject.find(params[:subject])
+    @classrooms = []
+    if current_user.type == 'Teacher'
+      @classrooms_pre = []
+      @subject.classrooms.each do |classroom|
+        classroom.users.each do |user|
+          if user.id == current_user.id
+            @classrooms_pre << classroom
+          end
+        end
+      end
+    elsif current_user.type == 'Coordinator' || 'Principal'
+      @classrooms_pre = @subject.classrooms
+    end
+    @classrooms_pre.each do |classroom|
+      if classroom.semestre == @semestre
+        @classrooms << classroom
+      end
+    end
+    respond_to do |format|
+       format.js {  }
+    end
+  end
+
+  def semestre2_selection
     @semestre = params[:semestre]
     @subject = Subject.find(params[:subject])
     @classrooms = []

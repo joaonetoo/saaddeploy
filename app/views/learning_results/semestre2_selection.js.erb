@@ -1,0 +1,7 @@
+$('#_classroom2_id').empty();
+$('#_users2_id').empty();
+$('#_users2_id').prepend("<option value='todos'>Todos</option>");
+$('#_users2_id option:first').attr("selected", "selected");
+$('#_classroom2_id').html("<%= escape_javascript options_from_collection_for_select(@classrooms, :id, :codigo)%>");
+$('#_classroom2_id').prepend("<option value='todos'>Todos</option>");
+$('#_classroom2_id option:first').attr("selected", "selected");
