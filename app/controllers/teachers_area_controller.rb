@@ -17,15 +17,16 @@ class TeachersAreaController < ApplicationController
     @campus << @campu
     @subjects = []
     @students = []
+    @anos = []
+    @semestres = []
     @classrooms.each do |classroom|
         @subjects << classroom.subject
         classroom.users.each do |user|
-            if user.type == 'Student'
-            @students << user
-        end
+              @students << user
         end
     end
     @subjects.uniq!
+    @users = @students
     @students = @students.uniq { |s| s.nome}
   end
 

@@ -20,9 +20,8 @@
                     </label>
                     <div>
                         <%= link_to 'Buscar planos', coordinators_area_search_plans_path%>
-                        <%= link_to 'Buscar âncoras', search_results_path %>
-                        <%= link_to 'Comparar âncoras ', analytics_results_path %>
-                        <%= link_to 'Criar Questionario', new_quiz_path %>
+                        <%= link_to 'Buscar âncoras', search_results_path, method: :post %>
+                        <%= link_to 'Comparar âncoras ', analytics_results_path, method: :post %>
                     </div>
                   </div>
                   <div>
@@ -32,9 +31,8 @@
                       Estilos de aprendizagem
                     </label>
                     <div>
-                      <%= link_to 'Buscar resultados', search_learning_results_path %>
-                      <%= link_to 'Criar Questionario', new_learning_quiz_path %>
-                      <%= link_to 'Comparar resultados', analytics_learning_results_path %>
+                      <%= link_to 'Buscar resultados', search_learning_results_path, method: :post %>
+                      <%= link_to 'Comparar resultados', analytics_learning_results_path, method: :post %>
                     </div>
                   </div>
                   <div>

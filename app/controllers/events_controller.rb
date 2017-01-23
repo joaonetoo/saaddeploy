@@ -119,7 +119,7 @@ class EventsController < ApplicationController
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 250
-          pdf.text "Declaro para os devidos fins que #{@project.autor.capitalize} apresentaram o trabalho intitulado #{@project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+          pdf.text "Declaro para os devidos fins que #{@project.autor.capitalize} apresentou/apresentaram o trabalho intitulado #{@project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
           pdf.move_down 150
           pdf.move_down 10
           pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
@@ -128,7 +128,7 @@ class EventsController < ApplicationController
           @projects.each do |project|
             pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape, :background => img)
             pdf.move_down 250
-            pdf.text "Declaro para os devidos fins que #{@project.autor.capitalize} apresentaram o trabalho intitulado #{@project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+            pdf.text "Declaro para os devidos fins que #{project.autor.capitalize} apresentaram o trabalho intitulado #{project.titulo}, no evento #{@event.nome}, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 150
             pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 10
