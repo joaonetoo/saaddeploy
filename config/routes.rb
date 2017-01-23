@@ -106,7 +106,6 @@ Rails.application.routes.draw do
   resources :learning_styles
   resources :learning_results do
     collection do
-      post 'new'
       get 'search'
       post 'search'
       post 'list'
