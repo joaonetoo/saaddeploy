@@ -23,7 +23,7 @@
   <div class="alert alert-info">
     <p>Voce tem Questionarios de estilo de aprendizagem para responder, clique nas datas</p>
       <% @my_learning_quizzes.each do |quiz| %>
-        <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final), :method=> :post %><br>
+        <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final)%><br>
       <% end %>
   </div>
 <% end %>
@@ -60,7 +60,7 @@
               </div>
               <div class="details">
                 <p>
-                  <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final), :method=> :post %><br>
+                  <%= link_to "#{quiz.data_final}", new_learning_result_path(:data_final => quiz.data_final)%><br>
                 </p>
               </div>
             </div>
