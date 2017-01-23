@@ -105,7 +105,7 @@
     @anchor2.save
 
 
-    redirect_to @result
+    redirect_to admin_index_path
   end
 
 end
