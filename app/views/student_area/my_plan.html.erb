@@ -17,7 +17,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="forcas">
-                          <h2>&nbsp;<i class="fa fa-angle-right"></i>Forças <%= link_to '+ ADICIONAR FORÇA', '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                          <h2>&nbsp;<i class="fa fa-angle-right"></i>Forças <%= link_to '+', '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar força" %></h2>
                           <p>&nbsp;Características e condições pessoais que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
                             <hr>
                             <div id = "strengths">
@@ -27,7 +27,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de forças</h2>
                               <% @strength_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -50,7 +50,7 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="oportunidades">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Oportunidades <%= link_to '+ ADICIONAR OPORTUNIDADE', '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Oportunidades <%= link_to '+', '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Oportunidade" %></h2>
                           <p>&nbsp;Eventos externos que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
                             <hr>
                             <div id = "opportunities">
@@ -60,7 +60,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre oportunidades</h2>
                               <% @opportunity_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -83,7 +83,7 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="fraquezas">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Fraquezas <%= link_to '+ ADICIONAR FRAQUEZA', '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Fraquezas <%= link_to '+', '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Fraqueza" %></h2>
                           <p>&nbsp;Características e condições pessoais que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
                             <hr>
                             <div id = "weaknesses">
@@ -93,7 +93,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de fraquezas</h2>
                               <% @weakness_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -116,7 +116,7 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="ameacas">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Ameaças <%= link_to '+ ADICIONAR AMEAÇA', '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Ameaças <%= link_to '+', '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Ameaça" %></h2>
                           <p>&nbsp;Eventos externos que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
                             <hr>
                             <div id = "threats">
@@ -126,7 +126,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de ameaças</h2>
                               <% @threat_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -149,7 +149,7 @@
                             </div>
                       </div>
                                             <div role="tabpanel" class="tab-pane" id="objetivos">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Objetivos <%= link_to '+ ADICIONAR OBJETIVO', '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-lg" %></h2>
+                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Objetivos <%= link_to '+', '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Objetivo" %></h2>
                         <p>&nbsp;Quais os seus objetivos para o próximo ano, para daqui a cinco anos e dez anos? Reflita para isso, com base nas análises realizadas anteriormente e na missão que você definiu.</p>
                         <hr>
                         <div id = "objectives">
@@ -159,7 +159,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de objetivos</h2>
                               <% @objective_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -185,7 +185,7 @@
                         <%= form_for(@plano) do |f| %>
                         <div class="form-group">
                           <h2>&nbsp;<i class="fa fa-angle-right"></i>Minha missão</h2>
-                            <p>&nbsp;Reflita sobre sua missão, a razão de ser de seus esforços e do seu emprego de seus talentos e recursos. Registre-os abaixo</p><br>
+                            <p>&nbsp;Reflita sobre sua missão, a razão de ser de seus esforços e do seu emprego de seus talentos e recursos. Registre-os abaixo. Atualize o plano para salvar alterações</p><br>
                             <label class="col-sm-1 col-sm-1 control-label">&nbsp;Minha missão</label>
                           <div class="col-sm-11">
                               <%= f.text_area :mission, :class => "form-control"%><br>
@@ -194,7 +194,7 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre missão</h2>
                               <% @mission_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to ' - Deletar observação', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -211,6 +211,7 @@
           <div class="field">
           <%= f.label :status %>
           <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
+          <p>Somente planos finalizados ficarão visíveis para os professores</p>
         </div>
         <div class="actions">
           <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), :class => "btn btn-primary btn-lg" %>

@@ -307,8 +307,15 @@ class TeachersAreaController < ApplicationController
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Plano de carreira",:color => "006699", :align => :left, :size => 16
           pdf.move_down 5
-          pdf.text "Ameaças", :color => "006699",:align => :left, :size => 14
+          pdf.text "Minha Missão", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
+           pdf.font("Helvetica")
+              pdf.text "#{@plano.mission}", :align => :left, :size => 12
+          pdf.move_down 20
 
+          pdf.font("Helvetica", :style => :bold)
+          pdf.text "Ameaças", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
 
           @plano.threats.each do |threat|
 
@@ -316,13 +323,12 @@ class TeachersAreaController < ApplicationController
               pdf.text "#{threat.text}", :align => :left, :size => 12
               pdf.font("Helvetica", :style => :bold)
 
-               pdf.move_down 20
+              pdf.move_down 20
+              pdf.font("Helvetica")
+              pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+              pdf.move_down 5
               threat.threats_answers.each do |answer|
-
-
-                pdf.text "Resposta Ameaça",:color => "006699", :align => :left, :size => 14
                 pdf.move_down 5
-
                 pdf.font("Helvetica")
                 pdf.text "#{answer.text}", :align => :left, :size => 12
 
@@ -332,17 +338,16 @@ class TeachersAreaController < ApplicationController
 
 
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "2.0 oportunidades", :color => "006699",:align => :left, :size => 14
+          pdf.text "Oportunidades", :color => "006699",:align => :left, :size => 14
           pdf.move_down 5
         @plano.opportunities.each do |opportunity|
           pdf.font("Helvetica")
           pdf.text "#{opportunity.text}", :align => :left, :size => 12
           pdf.move_down 20
-
+          pdf.font("Helvetica")
+            pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+            pdf.move_down 5
           opportunity.opportunity_answers.each do |answer|
-
-            pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta oportunidade:", :color => "006699",:align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
@@ -353,7 +358,7 @@ class TeachersAreaController < ApplicationController
 
 
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "3.0 fraquezas", :color => "006699",:align => :left, :size => 14
+            pdf.text "Fraquezas", :color => "006699",:align => :left, :size => 14
              pdf.move_down 5
           @plano.weaknesses.each do |weakness|
             pdf.font("Helvetica")
@@ -361,10 +366,11 @@ class TeachersAreaController < ApplicationController
 
             pdf.move_down 20
 
+            pdf.font("Helvetica")
+            pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+            pdf.move_down 5
             weakness.weakness_answers.each do |answer|
-
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta Fraqueza", :color => "006699",:align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
@@ -393,30 +399,33 @@ class TeachersAreaController < ApplicationController
           end
          end
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "6.0 Meus objetivos ", :color => "006699",:align => :left, :size => 14
+        @objectives = []
+        @strategies = []
+        @deadlines = []
+        @factors = []
+        @resources = []
 
+        @plano.objectives.each do |objective|
+          @objectives << objective.text
+          @deadlines << objective.data
+          objective.strategies.each do |strategy|
+            @strategies << strategy.text
+            @factors << strategy.factor
+            @resources << strategy.resource
+         end
+         end
+         pdf.font("Helvetica", :style => :bold)
+        pdf.text "Plano de ação: ", :color => "006699", :align => :left, :size => 14
+        pdf.font("Helvetica")
+         @objetivo = @objectives.join("\n")
+         @estrategia = @strategies.join("\n")
+         @prazo = @deadlines.join("\n")
+         @fatores = @factors.join("\n")
+         @recursos = @resources.join("\n")
 
-          pdf.move_down 10
-          data = [ ["this is not quite as long as the others", "here we have a line that is long but with smaller words", "this is so very looooooooooooooooooooooooooooooong"] ]
+          data = [ ["Objetivos", "Estratégias", "Prazos", "Fatores Críticos de sucesso", "Recursos" ],[@objetivo, @estrategia, @prazo, @fatores, @recursos]]
           pdf.table(data)
           pdf.move_down 20
-        @plano.objectives.each do |objective|
-          pdf.font("Helvetica")
-          pdf.text "#{objective.text}, Data limite planejada: #{l(objective.data, format: '%d de %B, de %Y')}", :align => :left, :size => 12
-
-          pdf.move_down 20
-
-          objective.strategies.each do |strategy|
-
-            pdf.font("Helvetica", :style => :bold)
-            pdf.text "Estratégias: ", :color => "006699", :align => :left, :size => 14
-            pdf.move_down 5
-            pdf.font("Helvetica")
-            pdf.text "#{strategy.text}, Data limite: #{l(strategy.deadline, format: '%d de %B, de %Y')}", :align => :left, :size => 12
-            pdf.move_down 10
-         end
-         end
         send_data pdf.render, filename: 'plan.pdf', type: 'application/pdf', disposition: "inline"
       }
     end

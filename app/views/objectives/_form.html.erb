@@ -3,7 +3,8 @@
 <%= form_for(Objective.new, remote: remote, html: {role: :form, 'data-model' => 'objective'}) do |f| %>
 
   <div class="field">
-    <%= f.label :deadline %><br>
+    <%= f.label :prazo %><br>
+    <p>Indique os objetivos de curto, médio e longo prazo</p>
     <select name="objective[deadline]" id="objective_deadline" class="form-control">
           <option value="1">1 ano</option>
           <option value="5">5 anos</option>

@@ -1,14 +1,26 @@
 <% modal ||= false %>
 <% remote = modal ? true : false %>
 <%= form_for(Strategy.new, remote: remote, html: {role: :form, 'data-model' => 'strategy'}) do |f| %>
-
+  <p>Para cada objetivo, destaque as ações necessárias para alcança-los</p>
   <div class="field">
-    <%= f.label :deadline %><br>
+    <%= f.label :prazo %><br>
     <%= f.date_select :deadline, :start_year => Date.current.year, :end_year => locals[:limit].year %>
   </div>
   <div class="field">
     <%= f.label :estrategia, class: 'control-label' %><br>
     <%= f.text_field :text, class: 'control-label' %>
+    <span class="help-block"></span>
+  </div>
+  <div class="field">
+    <%= f.label :fator_critico, class: 'control-label' %><br>
+    <p>Determine os fatores que você considera essenciais para o alcance dos objetivos. Podem estar ligados a qualificação, o autoconhecimento, a rede de relacionamentos, entre outros aspectos.</p>
+    <%= f.text_field :factor, class: 'control-label' %>
+    <span class="help-block"></span>
+  </div>
+  <div class="field">
+    <%= f.label :recursos, class: 'control-label' %><br>
+    <p>Indique os recursos necessários para o alcance dos objetivos. Podem ser recursos financeiros, materiais , de tempo e tecnológicos.</p>
+    <%= f.text_field :resource, class: 'control-label' %>
     <span class="help-block"></span>
   </div>
   <div class="field">

@@ -1,5 +1,5 @@
-<h3>&nbsp;<i class="fa fa-angle-right"></i><%= opportunity.text %> <%= link_to ' - Deletar oportunidade', opportunity, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger"%></h3>
-    <h4>&nbsp;<i class="fa fa-angle-right"></i>Respostas a <%= opportunity.text %> <%= link_to ' + Nova Resposta', "##{opportunity.id}new_opportunity_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success" %></h4>
+<h3>&nbsp;<i class="fa fa-angle-right"></i><%= opportunity.text %> <%= link_to '-', opportunity, method: :delete, remote: true, data: { confirm: 'excluindo esta oportunidade, todas as respostas da mesma serão excluídas' }, :class => "btn btn-danger", :title => "Deletar Oportunidade"%></h3>
+    <h4>&nbsp;<i class="fa fa-angle-right"></i>Respostas a <%= opportunity.text %> <%= link_to '+', "##{opportunity.id}new_opportunity_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success", :title => "Adicionar resposta" %></h4>
 
     <% opportunity.opportunity_answers.each do |answer|%>
         <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to ' - Deletar resposta', answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm"%></label><br>
