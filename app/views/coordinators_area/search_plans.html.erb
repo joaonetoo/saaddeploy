@@ -13,18 +13,30 @@
 
     <%= hidden_field_tag :course_id, @course.id %>
 
-    <div class="campo_compare">
-    <%= label_tag :Disciplina %>
-    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Turma %>
-    <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Usuarios %>
-    <%= collection_select(nil, :users_id, @students, :id, :nome)%>
-    </div>
+
+  </div>
+<br>
+                <div class="field">
+                <div class="campo_compare">
+                    <%= label_tag :Disciplina %>
+                    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :ano %>
+                <%= select_tag "ano", options_for_select(@anos)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :semestre %>
+                <%= select_tag "semestre", options_for_select(@semestres)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Turma %>
+                <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Usuarios %>
+                <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+      </div>
   </div>
 
 <div class="row mt">

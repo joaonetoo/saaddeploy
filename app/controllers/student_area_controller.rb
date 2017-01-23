@@ -155,17 +155,21 @@ require "prawn/measurement_extensions"
 
   def pdf_plan
     @plano = current_user.plano
-    @learning_result = current_user.learning_results.last
-    @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
-    @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
-    @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
-    @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
-    @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
-    @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
-    @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
-    @result = current_user.results.last
-    @ancora1 = @result.anchors[0]
-    @descricao = @ancora1.descricao.gsub("\n", '')
+    if current_user.learning_results != nil && current_user.learning_results.length > 0
+      @learning_result = current_user.learning_results.last
+      @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
+      @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
+      @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
+      @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
+      @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
+      @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
+      @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
+    end
+    if current_user.results != nil && current_user.results.length > 0
+      @result = current_user.results.last
+      @ancora1 = @result.anchors[0]
+      @descricao = @ancora1.descricao.gsub("\n", '')
+    end
     respond_to do |format|
       format.html
       format.pdf {
@@ -174,23 +178,34 @@ require "prawn/measurement_extensions"
 
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Nome do aluno: #{current_user.nome.capitalize}", :color => "006699", :align => :center, :size => 18
-          pdf.move_down 40
-          pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
-          pdf.move_down 40
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
-          pdf.move_down 20
-          pdf.font("Helvetica")
-          pdf.text "#{@descricao}", :align => :left, :size => 12
+          if current_user.learning_results != nil && current_user.learning_results.length > 0
+            pdf.move_down 40
+            pdf.text "Primeiro estilo predominante: #{@predominante1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@predominante1.descricao}", :align => :left, :size => 12
+            pdf.move_down 40
+            pdf.font("Helvetica", :style => :bold)
+          end
+          if current_user.results != nil && current_user.results.length > 0
+            pdf.text "Âncora de carreira: #{@ancora1.nome}",:color => "006699", :align => :left, :size => 16
+            pdf.move_down 20
+            pdf.font("Helvetica")
+            pdf.text "#{@descricao}", :align => :left, :size => 12
+          end
           pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
           pdf.text "Plano de carreira",:color => "006699", :align => :left, :size => 16
           pdf.move_down 5
-          pdf.text "1.0 Ameaças", :color => "006699",:align => :left, :size => 14
+          pdf.text "Minha Missão", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
+           pdf.font("Helvetica")
+              pdf.text "#{@plano.mission}", :align => :left, :size => 12
+          pdf.move_down 20
 
+          pdf.font("Helvetica", :style => :bold)
+          pdf.text "Ameaças", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
 
           @plano.threats.each do |threat|
 
@@ -198,13 +213,12 @@ require "prawn/measurement_extensions"
               pdf.text "#{threat.text}", :align => :left, :size => 12
               pdf.font("Helvetica", :style => :bold)
 
-               pdf.move_down 20
+              pdf.move_down 20
+              pdf.font("Helvetica")
+              pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+              pdf.move_down 5
               threat.threats_answers.each do |answer|
-
-
-                pdf.text "Resposta Ameaça",:color => "006699", :align => :left, :size => 14
                 pdf.move_down 5
-
                 pdf.font("Helvetica")
                 pdf.text "#{answer.text}", :align => :left, :size => 12
 
@@ -214,17 +228,16 @@ require "prawn/measurement_extensions"
 
 
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "2.0 oportunidades", :color => "006699",:align => :left, :size => 14
+          pdf.text "Oportunidades", :color => "006699",:align => :left, :size => 14
           pdf.move_down 5
         @plano.opportunities.each do |opportunity|
           pdf.font("Helvetica")
           pdf.text "#{opportunity.text}", :align => :left, :size => 12
           pdf.move_down 20
-
+          pdf.font("Helvetica")
+            pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+            pdf.move_down 5
           opportunity.opportunity_answers.each do |answer|
-
-            pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta oportunidade:", :color => "006699",:align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
@@ -235,7 +248,7 @@ require "prawn/measurement_extensions"
 
 
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "3.0 fraquezas", :color => "006699",:align => :left, :size => 14
+            pdf.text "Fraquezas", :color => "006699",:align => :left, :size => 14
              pdf.move_down 5
           @plano.weaknesses.each do |weakness|
             pdf.font("Helvetica")
@@ -243,10 +256,11 @@ require "prawn/measurement_extensions"
 
             pdf.move_down 20
 
+            pdf.font("Helvetica")
+            pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+            pdf.move_down 5
             weakness.weakness_answers.each do |answer|
-
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta Fraqueza", :color => "006699",:align => :left, :size => 14
             pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
@@ -254,19 +268,19 @@ require "prawn/measurement_extensions"
             pdf.move_down 20
           end
         end
-
+          pdf.move_down 40
           pdf.font("Helvetica", :style => :bold)
-          pdf.text "4.0 Forças", :color => "006699",:align => :left, :size => 14
+          pdf.text "Forças", :color => "006699",:align => :left, :size => 14
            pdf.move_down 5
         @plano.strengths.each do |strength|
           pdf.font("Helvetica")
           pdf.text "#{strength.text}", :align => :left, :size => 12
 
           pdf.move_down 20
-
+          pdf.text "Respostas", :color => "006699",:align => :left, :size => 14
+          pdf.move_down 5
           strength.strength_answers.each do |answer|
             pdf.font("Helvetica", :style => :bold)
-            pdf.text "Resposta Força", :color => "006699",:align => :left, :size => 14
              pdf.move_down 5
             pdf.font("Helvetica")
             pdf.text "#{answer.text}", :align => :left, :size => 12
@@ -275,26 +289,33 @@ require "prawn/measurement_extensions"
           end
          end
 
-          pdf.font("Helvetica", :style => :bold)
-          pdf.text "6.0 Meus objetivos ", :color => "006699",:align => :left, :size => 14
+        @objectives = []
+        @strategies = []
+        @deadlines = []
+        @factors = []
+        @resources = []
 
-          pdf.move_down 10
         @plano.objectives.each do |objective|
-          pdf.font("Helvetica")
-          pdf.text "#{objective.text}, Data limite planejada: #{objective.data}", :align => :left, :size => 12
-
-          pdf.move_down 20
-
+          @objectives << objective.text
+          @deadlines << objective.data
           objective.strategies.each do |strategy|
+            @strategies << strategy.text
+            @factors << strategy.factor
+            @resources << strategy.resource
+         end
+         end
+         pdf.font("Helvetica", :style => :bold)
+        pdf.text "Plano de ação: ", :color => "006699", :align => :left, :size => 14
+        pdf.font("Helvetica")
+         @objetivo = @objectives.join("\n")
+         @estrategia = @strategies.join("\n")
+         @prazo = @deadlines.join("\n")
+         @fatores = @factors.join("\n")
+         @recursos = @resources.join("\n")
 
-            pdf.font("Helvetica", :style => :bold)
-            pdf.text "Estratégias: ", :color => "006699", :align => :left, :size => 14
-            pdf.move_down 5
-            pdf.font("Helvetica")
-            pdf.text "#{strategy.text}, Data limite: #{strategy.deadline}", :align => :left, :size => 12
-            pdf.move_down 10
-         end
-         end
+          data = [ ["Objetivos", "Estratégias", "Prazos", "Fatores Críticos de sucesso", "Recursos" ],[@objetivo, @estrategia, @prazo, @fatores, @recursos]]
+          pdf.table(data)
+          pdf.move_down 20
         send_data pdf.render, filename: 'plan.pdf', type: 'application/pdf', disposition: "inline"
       }
     end

@@ -1,0 +1,10 @@
+$('#semestre2').empty();
+$('#_classroom2_id').empty();
+$('#_classroom2_id').prepend("<option value='todos'>Todas</option>");
+$('#_classroom2_id option:first').attr("selected", "selected");
+$('#_users2_id').empty();
+$('#_users2_id').prepend("<option value='todos'>Todos</option>");
+$('#_users2_id option:first').attr("selected", "selected");
+$('#semestre2').html("<%= escape_javascript options_for_select(@semestres)%>");
+$('#semestre2').prepend("<option value='todos'>Todos</option>");
+$('#semestre2 option:first').attr("selected", "selected");

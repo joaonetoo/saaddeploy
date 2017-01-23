@@ -2,5 +2,5 @@
 <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
     <%= render :partial => 'results/teacher_analytics' %>
 <% elsif current_user.type == 'Principal' %>
-    <%= render :partial => 'results/principal_search' %>
+    <%= render :partial => 'results/principal_analytics' %>
 <% end %>

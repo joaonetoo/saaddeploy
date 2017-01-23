@@ -70,11 +70,11 @@ $('#graphic').highcharts({
         },
 
         series: [{
-            name: '<%= @selecao %>',
+            name: 'Seleção 1',
             data: [<%= @mediaTf %>, <%= @mediaGm %>, <%= @mediaAu %>, <%= @mediaSe %>, <%= @mediaEc %>, <%= @mediaSv %>, <%= @mediaCh %>, <%= @mediaLs %>],
             pointPlacement: 'on'
         }, {
-            name: '<%= @selecao2 %>',
+            name: 'Seleção 2',
             data: [<%= @mediaTf2 %>, <%= @mediaGm2 %>, <%= @mediaAu2 %>, <%= @mediaSe2 %>, <%= @mediaEc2 %>, <%= @mediaSv2 %>, <%= @mediaCh2 %>, <%= @mediaLs2 %>],
             pointPlacement: 'on'
         }]

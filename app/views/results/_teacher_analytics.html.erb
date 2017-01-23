@@ -16,14 +16,26 @@
 
               <%= hidden_field_tag :course_id, @course.id %>
 
-              <%= label_tag :Disciplina %>
-              <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
-
-              <%= label_tag :Turma %>
-              <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
-
-              <%= label_tag :Usuarios %>
-              <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+              <div class="campo_compare">
+                    <%= label_tag :Disciplina %>
+                    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :ano %>
+                <%= select_tag "ano", options_for_select(@anos)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :semestre %>
+                <%= select_tag "semestre", options_for_select(@semestres)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Turma %>
+                <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Usuarios %>
+                <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+      </div>
               </div>
           </div>
           <div class="col-lg-6">
@@ -37,17 +49,29 @@
 
               <%= hidden_field_tag :course2_id, @course.id %>
 
-              <%= label_tag :Disciplina %>
-              <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
-
-              <%= label_tag :Turma %>
-              <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
-
-              <%= label_tag :Usuarios %>
-              <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
+              <div class="campo_compare">
+                    <%= label_tag :Disciplina %>
+                    <%= collection_select(nil, :subject2_id, @subjects, :id, :nome)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :ano %>
+                <%= select_tag "ano2", options_for_select(@anos)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :semestre %>
+                <%= select_tag "semestre2", options_for_select(@semestres)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Turma %>
+                <%= collection_select(nil, :classroom2_id, @classrooms, :id, :codigo)%>
+                </div>
+                <div class="campo_compare">
+                <%= label_tag :Usuarios %>
+                <%= collection_select(nil, :users2_id, @students, :id, :nome)%>
+      </div>
             </div>
-          </div>  
-        </div> <br> 
+          </div>
+        </div> <br>
         <center><%= submit_tag "Enviar", :class => "btn btn-primary btn-sm" %></center>
 
 <% end %>

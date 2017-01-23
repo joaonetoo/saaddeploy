@@ -89,6 +89,8 @@ Rails.application.routes.draw do
 
   get 'coordinators_area/finished_events'
 
+  post 'coordinators_area/finished_events'
+
   get 'coordinators_area/show_finished_event'
 
   get 'coordinators_area/search_anchors'
@@ -106,14 +108,20 @@ Rails.application.routes.draw do
     collection do
       post 'new'
       get 'search'
+      post 'search'
       post 'list'
       post 'show_by_date'
       get 'analytics'
+      post 'analytics'
       post 'analytic_list'
       post 'compare_by_date'
       get 'pdf_list'
       get 'subject_selection'
       get 'subject2_selection'
+      get 'ano_selection'
+      get 'ano2_selection'
+      get 'semestre_selection'
+      get 'semestre2_selection'
       get 'classroom_selection'
       get 'classroom2_selection'
       get 'course_selection'
@@ -171,13 +179,19 @@ Rails.application.routes.draw do
   resources :results do
     collection do
       get 'search'
+      post 'search'
       post 'list'
       post 'show_by_date'
       get 'analytics'
+      post 'analytics'
       post 'analytic_list'
       post 'compare_by_date'
       get 'subject_selection'
       get 'subject2_selection'
+      get 'ano_selection'
+      get 'ano2_selection'
+      get 'semestre_selection'
+      get 'semestre2_selection'
       get 'classroom_selection'
       get 'classroom2_selection'
       get 'course_selection'
@@ -186,6 +200,7 @@ Rails.application.routes.draw do
       get 'center2_selection'
       get 'campu_selection'
       get 'campu2_selection'
+      get 'no_users_error'
     end
   end
   resources :quizzes

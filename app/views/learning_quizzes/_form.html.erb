@@ -1,6 +1,43 @@
 <%= javascript_include_tag "results" %>
 <% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
     <%= render :partial => 'learning_quizzes/teacher_search' %>
-<% elsif current_user.type == 'Principal' %>
+<% elsif current_user.type == 'Principal'%>
     <%= render :partial => 'learning_quizzes/principal_search' %>
+<% elsif current_user.type == 'Administrator' %>
+<%= javascript_include_tag 'search_learning_admin' %>
+<%= form_for(@learning_quiz) do |f| %>
+  <% if @learning_quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@learning_quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+      <ul>
+      <% @learning_quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2><i class="fa fa-angle-right"></i>Solicitar resposta a estilos de aprendizagem</h2>
+
+      <div class="col-lg-6">
+            <h3>Selecione a data final para preenchimento</h3>
+              <div class="campo_compare">
+                <%= f.date_select :data_final %>
+              </div>
+        </div>
+          </div>
+
+          </div>
+
+        </div>
+        <div class="row mt">
+          <div class="col-lg-12">
+              <div class="actions">
+              <center><%= f.submit "Criar questionário", :class => "btn btn-primary btn-lg"%></center>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

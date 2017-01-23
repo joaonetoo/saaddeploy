@@ -22,6 +22,12 @@ class AdminController < ApplicationController
     @pending = User.where(id: params[:pending]).first
     @pending.approved = true
     @pending.save
+    @learning_quizzes = LearningQuiz.all.sort_by &:created_at
+    @learning_quiz = @learning_quizzes.last
+    @learning_quiz.users << @pending
+    @quizzes = Quiz.all.sort_by &:created_at
+    @quiz = @quizzes.last
+    @quiz.users << @pending
     flash[:notice] = 'usuario aprovado'
     redirect_to admin_index_path
   end

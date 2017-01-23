@@ -36,7 +36,7 @@
         <td><%= event.deadline.strftime("%d/%m/%y: %H:%M") %></td>
         <td><%= event.trabalhos %></td>
         <td><%= event.user.nome %></td>
-        <td><%= link_to 'Ver', coordinators_area_show_finished_event_path(event: event) %></td>
+        <td><%= link_to 'Ver', coordinators_area_show_finished_event_path(event: event),method: :post %></td>
         <td><%= link_to 'Editar', edit_event_path(event) %></td>
         <td><%= link_to 'Deletar', event, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
       </tr>
