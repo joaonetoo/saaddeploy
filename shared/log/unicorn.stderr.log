@@ -1082,3 +1082,286 @@ E, [2016-12-19T13:01:25.299070 #23249] ERROR -- : reaped #<Process::Status: pid 
 I, [2016-12-19T13:01:25.312252 #23249]  INFO -- : worker=1 spawning...
 I, [2016-12-19T13:01:25.348631 #9451]  INFO -- : worker=1 spawned pid=9451
 I, [2016-12-19T13:01:25.349804 #9451]  INFO -- : worker=1 ready
+I, [2016-12-19T14:43:04.452765 #23249]  INFO -- : reaped #<Process::Status: pid 9451 exit 0> worker=1
+I, [2016-12-19T14:43:04.456443 #23249]  INFO -- : reaped #<Process::Status: pid 24838 exit 0> worker=0
+I, [2016-12-19T14:43:04.456743 #23249]  INFO -- : master complete
+I, [2016-12-19T15:33:39.978945 #10947]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-19T15:33:44.829510 #10947]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-19T15:33:44.830475 #10947]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-19T15:33:44.830733 #10947]  INFO -- : worker=0 spawning...
+I, [2016-12-19T15:33:44.834742 #10947]  INFO -- : worker=1 spawning...
+I, [2016-12-19T15:33:44.836361 #10951]  INFO -- : worker=0 spawned pid=10951
+I, [2016-12-19T15:33:44.836636 #10951]  INFO -- : worker=0 ready
+I, [2016-12-19T15:33:44.840022 #10947]  INFO -- : master process ready
+I, [2016-12-19T15:33:44.846601 #10954]  INFO -- : worker=1 spawned pid=10954
+I, [2016-12-19T15:33:44.846878 #10954]  INFO -- : worker=1 ready
+I, [2016-12-19T15:37:58.935281 #10947]  INFO -- : reaped #<Process::Status: pid 10951 exit 0> worker=0
+I, [2016-12-19T15:37:58.938588 #10947]  INFO -- : reaped #<Process::Status: pid 10954 exit 0> worker=1
+I, [2016-12-19T15:37:58.938872 #10947]  INFO -- : master complete
+I, [2016-12-19T15:38:12.625878 #11261]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-19T15:38:17.339851 #11261]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-19T15:38:17.340232 #11261]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-19T15:38:17.340412 #11261]  INFO -- : worker=0 spawning...
+I, [2016-12-19T15:38:17.343094 #11261]  INFO -- : worker=1 spawning...
+I, [2016-12-19T15:38:17.344458 #11265]  INFO -- : worker=0 spawned pid=11265
+I, [2016-12-19T15:38:17.344693 #11265]  INFO -- : worker=0 ready
+I, [2016-12-19T15:38:17.347336 #11261]  INFO -- : master process ready
+I, [2016-12-19T15:38:17.354891 #11268]  INFO -- : worker=1 spawned pid=11268
+I, [2016-12-19T15:38:17.355134 #11268]  INFO -- : worker=1 ready
+E, [2016-12-19T23:03:33.597949 #11261] ERROR -- : reaped #<Process::Status: pid 11265 SIGKILL (signal 9)> worker=0
+I, [2016-12-19T23:03:33.604218 #11261]  INFO -- : worker=0 spawning...
+I, [2016-12-19T23:03:33.631704 #15914]  INFO -- : worker=0 spawned pid=15914
+I, [2016-12-19T23:03:33.632197 #15914]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+D, [2016-12-20T18:05:55.856106 #11261] DEBUG -- : waiting 16.0s after suspend/hibernation
+D, [2016-12-20T18:06:46.096566 #11261] DEBUG -- : waiting 16.0s after suspend/hibernation
+E, [2016-12-21T00:22:18.238853 #11261] ERROR -- : worker=1 PID:11268 timeout (31s > 30s), killing
+E, [2016-12-21T00:22:45.240448 #11261] ERROR -- : reaped #<Process::Status: pid 11268 SIGKILL (signal 9)> worker=1
+E, [2016-12-21T00:22:45.312526 #11261] ERROR -- : worker=0 PID:15914 timeout (56s > 30s), killing
+I, [2016-12-21T00:22:45.323307 #11261]  INFO -- : worker=1 spawning...
+E, [2016-12-21T00:22:45.488279 #11261] ERROR -- : reaped #<Process::Status: pid 15914 SIGKILL (signal 9)> worker=0
+I, [2016-12-21T00:22:45.488894 #11261]  INFO -- : worker=0 spawning...
+I, [2016-12-21T00:23:02.781091 #31200]  INFO -- : worker=1 spawned pid=31200
+I, [2016-12-21T00:23:02.781628 #31200]  INFO -- : worker=1 ready
+I, [2016-12-21T00:23:02.782548 #31203]  INFO -- : worker=0 spawned pid=31203
+I, [2016-12-21T00:23:02.782851 #31203]  INFO -- : worker=0 ready
+I, [2016-12-23T13:08:40.905587 #11261]  INFO -- : reaped #<Process::Status: pid 31200 exit 0> worker=1
+I, [2016-12-23T13:08:40.907708 #11261]  INFO -- : reaped #<Process::Status: pid 31203 exit 0> worker=0
+I, [2016-12-23T13:08:40.907916 #11261]  INFO -- : master complete
+I, [2016-12-23T13:09:07.070782 #10746]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-23T13:09:12.082322 #10746]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-23T13:09:12.083424 #10746]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2016-12-23T13:09:12.083685 #10746]  INFO -- : worker=0 spawning...
+I, [2016-12-23T13:09:12.087567 #10746]  INFO -- : worker=1 spawning...
+I, [2016-12-23T13:09:12.089121 #10749]  INFO -- : worker=0 spawned pid=10749
+I, [2016-12-23T13:09:12.091616 #10746]  INFO -- : master process ready
+I, [2016-12-23T13:09:12.097446 #10749]  INFO -- : worker=0 ready
+I, [2016-12-23T13:09:12.099340 #10752]  INFO -- : worker=1 spawned pid=10752
+I, [2016-12-23T13:09:12.099571 #10752]  INFO -- : worker=1 ready
+E, [2016-12-23T13:10:39.171434 #10746] ERROR -- : reaped #<Process::Status: pid 10752 SIGKILL (signal 9)> worker=1
+I, [2016-12-23T13:10:39.178702 #10746]  INFO -- : worker=1 spawning...
+I, [2016-12-23T13:10:39.188815 #10779]  INFO -- : worker=1 spawned pid=10779
+I, [2016-12-23T13:10:39.189241 #10779]  INFO -- : worker=1 ready
+E, [2016-12-23T13:12:18.157612 #10746] ERROR -- : reaped #<Process::Status: pid 10779 SIGKILL (signal 9)> worker=1
+I, [2016-12-23T13:12:18.161181 #10746]  INFO -- : worker=1 spawning...
+I, [2016-12-23T13:12:18.173705 #10845]  INFO -- : worker=1 spawned pid=10845
+I, [2016-12-23T13:12:18.174230 #10845]  INFO -- : worker=1 ready
+I, [2016-12-23T13:22:10.045825 #10746]  INFO -- : reaped #<Process::Status: pid 10749 exit 0> worker=0
+I, [2016-12-23T13:22:10.047531 #10746]  INFO -- : reaped #<Process::Status: pid 10845 exit 0> worker=1
+I, [2016-12-23T13:22:10.047737 #10746]  INFO -- : master complete
+I, [2016-12-23T13:23:03.298809 #11466]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:156: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:454: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:473: warning: string literal in condition
+I, [2016-12-23T13:23:07.920073 #11466]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2016-12-23T13:23:07.921502 #11466]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=7
+I, [2016-12-23T13:23:07.921830 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-23T13:23:07.927061 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-23T13:23:07.928454 #11472]  INFO -- : worker=0 spawned pid=11472
+I, [2016-12-23T13:23:07.928668 #11472]  INFO -- : worker=0 ready
+I, [2016-12-23T13:23:07.931317 #11466]  INFO -- : master process ready
+I, [2016-12-23T13:23:07.938549 #11475]  INFO -- : worker=1 spawned pid=11475
+I, [2016-12-23T13:23:07.938763 #11475]  INFO -- : worker=1 ready
+E, [2016-12-23T15:15:33.543452 #11466] ERROR -- : reaped #<Process::Status: pid 11475 SIGKILL (signal 9)> worker=1
+I, [2016-12-23T15:15:33.548563 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-23T15:15:33.569171 #13132]  INFO -- : worker=1 spawned pid=13132
+I, [2016-12-23T15:15:33.569656 #13132]  INFO -- : worker=1 ready
+E, [2016-12-24T11:54:08.062277 #11466] ERROR -- : reaped #<Process::Status: pid 11472 SIGKILL (signal 9)> worker=0
+I, [2016-12-24T11:54:08.068382 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-24T11:54:08.126070 #27781]  INFO -- : worker=0 spawned pid=27781
+I, [2016-12-24T11:54:08.126514 #27781]  INFO -- : worker=0 ready
+E, [2016-12-24T20:58:52.112408 #11466] ERROR -- : reaped #<Process::Status: pid 27781 SIGKILL (signal 9)> worker=0
+I, [2016-12-24T20:58:52.116919 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-24T20:58:52.143039 #620]  INFO -- : worker=0 spawned pid=620
+I, [2016-12-24T20:58:52.143798 #620]  INFO -- : worker=0 ready
+E, [2016-12-25T20:50:31.326618 #11466] ERROR -- : reaped #<Process::Status: pid 13132 SIGKILL (signal 9)> worker=1
+I, [2016-12-25T20:50:31.330546 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-25T20:50:31.355423 #15269]  INFO -- : worker=1 spawned pid=15269
+I, [2016-12-25T20:50:31.355829 #15269]  INFO -- : worker=1 ready
+E, [2016-12-26T17:20:20.767573 #11466] ERROR -- : reaped #<Process::Status: pid 620 SIGKILL (signal 9)> worker=0
+I, [2016-12-26T17:20:20.774180 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-26T17:20:20.799380 #26764]  INFO -- : worker=0 spawned pid=26764
+I, [2016-12-26T17:20:20.799917 #26764]  INFO -- : worker=0 ready
+E, [2016-12-27T05:26:32.772022 #11466] ERROR -- : reaped #<Process::Status: pid 15269 SIGKILL (signal 9)> worker=1
+I, [2016-12-27T05:26:32.779403 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-27T05:26:32.812387 #1219]  INFO -- : worker=1 spawned pid=1219
+I, [2016-12-27T05:26:32.812803 #1219]  INFO -- : worker=1 ready
+E, [2016-12-27T12:06:31.070899 #11466] ERROR -- : reaped #<Process::Status: pid 26764 SIGKILL (signal 9)> worker=0
+I, [2016-12-27T12:06:31.075107 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-27T12:06:31.098427 #4702]  INFO -- : worker=0 spawned pid=4702
+I, [2016-12-27T12:06:31.099035 #4702]  INFO -- : worker=0 ready
+E, [2016-12-30T02:43:32.538477 #11466] ERROR -- : reaped #<Process::Status: pid 1219 SIGKILL (signal 9)> worker=1
+I, [2016-12-30T02:43:32.543380 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-30T02:43:32.567671 #15374]  INFO -- : worker=1 spawned pid=15374
+I, [2016-12-30T02:43:32.568108 #15374]  INFO -- : worker=1 ready
+E, [2016-12-30T11:43:14.401996 #11466] ERROR -- : reaped #<Process::Status: pid 15374 SIGKILL (signal 9)> worker=1
+I, [2016-12-30T11:43:14.406210 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-30T11:43:14.429387 #21042]  INFO -- : worker=1 spawned pid=21042
+I, [2016-12-30T11:43:14.429821 #21042]  INFO -- : worker=1 ready
+E, [2016-12-31T03:49:12.767844 #11466] ERROR -- : reaped #<Process::Status: pid 21042 SIGKILL (signal 9)> worker=1
+I, [2016-12-31T03:49:12.772346 #11466]  INFO -- : worker=1 spawning...
+I, [2016-12-31T03:49:12.797165 #29585]  INFO -- : worker=1 spawned pid=29585
+I, [2016-12-31T03:49:12.798228 #29585]  INFO -- : worker=1 ready
+E, [2016-12-31T11:40:34.239034 #11466] ERROR -- : reaped #<Process::Status: pid 4702 SIGKILL (signal 9)> worker=0
+I, [2016-12-31T11:40:34.245653 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-31T11:40:34.270869 #1514]  INFO -- : worker=0 spawned pid=1514
+I, [2016-12-31T11:40:34.271287 #1514]  INFO -- : worker=0 ready
+E, [2016-12-31T23:31:20.375147 #11466] ERROR -- : reaped #<Process::Status: pid 1514 SIGKILL (signal 9)> worker=0
+I, [2016-12-31T23:31:20.381081 #11466]  INFO -- : worker=0 spawning...
+I, [2016-12-31T23:31:20.406050 #9504]  INFO -- : worker=0 spawned pid=9504
+I, [2016-12-31T23:31:20.406564 #9504]  INFO -- : worker=0 ready
+E, [2017-01-01T10:07:27.352923 #11466] ERROR -- : reaped #<Process::Status: pid 29585 SIGKILL (signal 9)> worker=1
+I, [2017-01-01T10:07:27.360599 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-01T10:07:27.393260 #16414]  INFO -- : worker=1 spawned pid=16414
+I, [2017-01-01T10:07:27.393875 #16414]  INFO -- : worker=1 ready
+E, [2017-01-01T23:06:39.293978 #11466] ERROR -- : reaped #<Process::Status: pid 16414 SIGKILL (signal 9)> worker=1
+I, [2017-01-01T23:06:39.300885 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-01T23:06:39.332913 #26651]  INFO -- : worker=1 spawned pid=26651
+I, [2017-01-01T23:06:39.333401 #26651]  INFO -- : worker=1 ready
+E, [2017-01-03T01:05:17.301334 #11466] ERROR -- : reaped #<Process::Status: pid 9504 SIGKILL (signal 9)> worker=0
+I, [2017-01-03T01:05:17.305856 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-03T01:05:17.329819 #20977]  INFO -- : worker=0 spawned pid=20977
+I, [2017-01-03T01:05:17.336245 #20977]  INFO -- : worker=0 ready
+E, [2017-01-04T02:41:09.416624 #11466] ERROR -- : reaped #<Process::Status: pid 26651 SIGKILL (signal 9)> worker=1
+I, [2017-01-04T02:41:09.422254 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-04T02:41:09.453249 #6174]  INFO -- : worker=1 spawned pid=6174
+I, [2017-01-04T02:41:09.453717 #6174]  INFO -- : worker=1 ready
+E, [2017-01-04T16:02:04.959565 #11466] ERROR -- : reaped #<Process::Status: pid 20977 SIGKILL (signal 9)> worker=0
+I, [2017-01-04T16:02:04.964784 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-04T16:02:04.987998 #19807]  INFO -- : worker=0 spawned pid=19807
+I, [2017-01-04T16:02:04.988480 #19807]  INFO -- : worker=0 ready
+E, [2017-01-05T10:34:30.310614 #11466] ERROR -- : reaped #<Process::Status: pid 6174 SIGKILL (signal 9)> worker=1
+I, [2017-01-05T10:34:30.316519 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-05T10:34:30.339555 #30299]  INFO -- : worker=1 spawned pid=30299
+I, [2017-01-05T10:34:30.339985 #30299]  INFO -- : worker=1 ready
+E, [2017-01-05T23:05:53.252237 #11466] ERROR -- : reaped #<Process::Status: pid 19807 SIGKILL (signal 9)> worker=0
+I, [2017-01-05T23:05:53.256791 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-05T23:05:53.278160 #7910]  INFO -- : worker=0 spawned pid=7910
+I, [2017-01-05T23:05:53.278553 #7910]  INFO -- : worker=0 ready
+E, [2017-01-06T17:13:06.754953 #11466] ERROR -- : reaped #<Process::Status: pid 30299 SIGKILL (signal 9)> worker=1
+I, [2017-01-06T17:13:06.774919 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-06T17:13:06.801721 #20647]  INFO -- : worker=1 spawned pid=20647
+I, [2017-01-06T17:13:06.802215 #20647]  INFO -- : worker=1 ready
+E, [2017-01-07T02:30:40.037278 #11466] ERROR -- : reaped #<Process::Status: pid 20647 SIGKILL (signal 9)> worker=1
+I, [2017-01-07T02:30:40.041018 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-07T02:30:40.065264 #26205]  INFO -- : worker=1 spawned pid=26205
+I, [2017-01-07T02:30:40.066206 #26205]  INFO -- : worker=1 ready
+E, [2017-01-08T16:51:33.403753 #11466] ERROR -- : reaped #<Process::Status: pid 26205 SIGKILL (signal 9)> worker=1
+I, [2017-01-08T16:51:33.412096 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-08T16:51:33.431597 #19588]  INFO -- : worker=1 spawned pid=19588
+I, [2017-01-08T16:51:33.433058 #19588]  INFO -- : worker=1 ready
+E, [2017-01-10T17:57:58.307593 #11466] ERROR -- : reaped #<Process::Status: pid 7910 SIGKILL (signal 9)> worker=0
+I, [2017-01-10T17:57:58.311555 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-10T17:57:58.336603 #11920]  INFO -- : worker=0 spawned pid=11920
+I, [2017-01-10T17:57:58.337080 #11920]  INFO -- : worker=0 ready
+E, [2017-01-12T04:39:51.878443 #11466] ERROR -- : reaped #<Process::Status: pid 19588 SIGKILL (signal 9)> worker=1
+I, [2017-01-12T04:39:51.883797 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-12T04:39:51.910074 #11676]  INFO -- : worker=1 spawned pid=11676
+I, [2017-01-12T04:39:51.910465 #11676]  INFO -- : worker=1 ready
+E, [2017-01-14T02:07:56.339136 #11466] ERROR -- : reaped #<Process::Status: pid 11920 SIGKILL (signal 9)> worker=0
+I, [2017-01-14T02:07:56.346104 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-14T02:07:56.367367 #14195]  INFO -- : worker=0 spawned pid=14195
+I, [2017-01-14T02:07:56.367777 #14195]  INFO -- : worker=0 ready
+E, [2017-01-14T11:22:47.322094 #11466] ERROR -- : reaped #<Process::Status: pid 11676 SIGKILL (signal 9)> worker=1
+I, [2017-01-14T11:22:47.327043 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-14T11:22:47.351375 #27245]  INFO -- : worker=1 spawned pid=27245
+I, [2017-01-14T11:22:47.351872 #27245]  INFO -- : worker=1 ready
+E, [2017-01-15T12:26:35.760181 #11466] ERROR -- : reaped #<Process::Status: pid 14195 SIGKILL (signal 9)> worker=0
+I, [2017-01-15T12:26:35.766228 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-15T12:26:35.804142 #15784]  INFO -- : worker=0 spawned pid=15784
+I, [2017-01-15T12:26:35.804677 #15784]  INFO -- : worker=0 ready
+E, [2017-01-16T05:00:15.144183 #11466] ERROR -- : reaped #<Process::Status: pid 27245 SIGKILL (signal 9)> worker=1
+I, [2017-01-16T05:00:15.148382 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-16T05:00:15.170390 #3722]  INFO -- : worker=1 spawned pid=3722
+I, [2017-01-16T05:00:15.170804 #3722]  INFO -- : worker=1 ready
+E, [2017-01-16T14:45:14.281411 #11466] ERROR -- : reaped #<Process::Status: pid 3722 SIGKILL (signal 9)> worker=1
+I, [2017-01-16T14:45:14.287388 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-16T14:45:14.308154 #16050]  INFO -- : worker=1 spawned pid=16050
+I, [2017-01-16T14:45:14.308605 #16050]  INFO -- : worker=1 ready
+E, [2017-01-17T19:38:42.109663 #11466] ERROR -- : reaped #<Process::Status: pid 15784 SIGKILL (signal 9)> worker=0
+I, [2017-01-17T19:38:42.113665 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-17T19:38:42.126434 #9169]  INFO -- : worker=0 spawned pid=9169
+I, [2017-01-17T19:38:42.126839 #9169]  INFO -- : worker=0 ready
+E, [2017-01-18T17:59:07.463642 #11466] ERROR -- : reaped #<Process::Status: pid 9169 SIGKILL (signal 9)> worker=0
+I, [2017-01-18T17:59:07.469789 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-18T17:59:07.571352 #27088]  INFO -- : worker=0 spawned pid=27088
+I, [2017-01-18T17:59:07.571794 #27088]  INFO -- : worker=0 ready
+E, [2017-01-19T02:06:27.500699 #11466] ERROR -- : reaped #<Process::Status: pid 16050 SIGKILL (signal 9)> worker=1
+I, [2017-01-19T02:06:27.506813 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-19T02:06:27.525427 #334]  INFO -- : worker=1 spawned pid=334
+I, [2017-01-19T02:06:27.525875 #334]  INFO -- : worker=1 ready
+E, [2017-01-19T17:35:48.843815 #11466] ERROR -- : reaped #<Process::Status: pid 334 SIGKILL (signal 9)> worker=1
+I, [2017-01-19T17:35:48.847688 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-19T17:35:48.865977 #11750]  INFO -- : worker=1 spawned pid=11750
+I, [2017-01-19T17:35:48.866523 #11750]  INFO -- : worker=1 ready
+E, [2017-01-19T22:37:43.494378 #11466] ERROR -- : reaped #<Process::Status: pid 27088 SIGKILL (signal 9)> worker=0
+I, [2017-01-19T22:37:43.499006 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-19T22:37:43.519032 #16456]  INFO -- : worker=0 spawned pid=16456
+I, [2017-01-19T22:37:43.519429 #16456]  INFO -- : worker=0 ready
+E, [2017-01-20T12:03:14.498148 #11466] ERROR -- : reaped #<Process::Status: pid 16456 SIGKILL (signal 9)> worker=0
+I, [2017-01-20T12:03:14.503109 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-20T12:03:14.522102 #3846]  INFO -- : worker=0 spawned pid=3846
+I, [2017-01-20T12:03:14.522563 #3846]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-01-20T19:08:09.591580 #11466] ERROR -- : reaped #<Process::Status: pid 11750 SIGKILL (signal 9)> worker=1
+I, [2017-01-20T19:08:09.595656 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-20T19:08:09.607169 #11155]  INFO -- : worker=1 spawned pid=11155
+I, [2017-01-20T19:08:09.607531 #11155]  INFO -- : worker=1 ready
+E, [2017-01-20T19:08:22.363261 #11466] ERROR -- : reaped #<Process::Status: pid 3846 SIGKILL (signal 9)> worker=0
+I, [2017-01-20T19:08:22.368234 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-20T19:08:22.387379 #11373]  INFO -- : worker=0 spawned pid=11373
+I, [2017-01-20T19:08:22.387901 #11373]  INFO -- : worker=0 ready
+E, [2017-01-21T16:54:13.867517 #11466] ERROR -- : reaped #<Process::Status: pid 11155 SIGKILL (signal 9)> worker=1
+I, [2017-01-21T16:54:13.872662 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-21T16:54:13.894029 #2212]  INFO -- : worker=1 spawned pid=2212
+I, [2017-01-21T16:54:13.894413 #2212]  INFO -- : worker=1 ready
+E, [2017-01-22T01:06:42.681975 #11466] ERROR -- : reaped #<Process::Status: pid 11373 SIGKILL (signal 9)> worker=0
+I, [2017-01-22T01:06:42.686114 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-22T01:06:42.706361 #9547]  INFO -- : worker=0 spawned pid=9547
+I, [2017-01-22T01:06:42.706733 #9547]  INFO -- : worker=0 ready
+E, [2017-01-22T11:57:42.399676 #11466] ERROR -- : reaped #<Process::Status: pid 2212 SIGKILL (signal 9)> worker=1
+I, [2017-01-22T11:57:42.404107 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-22T11:57:42.424702 #19457]  INFO -- : worker=1 spawned pid=19457
+I, [2017-01-22T11:57:42.425348 #19457]  INFO -- : worker=1 ready
+E, [2017-01-23T03:45:52.493298 #11466] ERROR -- : reaped #<Process::Status: pid 19457 SIGKILL (signal 9)> worker=1
+I, [2017-01-23T03:45:52.498158 #11466]  INFO -- : worker=1 spawning...
+I, [2017-01-23T03:45:52.515646 #1479]  INFO -- : worker=1 spawned pid=1479
+I, [2017-01-23T03:45:52.516073 #1479]  INFO -- : worker=1 ready
+E, [2017-01-23T04:56:54.490499 #11466] ERROR -- : reaped #<Process::Status: pid 9547 SIGKILL (signal 9)> worker=0
+I, [2017-01-23T04:56:54.496839 #11466]  INFO -- : worker=0 spawning...
+I, [2017-01-23T04:56:54.518661 #2544]  INFO -- : worker=0 spawned pid=2544
+I, [2017-01-23T04:56:54.519094 #2544]  INFO -- : worker=0 ready
