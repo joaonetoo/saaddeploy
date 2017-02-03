@@ -25,7 +25,7 @@ class AdministratorsController < ApplicationController
   # POST /administrators.json
   def create
     @administrator = Administrator.new(administrator_params)
-
+    @administrator.type = 'Administrator'
     respond_to do |format|
       if @administrator.save
         format.html { redirect_to @administrator, notice: 'Administrator was successfully created.' }
@@ -69,6 +69,6 @@ class AdministratorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def administrator_params
-      params.fetch(:administrator, {})
+      params.require(:administrator).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email)
     end
 end

@@ -23,8 +23,8 @@
                                   <td><%= campu.institution.nome %> </td>
                                   <td><center><%= button_to 'Abrir', campu, :class => "btn btn-primary btn-sm", method: :get%></center></td>
                                   <% if current_user.type == 'Administrator'%>
-                                  <td><%= link_to 'Edit', edit_campu_path(campu) %></td>
-                                  <td><%= link_to 'Destroy', campu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                  <td><%= link_to 'Editar', edit_campu_path(campu) %></td>
+                                  <td><%= link_to 'Deletar', campu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                   <% end %>
                                 </tr>
                               <% end %>

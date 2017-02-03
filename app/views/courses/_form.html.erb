@@ -28,14 +28,14 @@
                                 <%= f.label :data_de_abertura %><br>
                                 <%= f.date_select :data_abertura %>
                               </div>
-			</div>
-			<div class="col-lg-3">
+			     </div>
+			   <div class="col-lg-3">
                                 <div class="field">
                                   <%= f.label :turno %><br>
                                   <%= f.text_field :turno %>
                                 </div>
-                        </div>  
-                          <div class="col-lg-3">
+                        </div>
+                            <div class="col-lg-3">
                               <%if current_user.type == 'Administrator'%>
                               <%= label_tag :center %><br>
                                 <%= autocomplete_field_tag :center, params[:center], autocomplete_center_name_centers_path, :id_element => '#course_center_id'%>
@@ -47,12 +47,9 @@
                             <%elsif current_user.type == 'Principal' %>
                               <div class="field">
                               <%= f.collection_select(:center_id, @centers, :id, :name)%>
+                              </div>
                             <% end %>
-                          </div>
                         </div>
-                      </div>            
-                </div>
-            </div>
             <div class="row mt">
               <div class="actions">
                 <center><%= f.submit 'Cadastrar curso', :class => "btn btn-success btn-lg"  %></center>
@@ -61,5 +58,7 @@
           <% end %>
       </div>
     </div>
-</div>
+    </div>
+    </div>
+    </div>
 
