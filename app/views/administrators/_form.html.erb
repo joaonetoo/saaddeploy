@@ -40,6 +40,12 @@
                                     <div class="field" style="display:none;">
                                       <%= f.select :type, [['Administrador', 'Administrator']]%>
                                     </div>
+                                    <div class="field" style="display:none;">
+                                      <%= f.text_field :institution_id, :value => @institution_id%>
+                                    </div>
+                                    <div class="field" style="display:none;">
+                                      <%= f.text_field :course_id, :value => @course_id%>
+                                    </div>
                               </div>
                               <div class="col-lg-4">
                                     <div class="campo_compare">

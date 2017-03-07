@@ -22,6 +22,8 @@ gem 'jquery-turbolinks'
 
 gem 'therubyracer'
 
+gem 'client_side_validations'
+
 gem 'rails-i18n'
 
 gem 'unicorn'

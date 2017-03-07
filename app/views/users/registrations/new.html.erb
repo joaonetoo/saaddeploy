@@ -51,7 +51,7 @@
           </div>
           <div class="field">
           <%= f.label :instituição %>
-          <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true %>
+          <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true, :required => true %>
           </div>
           <div class="field">
           <%= f.label :campus %>

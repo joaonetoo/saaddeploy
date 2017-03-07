@@ -15,6 +15,8 @@ class PrincipalsController < ApplicationController
   # GET /principals/new
   def new
     @principal = Principal.new
+    @institution_id = Institution.all.first.id
+    @course_id = Course.all.first.id
   end
 
   # GET /principals/1/edit
