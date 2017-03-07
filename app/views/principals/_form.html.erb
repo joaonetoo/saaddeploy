@@ -26,6 +26,13 @@
     <%= f.label :tipo%><br>
     <%= f.select :type, [['Diretor', 'Principal']]%>
   </div>
+
+  <div class="field" style="display:none;">
+    <%= f.text_field :institution_id, :value => @institution_id%>
+  </div>
+  <div class="field" style="display:none;">
+    <%= f.text_field :course_id, :value => @course_id%>
+  </div>
   <div class="field">
     <%= f.label :matricula %><br>
     <%= f.text_field :matricula %>

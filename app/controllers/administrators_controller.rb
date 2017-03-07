@@ -15,6 +15,8 @@ class AdministratorsController < ApplicationController
   # GET /administrators/new
   def new
     @administrator = Administrator.new
+    @institution_id = Institution.all.first.id
+    @course_id = Course.all.first.id
   end
 
   # GET /administrators/1/edit
@@ -69,6 +71,6 @@ class AdministratorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def administrator_params
-      params.require(:administrator).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email)
+      params.require(:administrator).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email, :course_id, :institution_id)
     end
 end

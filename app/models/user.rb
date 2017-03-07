@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { thumb: "100x100>" }, default_url: "/assets/semfoto.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validate :image_dimensions, :unless => "avatar.queued_for_write[:original].blank?"
-  validates :nome, :email, :telefone, :endereco, :lattes, :biografia, :matricula, presence: true, :on => :create
+  validates :nome, :email, :telefone, :endereco, :lattes, :biografia, :matricula, :institution_id, :course_id, presence: true, :on => :create
 
   has_many :results
   has_many :learning_results
