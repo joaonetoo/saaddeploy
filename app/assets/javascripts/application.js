@@ -18,5 +18,6 @@
 //= require jquery.validate.additional-methods
 //= require autocomplete-rails
 //= require dependent-fields
+//= require rails.validations
 //= require turbolinks
 
