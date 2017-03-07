@@ -71,6 +71,6 @@ class PrincipalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def principal_params
-      params.require(:principal).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email)
+      params.require(:principal).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email, :institution_id, :course_id)
     end
 end

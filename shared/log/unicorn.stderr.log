@@ -1365,3 +1365,1355 @@ E, [2017-01-23T04:56:54.490499 #11466] ERROR -- : reaped #<Process::Status: pid 
 I, [2017-01-23T04:56:54.496839 #11466]  INFO -- : worker=0 spawning...
 I, [2017-01-23T04:56:54.518661 #2544]  INFO -- : worker=0 spawned pid=2544
 I, [2017-01-23T04:56:54.519094 #2544]  INFO -- : worker=0 ready
+I, [2017-01-23T04:59:43.376216 #11466]  INFO -- : reaped #<Process::Status: pid 1479 exit 0> worker=1
+I, [2017-01-23T04:59:43.478258 #11466]  INFO -- : reaped #<Process::Status: pid 2544 exit 0> worker=0
+I, [2017-01-23T04:59:43.478655 #11466]  INFO -- : master complete
+I, [2017-01-23T04:59:51.132619 #2926]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-01-23T04:59:55.795904 #2926]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-01-23T04:59:55.796853 #2926]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-01-23T04:59:55.797070 #2926]  INFO -- : worker=0 spawning...
+I, [2017-01-23T04:59:55.803500 #2926]  INFO -- : worker=1 spawning...
+I, [2017-01-23T04:59:55.805058 #2929]  INFO -- : worker=0 spawned pid=2929
+I, [2017-01-23T04:59:55.805365 #2929]  INFO -- : worker=0 ready
+I, [2017-01-23T04:59:55.808569 #2926]  INFO -- : master process ready
+I, [2017-01-23T04:59:55.817569 #2932]  INFO -- : worker=1 spawned pid=2932
+I, [2017-01-23T04:59:55.817793 #2932]  INFO -- : worker=1 ready
+E, [2017-01-23T05:11:24.048872 #2926] ERROR -- : reaped #<Process::Status: pid 2929 SIGKILL (signal 9)> worker=0
+I, [2017-01-23T05:11:24.055866 #2926]  INFO -- : worker=0 spawning...
+I, [2017-01-23T05:11:24.081604 #3107]  INFO -- : worker=0 spawned pid=3107
+I, [2017-01-23T05:11:24.082093 #3107]  INFO -- : worker=0 ready
+I, [2017-01-23T05:54:14.991062 #2926]  INFO -- : reaped #<Process::Status: pid 3107 exit 0> worker=0
+I, [2017-01-23T05:54:15.094282 #2926]  INFO -- : reaped #<Process::Status: pid 2932 exit 0> worker=1
+I, [2017-01-23T05:54:15.094545 #2926]  INFO -- : master complete
+I, [2017-01-23T05:54:39.275265 #3835]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-01-23T05:54:43.870828 #3835]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-01-23T05:54:43.872021 #3835]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-01-23T05:54:43.872271 #3835]  INFO -- : worker=0 spawning...
+I, [2017-01-23T05:54:43.877392 #3835]  INFO -- : worker=1 spawning...
+I, [2017-01-23T05:54:43.878781 #3838]  INFO -- : worker=0 spawned pid=3838
+I, [2017-01-23T05:54:43.879061 #3838]  INFO -- : worker=0 ready
+I, [2017-01-23T05:54:43.881588 #3835]  INFO -- : master process ready
+I, [2017-01-23T05:54:43.889916 #3841]  INFO -- : worker=1 spawned pid=3841
+I, [2017-01-23T05:54:43.890240 #3841]  INFO -- : worker=1 ready
+E, [2017-01-23T09:59:48.148150 #3835] ERROR -- : reaped #<Process::Status: pid 3838 SIGKILL (signal 9)> worker=0
+I, [2017-01-23T09:59:48.153120 #3835]  INFO -- : worker=0 spawning...
+I, [2017-01-23T09:59:48.165414 #7795]  INFO -- : worker=0 spawned pid=7795
+I, [2017-01-23T09:59:48.165824 #7795]  INFO -- : worker=0 ready
+E, [2017-01-23T14:43:04.901710 #3835] ERROR -- : reaped #<Process::Status: pid 3841 SIGKILL (signal 9)> worker=1
+I, [2017-01-23T14:43:04.909633 #3835]  INFO -- : worker=1 spawning...
+I, [2017-01-23T14:43:04.933872 #12268]  INFO -- : worker=1 spawned pid=12268
+I, [2017-01-23T14:43:04.934458 #12268]  INFO -- : worker=1 ready
+I, [2017-01-23T14:45:13.741420 #3835]  INFO -- : reaped #<Process::Status: pid 7795 exit 0> worker=0
+I, [2017-01-23T14:45:13.842054 #3835]  INFO -- : reaped #<Process::Status: pid 12268 exit 0> worker=1
+I, [2017-01-23T14:45:13.842242 #3835]  INFO -- : master complete
+I, [2017-01-23T14:45:23.716536 #12558]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-01-23T14:45:28.380619 #12558]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-01-23T14:45:28.382105 #12558]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-01-23T14:45:28.382434 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-23T14:45:28.387094 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-23T14:45:28.388555 #12563]  INFO -- : worker=0 spawned pid=12563
+I, [2017-01-23T14:45:28.388819 #12563]  INFO -- : worker=0 ready
+I, [2017-01-23T14:45:28.391554 #12558]  INFO -- : master process ready
+I, [2017-01-23T14:45:28.401009 #12566]  INFO -- : worker=1 spawned pid=12566
+I, [2017-01-23T14:45:28.401250 #12566]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-01-23T21:18:48.916600 #12558] ERROR -- : reaped #<Process::Status: pid 12566 SIGKILL (signal 9)> worker=1
+I, [2017-01-23T21:18:48.925087 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-23T21:18:48.950402 #17345]  INFO -- : worker=1 spawned pid=17345
+I, [2017-01-23T21:18:48.950793 #17345]  INFO -- : worker=1 ready
+D, [2017-01-24T02:56:45.284160 #12558] DEBUG -- : waiting 16.0s after suspend/hibernation
+E, [2017-01-24T02:56:45.292580 #12558] ERROR -- : reaped #<Process::Status: pid 17345 SIGKILL (signal 9)> worker=1
+I, [2017-01-24T02:56:45.293539 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-24T02:56:45.308025 #21647]  INFO -- : worker=1 spawned pid=21647
+I, [2017-01-24T02:56:45.309684 #21647]  INFO -- : worker=1 ready
+E, [2017-01-24T14:32:01.672038 #12558] ERROR -- : reaped #<Process::Status: pid 12563 SIGKILL (signal 9)> worker=0
+I, [2017-01-24T14:32:01.675463 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-24T14:32:01.692672 #28414]  INFO -- : worker=0 spawned pid=28414
+I, [2017-01-24T14:32:01.693075 #28414]  INFO -- : worker=0 ready
+E, [2017-01-24T19:46:17.189516 #12558] ERROR -- : reaped #<Process::Status: pid 28414 SIGKILL (signal 9)> worker=0
+I, [2017-01-24T19:46:17.194595 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-24T19:46:17.210444 #1321]  INFO -- : worker=0 spawned pid=1321
+I, [2017-01-24T19:46:17.210849 #1321]  INFO -- : worker=0 ready
+E, [2017-01-25T01:47:33.198141 #12558] ERROR -- : reaped #<Process::Status: pid 21647 SIGKILL (signal 9)> worker=1
+I, [2017-01-25T01:47:33.203116 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-25T01:47:33.215594 #5524]  INFO -- : worker=1 spawned pid=5524
+I, [2017-01-25T01:47:33.216032 #5524]  INFO -- : worker=1 ready
+E, [2017-01-25T14:03:32.339415 #12558] ERROR -- : reaped #<Process::Status: pid 1321 SIGKILL (signal 9)> worker=0
+I, [2017-01-25T14:03:32.343574 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-25T14:03:32.360521 #14797]  INFO -- : worker=0 spawned pid=14797
+I, [2017-01-25T14:03:32.360928 #14797]  INFO -- : worker=0 ready
+E, [2017-01-26T01:01:18.114728 #12558] ERROR -- : reaped #<Process::Status: pid 5524 SIGKILL (signal 9)> worker=1
+I, [2017-01-26T01:01:18.118195 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-26T01:01:18.134629 #23559]  INFO -- : worker=1 spawned pid=23559
+I, [2017-01-26T01:01:18.135010 #23559]  INFO -- : worker=1 ready
+E, [2017-01-26T13:02:15.057681 #12558] ERROR -- : reaped #<Process::Status: pid 23559 SIGKILL (signal 9)> worker=1
+I, [2017-01-26T13:02:15.063084 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-26T13:02:15.079932 #5063]  INFO -- : worker=1 spawned pid=5063
+I, [2017-01-26T13:02:15.080334 #5063]  INFO -- : worker=1 ready
+E, [2017-01-26T16:44:54.450072 #12558] ERROR -- : reaped #<Process::Status: pid 14797 SIGKILL (signal 9)> worker=0
+I, [2017-01-26T16:44:54.455534 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-26T16:44:54.465635 #9346]  INFO -- : worker=0 spawned pid=9346
+I, [2017-01-26T16:44:54.466021 #9346]  INFO -- : worker=0 ready
+E, [2017-01-26T17:33:53.074792 #12558] ERROR -- : reaped #<Process::Status: pid 9346 SIGKILL (signal 9)> worker=0
+I, [2017-01-26T17:33:53.078302 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-26T17:33:53.089163 #10312]  INFO -- : worker=0 spawned pid=10312
+I, [2017-01-26T17:33:53.089567 #10312]  INFO -- : worker=0 ready
+E, [2017-01-26T18:14:47.071616 #12558] ERROR -- : reaped #<Process::Status: pid 5063 SIGKILL (signal 9)> worker=1
+I, [2017-01-26T18:14:47.074374 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-26T18:14:47.083753 #11579]  INFO -- : worker=1 spawned pid=11579
+I, [2017-01-26T18:14:47.084102 #11579]  INFO -- : worker=1 ready
+E, [2017-01-27T11:11:27.427068 #12558] ERROR -- : reaped #<Process::Status: pid 10312 SIGKILL (signal 9)> worker=0
+I, [2017-01-27T11:11:27.434037 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-27T11:11:27.453818 #27465]  INFO -- : worker=0 spawned pid=27465
+I, [2017-01-27T11:11:27.456285 #27465]  INFO -- : worker=0 ready
+E, [2017-01-27T12:07:24.110720 #12558] ERROR -- : reaped #<Process::Status: pid 11579 SIGKILL (signal 9)> worker=1
+I, [2017-01-27T12:07:24.117060 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-27T12:07:24.127508 #28296]  INFO -- : worker=1 spawned pid=28296
+I, [2017-01-27T12:07:24.127908 #28296]  INFO -- : worker=1 ready
+E, [2017-01-27T12:07:39.324162 #12558] ERROR -- : reaped #<Process::Status: pid 27465 SIGKILL (signal 9)> worker=0
+I, [2017-01-27T12:07:39.330839 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-27T12:07:39.351364 #28517]  INFO -- : worker=0 spawned pid=28517
+I, [2017-01-27T12:07:39.351914 #28517]  INFO -- : worker=0 ready
+E, [2017-01-27T19:27:54.506987 #12558] ERROR -- : reaped #<Process::Status: pid 28296 SIGKILL (signal 9)> worker=1
+I, [2017-01-27T19:27:54.514199 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-27T19:27:54.525963 #3561]  INFO -- : worker=1 spawned pid=3561
+I, [2017-01-27T19:27:54.526311 #3561]  INFO -- : worker=1 ready
+E, [2017-01-28T13:25:18.829022 #12558] ERROR -- : reaped #<Process::Status: pid 28517 SIGKILL (signal 9)> worker=0
+I, [2017-01-28T13:25:18.832326 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-28T13:25:18.849495 #30891]  INFO -- : worker=0 spawned pid=30891
+I, [2017-01-28T13:25:18.850088 #30891]  INFO -- : worker=0 ready
+E, [2017-01-28T20:59:26.395124 #12558] ERROR -- : reaped #<Process::Status: pid 3561 SIGKILL (signal 9)> worker=1
+I, [2017-01-28T20:59:26.398698 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-28T20:59:26.410586 #7442]  INFO -- : worker=1 spawned pid=7442
+I, [2017-01-28T20:59:26.410929 #7442]  INFO -- : worker=1 ready
+E, [2017-01-29T01:21:49.945478 #12558] ERROR -- : reaped #<Process::Status: pid 30891 SIGKILL (signal 9)> worker=0
+I, [2017-01-29T01:21:49.950789 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-29T01:21:49.962018 #11141]  INFO -- : worker=0 spawned pid=11141
+I, [2017-01-29T01:21:49.962381 #11141]  INFO -- : worker=0 ready
+E, [2017-01-29T06:47:07.019213 #12558] ERROR -- : reaped #<Process::Status: pid 11141 SIGKILL (signal 9)> worker=0
+I, [2017-01-29T06:47:07.022898 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-29T06:47:07.034542 #17319]  INFO -- : worker=0 spawned pid=17319
+I, [2017-01-29T06:47:07.034932 #17319]  INFO -- : worker=0 ready
+E, [2017-01-29T16:47:42.644861 #12558] ERROR -- : reaped #<Process::Status: pid 17319 SIGKILL (signal 9)> worker=0
+I, [2017-01-29T16:47:42.647899 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-29T16:47:42.660317 #27493]  INFO -- : worker=0 spawned pid=27493
+I, [2017-01-29T16:47:42.660689 #27493]  INFO -- : worker=0 ready
+E, [2017-01-30T00:19:12.562135 #12558] ERROR -- : reaped #<Process::Status: pid 7442 SIGKILL (signal 9)> worker=1
+I, [2017-01-30T00:19:12.564965 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-30T00:19:12.580036 #3165]  INFO -- : worker=1 spawned pid=3165
+I, [2017-01-30T00:19:12.580421 #3165]  INFO -- : worker=1 ready
+E, [2017-01-30T10:38:01.667841 #12558] ERROR -- : reaped #<Process::Status: pid 27493 SIGKILL (signal 9)> worker=0
+I, [2017-01-30T10:38:01.672135 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-30T10:38:01.683750 #16453]  INFO -- : worker=0 spawned pid=16453
+I, [2017-01-30T10:38:01.684183 #16453]  INFO -- : worker=0 ready
+E, [2017-01-30T12:00:07.805980 #12558] ERROR -- : reaped #<Process::Status: pid 3165 SIGKILL (signal 9)> worker=1
+I, [2017-01-30T12:00:07.813141 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-30T12:00:07.825012 #18407]  INFO -- : worker=1 spawned pid=18407
+I, [2017-01-30T12:00:07.825347 #18407]  INFO -- : worker=1 ready
+E, [2017-01-30T13:47:32.941802 #12558] ERROR -- : reaped #<Process::Status: pid 16453 SIGKILL (signal 9)> worker=0
+I, [2017-01-30T13:47:32.945625 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-30T13:47:32.957664 #20508]  INFO -- : worker=0 spawned pid=20508
+I, [2017-01-30T13:47:32.958042 #20508]  INFO -- : worker=0 ready
+E, [2017-01-30T17:22:24.097021 #12558] ERROR -- : reaped #<Process::Status: pid 18407 SIGKILL (signal 9)> worker=1
+I, [2017-01-30T17:22:24.102102 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-30T17:22:24.115549 #24492]  INFO -- : worker=1 spawned pid=24492
+I, [2017-01-30T17:22:24.115908 #24492]  INFO -- : worker=1 ready
+E, [2017-01-30T23:00:52.588581 #12558] ERROR -- : reaped #<Process::Status: pid 20508 SIGKILL (signal 9)> worker=0
+I, [2017-01-30T23:00:52.592711 #12558]  INFO -- : worker=0 spawning...
+I, [2017-01-30T23:00:52.606389 #30000]  INFO -- : worker=0 spawned pid=30000
+I, [2017-01-30T23:00:52.606763 #30000]  INFO -- : worker=0 ready
+E, [2017-01-30T23:13:02.755481 #12558] ERROR -- : reaped #<Process::Status: pid 24492 SIGKILL (signal 9)> worker=1
+I, [2017-01-30T23:13:02.759918 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-30T23:13:02.770090 #30410]  INFO -- : worker=1 spawned pid=30410
+I, [2017-01-30T23:13:02.770479 #30410]  INFO -- : worker=1 ready
+E, [2017-01-31T17:08:44.517435 #12558] ERROR -- : reaped #<Process::Status: pid 30410 SIGKILL (signal 9)> worker=1
+I, [2017-01-31T17:08:44.521244 #12558]  INFO -- : worker=1 spawning...
+I, [2017-01-31T17:08:44.538181 #11312]  INFO -- : worker=1 spawned pid=11312
+I, [2017-01-31T17:08:44.538617 #11312]  INFO -- : worker=1 ready
+E, [2017-02-01T09:55:09.640525 #12558] ERROR -- : reaped #<Process::Status: pid 30000 SIGKILL (signal 9)> worker=0
+I, [2017-02-01T09:55:09.644537 #12558]  INFO -- : worker=0 spawning...
+I, [2017-02-01T09:55:09.654977 #25915]  INFO -- : worker=0 spawned pid=25915
+I, [2017-02-01T09:55:09.655334 #25915]  INFO -- : worker=0 ready
+E, [2017-02-01T15:37:19.350766 #12558] ERROR -- : reaped #<Process::Status: pid 11312 SIGKILL (signal 9)> worker=1
+I, [2017-02-01T15:37:19.355483 #12558]  INFO -- : worker=1 spawning...
+I, [2017-02-01T15:37:19.369777 #5247]  INFO -- : worker=1 spawned pid=5247
+I, [2017-02-01T15:37:19.370282 #5247]  INFO -- : worker=1 ready
+E, [2017-02-01T17:47:54.550728 #12558] ERROR -- : reaped #<Process::Status: pid 5247 SIGKILL (signal 9)> worker=1
+I, [2017-02-01T17:47:54.554888 #12558]  INFO -- : worker=1 spawning...
+I, [2017-02-01T17:47:54.588837 #7711]  INFO -- : worker=1 spawned pid=7711
+I, [2017-02-01T17:47:54.589342 #7711]  INFO -- : worker=1 ready
+E, [2017-02-02T02:50:40.287218 #12558] ERROR -- : reaped #<Process::Status: pid 7711 SIGKILL (signal 9)> worker=1
+I, [2017-02-02T02:50:40.295349 #12558]  INFO -- : worker=1 spawning...
+I, [2017-02-02T02:50:40.308029 #17687]  INFO -- : worker=1 spawned pid=17687
+I, [2017-02-02T02:50:40.308516 #17687]  INFO -- : worker=1 ready
+E, [2017-02-02T04:53:46.435990 #12558] ERROR -- : reaped #<Process::Status: pid 25915 SIGKILL (signal 9)> worker=0
+I, [2017-02-02T04:53:46.442691 #12558]  INFO -- : worker=0 spawning...
+I, [2017-02-02T04:53:46.455930 #19420]  INFO -- : worker=0 spawned pid=19420
+I, [2017-02-02T04:53:46.456326 #19420]  INFO -- : worker=0 ready
+E, [2017-02-02T17:28:00.457956 #12558] ERROR -- : reaped #<Process::Status: pid 17687 SIGKILL (signal 9)> worker=1
+I, [2017-02-02T17:28:00.461601 #12558]  INFO -- : worker=1 spawning...
+I, [2017-02-02T17:28:00.475440 #5818]  INFO -- : worker=1 spawned pid=5818
+I, [2017-02-02T17:28:00.475842 #5818]  INFO -- : worker=1 ready
+E, [2017-02-02T19:58:53.329545 #12558] ERROR -- : reaped #<Process::Status: pid 19420 SIGKILL (signal 9)> worker=0
+I, [2017-02-02T19:58:53.334874 #12558]  INFO -- : worker=0 spawning...
+I, [2017-02-02T19:58:53.346417 #8802]  INFO -- : worker=0 spawned pid=8802
+I, [2017-02-02T19:58:53.346790 #8802]  INFO -- : worker=0 ready
+E, [2017-02-03T01:36:05.617601 #12558] ERROR -- : reaped #<Process::Status: pid 5818 SIGKILL (signal 9)> worker=1
+I, [2017-02-03T01:36:05.622551 #12558]  INFO -- : worker=1 spawning...
+I, [2017-02-03T01:36:05.634464 #15754]  INFO -- : worker=1 spawned pid=15754
+I, [2017-02-03T01:36:05.634992 #15754]  INFO -- : worker=1 ready
+E, [2017-02-03T05:13:18.895768 #12558] ERROR -- : reaped #<Process::Status: pid 8802 SIGKILL (signal 9)> worker=0
+I, [2017-02-03T05:13:18.900334 #12558]  INFO -- : worker=0 spawning...
+I, [2017-02-03T05:13:18.939938 #19612]  INFO -- : worker=0 spawned pid=19612
+I, [2017-02-03T05:13:18.940387 #19612]  INFO -- : worker=0 ready
+I, [2017-02-03T05:14:19.892562 #12558]  INFO -- : reaped #<Process::Status: pid 15754 exit 0> worker=1
+I, [2017-02-03T05:14:19.996568 #12558]  INFO -- : reaped #<Process::Status: pid 19612 exit 0> worker=0
+I, [2017-02-03T05:14:19.997001 #12558]  INFO -- : master complete
+I, [2017-02-03T05:14:26.734265 #19901]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-02-03T05:14:31.247495 #19901]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-02-03T05:14:31.248286 #19901]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=9
+I, [2017-02-03T05:14:31.248517 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-03T05:14:31.251808 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-03T05:14:31.253244 #19906]  INFO -- : worker=0 spawned pid=19906
+I, [2017-02-03T05:14:31.253909 #19906]  INFO -- : worker=0 ready
+I, [2017-02-03T05:14:31.256139 #19901]  INFO -- : master process ready
+I, [2017-02-03T05:14:31.265057 #19909]  INFO -- : worker=1 spawned pid=19909
+I, [2017-02-03T05:14:31.265273 #19909]  INFO -- : worker=1 ready
+E, [2017-02-03T17:48:19.831624 #19901] ERROR -- : reaped #<Process::Status: pid 19906 SIGKILL (signal 9)> worker=0
+I, [2017-02-03T17:48:19.836402 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-03T17:48:19.848734 #28458]  INFO -- : worker=0 spawned pid=28458
+I, [2017-02-03T17:48:19.849260 #28458]  INFO -- : worker=0 ready
+E, [2017-02-04T00:24:59.717892 #19901] ERROR -- : reaped #<Process::Status: pid 19909 SIGKILL (signal 9)> worker=1
+I, [2017-02-04T00:24:59.724076 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-04T00:24:59.740696 #6733]  INFO -- : worker=1 spawned pid=6733
+I, [2017-02-04T00:24:59.741080 #6733]  INFO -- : worker=1 ready
+E, [2017-02-04T07:33:19.934369 #19901] ERROR -- : reaped #<Process::Status: pid 28458 SIGKILL (signal 9)> worker=0
+I, [2017-02-04T07:33:19.941112 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-04T07:33:19.965630 #14333]  INFO -- : worker=0 spawned pid=14333
+I, [2017-02-04T07:33:19.966037 #14333]  INFO -- : worker=0 ready
+E, [2017-02-04T18:43:45.675428 #19901] ERROR -- : reaped #<Process::Status: pid 6733 SIGKILL (signal 9)> worker=1
+I, [2017-02-04T18:43:45.678224 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-04T18:43:45.693682 #23463]  INFO -- : worker=1 spawned pid=23463
+I, [2017-02-04T18:43:45.693992 #23463]  INFO -- : worker=1 ready
+E, [2017-02-05T03:15:52.333648 #19901] ERROR -- : reaped #<Process::Status: pid 14333 SIGKILL (signal 9)> worker=0
+I, [2017-02-05T03:15:52.342446 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-05T03:15:52.357567 #30471]  INFO -- : worker=0 spawned pid=30471
+I, [2017-02-05T03:15:52.357949 #30471]  INFO -- : worker=0 ready
+E, [2017-02-05T14:56:58.848862 #19901] ERROR -- : reaped #<Process::Status: pid 23463 SIGKILL (signal 9)> worker=1
+I, [2017-02-05T14:56:58.854361 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-05T14:56:58.873276 #8073]  INFO -- : worker=1 spawned pid=8073
+I, [2017-02-05T14:56:58.873656 #8073]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-06T05:24:23.311961 #19901] ERROR -- : reaped #<Process::Status: pid 30471 SIGKILL (signal 9)> worker=0
+I, [2017-02-06T05:24:23.316654 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-06T05:24:23.330188 #21476]  INFO -- : worker=0 spawned pid=21476
+I, [2017-02-06T05:24:23.330602 #21476]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-06T13:58:28.933320 #19901] ERROR -- : reaped #<Process::Status: pid 21476 SIGKILL (signal 9)> worker=0
+I, [2017-02-06T13:58:28.938379 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-06T13:58:29.012177 #30466]  INFO -- : worker=0 spawned pid=30466
+I, [2017-02-06T13:58:29.012614 #30466]  INFO -- : worker=0 ready
+E, [2017-02-06T16:10:45.715857 #19901] ERROR -- : reaped #<Process::Status: pid 8073 SIGKILL (signal 9)> worker=1
+I, [2017-02-06T16:10:45.720782 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-06T16:10:45.773081 #2428]  INFO -- : worker=1 spawned pid=2428
+I, [2017-02-06T16:10:45.773801 #2428]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-06T19:42:44.859711 #19901] ERROR -- : reaped #<Process::Status: pid 2428 SIGKILL (signal 9)> worker=1
+I, [2017-02-06T19:42:44.864122 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-06T19:42:44.875471 #6674]  INFO -- : worker=1 spawned pid=6674
+I, [2017-02-06T19:42:44.875794 #6674]  INFO -- : worker=1 ready
+E, [2017-02-06T21:37:16.461737 #19901] ERROR -- : reaped #<Process::Status: pid 30466 SIGKILL (signal 9)> worker=0
+I, [2017-02-06T21:37:16.470827 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-06T21:37:16.505442 #9217]  INFO -- : worker=0 spawned pid=9217
+I, [2017-02-06T21:37:16.505795 #9217]  INFO -- : worker=0 ready
+E, [2017-02-06T21:38:13.357377 #19901] ERROR -- : reaped #<Process::Status: pid 6674 SIGKILL (signal 9)> worker=1
+I, [2017-02-06T21:38:13.361713 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-06T21:38:13.380245 #9251]  INFO -- : worker=1 spawned pid=9251
+I, [2017-02-06T21:38:13.380677 #9251]  INFO -- : worker=1 ready
+E, [2017-02-07T09:50:27.996418 #19901] ERROR -- : reaped #<Process::Status: pid 9217 SIGKILL (signal 9)> worker=0
+I, [2017-02-07T09:50:28.000614 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-07T09:50:28.018756 #20918]  INFO -- : worker=0 spawned pid=20918
+I, [2017-02-07T09:50:28.019080 #20918]  INFO -- : worker=0 ready
+E, [2017-02-07T15:30:35.317164 #19901] ERROR -- : reaped #<Process::Status: pid 20918 SIGKILL (signal 9)> worker=0
+I, [2017-02-07T15:30:35.321587 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-07T15:30:35.337586 #26388]  INFO -- : worker=0 spawned pid=26388
+I, [2017-02-07T15:30:35.337879 #26388]  INFO -- : worker=0 ready
+E, [2017-02-08T00:51:49.362263 #19901] ERROR -- : reaped #<Process::Status: pid 9251 SIGKILL (signal 9)> worker=1
+I, [2017-02-08T00:51:49.373078 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-08T00:51:49.384520 #5278]  INFO -- : worker=1 spawned pid=5278
+I, [2017-02-08T00:51:49.384849 #5278]  INFO -- : worker=1 ready
+E, [2017-02-08T00:55:45.469407 #19901] ERROR -- : reaped #<Process::Status: pid 26388 SIGKILL (signal 9)> worker=0
+I, [2017-02-08T00:55:45.474210 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-08T00:55:45.492952 #5378]  INFO -- : worker=0 spawned pid=5378
+I, [2017-02-08T00:55:45.493269 #5378]  INFO -- : worker=0 ready
+E, [2017-02-08T04:05:06.079044 #19901] ERROR -- : reaped #<Process::Status: pid 5378 SIGKILL (signal 9)> worker=0
+I, [2017-02-08T04:05:06.083185 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-08T04:05:06.095620 #9365]  INFO -- : worker=0 spawned pid=9365
+I, [2017-02-08T04:05:06.096084 #9365]  INFO -- : worker=0 ready
+E, [2017-02-08T12:40:43.720519 #19901] ERROR -- : reaped #<Process::Status: pid 5278 SIGKILL (signal 9)> worker=1
+I, [2017-02-08T12:40:43.725531 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-08T12:40:43.746622 #19968]  INFO -- : worker=1 spawned pid=19968
+I, [2017-02-08T12:40:43.747128 #19968]  INFO -- : worker=1 ready
+E, [2017-02-08T14:13:57.653566 #19901] ERROR -- : reaped #<Process::Status: pid 9365 SIGKILL (signal 9)> worker=0
+I, [2017-02-08T14:13:57.657426 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-08T14:13:57.671591 #21475]  INFO -- : worker=0 spawned pid=21475
+I, [2017-02-08T14:13:57.672012 #21475]  INFO -- : worker=0 ready
+E, [2017-02-08T18:46:46.544977 #19901] ERROR -- : reaped #<Process::Status: pid 21475 SIGKILL (signal 9)> worker=0
+I, [2017-02-08T18:46:46.549530 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-08T18:46:46.558434 #25537]  INFO -- : worker=0 spawned pid=25537
+I, [2017-02-08T18:46:46.558732 #25537]  INFO -- : worker=0 ready
+E, [2017-02-08T21:57:52.673359 #19901] ERROR -- : reaped #<Process::Status: pid 25537 SIGKILL (signal 9)> worker=0
+I, [2017-02-08T21:57:52.676271 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-08T21:57:52.687123 #29053]  INFO -- : worker=0 spawned pid=29053
+I, [2017-02-08T21:57:52.687509 #29053]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-09T03:56:47.312086 #19901] ERROR -- : reaped #<Process::Status: pid 19968 SIGKILL (signal 9)> worker=1
+I, [2017-02-09T03:56:47.315297 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-09T03:56:47.327456 #2308]  INFO -- : worker=1 spawned pid=2308
+I, [2017-02-09T03:56:47.327762 #2308]  INFO -- : worker=1 ready
+E, [2017-02-09T06:25:11.997706 #19901] ERROR -- : reaped #<Process::Status: pid 29053 SIGKILL (signal 9)> worker=0
+I, [2017-02-09T06:25:12.001552 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-09T06:25:12.012797 #4914]  INFO -- : worker=0 spawned pid=4914
+I, [2017-02-09T06:25:12.013131 #4914]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-09T13:47:11.059779 #19901] ERROR -- : reaped #<Process::Status: pid 4914 SIGKILL (signal 9)> worker=0
+I, [2017-02-09T13:47:11.065552 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-09T13:47:11.076358 #13020]  INFO -- : worker=0 spawned pid=13020
+I, [2017-02-09T13:47:11.076706 #13020]  INFO -- : worker=0 ready
+E, [2017-02-09T22:02:00.702540 #19901] ERROR -- : reaped #<Process::Status: pid 2308 SIGKILL (signal 9)> worker=1
+I, [2017-02-09T22:02:00.708165 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-09T22:02:00.719015 #19209]  INFO -- : worker=1 spawned pid=19209
+I, [2017-02-09T22:02:00.719353 #19209]  INFO -- : worker=1 ready
+E, [2017-02-10T03:30:53.037817 #19901] ERROR -- : reaped #<Process::Status: pid 13020 SIGKILL (signal 9)> worker=0
+I, [2017-02-10T03:30:53.040862 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-10T03:30:53.052539 #24237]  INFO -- : worker=0 spawned pid=24237
+I, [2017-02-10T03:30:53.052885 #24237]  INFO -- : worker=0 ready
+E, [2017-02-10T14:11:44.277001 #19901] ERROR -- : reaped #<Process::Status: pid 24237 SIGKILL (signal 9)> worker=0
+I, [2017-02-10T14:11:44.280834 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-10T14:11:44.291441 #32629]  INFO -- : worker=0 spawned pid=32629
+I, [2017-02-10T14:11:44.291790 #32629]  INFO -- : worker=0 ready
+E, [2017-02-10T16:30:02.327357 #19901] ERROR -- : reaped #<Process::Status: pid 19209 SIGKILL (signal 9)> worker=1
+I, [2017-02-10T16:30:02.330084 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-10T16:30:02.340210 #2948]  INFO -- : worker=1 spawned pid=2948
+I, [2017-02-10T16:30:02.342671 #2948]  INFO -- : worker=1 ready
+E, [2017-02-10T20:50:00.326958 #19901] ERROR -- : reaped #<Process::Status: pid 32629 SIGKILL (signal 9)> worker=0
+I, [2017-02-10T20:50:00.331826 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-10T20:50:00.346731 #5179]  INFO -- : worker=0 spawned pid=5179
+I, [2017-02-10T20:50:00.347064 #5179]  INFO -- : worker=0 ready
+E, [2017-02-10T22:41:05.280493 #19901] ERROR -- : reaped #<Process::Status: pid 2948 SIGKILL (signal 9)> worker=1
+I, [2017-02-10T22:41:05.285656 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-10T22:41:05.305134 #6188]  INFO -- : worker=1 spawned pid=6188
+I, [2017-02-10T22:41:05.305510 #6188]  INFO -- : worker=1 ready
+E, [2017-02-11T16:25:18.290118 #19901] ERROR -- : reaped #<Process::Status: pid 6188 SIGKILL (signal 9)> worker=1
+I, [2017-02-11T16:25:18.293874 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-11T16:25:18.304319 #15796]  INFO -- : worker=1 spawned pid=15796
+I, [2017-02-11T16:25:18.304641 #15796]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-12T03:33:07.279253 #19901] ERROR -- : reaped #<Process::Status: pid 5179 SIGKILL (signal 9)> worker=0
+I, [2017-02-12T03:33:07.283871 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-12T03:33:07.295299 #24656]  INFO -- : worker=0 spawned pid=24656
+I, [2017-02-12T03:33:07.295666 #24656]  INFO -- : worker=0 ready
+E, [2017-02-12T12:41:16.858368 #19901] ERROR -- : reaped #<Process::Status: pid 15796 SIGKILL (signal 9)> worker=1
+I, [2017-02-12T12:41:16.861578 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-12T12:41:16.882253 #32131]  INFO -- : worker=1 spawned pid=32131
+I, [2017-02-12T12:41:16.882553 #32131]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-12T19:32:41.594671 #19901] ERROR -- : reaped #<Process::Status: pid 32131 SIGKILL (signal 9)> worker=1
+I, [2017-02-12T19:32:41.599373 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-12T19:32:41.614660 #5853]  INFO -- : worker=1 spawned pid=5853
+I, [2017-02-12T19:32:41.615071 #5853]  INFO -- : worker=1 ready
+E, [2017-02-13T02:02:02.353526 #19901] ERROR -- : reaped #<Process::Status: pid 5853 SIGKILL (signal 9)> worker=1
+I, [2017-02-13T02:02:02.356123 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-13T02:02:02.368353 #11606]  INFO -- : worker=1 spawned pid=11606
+I, [2017-02-13T02:02:02.368770 #11606]  INFO -- : worker=1 ready
+E, [2017-02-13T06:41:28.113110 #19901] ERROR -- : reaped #<Process::Status: pid 24656 SIGKILL (signal 9)> worker=0
+I, [2017-02-13T06:41:28.118468 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-13T06:41:28.138007 #15200]  INFO -- : worker=0 spawned pid=15200
+I, [2017-02-13T06:41:28.138361 #15200]  INFO -- : worker=0 ready
+E, [2017-02-14T01:58:07.371567 #19901] ERROR -- : reaped #<Process::Status: pid 11606 SIGKILL (signal 9)> worker=1
+I, [2017-02-14T01:58:07.375753 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-14T01:58:07.394550 #31268]  INFO -- : worker=1 spawned pid=31268
+I, [2017-02-14T01:58:07.394909 #31268]  INFO -- : worker=1 ready
+E, [2017-02-14T14:03:47.810119 #19901] ERROR -- : reaped #<Process::Status: pid 15200 SIGKILL (signal 9)> worker=0
+I, [2017-02-14T14:03:47.816251 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-14T14:03:47.828851 #8563]  INFO -- : worker=0 spawned pid=8563
+I, [2017-02-14T14:03:47.829146 #8563]  INFO -- : worker=0 ready
+E, [2017-02-14T18:29:41.418378 #19901] ERROR -- : reaped #<Process::Status: pid 31268 SIGKILL (signal 9)> worker=1
+I, [2017-02-14T18:29:41.423818 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-14T18:29:41.435819 #11351]  INFO -- : worker=1 spawned pid=11351
+I, [2017-02-14T18:29:41.436187 #11351]  INFO -- : worker=1 ready
+E, [2017-02-15T00:12:53.363396 #19901] ERROR -- : reaped #<Process::Status: pid 8563 SIGKILL (signal 9)> worker=0
+I, [2017-02-15T00:12:53.381561 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-15T00:12:53.410033 #15377]  INFO -- : worker=0 spawned pid=15377
+I, [2017-02-15T00:12:53.410346 #15377]  INFO -- : worker=0 ready
+E, [2017-02-15T00:52:03.097552 #19901] ERROR -- : reaped #<Process::Status: pid 11351 SIGKILL (signal 9)> worker=1
+I, [2017-02-15T00:52:03.102993 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-15T00:52:03.121967 #16299]  INFO -- : worker=1 spawned pid=16299
+I, [2017-02-15T00:52:03.122525 #16299]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-15T19:13:44.186240 #19901] ERROR -- : reaped #<Process::Status: pid 15377 SIGKILL (signal 9)> worker=0
+I, [2017-02-15T19:13:44.190588 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-15T19:13:44.201263 #31104]  INFO -- : worker=0 spawned pid=31104
+I, [2017-02-15T19:13:44.201568 #31104]  INFO -- : worker=0 ready
+E, [2017-02-15T19:55:10.596511 #19901] ERROR -- : reaped #<Process::Status: pid 16299 SIGKILL (signal 9)> worker=1
+I, [2017-02-15T19:55:10.604264 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-15T19:55:10.621552 #31756]  INFO -- : worker=1 spawned pid=31756
+I, [2017-02-15T19:55:10.624078 #31756]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-16T00:15:47.589368 #19901] ERROR -- : reaped #<Process::Status: pid 31104 SIGKILL (signal 9)> worker=0
+I, [2017-02-16T00:15:47.592849 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-16T00:15:47.602801 #2660]  INFO -- : worker=0 spawned pid=2660
+I, [2017-02-16T00:15:47.603134 #2660]  INFO -- : worker=0 ready
+E, [2017-02-16T09:24:50.555036 #19901] ERROR -- : reaped #<Process::Status: pid 31756 SIGKILL (signal 9)> worker=1
+I, [2017-02-16T09:24:50.558107 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-16T09:24:50.576458 #11510]  INFO -- : worker=1 spawned pid=11510
+I, [2017-02-16T09:24:50.576853 #11510]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-16T19:55:38.905629 #19901] ERROR -- : reaped #<Process::Status: pid 11510 SIGKILL (signal 9)> worker=1
+I, [2017-02-16T19:55:38.909170 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-16T19:55:38.923331 #23156]  INFO -- : worker=1 spawned pid=23156
+I, [2017-02-16T19:55:38.924349 #23156]  INFO -- : worker=1 ready
+E, [2017-02-17T04:47:40.027029 #19901] ERROR -- : reaped #<Process::Status: pid 2660 SIGKILL (signal 9)> worker=0
+I, [2017-02-17T04:47:40.030225 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-17T04:47:40.040941 #28799]  INFO -- : worker=0 spawned pid=28799
+I, [2017-02-17T04:47:40.041266 #28799]  INFO -- : worker=0 ready
+E, [2017-02-17T16:46:52.298023 #19901] ERROR -- : reaped #<Process::Status: pid 23156 SIGKILL (signal 9)> worker=1
+I, [2017-02-17T16:46:52.302745 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-17T16:46:52.315810 #10329]  INFO -- : worker=1 spawned pid=10329
+I, [2017-02-17T16:46:52.316248 #10329]  INFO -- : worker=1 ready
+E, [2017-02-17T17:49:14.333523 #19901] ERROR -- : reaped #<Process::Status: pid 28799 SIGKILL (signal 9)> worker=0
+I, [2017-02-17T17:49:14.340410 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-17T17:49:14.357627 #11189]  INFO -- : worker=0 spawned pid=11189
+I, [2017-02-17T17:49:14.357968 #11189]  INFO -- : worker=0 ready
+E, [2017-02-17T17:54:52.398147 #19901] ERROR -- : reaped #<Process::Status: pid 10329 SIGKILL (signal 9)> worker=1
+I, [2017-02-17T17:54:52.402814 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-17T17:54:52.412001 #11334]  INFO -- : worker=1 spawned pid=11334
+I, [2017-02-17T17:54:52.412409 #11334]  INFO -- : worker=1 ready
+E, [2017-02-17T18:07:14.828189 #19901] ERROR -- : reaped #<Process::Status: pid 11334 SIGKILL (signal 9)> worker=1
+I, [2017-02-17T18:07:14.835283 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-17T18:07:14.857493 #11673]  INFO -- : worker=1 spawned pid=11673
+I, [2017-02-17T18:07:14.858029 #11673]  INFO -- : worker=1 ready
+E, [2017-02-17T18:40:16.280592 #19901] ERROR -- : reaped #<Process::Status: pid 11189 SIGKILL (signal 9)> worker=0
+I, [2017-02-17T18:40:16.287592 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-17T18:40:16.302713 #12251]  INFO -- : worker=0 spawned pid=12251
+I, [2017-02-17T18:40:16.303113 #12251]  INFO -- : worker=0 ready
+E, [2017-02-18T08:20:44.383754 #19901] ERROR -- : reaped #<Process::Status: pid 11673 SIGKILL (signal 9)> worker=1
+I, [2017-02-18T08:20:44.388346 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-18T08:20:44.400611 #26439]  INFO -- : worker=1 spawned pid=26439
+I, [2017-02-18T08:20:44.401007 #26439]  INFO -- : worker=1 ready
+E, [2017-02-19T05:56:14.514583 #19901] ERROR -- : reaped #<Process::Status: pid 26439 SIGKILL (signal 9)> worker=1
+I, [2017-02-19T05:56:14.520298 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-19T05:56:14.531570 #14780]  INFO -- : worker=1 spawned pid=14780
+I, [2017-02-19T05:56:14.531952 #14780]  INFO -- : worker=1 ready
+E, [2017-02-20T01:05:51.994154 #19901] ERROR -- : reaped #<Process::Status: pid 12251 SIGKILL (signal 9)> worker=0
+I, [2017-02-20T01:05:51.998275 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-20T01:05:52.009196 #848]  INFO -- : worker=0 spawned pid=848
+I, [2017-02-20T01:05:52.009519 #848]  INFO -- : worker=0 ready
+E, [2017-02-20T20:10:34.506561 #19901] ERROR -- : reaped #<Process::Status: pid 14780 SIGKILL (signal 9)> worker=1
+I, [2017-02-20T20:10:34.509974 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-20T20:10:34.527628 #18526]  INFO -- : worker=1 spawned pid=18526
+I, [2017-02-20T20:10:34.527951 #18526]  INFO -- : worker=1 ready
+E, [2017-02-21T01:53:26.275525 #19901] ERROR -- : reaped #<Process::Status: pid 848 SIGKILL (signal 9)> worker=0
+I, [2017-02-21T01:53:26.280334 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-21T01:53:26.304903 #23250]  INFO -- : worker=0 spawned pid=23250
+I, [2017-02-21T01:53:26.305239 #23250]  INFO -- : worker=0 ready
+E, [2017-02-21T12:04:48.189301 #19901] ERROR -- : reaped #<Process::Status: pid 18526 SIGKILL (signal 9)> worker=1
+I, [2017-02-21T12:04:48.194010 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-21T12:04:48.206245 #3843]  INFO -- : worker=1 spawned pid=3843
+I, [2017-02-21T12:04:48.206578 #3843]  INFO -- : worker=1 ready
+E, [2017-02-22T03:54:25.873148 #19901] ERROR -- : reaped #<Process::Status: pid 3843 SIGKILL (signal 9)> worker=1
+I, [2017-02-22T03:54:25.877207 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-22T03:54:25.899766 #14543]  INFO -- : worker=1 spawned pid=14543
+I, [2017-02-22T03:54:25.900298 #14543]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-22T18:46:15.323322 #19901] ERROR -- : reaped #<Process::Status: pid 23250 SIGKILL (signal 9)> worker=0
+I, [2017-02-22T18:46:15.327333 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-22T18:46:15.342676 #25754]  INFO -- : worker=0 spawned pid=25754
+I, [2017-02-22T18:46:15.343077 #25754]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-02-23T00:17:43.603987 #19901] ERROR -- : reaped #<Process::Status: pid 14543 SIGKILL (signal 9)> worker=1
+I, [2017-02-23T00:17:43.610587 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-23T00:17:43.622764 #30418]  INFO -- : worker=1 spawned pid=30418
+I, [2017-02-23T00:17:43.623142 #30418]  INFO -- : worker=1 ready
+E, [2017-02-23T17:34:48.630857 #19901] ERROR -- : reaped #<Process::Status: pid 25754 SIGKILL (signal 9)> worker=0
+I, [2017-02-23T17:34:48.636532 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-23T17:34:48.652731 #13472]  INFO -- : worker=0 spawned pid=13472
+I, [2017-02-23T17:34:48.653215 #13472]  INFO -- : worker=0 ready
+E, [2017-02-24T01:25:59.383237 #19901] ERROR -- : reaped #<Process::Status: pid 30418 SIGKILL (signal 9)> worker=1
+I, [2017-02-24T01:25:59.387173 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-24T01:25:59.401571 #21113]  INFO -- : worker=1 spawned pid=21113
+I, [2017-02-24T01:25:59.401916 #21113]  INFO -- : worker=1 ready
+E, [2017-02-26T06:47:06.274618 #19901] ERROR -- : reaped #<Process::Status: pid 13472 SIGKILL (signal 9)> worker=0
+I, [2017-02-26T06:47:06.278615 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-26T06:47:06.296934 #10005]  INFO -- : worker=0 spawned pid=10005
+I, [2017-02-26T06:47:06.297294 #10005]  INFO -- : worker=0 ready
+E, [2017-02-28T02:26:44.787986 #19901] ERROR -- : reaped #<Process::Status: pid 10005 SIGKILL (signal 9)> worker=0
+I, [2017-02-28T02:26:44.791000 #19901]  INFO -- : worker=0 spawning...
+I, [2017-02-28T02:26:44.809308 #27312]  INFO -- : worker=0 spawned pid=27312
+I, [2017-02-28T02:26:44.809636 #27312]  INFO -- : worker=0 ready
+E, [2017-02-28T04:40:51.577328 #19901] ERROR -- : reaped #<Process::Status: pid 21113 SIGKILL (signal 9)> worker=1
+I, [2017-02-28T04:40:51.586324 #19901]  INFO -- : worker=1 spawning...
+I, [2017-02-28T04:40:51.609617 #30648]  INFO -- : worker=1 spawned pid=30648
+I, [2017-02-28T04:40:51.611180 #30648]  INFO -- : worker=1 ready
+E, [2017-03-01T16:19:02.324684 #19901] ERROR -- : reaped #<Process::Status: pid 27312 SIGKILL (signal 9)> worker=0
+I, [2017-03-01T16:19:02.327975 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-01T16:19:02.345051 #27325]  INFO -- : worker=0 spawned pid=27325
+I, [2017-03-01T16:19:02.345379 #27325]  INFO -- : worker=0 ready
+E, [2017-03-01T20:45:09.420163 #19901] ERROR -- : reaped #<Process::Status: pid 30648 SIGKILL (signal 9)> worker=1
+I, [2017-03-01T20:45:09.423591 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-01T20:45:09.435212 #32477]  INFO -- : worker=1 spawned pid=32477
+I, [2017-03-01T20:45:09.435529 #32477]  INFO -- : worker=1 ready
+E, [2017-03-02T01:55:50.747843 #19901] ERROR -- : reaped #<Process::Status: pid 32477 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T01:55:50.751891 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-02T01:55:50.762042 #3739]  INFO -- : worker=1 spawned pid=3739
+I, [2017-03-02T01:55:50.762322 #3739]  INFO -- : worker=1 ready
+E, [2017-03-02T13:51:15.122328 #19901] ERROR -- : reaped #<Process::Status: pid 27325 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T13:51:15.126058 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-02T13:51:15.135915 #12550]  INFO -- : worker=0 spawned pid=12550
+I, [2017-03-02T13:51:15.136248 #12550]  INFO -- : worker=0 ready
+E, [2017-03-02T21:18:24.997743 #19901] ERROR -- : reaped #<Process::Status: pid 12550 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T21:18:25.004320 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-02T21:18:25.018641 #18631]  INFO -- : worker=0 spawned pid=18631
+I, [2017-03-02T21:18:25.018926 #18631]  INFO -- : worker=0 ready
+E, [2017-03-02T21:20:57.628568 #19901] ERROR -- : reaped #<Process::Status: pid 3739 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T21:20:57.634383 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-02T21:20:57.655583 #18836]  INFO -- : worker=1 spawned pid=18836
+I, [2017-03-02T21:20:57.656130 #18836]  INFO -- : worker=1 ready
+E, [2017-03-02T21:25:37.310459 #19901] ERROR -- : reaped #<Process::Status: pid 18631 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T21:25:37.314129 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-02T21:25:37.324632 #18913]  INFO -- : worker=0 spawned pid=18913
+I, [2017-03-02T21:25:37.325005 #18913]  INFO -- : worker=0 ready
+E, [2017-03-02T21:27:14.746109 #19901] ERROR -- : reaped #<Process::Status: pid 18836 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T21:27:14.752503 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-02T21:27:14.764520 #18955]  INFO -- : worker=1 spawned pid=18955
+I, [2017-03-02T21:27:14.765064 #18955]  INFO -- : worker=1 ready
+E, [2017-03-02T21:27:27.377625 #19901] ERROR -- : reaped #<Process::Status: pid 18913 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T21:27:27.383046 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-02T21:27:27.395139 #18963]  INFO -- : worker=0 spawned pid=18963
+I, [2017-03-02T21:27:27.395445 #18963]  INFO -- : worker=0 ready
+E, [2017-03-02T21:27:46.253612 #19901] ERROR -- : reaped #<Process::Status: pid 18955 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T21:27:46.262676 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-02T21:27:46.278380 #18973]  INFO -- : worker=1 spawned pid=18973
+I, [2017-03-02T21:27:46.278694 #18973]  INFO -- : worker=1 ready
+E, [2017-03-02T21:28:03.742009 #19901] ERROR -- : reaped #<Process::Status: pid 18963 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T21:28:03.748408 #19901]  INFO -- : worker=0 spawning...
+I, [2017-03-02T21:28:03.766876 #18986]  INFO -- : worker=0 spawned pid=18986
+I, [2017-03-02T21:28:03.768957 #18986]  INFO -- : worker=0 ready
+E, [2017-03-02T21:29:42.401274 #19901] ERROR -- : reaped #<Process::Status: pid 18973 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T21:29:42.409270 #19901]  INFO -- : worker=1 spawning...
+I, [2017-03-02T21:29:42.420666 #19010]  INFO -- : worker=1 spawned pid=19010
+I, [2017-03-02T21:29:42.420964 #19010]  INFO -- : worker=1 ready
+I, [2017-03-02T22:02:44.873149 #19901]  INFO -- : reaped #<Process::Status: pid 18986 exit 0> worker=0
+I, [2017-03-02T22:02:44.874843 #19901]  INFO -- : reaped #<Process::Status: pid 19010 exit 0> worker=1
+I, [2017-03-02T22:02:44.875075 #19901]  INFO -- : master complete
+I, [2017-03-02T22:02:48.170397 #19912]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-02T22:02:52.641885 #19912]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-02T22:02:52.645974 #19912]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-03-02T22:02:52.646906 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-02T22:02:52.649762 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-02T22:02:52.651072 #19916]  INFO -- : worker=0 spawned pid=19916
+I, [2017-03-02T22:02:52.651283 #19916]  INFO -- : worker=0 ready
+I, [2017-03-02T22:02:52.652926 #19912]  INFO -- : master process ready
+I, [2017-03-02T22:02:52.660763 #19919]  INFO -- : worker=1 spawned pid=19919
+I, [2017-03-02T22:02:52.661016 #19919]  INFO -- : worker=1 ready
+E, [2017-03-02T22:03:10.707810 #19912] ERROR -- : reaped #<Process::Status: pid 19916 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T22:03:10.712926 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-02T22:03:10.734010 #19937]  INFO -- : worker=0 spawned pid=19937
+I, [2017-03-02T22:03:10.734312 #19937]  INFO -- : worker=0 ready
+E, [2017-03-02T22:03:16.510993 #19912] ERROR -- : reaped #<Process::Status: pid 19919 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T22:03:16.515184 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-02T22:03:16.531284 #19948]  INFO -- : worker=1 spawned pid=19948
+I, [2017-03-02T22:03:16.531583 #19948]  INFO -- : worker=1 ready
+E, [2017-03-02T22:03:38.490776 #19912] ERROR -- : reaped #<Process::Status: pid 19948 SIGKILL (signal 9)> worker=1
+I, [2017-03-02T22:03:38.495261 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-02T22:03:38.511875 #19967]  INFO -- : worker=1 spawned pid=19967
+I, [2017-03-02T22:03:38.512230 #19967]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-03-02T22:07:39.069136 #19912] ERROR -- : reaped #<Process::Status: pid 19937 SIGKILL (signal 9)> worker=0
+I, [2017-03-02T22:07:39.074666 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-02T22:07:39.087278 #20083]  INFO -- : worker=0 spawned pid=20083
+I, [2017-03-02T22:07:39.087640 #20083]  INFO -- : worker=0 ready
+E, [2017-03-03T00:50:46.225938 #19912] ERROR -- : reaped #<Process::Status: pid 19967 SIGKILL (signal 9)> worker=1
+I, [2017-03-03T00:50:46.230613 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-03T00:50:46.245057 #22804]  INFO -- : worker=1 spawned pid=22804
+I, [2017-03-03T00:50:46.245498 #22804]  INFO -- : worker=1 ready
+E, [2017-03-03T19:17:19.867477 #19912] ERROR -- : reaped #<Process::Status: pid 20083 SIGKILL (signal 9)> worker=0
+I, [2017-03-03T19:17:19.870626 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-03T19:17:19.882063 #1854]  INFO -- : worker=0 spawned pid=1854
+I, [2017-03-03T19:17:19.883857 #1854]  INFO -- : worker=0 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-03-04T01:27:13.842901 #19912] ERROR -- : reaped #<Process::Status: pid 1854 SIGKILL (signal 9)> worker=0
+I, [2017-03-04T01:27:13.846420 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-04T01:27:13.858505 #5386]  INFO -- : worker=0 spawned pid=5386
+I, [2017-03-04T01:27:13.858814 #5386]  INFO -- : worker=0 ready
+E, [2017-03-04T13:00:10.503715 #19912] ERROR -- : reaped #<Process::Status: pid 22804 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T13:00:10.507827 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T13:00:10.519673 #10740]  INFO -- : worker=1 spawned pid=10740
+I, [2017-03-04T13:00:10.519977 #10740]  INFO -- : worker=1 ready
+E, [2017-03-04T14:02:01.767614 #19912] ERROR -- : reaped #<Process::Status: pid 5386 SIGKILL (signal 9)> worker=0
+I, [2017-03-04T14:02:01.770032 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-04T14:02:01.778380 #11421]  INFO -- : worker=0 spawned pid=11421
+I, [2017-03-04T14:02:01.778608 #11421]  INFO -- : worker=0 ready
+E, [2017-03-04T14:58:12.045540 #19912] ERROR -- : reaped #<Process::Status: pid 10740 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T14:58:12.052163 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T14:58:12.061978 #12410]  INFO -- : worker=1 spawned pid=12410
+I, [2017-03-04T14:58:12.062248 #12410]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-03-04T15:16:45.341258 #19912] ERROR -- : reaped #<Process::Status: pid 12410 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T15:16:45.344498 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T15:16:45.353881 #12661]  INFO -- : worker=1 spawned pid=12661
+I, [2017-03-04T15:16:45.354197 #12661]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-03-04T15:43:26.156591 #19912] ERROR -- : reaped #<Process::Status: pid 11421 SIGKILL (signal 9)> worker=0
+I, [2017-03-04T15:43:26.160132 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-04T15:43:26.171993 #13103]  INFO -- : worker=0 spawned pid=13103
+I, [2017-03-04T15:43:26.172284 #13103]  INFO -- : worker=0 ready
+E, [2017-03-04T17:18:01.103852 #19912] ERROR -- : reaped #<Process::Status: pid 12661 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T17:18:01.108044 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T17:18:01.125719 #14797]  INFO -- : worker=1 spawned pid=14797
+I, [2017-03-04T17:18:01.125984 #14797]  INFO -- : worker=1 ready
+E, [2017-03-04T17:22:18.413516 #19912] ERROR -- : reaped #<Process::Status: pid 14797 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T17:22:18.417368 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T17:22:18.429720 #15009]  INFO -- : worker=1 spawned pid=15009
+I, [2017-03-04T17:22:18.430040 #15009]  INFO -- : worker=1 ready
+PDF's built-in fonts have very limited support for internationalized text.
+If you need full UTF-8 support, consider using a TTF font instead.
+
+To disable this warning, add the following line to your code:
+Prawn::Font::AFM.hide_m17n_warning = true
+E, [2017-03-04T17:47:23.100306 #19912] ERROR -- : reaped #<Process::Status: pid 15009 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T17:47:23.103811 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T17:47:23.113139 #15378]  INFO -- : worker=1 spawned pid=15378
+I, [2017-03-04T17:47:23.113422 #15378]  INFO -- : worker=1 ready
+E, [2017-03-04T17:55:15.755462 #19912] ERROR -- : reaped #<Process::Status: pid 15378 SIGKILL (signal 9)> worker=1
+I, [2017-03-04T17:55:15.762340 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-04T17:55:15.774282 #15483]  INFO -- : worker=1 spawned pid=15483
+I, [2017-03-04T17:55:15.774564 #15483]  INFO -- : worker=1 ready
+E, [2017-03-05T06:47:05.175138 #19912] ERROR -- : reaped #<Process::Status: pid 13103 SIGKILL (signal 9)> worker=0
+I, [2017-03-05T06:47:05.178164 #19912]  INFO -- : worker=0 spawning...
+I, [2017-03-05T06:47:05.196821 #27128]  INFO -- : worker=0 spawned pid=27128
+I, [2017-03-05T06:47:05.197115 #27128]  INFO -- : worker=0 ready
+E, [2017-03-07T02:54:33.057769 #19912] ERROR -- : reaped #<Process::Status: pid 15483 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T02:54:33.061328 #19912]  INFO -- : worker=1 spawning...
+I, [2017-03-07T02:54:33.091406 #30192]  INFO -- : worker=1 spawned pid=30192
+I, [2017-03-07T02:54:33.091743 #30192]  INFO -- : worker=1 ready
+E, [2017-03-07T02:58:47.431284 #19912] ERROR -- : reaped #<Process::Status: pid 27128 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T02:58:47.534492 #19912]  INFO -- : reaped #<Process::Status: pid 30192 exit 0> worker=1
+I, [2017-03-07T02:58:47.534683 #19912]  INFO -- : master complete
+I, [2017-03-07T03:10:05.884328 #31187]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-07T03:10:10.365653 #31187]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-07T03:10:10.365951 #31187]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=10
+I, [2017-03-07T03:10:10.366431 #31187]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:10:10.369404 #31187]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:10:10.370641 #31190]  INFO -- : worker=0 spawned pid=31190
+I, [2017-03-07T03:10:10.370840 #31190]  INFO -- : worker=0 ready
+I, [2017-03-07T03:10:10.372854 #31187]  INFO -- : master process ready
+I, [2017-03-07T03:10:10.381492 #31193]  INFO -- : worker=1 spawned pid=31193
+I, [2017-03-07T03:10:10.381745 #31193]  INFO -- : worker=1 ready
+E, [2017-03-07T03:13:49.042674 #31187] ERROR -- : reaped #<Process::Status: pid 31193 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:13:49.049335 #31187]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:13:49.066280 #31248]  INFO -- : worker=1 spawned pid=31248
+I, [2017-03-07T03:13:49.066540 #31248]  INFO -- : worker=1 ready
+E, [2017-03-07T03:14:18.391840 #31187] ERROR -- : reaped #<Process::Status: pid 31248 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:14:18.394831 #31187]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:14:18.403716 #31292]  INFO -- : worker=1 spawned pid=31292
+I, [2017-03-07T03:14:18.404016 #31292]  INFO -- : worker=1 ready
+E, [2017-03-07T03:14:49.540980 #31187] ERROR -- : worker=1 PID:31292 timeout (31s > 30s), killing
+E, [2017-03-07T03:14:49.799072 #31187] ERROR -- : reaped #<Process::Status: pid 31292 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:14:49.803652 #31187]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:14:49.822243 #31303]  INFO -- : worker=1 spawned pid=31303
+I, [2017-03-07T03:14:49.822599 #31303]  INFO -- : worker=1 ready
+I, [2017-03-07T03:16:14.759421 #31187]  INFO -- : reaped #<Process::Status: pid 31190 exit 0> worker=0
+I, [2017-03-07T03:16:14.860085 #31187]  INFO -- : reaped #<Process::Status: pid 31303 exit 0> worker=1
+I, [2017-03-07T03:16:14.860659 #31187]  INFO -- : master complete
+I, [2017-03-07T03:16:30.817147 #31595]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-07T03:16:35.195127 #31595]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-07T03:16:35.196799 #31595]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-03-07T03:16:35.197053 #31595]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:16:35.200189 #31595]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:16:35.201803 #31598]  INFO -- : worker=0 spawned pid=31598
+I, [2017-03-07T03:16:35.202003 #31598]  INFO -- : worker=0 ready
+I, [2017-03-07T03:16:35.204383 #31595]  INFO -- : master process ready
+I, [2017-03-07T03:16:35.213166 #31601]  INFO -- : worker=1 spawned pid=31601
+I, [2017-03-07T03:16:35.213397 #31601]  INFO -- : worker=1 ready
+E, [2017-03-07T03:17:17.337192 #31595] ERROR -- : reaped #<Process::Status: pid 31598 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:17:17.347016 #31595]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:17:17.361569 #31620]  INFO -- : worker=0 spawned pid=31620
+I, [2017-03-07T03:17:17.361838 #31620]  INFO -- : worker=0 ready
+E, [2017-03-07T03:21:02.546578 #31595] ERROR -- : reaped #<Process::Status: pid 31601 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:21:02.551392 #31595]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:21:02.563629 #31714]  INFO -- : worker=1 spawned pid=31714
+I, [2017-03-07T03:21:02.563993 #31714]  INFO -- : worker=1 ready
+E, [2017-03-07T03:22:14.994437 #31595] ERROR -- : reaped #<Process::Status: pid 31620 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:22:15.298321 #31595]  INFO -- : reaped #<Process::Status: pid 31714 exit 0> worker=1
+I, [2017-03-07T03:22:15.298582 #31595]  INFO -- : master complete
+I, [2017-03-07T03:26:59.853038 #32262]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-07T03:27:03.838258 #32262]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-07T03:27:03.838660 #32262]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=8
+I, [2017-03-07T03:27:03.838840 #32262]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:27:03.841909 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:27:03.846616 #32262]  INFO -- : master process ready
+I, [2017-03-07T03:27:03.852656 #32266]  INFO -- : worker=0 spawned pid=32266
+I, [2017-03-07T03:27:03.852900 #32266]  INFO -- : worker=0 ready
+I, [2017-03-07T03:27:03.859171 #32269]  INFO -- : worker=1 spawned pid=32269
+I, [2017-03-07T03:27:03.866173 #32269]  INFO -- : worker=1 ready
+E, [2017-03-07T03:28:12.914387 #32262] ERROR -- : reaped #<Process::Status: pid 32269 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:28:12.919421 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:28:12.936141 #32289]  INFO -- : worker=1 spawned pid=32289
+I, [2017-03-07T03:28:12.936471 #32289]  INFO -- : worker=1 ready
+E, [2017-03-07T03:29:37.775557 #32262] ERROR -- : reaped #<Process::Status: pid 32289 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:29:37.781608 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:29:37.800975 #32362]  INFO -- : worker=1 spawned pid=32362
+I, [2017-03-07T03:29:37.801311 #32362]  INFO -- : worker=1 ready
+E, [2017-03-07T03:29:59.600838 #32262] ERROR -- : reaped #<Process::Status: pid 32266 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:29:59.604927 #32262]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:29:59.616432 #32375]  INFO -- : worker=0 spawned pid=32375
+I, [2017-03-07T03:29:59.616790 #32375]  INFO -- : worker=0 ready
+E, [2017-03-07T03:30:24.625390 #32262] ERROR -- : reaped #<Process::Status: pid 32375 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:30:24.628736 #32262]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:30:24.639086 #32383]  INFO -- : worker=0 spawned pid=32383
+I, [2017-03-07T03:30:24.639386 #32383]  INFO -- : worker=0 ready
+E, [2017-03-07T03:30:28.872298 #32262] ERROR -- : reaped #<Process::Status: pid 32362 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:30:28.878104 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:30:28.888778 #32391]  INFO -- : worker=1 spawned pid=32391
+I, [2017-03-07T03:30:28.889066 #32391]  INFO -- : worker=1 ready
+E, [2017-03-07T03:30:30.504696 #32262] ERROR -- : reaped #<Process::Status: pid 32383 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:30:30.510046 #32262]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:30:30.524439 #32397]  INFO -- : worker=0 spawned pid=32397
+I, [2017-03-07T03:30:30.525395 #32397]  INFO -- : worker=0 ready
+E, [2017-03-07T03:30:40.054925 #32262] ERROR -- : reaped #<Process::Status: pid 32391 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:30:40.062893 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:30:40.076450 #32402]  INFO -- : worker=1 spawned pid=32402
+I, [2017-03-07T03:30:40.076790 #32402]  INFO -- : worker=1 ready
+E, [2017-03-07T03:30:55.730134 #32262] ERROR -- : reaped #<Process::Status: pid 32402 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:30:55.735233 #32262]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:30:55.748375 #32410]  INFO -- : worker=1 spawned pid=32410
+I, [2017-03-07T03:30:55.748679 #32410]  INFO -- : worker=1 ready
+I, [2017-03-07T03:31:09.629501 #32262]  INFO -- : reaped #<Process::Status: pid 32397 exit 0> worker=0
+I, [2017-03-07T03:31:09.830470 #32262]  INFO -- : reaped #<Process::Status: pid 32410 exit 0> worker=1
+I, [2017-03-07T03:31:09.830660 #32262]  INFO -- : master complete
+I, [2017-03-07T03:31:25.001102 #32690]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-07T03:31:28.748481 #32690]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-07T03:31:28.748917 #32690]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-03-07T03:31:28.749075 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:31:28.751225 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:31:28.752309 #32694]  INFO -- : worker=0 spawned pid=32694
+I, [2017-03-07T03:31:28.752506 #32694]  INFO -- : worker=0 ready
+I, [2017-03-07T03:31:28.754883 #32690]  INFO -- : master process ready
+I, [2017-03-07T03:31:28.761126 #32697]  INFO -- : worker=1 spawned pid=32697
+I, [2017-03-07T03:31:28.761327 #32697]  INFO -- : worker=1 ready
+E, [2017-03-07T03:31:41.762898 #32690] ERROR -- : reaped #<Process::Status: pid 32694 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:31:41.767726 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:31:41.783191 #32706]  INFO -- : worker=0 spawned pid=32706
+I, [2017-03-07T03:31:41.783494 #32706]  INFO -- : worker=0 ready
+E, [2017-03-07T03:32:07.643866 #32690] ERROR -- : reaped #<Process::Status: pid 32706 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:32:07.651382 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:32:07.666011 #32718]  INFO -- : worker=0 spawned pid=32718
+I, [2017-03-07T03:32:07.666274 #32718]  INFO -- : worker=0 ready
+E, [2017-03-07T03:33:17.405887 #32690] ERROR -- : reaped #<Process::Status: pid 32697 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:33:17.409008 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:33:17.418550 #324]  INFO -- : worker=1 spawned pid=324
+I, [2017-03-07T03:33:17.418846 #324]  INFO -- : worker=1 ready
+E, [2017-03-07T03:33:20.792380 #32690] ERROR -- : reaped #<Process::Status: pid 32718 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:33:20.796545 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:33:20.806554 #329]  INFO -- : worker=0 spawned pid=329
+I, [2017-03-07T03:33:20.806850 #329]  INFO -- : worker=0 ready
+E, [2017-03-07T03:33:22.750704 #32690] ERROR -- : reaped #<Process::Status: pid 324 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:33:22.753995 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:33:22.766751 #336]  INFO -- : worker=1 spawned pid=336
+I, [2017-03-07T03:33:22.767159 #336]  INFO -- : worker=1 ready
+E, [2017-03-07T03:33:29.055720 #32690] ERROR -- : reaped #<Process::Status: pid 329 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:33:29.059871 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:33:29.072152 #341]  INFO -- : worker=0 spawned pid=341
+I, [2017-03-07T03:33:29.072473 #341]  INFO -- : worker=0 ready
+E, [2017-03-07T03:33:38.939551 #32690] ERROR -- : reaped #<Process::Status: pid 336 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:33:38.945655 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:33:38.964432 #346]  INFO -- : worker=1 spawned pid=346
+I, [2017-03-07T03:33:38.964725 #346]  INFO -- : worker=1 ready
+E, [2017-03-07T03:33:42.438970 #32690] ERROR -- : reaped #<Process::Status: pid 346 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:33:42.444497 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:33:42.459360 #351]  INFO -- : worker=1 spawned pid=351
+I, [2017-03-07T03:33:42.459658 #351]  INFO -- : worker=1 ready
+E, [2017-03-07T03:39:28.054068 #32690] ERROR -- : reaped #<Process::Status: pid 351 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:39:28.060896 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:39:28.071882 #441]  INFO -- : worker=1 spawned pid=441
+I, [2017-03-07T03:39:28.072184 #441]  INFO -- : worker=1 ready
+E, [2017-03-07T03:39:46.294696 #32690] ERROR -- : reaped #<Process::Status: pid 341 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:39:46.298871 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:39:46.316832 #449]  INFO -- : worker=0 spawned pid=449
+I, [2017-03-07T03:39:46.317034 #449]  INFO -- : worker=0 ready
+E, [2017-03-07T03:39:49.296282 #32690] ERROR -- : reaped #<Process::Status: pid 441 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:39:49.299283 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:39:49.307689 #453]  INFO -- : worker=1 spawned pid=453
+I, [2017-03-07T03:39:49.307943 #453]  INFO -- : worker=1 ready
+E, [2017-03-07T03:39:55.139135 #32690] ERROR -- : reaped #<Process::Status: pid 449 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:39:55.144475 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:39:55.155551 #460]  INFO -- : worker=0 spawned pid=460
+I, [2017-03-07T03:39:55.155834 #460]  INFO -- : worker=0 ready
+E, [2017-03-07T03:40:00.658921 #32690] ERROR -- : reaped #<Process::Status: pid 460 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:40:00.666359 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:40:00.682740 #464]  INFO -- : worker=0 spawned pid=464
+I, [2017-03-07T03:40:00.683059 #464]  INFO -- : worker=0 ready
+E, [2017-03-07T03:43:47.401528 #32690] ERROR -- : reaped #<Process::Status: pid 464 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:43:47.409725 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:43:47.423768 #514]  INFO -- : worker=0 spawned pid=514
+I, [2017-03-07T03:43:47.424040 #514]  INFO -- : worker=0 ready
+E, [2017-03-07T03:43:53.932997 #32690] ERROR -- : reaped #<Process::Status: pid 514 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:43:53.938044 #32690]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:43:53.949736 #520]  INFO -- : worker=0 spawned pid=520
+I, [2017-03-07T03:43:53.950000 #520]  INFO -- : worker=0 ready
+E, [2017-03-07T03:47:03.658051 #32690] ERROR -- : reaped #<Process::Status: pid 453 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:47:03.663022 #32690]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:47:03.676038 #567]  INFO -- : worker=1 spawned pid=567
+I, [2017-03-07T03:47:03.676310 #567]  INFO -- : worker=1 ready
+I, [2017-03-07T03:51:00.610837 #32690]  INFO -- : reaped #<Process::Status: pid 520 exit 0> worker=0
+I, [2017-03-07T03:51:00.811986 #32690]  INFO -- : reaped #<Process::Status: pid 567 exit 0> worker=1
+I, [2017-03-07T03:51:00.812163 #32690]  INFO -- : master complete
+I, [2017-03-07T03:52:34.241285 #882]  INFO -- : Refreshing Gem list
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+/home/deploy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:254: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:281: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/coordinators_area_controller.rb:309: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:160: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:183: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:208: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:235: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:262: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:288: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:599: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:626: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:654: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:798: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:825: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:853: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:995: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1022: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/learning_results_controller.rb:1050: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:175: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:202: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/principals_area_controller.rb:230: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:381: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:408: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:436: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:536: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:559: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:584: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:611: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:638: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:664: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:794: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:821: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:849: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:991: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1018: warning: string literal in condition
+/home/deploy/saaddeploy/app/controllers/results_controller.rb:1046: warning: string literal in condition
+I, [2017-03-07T03:52:38.138806 #882]  INFO -- : unlinking existing socket=/home/deploy/saaddeploy/shared/sockets/unicorn.sock
+I, [2017-03-07T03:52:38.139058 #882]  INFO -- : listening on addr=/home/deploy/saaddeploy/shared/sockets/unicorn.sock fd=12
+I, [2017-03-07T03:52:38.139473 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:52:38.144599 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:52:38.146011 #882]  INFO -- : master process ready
+I, [2017-03-07T03:52:38.153635 #885]  INFO -- : worker=0 spawned pid=885
+I, [2017-03-07T03:52:38.153933 #885]  INFO -- : worker=0 ready
+I, [2017-03-07T03:52:38.155100 #887]  INFO -- : worker=1 spawned pid=887
+I, [2017-03-07T03:52:38.155292 #887]  INFO -- : worker=1 ready
+E, [2017-03-07T03:53:01.901562 #882] ERROR -- : reaped #<Process::Status: pid 887 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:53:01.906663 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:53:01.917596 #979]  INFO -- : worker=1 spawned pid=979
+I, [2017-03-07T03:53:01.917893 #979]  INFO -- : worker=1 ready
+E, [2017-03-07T03:53:12.233734 #882] ERROR -- : reaped #<Process::Status: pid 885 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:53:12.243623 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:53:12.264289 #987]  INFO -- : worker=0 spawned pid=987
+I, [2017-03-07T03:53:12.265020 #987]  INFO -- : worker=0 ready
+E, [2017-03-07T03:53:14.869057 #882] ERROR -- : reaped #<Process::Status: pid 979 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:53:14.876713 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:53:14.890038 #992]  INFO -- : worker=1 spawned pid=992
+I, [2017-03-07T03:53:14.890354 #992]  INFO -- : worker=1 ready
+E, [2017-03-07T03:53:31.762438 #882] ERROR -- : reaped #<Process::Status: pid 987 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:53:31.767688 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:53:31.778028 #1003]  INFO -- : worker=0 spawned pid=1003
+I, [2017-03-07T03:53:31.778389 #1003]  INFO -- : worker=0 ready
+E, [2017-03-07T03:53:35.332417 #882] ERROR -- : reaped #<Process::Status: pid 992 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:53:35.337731 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:53:35.347564 #1010]  INFO -- : worker=1 spawned pid=1010
+I, [2017-03-07T03:53:35.348034 #1010]  INFO -- : worker=1 ready
+E, [2017-03-07T03:53:52.398364 #882] ERROR -- : reaped #<Process::Status: pid 1003 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:53:52.403403 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:53:52.413516 #1018]  INFO -- : worker=0 spawned pid=1018
+I, [2017-03-07T03:53:52.414131 #1018]  INFO -- : worker=0 ready
+E, [2017-03-07T03:54:05.559625 #882] ERROR -- : reaped #<Process::Status: pid 1018 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:54:05.564492 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:54:05.572781 #1025]  INFO -- : worker=0 spawned pid=1025
+I, [2017-03-07T03:54:05.578665 #1025]  INFO -- : worker=0 ready
+E, [2017-03-07T03:54:13.908443 #882] ERROR -- : reaped #<Process::Status: pid 1010 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:54:13.913539 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:54:13.929809 #1031]  INFO -- : worker=1 spawned pid=1031
+I, [2017-03-07T03:54:13.930168 #1031]  INFO -- : worker=1 ready
+E, [2017-03-07T03:55:34.177881 #882] ERROR -- : reaped #<Process::Status: pid 1031 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:55:34.187178 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:55:34.200367 #1064]  INFO -- : worker=1 spawned pid=1064
+I, [2017-03-07T03:55:34.200673 #1064]  INFO -- : worker=1 ready
+E, [2017-03-07T03:56:02.031558 #882] ERROR -- : reaped #<Process::Status: pid 1025 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:56:02.036391 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:56:02.049742 #1074]  INFO -- : worker=0 spawned pid=1074
+I, [2017-03-07T03:56:02.051882 #1074]  INFO -- : worker=0 ready
+E, [2017-03-07T03:56:04.262713 #882] ERROR -- : reaped #<Process::Status: pid 1064 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:56:04.266199 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:56:04.279592 #1079]  INFO -- : worker=1 spawned pid=1079
+I, [2017-03-07T03:56:04.281075 #1079]  INFO -- : worker=1 ready
+E, [2017-03-07T03:56:05.673094 #882] ERROR -- : reaped #<Process::Status: pid 1074 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:56:05.677014 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:56:05.695460 #1084]  INFO -- : worker=0 spawned pid=1084
+I, [2017-03-07T03:56:05.695764 #1084]  INFO -- : worker=0 ready
+E, [2017-03-07T03:56:07.113461 #882] ERROR -- : reaped #<Process::Status: pid 1079 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:56:07.119226 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:56:07.138320 #1089]  INFO -- : worker=1 spawned pid=1089
+I, [2017-03-07T03:56:07.138657 #1089]  INFO -- : worker=1 ready
+E, [2017-03-07T03:56:14.781538 #882] ERROR -- : reaped #<Process::Status: pid 1084 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:56:14.784331 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:56:14.793327 #1096]  INFO -- : worker=0 spawned pid=1096
+I, [2017-03-07T03:56:14.793582 #1096]  INFO -- : worker=0 ready
+E, [2017-03-07T03:56:28.525747 #882] ERROR -- : reaped #<Process::Status: pid 1096 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:56:28.531120 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:56:28.556190 #1104]  INFO -- : worker=0 spawned pid=1104
+I, [2017-03-07T03:56:28.556607 #1104]  INFO -- : worker=0 ready
+E, [2017-03-07T03:57:05.677227 #882] ERROR -- : reaped #<Process::Status: pid 1089 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:57:05.681257 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:57:05.692252 #1115]  INFO -- : worker=1 spawned pid=1115
+I, [2017-03-07T03:57:05.692509 #1115]  INFO -- : worker=1 ready
+E, [2017-03-07T03:57:48.878419 #882] ERROR -- : reaped #<Process::Status: pid 1115 SIGKILL (signal 9)> worker=1
+I, [2017-03-07T03:57:48.889523 #882]  INFO -- : worker=1 spawning...
+I, [2017-03-07T03:57:48.900860 #1126]  INFO -- : worker=1 spawned pid=1126
+I, [2017-03-07T03:57:48.901179 #1126]  INFO -- : worker=1 ready
+E, [2017-03-07T03:58:05.426305 #882] ERROR -- : reaped #<Process::Status: pid 1104 SIGKILL (signal 9)> worker=0
+I, [2017-03-07T03:58:05.433813 #882]  INFO -- : worker=0 spawning...
+I, [2017-03-07T03:58:05.452220 #1134]  INFO -- : worker=0 spawned pid=1134
+I, [2017-03-07T03:58:05.452546 #1134]  INFO -- : worker=0 ready
+I, [2017-03-07T04:06:07.026102 #882]  INFO -- : reaped #<Process::Status: pid 1126 exit 0> worker=1
+I, [2017-03-07T04:06:07.027043 #882]  INFO -- : reaped #<Process::Status: pid 1134 exit 0> worker=0
+I, [2017-03-07T04:06:07.027161 #882]  INFO -- : master complete
