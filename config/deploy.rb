@@ -1,7 +1,7 @@
 # Change these
 server '138.68.18.111', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url, 'https://github.com/JulianSansat/saaddeploy.git'
+set :repo_url, 'https://github.com/joaonetoo/saaddeploy.git'
 set :application, 'saad-v3'
 set :user, 'deploy'
 set :puma_threads,    [4, 16]
