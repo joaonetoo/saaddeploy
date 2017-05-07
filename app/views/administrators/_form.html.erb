@@ -1,97 +1,104 @@
-<h2><i class="fa fa-angle-right"></i>Cadastrar administrador</h2>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-            <div class="row mt">
-                  <div class="col-lg-12">
-                      <%= form_for("user", url: user_registration_path) do |f| %>
-                        <div class="row mt">
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :nome %><br>
-                                      <%= f.text_field :nome, :class => "form-control col-sm-12" %>
-                                    </div>
-                              </div>
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :telefone %><br>
-                                      <%= f.text_field :telefone, :class => "form-control" %>
-                                    </div>
-                              </div>
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :endereco %><br>
-                                      <%= f.text_field :endereco, :class => "form-control" %>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="row mt">
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :lattes %><br>
-                                      <%= f.text_field :lattes, :class => "form-control" %>
-                                    </div>
-                              </div>
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :biografia %><br>
-                                      <%= f.text_field :biografia, :class => "form-control" %>
-                                    </div>
-                                    <div class="field" style="display:none;">
-                                      <%= f.select :type, [['Administrador', 'Administrator']]%>
-                                    </div>
-                                    <div class="field" style="display:none;">
-                                      <%= f.text_field :institution_id, :value => @institution_id%>
-                                    </div>
-                                    <div class="field" style="display:none;">
-                                      <%= f.text_field :course_id, :value => @course_id%>
-                                    </div>
-                              </div>
-                              <div class="col-lg-4">
-                                    <div class="campo_compare">
-                                      <%= f.label :matricula %><br>
-                                      <%= f.text_field :matricula, :class => "form-control" %>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="row mt">
-                              <div class="col-lg-3">
-                                    <div class="campo_compare">
-                                      <%= f.label :foto %><br>
-                                      <%= f.file_field :avatar, :class => "form-control" %>
-                                    </div>
-                              </div>
-                              <div class="col-lg-3">
-                                  <div class="campo_compare">
-                                    <%= f.label :email %><br />
-                                    <%= f.email_field :email, autofocus: true, :class => "form-control" %>
-                                  </div>
-                              </div>
-                              <div class="col-lg-3">
-                                  <div class="campo_compare">
-                                    <%= f.label :senha %>
-                                    <% if @minimum_password_length %>
-                                    <em>(<%= @minimum_password_length %> characters minimum)</em>
-                                    <% end %><br />
-                                    <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
-                                  </div>
-                              </div>
-                              <div class="col-lg-3">
-                                    <div class="campo_compare">
-                                      <%= f.label :confirmação_senha %><br />
-                                      <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
-                                    </div>
-                              </div>
-                        </div>
-                        <div class="row mt">
-                                <div class="col-lg-12">
-                                      <div class="actions">
-                                        <center><%= f.submit "Cadastrar", :class => "btn btn-primary btn-lg"  %></center>
-                                      </div>
-                                </div>
-                        </div>
-                      <% end %>
+
+<div class="panel panel-default">
+   <% if @administrator.errors.any?  %>
+       <div class="alert alert-danger alert-dismissable">
+          <% @administrator.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </div> 
+  <% end %>
+
+<div class="panel-heading">
+   <h4>Cadastrar administrador</h4>
+</div>
+  <div class="panel-body">
+
+   <%= form_for(@administrator) do |f| %>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :nome %><br>
+                    <%= f.text_field :nome, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :telefone %><br>
+                    <%= f.text_field :telefone, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :endereco %><br>
+                    <%= f.text_field :endereco, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                  <div class="form-group">
+                    <%= f.label :lattes %><br>
+                    <%= f.text_field :lattes, :class => "form-control" %>
+                  </div>
+            </div>
+
+      </div>
+      <div class="row ">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :biografia %><br>
+                    <%= f.text_area :biografia, :class => "form-control", rows:3%>
+                  </div>
+                  
+                  <div class="field" style="display:none;">
+                    <%= f.text_field :institution_id, :value => @institution_id%>
+                  </div>
+                  <div class="field" style="display:none;">
+                    <%= f.text_field :course_id, :value => @course_id%>
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                  <div class="form-group">
+                    <%= f.label :matricula %><br>
+                    <%= f.text_field :matricula, :class => "form-control" %>
                   </div>
             </div>
       </div>
-</div>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :foto %><br>
+                    <%= f.file_field :avatar, :class => "form-control" %>
+                  </div>
+            </div>
+      </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                  <%= f.label :senha %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :confirmação_senha %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+                  </div>
+            </div>
+        </div>
+
+                      <center>  <%= submit_tag "Cadastrar",class: "btn btn-default"  %>
+                  </center>
+          <% end %>
+
+      </div>
+      </div>
