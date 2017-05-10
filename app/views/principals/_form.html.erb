@@ -1,81 +1,97 @@
-<h2>Cadastro</h2>
+<div class="panel panel-default">
 
-<%= form_for("user", url: user_registration_path) do |f| %>
+<div class="panel-heading">
+   <h4>Cadastrar Diretor</h4>
+</div>
+  <div class="panel-body">
 
-    <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :lattes %><br>
-    <%= f.text_field :lattes %>
-  </div>
-   <div class="field">
-    <%= f.label :biografia %><br>
-    <%= f.text_area :biografia %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo%><br>
-    <%= f.select :type, [['Diretor', 'Principal']]%>
-  </div>
+   <%= form_for(@principal) do |f| %>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :nome %><br>
+                    <%= f.text_field :nome, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :telefone %><br>
+                    <%= f.text_field :telefone, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :endereco %><br>
+                    <%= f.text_field :endereco, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                  <div class="form-group">
+                    <%= f.label :lattes %><br>
+                    <%= f.text_field :lattes, :class => "form-control" %>
+                  </div>
+            </div>
 
-  <div class="field" style="display:none;">
-    <%= f.text_field :institution_id, :value => @institution_id%>
-  </div>
-  <div class="field" style="display:none;">
-    <%= f.text_field :course_id, :value => @course_id%>
-  </div>
-  <div class="field">
-    <%= f.label :matricula %><br>
-    <%= f.text_field :matricula %>
-  </div>
+      </div>
+      <div class="row ">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :biografia %><br>
+                    <%= f.text_area :biografia, :class => "form-control", rows:3%>
+                  </div>
+                  
+                  <div class="field" style="display:none;">
+                    <%= f.text_field :institution_id, :value => @institution_id%>
+                  </div>
+                  <div class="field" style="display:none;">
+                    <%= f.text_field :course_id, :value => @course_id%>
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                  <div class="form-group">
+                    <%= f.label :matricula %><br>
+                    <%= f.text_field :matricula, :class => "form-control" %>
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :foto %><br>
+                    <%= f.file_field :avatar, :class => "form-control" %>
+                  </div>
+            </div>
+      </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                  <%= f.label :senha %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :confirmação_senha %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+                  </div>
+            </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :foto %><br>
-    <%= f.file_field :avatar %>
-  </div>
+                      <center>  <%= submit_tag "Cadastrar",class: "btn btn-default"  %>
+                  </center>
+          <% end %>
 
-  <div class="field">
-    <%= label_tag :institution %><br>
-    <%= autocomplete_field_tag :institution, params[:institution], autocomplete_institution_nome_institutions_path, :id_element => '#user_institution_id'%>
-  </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.hidden_field :institution_id %>
-  </div>
-
-  <div class="field" style="display:none;">
-    <%= f.text_field :course_id, :value => @course_id%>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :senha %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :confirmação_senha %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>

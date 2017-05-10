@@ -27,7 +27,7 @@ class PrincipalsController < ApplicationController
   # POST /principals.json
   def create
     @principal = Principal.new(principal_params)
-
+    @principal.type = 'Principal'
     respond_to do |format|
       if @principal.save
         format.html { redirect_to @principal, notice: 'Principal was successfully created.' }
@@ -71,6 +71,6 @@ class PrincipalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def principal_params
-      params.require(:principal).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email, :institution_id, :course_id)
+      params.require(:principal).permit(:nome, :telefone, :endereco, :lattes, :biografia, :matricula, :email, :institution_id, :course_id,:password, :password_confirmation, :avatar)
     end
 end

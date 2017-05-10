@@ -15,7 +15,7 @@
                           <table class="table table-bordered table-striped table-condensed">
                             <thead>
                               <tr>
-                                <!--<th>Foto</th>-->
+                                <th>Foto</th>
                                 <th>Nome</th>
                                 <th>Telefone</th>
                                 <th>Endereço</th>
@@ -29,7 +29,7 @@
                             <tbody>
                               <% @administrators.each do |administrator| %>
                                 <tr>
-                                  <!--<td><%= image_tag administrator.avatar.url(:thumb) %></td>-->
+                                  <td><center><%= image_tag administrator.avatar.url(:thumb), class: "photos_users", width:40, height:40  %></center></td>
                                   <td><%= administrator.nome %></td>
                                   <td><%= administrator.telefone %></td>
                                   <td><%= administrator.endereco %></td>
