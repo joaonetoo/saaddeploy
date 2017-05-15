@@ -1,41 +1,48 @@
 <p id="notice"><%= notice %></p>
-<h2><i class="fa fa-angle-right"></i>Lista de professores</h2>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-            <div class="row mt">
-                  <div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Professores</h4>
+        <%# para colocar o botao verde par aa direita %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+             <div class="table-responsive">
                       <section id="unseen">
                           <div id = "dados">
                           <table class="table table-bordered table-striped table-condensed">
-                              <thead>
+                            <thead>
+                              <tr>
+                                <th>Foto</th>
+                                <th>Nome</th>
+                                <th>Matrícula</th>
+                                <th>Telefone</th>
+                                <!--<th>Biografia</th>
+                                <th>Matricula</th>-->
+                                <th>Email</th>
+                                <!--<th>Autorizado</th>-->
+                                <th colspan="2"><center>Ações</center></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% @teachers.each do |teacher| %>
                                 <tr>
-                                  <th>Nome</th>
-                                  <th>Telefone</th>
-                                  <th>Endereço</th>
-                                  <th>Biografia</th>
-                                  <th>Matricula</th>
-                                  <th>Email</th>
-                                  <th colspan="2"><center>Ações</center></th>
+                                  <td><center><%= image_tag teacher.avatar.url(:thumb), class: "photos_users", width:40, height:40  %></center></td>
+                                  <td><%= teacher.nome %></td>
+                                  <td><%= teacher.matricula %></td>
+                                  <td><%= teacher.telefone %></td>
+                                  <!--<td><%= teacher.biografia %></td>
+                                  <td><%= teacher.matricula %></td>-->
+                                  <td><%= teacher.email %></td>
+                                  <!--<td><%= teacher.approved %></td>-->
+
+                                  <td>
+                                  <%= link_to 'Excluir', teacher, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
                                 </tr>
-                              </thead>
-                              <tbody>
-                                <% @teachers.each do |teacher| %>
-                                  <tr>
-                                    <td><%= teacher.nome %></td>
-                                    <td><%= teacher.telefone %></td>
-                                    <td><%= teacher.endereco %></td>
-                                    <td><%= teacher.biografia %></td>
-                                    <td><%= teacher.matricula %></td>
-                                    <td><%= teacher.email %></td>
-                                    <td><%= link_to 'Excluir', teacher, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
-                                  </tr>
-                                <% end %>
-                              </tbody>
+                              <% end %>
+                            </tbody>
                           </table>
-                          </div>
-                      </section>
-                  </div>
+                      </div>
+                    </section>
+                </div>
             </div>
       </div>
-</div>

@@ -1,80 +1,127 @@
-<h2>Cadastro</h2>
-<%= javascript_include_tag "coordinators" %>
 
-<%= form_for("user", url: user_registration_path) do |f| %>
+<div class="panel panel-default">
+   <% if @coordinator.errors.any?  %>
+       <div class="alert alert-danger alert-dismissable">
+          <% @coordinator.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </div> 
+  <% end %>
 
-    <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :lattes %><br>
-    <%= f.text_field :lattes %>
-  </div>
-   <div class="field">
-    <%= f.label :biografia %><br>
-    <%= f.text_area :biografia %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo%><br>
-    <%= f.select :type, [['Coordenador', 'Coordinator']]%>
-  </div>
-  <div class="field">
-    <%= f.label :matricula %><br>
-    <%= f.text_field :matricula %>
-  </div>
+<div class="panel-heading">
+   <h4>Cadastrar Coordenador</h4>
+</div>
+  <div class="panel-body">
+  <%= javascript_include_tag "coordinators" %>
 
-  <div class="field">
-    <%= f.label :foto %><br>
-    <%= f.file_field :avatar %>
-  </div>
+   <%= form_for(@coordinator )do |f| %>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :nome %><br>
+                    <%= f.text_field :nome, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :telefone %><br>
+                    <%= f.text_field :telefone, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :endereco %><br>
+                    <%= f.text_field :endereco, :class => "form-control" %>
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                  <div class="form-group">
+                    <%= f.label :lattes %><br>
+                    <%= f.text_field :lattes, :class => "form-control" %>
+                  </div>
+            </div>
+</div>
+      <div class="row ">
+            <div class="col-lg-10">
+                  <div class="form-group">
+                    <%= f.label :biografia %><br>
+                    <%= f.text_area :biografia, :class => "form-control", rows:3%>
+                  </div>
+            </div>
+                  <div class="col-lg-4">
+                        <div class="form-group">
+                          <%= f.label :matricula %><br>
+                          <%= f.text_field :matricula, :class => "form-control" %>
+                        </div>
+                  </div>
+            </div>
 
-   <div class="field">
-    <%= label_tag :institution %><br>
-    <%= f.collection_select :institution_id, Institution.order(:nome), :id, :nome, include_blank: true%>
-  </div>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :institution %><br>
+                    <%= f.collection_select  :institution_id, Institution.order(:nome), 
+                    :id, :nome,  {include_blank: true}, {class: "form-control"} %>
+                  </div>
+            </div>
+      </div>
+      <div class = "row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :Campus %><br>
+                    <%= grouped_collection_select( nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name, {include_blank: true}, {class: "form-control"})%>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :Centro %><br>
+                    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name,  {include_blank: true}, {class: "form-control"})%>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :Curso %><br>
+                    <%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome , {include_blank: true}, {class: "form-control"}%>
+                  </div>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :foto %><br>
+                    <%= f.file_field :avatar, :class => "form-control" %>
+                  </div>
+            </div>
+      </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                  <%= f.label :senha %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <%= f.label :confirmação_senha %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+                  </div>
+            </div>
+        </div>
 
-  <div class="field">
-    <%= label_tag :Campus %><br>
-    <%= grouped_collection_select(nil, :campu_id, Institution.order(:nome), :campus, :nome, :id, :name)%>
-  </div>
-  <div class="field">
-    <%= label_tag :Centro %><br>
-    <%= grouped_collection_select(nil, :center_id, Campu.order(:name), :centers, :name, :id, :name)%>
-  </div>
+                      <center>  <%= submit_tag "Cadastrar",class: "btn btn-default"  %>
+                  </center>
+          <% end %>
 
-  <div class="field">
-    <%= label_tag :Curso %><br>
-    <%= f.grouped_collection_select :course_id, Center.order(:name), :courses, :name, :id, :nome%>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :senha %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :confirmação_senha %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      </div>
+      </div>

@@ -1,47 +1,51 @@
 <p id="notice"><%= notice %></p>
-<h2><i class="fa fa-angle-right"></i>Lista de coordenadores</h2>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-            <div class="row mt">
-                  <div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Coordenadores</h4>
+        <%# para colocar o botao verde par aa direita %>
+        <%= link_to new_coordinator_path, class: "btn btn-primary btn-circle pull-right", style:  "margin-top : -35px" do  %> 
+            <i class="fa fa-plus"></i>
+        <% end %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+             <div class="table-responsive">
                       <section id="unseen">
                           <div id = "dados">
                           <table class="table table-bordered table-striped table-condensed">
-                              <thead>
+                            <thead>
                               <tr>
                                 <th>Foto</th>
                                 <th>Nome</th>
+                                <th>Matrícula</th>
                                 <th>Telefone</th>
-                                <th>Endereço</th>
-                                <th>Biografia</th>
-                                <th>Matricula</th>
+                                <!--<th>Biografia</th>
+                                <th>Matricula</th>-->
                                 <th>Email</th>
-                                <th>Autorizado</th>
+                                <!--<th>Autorizado</th>-->
                                 <th colspan="2"><center>Ações</center></th>
                               </tr>
                             </thead>
                             <tbody>
                               <% @coordinators.each do |coordinator| %>
                                 <tr>
-                                  <td><center><%= image_tag coordinator.avatar.url(:thumb), :class => "photos_users"  %></center></td>
+                                  <td><center><%= image_tag coordinator.avatar.url(:thumb), class: "photos_users", width:40, height:40  %></center></td>
                                   <td><%= coordinator.nome %></td>
-                                  <td><%= coordinator.telefone %></td>
-                                  <td><%= coordinator.endereco %></td>
-                                  <td><%= coordinator.biografia %></td>
                                   <td><%= coordinator.matricula %></td>
+                                  <td><%= coordinator.telefone %></td>
+                                  <!--<td><%= coordinator.biografia %></td>
+                                  <td><%= coordinator.matricula %></td>-->
                                   <td><%= coordinator.email %></td>
-                                  <td><%= coordinator.approved %></td>
-                                  <!--<td><%= link_to 'Show', coordinator %></td>-->
-                                  <td><%= link_to 'Excluir', coordinator, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+                                  <!--<td><%= coordinator.approved %></td>-->
+
+                                  <td>
+                                  <%= link_to 'Excluir', coordinator, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
                                 </tr>
                               <% end %>
                             </tbody>
                           </table>
-                        </div>
-                      </section>
-                      <center><%= link_to 'Cadastrar coordenador', new_coordinator_path, :class => "btn btn-primary btn-lg"  %></center>
-                  </div>
+                      </div>
+                    </section>
+                </div>
             </div>
       </div>
-</div>
