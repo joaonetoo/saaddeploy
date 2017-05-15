@@ -20,7 +20,7 @@
                                 <th>Matricula</th>-->
                                 <th>Email</th>
                                 <!--<th>Autorizado</th>-->
-                                <th colspan="2"><center>Ações</center></th>
+                                <th colspan="2"></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -35,8 +35,14 @@
                                   <td><%= teacher.email %></td>
                                   <!--<td><%= teacher.approved %></td>-->
 
-                                  <td>
-                                  <%= link_to 'Excluir', teacher, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+                                  <td style="width: 50px">
+
+                                  <%= link_to  teacher, method: :delete, class:"btn btn-danger btn-circle", data: { confirm: 'Deseja realmente excluir?' } do %>
+                                    <i class="fa fa-minus"></i>
+
+                                  <% end %>
+
+                                  </td>
                                 </tr>
                               <% end %>
                             </tbody>

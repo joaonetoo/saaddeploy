@@ -8,44 +8,52 @@
         <% end %>
     </div>
     <!-- /.panel-heading -->
-    <div class="panel-body">
-             <div class="table-responsive">
-                      <section id="unseen">
-                          <div id = "dados">
-                          <table class="table table-bordered table-striped table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Foto</th>
-                                <th>Nome</th>
-                                <th>Matrícula</th>
-                                <th>Telefone</th>
-                                <!--<th>Biografia</th>
-                                <th>Matricula</th>-->
-                                <th>Email</th>
-                                <!--<th>Autorizado</th>-->
-                                <th colspan="2"><center>Ações</center></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <% @coordinators.each do |coordinator| %>
-                                <tr>
-                                  <td><center><%= image_tag coordinator.avatar.url(:thumb), class: "photos_users", width:40, height:40  %></center></td>
-                                  <td><%= coordinator.nome %></td>
-                                  <td><%= coordinator.matricula %></td>
-                                  <td><%= coordinator.telefone %></td>
-                                  <!--<td><%= coordinator.biografia %></td>
-                                  <td><%= coordinator.matricula %></td>-->
-                                  <td><%= coordinator.email %></td>
-                                  <!--<td><%= coordinator.approved %></td>-->
+<div class="panel-body">
+         <div class="table-responsive">
+                  <section id="unseen">
+                      <div id = "dados">
+                      <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Foto</th>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                            <th>Telefone</th>
+                            <!--<th>Biografia</th>
+                            <th>Matricula</th>-->
+                            <th>Email</th>
+                            <!--<th>Autorizado</th>-->
+                            <th colspan="2"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% @coordinators.each do |coordinator| %>
+                            <tr>
+                              <td><center><%= image_tag coordinator.avatar.url(:thumb), class: "photos_users", width:40, height:40  %></center></td>
+                              <td><%= coordinator.nome %></td>
+                              <td><%= coordinator.matricula %></td>
+                              <td><%= coordinator.telefone %></td>
+                              <!--<td><%= coordinator.biografia %></td>
+                              <td><%= coordinator.matricula %></td>-->
+                              <td><%= coordinator.email %></td>
+                              <!--<td><%= coordinator.approved %></td>-->
 
-                                  <td>
-                                  <%= link_to 'Excluir', coordinator, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
-                                </tr>
-                              <% end %>
-                            </tbody>
-                          </table>
-                      </div>
-                    </section>
+                              <td style="width: 100px">
+                                <%= link_to edit_coordinator_path(coordinator), class: "btn btn-primary btn-circle" do %> 
+                                    <i class="fa fa-edit"></i>
+                                <% end %>
+
+                                  <%= link_to  coordinator, method: :delete, class:"btn btn-danger btn-circle", data: { confirm: 'Deseja realmente excluir?' } do %>
+                                    <i class="fa fa-minus"></i>
+
+                                  <% end %>
+                              </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                  </div>
+                </section>
                 </div>
             </div>
       </div>
