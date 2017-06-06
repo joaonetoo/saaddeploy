@@ -13,7 +13,7 @@ $('#media').html(content);
 $('#exports').empty();
 
 <% if @results.size == 1 %>
-    pdf = '<a id="cmd" onclick="geraPdf(\'<%= @nomeUsuario%>\',\'<%= @ancora1Nome%>\', \'<%= @ancora1Descricao%>\', \'<%= @ancora1Perfil%>\', \'<%= @ancora1Perspectiva%>\', \'<%= @ancora2Nome%>\', \'<%= @ancora2Descricao%>\', \'<%= @ancora2Perfil%>\', \'<%= @ancora2Perspectiva%>\')">Gerar PDF</a>';
+    pdf = '<a  class= "btn btn-danger btn-circle pull-right" style= " margin-top: -35px; margin-right: 50px;" id="cmd" onclick="geraPdf(\'<%= @nomeUsuario%>\',\'<%= @ancora1Nome%>\', \'<%= @ancora1Descricao%>\', \'<%= @ancora1Perfil%>\', \'<%= @ancora1Perspectiva%>\', \'<%= @ancora2Nome%>\', \'<%= @ancora2Descricao%>\', \'<%= @ancora2Perfil%>\', \'<%= @ancora2Perspectiva%>\')"><i class="fa  fa-file-pdf-o "></i></a>';
     $('#exports').append(pdf);
 <% end %>
 $('#chartjs').removeClass('hidden');
