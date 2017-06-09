@@ -1,32 +1,49 @@
 <%= javascript_include_tag "createPdf"%>
 <%= javascript_include_tag "createCsv"%>
-<h2><i class="fa fa-angle-right"></i>Comparar estilos de aprendizagem</h2>
-<p>Agora que você selecionou o(s) aluno(s), selecione duas diferentes datas para visualizar</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+<center><h4>Comparar Estilos de Aprendizagem</h4></center>
+</div>
 <div class="row mt">
     <div class="col-lg-12">
-      <div class="content-panel">
+      <div class="panel-body">
+        <center><h5>Selecione duas  datas para visualizar os resultados</h5></center>
             <div class="row mt">
                 <div class="col-lg-6">
+                    <div class="col-lg-4" style="right: -300px">
+                  <center>
+
+                    <div class="form-group">
+
+                        <h5>Parâmetro 1:</h5>
+
                     <%= form_tag(compare_by_date_learning_results_path, method: 'post', :remote => true) do %>
                     <%= hidden_field_tag "selecao", @selecao %>
-                    <label>Primeiro Parâmetro</label>
-                    <%= select_tag(:data_final, options_for_select(@datas)) %>
+                    <%= select_tag(:data_final, options_for_select(@datas),:class => "form-control") %>
                     <% @results.map(&:id).each do |id| %>
                       <%= hidden_field_tag "results[]", id %>
                     <% end %>
+                    </div>
+                    </center>
                 </div>
+              </div>
                 <div class="col-lg-6">
+                  <div class="col-lg-4"  style="right: -10px">
+                      <div class="form-group">
+                      <center>
+                        <h5>Parâmetro 2:</h5>
                     <%= hidden_field_tag "selecao2", @selecao2 %>
-                    <label>Segundo Parâmetro</label>
-                    <%= select_tag(:data_final2, options_for_select(@datas2)) %>
+                    <%= select_tag(:data_final2, options_for_select(@datas2),:class => "form-control") %>
                     <% @results2.map(&:id).each do |id| %>
                     <%= hidden_field_tag "results2[]", id %>
                     <% end %>
-                </div>
+                    </center>
+                  </div>
+                  </div>
             </div>
             <div class="row mt">
-                  <div class="col-lg-12">
-                        <center><%= submit_tag "Comparar", :class => "btn btn-primary btn-lg"  %></center>
+                  <div class="col-md-2 col-md-offset-5">
+                        <center><%= submit_tag "Comparar", :class => "btn btn-primary btn-sm btn-block"  %></center>
                         <% end %>
                         <br>
                   </div>
@@ -34,53 +51,15 @@
             <div class="row mt">
                   <div class="col-lg-6">
                     <section id="unseen">
-                        <div id = "dados">
-                        <table class="table table-bordered table-striped table-condensed">
-                    <thead>
-                      <tr>
-                      <th>Aluno</th>
-                      <th>Data</th>
-                      <th>Instituição</th>
-                      <th>Campus</th>
-                      <th>Centro</th>
-                      <th>Curso</th>
-                      <th>Ec</th>
-                      <th>Or</th>
-                      <th>Ca</th>
-                      <th>Ea</th>
-                      </tr>
-                    </thead>
-                    <tbody  id="media">
-                    </tbody>
-                  </table>
-                </div>
+                      <div id = "media">
+
+                        </div>
                   </section>
                   </div>
                   <div class="col-lg-6">
                         <section id="unseen">
-                            <div id = "dados">
-                            <table class="table table-bordered table-striped table-condensed">
-                        <thead>
-                          <tr>
-                          <th>Aluno</th>
-                          <th>Data</th>
-                          <th>Instituição</th>
-                          <th>Campus</th>
-                          <th>Centro</th>
-                          <th>Curso</th>
-                          <th>Ec</th>
-                          <th>Or</th>
-                          <th>Ca</th>
-                          <th>Ea</th>
-                            <th colspan="3"></th>
-                          </tr>
-                        </thead>
-
-                        <tbody  id="media2">
-
-                        </tbody>
-                      </table>
-                    </div>
+                            <div id = "media2">
+                            </div>
                       </section>
                   </div>
             </div>
@@ -93,4 +72,7 @@
                   </div>
             </div>
       </div>
+</div>
+</div>
+</div>
 </div>

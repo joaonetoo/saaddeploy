@@ -1,16 +1,34 @@
-  <h2><i class="fa fa-angle-right"></i>Análise de âncoras de carreira</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4></i>Estilos de Aprendizagem</h4>
+        <div id='exports'>
+        </div>
+
+  </div>
       <div class="row mt">
           <div class="col-lg-12">
-          <div class="content-panel">
-              <h3>Selecione uma data abaixo para visualizar</h3>
-              <%= form_tag(show_by_date_learning_results_path, method: 'post', :remote => true) do %>
+          <div class="panel-body">
+           
+        <%= form_tag(show_by_date_learning_results_path, method: 'post', :remote => true) do %>
               <%= hidden_field_tag "selecao", @selecao %>
-              <%= select_tag(:data_final, options_for_select(@datas)) %>
+         <div class="row">
+          <center> <h5>Selecione uma das datas abaixo para visualizar o resultado:
+          </h5></center>
+           <div class="col-lg-2" style="right: -400px">
+            <div class="form-group">
+              <center><%= select_tag(:data_final, options_for_select(@datas),:class => "form-control") %></center>
               <% @results.map(&:id).each do |id| %>
                 <%= hidden_field_tag "results[]", id %>
               <% end %>
-              <%= submit_tag "visualizar", :class => "btn btn-info btn-sm" %>
+              </br>
               <% end %>
+                            <center><%= submit_tag "Visualizar Estilo ", class: "btn btn-default"%></center>
+
+             </div>
+            </div>
+
+           </div>
+
               <div id="chartjs" class="row mt">
                   <div class="col-lg-6">
                         <div id="graphic"></div>
@@ -18,79 +36,11 @@
                   <div class="col-lg-6">
                         <div id="graphic2"></div>
                   </div>
+
+
               </div>
+
           </div>
       </div>
-
-    <div id='exports'>
-    </div>
-
-   <div class="row mt">
-  <div class="col-lg-12">
-      <h4><i class="fa fa-angle-right"></i> <%= @selecao %></h4>
-      <section id="unseen">
-        <div id = "dados">
-        <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-      <th>Ec</th>
-      <th>Or</th>
-      <th>Ca</th>
-      <th>Ea</th>
-      <th style="display:none;">q1a</th>
-      <th style="display:none;">q1b</th>
-      <th style="display:none;">q1c</th>
-      <th style="display:none;">q1d</th>
-      <th style="display:none;">q2a</th>
-      <th style="display:none;">q2b</th>
-      <th style="display:none;">q2c</th>
-      <th style="display:none;">q2d</th>
-      <th style="display:none;">q3a</th>
-      <th style="display:none;">q3b</th>
-      <th style="display:none;">q3c</th>
-      <th style="display:none;">q3d</th>
-      <th style="display:none;">q4a</th>
-      <th style="display:none;">q4b</th>
-      <th style="display:none;">q4c</th>
-      <th style="display:none;">q4d</th>
-      <th style="display:none;">q5a</th>
-      <th style="display:none;">q5b</th>
-      <th style="display:none;">q5c</th>
-      <th style="display:none;">q5d</th>
-      <th style="display:none;">q6a</th>
-      <th style="display:none;">q6b</th>
-      <th style="display:none;">q6c</th>
-      <th style="display:none;">q6d</th>
-      <th style="display:none;">q7a</th>
-      <th style="display:none;">q7b</th>
-      <th style="display:none;">q7c</th>
-      <th style="display:none;">q7d</th>
-      <th style="display:none;">q8a</th>
-      <th style="display:none;">q8b</th>
-      <th style="display:none;">q8c</th>
-      <th style="display:none;">q8d</th>
-      <th style="display:none;">q9a</th>
-      <th style="display:none;">q9b</th>
-      <th style="display:none;">q9c</th>
-      <th style="display:none;">q9d</th>
-      <th style="display:none;">q10a</th>
-      <th style="display:none;">q10b</th>
-      <th style="display:none;">q10c</th>
-      <th style="display:none;">q10d</th>
-      <th style="display:none;">q11a</th>
-      <th style="display:none;">q11b</th>
-      <th style="display:none;">q11c</th>
-      <th style="display:none;">q11d</th>
-      <th style="display:none;">q12a</th>
-      <th style="display:none;">q12b</th>
-      <th style="display:none;">q12c</th>
-      <th style="display:none;">q12d</th>
-      </tr>
-    </thead>
-    <tbody  id="list">
-    </tbody>
-  </table>
-  </div>
-  </section>
-  </div>
-  </div>
+      </div>
+      </div>
