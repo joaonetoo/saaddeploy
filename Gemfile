@@ -28,6 +28,8 @@ gem 'client_side_validations'
 gem 'rails-i18n'
 
 gem 'unicorn'
+  gem 'unicorn-worker-killer'
+
 
 gem 'font-awesome-rails'
 
