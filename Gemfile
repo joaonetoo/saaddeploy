@@ -90,3 +90,5 @@ gem 'paperclip-ghostscript'
 gem 'aws-sdk', '~> 2.3'
 
 ruby '2.3.1'
+
+#
