@@ -1,81 +1,47 @@
 //$('#media').html('<%= escape_javascript render (@learning_results) %>');
+function tabelasHtml(Ec,Or,Ca,Ea,Ac,Di,Co,As) { 
+  var html = '<table class="table table-bordered table-striped table-condensed">';
+
+   html+=  '<thead>';
+   html+= '<tr>';
+   html+= '<th><center>Experiência Concreta</center></th>';
+   html+= '<th><center>Observação Reflexiva</center></th>';
+   html+='<th><center>Conceituação Abstrata</center></th>';
+    html+= '<th><center>Experimentação Ativa</center></th>';
+    html+= '</tr>';
+    html+= '</thead>';
+    html+=  '<tbody>';
+    html+= '<tr>';
+    html+= '<td><center>'+ Ec+' </center></td>';
+    html+= '<td><center>'+Or+ '</center></td>';
+    html+= '<td><center>'+ Ca+ '</center></td>';
+    html+= '<td><center>'+ Ea+ '</center</td>';
+    html+= '</tr>';
+    html+= '<tr>';
+    html+= '<th><center>Acomodador</center></th>';
+    html+= '<th><center>Divergente</center></th>';
+    html+= '<th><center>Convergente</center></th>';
+    html+= '<th><center>Assimilador</center></th>';
+    html+= '</tr>';
+    html+= '<tr>';
+    html+= '<td><center>'+ Ac +'</center></td>';
+    html+= '<td><center>'+ Di +'</center></td>';
+    html+='<td><center>'+Co+' </center></td>';
+    html+= '<td><center>'+As+ '</center</td>';
+    html+= '</tr>';
+    html+= '</tbody>';
+
+    html+= '</table>';
+    return html;
+
+}
+$('#media').html( tabelasHtml(<%= @mediaEc %>,<%= @mediaOr %>,<%= @mediaCa %>,<%= @mediaEa %>,<%= @mediaAc %>,<%= @mediaDi %>,<%= @mediaCo %>,<%= @mediaAs %>));
+
+$('#media2').html( tabelasHtml(<%= @mediaEc2 %>,<%= @mediaOr2 %>,<%= @mediaCa2 %>,<%= @mediaEa2 %>,<%= @mediaAc2 %>,<%= @mediaDi2 %>,<%= @mediaCo2 %>,<%= @mediaAs2 %>));
 
 
-var content = document.getElementById("media");
-content = [
-   '<table >',
-
-     '<thead>',
-        '<tr>',
-        '<th><center>Experiência Concreta</center></th>',
-        '<th><center>Observação Reflexiva</center></th>',
-        '<th><center>Conceituação Abstrata</center></th>',
-        '<th><center>Experimentação Ativa</center></th>',
-        '</tr>',
-      '</thead>',
-      '<tbody>',
-      '<tr>',
-        '<td><center><%= @mediaEc %></center></td>',
-        '<td><center><%= @mediaOr %></center></td>',
-        '<td><center><%= @mediaCa %></center></td>',
-        '<td><center><%= @mediaEa %></center</td>',
-        '</tr>',
-      '</tbody>',
-        '<tr>',
-        '<th><center>Acomodador</center></th>',
-        '<th><center>Divergente</center></th>',
-        '<th><center>Convergente</center></th>',
-        '<th><center>Assimilador</center></th>',
-        '</tr>',
-         '<tr>',
-        '<td><center><%= @mediaAc %></center></td>',
-        '<td><center><%= @mediaDi %></center></td>',
-        '<td><center><%= @mediaCo %></center></td>',
-        '<td><center><%= @mediaAs %></center</td>',
-        '</tr>',
-
-      '</table>' ];
-$('#media').html(content);
 //alterei isso aqui e utilizei html com javaScript
 //$('#media2').html('<%= escape_javascript render (@learning_results2) %>');
-
-var content = document.getElementById("media2");
-content2 = [
-   '<table >',
-
-     '<thead>',
-        '<tr>',
-        '<th><center>Experiência Concreta</center></th>',
-        '<th><center>Observação Reflexiva</center></th>',
-        '<th><center>Conceituação Abstrata</center></th>',
-        '<th><center>Experimentação Ativa</center></th>',
-        '</tr>',
-      '</thead>',
-      '<tbody>',
-      '<tr>',
-        '<td><center><%= @mediaEc2 %></center></td>',
-        '<td><center><%= @mediaOr2 %></center></td>',
-        '<td><center><%= @mediaCa2 %></center></td>',
-        '<td><center><%= @mediaEa2 %></center</td>',
-        '</tr>',
-      '</tbody>',
-        '<tr>',
-        '<th><center>Acomodador</center></th>',
-        '<th><center>Divergente</center></th>',
-        '<th><center>Convergente</center></th>',
-        '<th><center>Assimilador</center></th>',
-        '</tr>',
-         '<tr>',
-        '<td><center><%= @mediaAc2 %></center></td>',
-        '<td><center><%= @mediaDi2 %></center></td>',
-        '<td><center><%= @mediaCo2 %></center></td>',
-        '<td><center><%= @mediaAs2 %></center</td>',
-        '</tr>',
-
-      '</table>' 
-      ];
-
-$('#media2').html(content2);
 
 
 var categories = ['Experiência Concreta', 'Observação Reflexiva', 'Conceituação Abstrata', 'Experimentação Ativa'],
