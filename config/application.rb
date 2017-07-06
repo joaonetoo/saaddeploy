@@ -20,6 +20,9 @@ module Saaddeploy
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.available_locales = ['pt-BR', :pt]
     config.i18n.default_locale = :pt
+     Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
+     Date::DATE_FORMATS[:default] = "%d/%m/%Y"
+
 
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
