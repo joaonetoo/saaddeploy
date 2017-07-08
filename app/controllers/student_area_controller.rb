@@ -53,11 +53,17 @@ require "prawn/measurement_extensions"
   def my_learning_result
     @selecao = current_user.nome
     @results = []
+    @allUsers = false
     current_user.learning_results.each do |result|
       @results << result
     end
 
     @datas = @results.map(&:data_final).uniq
+    @test= []
+    @datas.each do |d|
+      d = l(d, format: :long)
+      @test << d
+    end
 
   end
 
@@ -77,6 +83,8 @@ require "prawn/measurement_extensions"
 
   def compare_learning
     @selecao = current_user.nome
+    @allUsers = false
+    @allUsers2 = false
     @results = []
           current_user.learning_results.each do |result|
             @results << result

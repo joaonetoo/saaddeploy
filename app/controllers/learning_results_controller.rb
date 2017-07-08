@@ -362,15 +362,28 @@ class LearningResultsController < ApplicationController
   end
 
    def compare_by_date
-      @selecao = params[:selecao]
-      @resultados = params[:results]
-      @learning_results = []
+    @learning_results = []
+    @allUsers = params[:allUsers]
+    if @allUsers == 'false'
+        @selecao = params[:selecao]
+        @resultados = params[:results]
+
       @resultados.each do |result|
         pre = LearningResult.where(data_final: params[:data_final], id: result).first
         if not pre.nil?
           @learning_results << pre
         end
       end
+    else
+        @resultados = params[:users]
+        @resultados.each do |i|
+            pre = LearningResult.where(user_id:  i)
+            if not pre.nil?
+              pre = pre.last
+              @learning_results << pre
+            end
+        end
+    end
       @mediaEc = 0
       @mediaOr = 0
       @mediaCa = 0
@@ -401,14 +414,27 @@ class LearningResultsController < ApplicationController
       @mediaCo = @mediaCo / @learning_results.size.to_f
       #selecao 2
 
-    @selecao2 = params[:selecao2]
-    @resultados2 = params[:results2]
     @learning_results2 = []
-    @resultados2.each do |result|
-      pre = LearningResult.where(data_final: params[:data_final2], id: result).first
-      if not pre.nil?
-        @learning_results2 << pre
+    @allUsers2 = params[:allUsers2]
+    if  @allUsers2 == 'false'
+        @selecao2 = params[:selecao2]
+        @resultados2 = params[:results2]
+
+      @resultados2.each do |result|
+        pre = LearningResult.where(data_final: params[:data_final2], id: result).first
+        if not pre.nil?
+          @learning_results2 << pre
+        end
       end
+    else
+        @resultados2 = params[:users2]
+        @resultados2.each do |i|
+            pre = LearningResult.where(user_id:  i)
+            if not pre.nil?
+              pre = pre.last
+              @learning_results2 << pre
+            end
+        end
     end
     @mediaEc2 = 0
     @mediaOr2 = 0
@@ -451,15 +477,31 @@ class LearningResultsController < ApplicationController
   end
 
   def show_by_date
-    @selecao = params[:selecao]
-    @resultados = params[:results]
     @learning_results = []
-    @resultados.each do |result|
-      pre = LearningResult.where(data_final: params[:data_final], id: result).first
-      if not pre.nil?
-        @learning_results << pre
+
+    @allUsers = params[:allUsers]
+    if  @allUsers == 'false'
+        @selecao = params[:selecao]
+        @resultados = params[:results]
+
+      @resultados.each do |result|
+        pre = LearningResult.where(data_final: params[:data_final], id: result).first
+        if not pre.nil?
+          @learning_results << pre
+        end
       end
     end
+    if @allUsers == 'true'
+        @x = params[:users]
+        @x.each do |i|
+            pre = LearningResult.where(user_id:  i)
+            if not pre.nil?
+              pre = pre.last
+              @learning_results << pre
+            end
+        end
+    end
+
     @mediaEc = 0
     @mediaOr = 0
     @mediaCa = 0
@@ -479,7 +521,7 @@ class LearningResultsController < ApplicationController
       @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
 
-  end
+    end
       @mediaEc = @mediaEc / @learning_results.size.to_f
       @mediaOr = @mediaOr / @learning_results.size.to_f
       @mediaCa = @mediaCa / @learning_results.size.to_f
@@ -493,8 +535,8 @@ class LearningResultsController < ApplicationController
       @eap2 = @mediaEa - @mediaOr
 
     respond_to do |format|
-    format.js {}
-  end
+      format.js {}
+    end
 
 end
 
@@ -679,6 +721,11 @@ end
       @users = []
       @users << @user
       @selecao = @users.first.nome
+    end
+    #eu alterei isso aqui
+    @allUsers = false
+    if params[:users_id] == 'todos'
+      @allUsers = true
     end
 
     if @users != nil
@@ -879,6 +926,11 @@ end
       @users << @user
       @selecao = @users.first.nome
     end
+    @allUsers = false
+
+    if params[:users_id] == 'todos'
+      @allUsers = true
+    end
 
       if @users != nil
         @users = @users.uniq
@@ -1075,6 +1127,11 @@ end
       @users2 = []
       @users2 << @user2
       @selecao2 = @users2.first.nome
+    end
+
+    @allUsers2 = false
+    if params[:users2_id] == 'todos'
+      @allUsers2 = true
     end
 
       if @users2 != nil
