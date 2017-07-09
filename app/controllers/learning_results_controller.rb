@@ -378,7 +378,7 @@ class LearningResultsController < ApplicationController
         @resultados = params[:users]
         @resultados.each do |i|
             pre = LearningResult.where(user_id:  i)
-            if not pre.nil?
+            if not pre.blank?
               pre = pre.last
               @learning_results << pre
             end
@@ -430,7 +430,7 @@ class LearningResultsController < ApplicationController
         @resultados2 = params[:users2]
         @resultados2.each do |i|
             pre = LearningResult.where(user_id:  i)
-            if not pre.nil?
+            if not pre.blank?
               pre = pre.last
               @learning_results2 << pre
             end
@@ -495,7 +495,7 @@ class LearningResultsController < ApplicationController
         @x = params[:users]
         @x.each do |i|
             pre = LearningResult.where(user_id:  i)
-            if not pre.nil?
+            if not pre.blank?
               pre = pre.last
               @learning_results << pre
             end
