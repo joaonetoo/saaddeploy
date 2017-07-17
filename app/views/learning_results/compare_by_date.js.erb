@@ -35,9 +35,9 @@ function tabelasHtml(Ec,Or,Ca,Ea,Ac,Di,Co,As) {
     return html;
 
 }
-$('#media').html( tabelasHtml(<%= @mediaEc %>,<%= @mediaOr %>,<%= @mediaCa %>,<%= @mediaEa %>,<%= @mediaAc %>,<%= @mediaDi %>,<%= @mediaCo %>,<%= @mediaAs %>));
+$('#media').html( tabelasHtml(<%= @mediaEc.round(2) %>,<%= @mediaOr.round(2) %>,<%= @mediaCa.round(2) %>,<%= @mediaEa.round(2) %>,<%= @mediaAc.round(2) %>,<%= @mediaDi.round(2) %>,<%= @mediaCo.round(2) %>,<%= @mediaAs.round(2) %>));
 
-$('#media2').html( tabelasHtml(<%= @mediaEc2 %>,<%= @mediaOr2 %>,<%= @mediaCa2 %>,<%= @mediaEa2 %>,<%= @mediaAc2 %>,<%= @mediaDi2 %>,<%= @mediaCo2 %>,<%= @mediaAs2 %>));
+$('#media2').html( tabelasHtml(<%= @mediaEc2.round(2) %>,<%= @mediaOr2.round(2) %>,<%= @mediaCa2.round(2) %>,<%= @mediaEa2.round(2) %>,<%= @mediaAc2.round(2) %>,<%= @mediaDi2.round(2) %>,<%= @mediaCo2.round(2) %>,<%= @mediaAs2.round(2) %>));
 
 
 //alterei isso aqui e utilizei html com javaScript

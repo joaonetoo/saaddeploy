@@ -1,12 +1,12 @@
 $('#list').html('<%= escape_javascript render (@results) %>');
 
 var content = []
-
 <% @media.each_with_index do |(key, value), index| %>
    //print "key: #{key}, value: #{value}, index: #{index}\n"
     content += '<tr><td><%= index + 1 %></td><td><%= "#{'%.02f' % value}" %></td><td><%= key%></td></tr>';
 
 <% end %>
+
 
 $('#media').html(content);
 
@@ -25,7 +25,7 @@ $('#graphic').highcharts({
         },
 
         title: {
-            text: 'Media das Ancoras',
+            text: '',
             x: -80
         },
 

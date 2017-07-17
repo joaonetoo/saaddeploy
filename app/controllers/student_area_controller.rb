@@ -127,6 +127,7 @@ require "prawn/measurement_extensions"
   def my_result
     @selecao = current_user.nome
     @results = []
+    @allUsers = false
     current_user.results.each do |result|
       @results << result
     end

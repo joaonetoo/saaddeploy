@@ -1,10 +1,5 @@
 <%= javascript_include_tag 'search_learning' %>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
 <%= form_tag({ :controller => "results", :action => "list"}, { :id => "form2"}) do |f| %>
-<div class="field">
-
     <%= hidden_field_tag :institution_id, @institution.id %>
 
     <%= hidden_field_tag :campu_id, @campu.id %>
@@ -15,29 +10,28 @@
 
     <div class="campo_compare">
                     <%= label_tag :Disciplina %>
-                    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
+                    <%= collection_select(nil, :subject_id, @subjects, :id, :nome ,{}, {class: "form-control"})%>
                 </div>
                 <div class="campo_compare">
                 <%= label_tag :ano %>
-                <%= select_tag "ano", options_for_select(@anos)%>
+                <%= select_tag "ano", options_for_select(@anos),:class => "form-control"%>
                 </div>
                 <div class="campo_compare">
                 <%= label_tag :semestre %>
-                <%= select_tag "semestre", options_for_select(@semestres)%>
+                <%= select_tag "semestre", options_for_select(@semestres),:class => "form-control"%>
                 </div>
                 <div class="campo_compare">
                 <%= label_tag :Turma %>
-                <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
+                <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo ,{}, {class: "form-control"})%>
                 </div>
                 <div class="campo_compare">
                 <%= label_tag :Usuarios %>
-                <%= collection_select(nil, :users_id, @students, :id, :nome)%>
+                <%= collection_select(nil, :users_id, @students, :id, :nome ,{}, {class: "form-control"})%>
       </div>
-  </div>
 
 <div class="row mt">
                 <div class="col-lg-12">
-                    <br><center><%= submit_tag "Enviar", :class => "btn btn-primary btn-lg"  %></center>
+                    <br><center><%= submit_tag "Enviar", class: "btn btn-default"  %></center>
                 </div>
             </div>
    <% end %>

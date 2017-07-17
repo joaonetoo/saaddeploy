@@ -33,6 +33,8 @@
             <% @results.map(&:id).each do |id| %>
               <%= hidden_field_tag "results[]", id %>
             <% end %>
+            <%= hidden_field_tag "allUsers", @allUsers %>
+
           <div class="row mt">
               <div class="col-lg-6">
                   <div class="tab-pane hidden" id="chartjs">

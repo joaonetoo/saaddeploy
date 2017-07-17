@@ -1,6 +1,17 @@
-<h2><i class="fa fa-angle-right"></i>Comparar âncoras de carreira</h2>
-<% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
-    <%= render :partial => 'results/teacher_analytics' %>
-<% elsif current_user.type == 'Principal' %>
-    <%= render :partial => 'results/principal_analytics' %>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4>Comparar Âncoras de Carreira</h4></center>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+          <div class="panel-body">
+			<% if current_user.type == 'Teacher' || current_user.type == 'Coordinator'%>
+			    <%= render :partial => 'results/teacher_analytics' %>
+			<% elsif current_user.type == 'Principal' %>
+			    <%= render :partial => 'results/principal_analytics' %>
+			<% end %>
+		  </div>
+		 </div>
+
+</div>
+

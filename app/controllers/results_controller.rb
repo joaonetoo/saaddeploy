@@ -98,14 +98,27 @@ def setup_teacher_search
   def compare_by_date
     @selecao = params[:selecao]
     @selecao2 = params[:selecao2]
-    @resultados = params[:results]
+    @allUsers = params[:allUsers]
     @results = []
-    @resultados.each do |result|
-      pre = Result.where(data_final: params[:data_final], id: result).first
-      if not pre.nil?
-        @results << pre
+    if @allUsers == 'false'
+        @resultados = params[:results]
+      @resultados.each do |result|
+        pre = Result.where(data_final: params[:data_final], id: result).first
+        if not pre.blank?
+          @results << pre
+        end
       end
+    else
+        @resultados = params[:users]
+        @resultados.each do |i|
+            pre = Result.where(user_id:  i)
+            if not pre.blank?
+              pre = pre.last
+              @results << pre
+            end
+        end
     end
+
     @mediaTf = 0.0
     @mediaGm = 0.0
     @mediaAu = 0.0
@@ -156,15 +169,27 @@ def setup_teacher_search
     end
 
     #seleção 2
-
-    @resultados2 = params[:results2]
     @results2 = []
-    @resultados2.each do |result|
-      pre = Result.where(data_final: params[:data_final2], id: result).first
-      if not pre.nil?
-        @results2 << pre
+    @allUsers2 = params[:allUsers2]
+    if  @allUsers2 == 'false'
+      @resultados2 = params[:results2]
+      @resultados2.each do |result|
+        pre = Result.where(data_final: params[:data_final2], id: result).first
+        if not pre.nil?
+          @results2 << pre
+        end
       end
+    else
+        @resultados2 = params[:users2]
+        @resultados2.each do |i|
+            pre = Result.where(user_id:  i)
+            if not pre.blank?
+              pre = pre.last
+              @results2 << pre
+            end
+        end
     end
+
     @mediaTf2 = 0.0
     @mediaGm2 = 0.0
     @mediaAu2 = 0.0
@@ -218,15 +243,30 @@ def setup_teacher_search
   end
 
   def show_by_date
-    @resultados = params[:results]
     @results = []
-    @selecao = params[:selecao]
-    @resultados.each do |result|
-      pre = Result.where(data_final: params[:data_final], id: result).first
-      if not pre.nil?
-        @results << pre
+    @allUsers = params[:allUsers]
+    if  @allUsers == 'false'
+      @resultados = params[:results]
+
+      @selecao = params[:selecao]
+      @resultados.each do |result|
+        pre = Result.where(data_final: params[:data_final], id: result).first
+        if not pre.nil?
+          @results << pre
+        end
       end
     end
+    if @allUsers == 'true'
+      @x = params[:users]
+      @x.each do |i|
+         pre = Result.where(user_id:  i)
+            if not pre.blank?
+              pre = pre.last
+              @results << pre
+            end
+        end
+    end
+
     @mediaTf = 0.0
     @mediaGm = 0.0
     @mediaAu = 0.0
@@ -461,6 +501,11 @@ def setup_teacher_search
       @users = []
       @users << @user
       @selecao = @users.first.nome
+    end
+    #eu alterei isso aqui
+    @allUsers = false
+    if params[:users_id] == 'todos'
+      @allUsers = true
     end
 
     if @users != nil
@@ -876,6 +921,13 @@ def setup_teacher_search
       @selecao = @users.first.nome
     end
 
+    @allUsers = false
+
+    if params[:users_id] == 'todos'
+      @allUsers = true
+    end
+
+
       if @users != nil
         @users = @users.uniq
       @results = []
@@ -1071,6 +1123,10 @@ def setup_teacher_search
       @users2 = []
       @users2 << @user2
       @selecao2 = @users2.first.nome
+    end
+    @allUsers2 = false
+    if params[:users2_id] == 'todos'
+      @allUsers2 = true
     end
 
       if @users2 != nil
