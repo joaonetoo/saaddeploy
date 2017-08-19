@@ -11,6 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( quiz.js )
 Rails.application.config.assets.precompile += %w( quizzes.js )
+Rails.application.config.assets.precompile += %w( growl.js )
 Rails.application.config.assets.precompile += %w( results.js )
 Rails.application.config.assets.precompile += %w( registrations.js )
 Rails.application.config.assets.precompile += %w( subjects.js )

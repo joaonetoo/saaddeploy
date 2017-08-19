@@ -27,7 +27,7 @@ class CoordinatorsController < ApplicationController
     @coordinator = Coordinator.new(coordinator_params)
     respond_to do |format|
       if @coordinator.save
-        format.html { redirect_to @coordinator, notice: 'Coordinator was successfully created.' }
+        format.html { redirect_to @coordinator, notice: 'Coordenador cadastrado com sucesso!' }
         format.json { render :show, status: :created, location: @coordinator }
       else
         format.html { render :new }

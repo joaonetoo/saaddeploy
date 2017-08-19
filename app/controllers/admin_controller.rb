@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 
   def admin_check
     if current_user.type != "Administrator"
-      redirect_to welcome_index_path
+      redirect_to welcome_index_path 
     end
   end
 

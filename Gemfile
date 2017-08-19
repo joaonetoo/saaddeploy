@@ -87,6 +87,10 @@ gem "paperclip", "~> 5.0.0.beta1"
 
 gem 'paperclip-ghostscript'
 
+gem 'rails-assets-bootstrap.growl', source: 'https://rails-assets.org'
+
+gem 'rails-assets-animate-css', source: 'https://rails-assets.org'
+
 gem 'aws-sdk', '~> 2.3'
 
 ruby '2.3.1'

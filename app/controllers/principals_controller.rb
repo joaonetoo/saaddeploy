@@ -30,7 +30,7 @@ class PrincipalsController < ApplicationController
     @principal.type = 'Principal'
     respond_to do |format|
       if @principal.save
-        format.html { redirect_to @principal, notice: 'Principal was successfully created.' }
+        format.html { redirect_to @principal, notice: 'Um novo diretor foi cadastrado!' }
         format.json { render :show, status: :created, location: @principal }
       else
         format.html { render :new }
@@ -58,7 +58,7 @@ class PrincipalsController < ApplicationController
   def destroy
     @principal.destroy
     respond_to do |format|
-      format.html { redirect_to principals_url, notice: 'Principal was successfully destroyed.' }
+      format.html { redirect_to principals_url, notice: 'Um diretor foi excluido!' }
       format.json { head :no_content }
     end
   end

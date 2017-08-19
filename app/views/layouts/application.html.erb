@@ -2,8 +2,8 @@
 <html>
 <head>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <title>Saad</title>
 
   <!-- Bootstrap core CSS -->
@@ -50,7 +50,6 @@
 
               <div class="row">
                   <div class="col-lg-12 main-chart">
-
                         <!--<p class="notice"><%= notice %></p>-->
                         <!--<p class="alert"><%= alert %></p>-->
     <% end  %>
@@ -69,6 +68,8 @@
 <!-- js placed at the end of the document so the pages load faster -->
 
     <%= javascript_include_tag 'bootstrap'%>
+    <%= javascript_include_tag 'growl' %>
+        <%= render partial: 'layouts/notifications' %>
 
     <% if !user_signed_in? %>
       <!--BACKSTRETCH-->
@@ -82,9 +83,9 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
-
+    </section>
     <!--common script for all pages-->
-
+        <%# foi alterado para se adequar ao bootstrap notify %>
 </section>
 </body>
 </html>
