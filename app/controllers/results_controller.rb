@@ -104,7 +104,7 @@ def setup_teacher_search
         @resultados = params[:results]
       @resultados.each do |result|
         pre = Result.where(data_final: params[:data_final], id: result).first
-        if not pre.blank?
+        if not pre.nil?
           @results << pre
         end
       end

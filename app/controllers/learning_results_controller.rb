@@ -367,7 +367,7 @@ class LearningResultsController < ApplicationController
     if @allUsers == 'false'
         @selecao = params[:selecao]
         @resultados = params[:results]
-
+  
       @resultados.each do |result|
         pre = LearningResult.where(data_final: params[:data_final], id: result).first
         if not pre.nil?

@@ -70,6 +70,8 @@ require "prawn/measurement_extensions"
   def compare_anchors
     @selecao = current_user.nome
     @results = []
+    @allUsers = false
+    @allUsers2 = false
     current_user.results.each do |result|
       @results << result
     end

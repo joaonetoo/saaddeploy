@@ -1,14 +1,12 @@
-<h2><i class="fa fa-angle-right"></i>Nova turma</h2>
-<div class="row mt">
-  <div class="col-lg-12">
-    <div class="content-panel">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4></i>Nova turma</h4>
+  </div>
       <div class="row mt">
-        <div class="col-lg-12">
-          <%= form_for(@classroom) do |f| %>
-            <% if @classroom.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
-
+          <div class="col-lg-12">
+            <div class="panel-body">
+                        <% if @classroom.errors.any? %>
+             <div class="alert alert-danger alert-dismissable">
                 <ul>
                 <% @classroom.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -16,6 +14,7 @@
                 </ul>
               </div>
             <% end %>
+          <%= form_for(@classroom) do |f| %>
             <div class="row mt">
               <div class="col-lg-3">
                 <%if current_user.type == 'Administrator'%>
@@ -28,37 +27,37 @@
               </div>
               <% elsif current_user.type != 'Administrator' %>
                   <%= f.label :Disciplina%>
-                  <%= f.collection_select(:subject_id, @subjects, :id, :nome)%>
+                  <%= f.collection_select(:subject_id, @subjects, :id, :nome,{}, {class: "form-control"})%>
               <% end %>
               </div>
               <div class="col-lg-2">
                 <div class="field">
                   <%= f.label :ano %><br>
-                  <%= f.text_field :ano %>
+                  <%= f.text_field :ano,class: "form-control" %>
                 </div>
               </div>
               <div class="col-lg-2">
                 <div class="field">
                   <%= f.label :semestre %><br>
-                  <%= f.text_field :semestre %>
+                  <%= f.text_field :semestre,class: "form-control" %>
                 </div>
               </div>
               <div class="col-lg-2">
                 <div class="field">
                   <%= f.label :turno %><br>
-                  <%= f.text_field :turno %>
+                  <%= f.text_field :turno,class: "form-control" %>
                 </div>
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-3">
                 <div class="field">
                   <%= f.label :nome %><br>
-                  <%= f.text_field :codigo %>
+                  <%= f.text_field :codigo,class: "form-control" %>
                 </div>
               </div>
             </div>
 
     <div class="actions">
-      <center><br><%= f.submit 'Cadastrar turma', :class => "btn btn-success btn-lg"  %></center>
+      <center><br><%= f.submit 'Cadastrar', class: "btn btn-default"   %></center>
     </div>
 
 

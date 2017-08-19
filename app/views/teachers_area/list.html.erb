@@ -1,10 +1,11 @@
-<h2><i class="fa fa-angle-right"></i>Lista de alunos</h2>
-<div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-        <div class="row mt">
-                <div class="col-lg-12">
-                      <div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4></i>Lista de Alunos</h4>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
                           <div class="unseen">
                             <div class="dados">
                           <table class="table table-bordered table-striped table-condensed">
@@ -12,30 +13,24 @@
                               <tr>
                                 <th>Foto</th>
                                 <th>Nome</th>
-                                <th>Telefone</th>
-                                <th>Endereço</th>
-                                <th>Biografia</th>
                                 <th>Matricula</th>
                                 <th>Email</th>
-                                <th>Ações</th>
+                                <th>Plano</th>
                               </tr>
                             </thead>
 
                             <tbody>
                               <% @students.each do |student| %>
                                 <tr>
-                                  <td><center><%= image_tag student.avatar.url(:thumb), :class => "photos_users" %></center></td>
+                                  <td><center><%= image_tag student.avatar.url(:thumb), class: "photos_users", width:40, height:40   %></center></td>
                                   <td><%= student.nome %></td>
-                                  <td><%= student.telefone %></td>
-                                  <td><%= student.endereco %></td>
-                                  <td><%= student.biografia %></td>
                                   <td><%= student.matricula %></td>
                                   <td><%= student.email %></td>
                                   <td>
                                   <% if student.plano != nil && student.plano.publico == true%>
-                                    <center><%= button_to 'ver', teachers_area_show_plan_path(:plano => student.plano), :class => "btn btn-primary btn-sm"%></center>
+                                    <center><%= button_to 'Visualizar', teachers_area_show_plan_path(:plano => student.plano), :class => "btn btn-default "%></center>
                                   <% else %>
-                                    Não
+                                    <h6>Não finalizado</h6>
                                   <% end %>
                                   </td>
                                 </tr>

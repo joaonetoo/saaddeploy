@@ -1,6 +1,9 @@
 
 /log
-
+estilos_de_aprendizagem.pdf
+background.pdf
+public/system/
+shared/
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
 .env

@@ -333,7 +333,11 @@ class ClassroomsController < ApplicationController
   # POST /classrooms
   # POST /classrooms.json
   def create
+    # eu alterei e é importante para verificar erros
+
+
     @classroom = Classroom.new(classroom_params)
+
 
     respond_to do |format|
       if @classroom.save
