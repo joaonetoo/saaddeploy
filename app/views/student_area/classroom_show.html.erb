@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
-<h2><i class="fa fa-angle-right"></i>Participantes</h2>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-            <div class="row mt">
-                  <div class="col-lg-12">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-book"></i>Turma</h4></center>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
                     <section id="unseen">
                       <div id = "dados">
                       <table class="table table-bordered table-striped table-condensed">
-                      <h3><i class="fa fa-angle-right"></i>Professores</h3>
+                      <h4><i class="fa fa-user"></i>Professores</h4>
                         <thead>
                           <tr>
                             <th>Foto</th>
@@ -21,7 +22,7 @@
                         <tbody>
                           <% @classroom.teachers.each do |teacher| %>
                             <tr>
-                              <td><center><%= image_tag teacher.avatar.url(:thumb), :class => "photos_users"   %></center></td>
+                              <td><center><%= image_tag teacher.avatar.url(:thumb), :class => "photos_users"  , width:40, height:40 %></center></td>
                               <td><%= teacher.nome %></td>
                               <td><%= teacher.email %></td>
                             </tr>
@@ -29,7 +30,7 @@
                         </tbody>
                       </table>
                       <table class="table table-bordered table-striped table-condensed">
-                      <h3><i class="fa fa-angle-right"></i>Alunos</h3>
+                      <h4><i class="fa fa-graduation-cap"></i>Alunos</h4>
                         <thead>
                           <tr>
                             <th>Foto</th>
@@ -43,7 +44,7 @@
                         <tbody>
                           <% @classroom.students.each do |student| %>
                             <tr>
-                              <td><center><%= image_tag student.avatar.url(:thumb), :class => "photos_users"   %></center></td>
+                              <td><center><%= image_tag student.avatar.url(:thumb), :class => "photos_users"  , width:40, height:40 %></center></td>
                               <td><%= student.nome %></td>
                               <td><%= student.matricula %></td>
                               <td><%= student.email %></td>

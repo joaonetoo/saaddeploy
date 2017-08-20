@@ -140,15 +140,19 @@ class ClassroomsController < ApplicationController
   def add_user
     @user = User.where(nome: params[:user_id]).first
     @classroom = Classroom.find(params[:classroom_id])
-    if @user.type == 'Student'
+    if @user.nil?
+      redirect_to @classroom, alert: "Não foi possível encontrar o usuário na base de dados."
+    elsif @user.type == 'Student'
       @student = Student.where(nome: params[:user_id]).first
       @classroom.students << @user
+      redirect_to @classroom, notice:  "#{@user.nome} foi adicionado(a)."
+
     elsif @user.type == 'Teacher'
       @classroom.teachers << @user
+      redirect_to @classroom, notice:  "#{@user.nome} adicionado(a)."
+
     end
 
-    flash[:notice] = "Usuario adicionado."
-    redirect_to @classroom
   end
 
   def remove_user
@@ -158,7 +162,7 @@ class ClassroomsController < ApplicationController
    if @user.type == 'Student'
     @classroom.students.delete(@user)
    end
-    redirect_to  @classroom
+    redirect_to  @classroom, alert: "O Usuário #{@user.nome} foi removido"
   end
 
   # GET /classrooms/1
@@ -304,18 +308,26 @@ class ClassroomsController < ApplicationController
       @selecao = "turma " + @classroom.codigo
       @classrooms << @classroom
     end
+    if current_user.type == 'Teacher'
+      if params[:subject_id] != 'todos'
+        @classrooms = current_user.classrooms.where(subject_id: params[:subject_id])
+      else
+         @classrooms = current_user.classrooms
+      end
+    end
 
   end
 
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
-    if current_user.type == 'Principal'
+   if current_user.type == 'Principal'
       setup_principal_search
     elsif current_user.type == 'Coordinator'
       setup_coordinator_search
     elsif current_user.type == 'Teacher'
       setup_teacher_search
+      @subjects = Subject.where(course_id: @course.id).find_each
     end
   end
 
@@ -336,12 +348,14 @@ class ClassroomsController < ApplicationController
     # eu alterei e é importante para verificar erros
 
 
-    @classroom = Classroom.new(classroom_params)
-
+      @classroom = Classroom.new(classroom_params)
+      if current_user.type == 'Teacher'
+        @classroom.teachers << current_user
+      end
 
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
+        format.html { redirect_to @classroom, notice: 'A turma foi cadastrada com sucesso.' }
         format.json { render :show, status: :created, location: @classroom }
       else
         format.html { render :new }

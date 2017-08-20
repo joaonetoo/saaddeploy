@@ -1,10 +1,10 @@
-<h2><i class="fa fa-angle-right"></i>Minhas Turmas</h2>
-
-<div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-        <div class="row mt">
-                <div class="col-lg-12">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4>Minhas Turmas</h4></center>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
                       <div>
                           <div class="unseen">
                             <div class="dados">
@@ -27,7 +27,9 @@
                                   <td><%= classroom.semestre %></td>
                                   <td><%= classroom.codigo %></td>
                                   <td><%= classroom.turno%></td>
-                                  <td><center><%= button_to 'ver', classroom, :class => "btn btn-primary btn-sm", method: :get%></center></td>
+                                  <td><center><%= button_to 'Visualizar', classroom, :class => "btn btn-info btn-sm", method: :get%></center>  
+
+</td>
                                 </tr>
                               <% end %>
                             </tbody>
@@ -39,7 +41,6 @@
               </div>
           </div>
       </div>
-  </div>
 
 
 
