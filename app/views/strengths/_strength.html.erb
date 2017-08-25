@@ -1,9 +1,15 @@
-        <h3>&nbsp;<i class="fa fa-angle-right"></i><%= strength.text %> <%= link_to '-', strength, method: :delete, remote: true, data: { confirm: 'Excluindo esta força, excluirá as respostas associadas à mesma' }, :class => "btn btn-danger", :title => "Deletar Força"%></h3>
+        <h4>&nbsp; <%= strength.text %> <%= link_to "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar resposta à #{strength.text} " do %>   
+          <i class="fa fa-plus" ></i>
+          <% end %>
+         <%= link_to strength, method: :delete, remote: true, data: { confirm: 'Excluindo esta força, excluirá as respostas associadas à mesma' }, :class => "btn btn-danger btn-sm", :title => "Deletar Força" do %>
+                    <i class="fa fa-close"></i>
+        <% end %> 
+        </h4>
 
-    <h4>&nbsp;<i class="fa fa-angle-right"></i>Respostas a <%= strength.text %> <%= link_to '+', "##{strength.id}new_strength_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Resposta" %></h4>
 
     <% strength.strength_answers.each do |answer|%>
-        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to '-', answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta"%></label><br>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta" do %><i class="fa fa-close"></i>
+        <% end %></label><br>
    <% end %>
     <div class="modal fade"  class="modali" id="<%= strength.id%>new_strength_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">

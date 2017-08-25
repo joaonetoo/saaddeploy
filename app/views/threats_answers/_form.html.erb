@@ -4,12 +4,12 @@
 
   <div class="field">
     <%= f.label :resposta, class: 'control-label' %><br>
-    <%= f.text_field :text, class: 'control-label'  %>
+    <%= f.text_area :text,class: 'form-control',rows:4  %>
   </div>
   <div class="field">
     <%= f.hidden_field :threat_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit "responder ameaça"%>
+    <center><%= f.submit "Responder ameaça", class: "btn btn-default" %></center>
   </div>
 <% end %>

@@ -231,6 +231,7 @@ pt-BR:
         timeout: 'Sua sessão expirou, por favor, efetue login novamente para continuar.'
         unauthenticated: 'Para continuar, efetue login ou registre-se.'
         unconfirmed: 'Antes de continuar, confirme a sua conta.'
+        not_approved: 'Sua solicitação de inscrição foi realizada com sucesso, porém um administrador tem que aceitar sua solicitação para que tenha acesso ao sistema'
     mailer:
       confirmation_instructions:
         subject: 'Instruções de confirmação'

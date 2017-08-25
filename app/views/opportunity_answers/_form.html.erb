@@ -4,13 +4,13 @@
 
   <div class="field">
     <%= f.label :resposta, class: 'control-label' %><br>
-    <%= f.text_field :text, class: 'control-label'  %>
+    <%= f.text_area :text, class: 'form-control',rows:4 %>
     <span class="help-block"></span>
   </div>
   <div class="field">
     <%= f.hidden_field :opportunity_id, :value => locals[:teste] %>
   </div>
   <div class="actions">
-    <%= f.submit "responder oportunidade"%>
+    <center><%= f.submit "Responder oportunidade" , class: "btn btn-default"%></center>
   </div>
 <% end %>

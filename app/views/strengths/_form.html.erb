@@ -7,13 +7,13 @@
 
   <div class="field">
     <%= f.label :força, class: 'control-label' %><br>
-    <%= f.text_field :text, class: 'form-control' %>
+    <%= f.text_area :text, class: 'form-control',rows:4  %>
     <span class="help-block"></span>
   </div>
   <div class="field">
   <%= f.hidden_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
-    <%= f.submit 'Criar força' %>
+    <center><%= f.submit 'Criar força', class: "btn btn-default" %></center>
   </div>
 <% end %>

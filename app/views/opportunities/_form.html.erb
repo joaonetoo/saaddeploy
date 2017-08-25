@@ -4,13 +4,13 @@
 
   <div class="field">
     <%= f.label :oportunidade, class: 'control-label' %><br>
-    <%= f.text_field :text, class: 'form-control' %>
+    <%= f.text_area :text, class: 'form-control',rows:4  %>
     <span class="help-block"></span>
   </div>
   <div class="field">
     <%= f.hidden_field :plano_id, :value => @plano.id %>
   </div>
   <div class="actions">
-    <%= f.submit "criar oportunidade"%>
+    <center><%= f.submit "Criar oportunidade", class: "btn btn-default"%></center>
   </div>
 <% end %>

@@ -1,9 +1,13 @@
  <%= javascript_include_tag 'plano_modal' %>
-<h2><i class="fa fa-angle-right"></i>Plano de carreira</h2>
-<div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-        <div class="row mt">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Plano de Carreira <%= link_to  student_area_pdf_plan_path(format: 'pdf'), :class => "btn btn-danger", style:  "margin-top : -285x; margin-left: 800px;" do  %> 
+            <i class="fa  fa-file-pdf-o "></i>
+        <% end %>
+    </h4>
+    
+  </div>
+          <div class="panel-body">
                 <div class="col-lg-12">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
@@ -17,8 +21,13 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="forcas">
-                          <h2>&nbsp;<i class="fa fa-angle-right"></i>Forças <%= link_to '+', '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar força" %></h2>
-                          <p>&nbsp;Características e condições pessoais que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
+                          <h3>&nbsp;Forças <%= link_to  '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar força" do %>   
+                            <i class="fa fa-plus" ></i>
+                            <% end %>
+                          <button class="warning btn btn-warning btn-sm" id= "forc">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+</h3>
+
                             <hr>
                             <div id = "strengths">
                                 <%= render @strengths%>
@@ -27,7 +36,10 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de forças</h2>
                               <% @strength_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do%>
+                                              <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -50,8 +62,12 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="oportunidades">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Oportunidades <%= link_to '+', '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Oportunidade" %></h2>
-                          <p>&nbsp;Eventos externos que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos</p>
+                        <h3>&nbsp;Oportunidades <%= link_to  '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Oportunidade" do %>   
+                            <i class="fa fa-plus" ></i>
+                            <% end %>
+                          <button class="warning btn btn-warning btn-sm" id= "oport">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+                        </h3>
                             <hr>
                             <div id = "opportunities">
                               <%= render @opportunities%>
@@ -60,7 +76,10 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre oportunidades</h2>
                               <% @opportunity_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do %>
+                                              <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -83,8 +102,11 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="fraquezas">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Fraquezas <%= link_to '+', '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Fraqueza" %></h2>
-                          <p>&nbsp;Características e condições pessoais que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
+                        <h3>&nbsp;Fraquezas <%= link_to  '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Fraqueza" do %> 
+                            <i class="fa fa-plus" ></i>
+                        <% end %>
+                          <button class="warning btn btn-warning btn-sm" id= "fraq">&nbsp;<i class="fa fa-info" >&nbsp; </i></button>
+                        </h3>
                             <hr>
                             <div id = "weaknesses">
                               <%= render @weaknesses%>
@@ -93,7 +115,10 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de fraquezas</h2>
                               <% @weakness_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do%>
+                                            <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -116,8 +141,13 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="ameacas">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Ameaças <%= link_to '+', '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Ameaça" %></h2>
-                          <p>&nbsp;Eventos externos que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos</p>
+                        <h3>&nbsp;Ameaças <%= link_to '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Ameaça" do%>
+                              <i class="fa fa-plus" ></i>
+                          <% end %>
+                          <button class="warning btn btn-warning btn-sm" id= "ameac">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+
+                        </h3>
                             <hr>
                             <div id = "threats">
                               <%= render @threats%>
@@ -126,7 +156,10 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de ameaças</h2>
                               <% @threat_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do %>
+                                              <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -149,8 +182,12 @@
                             </div>
                       </div>
                                             <div role="tabpanel" class="tab-pane" id="objetivos">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Objetivos <%= link_to '+', '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-circle", :title => "Adicionar Objetivo" %></h2>
-                        <p>&nbsp;Quais os seus objetivos para o próximo ano, para daqui a cinco anos e dez anos? Reflita para isso, com base nas análises realizadas anteriormente e na missão que você definiu.</p>
+                        <h3>&nbsp;Objetivos <%= link_to  '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Objetivo" do%>
+                              <i class="fa fa-plus" ></i>
+                          <% end %>
+                          <button class="warning btn btn-warning btn-sm" id= "objects">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+                        </h3>
                         <hr>
                         <div id = "objectives">
                             <%= render @objectives%>
@@ -159,7 +196,10 @@
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações de objetivos</h2>
                               <% @objective_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do%>
+                                              <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
@@ -184,39 +224,104 @@
                       <div role="tabpanel" class="tab-pane" id="missao">
                         <%= form_for(@plano) do |f| %>
                         <div class="form-group">
-                          <h2>&nbsp;<i class="fa fa-angle-right"></i>Minha missão</h2>
+                          <h3>&nbsp;Minha missão</h3>
                             <p>&nbsp;Reflita sobre sua missão, a razão de ser de seus esforços e do seu emprego de seus talentos e recursos. Registre-os abaixo. Atualize o plano para salvar alterações</p><br>
-                            <label class="col-sm-1 col-sm-1 control-label">&nbsp;Minha missão</label>
                           <div class="col-sm-11">
-                              <%= f.text_area :mission, :class => "form-control"%><br>
+                              <%= f.text_area :mission, :class => "form-control", rows: 4%><br>
                           </div>
                           <% if @mission_notes != nil && @mission_notes.size > 0%>
                               <h2>&nbsp;<i class="fa fa-angle-right"></i>Observações sobre missão</h2>
                               <% @mission_notes.each do |note|%>
                                     <div>
-                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to '-', note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação"%></label><br>
+                                        <label class="control-label"> &nbsp; &nbsp; &nbsp; • Observação: <%= note.texto %> • Autor: <%= note.sender.nome %> <%= link_to  note, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Observação" do%>
+                                              <i class="fa fa-close" ></i>
+                                          <% end %>
+                                        </label><br>
                                     </div>
                               <% end %>
                             <% end %>
                         </div>
-                      </div>
                   </div>
               </div>
-        </div>
       </div>
   </div>
-</div>
-  <div class="row mt">
+  <div class="row mt" style="margin-left: 250px">
     <div class="col-lg-12">
-          <div class="field">
+          <div class="form-group">
+        <div class="col-lg-4">
           <%= f.label :status %>
-          <%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]] %>
+          <center><%= f.select :publico, [['Raschunho', false] , ['Finalizado', true]], {}, {class: "form-control"} %></center>
           <p>Somente planos finalizados ficarão visíveis para os professores</p>
         </div>
+
         <div class="actions">
-          <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), :class => "btn btn-primary btn-lg" %>
+          <%= f.submit ( f.object.new_record? ? "Criar plano" : "Atualizar plano"), class: "btn btn-default", style:  "margin-top : 25px"%>
         </div>
       <% end %>
-      <%= link_to "Gerar PDF", student_area_pdf_plan_path(format: 'pdf'), :class => "btn btn-danger" %>
     </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+  $("#forc").click(function(){
+      $.notify({
+        message: ' Características e condições pessoais que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos'
+      },{
+        type: 'pastel-info',
+        delay: 5000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+    });
+  $("#fraq").click(function(){
+      $.notify({
+        message: 'Características e condições pessoais que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos'
+      },{
+        type: 'pastel-info',
+        delay: 5000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+    });
+  $("#oport").click(function(){
+      $.notify({
+        message: ' Eventos externos que poderão afetar positivamente sua carreira ou seus objetivos nos próximos anos'
+      },{
+        type: 'pastel-info',
+        delay: 5000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+    });
+  $("#ameac").click(function(){
+      $.notify({
+        message: '  Eventos externos que poderão afetar negativamente sua carreira ou seus objetivos nos próximos anos'
+      },{
+        type: 'pastel-info',
+        delay: 5000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+    });
+  $("#objects").click(function(){
+      $.notify({
+        message: 'Quais os seus objetivos para o próximo ano, para daqui a cinco anos e dez anos? Reflita para isso, com base nas análises realizadas anteriormente e na missão que você definiu.'
+      },{
+        type: 'pastel-info',
+        delay: 5000,
+        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+          '<span data-notify="title">{1}</span>' +
+          '<span data-notify="message">{2}</span>' +
+        '</div>'
+      });
+    });
+
+  </script>
   </div>
