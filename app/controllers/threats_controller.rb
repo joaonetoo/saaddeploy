@@ -19,6 +19,10 @@ class ThreatsController < ApplicationController
 
   # GET /threats/1/edit
   def edit
+    @plano = current_user.plano
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /threats
@@ -30,7 +34,7 @@ class ThreatsController < ApplicationController
 
     respond_to do |format|
       if @threat.save
-        format.html { redirect_to @threat, notice: 'Threat was successfully created.' }
+        format.html { redirect_to @threat, notice: 'A Ameaça foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @threat }
         format.js
       else
@@ -45,8 +49,9 @@ class ThreatsController < ApplicationController
   # PATCH/PUT /threats/1.json
   def update
     respond_to do |format|
-      if @threat.update(threat_params)
-        format.html { redirect_to @threat, notice: 'Threat was successfully updated.' }
+      hash2 = { text: params[:text], plano_id: params[:plano_id]}
+      if @threat.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'A Ameaça foi atualizada.' }
         format.json { render :show, status: :ok, location: @threat }
       else
         format.html { render :edit }

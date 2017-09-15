@@ -1,16 +1,34 @@
-<h4>&nbsp;<%= truncate(opportunity.text,length:100) %> 
-  <%= link_to  "##{opportunity.id}new_opportunity_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar resposta à #{opportunity.text}" do %>
-            <i class="fa fa-plus" ></i>
-            <% end %>&nbsp;
-    <%= link_to opportunity, method: :delete, remote: true, data: { confirm: 'excluindo esta oportunidade, todas as respostas da mesma serão excluídas' }, :class => "btn btn-danger btn-sm", :title => "Deletar Oportunidade" do %>
+<h4>&nbsp;<%= truncate(opportunity.text,length:95) %> 
+    <%= link_to opportunity, method: :delete, remote: true, data: { confirm: 'excluindo esta oportunidade, todas as respostas da mesma serão excluídas' }, :class => "btn btn-danger btn-sm",style: "float: right;", :title => "Deletar Oportunidade" do %>
                         <i class="fa fa-close"></i>
-            <% end %> 
+    <% end %> 
+
+    <div style="float: right;">
+      &nbsp;
+    </div>
+
+    <%= link_to edit_opportunity_path(opportunity.id), class:"btn btn-info btn-sm",style: "float: right;", remote: true do %> 
+                      <i class="fa fa-edit"></i>
+    <% end %>
+
+    <div style="float: right;">
+      &nbsp;
+    </div>
+    
+    <%= link_to  "##{opportunity.id}new_opportunity_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;",:title => "Adicionar resposta à #{opportunity.text}" do %>
+              <i class="fa fa-plus" ></i>
+    <% end %>
+
     </h4>
 
     <% opportunity.opportunity_answers.each do |answer|%>
-        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm",:title => "Deletar Resposta" do %>
+    <br>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 110) %> </label>
+        <label class="control-label" style="float: right;">
+        <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm",:title => "Deletar Resposta" do %>
             <i class="fa fa-close"></i>
-      <% end %></label><br>
+      <% end %></label>
+      <br>
    <% end %>
     <div class="modal fade"  class="modali" id="<%= opportunity.id%>new_opportunity_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">

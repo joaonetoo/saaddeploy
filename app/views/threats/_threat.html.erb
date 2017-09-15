@@ -1,18 +1,33 @@
-  <h4>&nbsp;<%= threat.text %> 
-      <%= link_to "##{threat.id}new_threat_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Resposta à #{threat.text}" do %>
-          <i class="fa fa-plus" ></i>
-      <% end %>
-        <%= link_to threat, method: :delete, remote: true, data: { confirm: 'Excluindo esta ameaça, as respostas associadas à mesma serão excluidas' }, :class => "btn btn-danger btn-sm", :title => "Deletar Ameaça" do%>
+  <h4>&nbsp;<%= truncate(threat.text, length: 95) %> 
+        <%= link_to threat, method: :delete, remote: true, data: { confirm: 'Excluindo esta ameaça, as respostas associadas à mesma serão excluidas' }, :class => "btn btn-danger btn-sm",style: "float: right;",  :title => "Deletar Ameaça" do%>
            <i class="fa fa-close"></i>
 
         <% end %>
+        <div style="float: right;">
+          &nbsp;
+        </div>
+        <%= link_to edit_threat_path(threat.id), class:"btn btn-info btn-sm",style: "float: right;", remote: true do %> 
+            <i class="fa fa-edit"></i>
+        <% end %>
+        <div style="float: right;">
+          &nbsp;
+        </div>
+      <%= link_to "##{threat.id}new_threat_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;", :title => "Adicionar Resposta à #{threat.text}" do %>
+          <i class="fa fa-plus" ></i>
+      <% end %>
+
 </h4>
 
 
-    <% threat.threats_answers.each do |answer|%>
-        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta" do %>
+      <% threat.threats_answers.each do |answer|%>
+      <br>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 110) %> 
+        </label>
+      <label class="control-label" style="float: right;"><%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta" do %>
         <i class="fa fa-close"></i>
-        <% end %></label><br>
+        <% end %></label>
+
+        <br>
    <% end %>
     <div class="modal fade"  class="modali" id="<%= threat.id%>new_threat_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">

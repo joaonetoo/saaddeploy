@@ -1,0 +1,15 @@
+
+	$(function (){
+
+	let $planoJs = $('#planoJs');
+ 	$('#h4.modal-title').text( 'Editar Força');
+ 	$('#planoForm').html("<%= j render partial: 'threats/form2'  %>");
+	$('#text').val('<%= @threat.text %>');
+	$('#threat_id').val('<%= @threat.id %>');
+	$('#plano_id').val('<%= @plano.id %>');
+
+	$planoJs.modal();
+
+
+	//o focus foi utilizado para ele focar o input da mensagem quando clica
+});

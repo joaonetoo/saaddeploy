@@ -19,6 +19,11 @@ class OpportunitiesController < ApplicationController
 
   # GET /opportunities/1/edit
   def edit
+    @plano = current_user.plano
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   # POST /opportunities
@@ -30,7 +35,7 @@ class OpportunitiesController < ApplicationController
 
     respond_to do |format|
       if @opportunity.save
-        format.html { redirect_to @opportunity, notice: 'Opportunity was successfully created.' }
+        format.html { redirect_to @opportunity, notice: 'Oportunidade foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @opportunity }
         format.js
       else
@@ -44,8 +49,9 @@ class OpportunitiesController < ApplicationController
   # PATCH/PUT /opportunities/1.json
   def update
     respond_to do |format|
-      if @opportunity.update(opportunity_params)
-        format.html { redirect_to @opportunity, notice: 'Opportunity was successfully updated.' }
+      hash2 = { text: params[:text], plano_id: params[:plano_id]}
+      if @opportunity.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'Oportunidade foi atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @opportunity }
       else
         format.html { render :edit }

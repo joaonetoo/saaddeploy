@@ -1,0 +1,21 @@
+<%= form_tag  strength_path(id: @strength.id) , method: :put do %>
+  <div class="form-group">
+    <label for="text" class="control-label">Força:</label>
+    <%= text_area_tag(:text, nil,class: "form-control") %>
+  </div>
+  <div class= "hide">
+              <label for="strength_id" class="control-label">Força:</label>
+    <%= text_area_tag(:strength_id, nil,class: "form-control") %>
+  </div>
+  <div class= "hide">
+              <label for="plano_id" class="control-label">Força:</label>
+    <%= text_area_tag(:plano_id, nil,class: "form-control") %>
+  </div>
+
+ </div>
+
+<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <%= submit_tag "Editar", class: "btn btn-default" %>
+  </div>
+  <% end %>

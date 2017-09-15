@@ -19,6 +19,10 @@ class StrengthsController < ApplicationController
 
   # GET /strengths/1/edit
   def edit
+    @plano = current_user.plano
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /strengths
@@ -30,7 +34,7 @@ class StrengthsController < ApplicationController
 
     respond_to do |format|
       if @strength.save
-        format.html { redirect_to @strength, notice: 'Strength was successfully created.' }
+        format.html { redirect_to @strength, notice: 'A força foi cadastrada com sucesso.' }
         format.json { render :show, status: :created, location: @strength }
         format.js
       else
@@ -45,12 +49,20 @@ class StrengthsController < ApplicationController
   # PATCH/PUT /strengths/1.json
   def update
     respond_to do |format|
-      if @strength.update(strength_params)
-        format.html { redirect_to @strength, notice: 'Strength was successfully updated.' }
+      hash2 = { text: params[:text], plano_id: params[:plano_id]}
+
+      if @strength.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'A força foi atualizada.' }
         format.json { render :show, status: :ok, location: @strength }
+        format.js 
+
+
       else
         format.html { render :edit }
         format.json { render json: @strength.errors, status: :unprocessable_entity }
+        format.js
+
+
       end
     end
   end
@@ -78,4 +90,5 @@ class StrengthsController < ApplicationController
     def strength_params
       params.require(:strength).permit(:text, :plano_id)
     end
+ 
 end

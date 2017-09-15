@@ -1,18 +1,19 @@
-<h3><%= objective.text %>  <%= link_to objective, method: :delete, remote: true, data: { confirm: 'Excluindo este objetivo, todas as estratégias atadas á ele serão excluídas ' }, :class => "btn btn-danger btn-sm", :title => "Deletar Objetivo" do%>
+<h3><%= truncate(objective.text,length: 80) %>  <%= link_to objective, method: :delete, remote: true, data: { confirm: 'Excluindo este objetivo, todas as estratégias atadas á ele serão excluídas ' }, :class => "btn btn-danger btn-sm", style: "float: right;",:title => "Deletar Objetivo" do%>
        <i class="fa fa-close" ></i>
 
   <% end %>
 </h3>
     <p><b>&nbsp;Prazo para concluir objetivo: </b><%= objective.data.strftime("%d/%m/%Y") %></p>
-    <h4>&nbsp;Estratégias para <%= objective.text %> <%= link_to "##{objective.id}new_strategies_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Estratégia"   do %>
+    <h4>&nbsp;Estratégias para <%= truncate(objective.text,length: 100) %> <%= link_to "##{objective.id}new_strategies_modal", 'data-toggle' => 'modal', style: "float: right;",:class => "btn btn-success btn-sm", :title => "Adicionar Estratégia"   do %>
            <i class="fa fa-plus" ></i>
 
         <% end %>
     </h4>
 
     <% objective.strategies.each do |answer|%>
-        <label class="control-label"> &nbsp; &nbsp; &nbsp; <b>Estratégia:</b> <%= answer.text %></label>
-        <label> &nbsp; &nbsp; &nbsp; <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Excluir esta estratégia excluirá seu fator crítico e recursos associados' }, :class => "btn btn-danger btn-sm", :title => "Deletar Estratégia" do %><i class="fa fa-close" ></i> <% end %></label><br>
+    <Br>
+        <label class="control-label"> &nbsp; &nbsp; <b>Estratégia:</b> <%= truncate(answer.text,length: 100) %></label>
+        <label class="control-label" style="float: right;"> <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Excluir esta estratégia excluirá seu fator crítico e recursos associados' }, :class => "btn btn-danger btn-sm", :title => "Deletar Estratégia" do %><i class="fa fa-close" ></i> <% end %></label><br>
         <label> <b> &nbsp; &nbsp; &nbsp;Prazo:</b> <%= answer.deadline.strftime("%d/%m/%Y") %></label><br>
         <label> <b> &nbsp; &nbsp; &nbsp;Recursos:</b> <%= answer.resource %></label><br>
         <label> <b> &nbsp; &nbsp; &nbsp;Fatores críticos:</b> <%= answer.factor %></label><br>

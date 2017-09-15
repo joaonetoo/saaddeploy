@@ -1,0 +1,15 @@
+
+	$(function (){
+
+	let $planoJs = $('#planoJs');
+ 	$('#h4.modal-title').text( 'Editar Fraqueza');
+ 	$('#planoForm').html("<%= j render partial: 'weaknesses/form2'  %>");
+	$('#text').val('<%= @weakness.text %>');
+	$('#weakness_id').val('<%= @weakness.id %>');
+	$('#plano_id').val('<%= @plano.id %>');
+
+	$planoJs.modal();
+
+
+	//o focus foi utilizado para ele focar o input da mensagem quando clica
+});

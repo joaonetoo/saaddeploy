@@ -1,7 +1,7 @@
  <%= javascript_include_tag 'plano_modal' %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4>Plano de Carreira <%= link_to  student_area_pdf_plan_path(format: 'pdf'), :class => "btn btn-danger", style:  "margin-top : -285x; margin-left: 800px;" do  %> 
+    <h4>Plano de Carreira <%= link_to  student_area_pdf_plan_path(format: 'pdf'), :class => "btn btn-danger", style:  "float: right;" do  %> 
             <i class="fa  fa-file-pdf-o "></i>
         <% end %>
     </h4>
@@ -9,6 +9,8 @@
   </div>
           <div class="panel-body">
                 <div class="col-lg-12">
+                <%= render partial: 'layouts/form_plan' %>
+
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                       <li role="presentation" class="active"><a href="#forcas" aria-controls="forcas" role="tab" data-toggle="tab"><h4>Forças</h4></a></li>
@@ -21,11 +23,16 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="forcas">
-                          <h3>&nbsp;Forças <%= link_to  '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar força" do %>   
+                          <h3>&nbsp;Forças 
+                          <button class="warning btn btn-warning btn-sm" id= "forc", style="float: right;">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+                          <div style="float: right;">
+                            &nbsp;
+                          </div>
+                          <%= link_to  '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm",  style:  "float: right; ",:title => "Adicionar força" do %>   
                             <i class="fa fa-plus" ></i>
                             <% end %>
-                          <button class="warning btn btn-warning btn-sm" id= "forc">&nbsp;<i class="fa fa-info" >&nbsp; </i>
-                          </button>
+
 </h3>
 
                             <hr>
@@ -62,11 +69,17 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="oportunidades">
-                        <h3>&nbsp;Oportunidades <%= link_to  '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Oportunidade" do %>   
+                        <h3>&nbsp;Oportunidades 
+                          
+                          <button class="warning btn btn-warning btn-sm" id= "oport" style="float: right;">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                           </button>
+
+                          <div style="float: right;">
+                            &nbsp;
+                          </div>
+                          <%= link_to  '#new_opportunity_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;",:title => "Adicionar Oportunidade" do %>   
                             <i class="fa fa-plus" ></i>
                             <% end %>
-                          <button class="warning btn btn-warning btn-sm" id= "oport">&nbsp;<i class="fa fa-info" >&nbsp; </i>
-                          </button>
                         </h3>
                             <hr>
                             <div id = "opportunities">
@@ -102,10 +115,14 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="fraquezas">
-                        <h3>&nbsp;Fraquezas <%= link_to  '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Fraqueza" do %> 
+                        <h3>&nbsp;Fraquezas 
+                          <button class="warning btn btn-warning btn-sm" style="float: right;" id= "fraq">&nbsp;<i class="fa fa-info" >&nbsp; </i></button>
+                          <div style="float: right;">
+                            &nbsp;
+                          </div>
+                        <%= link_to  '#new_weakness_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;",:title => "Adicionar Fraqueza" do %> 
                             <i class="fa fa-plus" ></i>
                         <% end %>
-                          <button class="warning btn btn-warning btn-sm" id= "fraq">&nbsp;<i class="fa fa-info" >&nbsp; </i></button>
                         </h3>
                             <hr>
                             <div id = "weaknesses">
@@ -141,11 +158,15 @@
                             </div>
                       </div>
                       <div role="tabpanel" class="tab-pane" id="ameacas">
-                        <h3>&nbsp;Ameaças <%= link_to '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Ameaça" do%>
+                        <h3>&nbsp;Ameaças 
+                          <button class="warning btn btn-warning btn-sm" style="float: right;" id= "ameac">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+                          <div style="float: right;">
+                            &nbsp;
+                          </div>
+                        <%= link_to '#new_threat_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;",:title => "Adicionar Ameaça" do%>
                               <i class="fa fa-plus" ></i>
                           <% end %>
-                          <button class="warning btn btn-warning btn-sm" id= "ameac">&nbsp;<i class="fa fa-info" >&nbsp; </i>
-                          </button>
 
                         </h3>
                             <hr>
@@ -182,11 +203,16 @@
                             </div>
                       </div>
                                             <div role="tabpanel" class="tab-pane" id="objetivos">
-                        <h3>&nbsp;Objetivos <%= link_to  '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Objetivo" do%>
+                        <h3>&nbsp;Objetivos 
+                          <button class="warning btn btn-warning btn-sm" style="float: right;" id= "objects">&nbsp;<i class="fa fa-info" >&nbsp; </i>
+                          </button>
+                          <div style="float: right;">
+                            &nbsp;
+                          </div>
+
+                          <%= link_to  '#new_objective_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;",:title => "Adicionar Objetivo" do%>
                               <i class="fa fa-plus" ></i>
                           <% end %>
-                          <button class="warning btn btn-warning btn-sm" id= "objects">&nbsp;<i class="fa fa-info" >&nbsp; </i>
-                          </button>
                         </h3>
                         <hr>
                         <div id = "objectives">

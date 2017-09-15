@@ -1,15 +1,29 @@
 <h4>&nbsp;
-    <%= weakness.text %> 
-  <%= link_to "##{weakness.id}new_weakness_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", :title => "Adicionar Resposta à #{weakness.text}" do %>
-          <i class="fa fa-plus" ></i>
-  <% end %>
-    <%= link_to  weakness, method: :delete, remote: true, data: { confirm: 'Excluindo esta fraqueza, as respostas associadas à mesa serão excluidas' }, :class => "btn btn-danger btn-sm", :title => "Deletar Fraqueza" do%>
+    <%= truncate(weakness.text, length: 80) %> 
+  <%= link_to  weakness, method: :delete, remote: true, data: { confirm: 'Excluindo esta fraqueza, as respostas associadas à mesa serão excluidas' }, :class => "btn btn-danger btn-sm", style: "float: right;", :title => "Deletar Fraqueza" do%>
                     <i class="fa fa-close"></i>
     <% end %>
+   <div style="float: right;">
+      &nbsp;
+    </div>
+    <%= link_to edit_weakness_path(weakness.id), class:"btn btn-info btn-sm",style: "float: right;", remote: true do %> 
+          <i class="fa fa-edit"></i>
+    <% end %>
+    <div style="float: right;">
+      &nbsp;
+    </div>
+
+  <%= link_to "##{weakness.id}new_weakness_answers_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm",style: "float: right;", :title => "Adicionar Resposta à #{weakness.text}" do %>
+          <i class="fa fa-plus" ></i>
+  <% end %>
+
 
 </h4>
     <% weakness.weakness_answers.each do |answer|%>
-        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= answer.text %> <%= link_to answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta" do %><i class="fa fa-close"></i>
+    <br>
+        <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= truncate(answer.text,length: 120)%></label>
+        <label class= "control-label" style="float: right;">
+        <%= link_to answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm", :title => "Deletar Resposta" do %><i class="fa fa-close"></i>
         <% end %></label><br>
    <% end %>
     <div class="modal fade"  class="modali" id="<%= weakness.id%>new_weakness_answers_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
