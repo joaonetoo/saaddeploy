@@ -1,11 +1,15 @@
-<h2><i class="fa fa-angle-right"></i>Plano de carreira</h2>
-<p><b>Nome:</b> <%= @plano.user.nome.capitalize %><br>
-<b>Curso:</b> <%= @plano.user.course.nome %> </p>
-<div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-        <div class="row mt">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Plano de Carreira <%= link_to  teachers_area_pdf_plan_path(format: 'pdf', plano: @plano), :class => "btn btn-danger", style:  "float: right;" do  %> 
+            <i class="fa  fa-file-pdf-o "></i>
+        <% end %>
+    </h4>
+        <p><b>Nome:</b> <%= @plano.user.nome.capitalize %><br>
+
+  </div>
+          <div class="panel-body">
                 <div class="col-lg-12">
+
                       <ul class="nav nav-tabs" role="tablist">
                       <li role="presentation" class="active"><a href="#forcas" aria-controls="forcas" role="tab" data-toggle="tab"><h4>Forças</h4></a></li>
                       <li role="presentation"><a href="#oportunidades" aria-controls="oportunidades" role="tab" data-toggle="tab"><h4>Oportunidades</h4></a></li>
@@ -18,14 +22,14 @@
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="forcas">
                         <% @plano.strengths.each do |strength|%>
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i><%= strength.text %></h2>
-                            <h3>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Respostas:</h3>
+                          <h2><%= truncate(strength.text, length: 65) %></h2>
+                            <h4>&nbsp;&nbsp;Respostas:</h4>
                             <% strength.strength_answers.each do |answer|%>
-                              <p>&nbsp; &nbsp; &nbsp; • <%= answer.text %></p>
+                              <p>&nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 140) %></p>
                             <% end %>
                            <hr>
                            <% end %>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_forca', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_forca', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_forca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -46,14 +50,14 @@
                       </div>
                       <div role="tabpanel" class="tab-pane active" id="oportunidades">
                         <% @plano.opportunities.each do |opportunity|%>
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i><%= opportunity.text %></h2>
-                            <h3>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Respostas:</h3>
+                        <h2><%= truncate(opportunity.text,length: 65) %></h2>
+                            <h4>&nbsp;&nbsp;Respostas:</h4>
                             <% opportunity.opportunity_answers.each do |answer|%>
-                              <p>&nbsp; &nbsp; &nbsp; • <%= answer.text %></p>
+                              <p>&nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 140) %></p>
                             <% end %>
                            <hr>
                            <% end %>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_oportunidade', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_oportunidade', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_oportunidade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -75,14 +79,14 @@
 
                       <div role="tabpanel" class="tab-pane active" id="fraquezas">
                         <% @plano.weaknesses.each do |weakness|%>
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i><%= weakness.text %></h2>
-                            <h3>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Respostas:</h3>
+                        <h2><%= truncate(weakness.text, length: 65) %></h2>
+                            <h4>&nbsp;&nbsp;Respostas:</h4>
                             <% weakness.weakness_answers.each do |answer|%>
-                              <p>&nbsp; &nbsp; &nbsp; • <%= answer.text %></p>
+                              <p>&nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 140) %></p>
                             <% end %>
                            <hr>
                            <% end %>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_fraqueza', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_fraqueza', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_fraqueza" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -104,14 +108,14 @@
 
                       <div role="tabpanel" class="tab-pane active" id="ameacas">
                         <% @plano.threats.each do |threat|%>
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i><%= threat.text %></h2>
-                            <h3>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Respostas:</h3>
+                        <h2><%= truncate(threat.text, length: 65) %></h2>
+                            <h4>&nbsp;&nbsp;</i>Respostas:</h4>
                             <% threat.threats_answers.each do |answer| %>
-                              <p>&nbsp; &nbsp; &nbsp; • <%= answer.text %></p>
+                              <p>&nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 140) %></p>
                             <% end %>
                            <hr>
                            <% end %>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_ameaca', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_ameaca', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_ameaca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -132,10 +136,10 @@
                       </div>
 
                    <div role="tabpanel" class="tab-pane active" id="missao">
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i>Missão</h2>
+                        <h2>Missão</h2>
                         <p>&nbsp;&nbsp;<%= @plano.mission %></p>
                         <hr>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_missao', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_missao', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_missao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -157,19 +161,19 @@
 
                       <div role="tabpanel" class="tab-pane active" id="objetivos">
                         <% @plano.objectives.each do |objective|%>
-                        <h2>&nbsp;<i class="fa fa-angle-right"></i><%= objective.text %></h2>
-                        <h4>&nbsp;&nbsp;Limite máximo: <%= objective.data.strftime("%-d/%-m/%y") %></h4>
+                        <h2><%= truncate(objective.text, length: 65) %></h2>
+                        <h4>&nbsp;Limite máximo: <%= objective.data.strftime("%-d/%-m/%y") %></h4>
 
-                        <h3>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>Estratégia ao objetivo</h3>
+                        <h3>&nbsp;Estratégias aos objetivos :</h3>
                         <% objective.strategies.each do |answer|%>
-                        <h4>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i><%= answer.text %></h4>
-                        <h5>&nbsp; &nbsp; &nbsp; &nbsp;Limite definido: <%= answer.deadline.strftime("%-d/%-m/%y") %></h5>
+                        <h5>&nbsp;&nbsp;&nbsp;• <%= truncate(answer.text,length: 140) %></h5>
+                        <h5>&nbsp; &nbsp; &nbsp;Limite definido: <%= answer.deadline.strftime("%-d/%-m/%y") %></h5>
 
 
                             <% end %>
                            <hr>
                            <% end %>
-                        <center><%= link_to ' + Adicionar Observação', '#new_obs_objectives', 'data-toggle' => 'modal', :class => "add_button btn btn-primary" %></center>
+                        <center><%= link_to ' + Adicionar Observação', '#new_obs_objectives', 'data-toggle' => 'modal', :class => "btn btn-default" %></center>
                             <div class="modal fade" id="new_obs_objectives" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -195,10 +199,11 @@
         </div>
     </div>
 </div>
- <div class="row mt">
-    <div class="col-lg-12">
-          <div class="field">
-            <br><center><%= link_to "Gerar PDF", teachers_area_pdf_plan_path(format: 'pdf', plano: @plano), :class => "btn btn-danger"  %></center>
-          </div>
-    </div>
+<!--  <div class="row mt">
+   <div class="col-lg-12">
+         <div class="field">
+           <br><center><%= link_to "Gerar PDF", teachers_area_pdf_plan_path(format: 'pdf', plano: @plano), :class => "btn btn-danger"  %></center>
+         </div>
+   </div>
 </div>
+-->

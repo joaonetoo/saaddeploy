@@ -25,6 +25,10 @@
     <br>
         <label class="control-label"> &nbsp; &nbsp; &nbsp; • <%= truncate(answer.text, length: 110) %> </label>
         <label class="control-label" style="float: right;">
+        <%= link_to edit_opportunity_answer_path(answer.id), class:"btn btn-info btn-sm", remote: true do %> 
+            <i class="fa fa-edit"></i>
+        <% end %>     
+
         <%= link_to  answer, method: :delete, remote: true, data: { confirm: 'Deseja realmente excluir?' }, :class => "btn btn-danger btn-sm",:title => "Deletar Resposta" do %>
             <i class="fa fa-close"></i>
       <% end %></label>

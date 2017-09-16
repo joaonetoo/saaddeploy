@@ -1,0 +1,20 @@
+
+<%= form_tag opportunity_answer_path(id: @opportunity_answer.id), method: :put do  %>
+
+
+   <div class="form-group">
+    <label for="text" class="control-label">Resposta:</label>
+    <%= text_area_tag(:text, nil,class: "form-control") %>
+    </div>
+    <div class= "hide">
+    <label for="opportunity_id" class="control-label">Força:</label>
+    <%= text_area_tag(:opportunity_id, nil,class: "form-control") %>
+    </div>
+
+
+    <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            <%= submit_tag "Editar", class: "btn btn-default" %>
+    </div>
+
+<% end %>

@@ -19,6 +19,10 @@ class WeaknessAnswersController < ApplicationController
 
   # GET /weakness_answers/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   # POST /weakness_answers
@@ -44,8 +48,9 @@ class WeaknessAnswersController < ApplicationController
   # PATCH/PUT /weakness_answers/1.json
   def update
     respond_to do |format|
-      if @weakness_answer.update(weakness_answer_params)
-        format.html { redirect_to @weakness_answer, notice: 'Weakness answer was successfully updated.' }
+      hash2 = { text: params[:text], weakness_id: params[:weakness_id]}
+      if @weakness_answer.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'A resposta à fraqueza foi atualizada.' }
         format.json { render :show, status: :ok, location: @weakness_answer }
       else
         format.html { render :edit }

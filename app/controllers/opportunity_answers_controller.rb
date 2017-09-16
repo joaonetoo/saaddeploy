@@ -19,6 +19,10 @@ class OpportunityAnswersController < ApplicationController
 
   # GET /opportunity_answers/1/edit
   def edit
+    @plano = current_user.plano
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /opportunity_answers
@@ -45,8 +49,9 @@ class OpportunityAnswersController < ApplicationController
   # PATCH/PUT /opportunity_answers/1.json
   def update
     respond_to do |format|
-      if @opportunity_answer.update(opportunity_answer_params)
-        format.html { redirect_to @opportunity_answer, notice: 'Opportunity answer was successfully updated.' }
+      hash2 = { text: params[:text], opportunity_id: params[:opportunity_id]}
+      if @opportunity_answer.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'Resposta a oportunidade atualizada.' }
         format.json { render :show, status: :ok, location: @opportunity_answer }
       else
         format.html { render :edit }

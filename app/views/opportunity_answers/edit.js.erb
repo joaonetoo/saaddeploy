@@ -1,0 +1,14 @@
+
+	$(function (){
+
+	let $planoJs = $('#planoJs');
+	$('#exampleModalLabel').text( 'Editar Resposta à Oportunidade');
+ 	$('#planoForm').html("<%= j render partial: 'opportunity_answers/form2'  %>");
+	$('#text').val('<%= @opportunity_answer.text %>');
+	$('#opportunity_id').val('<%= @opportunity_answer.opportunity_id %>');
+
+	$planoJs.modal();
+
+
+	//o focus foi utilizado para ele focar o input da mensagem quando clica
+});

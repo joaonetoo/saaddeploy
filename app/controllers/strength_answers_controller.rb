@@ -19,6 +19,12 @@ class StrengthAnswersController < ApplicationController
 
   # GET /strength_answers/1/edit
   def edit
+    @plano = current_user.plano
+    # @strength = Strength.where(id: @strength_answer.strength_id)
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   # POST /strength_answers
@@ -30,7 +36,7 @@ class StrengthAnswersController < ApplicationController
     @strengths = @plano.strengths
     respond_to do |format|
       if @strength_answer.save
-        format.html { redirect_to @strength_answer, notice: 'Strength answer was successfully created.' }
+        format.html { redirect_to @strength_answer, notice: 'A resposta da força foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @strength_answer }
         format.js
       else
@@ -45,8 +51,9 @@ class StrengthAnswersController < ApplicationController
   # PATCH/PUT /strength_answers/1.json
   def update
     respond_to do |format|
-      if @strength_answer.update(strength_answer_params)
-        format.html { redirect_to @strength_answer, notice: 'Strength answer was successfully updated.' }
+      hash2 = { text: params[:text], strength_id: params[:strength_id]}
+      if @strength_answer.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'Resposta da força atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @strength_answer }
       else
         format.html { render :edit }
@@ -62,7 +69,7 @@ class StrengthAnswersController < ApplicationController
     @plano = current_user.plano
     @strengths = @plano.strengths
     respond_to do |format|
-      format.html { redirect_to strength_answers_url, notice: 'Strength answer was successfully destroyed.' }
+      format.html { redirect_to strength_answers_url, notice: 'A resposta da força foi destruída com sucesso.' }
       format.json { head :no_content }
       format.js
     end

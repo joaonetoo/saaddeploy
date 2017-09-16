@@ -2,7 +2,7 @@
 	$(function (){
 
 	let $planoJs = $('#planoJs');
- 	$('#h4.modal-title').text( 'Editar Força');
+ 	$('#exampleModalLabel').text( 'Editar Força');
  	$('#planoForm').html("<%= j render partial: 'strengths/form2'  %>");
 	$('#text').val('<%= @strength.text %>');
 	$('#strength_id').val('<%= @strength.id %>');

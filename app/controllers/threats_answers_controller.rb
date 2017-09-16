@@ -19,6 +19,9 @@ class ThreatsAnswersController < ApplicationController
 
   # GET /threats_answers/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /threats_answers
@@ -44,8 +47,9 @@ class ThreatsAnswersController < ApplicationController
   # PATCH/PUT /threats_answers/1.json
   def update
     respond_to do |format|
-      if @threats_answer.update(threats_answer_params)
-        format.html { redirect_to @threats_answer, notice: 'Threats answer was successfully updated.' }
+      hash2 = { text: params[:text], threat_id: params[:threat_id]}
+      if @threats_answer.update(hash2)
+        format.html { redirect_to student_area_my_plan_path, notice: 'A Resposta à Ameaça foi atualizada' }
         format.json { render :show, status: :ok, location: @threats_answer }
       else
         format.html { render :edit }

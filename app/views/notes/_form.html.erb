@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :Observação %><br>
-    <%= f.text_area :texto %>
+    <%= f.text_area :texto , class: 'form-control',rows:4  %>
   </div>
   <div class="field">
     <%= f.hidden_field :topico, :value => topico, readonly: true %>
@@ -18,6 +18,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Criar Observação"%>
+    <center><%= f.submit "Criar Observação", class: "btn btn-default" %></center>
   </div>
 <% end %>
