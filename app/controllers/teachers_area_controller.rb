@@ -82,7 +82,17 @@ class TeachersAreaController < ApplicationController
 
   def send_atividade_extra
     @classrooms = current_user.classrooms
-    @subjects =@classrooms.each.map(&:subject).uniq
+    # @subjects =@classrooms.each.map(&:subject).uniq
+    @subjects = []
+    @students = []
+    @classrooms.each do |classroom|
+        @subjects << classroom.subject
+        classroom.users.each do |user|
+              @students << user
+        end
+    end
+    @subjects.uniq!
+    @students = @students.uniq { |s| s.nome}
   end
 
   def list_atividades
