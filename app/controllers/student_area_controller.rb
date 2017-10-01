@@ -195,7 +195,7 @@ require "prawn/measurement_extensions"
     respond_to do |format|
       format.html
       format.pdf {
-        pdf = Prawn::Document.new
+        pdf = Prawn::Document.new :page_size=> "A4", :background => "public/bg_folder.jpg"
           pdf.font("Times-Roman", :style => :bold)
           pdf.text "Plano de Carreira",:color => "#778899", :align => :center, :size => 18
           pdf.move_down 40
@@ -276,7 +276,7 @@ require "prawn/measurement_extensions"
 
           end
           #se der algum problema provavelmente vai ser pelo formato inline
-          pdf.table(@threatAndAnswer ,:column_widths => [270,270],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+          pdf.table(@threatAndAnswer ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
         #   pdf.font("Helvetica", :style => :bold)
         #   pdf.text "Oportunidades", :color => "006699",:align => :left, :size => 14
         #   pdf.move_down 5
@@ -313,7 +313,7 @@ require "prawn/measurement_extensions"
            @opportunity1=""
            @answerOpportunity = ""
           end
-          pdf.table(@opportunitiesAndAnswer ,:column_widths => [270,270],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+          pdf.table(@opportunitiesAndAnswer ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
 
         #     pdf.font("Helvetica", :style => :bold)
         #     pdf.text "Fraquezas", :color => "006699",:align => :left, :size => 14
@@ -353,7 +353,7 @@ require "prawn/measurement_extensions"
             @weakness1=""
             @answerWeakness=""
           end
-          pdf.table(@weaknessesAndAnswer ,:column_widths => [270,270],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+          pdf.table(@weaknessesAndAnswer ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
         #   pdf.move_down 40
         #   pdf.font("Helvetica", :style => :bold)
         #   pdf.text "Forças", :color => "006699",:align => :left, :size => 14
@@ -391,7 +391,7 @@ require "prawn/measurement_extensions"
           @strength1=""
           @answerStrength =""
         end
-          pdf.table(@strengthsAndAnswer ,:column_widths => [270,270],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+          pdf.table(@strengthsAndAnswer ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
         
         pdf.move_down(20)
         pdf.text "Plano de Ação", :color => "#778899",:align => :left, :size => 14 ,:style => :bold
@@ -427,7 +427,7 @@ require "prawn/measurement_extensions"
             fator1=""
             recurso1=""
           end
-      pdf.table(@planoAcao ,:column_widths => [150,150,65,90,85],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      pdf.table(@planoAcao ,:column_widths => [150,148,65,90,70],:cell_style => { :font => "Times-Roman", :inline_format => true  })
 
         # @plano.objectives.each do |objective|
         #   @objectives << objective.text
