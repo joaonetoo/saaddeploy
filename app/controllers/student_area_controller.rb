@@ -178,9 +178,20 @@ require "prawn/measurement_extensions"
     end
     if current_user.results != nil && current_user.results.length > 0
       @result = current_user.results.last
-      @ancora1 = @result.anchors[0]
+      hash = {"tf" => @result.tf, "gm" => @result.gm, "au" => @result.au, "se" => @result.se, "ec" => @result.ec, "sv" => @result.sv, "ch" => @result.ch, "ls" => @result.ls}
+      @maiores = hash.max_by(2){|k,v| v}
+      num1 = @maiores[0][1]
+      num2 = @maiores[1][1]
+      @maior1 = @maiores[0][0]
+      @maior2 = @maiores[1][0]
+      if num1 > num2
+            @ancora1 = Anchorinfo.where(tipo: @maior1).first
+      else
+            @ancora1 = Anchorinfo.where(tipo: @maior2).first
+      end
       @descricao = @ancora1.descricao.gsub("\n", '')
-    end
+
+  end
     respond_to do |format|
       format.html
       format.pdf {
