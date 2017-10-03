@@ -109,6 +109,10 @@ class TeachersAreaController < ApplicationController
   end
 
   def create_atividade_extra
+    @enviar= true
+    if params[:arquivo] != "application/pdf" && params[:arquivo] != "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      @enviar=false
+    end
     @atividade_extra = AtividadeExtra.new
     @atividade_extra.titulo = params[:titulo]
     @atividade_extra.descricao = params[:descricao]
@@ -118,38 +122,47 @@ class TeachersAreaController < ApplicationController
     @atividade_extra.sender = current_user
     @atividade_extra.save
 
+    if @atividade_extra.arquivo_content_type != "application/pdf" && @atividade_extra.arquivo_content_type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document" && @atividade_extra.arquivo_content_type != "application/msword" 
+      @enviar=false
+      @atividade_extra.destroy
+      redirect_to teachers_area_send_atividade_extra_path , alert: 'Não foi possivel cadastrar a atividade, insira um arquivo do tipo pdf ou word.' 
+    else 
 
-     if params[:classroom_id] == 'todos'
-      @classrooms = current_user.classrooms
-      @selecao = "Todas as turmas"
-      @users = []
-      @classrooms.each do |classroom|
-        classroom.users.each do |user|
+       if params[:classroom_id] == 'todos'
+        @classrooms = current_user.classrooms
+        @selecao = "Todas as turmas"
+        @users = []
+        @classrooms.each do |classroom|
+          classroom.users.each do |user|
+            @users << user
+          end
+        end
+
+      elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
+        @classroom = Classroom.where(id: params[:classroom_id]).first
+        @selecao = "turma " + @classroom.codigo
+        @users = []
+        @classroom.users.each do |user|
           @users << user
         end
+
       end
 
-    elsif params[:classroom_id] != 'todos' && params[:classroom_id] != nil
-      @classroom = Classroom.where(id: params[:classroom_id]).first
-      @selecao = "turma " + @classroom.codigo
-      @users = []
-      @classroom.users.each do |user|
-        @users << user
+
+      if params[:users_id] != 'todos' && params[:users_id] != nil
+        @user = User.where(id: params[:users_id]).first
+        @users = []
+        @users << @user
+        @selecao = @users.first.nome
       end
-    end
+      @users.each do |user|
+          if user.type == 'Student'
+            @atividade_extra.recipients << user
+          end
+      end
 
-
-    if params[:users_id] != 'todos' && params[:users_id] != nil
-      @user = User.where(id: params[:users_id]).first
-      @users = []
-      @users << @user
-      @selecao = @users.first.nome
-    end
-    @users.each do |user|
-        if user.type == 'Student'
-          @atividade_extra.recipients << user
-        end
-    end
+        redirect_to teachers_area_list_atividades_path, notice: 'Atividade Cadastrada.' 
+end
   end
 
   def create_video

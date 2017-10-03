@@ -3,8 +3,6 @@ $(document).ready(function () {
 
     $('#_classroom_id').prepend("<option value='todos'>Todas</option>")
     $('#_classroom_id option:first').attr("selected", "selected");
-    $('#_users_id').prepend("<option value='todos'>Todos</option>")
-    $('#_users_id option:first').attr("selected", "selected");
 
     $('#_classroom_id').change(function () {
       if($('#_classroom_id').val() == 'todos') {

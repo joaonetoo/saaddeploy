@@ -28,7 +28,7 @@ class AtividadeExtrasController < ApplicationController
     @atividade_extra = AtividadeExtra.new(atividade_extra_params)
     respond_to do |format|
       if @atividade_extra.save
-        format.html { redirect_to @atividade_extra, notice: 'Atividade extra was successfully created.' }
+        format.html { redirect_to @atividade_extra, notice: 'Atividade criada com sucesso.' }
         format.json { render :show, status: :created, location: @atividade_extra }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AtividadeExtrasController < ApplicationController
   def update
     respond_to do |format|
       if @atividade_extra.update(atividade_extra_params)
-        format.html { redirect_to @atividade_extra, notice: 'Atividade extra was successfully updated.' }
+        format.html { redirect_to @atividade_extra, notice: 'Atividade foi atualizada.' }
         format.json { render :show, status: :ok, location: @atividade_extra }
       else
         format.html { render :edit }
@@ -54,10 +54,17 @@ class AtividadeExtrasController < ApplicationController
   # DELETE /atividade_extras/1
   # DELETE /atividade_extras/1.json
   def destroy
-    @atividade_extra.destroy
-    respond_to do |format|
-      format.html { redirect_to atividade_extras_url, notice: 'Atividade extra was successfully destroyed.' }
+    if @atividade_extra.answers.length >= 1
+      respond_to do |format|
+      format.html { redirect_to teachers_area_list_atividades_path , alert: 'Não é possível excluir a atividade pois alguns alunos já responderam.' }
       format.json { head :no_content }
+      end
+    else
+      @atividade_extra.destroy
+      respond_to do |format|
+        format.html { redirect_to teachers_area_list_atividades_path , notice: 'A atividade foi excluir com sucesso.' }
+        format.json { head :no_content }
+      end
     end
   end
 

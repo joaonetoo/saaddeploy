@@ -1,37 +1,63 @@
-<%= form_for(@atividade_extra) do |f| %>
-  <% if @atividade_extra.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@atividade_extra.errors.count, "error") %> prohibited this atividade_extra from being saved:</h2>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-pencil-square-o"></i><%= action %></h4></center>
+  </div>
+      <div class="row mt">
+            <%= form_for(@atividade_extra) do |f| %>
+                <% if @atividade_extra.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@atividade_extra.errors.count, "error") %> prohibited this atividade_extra from being saved:</h2>
 
-      <ul>
-      <% @atividade_extra.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+                    <ul>
+                    <% @atividade_extra.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row mt">
 
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_area :descricao %>
-  </div>
-  <div class="field">
-    <%= f.label :data_final %><br>
-    <%= f.date_select :data_final %>
-  </div>
-  <div class="field">
-    <%= f.label :arquivo %><br>
-    <%= f.file_field :arquivo %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+                  <div class = "form-group">
+                    <div class="col-lg-12">
+
+                      <%= f.label :titulo %><br>
+                      <%= f.text_field :titulo ,class: "form-control"%>
+                    </div>
+                    <div class="col-lg-12">
+                          <%= f.label :descricao %><br>
+                          <%= f.text_area :descricao ,class: "form-control", rows:7%>
+                    </div>
+                  </div>
+                </div>
+              <div class="row mt">
+                  <div class = "form-group">
+                    <div class="col-lg-3">
+                      <div class="field">
+                          <%= f.label :data_final %><br>
+                          <%= f.date_select :data_final %>
+
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="field">
+                            <%= f.label :arquivo %><br>
+                            <%= f.file_field :arquivo,class: 'btn btn-large btn-default' %>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <%= f.hidden_field :user_id, :value => @atividade_extra.user_id %>
+
+          <div class="actions">
+            <center><br><%= f.submit fucao, class: "btn btn-default" %></center>
+          </div>
+</div>
+
+</div>
 <% end %>
+
+</div>      
+
+</div>
