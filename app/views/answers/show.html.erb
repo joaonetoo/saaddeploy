@@ -1,14 +1,18 @@
-<div class="row mt">
-  <div class="col-lg-12">
-    <div class="content-panel">
-      <h4><i class="fa fa-angle-right"></i> Correções</h4>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-check-circle" style="color:#11B70B;"></i>Correções da Atividade</h4></center>
+  </div>
+
+    <div class="row mt">
+      <div class="col-lg-12">
+            <div class="panel-body">
       <section id="unseen">
         <table class="table table-bordered table-striped table-condensed">
   <thead>
     <tr>
       <th>Professor</th>
-      <th>Observacao</th>
-      <th>Anexo</th>
+      <th>Observacões do professor</th>
+      <th>Anexo do Professor</th>
     </tr>
   </thead>
 
@@ -17,13 +21,24 @@
       <tr>
         <td><%= note.user.nome %></td>
         <td><%= note.observacao %></td>
-        <td><%= link_to "Arquivo", note.arquivo.url(:original, false) %></td>
-      </tr>
+      <% if note.arquivo_content_type.nil? %>
+        <td>O professor não anexou nenhum arquivo à correção</td>
+      <% else %>
+        <td><%= link_to  note.arquivo.url(:original, false),class:"btn btn-default btn-sm" do %>
+                  <% if note.arquivo_content_type == "application/pdf" %>
+                    <i class="fa fa-file-pdf-o" style="color:#BD1E0F;"></i>
+                  <% else %>
+                    <i class="fa fa-file-word-o" style="color:#08336E;"></i>
+
+                  <% end %>
+              <% end %></td>
+      <% end %>
     <% end %>
+      </tr>
   </tbody>
 </table>
 </section>
 </div>
 </div>
 </div>
-
+</div>

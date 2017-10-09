@@ -16,6 +16,7 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @atividade_extra = params[:atividade_extra]
+    @atividade = AtividadeExtra.where(id: params[:atividade_extra])
   end
 
   # GET /answers/1/edit
@@ -28,13 +29,18 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.user = current_user
     @answer.status = "respondido"
-    respond_to do |format|
-      if @answer.save
-        format.html { redirect_to admin_index_path, notice: 'Answer was successfully created.' }
-        format.json { render :show, status: :created, location: @answer }
-      else
-        format.html { render :new }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
+    if @answer.arquivo_resposta_content_type != "application/pdf" && @answer.arquivo_resposta_content_type != "application/vnd.openxmlformats-officedocument.wordprocessingml.document" && @answer.arquivo_resposta_content_type != "application/msword" 
+      @answer.destroy
+      redirect_to student_area_list_atividades_path , alert: 'Não foi possivel enviar sua resposta, insira um arquivo do tipo pdf ou word.' 
+    else
+      respond_to do |format|
+        if @answer.save
+          format.html { redirect_to admin_index_path, notice: 'Sua resposta foi enviada com sucesso.' }
+          format.json { render :show, status: :created, location: @answer }
+        else
+          format.html { render :new }
+          format.json { render json: @answer.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

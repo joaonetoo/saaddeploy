@@ -57,9 +57,9 @@
             </td>
                 <td><%= answer.status %></td>
                 <% if answer.status != 'finalizado'%>
-                  <td><%= link_to 'Aprovar', teachers_area_aprove_answer_path(answer: answer, atividade: @atividade_extra) %></td>
+                  <td><%= link_to 'Aprovar', teachers_area_aprove_answer_path(answer: answer, atividade: @atividade_extra) ,class:"btn btn-default btn-sm" %></td>
                 <% end %>
-                <td><%= link_to 'Correção', new_answer_note_path(:answer => answer) %></td>
+                <td><%= link_to 'Correção', new_answer_note_path(:answer => answer),class:"btn btn-default btn-sm" %></td>
               </tr>
             <% end %>
           </tbody>
