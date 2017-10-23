@@ -1,2 +1,3 @@
+$('#sendQuestion').modal('hide');
 $('#questions').html('<%= escape_javascript render (@questions) %>');
-$('#new_question_modal').modal_success();
+$('#sendQuestion').modal_success();

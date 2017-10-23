@@ -24,10 +24,26 @@
         <td><%= link_to 'Edit', edit_line_case_path(line_case) %></td>
         <td><%= link_to 'Destroy', line_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <table>
+  <thead>
+    <tr>
+      <th>Study case</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% line_case.users.each do |user| %>
+      <tr>
+        <td><%= user.nome %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
+
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'New Line case', new_line_case_path %>

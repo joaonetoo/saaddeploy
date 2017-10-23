@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
     @questions = @study_case.questions
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @question, notice: 'Questão criada com sucesso!' }
         format.json { render :show, status: :created, location: @question }
         format.js
       else

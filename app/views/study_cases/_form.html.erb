@@ -1,9 +1,15 @@
-<h2><i class="fa fa-angle-right"></i>Novo caso para ensino</h2>
-<div class="row mt">
-  <div class="col-lg-12">
-    <div class="content-panel">
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-pencil-square-o"></i><%= action %></h4></center>
+  </div>
       <div class="row mt">
-        <div class="col-lg-12">
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row mt">
+
+            <div class = "form-group">
+              <div class="col-lg-12">
+
           <%= javascript_include_tag 'add_reference' %>
           <%= form_for(@study_case) do |f| %>
           <% if @study_case.errors.any? %>
@@ -17,47 +23,49 @@
           </div>
           <% end %>
           <div class="row">
-            <div class="col-lg-3">
-              <div class="field">
+            <div class = "form-group">
+              <div class="col-lg-12">
                 <%= f.label :titulo %><br>
-                <%= f.text_field :title %>
+                <%= f.text_field :title,class: "form-control" %>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="field">
+          </div><hr>
+          <div class="row">
+            <div class = "form-group">
+              <div class="col-lg-5">
                 <%= f.label :autor %><br>
-                <%= f.text_field :author %>
+                <%= f.text_field :author,class: "form-control" %>
               </div>
             </div>
             <div class="col-lg-3">
               <div class="field">
                 <label>Caso Publicado em Evento ou Periódico?</label><br>
-                <%= radio_button 'relat', 'atu', 'yes', {:class => "relat__atu relat__atu_yes"} %> Sim
+                <%= radio_button 'relat', 'atu', 'yes', {:class => "relat__atu relat__atu_yes"}%> Sim
                 <%= radio_button 'relat', 'atu', 'no', {:class => "relat__atu relat__atu_no"} %>  Não
-                <div id="esatu" style="display:none" class="field">
+                <div id="esatu" style="display:none" class="form-group">
                   <label>Referencia:</label>
-                    <%= text_field_tag :reference %>
-                </div>
+                    <%= text_field_tag :reference ,"",:class => "form-control"%> 
+              </div>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="field">
+            <div class = "form-group">
+              <div class="col-lg-4">
                 <%= f.label :area_de_conhecimento %><br>
-                <%= f.text_field :area %>
+                <%= f.text_field :area,class: "form-control"  %>
               </div>
             </div>
           </div><hr>
           <div class="row">
-            <div class="col-lg-3">
-              <div class="field">
+            <div class = "form-group">
+              <div class="col-lg-4">
                 <%= f.label :tema_primário %><br>
-                <%= f.text_field :topic %>
+                <%= f.text_field :topic,class: "form-control" %>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="field">
+            <div class = "form-group">
+              <div class="col-lg-4">
                 <%= f.label :tema_secundário %><br>
-                <%= f.text_field :topic2 %>
+                <%= f.text_field :topic2 ,class: "form-control"%>
               </div>
             </div>
             <div class="col-lg-3">
@@ -69,34 +77,37 @@
                 <input type="checkbox" name="recommended[]" value="pós-graduação" />
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="field">
+            <div class = "form-group">
+              <div class="col-lg-12">
                 <%= f.label :resumo %><br>
-                <%= f.text_area :abstract %>
+                <%= f.text_area :abstract ,class: "form-control", rows:3%>
               </div>
-            </div>
-          </div><hr>
+          </div>          </div>
+<hr>
           <div class="row">
-            <div class="col-lg-3">
-              <div class="field">
-                <%= f.label :arquivo_do_caso %><br>
-                <%= f.file_field :case_file %>
+            <div class = "form-group">
+              <div class="col-lg-5">
+                <div class="field">
+                  <%= f.label :arquivo_do_caso_para_ensino %><br>
+                  <%= f.file_field :case_file,class: 'btn btn-large btn-default'  %>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="field">
-                <%= f.label :arquivo_das_notas %><br>
-                <%= f.file_field :notes_file %>
+              <div class="col-lg-5">
+                <div class="field">
+                  <%= f.label :arquivo_das_notas_de_ensino %><br>
+                  <%= f.file_field :notes_file,class: 'btn btn-large btn-default'  %>
+                </div>
               </div>
             </div>
           </div>
+        <div class="actions">
+          <center><br><%= f.submit fucao, class: "btn btn-default"   %></center>
+        </div>
+      <% end %>
           </div>
         </div>
       </div>
-      <div class="actions">
-        <center><br><%= f.submit 'Cadastrar caso para ensino', :class => "btn btn-success btn-lg"  %></center>
-      </div>
-      <% end %>
     </div>
   </div>
+</div>
 </div>

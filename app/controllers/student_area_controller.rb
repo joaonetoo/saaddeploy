@@ -98,6 +98,18 @@ require "prawn/measurement_extensions"
     @selecao2 = @selecao
   end
 
+  def list_cases
+    @line_cases = []
+    @cases = LineCase.all
+    @cases.each do |c|
+      c.users.each do |user|
+        if user == current_user
+          @line_cases << c
+        end
+      end
+    end
+  end
+
   def list_atividades
     AtividadeExtra.close
     @atividades = current_user.received_atividade_extras

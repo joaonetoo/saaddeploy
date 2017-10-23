@@ -23,6 +23,8 @@ class LineCasesController < ApplicationController
     @campus << @campu
     @subjects = []
     @students = []
+    @anos = []
+    @semestres = []
     @classrooms.each do |classroom|
         @subjects << classroom.subject
         classroom.users.each do |user|
@@ -88,6 +90,7 @@ class LineCasesController < ApplicationController
   # GET /line_cases/1
   # GET /line_cases/1.json
   def show
+    @questions = @line_case.questions
   end
 
   # GET /line_cases/new
@@ -227,12 +230,18 @@ class LineCasesController < ApplicationController
     @users.each do |user|
       @line_case.users << user
     end
-
-    @questions = Question.where(id: params[:questions])
-
+    questoes = params[:questions]
+    questoes.each do |q|
+      q2 = Question.find(q)
+      questao = Question.new
+      questao.statement = q2.statement
+      questao.save
+      @line_case.questions << questao
+    end
+    @line_case.user = current_user
     respond_to do |format|
       if @line_case.save
-        format.html { redirect_to @line_case, notice: 'Line case was successfully created.' }
+        format.html { redirect_to @line_case, notice: 'O caso de ensino foi enviado com sucesso.' }
         format.json { render :show, status: :created, location: @line_case }
       else
         format.html { render :new }

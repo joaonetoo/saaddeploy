@@ -1,95 +1,128 @@
 <%= javascript_include_tag 'search_learning' %>
-<div class="row mt">
-    <div class="col-lg-12">
-      <div class="content-panel">
-<%= form_for(@line_case) do |f| %>
-<div class="field">
-    <h3>Caso de Ensino: <%= @study_case.title%></h3>
 
-    <%= hidden_field_tag :institution_id, @institution.id %>
-
-    <%= hidden_field_tag :campu_id, @campu.id %>
-
-    <%= hidden_field_tag :center_id, @center.id %>
-
-    <%= hidden_field_tag :course_id, @course.id %>
-
-    <div class="campo_compare">
-    <%= label_tag :Disciplina %>
-    <%= collection_select(nil, :subject_id, @subjects, :id, :nome)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Turma %>
-    <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo)%>
-    </div>
-    <div class="campo_compare">
-    <%= label_tag :Usuarios %>
-    <%= collection_select(nil, :users_id, @students, :id, :nome)%>
-    </div>
-
-    <div class="field">
-    <%= f.hidden_field :study_case_id, :value => @study_case.id %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4></i>Enviar Caso de Ensino</h4></center>
   </div>
-  <div class="field">
-    <%= f.label :data_final %><br>
-    <%= f.date_select :data_final %>
-  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <%= form_for(@line_case) do |f| %>
 
-  <div class="row mt">
-<div class="col-lg-12">
-<div class="content-panel">
-<h4><i class="fa fa-angle-right"></i> Questões: </h4>
-<section id="unseen">
-<table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>Enunciado</th>
-      <th>Incluir questão</th>
-    </tr>
-  </thead>
+                <div class="field">
+                    <h4>Caso de Ensino: <%= @study_case.title%></h4>
 
-  <tbody id= "questions">
-    <%= render 'line_cases/line_questions' %>
-  </tbody>
-</table>
-</section>
-</div>
-</div>
-</div>
+                    <%= hidden_field_tag :institution_id, @institution.id %>
 
+                    <%= hidden_field_tag :campu_id, @campu.id %>
 
+                    <%= hidden_field_tag :center_id, @center.id %>
 
-<h4><%= link_to 'Adicionar Questão', '#new_question_modal', 'data-toggle' => 'modal' %></h4>
-
-
-
-
-  </div>
-
-<div class="row mt">
-                <div class="col-lg-12">
-                    <br><center><%= submit_tag "Enviar", :class => "btn btn-primary btn-lg"  %></center>
+                    <%= hidden_field_tag :course_id, @course.id %>
+              <div class="row mt">
+                <div class = "form-group">
+                  <div class="col-lg-12">
+<!--                     <div class="campo_compare">
+                  <%= label_tag :Disciplina %>
+                  <%= collection_select(nil, :subject_id, @subjects, :id, :nome,{}, {class: "form-control"})%>
+                  </div>
+                  <div class="campo_compare">
+                  <%= label_tag :Turma %>
+                  <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo,{}, {class: "form-control"})%>
+                  </div>
+                  <div class="campo_compare">
+                  <%= label_tag :Usuarios %>
+                  <%= collection_select(nil, :users_id, @students, :id, :nome,{}, {class: "form-control"})%>
+                  </div>
+                   -->                  
+            <div class="campo_compare">
+                        <%= label_tag :Disciplina %>
+                        <%= collection_select(nil, :subject_id, @subjects, :id, :nome,{}, {class: "form-control"})%>
+                        </div>
+                        <div class="campo_compare">
+                        <%= label_tag :ano %>
+                        <%= select_tag "ano", options_for_select(@anos),:class => "form-control"%>
+                        </div>
+                        <div class="campo_compare">
+                        <%= label_tag :semestre %>
+                        <%= select_tag "semestre", options_for_select(@semestres),:class => "form-control"%>
+                        </div>
+                        <div class="campo_compare">
+                        <%= label_tag :Turma %>
+                        <%= collection_select(nil, :classroom_id, @classrooms, :id, :codigo,{}, {class: "form-control"})%>
+                        </div>
+                        <div class="campo_compare">
+                        <%= label_tag :Usuarios %>
+                        <%= collection_select(nil, :users_id, @students, :id, :nome,{}, {class: "form-control"})%>
+                        </div>
+                    <div class="field">
+                    <%= f.hidden_field :study_case_id, :value => @study_case.id %>
+                    </div>
+                  </div>
                 </div>
-            </div>
-   <% end %>
-</div>
-</div>
-</div>
+              </div>
+            <div class="row mt">
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <div class="field">
+                    <%= f.label :data_final %><br>
+                    <%= f.date_select :data_final %>
+                  </div>
+                </div>
+              </div>
+              </div>
+                </div>
 
-<div class="modal fade" id="new_question_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Adicionar Questão</h4>
-              </div>
-              <div class="modal-body">
-                <%# Render the new person form (passing modal => true to enable remote => true) %>
-                <%= render 'questions/form2', modal: true %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
+              <div class="row mt">
+                <div class="col-lg-12">                
+                <h4><i class="fa fa-question"></i> Questões do caso de ensino à serem incluidas para os alunos : </h4>
+                <section id="unseen">
+                <table class="table table-bordered table-striped table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Enunciado</th>
+                      <th>Incluir questão</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id= "questions">
+                    <%= render 'line_cases/line_questions' %>
+                  </tbody>
+                </table>
+                </section>
+                </div>
+                </div>
+
+
+
+<!--                 <h4><%= link_to 'Adicionar Questão', '#new_question_modal', 'data-toggle' => 'modal' %></h4>
+ -->
+
+                <div class="row mt">
+                                <div class="col-lg-12">
+                                    <br><center><%= submit_tag "Enviar", :class => "btn btn-default btn-lg"  %></center>
+                                </div>
+                            </div>
+                   <% end %>
+                </div>
+                </div>
+                </div>
+                  </div>
+
+                <div class="modal fade" id="new_question_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Adicionar Questão</h4>
+                              </div>
+                              <div class="modal-body">
+                                <%# Render the new person form (passing modal => true to enable remote => true) %>
+                                <%= render 'questions/form2', modal: true %>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>

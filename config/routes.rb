@@ -157,6 +157,7 @@ Rails.application.routes.draw do
   get 'student_area/videos_index'
   get 'student_area/unsubscribe_video'
   get 'student_area/list_atividades'
+  get 'student_area/list_cases'
   get 'student_area/list_answers'
   get 'student_area/compare_anchors'
   post 'student_area/compare_anchors'

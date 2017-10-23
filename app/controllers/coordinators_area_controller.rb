@@ -349,6 +349,8 @@ class CoordinatorsAreaController < ApplicationController
     else
       redirect_to no_users_error_results_path, notice: 'Não há usuarios disponiveis para exibir'
     end
+    @users = @users.sort!
+
   end
 
   def show_plan

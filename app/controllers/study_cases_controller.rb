@@ -3,7 +3,7 @@ class StudyCasesController < ApplicationController
   autocomplete :study_case, :title, :full => true
 
   def check_privilege(study_case)
-     unless current_user.id == study_case.user_id
+     unless current_user.type == "Teacher"
       redirect_to welcome_index_path
       return
     end
@@ -19,6 +19,10 @@ class StudyCasesController < ApplicationController
   def show
     check_privilege(@study_case)
     @questions = @study_case.questions
+    respond_to do |format|
+        format.html { render :show }
+        format.js { render :show }
+      end 
   end
 
   # GET /study_cases/new
@@ -55,7 +59,7 @@ class StudyCasesController < ApplicationController
     end
     respond_to do |format|
       if @study_case.save
-        format.html { redirect_to @study_case, notice: 'Study case was successfully created.' }
+        format.html { redirect_to @study_case, notice: 'O estudo de caso foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @study_case }
       else
         format.html { render :new }
