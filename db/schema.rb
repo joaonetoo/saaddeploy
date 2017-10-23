@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022013241) do
+ActiveRecord::Schema.define(version: 20171023210626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -246,6 +246,12 @@ ActiveRecord::Schema.define(version: 20171022013241) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "knowledges", force: :cascade do |t|
+    t.string   "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "learning_quizzes", force: :cascade do |t|
     t.integer  "user_id"
     t.date     "data_final"
@@ -352,6 +358,12 @@ ActiveRecord::Schema.define(version: 20171022013241) do
   add_index "line_cases_users", ["line_case_id"], name: "index_line_cases_users_on_line_case_id", using: :btree
   add_index "line_cases_users", ["user_id"], name: "index_line_cases_users_on_user_id", using: :btree
 
+  create_table "main_themes", force: :cascade do |t|
+    t.string   "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "matriculations", force: :cascade do |t|
     t.string   "nome"
     t.string   "email"
@@ -446,14 +458,6 @@ ActiveRecord::Schema.define(version: 20171022013241) do
   add_index "questions", ["line_case_id"], name: "index_questions_on_line_case_id", using: :btree
   add_index "questions", ["study_case_id"], name: "index_questions_on_study_case_id", using: :btree
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
-
-  create_table "questions_line_cases", force: :cascade do |t|
-    t.integer "question_id"
-    t.integer "line_case_id"
-  end
-
-  add_index "questions_line_cases", ["line_case_id"], name: "index_questions_line_cases_on_line_case_id", using: :btree
-  add_index "questions_line_cases", ["question_id"], name: "index_questions_line_cases_on_question_id", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -729,8 +733,6 @@ ActiveRecord::Schema.define(version: 20171022013241) do
   add_foreign_key "questions", "line_cases"
   add_foreign_key "questions", "study_cases"
   add_foreign_key "questions", "users"
-  add_foreign_key "questions_line_cases", "line_cases"
-  add_foreign_key "questions_line_cases", "questions"
   add_foreign_key "quizzes", "users"
   add_foreign_key "quizzes_users", "quizzes"
   add_foreign_key "quizzes_users", "users"

@@ -28,11 +28,20 @@ class StudyCasesController < ApplicationController
   # GET /study_cases/new
   def new
     @study_case = StudyCase.new
+    @ke = Knowledge.all
+    @knowledges = @ke.collect { |knowledge| knowledge.descricao }
+    @mt= MainTheme.all
+    @main_themes = @mt.collect{|maintheme| maintheme.descricao}
   end
 
   # GET /study_cases/1/edit
   def edit
     check_privilege(@study_case)
+    @ke = Knowledge.all
+    @knowledges = @ke.collect { |knowledge| knowledge.descricao }
+    @mt= MainTheme.all
+    @main_themes = @mt.collect{|maintheme| maintheme.descricao}
+
   end
 
   def search

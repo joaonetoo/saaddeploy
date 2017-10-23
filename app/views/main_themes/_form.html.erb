@@ -1,0 +1,47 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-pencil-square-o"></i> <%= action %>
+</h4></center>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row mt">
+                  <div class = "form-group">
+                    <div class="col-lg-12">
+                      <%= form_for(@main_theme) do |f| %>
+                        <% if @main_theme.errors.any? %>
+                          <div id="error_explanation">
+                            <h2><%= pluralize(@main_theme.errors.count, "error") %> prohibited this main_theme from being saved:</h2>
+
+                            <ul>
+                            <% @main_theme.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                            <% end %>
+                            </ul>
+                          </div>
+                        <% end %>
+
+                <div class="row">
+                  <div class="form-group">
+                      <div class="col-lg-12">
+                        <%= f.label :descricao %><br>
+                        <%= f.text_field :descricao, class: "form-control"%>
+                      </div>
+                      </div>
+                    </div><br>
+                      <div class="row">
+                        <div class="actions">
+                          <center><%= f.submit fucao, class: "btn btn-default" %></center>
+                        </div>
+                      <% end %>
+                      </div>
+                    </div>
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

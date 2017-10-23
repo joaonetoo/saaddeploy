@@ -1,0 +1,1 @@
+json.array! @main_themes, partial: 'main_themes/main_theme', as: :main_theme

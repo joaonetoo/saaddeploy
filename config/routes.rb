@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :main_themes
+  resources :knowledges
   resources :line_cases
   resources :references
   resources :questions do

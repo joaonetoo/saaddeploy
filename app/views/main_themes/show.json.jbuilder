@@ -1,0 +1,1 @@
+json.partial! "main_themes/main_theme", main_theme: @main_theme
