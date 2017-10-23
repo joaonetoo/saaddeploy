@@ -1,0 +1,74 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-file-o"></i>Casos de Ensino</h4></center>
+  </div>
+
+    <div class="row mt">
+      <div class="col-lg-12">
+            <div class="panel-body">
+
+          <h4><i class="fa fa-file-o" style="color:#11B70B;"></i> Casos Em Aberto</h4>
+          <section id="unseen">
+            <table class="table table-bordered table-striped table-condensed">
+      <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Tema Principal</th>
+            <th>Caso</th>
+            <th  style="width: 80px;">Prazo</th>
+            <th>Responder</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+ <tbody>
+    <% @line_cases.each do |line_case| %>
+      <tr>
+        <td><%= line_case.study_case.title %></td>
+        <td><%= line_case.study_case.topic %></td>
+        <td><%= link_to  line_case.study_case.case_file.url(:original, false),class:"btn btn-default btn-sm" do %>
+                <% if line_case.study_case.case_file_content_type == "application/pdf" %>
+                  <i class="fa fa-file-pdf-o" style="color:#BD1E0F;"></i>
+                <% else %>
+                  <i class="fa fa-file-word-o" style="color:#08336E;"></i>
+
+                <% end %>
+            <% end %>
+          </td>
+        <td><%= line_case.data_final.strftime("%d/%m/%Y") %></td>
+        <td>oi</td>
+        <td><%= link_to  line_case, class:"btn btn-default btn-sm" do %>
+          <i class="fa fa-share-square" style="color:#0040ff;"></i>
+          <% end %>
+        </td>
+<!--           <td><%= link_to 'Edit', edit_line_case_path(line_case) %></td>
+                       <td><%= link_to 'Destroy', line_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+               -->              
+      </tr>
+<!--       <table>
+    <thead>
+<tr>
+  <th>Study case</th>
+  
+</tr>
+    </thead>
+
+    <tbody>
+<% line_case.users.each do |user| %>
+  <tr>
+    <td><%= user.nome %></td>
+  </tr>
+<% end %>
+    </tbody>
+  </table>
+<br> -->
+
+    <% end %>
+  </tbody>      </table>
+
+      </section>
+
+      </div>
+      </div>
+      </div>
+
+      <br>
