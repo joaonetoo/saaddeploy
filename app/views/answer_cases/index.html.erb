@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Answer Cases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resposta</th>
+      <th>User</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answer_cases.each do |answer_case| %>
+      <tr>
+        <td><%= answer_case.resposta %></td>
+        <td><%= answer_case.user %></td>
+        <td><%= answer_case.question %></td>
+        <td><%= link_to 'Show', answer_case %></td>
+        <td><%= link_to 'Edit', edit_answer_case_path(answer_case) %></td>
+        <td><%= link_to 'Destroy', answer_case, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Answer case', new_answer_case_path %>

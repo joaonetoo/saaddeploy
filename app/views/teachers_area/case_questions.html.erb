@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4></i>Respostas de <%= @user.nome %></h4></center>
+  </div>
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
+            <% @questions.each do |question| %>
+				<h4><%= question.statement %></h4><hr>
+
+			  <blockquote style="color:#08336E;">
+		          		<% @answer_cases.each do |answer_case|   %>
+							<% if question.id == answer_case.question_id %>
+								<p><%= answer_case.resposta %></p>
+							<% end %>
+		          		<% end %>
+
+
+			  </blockquote>
+
+				<hr>
+			<% end %>
+			</div>

@@ -1,0 +1,39 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">
+          <center><h4> Todos Os Alunos Inscritos No Caso</h4><center>
+  </div>
+
+    <div class="row mt">
+      <div class="col-lg-12">
+            <div class="panel-body">
+
+          <h4><i class="fa fa-user-circle-o"></i> Lista de Alunos</h4>
+          <section id="unseen">
+            <table class="table table-bordered table-striped table-condensed">
+      <thead>
+          <tr>
+            <th>Nome Aluno</th>
+            <th>Matricula</th>
+            <th>Ver Respostas</th>
+          </tr>
+        </thead>
+ <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.nome %></td>
+        <td><%= user.matricula %></td>
+        <%= hidden_field_tag :user_id, user.id %>
+        <%= hidden_field_tag :line_case, @line_case.id %>
+        <td><%= link_to "Ver resposta", teachers_area_case_questions_path(:line_case => @line_case.id, :user_id => user.id),class:"btn btn-default btn-sm"%></td>
+      </tr>
+
+    <% end %>
+  </tbody>      </table>
+
+      </section>
+
+      </div>
+      </div>
+      </div>
+
+      <br>

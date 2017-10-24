@@ -32,6 +32,7 @@ class StudyCasesController < ApplicationController
     @knowledges = @ke.collect { |knowledge| knowledge.descricao }
     @mt= MainTheme.all
     @main_themes = @mt.collect{|maintheme| maintheme.descricao}
+    
   end
 
   # GET /study_cases/1/edit

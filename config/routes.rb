@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answer_cases
   resources :main_themes
   resources :knowledges
   resources :line_cases
@@ -132,8 +133,11 @@ Rails.application.routes.draw do
       get 'campu_selection'
       get 'campu2_selection'
     end
-  end
+  end 
   get 'teachers_area/index'
+  get 'teachers_area/case_alunos'
+  get 'teachers_area/case_questions'
+  get 'teachers_area/list_case_alunos'
   get 'teachers_area/search_plans'
   post 'teachers_area/list'
   post 'teachers_area/show_plan'

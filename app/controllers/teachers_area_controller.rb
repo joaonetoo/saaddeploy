@@ -575,7 +575,34 @@ end
       }
     end
   end
+  def list_case_alunos
+    @line_cases = []
+    @cases = LineCase.all
+    @cases.each do |c|
+      if c.user_id == current_user.id
+        @line_cases << c
+      end
+    end
+  end
 
+  def case_alunos
+    @line_case = LineCase.find(params[:line_case])
+    @users = @line_case.users
+  end
+  def case_questions
+    @answer_cases = []
+    @line_case = LineCase.find(params[:line_case])
+    @user = User.find(params[:user_id])
+    @questions = @line_case.questions
+    @questions.each do |question|
+      ac = question.answer_cases
+      ac.each do |answer|
+        if answer.user_id == @user.id
+          @answer_cases << answer
+        end
+      end 
+    end
+  end
   def add_note
     respond_to do |format|
         format.js {}

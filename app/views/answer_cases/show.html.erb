@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Resposta:</strong>
+  <%= @answer_case.resposta %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @answer_case.user %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @answer_case.question %>
+</p>
+
+<%= link_to 'Edit', edit_answer_case_path(@answer_case) %> |
+<%= link_to 'Back', answer_cases_path %>

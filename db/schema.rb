@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023210626) do
+ActiveRecord::Schema.define(version: 20171024173222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20171023210626) do
 
   add_index "anchors", ["anchorinfo_id"], name: "index_anchors_on_anchorinfo_id", using: :btree
   add_index "anchors", ["result_id"], name: "index_anchors_on_result_id", using: :btree
+
+  create_table "answer_cases", force: :cascade do |t|
+    t.string   "resposta"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "answer_cases", ["question_id"], name: "index_answer_cases_on_question_id", using: :btree
+  add_index "answer_cases", ["user_id"], name: "index_answer_cases_on_user_id", using: :btree
 
   create_table "answer_notes", force: :cascade do |t|
     t.text     "observacao"
@@ -349,14 +360,6 @@ ActiveRecord::Schema.define(version: 20171023210626) do
 
   add_index "line_cases", ["study_case_id"], name: "index_line_cases_on_study_case_id", using: :btree
   add_index "line_cases", ["user_id"], name: "index_line_cases_on_user_id", using: :btree
-
-  create_table "line_cases_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "line_case_id"
-  end
-
-  add_index "line_cases_users", ["line_case_id"], name: "index_line_cases_users_on_line_case_id", using: :btree
-  add_index "line_cases_users", ["user_id"], name: "index_line_cases_users_on_user_id", using: :btree
 
   create_table "main_themes", force: :cascade do |t|
     t.string   "descricao"
@@ -697,6 +700,8 @@ ActiveRecord::Schema.define(version: 20171023210626) do
   add_foreign_key "activities", "events"
   add_foreign_key "anchors", "anchorinfos"
   add_foreign_key "anchors", "results"
+  add_foreign_key "answer_cases", "questions"
+  add_foreign_key "answer_cases", "users"
   add_foreign_key "answer_notes", "answers"
   add_foreign_key "answer_notes", "users"
   add_foreign_key "answers", "atividade_extras"
@@ -722,8 +727,6 @@ ActiveRecord::Schema.define(version: 20171023210626) do
   add_foreign_key "learning_results", "users"
   add_foreign_key "line_cases", "study_cases"
   add_foreign_key "line_cases", "users"
-  add_foreign_key "line_cases_users", "line_cases"
-  add_foreign_key "line_cases_users", "users"
   add_foreign_key "matriculations", "events"
   add_foreign_key "objectives", "planos"
   add_foreign_key "opportunities", "planos"
