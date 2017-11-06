@@ -7,11 +7,30 @@
             <div class="panel-body">
             <% @questions.each do |question| %>
 				<h4><%= question.statement %></h4><hr>
-
 			  <blockquote style="color:#08336E;">
 		          		<% @answer_cases.each do |answer_case|   %>
 							<% if question.id == answer_case.question_id %>
 								<p><%= answer_case.resposta %></p>
+								 <div class="modal fade"  class="modali" id="<%= answer_case.id%>new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							      <div class="modal-dialog">
+							        <div class="modal-content">
+							          <div class="modal-header">
+							            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							            <h4 class="modal-title" id="myModalLabel">Enviar Correção de Questão</h4>
+							          </div>
+							          <div class="modal-body">
+							            <%# Render the new person form (passing modal => true to enable remote => true) %>
+							            <%= render 'note_cases/form', modal: true, :locals => {:answer_case_id => answer_case.id, :user_id => current_user.id } %>
+							          </div>
+							          <div class="modal-footer">
+							            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+							          </div>
+							        </div>
+							      </div>
+							    </div>
+						        <%= link_to "##{answer_case.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-default btn-sm", style: "float: right;" do %>   
+						          <i class="fa fa-plus" > Corrigir Questão</i>
+						          <% end %>
 							<% end %>
 		          		<% end %>
 

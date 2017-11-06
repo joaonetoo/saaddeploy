@@ -1,6 +1,6 @@
 <% modal ||= false %>
 <% remote = modal ? true : false %>
-<%= form_for(AnswerCase.new, remote: remote, html: {role: :form, 'data-model' => 'answer_case'}) do |f| %>
+<%= form_for(AnswerCase.new, remote: true, html: {role: :form, 'data-model' => 'modal'}) do |f| %>
 
 <%# form_for(@answer_case) do |f| %>
 

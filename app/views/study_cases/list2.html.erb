@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4> Casos Para Ensino</h4></center>
+  </div>
+
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row mt">
+
+            <div class = "form-group">
+              <div class="col-lg-12">
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-condensed">  <thead>
+    <tr>
+      <th>Titulo</th>
+<!--       <th>Autor</th>
+       -->      <th>Area de conhecimento</th>
+<!--       <th>Tema primário</th>
+ --><!--       <th>Tema secundário</th>
+       -->      <!-- <th>Recomendado para</th> -->
+      <th>Caso</th>
+      <th>Notas</th>
+      <th>Questões</th>
+      <th>Editar</th>
+<!--       <th>Deletar</th>
+       -->      <th>Enviar Caso</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_cases.each do |study_case| %>
+      <tr>
+        <td><%= study_case.title %></td>
+<!--         <td><%= study_case.author %></td>
+         -->        
+         <td><%= study_case.area %></td>
+<!--         <td><%= study_case.topic %></td>
+ --><!--         <td><%= study_case.topic2 %></td>
+         -->        
+         <!-- <td><%= study_case.recommended %></td> -->
+        <td><%= link_to study_case.case_file.url(:original, false) ,class:"btn btn-default btn-sm" do %>
+                  <% if study_case.case_file_content_type == "application/pdf" %>
+                    <i class="fa fa-file-pdf-o" style="color:#BD1E0F;"></i>
+                  <% else %>
+                    <i class="fa fa-file-word-o" style="color:#08336E;"></i>
+
+                  <% end %>
+              <% end %>
+            </td>
+        <td><%= link_to  study_case.notes_file.url(:original, false),class:"btn btn-default btn-sm" do %>
+                  <% if study_case.notes_file_content_type == "application/pdf" %>
+                    <i class="fa fa-file-pdf-o" style="color:#BD1E0F;"></i>
+                  <% else %>
+                    <i class="fa fa-file-word-o" style="color:#08336E;"></i>
+
+                  <% end %>
+              <% end %>
+            </td>
+        <td><%= link_to  study_case ,class:"btn btn-default btn-sm" do %> 
+            <i class="fa fa-question" style="color:#FFD700;" ></i>
+        <% end %>
+        <td><%= link_to  edit_study_case_path(study_case) ,class:"btn btn-default btn-sm" do %>
+            <i class="fa fa-edit" style="color:#191970;" ></i>
+        <% end %></td>        
+        <!-- <td><%= link_to 'Deletar', study_case, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <td><%= link_to  new_line_case_path(:study_case => study_case) ,class:"btn btn-default btn-sm"  do%>
+            <i class="fa fa-paper-plane" style="color:#2E8B57;" ></i>
+        <% end %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>          
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="modal fade" id="new_question_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Adicionar Questão</h4>
+              </div>
+              <div class="modal-body">
+                <%# Render the new person form (passing modal => true to enable remote => true) %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+<%# link_to 'New Study case', new_study_case_path %> -->

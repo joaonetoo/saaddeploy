@@ -1,5 +1,8 @@
 <!-- <p id="notice"><%= notice %></p>
- --><div class="panel panel-default">
+
+ -->
+
+ <div class="panel panel-default">
   <div class="panel-heading">
     <center><h4></i>Detalhes Sobre O Caso de Ensino</h4></center>
   </div>
@@ -42,22 +45,28 @@
 				<hr>
 			<center><h4>Questões</h4></center>
 			<% @questions.each do |question| %>
-				<h4><%= question.statement %>
-		        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
+				<%= question.statement %>
+				<% if @line_case.data_final.past? || current_user.type == "Teacher" %>
+		        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal',disabled: "desibled", :class => "btn btn-success btn-sm", style: "float: right;" do %>   
 		          <i class="fa fa-plus" ></i>
 		          <% end %>
+		        <% else %>
+			        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
+			          <i class="fa fa-plus" ></i>
+			          <% end %>
+		        <% end %>
 		          <hr>
 			  <blockquote>
-				    <div class="modal fade"  class="modali" id="<%= question.id%>new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				    <div class="modal fade"  class="modali" id="<%= question.id%>new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 				      <div class="modal-dialog">
 				        <div class="modal-content">
 				          <div class="modal-header">
-				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
 				            <h4 class="modal-title" id="myModalLabel">Responder à Questão</h4>
 				          </div>
 				          <div class="modal-body">
 				            <%# Render the new person form (passing modal => true to enable remote => true) %>
-				            <%= render 'answer_cases/form', modal: true, :locals => {:question_id => question.id, :user_id => current_user.id } %>
+				            <%= render 'answer_cases/form', modal: false, :locals => {:question_id => question.id, :user_id => current_user.id } %>
 				          </div>
 				          <div class="modal-footer">
 				            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -66,15 +75,22 @@
 				      </div>
 				    </div>
 
-				<p>
 		          		<% question.answer_cases.each do |answer_case|   %>
 		          			<% if current_user.id == answer_case.user_id %>
 								<p><%= answer_case.resposta %></p>
 
 		          			<% end %>
-		          		<% end %>
+		          		<% if answer_case.note_cases.length >= 1 %>
+		          				          			<hr>
 
-				</p>
+							<h6>Observação do Professor:</h6>
+						<p> <h6><% answer_case.note_cases.each do |note| %>
+							<%= note.observacao %> </h6><br>
+								<% end %>
+
+						</p>
+		          		<% end %>
+						<% end %>
 			  </blockquote>
 
 				<hr>

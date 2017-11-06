@@ -1,0 +1,44 @@
+ <div class="panel panel-default">
+  <div class="panel-heading">
+    <center><h4><i class="fa fa-search"></i>Pesquisar Casos Para Ensino</h4></center>
+  </div>
+
+      <div class="row mt">
+          <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row mt">
+
+            <div class = "form-group">
+              <div class="col-lg-12">
+
+                  <%= form_tag list2_study_cases_path, :method => 'get', :class => 'form', :role => 'form' do%>
+		                <div class="campo_compare">
+		                <%= label_tag :area_do_conhecimento %>
+		                <%= select_tag "area_do_conhecimento", options_for_select(@knowledges), :class => "form-control"%>
+		                </div>
+		                <div class="campo_compare">
+		                <%= label_tag :tema_principal %>
+		                <%= select_tag "tema_principal", options_for_select(@main_themes), :class => "form-control"%>
+		                </div>
+
+		             <div class="row mt">
+		                <div class="col-lg-12">
+		                    <br><center><%= submit_tag "Pesquisar", class: "btn btn-default"  %></center>
+		                </div>
+		            </div>
+
+        		  <% end %>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+        $('#area_do_conhecimento').prepend("<option value='todos'>Todas</option>");
+        $('#area_do_conhecimento option:first').attr("selected", "selected");
+        $('#tema_principal').prepend("<option value='todos'>Todos</option>");
+        $('#tema_principal option:first').attr("selected", "selected");
+</script>

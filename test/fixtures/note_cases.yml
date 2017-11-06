@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  observacao: MyString
+  user_id: 
+  answer_case_id: 
+
+two:
+  observacao: MyString
+  user_id: 
+  answer_case_id: 

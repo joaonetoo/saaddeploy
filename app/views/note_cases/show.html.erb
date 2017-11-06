@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @note_case.observacao %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @note_case.user %>
+</p>
+
+<p>
+  <strong>Answer case:</strong>
+  <%= @note_case.answer_case %>
+</p>
+
+<%= link_to 'Edit', edit_note_case_path(@note_case) %> |
+<%= link_to 'Back', note_cases_path %>

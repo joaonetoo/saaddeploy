@@ -587,7 +587,25 @@ end
 
   def case_alunos
     @line_case = LineCase.find(params[:line_case])
-    @users = @line_case.users
+    @u = @line_case.users
+    @questions = @line_case.questions
+    if @line_case.data_final.past?
+      @users = @u
+    else 
+      @users = []
+      @u.each do |user|
+        answer_cases =[]
+        @questions.each do |q|
+          x = AnswerCase.where(user_id: user.id,question_id: q.id)
+          unless x.blank?
+            answer_cases << x
+          end
+        end
+        if @questions.length <= answer_cases.length
+          @users << user
+        end
+      end
+    end
   end
   def case_questions
     @answer_cases = []

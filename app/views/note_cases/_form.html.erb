@@ -1,0 +1,18 @@
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(NoteCase.new, remote: false, html: {role: :form, 'data-model' => 'answer_case'}) do |f| %>
+
+  <div class="field">
+    <%= f.label :observacao , class: 'control-label'%><br>
+    <%= f.text_area :observacao, class: 'form-control', rows:4 %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => locals[:user_id] %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :answer_case_id, :value => locals[:answer_case_id] %>
+  </div>
+  <div class="actions">
+    <center><%= f.submit'Corrigir', class: "btn btn-default" %></center>
+  </div>
+<% end %>

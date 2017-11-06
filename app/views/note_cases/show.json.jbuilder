@@ -1,0 +1,1 @@
+json.partial! "note_cases/note_case", note_case: @note_case

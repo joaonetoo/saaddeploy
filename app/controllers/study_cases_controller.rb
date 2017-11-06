@@ -24,7 +24,22 @@ class StudyCasesController < ApplicationController
         format.js { render :show }
       end 
   end
+  def search2
+    @knowledges = Knowledge.all.collect { |knowledge| knowledge.descricao }
+    @main_themes = MainTheme.all.collect{|maintheme| maintheme.descricao}
+  end
 
+  def list2
+    if params[:tema_principal] == "todos" && params[:area_do_conhecimento] == "todos"
+      @study_cases = StudyCase.all
+    elsif params[:tema_principal] == "todos" && params[:area_do_conhecimento] != "todos"
+      @study_cases = StudyCase.where(area: params[:area_do_conhecimento])
+    elsif params[:tema_principal] != "todos" && params[:area_do_conhecimento] == "todos"
+      @study_cases = StudyCase.where(topic: params[:tema_principal])
+    else
+      @study_cases = StudyCase.where(topic: params[:tema_principal], area: params[:area_do_conhecimento])
+    end 
+  end
   # GET /study_cases/new
   def new
     @study_case = StudyCase.new

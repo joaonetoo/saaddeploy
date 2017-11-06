@@ -47,7 +47,6 @@
                     </div>
                   </div>
                   <div>
-                  <div>
                     <input type="radio" name="item" id="item-five" hidden />
                     <label for="item-five">
                     <i class=" fa fa-youtube-play"></i>
@@ -61,25 +60,26 @@
                   <div>
                     <input type="radio" name="item" id="item-six" hidden />
                     <label for="item-six">
+                    <i class="fa fa-book"></i>
+                        Casos Para Ensino
+                    </label>
+                    <div>
+                      <%= link_to 'Adicionar Caso', new_study_case_path %>
+                      <%= link_to 'Meus Casos', study_cases_path %>
+                      <%= link_to 'Buscar Casos', search2_study_cases_path %>
+                      <%= link_to 'Casos Enviados', teachers_area_list_case_alunos_path  %>
+                    </div>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="item" id="item-seven" hidden />
+                    <label for="item-seven">
                     <i class="fa fa-mortar-board"></i>
                       Turmas
                     </label>
                     <div>
                       <%= link_to 'Criar Turma', new_classroom_path %>
                       <%= link_to "Buscar turmas", search_classrooms_path %>
-                    </div>
-                  </div>
-                  <div>
-                    <input type="radio" name="item" id="item-seven" hidden />
-                    <label for="item-seven">
-                    <i class="fa fa-book"></i>
-                        Casos de Ensino
-                    </label>
-                    <div>
-                      <%= link_to 'Adicionar Caso', new_study_case_path %>
-                      <%= link_to 'Meus Casos', study_cases_path %>
-                      <%= link_to 'Buscar Casos', search_study_cases_path %>
-                      <%= link_to 'Casos Enviados', teachers_area_list_case_alunos_path  %>
                     </div>
                   </div>
                   <div>
@@ -92,7 +92,6 @@
                       <%= link_to "Editar", edit_user_registration_path %>
                     </div>
                   </div>
-                </div>
               <!-- sidebar menu end-->
           </div>
       </aside>

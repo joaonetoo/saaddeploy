@@ -1,0 +1,1 @@
+json.array! @note_cases, partial: 'note_cases/note_case', as: :note_case

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :note_cases
   resources :answer_cases
   resources :main_themes
   resources :knowledges
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
       get 'search'
       get 'list'
       get 'autocomplete_study_case_title'
+      get 'search2'
+      get 'list2'
     end
   end
   resources :strategies
