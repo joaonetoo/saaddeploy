@@ -46,11 +46,7 @@
 			<center><h4>Questões</h4></center>
 			<% @questions.each do |question| %>
 				<%= question.statement %>
-				<% if @line_case.data_final.past? || current_user.type == "Teacher" %>
-		        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal',disabled: "desibled", :class => "btn btn-success btn-sm", style: "float: right;" do %>   
-		          <i class="fa fa-plus" ></i>
-		          <% end %>
-		        <% else %>
+				<% unless @line_case.data_final.past? || current_user.type == "Teacher" %>
 			        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
 			          <i class="fa fa-plus" ></i>
 			          <% end %>
@@ -77,7 +73,12 @@
 
 		          		<% question.answer_cases.each do |answer_case|   %>
 		          			<% if current_user.id == answer_case.user_id %>
-								<p><%= answer_case.resposta %></p>
+								<p><%= answer_case.resposta %>
+									<%= link_to answer_case, method: :delete,  data: { confirm: 'Você tem certeza que deseja apagar esta resposta?' }, :class => "btn btn-danger btn-sm",style: "float: right;",  :title => "Deletar Ameaça" do%>
+					           <i class="fa fa-close"></i>
+
+					        <% end %>
+								</p>
 
 		          			<% end %>
 		          		<% if answer_case.note_cases.length >= 1 %>

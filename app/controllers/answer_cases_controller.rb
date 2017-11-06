@@ -55,10 +55,17 @@ class AnswerCasesController < ApplicationController
   # DELETE /answer_cases/1
   # DELETE /answer_cases/1.json
   def destroy
-    @answer_case.destroy
-    respond_to do |format|
-      format.html { redirect_to answer_cases_url, notice: 'Answer case was successfully destroyed.' }
-      format.json { head :no_content }
+    question = Question.find(@answer_case.question_id)
+    line_case = LineCase.find(question.line_case_id)
+    notes = @answer_case.note_cases
+    if notes.length > 0
+        redirect_to line_case_path(line_case), alert: 'Não é possível excluir respostas corrigidas.' 
+    else
+      @answer_case.destroy
+      respond_to do |format|
+        format.html { redirect_to line_case_path(line_case), notice: 'Resposta excluída com sucesso.' }
+        format.json { head :no_content }
+      end
     end
   end
 

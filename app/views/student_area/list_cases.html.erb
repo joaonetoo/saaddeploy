@@ -69,23 +69,4 @@
       </div>
       </div>
 </div>
-            <div class="modal fade"  class="modali" id="new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Responder à Questão</h4>
-                  </div>
-                  <div class="modal-body">
-                    <%# Render the new person form (passing modal => true to enable remote => true) %>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <%= link_to "#new_answers_case_modal", 'data-toggle' => 'modal', style: "float: right;" do %>   
-              <i class="fa fa-plus" ></i>
-              <% end %>
