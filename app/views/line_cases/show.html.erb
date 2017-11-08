@@ -46,54 +46,56 @@
 			<center><h4>Questões</h4></center>
 			<% @questions.each do |question| %>
 				<%= question.statement %>
-				<% unless @line_case.data_final.past? || current_user.type == "Teacher" %>
-			        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
-			          <i class="fa fa-plus" ></i>
-			          <% end %>
-		        <% end %>
-		          <hr>
-			  <blockquote>
-				    <div class="modal fade"  class="modali" id="<%= question.id%>new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-				      <div class="modal-dialog">
-				        <div class="modal-content">
-				          <div class="modal-header">
-				            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
-				            <h4 class="modal-title" id="myModalLabel">Responder à Questão</h4>
-				          </div>
-				          <div class="modal-body">
-				            <%# Render the new person form (passing modal => true to enable remote => true) %>
-				            <%= render 'answer_cases/form', modal: false, :locals => {:question_id => question.id, :user_id => current_user.id } %>
-				          </div>
-				          <div class="modal-footer">
-				            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-				          </div>
-				        </div>
-				      </div>
-				    </div>
+				<% if @line_case.responder == "true" || @line_case.responder.nil? %>
+						<% unless @line_case.data_final.past? || current_user.type == "Teacher" %>
+					        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
+					          <i class="fa fa-plus" ></i>
+					          <% end %>
+				        <% end %>
+				          <hr>
 
-		          		<% question.answer_cases.each do |answer_case|   %>
-		          			<% if current_user.id == answer_case.user_id %>
-								<p><%= answer_case.resposta %>
-									<%= link_to answer_case, method: :delete,  data: { confirm: 'Você tem certeza que deseja apagar esta resposta?' }, :class => "btn btn-danger btn-sm",style: "float: right;",  :title => "Deletar Ameaça" do%>
-					           <i class="fa fa-close"></i>
+				 		<% end %>
+					  <blockquote>
+						    <div class="modal fade"  class="modali" id="<%= question.id%>new_answers_case_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+						      <div class="modal-dialog">
+						        <div class="modal-content">
+						          <div class="modal-header">
+						            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+						            <h4 class="modal-title" id="myModalLabel">Responder à Questão</h4>
+						          </div>
+						          <div class="modal-body">
+						            <%# Render the new person form (passing modal => true to enable remote => true) %>
+						            <%= render 'answer_cases/form', modal: false, :locals => {:question_id => question.id, :user_id => current_user.id } %>
+						          </div>
+						          <div class="modal-footer">
+						            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
 
-					        <% end %>
+				          		<% question.answer_cases.each do |answer_case|   %>
+				          			<% if current_user.id == answer_case.user_id %>
+										<p><%= answer_case.resposta %>
+											<%= link_to answer_case, method: :delete,  data: { confirm: 'Você tem certeza que deseja apagar esta resposta?' }, :class => "btn btn-danger btn-sm",style: "float: right;",  :title => "Deletar Ameaça" do%>
+							           <i class="fa fa-close"></i>
+
+							        <% end %>
+										</p>
+
+				          			<% end %>
+				          		<% if answer_case.note_cases.length >= 1 %>
+				          				          			<hr>
+
+									<h6>Observação do Professor:</h6>
+								<p> <h6><% answer_case.note_cases.each do |note| %>
+									<%= note.observacao %> </h6><br>
+										<% end %>
+
 								</p>
-
-		          			<% end %>
-		          		<% if answer_case.note_cases.length >= 1 %>
-		          				          			<hr>
-
-							<h6>Observação do Professor:</h6>
-						<p> <h6><% answer_case.note_cases.each do |note| %>
-							<%= note.observacao %> </h6><br>
+				          		<% end %>
 								<% end %>
-
-						</p>
-		          		<% end %>
-						<% end %>
 			  </blockquote>
-
 				<hr>
 			<% end %>
 			</div>

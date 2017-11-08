@@ -68,6 +68,13 @@
                     <%= f.label :data_final %><br>
                     <%= f.date_select :data_final %>
                   </div>
+                  <div class="field">
+                <label>Os alunos poderão responder o caso para ensino pelo sistema?</label><br>
+                <%= f.label :responder, "Sim", :value => "true"  %>
+                <%= f.radio_button :responder, true %>
+                <%= f.label :responder, "Não", :value => "false" %>
+                <%= f.radio_button :responder, false, :checked => true %>
+
                 </div>
               </div>
               </div>

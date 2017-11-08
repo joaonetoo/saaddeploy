@@ -35,7 +35,11 @@
             <% end %>
           </td>
         <td><%= line_case.data_final.strftime("%d/%m/%Y") %></td>
-        <td><%= link_to "Ver resposta", teachers_area_case_alunos_path(:line_case => line_case.id) ,class:"btn btn-default btn-sm"%></td>
+        <% if line_case.responder.nil? || line_case.responder == "true" %>
+          <td><%= link_to "Ver resposta", teachers_area_case_alunos_path(:line_case => line_case.id) ,class:"btn btn-default btn-sm"%></td>
+        <% else %>
+          <td><center><b>---</b></center></td>
+        <% end %>
         <td><%= link_to  line_case, class:"btn btn-default btn-sm" do %>
           <i class="fa fa-share-square" style="color:#0040ff;"></i>
           <% end %>

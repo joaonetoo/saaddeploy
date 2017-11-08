@@ -282,6 +282,6 @@ class LineCasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_case_params
-      params.require(:line_case).permit(:study_case_id, :user_id, :data_final, :question_id)
+      params.require(:line_case).permit(:study_case_id, :user_id, :data_final, :question_id,:responder)
     end
 end
