@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108095319) do
+ActiveRecord::Schema.define(version: 20171113193729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -669,6 +669,7 @@ ActiveRecord::Schema.define(version: 20171108095319) do
     t.boolean  "approved",               default: false, null: false
     t.integer  "course_id"
     t.integer  "institution_id"
+    t.string   "cpf"
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved", using: :btree

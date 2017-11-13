@@ -49,8 +49,10 @@
 				<% if @line_case.responder == "true" || @line_case.responder.nil? %>
 						<% unless @line_case.data_final.past? || current_user.type == "Teacher" %>
 					        <%= link_to "##{question.id}new_answers_case_modal", 'data-toggle' => 'modal', :class => "btn btn-success btn-sm", style: "float: right;" do %>   
-					          <i class="fa fa-plus" ></i>
+					          <i class="fa fa-plus" >Responder</i>
 					          <% end %>
+
+
 				        <% end %>
 				          <hr>
 
@@ -77,20 +79,23 @@
 				          		<% question.answer_cases.each do |answer_case|   %>
 				          			<% if current_user.id == answer_case.user_id %>
 										<p><%= answer_case.resposta %>
+										<% unless @line_case.data_final.past?  %>
 											<%= link_to answer_case, method: :delete,  data: { confirm: 'Você tem certeza que deseja apagar esta resposta?' }, :class => "btn btn-danger btn-sm",style: "float: right;",  :title => "Deletar Ameaça" do%>
-							           <i class="fa fa-close"></i>
-
+							           <i class="fa fa-close">Deletar Resposta</i>
+										<% end %>
 							        <% end %>
 										</p>
 
 				          			<% end %>
 				          		<% if answer_case.note_cases.length >= 1 %>
+				          			<% unless current_user.type == "Teacher" %>
 				          				          			<hr>
 
-									<h6>Observação do Professor:</h6>
-								<p> <h6><% answer_case.note_cases.each do |note| %>
-									<%= note.observacao %> </h6><br>
-										<% end %>
+										<h6>Observação do Professor:</h6>
+									<p> <h6><% answer_case.note_cases.each do |note| %>
+										<%= note.observacao %> </h6><br>
+											<% end %>
+									<% end %>
 
 								</p>
 				          		<% end %>

@@ -21,6 +21,13 @@
                     <%= f.text_field :nome, :class => "form-control" %>
                   </div>
             </div>
+            <div class="col-lg-6">
+                  <div class="form-group">
+                    <%= f.label :cpf %><br>
+                    <%= f.text_field :cpf, :class => "form-control" %>
+                  </div>
+            </div>
+
             <div class="col-lg-3">
                   <div class="form-group">
                     <%= f.label :telefone %><br>
@@ -33,21 +40,21 @@
                     <%= f.text_field :endereco, :class => "form-control" %>
                   </div>
             </div>
-            <div class="col-lg-4">
-                  <div class="form-group">
-                    <%= f.label :lattes %><br>
-                    <%= f.text_field :lattes, :class => "form-control" %>
-                  </div>
-            </div>
-
+<!--             <div class="col-lg-4">
+      <div class="form-group">
+        <%= f.label :lattes %><br>
+        <%= f.text_field :lattes, :class => "form-control" %>
+      </div>
+</div>
+ -->
       </div>
       <div class="row ">
             <div class="col-lg-6">
-                  <div class="form-group">
+<!--                   <div class="form-group">
                     <%= f.label :biografia %><br>
                     <%= f.text_area :biografia, :class => "form-control", rows:3%>
                   </div>
-                  
+                   -->                  
                   <div class="field" style="display:none;">
                     <%= f.text_field :institution_id, :value => @institution_id%>
                   </div>

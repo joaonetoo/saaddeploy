@@ -11,6 +11,12 @@
           <%= f.text_field :nome, :class => "form-control" %>
 
         </div>
+                <div class="field">
+          <%= f.label :CPF %>
+          <%= f.text_field :cpf, :class => "form-control" %>
+
+        </div>
+
         <div class="field">
         <%= f.label :telefone %>
           <%= f.text_field :telefone, :class => "form-control" %>
@@ -18,16 +24,6 @@
           <div class="field">
           <%= f.label :endereco %>
           <%= f.text_field :endereco, :class => "form-control" %>
-
-          </div>
-          <div class="field">
-          <%= f.label :lattes %>
-          <%= f.text_field :lattes, :class => "form-control" %>
-
-          </div>
-          <div class="field">
-          <%= f.label :biografia %>
-          <%= f.text_area :biografia, :class => "form-control" %>
 
           </div>
           <!--<%= f.select :type, [['Estudante', 'Student'], ['Professor','Teacher']],{:class => "form-control"} %>-->

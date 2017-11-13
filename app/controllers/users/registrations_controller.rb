@@ -6,11 +6,11 @@ skip_before_action :require_no_authentication, only: [:new, :create, :cancel]
 private
 
   def sign_up_params
-    params.require(:user).permit(:nome, :telefone, :endereco, :lattes, :biografia, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id)
+    params.require(:user).permit(:nome,:cpf, :telefone, :endereco, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id)
   end
 
   def account_update_params
-    params.require(:user).permit(:nome, :telefone, :endereco, :lattes, :biografia, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id, :current_password)
+    params.require(:user).permit(:nome,:cpf, :telefone, :endereco, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id, :current_password)
   end
   # GET /resource/sign_up
   # def new
@@ -50,7 +50,7 @@ private
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
-       devise_parameter_sanitizer.permit(:sign_up, keys: [:nome, :telefone, :endereco, :lattes, :biografia, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id])
+       devise_parameter_sanitizer.permit(:sign_up, keys: [:nome,:cpf, :telefone, :endereco, :type, :matricula, :avatar, :email , :password, :password_confirmation, :course_id, :institution_id])
    end
 
   # If you have extra params to permit, append them to the sanitizer.
