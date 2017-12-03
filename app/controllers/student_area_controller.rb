@@ -1,5 +1,6 @@
 class StudentAreaController < ApplicationController
 require "prawn/measurement_extensions"
+layout "curriculo", only: [:curriculo]
 
   def index
     @classrooms = current_user.classrooms
@@ -66,7 +67,9 @@ require "prawn/measurement_extensions"
     end
 
   end
-
+  def curriculo
+    @usuario = current_user
+  end
   def compare_anchors
     @selecao = current_user.nome
     @results = []

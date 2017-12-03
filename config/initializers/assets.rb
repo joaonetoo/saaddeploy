@@ -9,6 +9,14 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( bootstrap.min.css )
+Rails.application.config.assets.precompile += %w( font-awesome.min.css )
+Rails.application.config.assets.precompile += %w( devicons.min.css )
+Rails.application.config.assets.precompile += %w( simple-line-icons.css )
+Rails.application.config.assets.precompile += %w( resume.min.css )
+Rails.application.config.assets.precompile += %w( bootstrap.bundle.min.js )
+Rails.application.config.assets.precompile += %w( jquery.easing.min.js )
+Rails.application.config.assets.precompile += %w( resume.min.js )
 Rails.application.config.assets.precompile += %w( testando.js )
 Rails.application.config.assets.precompile += %w( quiz.js )
 Rails.application.config.assets.precompile += %w( quizzes.js )

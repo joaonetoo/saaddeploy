@@ -177,6 +177,7 @@ Rails.application.routes.draw do
   get 'student_area/classrooms'
   get 'student_area/classroom_show'
   post 'student_area/classroom_show'
+  get 'student_area/curriculo'
 
 
 
