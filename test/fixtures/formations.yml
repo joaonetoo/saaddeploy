@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nivel: MyString
+  institution: MyString
+  course: MyString
+  date_start: 2017-12-04
+  date_end: 2017-12-04
+  curriculum_id: 
+
+two:
+  nivel: MyString
+  institution: MyString
+  course: MyString
+  date_start: 2017-12-04
+  date_end: 2017-12-04
+  curriculum_id: 

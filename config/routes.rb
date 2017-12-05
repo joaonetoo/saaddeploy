@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :answer_cases
   resources :main_themes
   resources :knowledges
+  resources :experiences
+  resources :purposes, defaults: { format: 'js' }
+  resources :languages
+  resources :formations
+  resources :skills
   resources :line_cases
   resources :references
   resources :questions do
@@ -178,6 +183,8 @@ Rails.application.routes.draw do
   get 'student_area/classroom_show'
   post 'student_area/classroom_show'
   get 'student_area/curriculo'
+  get 'student_area/edit_curriculo'
+
 
 
 

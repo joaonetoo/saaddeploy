@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idioma: MyString
+  read: MyString
+  speak: MyString
+  write: MyString
+  understand: MyString
+  curriculum_id: 
+
+two:
+  idioma: MyString
+  read: MyString
+  speak: MyString
+  write: MyString
+  understand: MyString
+  curriculum_id: 

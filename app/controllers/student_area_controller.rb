@@ -1,6 +1,7 @@
 class StudentAreaController < ApplicationController
 require "prawn/measurement_extensions"
-layout "curriculo", only: [:curriculo]
+layout "curriculo", only: [:curriculo,:edit_curriculo]
+before_action :create_curriculum, only: [:edit_curriculo]
 
   def index
     @classrooms = current_user.classrooms
@@ -70,6 +71,25 @@ layout "curriculo", only: [:curriculo]
   def curriculo
     @usuario = current_user
   end
+  def edit_curriculo
+    @usuario = current_user
+    curriculums = Curriculum.all
+    curriculums.each do |curriculum|
+      if curriculum.user_id == @usuario.id
+        @curriculum = curriculum
+      end
+    end
+  end
+
+def create_curriculum
+    verify_curriculum = Curriculum.where(user_id: current_user)
+    if verify_curriculum.blank?
+      @curriculo = Curriculum.new
+      @curriculo.user_id = current_user
+      @curriculo.save
+    end
+end
+
   def compare_anchors
     @selecao = current_user.nome
     @results = []

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113193729) do
+ActiveRecord::Schema.define(version: 20171205152829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -196,6 +196,16 @@ ActiveRecord::Schema.define(version: 20171113193729) do
 
   add_index "courses", ["center_id"], name: "index_courses_on_center_id", using: :btree
 
+  create_table "curriculums", force: :cascade do |t|
+    t.string   "resume"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "message"
+    t.integer  "user_id"
+  end
+
+  add_index "curriculums", ["user_id"], name: "index_curriculums_on_user_id", using: :btree
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -236,6 +246,32 @@ ActiveRecord::Schema.define(version: 20171113193729) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
+  create_table "experiences", force: :cascade do |t|
+    t.string   "institution"
+    t.string   "office"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.string   "description"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "experiences", ["curriculum_id"], name: "index_experiences_on_curriculum_id", using: :btree
+
+  create_table "formations", force: :cascade do |t|
+    t.string   "nivel"
+    t.string   "institution"
+    t.string   "course"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "formations", ["curriculum_id"], name: "index_formations_on_curriculum_id", using: :btree
+
   create_table "institutions", force: :cascade do |t|
     t.string   "cnpj"
     t.string   "logradouro"
@@ -262,6 +298,19 @@ ActiveRecord::Schema.define(version: 20171113193729) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "idioma"
+    t.string   "read"
+    t.string   "speak"
+    t.string   "write"
+    t.string   "understand"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "languages", ["curriculum_id"], name: "index_languages_on_curriculum_id", using: :btree
 
   create_table "learning_quizzes", force: :cascade do |t|
     t.integer  "user_id"
@@ -466,6 +515,15 @@ ActiveRecord::Schema.define(version: 20171113193729) do
 
   add_index "projects", ["event_id"], name: "index_projects_on_event_id", using: :btree
 
+  create_table "purposes", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "purposes", ["curriculum_id"], name: "index_purposes_on_curriculum_id", using: :btree
+
   create_table "questions", force: :cascade do |t|
     t.string   "statement"
     t.integer  "user_id"
@@ -536,6 +594,15 @@ ActiveRecord::Schema.define(version: 20171113193729) do
 
   add_index "results", ["quiz_id"], name: "index_results_on_quiz_id", using: :btree
   add_index "results", ["user_id"], name: "index_results_on_user_id", using: :btree
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "skills", ["curriculum_id"], name: "index_skills_on_curriculum_id", using: :btree
 
   create_table "strategies", force: :cascade do |t|
     t.date     "deadline"
@@ -738,7 +805,11 @@ ActiveRecord::Schema.define(version: 20171113193729) do
   add_foreign_key "coordinators", "centers"
   add_foreign_key "coordinators", "institutions"
   add_foreign_key "courses", "centers"
+  add_foreign_key "curriculums", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "experiences", "curriculums"
+  add_foreign_key "formations", "curriculums"
+  add_foreign_key "languages", "curriculums"
   add_foreign_key "learning_quizzes", "users"
   add_foreign_key "learning_quizzes_users", "learning_quizzes"
   add_foreign_key "learning_quizzes_users", "users"
@@ -753,6 +824,7 @@ ActiveRecord::Schema.define(version: 20171113193729) do
   add_foreign_key "opportunity_answers", "opportunities"
   add_foreign_key "planos", "users"
   add_foreign_key "projects", "events"
+  add_foreign_key "purposes", "curriculums"
   add_foreign_key "questions", "line_cases"
   add_foreign_key "questions", "study_cases"
   add_foreign_key "questions", "users"
@@ -763,6 +835,7 @@ ActiveRecord::Schema.define(version: 20171113193729) do
   add_foreign_key "registrations", "events"
   add_foreign_key "results", "quizzes"
   add_foreign_key "results", "users"
+  add_foreign_key "skills", "curriculums"
   add_foreign_key "strategies", "objectives"
   add_foreign_key "strength_answers", "strengths"
   add_foreign_key "strengths", "planos"
