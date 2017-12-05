@@ -82,10 +82,10 @@ before_action :create_curriculum, only: [:edit_curriculo]
   end
 
 def create_curriculum
-    verify_curriculum = Curriculum.where(user_id: current_user)
+    verify_curriculum = Curriculum.where(user_id: current_user.id)
     if verify_curriculum.blank?
       @curriculo = Curriculum.new
-      @curriculo.user_id = current_user
+      @curriculo.user_id = current_user.id
       @curriculo.save
     end
 end
