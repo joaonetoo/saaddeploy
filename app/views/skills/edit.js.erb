@@ -1,0 +1,8 @@
+
+$(function (){
+	$('#titulo').html( "<img  src='/assets/saad_30.png'> Editar Competência");
+	$('#curriculumForm').html("<%= escape_javascript render partial: 'skills/form2' %>");
+	$('#description').val('<%= @skill.description %>');
+	$('#curriculo').modal('show');
+});
+

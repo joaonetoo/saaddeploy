@@ -1,0 +1,11 @@
+<%= form_tag  skill_path(id: @skill.id) ,remote:true, method: :put do %>
+  <div class="form-group">
+    <label for="description" class="control-label">Descrição:</label>
+    <%= text_area_tag(:description, nil,class: "form-control",rows:4) %>
+  </div>
+
+ </div>
+        <center><%= submit_tag "Editar", class: "btn btn-default btn-login" %></center>
+  <% end %>
+
+

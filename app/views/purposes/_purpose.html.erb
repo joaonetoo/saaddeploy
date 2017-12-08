@@ -1,0 +1,11 @@
+ <% @purposes.each do |purpose| %>
+  <div class="resume-item d-flex flex-column flex-md-row mb-5">
+    <div class="resume-content mr-auto" >
+      <p><b>•</b> <%= purpose.description %>.<%= link_to 'Deletar', purpose, method: :delete,class: "btn btn-default btn-sm btn-login", remote: true, data: { confirm: 'Are you sure?' }%>        <%= link_to 'Editar', edit_purpose_path(purpose.id), class: "btn btn-default btn-sm btn-login",remote:true   %> 
+
+
+</p>
+    </div>
+  </div>
+ <% end %>
+

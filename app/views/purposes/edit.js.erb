@@ -1,0 +1,8 @@
+
+$(function (){
+	$('#titulo').html( "<img  src='/assets/saad_30.png'> Editar Objetivo");
+	$('#curriculumForm').html("<%= escape_javascript render partial: 'purposes/form2' %>");
+	$('#description').val('<%= @purpose.description %>');
+	$('#curriculo').modal('show');
+});
+

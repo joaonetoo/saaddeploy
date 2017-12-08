@@ -1,8 +1,7 @@
-$('#new_purpose_modal').modal('hide');
-$('#description').val("");
+$('#curriculo').modal('hide');
 $('#purpose_curriculum').html("<%= escape_javascript render 'purposes/purpose' %>");
  $.notify({
-            message: 'Objetivo cadastrado com sucesso!'
+            message: 'Objetivo atualizado com sucesso!'
         },{
             type: 'pastel-success',
             delay: 4000,

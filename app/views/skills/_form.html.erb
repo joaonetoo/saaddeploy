@@ -1,7 +1,4 @@
-<%# Conditionally set remote: true. Also, passing model name as data attribute %>
-<% modal ||= false %>
-<% remote = modal ? true : false %>
-<%= form_for(Purpose.new,remote: true, method: "puts", html: {role: :form, 'data-model' => 'strength'}) do |f| %>
+<%= form_for(Skill.new,remote: true, method: "puts", html: {role: :form, 'data-model' => 'skill'}) do |f| %>
   <div class="field">
     <%= f.label :descricao, class: 'control-label' %><br>
     <%= f.text_area :description, class: 'form-control',rows:4 , id: 'description' %>
@@ -11,6 +8,6 @@
   <%= f.hidden_field :curriculum_id, :value => locals[:curriculum] %>
   </div><br>
   <div class="actions">
-    <center><%= f.submit 'Criar objetivo', class: "btn btn-success btn-login" %></center>
+    <center><%= f.submit 'Criar competência', class: "btn btn-success btn-login" %></center>
   </div>
 <% end %>

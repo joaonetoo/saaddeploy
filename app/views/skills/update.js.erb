@@ -1,8 +1,7 @@
-$('#new_purpose_modal').modal('hide');
-$('#description').val("");
-$('#purpose_curriculum').html("<%= escape_javascript render 'purposes/purpose' %>");
+$('#curriculo').modal('hide');
+$('#skill_curriculum').html("<%= escape_javascript render 'skills/skill' %>");
  $.notify({
-            message: 'Objetivo cadastrado com sucesso!'
+            message: 'Competência atualizada com sucesso!'
         },{
             type: 'pastel-success',
             delay: 4000,

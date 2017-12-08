@@ -79,6 +79,8 @@ before_action :create_curriculum, only: [:edit_curriculo]
         @curriculum = curriculum
       end
     end
+    @purposes = Purpose.where(curriculum_id: @curriculum.id)
+    @skills = Skill.where(curriculum_id: @curriculum.id)
   end
 
 def create_curriculum

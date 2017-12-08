@@ -1,9 +1,9 @@
 
 
 [data-notify="container"][class*="alert-pastel-"] {
-	background-color: rgb(255, 255, 238);
+	background-color: rgb(255, 255, 255);
 	border-width: 0px;
-	border-left: 15px solid rgb(255, 240, 106);
+	border-left: 15px solid rgba(52,58,64,.5);
 	border-radius: 0px;
 	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.3);
 	font-family: 'Old Standard TT', serif;
@@ -12,6 +12,10 @@
 [data-notify="container"].alert-pastel-info {
 	border-left-color: rgb(255, 179, 40);
 }
+[data-notify="container"].alert-pastel-success {
+	border-left-color: rgb(146, 189, 85);
+}
+
 [data-notify="container"].alert-pastel-danger {
 	border-left-color: rgb(255, 103, 76);
 }
@@ -24,3 +28,27 @@
 [data-notify="container"][class*="alert-pastel-"] > [data-notify="message"] {
 	font-weight: 400;
 }
+
+
+
+.btn-login{
+	color: white;
+	border:1px solid #343a40;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #424a5d), color-stop(100%, #424a5d) );
+	background-color:#424a5d;
+}.btn-login:hover {
+	color: white;
+	border:1px solid #343a40;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #343a40), color-stop(100%, #343a40) );
+	background-color:#343a40;
+}.btn-login:active {
+		color: white;
+
+	border:1px solid black;
+	position:relative;
+	top:1px;
+}
+.btn-login.focus,.btn-login:focus{	color: white;box-shadow:0 0 0 .1rem rgba(52,58,64,.5)}
+.btn-login.disabled,.btn-login:disabled{background-color:#343a40;border-color:#343a40}
+.btn-login:not([disabled]):not(.disabled).active,.btn-login:not([disabled]):not(.disabled):active,.show>.btn-login.dropdown-toggle{color:#fff;background-color:#343a40;border-color:#343a40;box-shadow:0 0 0 .2rem rgba(52,58,64,.5)}
+
