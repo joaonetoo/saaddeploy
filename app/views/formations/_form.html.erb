@@ -1,0 +1,47 @@
+
+<%= form_for(Formation.new,remote: true, method: "post", html: {role: :form, 'data-model' => 'Experience'}) do |f| %>
+    <div class="field">
+      <b><%= f.label :nível, class: 'control-label' %><br></b>
+      <%= f.select :nivel, ['Graduação','Médio', 'Pós-graduação'],  {}, {class: "form-control", id: 'nivel'}  %>
+    </div>
+
+    <div class="field">
+      <b><%= f.label :instituiçao, class: 'control-label' %></b>
+      <%= f.text_field :institution, class: 'form-control', id: 'institution2' %>
+    </div>
+    <div class="field">
+      <b><%= f.label :curso, class: 'control-label' %><br></b>
+      <%= f.text_field :course, class: 'form-control', id: 'course' %>
+    </div>
+      <div class="field">
+         <label>Em andamento</label><br>
+                <%= radio_button 'relat', 'atu', 'yes', :class => "relat__atu relat__atu_no" %> Sim
+                <%= radio_button 'relat', 'atu', 'no', :class => "relat__atu relat__atu_yes" %>  Não
+      </div>
+        <div class="row">
+          <div class="col-lg-5">
+                    <div class="form-group">
+                <b><%= f.label :data_de_ingresso %></b><br>
+                <%= f.text_field :date_start, class: "form-control ", id: "datepicker_experience_start_f"  %>
+                    </div>
+          </div>
+                <div id="esatu" style="display:none" >
+                  <div class="col-lg-10">
+                    <div class="form-group">
+                             <b><%= f.label :data_de_término %></b><br>
+                            <%= f.text_field :date_end, class: "form-control", id: "datepicker_experience_end_f" %>
+
+                        </div>
+                      </div>              
+                </div>
+
+
+          </div>
+
+  <div class="field">
+  <%= f.hidden_field :curriculum_id, :value => locals[:curriculum] %>
+  </div><br>
+  <div class="actions">
+    <center><%= f.submit 'Criar Formação', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

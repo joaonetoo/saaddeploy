@@ -1,0 +1,16 @@
+$('#new_formation_modal').modal('hide');
+$('#institution2').val("");
+$('#course').val("");
+$('#datepicker_experience_start_f').val("");
+$('#datepicker_experience_end_f').val("");
+$('#formation_curriculum').html("<%= escape_javascript render 'formations/formation' %>");
+ $.notify({
+            message: 'Formação cadastrada com sucesso!'
+        },{
+            type: 'pastel-success',
+            delay: 4000,
+            template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+                '<span data-notify="title">{1}</span>' +
+                '<span data-notify="message">{2}</span>' +
+            '</div>'
+        });

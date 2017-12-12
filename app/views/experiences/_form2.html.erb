@@ -1,0 +1,40 @@
+<%= form_tag  experience_path(id: @experience.id) ,remote:true, method: :put do %>
+    <div class="field">
+    <label  class="control-label">Instituição</label>
+      <%=text_field_tag(:institution, nil, class: 'form-control', id: 'institution')%>
+    </div>
+    <div class="field">
+    <label  class="control-label">Cargo/Função</label>
+      <%= text_field_tag(:office,nil, class: 'form-control', id: 'office') %>
+    </div>
+
+        <div class="row">
+          <div class="col-lg-5">
+                    <div class="form-group">
+    			<label  class="control-label">Data de Ingresso</label>
+                <%= text_field_tag(:date_start, nil, class: "form-control ", id: "datepicker_experience_start2")  %>
+                    </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="form-group">
+    			<label  class="control-label">Data de Saída</label>
+                    <%= text_field_tag(:date_end,nil, class: "form-control", id: "datepicker_experience_end2") %>
+
+                </div>
+              </div>
+          </div>
+
+  <div class="field">
+    <label  class="control-label">Síntese das principais atribuições e realizações</label>
+
+    <%= text_area_tag(:description, nil, class: 'form-control',rows:4 , id: 'description') %>
+    <span class="help-block"></span>
+  </div>
+  <br>
+  <div class="actions">
+    <center><%= submit_tag 'Criar Experiência', class: "btn btn-success btn-login" %></center>
+  </div>
+  <% end %>
+
+

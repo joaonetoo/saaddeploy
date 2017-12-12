@@ -1,0 +1,39 @@
+<%= form_for(Experience.new,remote: true, method: "post", html: {role: :form, 'data-model' => 'Experience'}) do |f| %>
+    <div class="field">
+      <b><%= f.label :instituiçao, class: 'control-label' %></b>
+      <%= f.text_field :institution, class: 'form-control', id: 'institution' %>
+    </div>
+    <div class="field">
+      <b><%= f.label :cargo_ou_Função, class: 'control-label' %><br></b>
+      <%= f.text_field :office, class: 'form-control', id: 'office' %>
+    </div>
+
+        <div class="row">
+          <div class="col-lg-5">
+                    <div class="form-group">
+                <b><%= f.label :data_de_ingresso %></b><br>
+                <%= f.text_field :date_start, class: "form-control ", id: "datepicker_experience_start"  %>
+                    </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="form-group">
+                     <b><%= f.label :data_de_saída %></b><br>
+                    <%= f.text_field :date_end, class: "form-control", id: "datepicker_experience_end" %>
+
+                </div>
+              </div>
+          </div>
+
+  <div class="field">
+    <b><%= f.label :Síntese_das_principais_atribuições_e_realizações, class: 'control-label' %></b>
+    <%= f.text_area :description, class: 'form-control',rows:4 , id: 'description' %>
+    <span class="help-block"></span>
+  </div>
+  <div class="field">
+  <%= f.hidden_field :curriculum_id, :value => locals[:curriculum] %>
+  </div><br>
+  <div class="actions">
+    <center><%= f.submit 'Criar Experiência', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

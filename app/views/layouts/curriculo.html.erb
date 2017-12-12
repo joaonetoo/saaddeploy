@@ -11,6 +11,7 @@
     <title>Saad - Currículo</title>
 
     <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -35,13 +36,31 @@
         <%= image_tag current_user.avatar.url(:original), class: "img-fluid img-profile rounded-circle mx-auto mb-2" %>
         </span>
       </a>
+
         <%= yield %>
     <%= javascript_include_tag 'curriculo.js' %>
     <%= javascript_include_tag 'bootstrap.bundle.min.js' %>
     <%= javascript_include_tag 'jquery.easing.min.js' %>
     <%= javascript_include_tag 'resume.min.js' %>
     <%= javascript_include_tag 'growl' %>
+                    <%= javascript_include_tag 'add_reference' %>
 
-  </body>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+var format = {dateFormat: 'dd-mm-yy',
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+};
+
+    $('#datepicker_experience_start').datepicker(format);
+    $('#datepicker_experience_end').datepicker(format);
+    $('#datepicker_experience_end_f').datepicker(format);
+    $('#datepicker_experience_start_f').datepicker(format);
+</script>
+</body>
 
 </html>

@@ -1,4 +1,6 @@
-
+/*
+ *= require jquery-ui/datepicker
+*/
 
 [data-notify="container"][class*="alert-pastel-"] {
 	background-color: rgb(255, 255, 255);

@@ -90,90 +90,35 @@
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
     <div class="my-auto">
       <h2 class="mb-5">Minhas Competências
-       <%= link_to "Cadastrar Objetivo", '#new_skill_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>   
+       <%= link_to "Cadastrar Competência", '#new_skill_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>   
       </h2>
-  <div id="skill_curriculum">
-
-      <%= render 'skills/skill' %>
-</div>
+      <div id="skill_curriculum">
+          <%= render 'skills/skill' %>
+      </div>
+    </div>
   </section>
 
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
     <div class="my-auto">
-      <h2 class="mb-5">Minha Formação
-      <%= link_to  '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-warming btn-lg",  style:  "float: right; margin-top: 25px;",:title => "Adicionar força" do %>   
-        <i >+Cadastrar Formação</i>
-      <% end %>
+      <h2 class="mb-5">Minhas Formações
+       <%= link_to "Cadastrar Formação", '#new_formation_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>   
       </h2>
-
-      <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-      <ul class="list-inline list-icons">
-        <li class="list-inline-item">
-          <i class="devicons devicons-html5"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-css3"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-javascript"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-jquery"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-sass"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-less"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-bootstrap"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-wordpress"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-grunt"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-gulp"></i>
-        </li>
-        <li class="list-inline-item">
-          <i class="devicons devicons-npm"></i>
-        </li>
-      </ul>
-
-      <div class="subheading mb-3">Workflow</div>
-      <ul class="fa-ul mb-0">
-        <li>
-          <i class="fa-li fa fa-check"></i>
-          Mobile-First, Responsive Design</li>
-        <li>
-          <i class="fa-li fa fa-check"></i>
-          Cross Browser Testing &amp; Debugging</li>
-        <li>
-          <i class="fa-li fa fa-check"></i>
-          Cross Functional Teams</li>
-        <li>
-          <i class="fa-li fa fa-check"></i>
-          Agile Development &amp; Scrum</li>
-      </ul>
+      <div id="formation_curriculum">
+          <%= render 'formations/formation' %>
+      </div>
     </div>
+
   </section>
 
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
     <div class="my-auto">
       <h2 class="mb-5">Minhas Experiências
-
-      <%= link_to  '#new_strength_modal', 'data-toggle' => 'modal', :class => "btn btn-warming btn-lg",  style:  "float: right; margin-top: 25px;",:title => "Adicionar força" do %>   
-          <i >+Cadastrar Experiência</i>
-      <% end %>
-
+       <%= link_to "Cadastrar Experiência", '#new_experience_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>   
       </h2>
-
-      <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-      <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
-    </div>
+      <div id="experience_curriculum">
+            <%= render 'experiences/experience' %>
+      </div>
+</div>
   </section>
 
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
@@ -235,8 +180,9 @@
 <div class="modal-dialog">
      <div class="modal-content">
          <div class="modal-header">
-<h4 >                       <img  src="/assets/saad_30.png" >
-                Cadastrar Competência</h4>
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Competência
+          </h4>
          </div>
          <div class="modal-body">
                <%= render 'skills/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
@@ -248,6 +194,39 @@
  </div>
 </div>
 
-
+<div class="modal fade" id="new_experience_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Experiência
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'experiences/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+<div class="modal fade" id="new_formation_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Formação
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'formations/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
 
 </div>

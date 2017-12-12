@@ -1,0 +1,12 @@
+
+$(function (){
+	$('#titulo').html( "<img  src='/assets/saad_30.png'> Editar Experiência");
+	$('#curriculumForm').html("<%= escape_javascript render partial: 'experiences/form2' %>");
+	$('#description').val('<%= @experience.description %>');
+	$('#datepicker_experience_start2').val('<%= @experience.date_start.strftime("%d-%m-%Y") %>');
+	$('#datepicker_experience_end2').val('<%= @experience.date_end.strftime("%d-%m-%Y") %>');
+	$('#institution').val('<%= @experience.institution %>');
+	$('#office').val('<%= @experience.office %>');
+	$('#curriculo').modal('show');
+});
+

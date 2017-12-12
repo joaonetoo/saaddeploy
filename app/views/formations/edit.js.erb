@@ -1,0 +1,13 @@
+
+$(function (){
+	$('#titulo').html( "<img  src='/assets/saad_30.png'> Editar Formação");
+	$('#curriculumForm').html("<%= escape_javascript render partial: 'formations/form2' %>");
+	$('#nivel').val('<%= @formation.nivel %>');
+	$('#datepicker_experience_start_f2').val('<%= @formation.date_start.strftime("%d-%m-%Y") %>');
+<% unless @formation.date_end.nil? %>
+	$('#datepicker_experience_end_f2').val('<%= @formation.date_end.strftime("%d-%m-%Y") %>');
+<% end %>
+	$('#institution2').val('<%= @formation.institution %>');
+	$('#curriculo').modal('show');
+});
+

@@ -1,0 +1,42 @@
+                    <%= javascript_include_tag 'add_reference' %>
+
+<%= form_tag  formation_path(id: @formation.id) ,remote:true, method: :put do %>
+    <div class="field">
+    <label  class="control-label">Nível</label>
+    <%= select_tag :nivel, options_for_select(['Graduação','Médio', 'Pós-graduação']), :class => "form-control" , id: 'nivel' %>              </div>
+    </div>
+    <div class="field">
+    <label  class="control-label">Instituição</label>
+      <%= text_field_tag(:institution,nil, class: 'form-control', id: 'institution2') %>
+    </div>
+      <div class="field">
+         <label>Em andamento</label><br>
+                <%= radio_button 'relat', 'at', 'yes', {:class => "relat__at relat__at_no"}%> Sim
+                <%= radio_button 'relat', 'at', 'no', {:class => "relat__at relat__at_yes"} %>  Não
+      </div>
+
+        <div class="row">
+          <div class="col-lg-5">
+                    <div class="form-group">
+    			<label >Data de Ingresso</label>
+                <%= text_field_tag(:date_start, nil, class: "form-control ", id: "datepicker_experience_start_f2")  %>
+                    </div>
+          </div>
+                <div id="esatu2" style="display:none" >
+
+          <div class="col-lg-10">
+            <div class="form-group">
+    			<label  class="control-label">Data de Saída</label>
+                    <%= text_field_tag(:date_end,nil, class: "form-control", id: "datepicker_experience_end_f2") %>
+
+                </div>
+              </div>
+          </div>
+</div>
+  <br>
+  <div class="actions">
+    <center><%= submit_tag 'Criar Formação', class: "btn btn-success btn-login" %></center>
+  </div>
+  <% end %>
+
+

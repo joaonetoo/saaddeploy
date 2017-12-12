@@ -1,0 +1,20 @@
+ <% @formations.each do |formation| %>
+  <div class="resume-item d-flex flex-column flex-md-row mb-5">
+    <div class="resume-content mr-auto" >
+      <p><b>•</b> <%= formation.nivel %>s . <%= formation.institution %> 
+. <%= formation.course %> . Período: <%= formation.date_start.strftime("%d/%m/%Y") %> -
+	<% if formation.date_end.nil? %>
+		Em andamento
+		
+	<% else %>
+		 <%= formation.date_end.strftime("%d/%m/%Y") %> 
+	<% end %>
+
+      <%= link_to 'Deletar', formation, method: :delete,class: "btn btn-default btn-sm btn-login", remote: true, data: { confirm: 'Are you sure?' }%>        <%= link_to 'Editar', edit_formation_path(formation.id), class: "btn btn-default btn-sm btn-login",remote:true   %> 
+
+
+</p>
+    </div>
+  </div>
+ <% end %>
+

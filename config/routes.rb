@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :answer_cases
   resources :main_themes
   resources :knowledges
-  resources :experiences
+  resources :experiences, defaults: { format: 'js' }
   resources :purposes, defaults: { format: 'js' }
   resources :languages
-  resources :formations
+  resources :formations, defaults: { format: 'js' }
   resources :skills, defaults: { format: 'js' }
   resources :line_cases
   resources :references
