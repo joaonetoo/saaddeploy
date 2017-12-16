@@ -1,7 +1,7 @@
 $('#curriculo').modal('hide');
-$('#formation_curriculum').html("<%= escape_javascript render 'formations/formation' %>");
+$('#language_curriculum').html("<%= escape_javascript render 'languages/language' %>");
  $.notify({
-            message: 'Formação atualizada com sucesso!'
+            message: 'Idioma atualizado com sucesso!'
         },{
             type: 'pastel-success',
             delay: 4000,

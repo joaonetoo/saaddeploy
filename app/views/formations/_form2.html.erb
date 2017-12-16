@@ -22,7 +22,8 @@
                 <%= text_field_tag(:date_start, nil, class: "form-control ", id: "datepicker_experience_start_f2")  %>
                     </div>
           </div>
-                <div id="esatu2" style="display:none" >
+      <% if @formation.date_end.nil? %>
+          <div id="esatu2" style="display:none" >
 
           <div class="col-lg-10">
             <div class="form-group">
@@ -32,6 +33,18 @@
                 </div>
               </div>
           </div>
+      <% else %>
+          <div id="esatu2" >
+
+          <div class="col-lg-10">
+            <div class="form-group">
+          <label  class="control-label">Data de Saída</label>
+                    <%= text_field_tag(:date_end,nil, class: "form-control", id: "datepicker_experience_end_f2") %>
+
+                </div>
+              </div>
+          </div>
+      <% end %>
 </div>
   <br>
   <div class="actions">

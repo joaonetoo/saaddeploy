@@ -1,7 +1,7 @@
  <% @formations.each do |formation| %>
   <div class="resume-item d-flex flex-column flex-md-row mb-5">
     <div class="resume-content mr-auto" >
-      <p><b>•</b> <%= formation.nivel %>s . <%= formation.institution %> 
+      <p><b>•</b> <%= formation.nivel %> . <%= formation.institution %> 
 . <%= formation.course %> . Período: <%= formation.date_start.strftime("%d/%m/%Y") %> -
 	<% if formation.date_end.nil? %>
 		Em andamento

@@ -83,7 +83,40 @@ before_action :create_curriculum, only: [:edit_curriculo]
     @skills = Skill.where(curriculum_id: @curriculum.id)
     @experiences = Experience.where(curriculum_id: @curriculum.id)
     @formations = Formation.where(curriculum_id: @curriculum.id)
-
+    @languages = Language.where(curriculum_id: @curriculum.id)
+    @temResultados = false
+    if current_user.learning_results != nil && current_user.learning_results.length > 0 && current_user.results != nil && current_user.results.length > 0
+        @temResultados = true
+    end
+    if @temResultados
+      @plano = current_user.plano
+      if current_user.learning_results != nil && current_user.learning_results.length > 0
+        @learning_result = current_user.learning_results.last
+        @mediaDi = ((@learning_result.ec + @learning_result.or) / 2)
+        @mediaAc = ((@learning_result.ec + @learning_result.ea) / 2)
+        @mediaAs = ((@learning_result.or + @learning_result.ca) / 2)
+        @mediaCo = ((@learning_result.ea + @learning_result.ca) / 2)
+        @predominantes = {"co" => @mediaCo, "ac" => @mediaAc, "as" => @mediaAs, "di" => @mediaDi }.sort_by{ |k, v| v }.reverse.to_h
+        @predominante1 = LearningStyle.where(sigla: @predominantes.keys[0]).first
+        @predominante2 = LearningStyle.where(sigla: @predominantes.keys[1]).first
+      end
+      if current_user.results != nil && current_user.results.length > 0
+        @result = current_user.results.last
+        hash = {"tf" => @result.tf, "gm" => @result.gm, "au" => @result.au, "se" => @result.se, "ec" => @result.ec, "sv" => @result.sv, "ch" => @result.ch, "ls" => @result.ls}
+        @maiores = hash.max_by(2){|k,v| v}
+        num1 = @maiores[0][1]
+        num2 = @maiores[1][1]
+        @maior1 = @maiores[0][0]
+        @maior2 = @maiores[1][0]
+        if num1 > num2
+              @ancora1 = Anchorinfo.where(tipo: @maior1).first
+              @ancora2 = Anchorinfo.where(tipo: @maior2).first
+        else
+              @ancora1 = Anchorinfo.where(tipo: @maior2).first
+              @ancora2 = Anchorinfo.where(tipo: @maior1).first
+        end
+      end
+    end
   end
 
 def create_curriculum

@@ -1,0 +1,46 @@
+<%= form_for(Language.new,remote: true, method: "puts", html: {role: :form, 'data-model' => 'strength'}) do |f| %>
+    <div class="field">
+      <b><%= f.label :idioma, class: 'control-label' %><br></b>
+      <%= f.select :idioma, ['Espanhol','Inglês', 'Italiano','Francês'],  {}, {class: "form-control", id: 'idioma'}  %>
+    </div>
+  <br>
+  <div class="field">
+
+    <label><b>Lê </b> &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><%= f.radio_button :read, 'pouco'  %> 
+    <%= f.label :read, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :read, 'razoavelmente' %>
+    <%= f.label :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :read, 'bem' %> 
+    <%= f.label :read, 'Bem', :value => 'bem' %>
+
+<br>
+    <label><b>Fala </b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><%= f.radio_button :speak, 'pouco' %> 
+    <%= f.label :speak, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :speak, 'razoavelmente' %>
+    <%= f.label :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :speak, 'bem' %> 
+    <%= f.label :speak, 'Bem', :value => 'bem' %>
+
+<br>
+    <label><b>Escreve </b>&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label><%= f.radio_button :write, 'pouco' %> 
+    <%= f.label :write, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :write, 'razoavelmente' %>
+    <%= f.label :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :write, 'bem' %> 
+    <%= f.label :write, 'Bem', :value => 'bem' %>
+
+<br>
+    <label><b>Compreende </b>&nbsp; &nbsp; &nbsp; &nbsp;</label><%= f.radio_button :understand, 'pouco' %> 
+    <%= f.label :understand, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :understand, 'razoavelmente' %>
+    <%= f.label :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.radio_button :understand, 'bem' %> 
+    <%= f.label :understand, 'Bem', :value => 'bem' %>
+  </div>
+  <div class="field">
+  <%= f.hidden_field :curriculum_id, :value => locals[:curriculum] %>
+  </div><br>
+  <div class="actions">
+    <center><%= f.submit 'Cadastrar Idioma', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

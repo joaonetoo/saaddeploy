@@ -1,0 +1,97 @@
+
+<%= form_tag  language_path(id: @language.id) ,remote:true, method: :put do %>
+    <div class="field">
+    <label  class="control-label">Idioma</label>
+    <%= select_tag :idioma, options_for_select(['Espanhol','Inglês', 'Italiano','Francês']), :class => "form-control" , id: 'idioma' %>              </div>
+  <br>
+  <div class="field">
+
+    <label><b>Lê </b> &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <% if @language.read == "pouco" %>
+      <%= radio_button_tag :read, 'pouco', true  %>
+    <% else %>
+      <%= radio_button_tag :read, 'pouco'  %>
+    <% end %> 
+    <%= label_tag :read, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.read == "razoavelmente" %>
+      <%= radio_button_tag :read, 'razoavelmente',true %>
+    <% else  %>
+      <%= radio_button_tag :read, 'razoavelmente' %>
+    <% end %>
+    <%= label_tag :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.read == "bem" %>
+      <%= radio_button_tag :read, 'bem',true %> 
+    <% else %>
+      <%= radio_button_tag :read, 'bem' %> 
+    <% end %>
+    <%= label_tag :read, 'Bem', :value => 'bem' %>
+
+    <label><b>Fala </b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <% if @language.speak == "pouco" %>
+    <%= radio_button_tag :speak, 'pouco',true %> 
+    <% else %>
+    <%= radio_button_tag :speak, 'pouco' %> 
+    <% end %>
+    <%= label_tag :speak, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.speak == "razoavelmente" %>
+      <%= radio_button_tag :speak, 'razoavelmente',true %>
+    <% else %>
+      <%= radio_button_tag :speak, 'razoavelmente' %>
+    <% end %>
+    <%= label_tag :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.speak == "bem" %>
+      <%= radio_button_tag :speak, 'bem', true %>
+    <% else %>
+      <%= radio_button_tag :speak, 'bem' %>
+    <% end %>
+    <%= label_tag :speak, 'Bem', :value => 'bem' %>
+
+    <label><b>Escreve </b>&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <% if @language.write == "pouco" %>
+      <%= radio_button_tag :write, 'pouco',true %>
+    <% else %>
+      <%= radio_button_tag :write, 'pouco' %>
+    <% end %>
+    <%= label_tag :write, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <% if @language.write == "razoavelmente" %>
+      <%= radio_button_tag :write, 'razoavelmente',true %>
+    <% else %>
+      <%= radio_button_tag :write, 'razoavelmente' %>
+    <% end %>
+    <%= label_tag :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.write =="bem" %>
+      <%= radio_button_tag :write, 'bem',true %>
+    <% else %> 
+      <%= radio_button_tag :write, 'bem' %>
+    <% end %>
+    <%= label_tag :write, 'Bem', :value => 'bem' %>
+
+    <label><b>Compreende </b>&nbsp; &nbsp; &nbsp; &nbsp;</label>
+    <% if @language.understand == "pouco" %>
+      <%= radio_button_tag :understand, 'pouco',true %>
+    <% else %>
+      <%= radio_button_tag :understand, 'pouco' %>
+    <% end %>
+    <%= label_tag :understand, 'Pouco', :value => 'pouco' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.understand == "razoavelmente" %>
+      <%= radio_button_tag :understand, 'razoavelmente',true %>
+    <% else %>
+      <%= radio_button_tag :understand, 'razoavelmente' %>
+    <% end %>
+    <%= label_tag :contactmethod, 'Razoavelmente', :value => 'razoavelmente' %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <% if @language.understand == "bem" %>
+      <%= radio_button_tag :understand, 'bem',true  %>
+    <% else %>
+      <%= radio_button_tag :understand, 'bem' %>
+    <% end %>
+    <%= label_tag :understand, 'Bem', :value => 'bem' %>
+
+  </div>
+<br>
+  <div class="actions">
+    <center><%= submit_tag 'Editar Idioma', class: "btn btn-success btn-login" %></center>
+  </div>
+  <% end %>
+
+

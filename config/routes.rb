@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :knowledges
   resources :experiences, defaults: { format: 'js' }
   resources :purposes, defaults: { format: 'js' }
-  resources :languages
+  resources :languages, defaults: { format: 'js' }
   resources :formations, defaults: { format: 'js' }
   resources :skills, defaults: { format: 'js' }
   resources :line_cases

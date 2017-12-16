@@ -23,6 +23,16 @@ class FormationsController < ApplicationController
 
   # PATCH/PUT /formations/1
   def update
+    @formation.nivel = params[:nivel]
+    @formation.institution = params[:institution]
+    @formation.course = params[:course]
+    @formation.date_start = params[:date_start]
+    @formation.date_end = params[:date_end]
+    respond_to do |format|
+      if @formation.save
+        format.js
+      end
+    end
   end
 
   # DELETE /formations/1
