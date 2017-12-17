@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205152829) do
+ActiveRecord::Schema.define(version: 20171217035311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,6 +202,9 @@ ActiveRecord::Schema.define(version: 20171205152829) do
     t.datetime "updated_at", null: false
     t.string   "message"
     t.integer  "user_id"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "linkedin"
   end
 
   add_index "curriculums", ["user_id"], name: "index_curriculums_on_user_id", using: :btree
@@ -524,6 +527,15 @@ ActiveRecord::Schema.define(version: 20171205152829) do
 
   add_index "purposes", ["curriculum_id"], name: "index_purposes_on_curriculum_id", using: :btree
 
+  create_table "qualifications", force: :cascade do |t|
+    t.integer  "curriculum_id"
+    t.string   "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "qualifications", ["curriculum_id"], name: "index_qualifications_on_curriculum_id", using: :btree
+
   create_table "questions", force: :cascade do |t|
     t.string   "statement"
     t.integer  "user_id"
@@ -825,6 +837,7 @@ ActiveRecord::Schema.define(version: 20171205152829) do
   add_foreign_key "planos", "users"
   add_foreign_key "projects", "events"
   add_foreign_key "purposes", "curriculums"
+  add_foreign_key "qualifications", "curriculums"
   add_foreign_key "questions", "line_cases"
   add_foreign_key "questions", "study_cases"
   add_foreign_key "questions", "users"

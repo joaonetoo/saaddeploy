@@ -25,6 +25,10 @@
         <a class="nav-link js-scroll-trigger" href="#experience">Minhas Experiências </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#qualification">Minhas Qualificações Complementares </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#language">Meus Idiomas</a>
       </li>
     </ul>
@@ -40,41 +44,58 @@
       </h2>
       <div class="subheading mb-5"><%= @usuario.endereco %> · <%= @usuario.telefone %> ·
         <a href="mailto:name@email.com"><%= @usuario.email %></a>
+          <%  if @curriculum.message.nil? %>
+             <%= link_to "Cadastrar Mensagem", '#new_mensage_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>
+  
+                         <div style="float: right;">
+              &nbsp;
+            </div>
+          <% else %>
+             <%= link_to "Editar Mensagem", '#new_mensage_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>
+  
+                         <div style="float: right;">
+              &nbsp;
+            </div>
+          <% end %>
+        <button id="information_dados" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
+           </button>
+
       </div>
-      <p class="mb-5">I am purposed in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+      <% unless @curriculum.message.nil? %>
+        <p class="mb-5"><%= @curriculum.message %>.</p>
+      <% end %>
+ <div class="subheading mb-5">
+     <%= link_to "Adicionar Redes Sociais", '#new_network_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: -50px;" %></div>
       <ul class="list-inline list-social-icons mb-0">
+       <% unless @curriculum.facebook.nil? %>
         <li class="list-inline-item">
-          <a href="#">
+          <a href="https://<%= @curriculum.facebook %>">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
             </span>
           </a>
         </li>
+        <% end %>
+      <% unless @curriculum.twitter.nil? %>
         <li class="list-inline-item">
-          <a href="#">
+          <a href="https://<%= @curriculum.twitter %>">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
             </span>
           </a>
         </li>
-        <li class="list-inline-item">
-          <a href="#">
+      <% end %>
+      <% unless @curriculum.linkedin.nil? %>
+          <a href="https://<%= @curriculum.linkedin %>">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
             </span>
           </a>
         </li>
-        <li class="list-inline-item">
-          <a href="#">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-        </li>
+      <% end %>
       </ul>
     </div>
   </section>
@@ -187,6 +208,24 @@
 </div>
   </section>
 
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="qualification">
+    <div class="my-auto">
+      <h2 class="mb-5">Minhas Qualificações 
+       <%= link_to "Cadastrar Qualificação", '#new_qualification_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: 25px;" %>   
+        <div style="float: right;">
+          &nbsp;
+        </div>
+        <button id="information_qualification" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
+       </button>
+
+      </h2>
+      <div id="qualification_curriculum">
+            <%= render 'qualifications/qualification' %>
+      </div>
+</div>
+
+  </section>
+
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="language">
     <div class="my-auto">
       <h2 class="mb-5">Meus Idiomas
@@ -283,6 +322,62 @@
          </div>
          <div class="modal-body">
                <%= render 'languages/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+<div class="modal fade" id="new_qualification_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Qualificação
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'qualifications/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+
+
+<div class="modal fade" id="new_mensage_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Mensagem
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'curriculums/form' %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+<div class="modal fade" id="new_network_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Redes Sociais
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'curriculums/form2' %>
          </div>
          <div class="modal-footer">
              <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>

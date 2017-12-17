@@ -1,0 +1,8 @@
+
+$(function (){
+	$('#titulo').html( "<img  src='/assets/saad_30.png'> Editar Qualificação");
+	$('#curriculumForm').html("<%= escape_javascript render partial: 'qualifications/form2' %>");
+	$('#description_qualification').val('<%= @qualification.description %>');
+	$('#curriculo').modal('show');
+});
+

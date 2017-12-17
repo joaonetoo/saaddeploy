@@ -84,6 +84,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
     @experiences = Experience.where(curriculum_id: @curriculum.id)
     @formations = Formation.where(curriculum_id: @curriculum.id)
     @languages = Language.where(curriculum_id: @curriculum.id)
+    @qualifications = Qualification.where(curriculum_id: @curriculum.id)
     @temResultados = false
     if current_user.learning_results != nil && current_user.learning_results.length > 0 && current_user.results != nil && current_user.results.length > 0
         @temResultados = true

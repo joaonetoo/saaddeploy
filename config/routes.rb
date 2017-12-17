@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :answer_cases
   resources :main_themes
   resources :knowledges
+  resources :qualifications, defaults: { format: 'js' }
   resources :experiences, defaults: { format: 'js' }
   resources :purposes, defaults: { format: 'js' }
   resources :languages, defaults: { format: 'js' }
@@ -15,6 +16,13 @@ Rails.application.routes.draw do
       post 'add'
     end
   end
+  resources :curriculums do
+    collection do
+      post 'create_message'
+      post 'create_networks'
+    end
+  end
+
   resources :study_cases do
     collection do
       get 'search'
@@ -184,7 +192,6 @@ Rails.application.routes.draw do
   post 'student_area/classroom_show'
   get 'student_area/curriculo'
   get 'student_area/edit_curriculo'
-
 
 
 

@@ -1,0 +1,13 @@
+<%= form_for(Qualification.new,remote: true, method: "puts", html: {role: :form, 'data-model' => 'qualification'}) do |f| %>
+  <div class="field">
+    <%= f.label :descricao, class: 'control-label' %><br>
+    <%= f.text_area :description, class: 'form-control',rows:4 , id: 'description_qualification' %>
+    <span class="help-block"></span>
+  </div>
+  <div class="field">
+  <%= f.hidden_field :curriculum_id, :value => locals[:curriculum] %>
+  </div><br>
+  <div class="actions">
+    <center><%= f.submit 'Criar Qualificação', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

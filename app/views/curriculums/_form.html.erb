@@ -1,0 +1,9 @@
+<%= form_for @curriculum, url: {action: "create_message", controller: "curriculums"}, method: "POST" do |f| %>
+    <%= f.label :messagem, class: 'control-label' %>     
+<br>
+    <%= f.text_area :message, class: 'form-control',rows:4 , id: 'message' %>
+	<br>
+  <div class="actions">
+    <center><%= f.submit 'Criar Mensagem', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

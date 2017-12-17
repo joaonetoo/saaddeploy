@@ -1,6 +1,7 @@
 /*
  *= require jquery-ui/datepicker
 */
+@import "font-awesome";
 
 [data-notify="container"][class*="alert-pastel-"] {
 	background-color: rgb(255, 255, 255);

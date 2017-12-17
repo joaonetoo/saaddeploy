@@ -1,0 +1,12 @@
+<%= form_for @curriculum, url: {action: "create_networks", controller: "curriculums"}, method: "POST" do |f| %>
+    <%= f.label :facebook, class: 'control-label' %>
+    <%= f.text_field :facebook, class: 'form-control' %>
+    <%= f.label :linkedin, class: 'control-label' %>
+    <%= f.text_field :linkedin, class: 'form-control' %>
+    <%= f.label :twitter, class: 'control-label' %>
+    <%= f.text_field :twitter, class: 'form-control' %>
+<br>
+  <div class="actions">
+    <center><%= f.submit 'Cadastrar', class: "btn btn-success btn-login" %></center>
+  </div>
+<% end %>

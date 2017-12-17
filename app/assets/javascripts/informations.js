@@ -58,3 +58,27 @@ $('#information_skill').click(function() {
             '</div>'
         });
 });
+$('#information_qualification').click(function() {
+ $.notify({
+            message: 'Indique os cursos de curta duração ou treinamentos que já realizou.'
+        },{
+            type: 'pastel-success',
+            delay: 9000,
+            template: '<div data-notify="container" class="col-xs-11 col-sm-4 alert alert-{0}" role="alert">' +
+                '<span data-notify="title">{1}</span>' +
+                '<span data-notify="message">{2}</span>' +
+            '</div>'
+        });
+});
+$('#information_dados').click(function() {
+ $.notify({
+            message: 'Incluir alguma observação adicional, como por exemplo o cargo ou função a que se destina o currículo. Pode também colocar uma frase que seja significativa e se a mesma tiver um autor, não esquecer de indicar o nome.'
+        },{
+            type: 'pastel-success',
+            delay: 9000,
+            template: '<div data-notify="container" class="col-xs-11 col-sm-4 alert alert-{0}" role="alert">' +
+                '<span data-notify="title">{1}</span>' +
+                '<span data-notify="message">{2}</span>' +
+            '</div>'
+        });
+});
