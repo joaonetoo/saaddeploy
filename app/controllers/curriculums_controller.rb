@@ -61,7 +61,7 @@ class CurriculumsController < ApplicationController
     @curriculums = Curriculum.all
     @students =[]
     @curriculums.each do |curriculum|
-     if curriculum.user_id.nil?
+     unless curriculum.user_id.nil?
       student = User.find(curriculum.user_id)
       @students << student
      end
