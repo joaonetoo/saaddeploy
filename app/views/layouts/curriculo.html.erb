@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <%= stylesheet_link_tag 'font-awesome' %>
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -33,7 +34,7 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Start Bootstrap</span>
         <span class="d-none d-lg-block">
-        <%= image_tag current_user.avatar.url(:original), class: "img-fluid img-profile rounded-circle mx-auto mb-2" %>
+        <%= image_tag @usuario.avatar.url(:original), class: "img-fluid img-profile rounded-circle mx-auto mb-2" %>
         </span>
       </a>
 

@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     collection do
       post 'create_message'
       post 'create_networks'
+      get 'all_curriculums'
+      get 'show'
+      post 'show'
     end
   end
 

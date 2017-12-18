@@ -1,0 +1,282 @@
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+      </li>
+    <% if @temResultados %>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#ancora_estilo">Ancora e Estilo de Aprendizagem</a>
+      </li>
+    <% end %>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#purpose">Meus Objetivos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#skill">Minhas Competências</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#formation">Minha Formação</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#experience">Minhas Experiências </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#qualification">Minhas Qualificações Complementares </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#language">Meus Idiomas</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid p-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+    <div class="my-auto">
+      <h2 class="mb-0">
+        <span class="mb-5"><%= @usuario.nome %> </span>
+      </h2>
+      <div class="subheading mb-5"><%= @usuario.endereco %> · <%= @usuario.telefone %> ·
+        <a href="mailto:name@email.com"><%= @usuario.email %></a>
+      </div>
+      <% unless @curriculum.message.nil? %>
+        <p class="mb-5"><%= @curriculum.message %>.</p>
+      <% end %>
+
+      <ul class="list-inline list-social-icons mb-0">
+       <% unless @curriculum.facebook.nil? %>
+        <li class="list-inline-item">
+          <a href="https://<%= @curriculum.facebook %>">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <% end %>
+      <% unless @curriculum.twitter.nil? %>
+        <li class="list-inline-item">
+          <a href="https://<%= @curriculum.twitter %>">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      <% end %>
+      <% unless @curriculum.linkedin.nil? %>
+          <a href="https://<%= @curriculum.linkedin %>">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </section>
+<% if @temResultados %>
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="ancora_estilo">
+    <div class="my-auto">
+      <h2 class="mb-5">Âncoras De Carreira E Estilos De Aprendizagem
+      </h2>
+     <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                      <tr>
+                        <th><center>Âncoras De Carreira</center></th>
+                        <th><center>Estilos De Aprendizagem</center></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>
+                            <center><b><%= @ancora1.nome %></b></center>
+                            <br>
+                            <%= @ancora1.descricao %>
+                            <hr>
+                             <center><b><%= @ancora2.nome %></b></center>
+                            <br>
+                            <%= @ancora2.descricao %>
+
+                          </td>
+                          <td><center><b><%= @predominante1.nome %></b></center>
+                          <br>
+                          <%= @predominante1.descricao %>
+                          <hr>
+                          <center><b><%= @predominante2.nome %></b></center>
+                          <br>
+                          <%= @predominante2.descricao %>
+                          </td>
+                        </tr>
+                    </tbody>
+                  </table>
+        </div>
+
+    </div>
+  </section>
+<% end %>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="purpose">
+    <div class="my-auto">
+      <h2 class="mb-5">Meus Objetivos
+      </h2>
+      <div id="purpose_curriculum">
+       <% @purposes.each do |purpose| %>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" >
+            <p><b>•</b> <%= purpose.description %></p>
+          </div>
+        </div>
+       <% end %>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skill">
+    <div class="my-auto">
+      <h2 class="mb-5">Minhas Competências
+      </h2>
+      <div id="skill_curriculum">
+       <% @skills.each do |skill| %>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" >
+            <p><b>•</b> <%= skill.description %></p>
+          </div>
+        </div>
+       <% end %>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="formation">
+    <div class="my-auto">
+      <h2 class="mb-5">Minhas Formações
+      </h2>
+      <div id="formation_curriculum">
+       <% @formations.each do |formation| %>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" >
+            <p><b>•</b> <%= formation.nivel %> . <%= formation.institution %> 
+      . <%= formation.course %> . Período: <%= formation.date_start.strftime("%d/%m/%Y") %> -
+        <% if formation.date_end.nil? %>
+          Em andamento
+          
+        <% else %>
+           <%= formation.date_end.strftime("%d/%m/%Y") %> 
+        <% end %>
+      </p>
+          </div>
+        </div>
+       <% end %>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div class="my-auto">
+      <h2 class="mb-5">Minhas Experiências
+      </h2>
+      <div id="experience_curriculum">
+         <% @experiences.each do |experience| %>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto" >
+              <p><b> Instituição: </b><%= experience.institution %> · <b>Cargo/Função:</b> <%= experience.office %> · 
+            <b>Período: </b><%= experience.date_start.strftime("%d/%m/%Y")  %> -  <%= experience.date_end.strftime("%d/%m/%Y")  %>
+        <br>
+          <b>Resumo:</b><%=experience.description %>
+        </p>
+            </div>
+          </div>
+         <% end %>
+
+      </div>
+</div>
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="qualification">
+    <div class="my-auto">
+      <h2 class="mb-5">Minhas Qualificações 
+      </h2>
+      <div id="qualification_curriculum">
+       <% @qualifications.each do |qualification| %>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" >
+            <p><b>•</b> <%= qualification.description %></p>
+          </div>
+        </div>
+       <% end %>
+
+      </div>
+</div>
+
+  </section>
+
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="language">
+    <div class="my-auto">
+      <h2 class="mb-5">Meus Idiomas
+        <button id="information_language" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
+       </button>
+
+      </h2>
+      <div id="language_curriculum">
+       <% @languages.each do |language| %>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" >
+           <b><%= language.idioma %></b>  &nbsp; &nbsp;  &nbsp; Compreende <%= language.understand %>, Fala <%= language.speak %>, Lê <%= language.read %>, Escreve <%= language.write %>
+            <br>
+          </div>
+        </div>
+       <% end %>
+
+      </div>
+</div>
+
+  </section>
+<div class="modal fade" id="new_purpose_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+<h4 >                       <img  src="/assets/saad_30.png" >
+                Cadastrar Objetivo</h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'purposes/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+<div class="modal fade" id="new_skill_modal">
+<div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+          <h4> <img  src="/assets/saad_30.png" >
+                Cadastrar Competência
+          </h4>
+         </div>
+         <div class="modal-body">
+               <%= render 'skills/form', remote: true ,:locals => {:curriculum => @curriculum.id} %>
+         </div>
+         <div class="modal-footer">
+             <button type="button" class="btn btn-success btn-login" data-dismiss="modal">Fechar</button>
+         </div>
+     </div>
+ </div>
+</div>
+
+</div>
