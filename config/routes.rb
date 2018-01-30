@@ -174,6 +174,7 @@ Rails.application.routes.draw do
   get 'teachers_area/search_analytics'
 
   get 'student_area/index'
+  get 'student_area/generate_curriculo'
   get 'student_area/pdf_plan'
   get 'student_area/my_learning_result'
   post 'student_area/my_learning_result'
