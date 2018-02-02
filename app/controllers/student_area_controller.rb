@@ -131,17 +131,23 @@ before_action :create_curriculum, only: [:edit_curriculo]
               end
             end
             #pdf.image "app/assets/images/saad.png",width: 35, height: 35, position: :left
-            pdf.image "#{Rails.root}/public#{image}",width: 75, height: 75, position: :left
+            pdf.image "#{Rails.root}/public#{image}",width: 75, height: 75
           end
-          pdf.move_down 40
           temResultados = false
           pdf.font("Times-Roman")
-          pdf.text "<b>Nome:</b> #{current_user.nome.capitalize}" , :color => "#778899", :align => :left, :size => 14, :inline_format => true
+          pdf.text_box "<b>Nome:</b> #{@usuario.nome.capitalize}",:size => 14,:at => [80, 755], :inline_format => true
           curso = Course.where(id: current_user.course_id)
-          pdf.text "<b>Curso:</b> #{current_user.course.nome}" , :color => "#778899", :align => :left, :size => 14, :inline_format => true
+          pdf.text_box "<b>Curso:</b> #{@usuario.course.nome}" , :size => 14,:at => [80, 740], :inline_format => true
+          pdf.text_box "<b>Email:</b> #{@usuario.email}" , :size => 14,:at => [80, 725], :inline_format => true
+          pdf.text_box "<b>Telefone:</b> #{@usuario.telefone}" , :size => 14,:at => [80, 710], :inline_format => true
+          pdf.text_box "<b>Endereço:</b> #{@usuario.endereco}" , :size => 14,:at => [80, 695], :inline_format => true
+          pdf.move_down 20
+          pdf.text "Resumo", :color => "#778899", :size => 14, :align => :center, :style => :bold
+          pdf.move_down 10
+          pdf.text "#{@curriculum.message}"
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Âncora de Carreira e Estilo de Aprendizagem", :color => "#778899", :align => :left, :size => 14
+          pdf.text "Âncora de Carreira e Estilo de Aprendizagem", :color => "#778899", :align => :center, :size => 14
           if current_user.learning_results != nil && current_user.learning_results.length > 0 && current_user.results != nil && current_user.results.length > 0
               temResultados = true
           end
@@ -154,7 +160,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
 
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Objetivos", :color => "#778899", :align => :left, :size => 14
+          pdf.text "Objetivos", :color => "#778899", :align => :center, :size => 14
           pdf.font("Times-Roman")
           @purposes.each do |purpose|
             pdf.move_down 10
@@ -162,7 +168,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
           end
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Competências", :color => "#778899", :size =>14
+          pdf.text "Competências", :color => "#778899", :size =>14, :align => :center
           pdf.font("Times-Roman")
           @skills.each do |skill|
             pdf.move_down 10
@@ -170,7 +176,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
           end
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Formação", :color => "#778899", :size => 14
+          pdf.text "Formação", :color => "#778899", :size => 14, :align => :center
           pdf.font("Times-Roman")
           @formations.each do |formation|
             pdf.move_down 10
@@ -185,7 +191,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
           end
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Experiências", :color => "#778899", :size => 14
+          pdf.text "Experiências", :color => "#778899", :size => 14, :align => :center
           pdf.font("Times-Roman")
           @experiences.each do |experience|
             pdf.move_down 10
@@ -195,7 +201,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
 
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Qualificações Complementares", :color => "#778899", :size => 14
+          pdf.text "Qualificações Complementares", :color => "#778899", :size => 14, :align => :center
           pdf.font("Times-Roman")
           @qualifications.each do |qualification|
             pdf.move_down 10
@@ -204,7 +210,7 @@ before_action :create_curriculum, only: [:edit_curriculo]
 
           pdf.move_down 40
           pdf.font("Times-Roman", :style => :bold)
-          pdf.text "Idiomas", :color=> "#778899", :size => 14
+          pdf.text "Idiomas", :color=> "#778899", :size => 14, :align => :center
           pdf.font("Times-Roman")
           @languages.each do |language|
             pdf.move_down 10
