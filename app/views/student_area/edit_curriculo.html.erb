@@ -28,15 +28,14 @@
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#language">Meus Idiomas</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+      </li>
     </ul>
   </div>
 </nav>
 
 <div class="container-fluid p-0">
-      <%= link_to  student_area_generate_curriculo_path(format: 'pdf'), :class => "btn btn-success" do  %> 
-            <i class="fa  fa-file-pdf-o "></i>
-        <% end %>
-
   <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
     <div class="my-auto">
       <h2 class="mb-0">
@@ -65,7 +64,7 @@
         <p class="mb-5"><%= @curriculum.message %>.</p>
       <% end %>
  <div class="subheading mb-5">
-     <%= link_to "Adicionar Redes Sociais", '#new_network_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right; margin-top: -50px;" %></div>
+     <%= link_to "Adicionar Redes Sociais", '#new_network_modal', 'data-toggle' => 'modal', :class => "btn btn-success btn-login",  style:  "float: right;" %></div>
       <ul class="list-inline list-social-icons mb-0">
        <% unless @curriculum.facebook.nil? %>
         <li class="list-inline-item">
@@ -243,6 +242,25 @@
 </div>
 
   </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="download">
+    <div class="my-auto">
+      <h2 class="mb-5">DOWNLOAD DO CURRÍCULO
+      </h2>
+      <h3>Gerar o currículo com âncoras de carreira e estilos de aprendizagem
+      <%= link_to  generate_curriculum_curriculums_path(:student => @usuario.id,:generate => :yes,format: 'pdf'), :class => "btn btn-success btn-login" do  %> 
+                  <i class="fa  fa-download "></i>
+              <% end %>
+      </h3>
+      <h3>Gerar o currículo sem âncoras de carreira e estilos de aprendizagem
+      <%= link_to  generate_curriculum_curriculums_path(:student => @usuario.id,:generate => :no,format: 'pdf'), :class => "btn btn-success btn-login" do  %> 
+                  <i class="fa  fa-download "></i>
+              <% end %>
+      </h3>
+
+      </div>
+  </section>
+
 <div class="modal fade" id="new_purpose_modal">
 <div class="modal-dialog">
      <div class="modal-content">

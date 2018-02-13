@@ -31,6 +31,10 @@
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#language"> Idiomas</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+      </li>
+
     </ul>
   </div>
 </nav>
@@ -226,9 +230,6 @@
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="language">
     <div class="my-auto">
       <h2 class="mb-5">Idiomas
-        <button id="information_language" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
-       </button>
-
       </h2>
       <div id="language_curriculum">
        <% @languages.each do |language| %>
@@ -244,6 +245,24 @@
 </div>
 
   </section>
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="download">
+    <div class="my-auto">
+      <h2 class="mb-5">DOWNLOAD DO CURRÍCULO
+      </h2>
+      <h3>Gerar o currículo com âncoras de carreira e estilos de aprendizagem
+      <%= link_to  generate_curriculum_curriculums_path(:student => @usuario.id,:generate => :yes,format: 'pdf'), :class => "btn btn-success btn-login" do  %> 
+                  <i class="fa  fa-download "></i>
+              <% end %>
+      </h3>
+      <h3>Gerar o currículo sem âncoras de carreira e estilos de aprendizagem
+      <%= link_to  generate_curriculum_curriculums_path(:student => @usuario.id, :generate => :no,format: 'pdf'), :class => "btn btn-success btn-login" do  %> 
+                  <i class="fa  fa-download "></i>
+              <% end %>
+      </h3>
+
+      </div>
+  </section>
+
 <div class="modal fade" id="new_purpose_modal">
 <div class="modal-dialog">
      <div class="modal-content">

@@ -1,10 +1,16 @@
  <% @languages.each do |language| %>
   <div class="resume-item d-flex flex-column flex-md-row mb-5">
     <div class="resume-content mr-auto" >
-     <b><%= language.idioma %></b>  &nbsp; &nbsp;  &nbsp; Compreende <%= language.understand %>, Fala <%= language.speak %>, Lê <%= language.read %>, Escreve <%= language.write %>.      <%= link_to 'Deletar', language, method: :delete,class: "btn btn-default btn-sm btn-login", remote: true, data: { confirm: 'Are you sure?' }%>        <%= link_to 'Editar', edit_language_path(language.id), class: "btn btn-default btn-sm btn-login",remote:true   %> 
-
-      <br>
+     <b><%= language.idioma %></b>  &nbsp; &nbsp;  &nbsp; Compreende <%= language.understand %>, Fala <%= language.speak %>, Lê <%= language.read %>, Escreve <%= language.write %>.
     </div>
+  <div class="resume-content">
+		<%= link_to 'Deletar', language, method: :delete,class: "btn btn-default btn-sm btn-login",style: "float: right;", remote: true, data: { confirm: 'Você tem certeza?' }%>
+		<div style="float:right;">
+			&nbsp;
+		</div>
+		<%= link_to 'Editar', edit_language_path(language.id), class: "btn btn-default btn-sm btn-login",style: "float:right;", remote:true   %> 
+      <br>  
+  </div>
   </div>
  <% end %>
 

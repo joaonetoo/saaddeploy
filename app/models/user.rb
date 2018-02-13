@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   has_many :answer_notes
   has_many :answer_cases
   has_one :plano
+  has_one :curriculum
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
