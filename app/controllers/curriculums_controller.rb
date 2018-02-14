@@ -1,9 +1,8 @@
 class CurriculumsController < ApplicationController
   before_action :set_curriculum, only: [:create_message,:create_networks]
-  skip_before_action :authenticate_user!, only:[:all_curriculums,:show,:generate_curriculum]
+  skip_before_action :authenticate_user!, only:[:all_curriculums,:show,:generate_curriculum,:search_user, :autocomplete_user_nome]
   layout "curriculo", only: [:show]
   autocomplete :user, :nome, :full => true
-
 
   def create_message
     @curriculum.update(curriculums_params)
@@ -60,21 +59,37 @@ class CurriculumsController < ApplicationController
   end
 
   def all_curriculums
-    @curriculums = Curriculum.all
-    @students =[]
-    @curriculums.each do |curriculum|
-     unless curriculum.user_id.nil?
-      student = User.find(curriculum.user_id)
-      @students << student
-     end
+    @courses = Course.all.map { |course| course.nome }
+    @students = []
+    unless params[:students].nil?
+      student_ids = params[:students]
+      student_ids.each do |student|
+        student_curriculum =  User.find(student)
+        @students << student_curriculum
+      end
     end
   end
   def search_user
-    @user = User.where("lower(nome) LIKE ?", "%#{params[:user_id].downcase}%").first
-    if not @user.nil?
-      redirect_to all_curriculums_curriculums_path, notice:  "#{@user.nome} adicionado(a)."
-    elsif
-      redirect_to all_curriculums_curriculums_path, notice:" adicionado(a)."
+    if params[:user_id] != ""
+      course = Course.where(nome: params[:curso]).first
+      users = User.where("lower(nome) LIKE ?", "%#{params[:user_id].downcase}%")
+      if not  users.blank? 
+        users = users.select {|user| user.course_id == course.id && user.curriculum != nil}
+        students = users.map { |x|  x.id }
+        redirect_to all_curriculums_curriculums_path(:students => students)
+      else
+        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante com o nome #{params[:user_id]} no curso #{course.nome}."
+      end
+    else
+      course = Course.where(nome: params[:curso]).first
+      users = course.users
+      students = []
+      if not  users.blank?
+        students = users.select {|user| user.type == "Student" && user.curriculum != nil}
+        redirect_to all_curriculums_curriculums_path(:students => students)
+      else
+        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante  no curso #{course} com currículo cadastrado."
+      end
     end
   end
   def create_networks

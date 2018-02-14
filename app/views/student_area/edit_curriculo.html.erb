@@ -33,14 +33,19 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav><br>
+      <%= link_to  student_area_index_path, style: "float:right;", :class => "btn btn-success btn-login" do  %> 
+                  <i class="fa fa-toggle-left "></i>
+              <% end %>
 
 <div class="container-fluid p-0">
   <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+
     <div class="my-auto">
       <h2 class="mb-0">
         <span class="mb-5"><%= @usuario.nome %> </span>
       </h2>
+
       <div class="subheading mb-5"><%= @usuario.endereco %> · <%= @usuario.telefone %> ·
         <a href="mailto:name@email.com"><%= @usuario.email %></a>
           <%  if @curriculum.message.nil? %>
@@ -181,9 +186,9 @@
         <div style="float: right;">
           &nbsp;
         </div>
-        <button id="information_formation" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
-       </button>
-      </h2>
+<!--         <button id="information_formation" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
+             </button>
+       -->      </h2>
       <div id="formation_curriculum">
           <%= render 'formations/formation' %>
       </div>
@@ -232,9 +237,9 @@
         <div style="float: right;">
           &nbsp;
         </div>
-        <button id="information_language" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
+<!--         <button id="information_language" style="float:right; margin-top: 25px;" class="btn btn-success btn-login" > INFORMAÇÕES
        </button>
-
+ -->
       </h2>
       <div id="language_curriculum">
             <%= render 'languages/language' %>
