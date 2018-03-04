@@ -1,69 +1,105 @@
-<%= form_for(@institution, html: { multipart: true }) do |f| %>
-  <% if @institution.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
-
-      <ul>
-      <% @institution.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <center><h4><%= action %></h4></center>
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :cnpj %><br>
-    <%= f.text_field :cnpj %>
-  </div>
-  <div class="field">
-    <%= f.label :logradouro %><br>
-    <%= f.text_field :logradouro %>
-  </div>
-  <div class="field">
-    <%= f.label :numero %><br>
-    <%= f.text_field :numero %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro %><br>
-    <%= f.text_field :bairro %>
-  </div>
-  <div class="field">
-    <%= f.label :cep %><br>
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
-  </div>
-  <div class="field">
-    <%= f.label :estado %><br>
-    <%= f.text_field :estado %>
-  </div>
-    <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :organizacao_academica %><br>
-    <%= f.select( :organizacao_academica, [['universidade'], ['centro universitário'], ['faculdade']]) %>
-  </div>
-  <div class="field">
-    <%= f.label :categoria_administrativa %><br>
-    <%= f.select( :categoria_administrativa, [['privada com fins lucrativos'], ['privada sem fins lucrativos'], ['pública']] )%>
-  </div>
-  <div class="field">
-    <%= f.label :site %><br>
-    <%= f.text_field :site %>
-  </div>
-  <div class="field">
-    <%= f.label :Logo %><br>
-    <%= f.file_field :avatar %>
-  </div>
+  <div class="panel-body">
+    <div class="col-lg-12">
 
-  <div class="actions">
-    <%= f.submit %>
+      <%= form_for(@institution, html: { multipart: true }) do |f| %>
+        <% if @institution.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+            <ul>
+            <% @institution.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="row"> 
+          <div class="form-group"> 
+            <div class="col-lg-6">
+              <%= f.label :nome %><br>
+              <%= f.text_field :nome, class: "form-control" %>
+            </div>
+              <div class="col-lg-6">
+              <%= f.label :cnpj %><br>
+              <%= f.text_field :cnpj, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row"> 
+          <div class="form-group"> 
+            <div class="col-lg-6">
+              <%= f.label :logradouro %><br>
+              <%= f.text_field :logradouro, class: "form-control" %>
+            </div>
+            <div class="col-lg-1">
+              <%= f.label :numero %><br>
+              <%= f.text_field :numero, class: "form-control" %>
+            </div>
+            <div class="col-lg-3">
+              <%= f.label :bairro %><br>
+              <%= f.text_field :bairro, class: "form-control" %>
+            </div>
+            <div class="col-lg-2">
+              <%= f.label :cep %><br>
+              <%= f.text_field :cep , class: "form-control" %>
+            </div>
+          </div>
+        </div>
+<br>
+        <div class="row"> 
+          <div class="form-group"> 
+            <div class="col-lg-6">
+              <%= f.label :cidade %><br>
+              <%= f.text_field :cidade , class: "form-control" %>
+            </div>
+            <div class="col-lg-1">
+              <%= f.label :estado %><br>
+              <%= f.text_field :estado , class: "form-control" %>
+            </div>
+            <div class="col-lg-3">
+              <%= f.label :tel %><br>
+              <%= f.text_field :tel , class: "form-control" %>
+            </div>
+          </div>
+        </div>
+<br>
+        <div class="row"> 
+          <div class="form-group"> 
+            <div class="col-lg-6">
+              <%= f.label :organizacao_Academica %><br>
+              <%= f.select( :organizacao_academica, [['Universidade'], ['Centro Universitário'], ['Faculdade']], {}, {class: "form-control"}) %>
+            </div>
+            <div class="col-lg-6">
+              <%= f.label :categoria_Administrativa %><br>
+              <%= f.select( :categoria_administrativa, [['Privada Com Fins Lucrativos'], ['Privada Sem Fins Lucrativos'], ['Pública']],{}, {class: "form-control"} )%>
+            </div>
+          </div>
+        </div>
+<br>
+        <div class="row"> 
+          <div class="form-group"> 
+            <div class="col-lg-6">
+              <%= f.label :site %><br>
+              <%= f.text_field :site, class: "form-control" %>
+            </div>
+            <div class="col-lg-6">
+              <%= f.label :Logo %><br>
+              <%= f.file_field :avatar, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+<br>
+        <div class="actions">
+          <center><%= f.submit funcao , 
+          :class => "btn btn-success btn-login btn-sm" %></center>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+

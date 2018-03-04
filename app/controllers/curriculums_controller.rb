@@ -60,6 +60,7 @@ class CurriculumsController < ApplicationController
 
   def all_curriculums
     @courses = Course.all.map { |course| course.nome }
+    @courses.sort!
     @students = []
     unless params[:students].nil?
       student_ids = params[:students]
@@ -78,7 +79,7 @@ class CurriculumsController < ApplicationController
         students = users.map { |x|  x.id }
         redirect_to all_curriculums_curriculums_path(:students => students)
       else
-        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante com o nome #{params[:user_id]} no curso #{course.nome}."
+        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante com o nome #{params[:user_id]} no curso #{course}."
       end
     else
       course = Course.where(nome: params[:curso]).first
@@ -88,7 +89,7 @@ class CurriculumsController < ApplicationController
         students = users.select {|user| user.type == "Student" && user.curriculum != nil}
         redirect_to all_curriculums_curriculums_path(:students => students)
       else
-        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante  no curso #{course} com currículo cadastrado."
+        redirect_to all_curriculums_curriculums_path, alert:" Não foi escontrado nenhum estudante com o nome #{params[:user_id]} no curso #{course.nome}."
       end
     end
   end

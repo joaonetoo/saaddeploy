@@ -11,21 +11,29 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= label_tag :institution %><br>
-    <%= autocomplete_field_tag :institution, params[:institution], autocomplete_institution_nome_institutions_path, :id_element => '#campu_institution_id'%>
-  </div>
+<div class="col-lg-12">
 
+  <div class="row">
+    <div class="form-group"> 
+      <div class="col-lg-6">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="col-lg-6">
+        <%= label_tag :institution %><br>
+        <%= autocomplete_field_tag :institution, params[:institution], autocomplete_institution_nome_institutions_path, :id_element => '#campu_institution_id',class: "form-control" %>
+      </div>
+  </div>
+  </div>
+  <br>
   <div class="field">
     <%= f.hidden_field :institution_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <center><%= f.submit 'Atualizar', class: "btn btn-primary btn-login btn-sm" %>
+    </center>
   </div>
+
   <% end %>
  <% elsif current_user.type == "Principal" %>
  <%= form_for(@campu) do |f| %>

@@ -1,4 +1,2 @@
 <%= javascript_include_tag "subjects" %>
-<h1>Criar Disciplina</h1>
-
-<%= render 'form' %>
+<%= render partial: "subjects/form" , locals:{action: "Cadastrar Disciplina", funcao: "Cadastrar"} %>

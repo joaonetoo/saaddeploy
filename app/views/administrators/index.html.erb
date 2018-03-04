@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
   <div class="panel panel-default">
     <div class="panel-heading">
-        <h4>Administradores</h4>
+        <center><h4>Administradores</h4></center>
         <%# para colocar o botao verde par aa direita %>
-        <%= link_to new_administrator_path, class: "btn btn-primary btn-circle pull-right", style:  "margin-top : -35px" do  %> 
+        <%= link_to new_administrator_path, class: "btn btn-primary btn-sm btn-login pull-right", style:  "margin-top : -35px" do  %> 
             <i class="fa fa-plus"></i>
         <% end %>
     </div>
@@ -40,10 +40,10 @@
 
                                   <td style="width: 100px" >
 
-                                  <%= link_to edit_administrator_path(administrator), class: "btn btn-primary btn-circle" do %> 
+                                  <%= link_to edit_administrator_path(administrator), class: "btn btn-primary btn-login btn-sm" do %> 
                                     <i class="fa fa-edit"></i>
                                 <% end %>
-                                  <%= link_to  administrator, method: :delete, class:"btn btn-danger btn-circle", data: { confirm: 'Deseja realmente excluir?' } do %>
+                                  <%= link_to  administrator, method: :delete, class:"btn btn-danger btn-login btn-sm", data: { confirm: 'Deseja realmente excluir?' } do %>
                                     <i class="fa fa-minus"></i>
 
                                   <% end %>

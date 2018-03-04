@@ -36,18 +36,20 @@
     <hr>
     <% if @atividades.size > 0%>
         <br>
-        <h4 class="text-center">Voce tem atividades para responder</h4>
+        <h4 class="text-center">Atividades para responder</h4>
           <% @atividades.each do |atividade| %>
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+            <% unless atividade.status == "finalizado" %>
+              <div class="desc">
+                <div class="thumb">
+                  <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                </div>
+                <div class="details">
+                  <p>
+                    <%= link_to "#{atividade.titulo}", new_answer_path(:atividade_extra => atividade) %><br>
+                  </p>
+                </div>
               </div>
-              <div class="details">
-                <p>
-                  <%= link_to "#{atividade.titulo}", new_answer_path(:atividade_extra => atividade) %><br>
-                </p>
-              </div>
-            </div>
+            <% end %>
         <% end %>
     <% end %>
     <hr>

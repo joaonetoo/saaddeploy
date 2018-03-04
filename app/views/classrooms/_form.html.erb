@@ -1,9 +1,9 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4></i>Nova turma</h4>
-  </div>
-      <div class="row mt">
-          <div class="col-lg-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <center><h4><%= action %></h4></center>
+    </div>
+  <div class="panel-body">
+    <div class="col-lg-12">
             <div class="panel-body">
                         <% if @classroom.errors.any? %>
              <div class="alert alert-danger alert-dismissable">
@@ -20,7 +20,7 @@
                 <%if current_user.type == 'Administrator'%>
               <div class="field">
                 <%= f.label :Disciplina %><br>
-                 <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id'%>
+                 <%= autocomplete_field_tag :subject, params[:subject], autocomplete_subject_nome_subjects_path, :id_element => '#classroom_subject_id', class: "form-control" %>
               </div>
               <div class="field">
                 <%= f.hidden_field :subject_id %>
@@ -57,7 +57,7 @@
             </div>
 
     <div class="actions">
-      <center><br><%= f.submit 'Cadastrar', class: "btn btn-default"   %></center>
+      <center><br><%= f.submit funcao, class: "btn btn-default"   %></center>
     </div>
 
 

@@ -19,6 +19,7 @@
                       Carreira
                     </label>
                     <div>
+                      <%= link_to 'Currículo', student_area_edit_curriculo_path  %>
                       <% if current_user.plano == nil %>
                           <%= link_to 'Criar plano', new_plano_path %>
                           <% elsif current_user.plano != nil%>

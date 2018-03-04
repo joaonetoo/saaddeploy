@@ -22,10 +22,10 @@
                            <td> <center><%= pending.nome %></center></td>
                            <td> <center><%= pending.type %></center></td>
                            <td style="width: 100px">
-                              <%= link_to  admin_aprove_path(pending: pending), class:"btn btn-success btn-circle", data: { confirm: 'Deseja Aceitar ?'} do %>
+                              <%= link_to  admin_aprove_path(pending: pending), class:"btn btn-success btn-sm btn-login", data: { confirm: 'Deseja Aceitar ?'} do %>
                                   <i class="fa fa-check"></i>
                               <% end %>
-                              <%= link_to  pending, method: :delete, class:"btn btn-danger btn-circle", data: { confirm: 'Deseja realmente excluir?' } do %>
+                              <%= link_to  pending, method: :delete, class:"btn btn-danger btn-sm btn-login", data: { confirm: 'Deseja realmente excluir?' } do %>
                                   <i class="fa fa-minus"></i>
                                 <% end %>
 

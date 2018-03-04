@@ -1,72 +1,36 @@
-<p id="notice"><%= notice %></p>
-<div class="row mt">
-  <div class="col-lg-12">
-    <div class="content-panel">
-      <h4><i class="fa fa-angle-right"></i> Disciplinas</h4>
-      <br>
-      <section id="unseen">
-        <table class="table table-bordered table-striped table-condensed">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Carga horária</th>
-              <th>Ementa</th>
-              <th>Código</th>
-              <th>Curso</th>
-              <th></th>
-            </tr>
-          </thead>
-
-          <tbody>
-              <tr>
-                <td><%= @subject.nome %></td>
-                <td><%= @subject.ch %></td>
-                <td><%= @subject.ementa %></td>
-                <td><%= @subject.codigo %></td>
-                <td><%= @subject.course.nome %></td>
-              </tr>
-          </tbody>
-
-        </table>
-
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <center><h4>Disciplina</h4></center>
+    </div>
+    <div class="panel-body">
+        <center><h4><b>Informações</b></h4></center>
+        <h5><b>Nome: </b><%= @subject.nome %></h5>
+        <h5><b>Carga Horaria: </b><%= @subject.ch %>, <b>Código: </b> <%= @subject.codigo %>, <b>Curso: </b> <%= @subject.course.nome %></h5>
+        <h5><b>Ementa:</b><%= @subject.ementa %></h5>
         <br>
-        </section>
+
+        <center><h4><b>Turmas Vinculadas</b></h4></center>
+        <table class="table table-bordered table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>Turma</th>
+            <th>Turno</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @subject.classrooms.each do |classroom| %>
+            <tr>
+              <td><%= classroom.codigo %></td>
+              <td><%= classroom.turno%></td>
+              <td><center><%= button_to 'ver', classroom, :class => "btn btn-primary btn-login btn-sm", method: :get%></center></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
       </div>
     </div>
   </div>
 
-  <div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-      <h4><i class="fa fa-angle-right"></i> Disciplinas</h4>
-        <div class="row mt">
-                <div class="col-lg-12">
-                      <div>
-                          <div class="unseen">
-                            <div class="dados">
-                          <table class="table table-bordered table-striped table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Turma</th>
-                                <th>Turno</th>
-                                <th>Ações</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <% @subject.classrooms.each do |classroom| %>
-                                <tr>
-                                  <td><%= classroom.codigo %></td>
-                                  <td><%= classroom.turno%></td>
-                                  <td><center><%= button_to 'ver', classroom, :class => "btn btn-primary btn-sm", method: :get%></center></td>
-                                </tr>
-                              <% end %>
-                            </tbody>
-                          </table>
-                          </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+ 

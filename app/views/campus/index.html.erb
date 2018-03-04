@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
-<div class="row mt">
-  <div class="col-lg-12">
-      <div class="content-panel">
-      <h4><i class="fa fa-angle-right"></i>Campus</h4>
-        <div class="row mt">
-                <div class="col-lg-12">
-                      <div>
-                          <div class="unseen">
-                            <div class="dados">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <center><h4>Campus</h4></center>
+    </div>
+    <div class="panel-body">
                           <table class="table table-bordered table-striped table-condensed">
                             <thead>
                               <tr>
                                 <th>Nome</th>
                                 <th>Instituição</th>
+                                <th colspan="2"></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -21,22 +18,16 @@
                                 <tr>
                                   <td><%= campu.name %></td>
                                   <td><%= campu.institution.nome %> </td>
-                                  <td><center><%= button_to 'Abrir', campu, :class => "btn btn-primary btn-sm", method: :get%></center></td>
+                                  <td><center><%= button_to 'Abrir', campu, :class => "btn btn-primary btn-login btn-sm", method: :get%></center></td>
                                   <% if current_user.type == 'Administrator'%>
-                                  <td><%= link_to 'Editar', edit_campu_path(campu) %></td>
-                                  <td><%= link_to 'Deletar', campu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                  <% end %>
+                                  <td><%= link_to 'Editar', edit_campu_path(campu), :class => "btn btn-primary btn-login btn-sm" %></td>
+<!--                                   <td><%= link_to 'Deletar', campu, method: :delete, :class => "btn btn-primary btn-login btn-sm", data: { confirm: 'Are you sure?' } %></td>
+                                   -->                                  <% end %>
                                 </tr>
                               <% end %>
                               <% end %>
                             </tbody>
                           </table>
-                          </div>
-                          </div>
                       </div>
                   </div>
-              </div>
-          </div>
-      </div>
-  </div>
   <br>
