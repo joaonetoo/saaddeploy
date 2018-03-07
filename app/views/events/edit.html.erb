@@ -1,7 +1,2 @@
 <%= javascript_include_tag "events" %>
-<h1>Editar Evento</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<%= render partial: "events/form", locals: {action: "Editar Evento", funcao: "Atualizar"} %>

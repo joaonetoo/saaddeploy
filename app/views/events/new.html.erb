@@ -1,4 +1,3 @@
 <%= javascript_include_tag "events" %>
-<%= render 'form' %>
 
-<%= link_to 'Back', events_path %>
+<%= render partial: "events/form", locals: {action: "Cadastrar Evento", funcao: "Cadastrar Evento"} %>

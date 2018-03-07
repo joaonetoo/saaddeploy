@@ -56,7 +56,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: 'Evento cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -73,30 +73,33 @@ class EventsController < ApplicationController
           img = "#{Rails.root}/public/bg_folder.jpg"
           #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
           Prawn::Document.generate("background.pdf", :page_size=> "A4",:background => img) do |pdf|
-          pdf.image "#{@event.image.path(:thumb)}", :position => :center
+          if @event.image.url == "/assets/default.jpg"
+            pdf.image "app/assets/images/default.jpg",width: 75, height: 75, position: :center
+          else 
+              pdf.image "#{@event.image.path(:thumb)}", :position => :center
+          end
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 50
           pdf.text "#{@event.nome}", :align => :center,:color => "006699", :size => 18
           pdf.move_down 50
-          pdf.image "#{Rails.root}/public/icon_apresentacao.png"
-          pdf.move_down 5
-          pdf.text "Apresentação: #{@event.apresentacao}", :align => :left,:color => "006699", :size => 18
+          #pdf.image "#{Rails.root}/public/icon_apresentacao.png"
+          pdf.text "Apresentação: #{@event.apresentacao}", :align => :left,:color => "006699", :size => 15
           pdf.move_down 40
-          pdf.image "#{Rails.root}/public/icon_objetivo.png"
+          #pdf.image "#{Rails.root}/public/icon_objetivo.png"
           pdf.move_down 5
-          pdf.text "Objetivo: #{@event.objetivos}", :align => :left,:color => "006699", :size => 18
+          pdf.text "Objetivo: #{@event.objetivos}", :align => :left,:color => "006699", :size => 15
           pdf.move_down 40
-          pdf.image "#{Rails.root}/public/icon_inscricao.png"
+          #pdf.image "#{Rails.root}/public/icon_inscricao.png"
           pdf.move_down 5
-          pdf.text "Informações: #{@event.informacoes}", :align => :left,:color => "006699", :size => 18
+          pdf.text "Informações: #{@event.informacoes}", :align => :left,:color => "006699", :size => 15
           pdf.move_down 40
-          pdf.image "#{Rails.root}/public/icon_data.png"
+          #pdf.image "#{Rails.root}/public/icon_data.png"
           pdf.move_down 5
-          pdf.text "Data: #{@event.inicio.strftime("%-d/%-m/%y às %H:%M")}", :align => :left,:color => "006699", :size => 18
+          pdf.text "Data: #{@event.inicio.strftime("%-d/%-m/%y às %H:%M")}", :align => :left,:color => "006699", :size => 15
           pdf.move_down 40
-          pdf.image "#{Rails.root}/public/icon_local.png"
+          #pdf.image "#{Rails.root}/public/icon_local.png"
           pdf.move_down 5
-          pdf.text "Local: #{@event.local}", :align => :left,:color => "006699", :size => 18
+          pdf.text "Local: #{@event.local}", :align => :left,:color => "006699", :size => 15
 
 
           send_data pdf.render, filename: 'learning_results.pdf', type: 'application/pdf', disposition: "inline"
@@ -184,7 +187,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: 'Evento atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }

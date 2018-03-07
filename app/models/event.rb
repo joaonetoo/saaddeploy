@@ -5,9 +5,9 @@ class Event < ActiveRecord::Base
     has_many :projects, :dependent => :destroy
     has_many :matriculations, :dependent => :destroy
     has_many :registrations, :dependent => :destroy
-    has_attached_file :image, styles: { medium: "300x300>", thumb: "175x175>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :image, styles: { medium: "300x300>", thumb: "175x175>" }, default_url: "/assets/default.jpg"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-    validate :image_dimensions, :unless => "image.queued_for_write[:original].blank?"
+    #validate :image_dimensions, :unless => "image.queued_for_write[:original].blank?"
 
     private
   def image_dimensions
