@@ -20,6 +20,6 @@
 	border:1px solid black;
 	position:relative;
 	top:1px;
-.btn-login.focus,.btn-login:focus{	color: white;box-shadow:0 0 0 .1rem rgba(52,58,64,.5)}
+}.btn-login.focus,.btn-login:focus{	color: white;box-shadow:0 0 0 .1rem rgba(52,58,64,.5)}
 .btn-login.disabled,.btn-login:disabled{background-color:#343a40;border-color:#343a40}
 .btn-login:not([disabled]):not(.disabled).active,.btn-login:not([disabled]):not(.disabled):active,.show>.btn-login.dropdown-toggle{color:#fff;background-color:#343a40;border-color:#343a40;box-shadow:0 0 0 .2rem rgba(52,58,64,.5)}
