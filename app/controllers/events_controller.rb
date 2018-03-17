@@ -148,35 +148,28 @@ class EventsController < ApplicationController
   def certificate_event
         @event = Event.find(params[:event])
         @matriculations = Matriculation.find(params[:matriculations])
-        @matriculation = @matriculations.first
-        @matriculations.shift
       respond_to do |format|
       format.pdf {
           img = "#{Rails.root}/public/background_certificado.jpg"
           #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          @matriculations.each do |matriculation|
           Prawn::Document.generate("background.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 250
-          pdf.text "Declaro para os devidos fins que #{@matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
-          pdf.move_down 150
-          pdf.move_down 10
-          pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
-          pdf.move_down 10
-          pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
-          @matriculations.each do |matriculation|
-            pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape, :background => img)
-            pdf.move_down 250
             pdf.text "Declaro para os devidos fins que #{matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 150
             pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 10
             pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
+            #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
+            RegistrationMailer.send_certificate(matriculation,@event).deliver_now
           end
 
-
-          send_data pdf.render, filename: 'certificado.pdf', type: 'application/pdf', disposition: "inline"
         end
+        redirect_to coordinators_area_my_events_path, notice: 'Event deletado com sucesso.'
+
       }
     end
 
@@ -201,7 +194,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to coordinators_area_my_events_path, notice: 'Event deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

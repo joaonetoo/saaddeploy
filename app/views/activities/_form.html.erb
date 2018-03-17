@@ -4,18 +4,25 @@
     <%= f.label :data %><br>
     <%= f.datetime_select :data %>
   </div>
+    <div class="col-lg-6">
+
   <div class="field">
     <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, class: "form-control" %>
   </div>
+  </div>
+  <div class="col-lg-6">
+
   <div class="field">
     <%= f.label :palestrante %><br>
-    <%= f.text_field :palestrante %>
+    <%= f.text_field :palestrante, class: "form-control" %> <br>
   </div>
+  </div>
+
   <div class="field">
     <%= f.hidden_field :event_id, :value => @event.id %>
   </div>
   <div class="actions">
-    <%= f.submit "criar atividade"%>
+    <center><%= f.submit "Criar Atividade", class: "btn btn-login btn-sm" %></center>
   </div>
 <% end %>
