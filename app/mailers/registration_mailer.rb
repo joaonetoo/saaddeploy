@@ -11,7 +11,7 @@ class RegistrationMailer < ApplicationMailer
     def send_certificate(matriculation,event)
        @event = event
        @matriculation = matriculation
-       attachments.inline['background.pdf'] = File.read('certificado.pdf')
+       attachments['certificado.pdf'] = File.read('certificado.pdf')
        mail(to: @matriculation.email, subject: 'Certificado De Participação')
 	end
 end
