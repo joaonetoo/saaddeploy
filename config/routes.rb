@@ -92,6 +92,7 @@ Rails.application.routes.draw do
         get 'certificate_project'
         post 'certificate_project'
         get 'approve_project'
+        get 'attendance_list'
     end
   end
   get 'coordinators_area/index'

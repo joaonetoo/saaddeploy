@@ -148,43 +148,81 @@ class EventsController < ApplicationController
   def certificate_event
         @event = Event.find(params[:event])
         @matriculations = Matriculation.find(params[:matriculations])
-        @matriculation = @matriculations.first
-        @matriculations.shift
       respond_to do |format|
       format.pdf {
           img = "#{Rails.root}/public/background_certificado.jpg"
+          #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+          @matriculations.each do |matriculation|
           Prawn::Document.generate("certificado.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
+          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           pdf.font("Helvetica", :style => :bold)
           pdf.move_down 250
-            pdf.text "Declaro para os devidos fins que #{@matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
+            pdf.text "Declaro para os devidos fins que #{matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 150
             pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
             pdf.move_down 10
             pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
             #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
-            RegistrationMailer.send_certificate(@matriculation,@event).deliver_now
           end
-          @matriculations.each do |matriculation|
-            Prawn::Document.generate("certificado.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
-            #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-            pdf.font("Helvetica", :style => :bold)
-            pdf.move_down 250
-              pdf.text "Declaro para os devidos fins que #{matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
-              pdf.move_down 150
-              pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
-              pdf.move_down 10
-              pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
-              #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
-              RegistrationMailer.send_certificate(matriculation,@event).deliver_now
-            end
-          end
-        redirect_to coordinators_area_my_events_path, notice: 'Event deletado com sucesso.'
+          RegistrationMailer.send_certificate(matriculation,@event).deliver_now
+
+        end
+        redirect_to coordinators_area_my_events_path, notice: 'Certificados enviados com sucesso.'
 
       }
     end
 
   end
-
+  def attendance_list
+    @event = Event.find(params[:event])
+    @matriculations = @event.matriculations
+    @teachers = @matriculations.where(tipo: 'Professor')
+    @students = @matriculations.where(tipo: 'Estudante')
+    @profissionals = @matriculations.where(tipo: 'Profissional')
+    respond_to do |format|
+      format.pdf{
+      pdf = Prawn::Document.new :page_size=> "A4"
+      pdf.font("Times-Roman", :style => :bold)
+      pdf.text "Lista De Presença",:align => :center, :size => 18
+      pdf.move_down 30
+      pdf.text "Estudantes", :align => :center, :size => 14
+      pdf.font("Times-Roman")
+      @list_students =[["<b><i>Nome completo</i></b>","<b><i>Assinatura</i></b>"]]
+      @students.each do |student|
+        @list_students << [student.nome,""]
+      end
+      pdf.table(@list_students ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      unless @teachers.blank?
+        pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape)
+        pdf.font("Times-Roman", :style => :bold)
+        pdf.text "Lista De Presença",:align => :center, :size => 18
+        pdf.move_down 30
+        pdf.text "Professores", :align => :center, :size => 14
+        pdf.font("Times-Roman")
+        @list_teachers =[["<b><i>Nome completo</i></b>","<b><i>Assinatura</i></b>"]]
+        @teachers.each do |teacher|
+          @list_teachers << [teacher.nome,""]
+        end
+        pdf.table(@list_teachers ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      end
+      unless @profissionals
+        pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape)
+        pdf.font("Times-Roman", :style => :bold)
+        pdf.text "Lista De Presença",:align => :center, :size => 18
+        pdf.move_down 30
+        pdf.text "Profissionais", :align => :center, :size => 14
+        pdf.font("Times-Roman")
+        @list_profissionals =[["<b><i>Nome completo</i></b>","<b><i>Assinatura</i></b>"]]
+        @profissionals.each do |profissional|
+          @list_profissionals << [profissional.nome,""]
+        end
+        pdf.table(@list_profissionals ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      end
+      send_data pdf.render, filename: 'lista_de_presenca.pdf', type: 'application/pdf', disposition: "inline"
+      }
+    end
+  end
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
