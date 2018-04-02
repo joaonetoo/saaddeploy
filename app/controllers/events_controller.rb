@@ -180,6 +180,15 @@ class EventsController < ApplicationController
     @teachers = @matriculations.where(tipo: 'Professor')
     @students = @matriculations.where(tipo: 'Estudante')
     @profissionals = @matriculations.where(tipo: 'Profissional')
+    unless @students.blank?
+      @students = @students.sort_by{ |student| student.nome}
+    end
+    unless @teachers.blank?
+      @teachers = @teachers.sort_by{ |teacher| teacher.nome}
+    end
+    unless @profissionals.blank?
+      @profissionals = @profissionals.sort_by{|profisional| profisional.nome}
+    end
     respond_to do |format|
       format.pdf{
       pdf = Prawn::Document.new :page_size=> "A4"
