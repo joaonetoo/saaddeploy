@@ -6,7 +6,7 @@
       <%= image_tag @event.image.url(:thumb) %>
     </div>
     <div class="col-sm-10">
-      <h2 class="title_event"><%= @event.nome.capitalize %></h2>
+      <h2 class="title_event"><%= @event.nome %></h2>
     </div>
   </div>
 
@@ -46,6 +46,10 @@
         <p>
           <strong>Fim:</strong>
           <%= @event.fim.strftime("%-d/%-m/%y às %H:%M") %>
+        </p>
+        <p>
+          <strong>Local:</strong>
+          <%= @event.local %>
         </p>
         <p>
           <strong>Criado por:</strong>
