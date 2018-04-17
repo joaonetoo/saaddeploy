@@ -296,19 +296,29 @@ def setup_teacher_search
     @media = {"Competência Técnica e Funcional" => @mediaTf, "Competência Administrativa Geral" => @mediaGm, "Autonomia e Independência" => @mediaAu,
       "Segurança e Estabilidade" => @mediaSe, "Criatividade Empresarial" => @mediaEc, "Dedicação a uma Causa" => @mediaSv, "Desafio Puro" => @mediaCh, "Estilo de Vida" => @mediaLs }.sort_by{ |k, v| v }.reverse.to_h
     if @results.size == 1
-      if @results.first.anchors[0] != nil
-         @ancora1 = @results.first.anchors[0]
+      if @results.first.anchors[0] != nil &&  @results.first.anchors[1] != nil
+        @result = @results.first
+        hash = {"tf" => @result.tf, "gm" => @result.gm, "au" => @result.au, "se" => @result.se, "ec" => @result.ec, "sv" => @result.sv, "ch" => @result.ch, "ls" => @result.ls}
+        @maiores = hash.max_by(2){|k,v| v}
+        num1 = @maiores[0][1]
+        num2 = @maiores[1][1]
+        @maior1 = @maiores[0][0]
+        @maior2 = @maiores[1][0]
+        if num1 > num2
+              @ancora1 = Anchorinfo.where(tipo: @maior1).first
+              @ancora2 = Anchorinfo.where(tipo: @maior2).first
+        else
+              @ancora1 = Anchorinfo.where(tipo: @maior2).first
+              @ancora1 = Anchorinfo.where(tipo: @maior1).first
+        end
          @ancora1Nome = @ancora1.nome
          @ancora1Descricao = @ancora1.descricao.gsub("\n", '')
          @ancora1Perspectiva = @ancora1.perspectiva.gsub("\n", '')
          @ancora1Perfil = @ancora1.perfil.gsub("\n", '')
-      end
-      if @results.first.anchors[1] != nil
-       @ancora2 = @results.first.anchors[1]
-       @ancora2Nome = @ancora2.nome
-       @ancora2Descricao = @ancora2.descricao.gsub("\n", '')
-       @ancora2Perspectiva = @ancora2.perspectiva.gsub("\n", '')
-       @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
+         @ancora2Nome = @ancora2.nome
+         @ancora2Descricao = @ancora2.descricao.gsub("\n", '')
+         @ancora2Perspectiva = @ancora2.perspectiva.gsub("\n", '')
+         @ancora2Perfil = @ancora2.perfil.gsub("\n", '')
       end
       @nomeUsuario = @results.first.user.nome.capitalize
 
