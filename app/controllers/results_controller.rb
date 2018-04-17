@@ -309,7 +309,7 @@ def setup_teacher_search
               @ancora2 = Anchorinfo.where(tipo: @maior2).first
         else
               @ancora1 = Anchorinfo.where(tipo: @maior2).first
-              @ancora1 = Anchorinfo.where(tipo: @maior1).first
+              @ancora2 = Anchorinfo.where(tipo: @maior1).first
         end
          @ancora1Nome = @ancora1.nome
          @ancora1Descricao = @ancora1.descricao.gsub("\n", '')
