@@ -160,7 +160,7 @@ class EventsController < ApplicationController
             pdf.font("Times-Roman")
             pdf.move_down 250
             pdf.bounding_box([20, 300], :width => 750, :height => 850) do
-              pdf.text "Declaro para os devidos fins que <b>#{matriculation.nome.upcase}</b> participou do Seminário <b>#{@event.nome}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local}</b>.", :align => :left, :size => 18, :inline_format => true,:indent_paragraphs => 25
+              pdf.text "Declaro para os devidos fins que <b>#{matriculation.nome.upcase}</b> participou do Seminário <b>#{@event.nome}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
               #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
             pdf.move_down 30
             pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500
