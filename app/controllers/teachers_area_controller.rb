@@ -26,8 +26,10 @@ class TeachersAreaController < ApplicationController
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @users = @students
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
   end
 
   def index

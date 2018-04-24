@@ -26,7 +26,9 @@ class ClassroomsController < ApplicationController
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
 
   end
 
@@ -170,6 +172,7 @@ class ClassroomsController < ApplicationController
   def show
     @users = User.all
     @students = @classroom.students
+    @students = @students.sort_by{ |student| student.nome}
     @teachers = @classroom.teachers
   end
 

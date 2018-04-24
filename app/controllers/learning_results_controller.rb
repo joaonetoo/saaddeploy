@@ -26,7 +26,9 @@ class LearningResultsController < ApplicationController
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
 
   end
 
@@ -80,7 +82,10 @@ class LearningResultsController < ApplicationController
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
+
   end
   # GET /learning_results
   # GET /learning_results.json
@@ -109,6 +114,7 @@ class LearningResultsController < ApplicationController
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
+      @subjects = @subjects.sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
@@ -312,6 +318,7 @@ class LearningResultsController < ApplicationController
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
+      @subjects = @subjects.sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end

@@ -14,6 +14,7 @@ class CoordinatorsAreaController < ApplicationController
     @campu = @center.campu
 
     @subjects = current_user.course.subjects
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @classrooms = []
     @students = []
     @subjects.each do |subject|
@@ -28,6 +29,7 @@ class CoordinatorsAreaController < ApplicationController
     end
     @classrooms.uniq!
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
     @institutions << @institution
     @courses << @course
     @centers << @center

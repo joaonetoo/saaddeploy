@@ -146,24 +146,27 @@ class EventsController < ApplicationController
   end
 
   def certificate_event
-        @event = Event.find(params[:event])
-        @matriculations = Matriculation.find(params[:matriculations])
+      @event = Event.find(params[:event])
+      @matriculations = Matriculation.find(params[:matriculations])
+      img = "#{Rails.root}/app/assets/images/cert3.png"
+      date = DateTime.now
       respond_to do |format|
       format.pdf {
-          img = "#{Rails.root}/public/background_certificado.jpg"
           #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           @matriculations.each do |matriculation|
-          Prawn::Document.generate("certificado.pdf", :page_size=> "A4", :page_layout=> :landscape, :background => img) do |pdf|
+          Prawn::Document.generate("certificado.pdf", :page_size=> [596, 842], :page_layout=> :landscape, :background => img) do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-          pdf.font("Helvetica", :style => :bold)
-          pdf.move_down 250
-            pdf.text "Declaro para os devidos fins que #{matriculation.nome.capitalize} participou do(a) #{@event.nome}, com carga horária de #{@event.ch} horas, realizado em #{l(@event.inicio, format: '%d de %B, de %Y')} no(a) #{@event.local}", :align => :center,:color => "006699", :size => 18
-            pdf.move_down 150
-            pdf.text "#{current_user.nome.capitalize}", :align => :center,:color => "006699", :size => 18
-            pdf.move_down 10
-            pdf.text "Coordenador", :align => :center,:color => "006699", :size => 16
-            #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
+            pdf.font("Times-Roman")
+            pdf.move_down 250
+            pdf.bounding_box([20, 300], :width => 750, :height => 850) do
+              pdf.text "Declaro para os devidos fins que <b>#{matriculation.nome.upcase}</b> participou do Seminário <b>#{@event.nome}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local}</b>.", :align => :left, :size => 18, :inline_format => true,:indent_paragraphs => 25
+              #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
+            pdf.move_down 30
+            pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500
+
+            end
+
           end
           RegistrationMailer.send_certificate(matriculation,@event).deliver_now
 

@@ -33,8 +33,11 @@ def setup_teacher_search
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @users = @students
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
+    @students.each {|student| student.nome = student.nome.upcase}
 
   end
 
@@ -88,7 +91,10 @@ def setup_teacher_search
         end
     end
     @subjects.uniq!
+    @subjects = @subjects.sort_by{ |subject| subject.nome}
     @students = @students.uniq { |s| s.nome}
+    @students = @students.sort_by{ |student| student.nome}
+
   end
   # GET /results/1
   # GET /results/1.json
@@ -304,7 +310,7 @@ def setup_teacher_search
         num2 = @maiores[1][1]
         @maior1 = @maiores[0][0]
         @maior2 = @maiores[1][0]
-        if num1 > num2
+        if num1 >= num2
               @ancora1 = Anchorinfo.where(tipo: @maior1).first
               @ancora2 = Anchorinfo.where(tipo: @maior2).first
         else
@@ -329,7 +335,6 @@ def setup_teacher_search
     format.js {}
     end
   end
-
   def list
 
     if params[:institution_id] == 'todos'
@@ -540,6 +545,7 @@ def setup_teacher_search
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
+      @subjects = @subjects.sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
@@ -743,6 +749,8 @@ def setup_teacher_search
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
+      @subjects = @subjects.sort_by{ |subject| subject.nome}
+      @subjects.each {|subject| subject.nome = subject.nome.upcase}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
