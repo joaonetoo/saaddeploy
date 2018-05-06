@@ -75,7 +75,7 @@ class EventsController < ApplicationController
           Prawn::Document.generate("background.pdf", :page_size=> "A4",:background => img) do |pdf|
           if @event.image.url == "/assets/default.jpg"
             pdf.image "app/assets/images/default.jpg",width: 75, height: 75, position: :center
-          else 
+          else
               pdf.image "#{@event.image.path(:thumb)}", :position => :center
           end
           pdf.font("Helvetica", :style => :bold)
@@ -148,7 +148,12 @@ class EventsController < ApplicationController
   def certificate_event
       @event = Event.find(params[:event])
       @matriculations = Matriculation.find(params[:matriculations])
-      img = "#{Rails.root}/app/assets/images/cert3.png"
+      template = params[:template]
+      if template == "NAC"
+        img = "#{Rails.root}/app/assets/images/cert3.png"
+      else
+        img = "#{Rails.root}/app/assets/images/CADM.png"
+      end
       date = DateTime.now
       respond_to do |format|
       format.pdf {
@@ -160,7 +165,7 @@ class EventsController < ApplicationController
             pdf.font("Times-Roman")
             pdf.move_down 250
             pdf.bounding_box([20, 300], :width => 750, :height => 850) do
-              pdf.text "Declaro para os devidos fins que <b>#{matriculation.nome.upcase}</b> participou do Seminário <b>#{@event.nome}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
+              pdf.text "Certificamos que <b>#{matriculation.nome.upcase}</b> participou do evento <b>#{@event.nome.upcase}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local.upcase}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
               #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
             pdf.move_down 30
             pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500

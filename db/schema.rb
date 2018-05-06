@@ -235,7 +235,7 @@ ActiveRecord::Schema.define(version: 20171217035311) do
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.string   "normas",             default: "nenhuma"
-    t.datetime "deadline",           default: '2017-04-30 19:25:34'
+    t.datetime "deadline",           default: '2018-04-27 15:18:21'
     t.string   "trabalhos",          default: "nenhum"
     t.integer  "user_id"
     t.text     "informacoes"
@@ -415,9 +415,12 @@ ActiveRecord::Schema.define(version: 20171217035311) do
   add_index "line_cases", ["user_id"], name: "index_line_cases_on_user_id", using: :btree
 
   create_table "line_cases_users", id: false, force: :cascade do |t|
-    t.integer "user_id",      null: false
-    t.integer "line_case_id", null: false
+    t.integer "user_id"
+    t.integer "line_case_id"
   end
+
+  add_index "line_cases_users", ["line_case_id"], name: "index_line_cases_users_on_line_case_id", using: :btree
+  add_index "line_cases_users", ["user_id"], name: "index_line_cases_users_on_user_id", using: :btree
 
   create_table "main_themes", force: :cascade do |t|
     t.string   "descricao"
@@ -828,6 +831,8 @@ ActiveRecord::Schema.define(version: 20171217035311) do
   add_foreign_key "learning_results", "users"
   add_foreign_key "line_cases", "study_cases"
   add_foreign_key "line_cases", "users"
+  add_foreign_key "line_cases_users", "line_cases"
+  add_foreign_key "line_cases_users", "users"
   add_foreign_key "matriculations", "events"
   add_foreign_key "note_cases", "answer_cases"
   add_foreign_key "note_cases", "users"

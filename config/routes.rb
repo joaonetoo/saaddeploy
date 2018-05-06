@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'questionnaires/complete'
+  get 'questionnaires/learning_strategies'
+
   resources :note_cases
   resources :answer_cases
   resources :main_themes
@@ -156,7 +159,7 @@ Rails.application.routes.draw do
       get 'campu_selection'
       get 'campu2_selection'
     end
-  end 
+  end
   get 'teachers_area/index'
   get 'teachers_area/case_alunos'
   get 'teachers_area/case_questions'

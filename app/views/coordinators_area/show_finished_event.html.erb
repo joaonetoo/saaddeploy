@@ -136,6 +136,12 @@
 
       <tbody>
       <%= form_tag({ :controller => "events", :action => "certificate_event", :format => "pdf"}, { :id => "myform"}) do |f| %>
+      <div class="row">
+          <div class="col-lg-2">
+            <label> Template</label>
+            <%=select_tag "template", raw("<option>NAC</option><option>CADM</option>"),class:"form-control" %>
+          </div></div><br>
+
         <% @matriculations.each do |registration| %>
           <tr>
             <td><%= registration.nome %></td>
