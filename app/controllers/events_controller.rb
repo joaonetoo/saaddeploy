@@ -160,17 +160,17 @@ class EventsController < ApplicationController
           #Prawn::Document.generate "estilos_de_aprendizagem.pdf" do |pdf|
           #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
           @matriculations.each do |matriculation|
-          Prawn::Document.generate("certificado.pdf", :page_size=> [596, 842], :page_layout=> :landscape, :background => img) do |pdf|
-          #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
-            pdf.font("Times-Roman")
-            pdf.move_down 250
-            pdf.bounding_box([20, 300], :width => 750, :height => 850) do
-              pdf.text "Certificamos que <b>#{matriculation.nome.upcase}</b> participou do evento <b>#{@event.nome.upcase}</b>, com carga horária de <b>#{@event.ch} horas</b>, realizado no <b>#{@event.local.upcase}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
-              #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
-            pdf.move_down 30
-            pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500
+            Prawn::Document.generate("certificado.pdf", :page_size=> [596, 842], :page_layout=> :landscape, :background => img) do |pdf|
+            #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
+              pdf.font("Times-Roman")
+              pdf.move_down 250
+              pdf.bounding_box([20, 300], :width => 750, :height => 850) do
+                pdf.text "Certificamos que <b>#{matriculation.nome.mb_chars.upcase}</b> participou do evento <b>#{@event.nome.mb_chars.upcase}</b>, com carga horária de <b>#{@event.ch} HORAS</b>, realizado no <b>#{@event.local.mb_chars.upcase}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
+                #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
+              pdf.move_down 30
+              pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500
 
-            end
+              end
 
           end
           RegistrationMailer.send_certificate(matriculation,@event).deliver_now
