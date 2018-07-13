@@ -10,14 +10,11 @@ $(document).ready(function () {
                         if ($(this).val() > 0) {
                         }
                         if( $(this).val() == atual.val() && atual.val() > 0 ) {
-                            atual.css("border", "5px solid red");
+                            atual.css("border", "2px solid #232839");
                             atual.addClass('borderclass');
-                            $(this).css("border", "5px solid red");
+                            $(this).css("border", "2px solid #232839");
                             $(this).addClass('borderclass');
-                            $(this).parent('div').parent('div').find('.alert').show();
                         }
-
-
                     });
                 });
                 var alerta = 0;
@@ -57,12 +54,21 @@ $(document).ready(function () {
     });
 
 
+    $('input').blur(function () {
+        var atual = $(this)
+        $(this).parent().siblings().each(function (){
 
+            $(this).find('input').each(function (){
+                if ($(this).val() > 0) {
+                }
+                if( $(this).val() == atual.val() && atual.val() > 0 ) {
+                    $(this).parent('div').parent('div').find('.alert').show();
+                }
+            });
+        });
+    });
 });
 
-
-
-
 //        $(this).closest('.row').find('input').each(function (){
-//                $(this).css("border", "5px solid red");
+//                $(this).css("border", "5px solid #232839");
 //        });

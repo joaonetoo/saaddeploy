@@ -58,6 +58,8 @@ jQuery ->
                 alert((5 - countcheck) + " questoes extras sem pontuar")
             else if(countcheck > 5)
                 alert("Pontue apenas 5 questões extras")
+            else if(count < 40)
+                alert((40 - count) + " Questões sem marcar")
             $('#notice').html((40 - count) + " Questões sem marcar")
             return false
     if (complete == true)

@@ -374,7 +374,7 @@ class LearningResultsController < ApplicationController
     if @allUsers == 'false'
         @selecao = params[:selecao]
         @resultados = params[:results]
-  
+
       @resultados.each do |result|
         pre = LearningResult.where(data_final: params[:data_final], id: result).first
         if not pre.nil?
@@ -1168,7 +1168,7 @@ end
     @learning_result.user_id = current_user.id
     respond_to do |format|
       if @learning_result.save
-        format.html { redirect_to welcome_index_path, notice: 'Learning result was successfully created.' }
+        format.html { redirect_to welcome_index_path, notice: 'Inventário preenchido com sucesso.' }
         format.json { render :show, status: :created, location: @learning_result }
       else
         format.html { render :new }
