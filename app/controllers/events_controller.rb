@@ -201,8 +201,14 @@ class EventsController < ApplicationController
       format.pdf{
       pdf = Prawn::Document.new :page_size=> "A4"
       pdf.font("Times-Roman", :style => :bold)
-      pdf.text "Lista De Presença",:align => :center, :size => 18
-      pdf.move_down 30
+      date = DateTime.now
+      pdf.text "#{ date.strftime('%d/%m/%Y às %H:%M')}", :align => :right
+      pdf.move_down 5
+      pdf.text "Lista De Presença",:align => :center, :size => 16
+      pdf.move_down 10
+      pdf.text @event.nome,:align => :center, :size => 14
+      pdf.move_down 20
+
       pdf.text "Estudantes", :align => :center, :size => 14
       pdf.font("Times-Roman")
       @list_students =[["<b><i>Nome completo</i></b>","<b><i>Assinatura</i></b>"]]

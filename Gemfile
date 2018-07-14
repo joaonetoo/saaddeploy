@@ -51,6 +51,8 @@ gem 'jquery-validation-rails'
 
 gem 'delayed_job_active_record'
 
+gem 'axlsx_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

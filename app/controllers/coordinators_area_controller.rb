@@ -90,7 +90,7 @@ class CoordinatorsAreaController < ApplicationController
     @event = Event.find(params[:event])
     @projects = @event.projects
     @activities = @event.activities
-    @matriculations = @event.matriculations
+    @matriculations = @event.matriculations.sort_by{|matriculation| matriculation.nome}
   end
 
 

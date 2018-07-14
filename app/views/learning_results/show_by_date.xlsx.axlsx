@@ -1,0 +1,37 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+    highlight_cell = style.add_style(bg_color: "343a40")
+    wb.add_worksheet(name: "LearningResults") do |sheet|
+        sheet.add_row ['Nome',
+            'Experiência Concreta','Observação Reflexiva',
+            'Conceituação Abstrata','Experimentação Ativa',
+            "q1a", "q1b", "q1c","q1d","q2a","q2b","q2c","q2d",
+            "q3a", "q3b", "q3c", "q3d", "q4a", "q4b", "q4c",
+            "q4d", "q5a", "q5b", "q5c", "q5d", "q6a","q6b",
+            "q6c", "q6d", "q7a", "q7b", "q7c", "q7d", "q8a",
+            "q8b", "q8c", "q8d", "q9a", "q9b", "q9c", "q9d",
+            "q10a", "q10b", "q10c", "q10d", "q11a", "q11b",
+            "q11c", "q11d", "q12a", "q12b", "q12c", "q12d"], style: highlight_cell
+
+        @learning_results.each do |result|
+            sheet.add_row [result.user.nome, result.ec, result.or,
+                result.ca, result.ea,result.q1a, result.q1b, result.q1c,
+                result.q1d, result.q2a, result.q2b, result.q2c, result.q2d,
+                result.q3a, result.q3b, result.q3c, result.q3d, result.q4a,
+                result.q4b, result.q4c, result.q4d, result.q5a, result.q5b,
+                result.q5c, result.q5d, result.q6a, result.q6b, result.q6c,
+                result.q6d, result.q7a, result.q7b, result.q7c, result.q7d,
+                result.q8a, result.q8b, result.q8c, result.q8d, result.q9a,
+                result.q9b, result.q9c, result.q9d, result.q10a, result.q10b,
+                result.q10c, result.q10d, result.q11a, result.q11b, result.q11c,
+                result.q11d, result.q12a, result.q12b, result.q12c, result.q12d ]
+        end
+        if @learning_results.length > 1
+            sheet.add_row ['Total', "=SUM(B2:B#{@learning_results.length+1})/#{@learning_results.length}",
+             "=SUM(C2:C#{@learning_results.length+1})/#{@learning_results.length}",
+             "=SUM(D2:D#{@learning_results.length+1})/#{@learning_results.length}",
+             "=SUM(E2:E#{@learning_results.length+1})/#{@learning_results.length}"],style: [highlight_cell]
+        end
+    end
+end
+

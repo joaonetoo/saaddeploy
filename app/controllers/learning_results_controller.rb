@@ -113,8 +113,7 @@ class LearningResultsController < ApplicationController
       setup_teacher_search
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
-      @subjects = Subject.where(course_id: @course.id).find_each
-      @subjects = @subjects.sort_by{ |subject| subject.nome}
+      @subjects = Subject.where(course_id: @course.id).sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
@@ -317,8 +316,8 @@ class LearningResultsController < ApplicationController
       setup_teacher_search
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
-      @subjects = Subject.where(course_id: @course.id).find_each
-      @subjects = @subjects.sort_by{ |subject| subject.nome}
+      @subjects = Subject.where(course_id: @course.id).sort_by{ |subject| subject.nome}
+      # @subjects = @subjects.sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
@@ -490,11 +489,16 @@ class LearningResultsController < ApplicationController
     if  @allUsers == 'false'
         @selecao = params[:selecao]
         @resultados = params[:results]
-
-      @resultados.each do |result|
-        pre = LearningResult.where(data_final: params[:data_final], id: result).first
-        if not pre.nil?
-          @learning_results << pre
+      unless @resultados.blank?
+        @resultados.each do |result|
+          if params[:data_final]
+            pre = LearningResult.where(data_final: params[:data_final], id: result).first
+          else
+              pre = LearningResult.find(result)
+          end
+          if not pre.blank?
+            @learning_results << pre
+          end
         end
       end
     end
@@ -529,20 +533,24 @@ class LearningResultsController < ApplicationController
       @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
 
     end
-      @mediaEc = @mediaEc / @learning_results.size.to_f
-      @mediaOr = @mediaOr / @learning_results.size.to_f
-      @mediaCa = @mediaCa / @learning_results.size.to_f
-      @mediaEa = @mediaEa / @learning_results.size.to_f
-      @mediaDi = @mediaDi / @learning_results.size.to_f
-      @mediaAc = @mediaAc / @learning_results.size.to_f
-      @mediaAs = @mediaAs / @learning_results.size.to_f
-      @mediaCo = @mediaCo / @learning_results.size.to_f
+      @mediaEc = (@mediaEc / @learning_results.size.to_f).round(2)
+      @mediaOr = (@mediaOr / @learning_results.size.to_f).round(2)
+      @mediaCa = (@mediaCa / @learning_results.size.to_f).round(2)
+      @mediaEa = (@mediaEa / @learning_results.size.to_f).round(2)
+      @mediaDi = (@mediaDi / @learning_results.size.to_f).round(2)
+      @mediaAc = (@mediaAc / @learning_results.size.to_f).round(2)
+      @mediaAs = (@mediaAs / @learning_results.size.to_f).round(2)
+      @mediaCo = (@mediaCo / @learning_results.size.to_f).round(2)
 
-      @eap1 = @mediaCa - @mediaEc
-      @eap2 = @mediaEa - @mediaOr
+      @eap1 = (@mediaCa - @mediaEc).round(2)
+      @eap2 = (@mediaEa - @mediaOr).round(2)
 
     respond_to do |format|
       format.js {}
+      format.xlsx{
+        response.headers['Content-Disposition'] = 'attachment; filename="Resultados.xlsx"'
+
+      }
     end
 
 end
@@ -743,7 +751,6 @@ end
             @results << result
           end
       end
-
       @datas = @results.map(&:data_final).uniq
     else
       redirect_to no_users_error_results_path, notice: 'Não há usuarios disponiveis para exibir'

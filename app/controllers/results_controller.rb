@@ -544,8 +544,7 @@ def setup_teacher_search
       setup_teacher_search
     elsif current_user.type == 'Coordinator'
       setup_teacher_search
-      @subjects = Subject.where(course_id: @course.id).find_each
-      @subjects = @subjects.sort_by{ |subject| subject.nome}
+      @subjects = Subject.where(course_id: @course.id).sort_by{ |subject| subject.nome}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
@@ -735,12 +734,14 @@ def setup_teacher_search
 
   def classroom_selection
     @classroom = Classroom.find(params[:classroom])
-    @users = @classroom.users
+    @users = @classroom.users.each {|user| user.nome = user.nome.mb_chars.upcase}
+    @users = @users.sort_by {|user| user.nome}
   end
 
   def classroom2_selection
     @classroom = Classroom.find(params[:classroom])
-    @users = @classroom.users
+    @users = @classroom.users.each {|user| user.nome = user.nome.mb_chars.upcase}
+    @users = @users.sort_by {|user| user.nome}
   end
 
   def analytics
@@ -750,7 +751,6 @@ def setup_teacher_search
       setup_teacher_search
       @subjects = Subject.where(course_id: @course.id).find_each
       @subjects = @subjects.sort_by{ |subject| subject.nome}
-      @subjects.each {|subject| subject.nome = subject.nome.upcase}
     elsif current_user.type == 'Principal'
       setup_principal_search
     end
