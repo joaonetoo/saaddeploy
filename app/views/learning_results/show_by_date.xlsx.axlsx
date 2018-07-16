@@ -1,6 +1,6 @@
 wb = xlsx_package.workbook
 wb.styles do |style|
-    highlight_cell = style.add_style(bg_color: "343a40")
+    highlight_cell = style.add_style(bg_color: "343a40",:fg_color => "FFFFF")
     wb.add_worksheet(name: "LearningResults") do |sheet|
         sheet.add_row ['Nome',
             'Experiência Concreta','Observação Reflexiva',
@@ -12,7 +12,6 @@ wb.styles do |style|
             "q8b", "q8c", "q8d", "q9a", "q9b", "q9c", "q9d",
             "q10a", "q10b", "q10c", "q10d", "q11a", "q11b",
             "q11c", "q11d", "q12a", "q12b", "q12c", "q12d"], style: highlight_cell
-
         @learning_results.each do |result|
             sheet.add_row [result.user.nome, result.ec, result.or,
                 result.ca, result.ea,result.q1a, result.q1b, result.q1c,

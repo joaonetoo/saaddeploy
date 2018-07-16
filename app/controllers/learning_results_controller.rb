@@ -409,15 +409,15 @@ class LearningResultsController < ApplicationController
         @mediaAs = @mediaAs + ((result.or + result.ca) / 2)
         @mediaCo = @mediaCo + ((result.ea + result.ca) / 2)
       end
-      @mediaEc = (@mediaEc / @learning_results.size.to_f)
-      @mediaOr = @mediaOr / @learning_results.size.to_f
-      @mediaCa = @mediaCa / @learning_results.size.to_f
-      @mediaEa = @mediaEa / @learning_results.size.to_f
+      @mediaEc = (@mediaEc / @learning_results.size.to_f).round(2)
+      @mediaOr = (@mediaOr / @learning_results.size.to_f).round(2)
+      @mediaCa = (@mediaCa / @learning_results.size.to_f).round(2)
+      @mediaEa = (@mediaEa / @learning_results.size.to_f).round(2)
 
-      @mediaDi = @mediaDi / @learning_results.size.to_f
-      @mediaAc = @mediaAc / @learning_results.size.to_f
-      @mediaAs = @mediaAs / @learning_results.size.to_f
-      @mediaCo = @mediaCo / @learning_results.size.to_f
+      @mediaDi = (@mediaDi / @learning_results.size.to_f).round(2)
+      @mediaAc = (@mediaAc / @learning_results.size.to_f).round(2)
+      @mediaAs = (@mediaAs / @learning_results.size.to_f).round(2)
+      @mediaCo = (@mediaCo / @learning_results.size.to_f).round(2)
       #selecao 2
 
     @learning_results2 = []
@@ -461,15 +461,15 @@ class LearningResultsController < ApplicationController
       @mediaAs2 = @mediaAs2 + ((result.or + result.ca) / 2)
       @mediaCo2 = @mediaCo2 + ((result.ea + result.ca) / 2)
     end
-    @mediaEc2 = @mediaEc2 / @learning_results2.size.to_f
-    @mediaOr2 = @mediaOr2 / @learning_results2.size.to_f
-    @mediaCa2 = @mediaCa2 / @learning_results2.size.to_f
-    @mediaEa2 = @mediaEa2 / @learning_results2.size.to_f
+    @mediaEc2 = (@mediaEc2 / @learning_results2.size.to_f).round(2)
+    @mediaOr2 = (@mediaOr2 / @learning_results2.size.to_f).round(2)
+    @mediaCa2 = (@mediaCa2 / @learning_results2.size.to_f).round(2)
+    @mediaEa2 = (@mediaEa2 / @learning_results2.size.to_f).round(2)
 
-    @mediaDi2 = @mediaDi2 / @learning_results2.size.to_f
-    @mediaAc2 = @mediaAc2 / @learning_results2.size.to_f
-    @mediaAs2 = @mediaAs2 / @learning_results2.size.to_f
-    @mediaCo2 = @mediaCo2 / @learning_results2.size.to_f
+    @mediaDi2 = (@mediaDi2 / @learning_results2.size.to_f).round(2)
+    @mediaAc2 = (@mediaAc2 / @learning_results2.size.to_f).round(2)
+    @mediaAs2 = (@mediaAs2 / @learning_results2.size.to_f).round(2)
+    @mediaCo2 = (@mediaCo2 / @learning_results2.size.to_f).round(2)
 
     @eap1 = @mediaCa - @mediaEc
     @eap2 = @mediaEa - @mediaOr
@@ -511,6 +511,7 @@ class LearningResultsController < ApplicationController
               @learning_results << pre
             end
         end
+        @learning_results = @learning_results.sort_by{ |result| result.user.nome}
     end
 
     @mediaEc = 0

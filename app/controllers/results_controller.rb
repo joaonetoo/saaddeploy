@@ -256,7 +256,11 @@ def setup_teacher_search
 
       @selecao = params[:selecao]
       @resultados.each do |result|
-        pre = Result.where(data_final: params[:data_final], id: result).first
+        if params[:data_final]
+          pre = Result.where(data_final: params[:data_final], id: result).first
+        else
+          pre = Result.find(result)
+        end
         if not pre.nil?
           @results << pre
         end
@@ -271,6 +275,7 @@ def setup_teacher_search
               @results << pre
             end
         end
+    @results = @results.sort_by{ |result| result.user.nome}
     end
 
     @mediaTf = 0.0
@@ -332,7 +337,10 @@ def setup_teacher_search
 
 
     respond_to do |format|
-    format.js {}
+      format.js {}
+      format.xlsx{
+        response.headers['Content-Disposition'] = 'attachment; filename="Resultados.xlsx"'
+      }
     end
   end
   def list

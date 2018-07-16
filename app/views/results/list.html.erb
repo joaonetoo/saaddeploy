@@ -5,13 +5,31 @@
 <%= javascript_include_tag "createCsv"%>
 
 <div class="panel panel-default">
-<div class="panel-heading">
-<center><h4>Analisar Âncoras de Carreira</h4></center>
-        <%= link_to '#', id: "export", class: "btn btn-success btn-circle pull-right", style:  "margin-top : -35px" do  %> 
-            <i class="fa  fa-file-excel-o "></i>
-        <% end %>
-        <div id='exports'>
-</div>
+  <div class="panel-heading">
+    <center><h4>Analisar Âncoras de Carreira</h4></center>
+         <%= form_tag(show_by_date_results_path(format: :xlsx), method: 'post') do %>
+            <% if @allUsers == false %>
+              <%= hidden_field_tag "selecao", @selecao %>
+              <%= hidden_field_tag "allUsers", @allUsers %>
+              <% @users.map(&:id).each do |u| %>
+                <%= hidden_field_tag "users[]", u %>
+              <% end %>
+              <% @results.map(&:id).each do |id| %>
+              <%= hidden_field_tag "results[]", id %>
+              <% end %>
+            <% else  %>
+                   <%= hidden_field_tag "allUsers", @allUsers %>
+                    <% @users.map(&:id).each do |uu| %>
+                      <%= hidden_field_tag "users[]", uu %>
+                    <% end %>
+
+            <% end %>
+            <%= button_tag(type: "submit",class: "btn btn-success btn-circle pull-right", style:  "margin-top : -35px; margin-left: -35px") do %>
+                      <i class="fa  fa-file-excel-o "></i>
+            <% end %>
+      <% end %>
+          <div id='exports'>
+        </div>
 
 </div>
 

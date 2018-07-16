@@ -1,0 +1,40 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+    highlight_cell = style.add_style(bg_color: "343a40",:fg_color => "FFFFF")
+    wb.add_worksheet(name: "Results") do |sheet|
+        sheet.add_row ['Nome',"Competência Técnica e Funcional",
+        "Competência Administrativa Geral","Autonomia e Independência",
+        "Segurança e Estabilidade","Criatividade Empresarial",
+        "Dedicação a uma Causa","Desafio Puro","Estilo de Vida"], style: highlight_cell
+        @results.each do |result|
+            sheet.add_row [result.user.nome,result.tf,
+            result.gm,result.au,result.se,result.ec,
+            result.sv,result.ch,result.ls]
+        end
+        if @results.length > 1
+            length = @results.length
+            sheet.add_row ['Total', "=SUM(B2:B#{@results.length+1})/#{@results.length}",
+             "=SUM(C2:C#{length+1})/#{length}",
+             "=SUM(D2:D#{length+1})/#{length}",
+             "=SUM(E2:E#{length+1})/#{length}",
+             "=SUM(F2:F#{length+1})/#{length}",
+             "=SUM(G2:G#{length+1})/#{length}",
+             "=SUM(H2:H#{length+1})/#{length}",
+             "=SUM(I2:I#{length+1})/#{length}"],style: [highlight_cell]
+            sheet.add_chart(Axlsx::Bar3DChart, :start_at => "B#{length + 6 }", :end_at => "E#{length + 19}") do |chart|
+              chart.add_series :data => sheet["B2:I#{length}"], :labels => sheet["B1:I1"], :title => sheet["B1"], :colors => ["00FF00", "0000FF"]
+            end
+         end
+    end
+end
+
+# if examples.include? :bar_chart
+#   wb.add_worksheet(:name => "Bar Chart") do |sheet|
+#     sheet.add_row ["A Simple Bar Chart"]
+#     %w(first second third).each { |label| sheet.add_row [label, rand(24)+1] }
+#     sheet.add_chart(Axlsx::Bar3DChart, :start_at => "B2", :end_at => "I#{length}") do |chart|
+#       chart.add_series :data => sheet["B2:B4"], :labels => sheet["A2:A4"], :title => sheet["A1"], :colors => ["00FF00", "0000FF"]
+#     end
+#   end
+# end
