@@ -9,6 +9,7 @@
     <div class="col-lg-12">
     <div class="pull-right">
         <%= link_to "Gerar PDF", pdf_event_events_path(format: 'pdf', event: @event), class: "btn btn-login btn-sm" %>
+        <%= link_to "Gerar Lista de Inscritos", enrolled_list_events_path(format: 'pdf', event: @event), class: "btn btn-login btn-sm" %>
         <%= link_to "Gerar Lista de Presença", attendance_list_events_path(format: 'pdf', event: @event), class: "btn btn-login btn-sm" %>
         <%= link_to 'Editar', edit_event_path(@event), class: "btn btn-login btn-sm" %>
   </div>
@@ -38,6 +39,14 @@
         <strong>Fim:</strong>
         <%= @event.fim.strftime("%-d/%-m/%y às %H:%M") %>
       </p>
+
+      <% unless @event.date_achievement.nil? %>
+        <p>
+          <strong>Datas de realização:</strong>
+          <%= @event.date_achievement %>
+        </p>
+        <p>
+      <% end %>
 
       <p>
         <strong>Submissao:</strong>

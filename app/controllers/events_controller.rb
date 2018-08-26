@@ -164,11 +164,14 @@ class EventsController < ApplicationController
             #pdf.image "#{student.avatar.path(:thumb)}", :scale => 0.75
               pdf.font("Times-Roman")
               pdf.move_down 250
-              pdf.bounding_box([20, 300], :width => 750, :height => 850) do
-                pdf.text "Certificamos que <b>#{matriculation.nome.mb_chars.upcase}</b> participou do evento <b>#{@event.nome.mb_chars.upcase}</b>, com carga horária de <b>#{@event.ch} HORAS</b>, realizado no <b>#{@event.local.mb_chars.upcase}</b>.", :align => :center, :size => 18, :inline_format => true,:indent_paragraphs => 25
-                #send_data pdf.render, filename: 'background.pdf', type: 'application/pdf', disposition: "inline"
+              pdf.bounding_box([20, 300], :width => 740, :height => 850) do
+                unless @event.date_achievement.nil?
+                  pdf.text "Certificamos que <b>#{matriculation.nome.mb_chars.upcase}</b> participou do evento <b>#{@event.nome.mb_chars.upcase}</b>, com carga horária de <b>#{@event.ch} HORAS</b>, realizado no(a) <b>#{@event.local.mb_chars.upcase}</b>, no(s) dia(s) #{@event.date_achievement}.", :align => :justify, :size => 18, :inline_format => true,:indent_paragraphs => 25
+                else
+                  pdf.text "Certificamos que <b>#{matriculation.nome.mb_chars.upcase}</b> participou do evento <b>#{@event.nome.mb_chars.upcase}</b>, com carga horária de <b>#{@event.ch} HORAS</b>, realizado no(a) <b>#{@event.local.mb_chars.upcase}</b>, no(s) dia(s) #{@event.date_achievement}.", :align => :justify, :size => 18, :inline_format => true,:indent_paragraphs => 25
+                end
               pdf.move_down 30
-              pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 500
+              pdf.text " João Pessoa, #{l(date, format: '%d de %B de %Y')}.", :align => :left , :size => 16, :inline_format => true,:indent_paragraphs => 475
 
               end
 
@@ -229,7 +232,7 @@ class EventsController < ApplicationController
         end
         pdf.table(@list_teachers ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
       end
-      unless @profissionals
+      unless @profissionals.blank?
         pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape)
         pdf.font("Times-Roman", :style => :bold)
         pdf.text "Lista De Presença",:align => :center, :size => 18
@@ -243,6 +246,71 @@ class EventsController < ApplicationController
         pdf.table(@list_profissionals ,:column_widths => [261,261],:cell_style => { :font => "Times-Roman", :inline_format => true  })
       end
       send_data pdf.render, filename: 'lista_de_presenca.pdf', type: 'application/pdf', disposition: "inline"
+      }
+    end
+  end
+
+  def enrolled_list
+    @event = Event.find(params[:event])
+    @matriculations = @event.matriculations
+    @teachers = @matriculations.where(tipo: 'Professor')
+    @students = @matriculations.where(tipo: 'Estudante')
+    @profissionals = @matriculations.where(tipo: 'Profissional')
+    unless @students.blank?
+      @students = @students.sort_by{ |student| student.nome}
+    end
+    unless @teachers.blank?
+      @teachers = @teachers.sort_by{ |teacher| teacher.nome}
+    end
+    unless @profissionals.blank?
+      @profissionals = @profissionals.sort_by{|profisional| profisional.nome}
+    end
+    respond_to do |format|
+      format.pdf{
+      pdf = Prawn::Document.new :page_size=> "A4"
+      pdf.font("Times-Roman", :style => :bold)
+      date = DateTime.now
+      pdf.text "#{ date.strftime('%d/%m/%Y às %H:%M')}", :align => :right
+      pdf.move_down 5
+      pdf.text "Lista de Inscritos",:align => :center, :size => 16
+      pdf.move_down 10
+      pdf.text @event.nome,:align => :center, :size => 14
+      pdf.move_down 20
+
+      pdf.text "Estudantes", :align => :center, :size => 14
+      pdf.font("Times-Roman")
+      @list_students =[["<b><i>Nome completo</i></b>","<b><i>Email</i></b>","<b><i>Telefone</i></b>"]]
+      @students.each do |student|
+        @list_students << [student.nome, student.email, student.telefone]
+      end
+      pdf.table(@list_students ,:column_widths => [240,190,90],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      unless @teachers.blank?
+        pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape)
+        pdf.font("Times-Roman", :style => :bold)
+        pdf.text "Lista de Inscritos",:align => :center, :size => 18
+        pdf.move_down 30
+        pdf.text "Professores", :align => :center, :size => 14
+        pdf.font("Times-Roman")
+        @list_teachers =[["<b><i>Nome completo</i></b>","<b><i>Email</i></b>","<b><i>Telefone</i></b>"]]
+        @teachers.each do |teacher|
+          @list_teachers << [teacher.nome, teacher.email, teacher.telefone]
+        end
+        pdf.table(@list_teachers ,:column_widths =>  [240,190,90],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      end
+      unless @profissionals.blank?
+        pdf.start_new_page(:page_size=> "A4", :page_layout=> :landscape)
+        pdf.font("Times-Roman", :style => :bold)
+        pdf.text "Lista de Inscritos",:align => :center, :size => 18
+        pdf.move_down 30
+        pdf.text "Profissionais", :align => :center, :size => 14
+        pdf.font("Times-Roman")
+        @list_profissionals =[["<b><i>Nome completo</i></b>","<b><i>Email</i></b>","<b><i>Telefone</i></b>"]]
+        @profissionals.each do |profissional|
+          @list_profissionals << [profissional.nome, profissional.email, profissional.telefone]
+        end
+        pdf.table(@list_profissionals ,:column_widths => [240,190,90],:cell_style => { :font => "Times-Roman", :inline_format => true  })
+      end
+      send_data pdf.render, filename: 'lista_de_inscritos.pdf', type: 'application/pdf', disposition: "inline"
       }
     end
   end
@@ -284,6 +352,6 @@ class EventsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:nome, :ch,:informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at)
+      params.require(:event).permit(:nome, :ch,:informacoes,:apresentacao, :objetivos, :inicio, :fim, :submissao, :trabalhos, :deadline, :normas, :local, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at,:date_achievement)
     end
 end

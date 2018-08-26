@@ -62,10 +62,19 @@
                       </div>
                   </div>
                 <div class="col-lg-6">
+                        <br>
                         <%= f.label :Submissões_de_trabalhos %>
                         <%= f.check_box :submissao %>
 
                 </div>
+
+                <div class="col-lg-4">
+                    <br>
+                    <%= f.label :Datas_de_realização %>
+                    <%= f.text_field :date_achievement, class: "form-control" %>
+
+                </div>
+
                 </div>
             </div>
           </div>
@@ -98,4 +107,4 @@
                   </div>
         </div>
   </div>
-                        <% end %>
+  <% end %>

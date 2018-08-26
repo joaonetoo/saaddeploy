@@ -96,6 +96,7 @@ Rails.application.routes.draw do
         post 'certificate_project'
         get 'approve_project'
         get 'attendance_list'
+        get 'enrolled_list'
     end
   end
   get 'coordinators_area/index'
